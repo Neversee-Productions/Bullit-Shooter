@@ -4,7 +4,7 @@
 
 ## Meet the team
 
-* Rafael Plugge
+* [Rafael Plugge](https://www.linkedin.com/in/rafael-plugge-512164106/)
 * Sebastian Kruzel
 
 ## Supervisor
