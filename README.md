@@ -13,6 +13,13 @@
 
 *All external dependencies included in the project*
 
+## 3rd Party Libraries
+
+* [SFML 2.4](https://github.com/SFML/SFML)
+* [Thor](https://github.com/Bromeon/Thor)
+* [JSON](https://github.com/nlohmann/json)
+* [tinyheaders](https://github.com/RandyGaul/tinyheaders)
+
 ## Supervisor
 
 * Phillip Bourke
