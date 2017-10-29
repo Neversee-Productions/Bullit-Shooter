@@ -24,15 +24,46 @@
 #include "json\json.hpp"
 #include "tinyheaders\tinyc2.h"
 
+#include "Application.h"
+
 /// <summary>
-/// Main entry point for the application
+/// @mainpage 3rd year Project
+/// 
+/// ## 2D Side Scroll Space shoot'em up
+///
+/// ## Meet the team
+/// 
+/// * [Rafael Plugge](https://www.linkedin.com/in/rafael-plugge-512164106/)
+/// * Sebastian Kruzel
+/// 
+/// ## Required software
+/// 
+/// * [Visual C++ Redistributable 2017](https ://go.microsoft.com/fwlink/?LinkId=746571)
+/// 
+///		*All external dependencies included in the project*
+/// 
+/// ## 3rd Party Libraries
+/// 
+/// * [SFML 2.4](https://github.com/SFML/SFML)
+/// * [Thor](https://github.com/Bromeon/Thor)
+/// * [JSON](https://github.com/nlohmann/json)
+/// * [tinyheaders](https://github.com/RandyGaul/tinyheaders)
+/// 
+/// ## Supervisor
+/// 
+/// * Phillip Bourke
+/// 
+/// </summary>
+
+/// <summary>
+/// @brief Entry point.
+/// 
+/// The Main Entry point for the application
+/// @file
 /// </summary>
 /// <param name="argc">number of arguments passed into the application</param>
 /// <param name="argv">c style string of the arguments passed into the application</param>
 int main(int argc, char** argv)
 {
-	sf::RenderWindow window;
-	thor::BigSprite bigSprite;
-	nlohmann::json json_ex;
-	c2Circle circle;
+
 }

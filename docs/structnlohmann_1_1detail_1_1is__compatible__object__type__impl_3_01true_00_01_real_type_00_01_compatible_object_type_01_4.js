@@ -1,0 +1,4 @@
+var structnlohmann_1_1detail_1_1is__compatible__object__type__impl_3_01true_00_01_real_type_00_01_compatible_object_type_01_4 =
+[
+    [ "value", "structnlohmann_1_1detail_1_1is__compatible__object__type__impl_3_01true_00_01_real_type_00_01_compatible_object_type_01_4.html#afa131fcd3a4fc1881dd350a04589e6cf", null ]
+];

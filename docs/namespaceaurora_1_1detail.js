@@ -1,0 +1,28 @@
+var namespaceaurora_1_1detail =
+[
+    [ "CopyTag", "structaurora_1_1detail_1_1_copy_tag.html", null ],
+    [ "EmplaceTag", "structaurora_1_1detail_1_1_emplace_tag.html", null ],
+    [ "EmptyType", "structaurora_1_1detail_1_1_empty_type.html", null ],
+    [ "FunctionSignature", "structaurora_1_1detail_1_1_function_signature.html", null ],
+    [ "FunctionSignature< R()>", "structaurora_1_1detail_1_1_function_signature_3_01_r_07_08_4.html", null ],
+    [ "FunctionSignature< R(P0)>", "structaurora_1_1detail_1_1_function_signature_3_01_r_07_p0_08_4.html", null ],
+    [ "FunctionSignature< R(P0, P1)>", "structaurora_1_1detail_1_1_function_signature_3_01_r_07_p0_00_01_p1_08_4.html", null ],
+    [ "FunctionSignature< R(P0, P1, P2)>", "structaurora_1_1detail_1_1_function_signature_3_01_r_07_p0_00_01_p1_00_01_p2_08_4.html", null ],
+    [ "FunctionSignatureBase", "structaurora_1_1detail_1_1_function_signature_base.html", "structaurora_1_1detail_1_1_function_signature_base" ],
+    [ "MoveTag", "structaurora_1_1detail_1_1_move_tag.html", null ],
+    [ "NthType", "structaurora_1_1detail_1_1_nth_type.html", null ],
+    [ "NthType< 0, T0, T1, T2 >", "structaurora_1_1detail_1_1_nth_type_3_010_00_01_t0_00_01_t1_00_01_t2_01_4.html", "structaurora_1_1detail_1_1_nth_type_3_010_00_01_t0_00_01_t1_00_01_t2_01_4" ],
+    [ "NthType< 1, T0, T1, T2 >", "structaurora_1_1detail_1_1_nth_type_3_011_00_01_t0_00_01_t1_00_01_t2_01_4.html", "structaurora_1_1detail_1_1_nth_type_3_011_00_01_t0_00_01_t1_00_01_t2_01_4" ],
+    [ "NthType< 2, T0, T1, T2 >", "structaurora_1_1detail_1_1_nth_type_3_012_00_01_t0_00_01_t1_00_01_t2_01_4.html", "structaurora_1_1detail_1_1_nth_type_3_012_00_01_t0_00_01_t1_00_01_t2_01_4" ],
+    [ "PtrIndirection", "structaurora_1_1detail_1_1_ptr_indirection.html", "structaurora_1_1detail_1_1_ptr_indirection" ],
+    [ "PtrOwner", "structaurora_1_1detail_1_1_ptr_owner.html", "structaurora_1_1detail_1_1_ptr_owner" ],
+    [ "PtrOwnerBase", "structaurora_1_1detail_1_1_ptr_owner_base.html", "structaurora_1_1detail_1_1_ptr_owner_base" ],
+    [ "RawType", "structaurora_1_1detail_1_1_raw_type.html", "structaurora_1_1detail_1_1_raw_type" ],
+    [ "RemoveIndirection", "structaurora_1_1detail_1_1_remove_indirection.html", "structaurora_1_1detail_1_1_remove_indirection" ],
+    [ "Replicate", "structaurora_1_1detail_1_1_replicate.html", "structaurora_1_1detail_1_1_replicate" ],
+    [ "SafeBoolHolder", "structaurora_1_1detail_1_1_safe_bool_holder.html", "structaurora_1_1detail_1_1_safe_bool_holder" ],
+    [ "TupleDynamic", "structaurora_1_1detail_1_1_tuple_dynamic.html", "structaurora_1_1detail_1_1_tuple_dynamic" ],
+    [ "TupleDynamic< Tuple, Result, 0u >", "structaurora_1_1detail_1_1_tuple_dynamic_3_01_tuple_00_01_result_00_010u_01_4.html", "structaurora_1_1detail_1_1_tuple_dynamic_3_01_tuple_00_01_result_00_010u_01_4" ],
+    [ "TupleTransform", "structaurora_1_1detail_1_1_tuple_transform.html", null ],
+    [ "TupleTransform< SrcTuple, Transformer, 0u >", "structaurora_1_1detail_1_1_tuple_transform_3_01_src_tuple_00_01_transformer_00_010u_01_4.html", "structaurora_1_1detail_1_1_tuple_transform_3_01_src_tuple_00_01_transformer_00_010u_01_4" ]
+];
