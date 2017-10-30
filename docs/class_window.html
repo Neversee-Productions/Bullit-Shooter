@@ -96,8 +96,8 @@ $(document).ready(function(){initNavTree('class_window.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a74e6087da23d3c24e9fac0245e5ec92c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a74e6087da23d3c24e9fac0245e5ec92c">Window</a> ()</td></tr>
-<tr class="separator:a74e6087da23d3c24e9fac0245e5ec92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88f9c5ae954731a6a8df093b2223eba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#ac88f9c5ae954731a6a8df093b2223eba">Window</a> (<a class="el" href="class_key_handler.html">KeyHandler</a> &amp;keyHandler)</td></tr>
+<tr class="separator:ac88f9c5ae954731a6a8df093b2223eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a245d821e6016fa1f6970ccbbedd635f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a245d821e6016fa1f6970ccbbedd635f6">~Window</a> ()</td></tr>
 <tr class="separator:a245d821e6016fa1f6970ccbbedd635f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a381364c2704bed978cdf9df669c4b629"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a381364c2704bed978cdf9df669c4b629">processEvents</a> ()</td></tr>
@@ -108,6 +108,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad1c40ec9b475f25d3dfec7ae5524896a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afadfafa5a0b9472554759004aafb327e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#afadfafa5a0b9472554759004aafb327e">display</a> ()</td></tr>
 <tr class="separator:afadfafa5a0b9472554759004aafb327e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761d614931fb5a5daa70e4f580c3e78e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a761d614931fb5a5daa70e4f580c3e78e">isOpen</a> () const</td></tr>
+<tr class="separator:a761d614931fb5a5daa70e4f580c3e78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38bc43bdd1a97e5de7f346ba4c3957ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a38bc43bdd1a97e5de7f346ba4c3957ef">clear</a> ()</td></tr>
+<tr class="separator:a38bc43bdd1a97e5de7f346ba4c3957ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -121,13 +125,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a81ae3ae4f15969f55a96d513ff5572e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a328bc625cf152d7b15d13495e7f0f99a"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a328bc625cf152d7b15d13495e7f0f99a">m_textureRenderer</a></td></tr>
 <tr class="separator:a328bc625cf152d7b15d13495e7f0f99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f326af91aa0b826314e713cf3f2d2e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a2f326af91aa0b826314e713cf3f2d2e5">m_keyHandler</a></td></tr>
+<tr class="separator:a2f326af91aa0b826314e713cf3f2d2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
 <p>This class will wrap over the sfml RenderWindow. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a74e6087da23d3c24e9fac0245e5ec92c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74e6087da23d3c24e9fac0245e5ec92c">&#9670;&nbsp;</a></span>Window()</h2>
+<a id="ac88f9c5ae954731a6a8df093b2223eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88f9c5ae954731a6a8df093b2223eba">&#9670;&nbsp;</a></span>Window()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,13 +141,20 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Window::Window </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>keyHandler</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Creates and window wrapper.</p>
 <p>Creates a sfml window, acquires possible resolutions, sets the best one to the current resolutions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyHandler</td><td>stored reference to our key handler.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -192,6 +205,25 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a38bc43bdd1a97e5de7f346ba4c3957ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38bc43bdd1a97e5de7f346ba4c3957ef">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Clears current frame.</p>
+<p>Clears our render texture </p>
+
+</div>
+</div>
 <a id="afadfafa5a0b9472554759004aafb327e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afadfafa5a0b9472554759004aafb327e">&#9670;&nbsp;</a></span>display()</h2>
 
@@ -237,6 +269,26 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a761d614931fb5a5daa70e4f580c3e78e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a761d614931fb5a5daa70e4f580c3e78e">&#9670;&nbsp;</a></span>isOpen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Window::isOpen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tell whether window is open or not.</p>
+<p>Used to determine whether or not a window is opened. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if window is open, false if it has been closed</dd></dl>
+
+</div>
+</div>
 <a id="a381364c2704bed978cdf9df669c4b629"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a381364c2704bed978cdf9df669c4b629">&#9670;&nbsp;</a></span>processEvents()</h2>
 
@@ -252,11 +304,35 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Process SFML events.</p>
-<p>Polls sfml's window events, and responds to them. </p>
+<p>Polls sfml's window events, and responds to them. Key events are used to update our m_keyHandler map. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2f326af91aa0b826314e713cf3f2d2e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f326af91aa0b826314e713cf3f2d2e5">&#9670;&nbsp;</a></span>m_keyHandler</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_key_handler.html">KeyHandler</a>&amp; Window::m_keyHandler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to <a class="el" href="class_key_handler.html" title="Manages key input. ">KeyHandler</a>.</p>
+<p>Will be used to update its map of keys </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_window.html#a381364c2704bed978cdf9df669c4b629">Window::processEvents()</a> </dd></dl>
+
+</div>
+</div>
 <a id="a81ae3ae4f15969f55a96d513ff5572e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81ae3ae4f15969f55a96d513ff5572e3">&#9670;&nbsp;</a></span>m_renderTexture</h2>
 

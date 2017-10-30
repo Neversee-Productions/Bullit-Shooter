@@ -6,9 +6,9 @@
 #include "SFML\Graphics\RenderWindow.hpp"
 #include "SFML\Graphics\RenderTexture.hpp"
 #include "SFML\Graphics\Sprite.hpp"
+#include "KeyHandler.h"
 
 /// 
-/// @class Window
 /// @brief Wrapper window class.
 /// @author Rafael Plugge
 /// 
@@ -17,12 +17,14 @@
 class Window
 {
 public:
-	Window();
+	Window(KeyHandler & keyHandler);
 	~Window();
 	void processEvents();
 	void changeStyle(const sf::Uint32 & newStyle);
 	void draw(sf::Drawable & drawable);
 	void display();
+	bool isOpen() const;
+	void clear();
 
 private:
 
@@ -65,6 +67,15 @@ private:
 	/// draw it at (0, 0).
 	/// </summary>
 	sf::Sprite m_textureRenderer;
+
+	/// <summary>
+	/// @brief Reference to KeyHandler.
+	/// 
+	/// Will be used to update its map of keys
+	/// @see Window::processEvents()
+	/// </summary>
+	KeyHandler & m_keyHandler;
+
 };
 
 #endif // !WINDOW_H

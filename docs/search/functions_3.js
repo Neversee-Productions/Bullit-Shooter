@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['ispressed',['isPressed',['../class_key_handler.html#a23060a9c29fb10d80ca94863f977f34e',1,'KeyHandler']]],
-  ['isprevpressed',['isPrevPressed',['../class_key_handler.html#a91a81713f668041ff64c710b8b7a6e77',1,'KeyHandler']]]
+  ['getactive',['getActive',['../class_scene_manager.html#a10a725b0d82a65ea7beb2969204d119f',1,'SceneManager']]],
+  ['getname',['getName',['../class_scene.html#a056dfc15c377165943f5276f477c105d',1,'Scene']]],
+  ['getnextscenename',['getNextSceneName',['../class_scene.html#a4281c0ec2142a6a53a3057557d7ff195',1,'Scene']]],
+  ['getscene',['getScene',['../class_scene_manager.html#a8d57af5725ae91ccabbbc77e6d10fa00',1,'SceneManager']]],
+  ['gotonextscene',['goToNextScene',['../class_scene_manager.html#ab5a98ee1a0334f0b9d53d5ed4d5bd096',1,'SceneManager']]]
 ];

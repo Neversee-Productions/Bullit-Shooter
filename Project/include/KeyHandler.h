@@ -7,7 +7,8 @@
 /// 
 /// @brief Manages key input.
 /// @author Rafael Plugge
-/// @details Allows for simultaneous and instantaneous input detection.
+/// 
+/// Allows for simultaneous and instantaneous input detection.
 /// 
 class KeyHandler
 {

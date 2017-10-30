@@ -7,12 +7,14 @@
 /// acquires possible resolutions,
 /// sets the best one to the current resolutions.
 /// </summary>
-Window::Window()
+/// <param name="keyHandler">stored reference to our key handler.</param>
+Window::Window(KeyHandler & keyHandler)
 	: m_sfWindow()
 	, m_resolution()
 	, m_supportedResolutions()
 	, m_renderTexture()
 	, m_textureRenderer()
+	, m_keyHandler(keyHandler)
 {
 	///////////////////////////////////////////////////////
 	// keep our vector of supported resolutions
@@ -64,6 +66,7 @@ Window::~Window()
 /// @brief Process SFML events.
 /// 
 /// Polls sfml's window events, and responds to them.
+/// Key events are used to update our m_keyHandler map.
 /// </summary>
 void Window::processEvents()
 {
@@ -88,6 +91,14 @@ void Window::processEvents()
 			// screen should NOT be resizeable since
 			// we don't want to have to recreate m_renderTexture,
 			// in this manner
+			break;
+		case EventType::KeyPressed:
+			// window::KeyPressed data is in ev.key
+			m_keyHandler.updateKey(ev.key.code, true);
+			break;
+		case EventType::KeyReleased:
+			// window::KeyReleased data is in ev.key
+			m_keyHandler.updateKey(ev.key.code, false);
 			break;
 		default:
 			break;
@@ -131,4 +142,25 @@ void Window::display()
 	m_renderTexture.display();
 	m_sfWindow.draw(m_textureRenderer, sf::RenderStates::Default);
 	m_sfWindow.display();
+}
+
+/// <summary>
+/// @brief Tell whether window is open or not.
+/// 
+/// Used to determine whether or not a window is opened.
+/// </summary>
+/// <returns>True if window is open, false if it has been closed</returns>
+bool Window::isOpen() const
+{
+	return m_sfWindow.isOpen();
+}
+
+/// <summary>
+/// @brief Clears current frame.
+/// 
+/// Clears our render texture
+/// </summary>
+void Window::clear()
+{
+	m_renderTexture.clear();
 }
