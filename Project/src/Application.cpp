@@ -25,5 +25,6 @@ Application::~Application()
 /// </summary>
 void Application::run()
 {
+	sf::Clock clock;
 
 }

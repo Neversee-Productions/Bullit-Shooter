@@ -13,16 +13,6 @@
 #pragma comment(lib,"sfml-network.lib")
 #pragma comment(lib,"thor.lib")
 #endif
-#pragma comment(lib,"_doxygen.lib")
-#pragma comment(lib,"doxycfg.lib")
-#pragma comment(lib,"md5.lib")
-#pragma comment(lib,"qtools.lib")
-#pragma comment(lib,"vhdlparser.lib")
-
-#include "SFML\Graphics.hpp"
-#include "Thor\Graphics.hpp"
-#include "json\json.hpp"
-#include "tinyheaders\tinyc2.h"
 
 #include "Application.h"
 
