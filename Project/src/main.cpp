@@ -65,5 +65,6 @@
 /// <param name="argv">c style string of the arguments passed into the application</param>
 int main(int argc, char** argv)
 {
-
+	Application& app = Application();
+	app.run();
 }

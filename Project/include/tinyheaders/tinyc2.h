@@ -1,3 +1,6 @@
+namespace tinyh
+{
+
 /*
 	tinyc2.h - v1.03
 
@@ -1691,3 +1694,4 @@ void c2PolytoPolyManifold( const c2Poly* A, const c2x* ax_ptr, const c2Poly* B, 
 	     be misrepresented as being the original software.
 	  3. This notice may not be removed or altered from any source distribution.
 */
+}
