@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('class_window.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p> 
+<p>Wrapper window class.  
  <a href="class_window.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_window_8h_source.html">Window.h</a>&gt;</code></p>
@@ -123,7 +123,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a328bc625cf152d7b15d13495e7f0f99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Wrapper window class. </p><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
 <p>This class will wrap over the sfml RenderWindow. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a74e6087da23d3c24e9fac0245e5ec92c"></a>
@@ -160,7 +160,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Deletes window.</p>
-<p>All variables are automatically removed off thes stack. </p>
+<p>All variables are automatically removed off the stack. </p>
 
 </div>
 </div>
@@ -181,7 +181,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Windows OS hack.</p>
-<p>Will alter the style of the sfml window by using its window handle. </p>
+<p>Will alter the style of the sfml window by using its window handle, required to be able to change the window style at runtime without having to destroy/create the sfml window.</p>
+<dl class="section warning"><dt>Warning</dt><dd>If peformed on a OS different than Windows the window is not changed. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">newStyle</td><td>Flag for the new style that the window will be changed to.</td></tr>
@@ -276,7 +277,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Representation of our current frame.</p>
-<p>This is our render target for render calls, all drawables drawn on this texture and than our frame is drawn on to the window. </p>
+<p>This is our render target for render calls, all drawables are drawn on this texture and than our frame is drawn on to the window. </p>
 
 </div>
 </div>
@@ -323,7 +324,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>SFML <a class="el" href="class_window.html">Window</a>.</p>
+<p>SFML RenderWindow.</p>
 <p>Handles OpenGL calls internally. </p>
 
 </div>

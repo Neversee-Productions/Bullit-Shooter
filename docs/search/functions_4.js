@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['processevents',['processEvents',['../class_window.html#a381364c2704bed978cdf9df669c4b629',1,'Window']]]
+  ['keyhandler',['KeyHandler',['../class_key_handler.html#a9f90e60def9a242e88629dc6d6641789',1,'KeyHandler']]]
 ];

@@ -54,7 +54,7 @@ Window::Window()
 /// <summary>
 /// @brief Deletes window.
 /// 
-/// All variables are automatically removed off thes stack.
+/// All variables are automatically removed off the stack.
 /// </summary>
 Window::~Window()
 {
@@ -98,7 +98,11 @@ void Window::processEvents()
 /// <summary>
 /// @brief Windows OS hack.
 /// 
-/// Will alter the style of the sfml window by using its window handle.
+/// Will alter the style of the sfml window by using its window handle,
+/// required to be able to change the window style at runtime without 
+/// having to destroy/create the sfml window.
+/// 
+/// @warning If peformed on a OS different than Windows the window is not changed.
 /// </summary>
 /// <param name="newStyle">Flag for the new style that the window will be changed to.</param>
 void Window::changeStyle(const sf::Uint32 & newStyle)

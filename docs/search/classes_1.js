@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window',['Window',['../class_window.html',1,'']]]
+  ['keyhandler',['KeyHandler',['../class_key_handler.html',1,'']]]
 ];

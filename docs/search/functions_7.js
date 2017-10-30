@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7eapplication',['~Application',['../class_application.html#a748bca84fefb9c12661cfaa2f623748d',1,'Application']]],
-  ['_7ewindow',['~Window',['../class_window.html#a245d821e6016fa1f6970ccbbedd635f6',1,'Window']]]
+  ['run',['run',['../class_application.html#a68965449404743bf1add056784d6cf81',1,'Application']]]
 ];

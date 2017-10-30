@@ -7,13 +7,13 @@
 #include "SFML\Graphics\RenderTexture.hpp"
 #include "SFML\Graphics\Sprite.hpp"
 
-/// <summary>
+/// 
 /// @class Window
 /// @brief Wrapper window class.
 /// @author Rafael Plugge
 /// 
 /// This class will wrap over the sfml RenderWindow.
-/// </summary>
+/// 
 class Window
 {
 public:
@@ -27,7 +27,7 @@ public:
 private:
 
 	/// <summary>
-	/// @brief SFML Window.
+	/// @brief SFML RenderWindow.
 	/// 
 	/// Handles OpenGL calls internally.
 	/// </summary>
@@ -52,7 +52,7 @@ private:
 	/// @brief Representation of our current frame.
 	/// 
 	/// This is our render target for render calls,
-	/// all drawables drawn on this texture and than
+	/// all drawables are drawn on this texture and than
 	/// our frame is drawn on to the window.
 	/// </summary>
 	sf::RenderTexture m_renderTexture;
