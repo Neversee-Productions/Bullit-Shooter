@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['changestyle',['changeStyle',['../class_window.html#ac547a5aacd051d9f5547c72fd06340a4',1,'Window']]],
+  ['clear',['clear',['../class_window.html#a38bc43bdd1a97e5de7f346ba4c3957ef',1,'Window']]]
 ];

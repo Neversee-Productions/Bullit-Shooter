@@ -5,7 +5,7 @@
 ## Meet the team
 
 * [Rafael Plugge](https://www.linkedin.com/in/rafael-plugge-512164106/)
-* Sebastian Kruzel
+* [Sebastian Kruzel](https://www.linkedin.com/in/sebastiankruzel/)
 
 ## Required software
 
