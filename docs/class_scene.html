@@ -82,6 +82,7 @@ $(document).ready(function(){initNavTree('class_scene.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_scene-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -93,6 +94,15 @@ $(document).ready(function(){initNavTree('class_scene.html','');});
  <a href="class_scene.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_scene_8h_source.html">Scene.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Scene:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_scene.png" usemap="#Scene_map" alt=""/>
+  <map id="Scene_map" name="Scene_map">
+<area href="class_game_scene.html" title="Main game scene. " alt="GameScene" shape="rect" coords="0,56,80,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -102,21 +112,26 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a056dfc15c377165943f5276f477c105d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4281c0ec2142a6a53a3057557d7ff195"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a4281c0ec2142a6a53a3057557d7ff195">getNextSceneName</a> ()</td></tr>
 <tr class="separator:a4281c0ec2142a6a53a3057557d7ff195"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ec5c2aa1fe770f3f72e1ce71138ae94"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a2ec5c2aa1fe770f3f72e1ce71138ae94">start</a> ()=0</td></tr>
-<tr class="separator:a2ec5c2aa1fe770f3f72e1ce71138ae94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a989867d07c5049832adcabb67e95e718"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a989867d07c5049832adcabb67e95e718">stop</a> ()=0</td></tr>
-<tr class="separator:a989867d07c5049832adcabb67e95e718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7faff47f5c1b1ebc986f768c9b9732ec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7faff47f5c1b1ebc986f768c9b9732ec">update</a> ()=0</td></tr>
-<tr class="separator:a7faff47f5c1b1ebc986f768c9b9732ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e4e4f31840b0511c55c0f359d4c255b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a9e4e4f31840b0511c55c0f359d4c255b">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)=0</td></tr>
-<tr class="separator:a9e4e4f31840b0511c55c0f359d4c255b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d9769ccc60e9c3cedb0fe740395718"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718">start</a> () override</td></tr>
+<tr class="separator:ab3d9769ccc60e9c3cedb0fe740395718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8e54f62795f26cebcc8da8e9109335"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a1a8e54f62795f26cebcc8da8e9109335">stop</a> () override</td></tr>
+<tr class="separator:a1a8e54f62795f26cebcc8da8e9109335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae72a3454e5d4e06d4125db5322fb0c91"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ae72a3454e5d4e06d4125db5322fb0c91">update</a> () override</td></tr>
+<tr class="separator:ae72a3454e5d4e06d4125db5322fb0c91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f191abbae537f7ba192074149e3518"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a41f191abbae537f7ba192074149e3518">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime) override</td></tr>
+<tr class="separator:a41f191abbae537f7ba192074149e3518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ad7eb3717d9ea0ce02d321869b90f9b95"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ad7eb3717d9ea0ce02d321869b90f9b95">m_nextSceneName</a></td></tr>
+<tr class="separator:ad7eb3717d9ea0ce02d321869b90f9b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9417e5e266363d6967278a073200ca"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a4d9417e5e266363d6967278a073200ca">m_UPDATE_DT</a></td></tr>
+<tr class="separator:a4d9417e5e266363d6967278a073200ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a59157f3f1fed1c8edd2accb000060f17"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a59157f3f1fed1c8edd2accb000060f17">m_name</a></td></tr>
 <tr class="separator:a59157f3f1fed1c8edd2accb000060f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7eb3717d9ea0ce02d321869b90f9b95"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ad7eb3717d9ea0ce02d321869b90f9b95">m_nextSceneName</a></td></tr>
-<tr class="separator:ad7eb3717d9ea0ce02d321869b90f9b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
@@ -149,8 +164,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9e4e4f31840b0511c55c0f359d4c255b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e4e4f31840b0511c55c0f359d4c255b">&#9670;&nbsp;</a></span>draw()</h2>
+<a id="a41f191abbae537f7ba192074149e3518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f191abbae537f7ba192074149e3518">&#9670;&nbsp;</a></span>draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,6 +197,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_game_scene.html#a2740f717119ea52855329ccc915acafc">GameScene</a>.</p>
 
 </div>
 </div>
@@ -232,8 +249,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2ec5c2aa1fe770f3f72e1ce71138ae94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ec5c2aa1fe770f3f72e1ce71138ae94">&#9670;&nbsp;</a></span>start()</h2>
+<a id="ab3d9769ccc60e9c3cedb0fe740395718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d9769ccc60e9c3cedb0fe740395718">&#9670;&nbsp;</a></span>start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,10 +272,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Implemented in <a class="el" href="class_game_scene.html#a687556c806a99bc5f3fbfec177386599">GameScene</a>.</p>
+
 </div>
 </div>
-<a id="a989867d07c5049832adcabb67e95e718"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a989867d07c5049832adcabb67e95e718">&#9670;&nbsp;</a></span>stop()</h2>
+<a id="a1a8e54f62795f26cebcc8da8e9109335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a8e54f62795f26cebcc8da8e9109335">&#9670;&nbsp;</a></span>stop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,10 +299,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Implemented in <a class="el" href="class_game_scene.html#a430cdee724052d31089edc8e6b0a4bdc">GameScene</a>.</p>
+
 </div>
 </div>
-<a id="a7faff47f5c1b1ebc986f768c9b9732ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7faff47f5c1b1ebc986f768c9b9732ec">&#9670;&nbsp;</a></span>update()</h2>
+<a id="ae72a3454e5d4e06d4125db5322fb0c91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae72a3454e5d4e06d4125db5322fb0c91">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,6 +325,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a">GameScene</a>.</p>
 
 </div>
 </div>
@@ -347,12 +370,35 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Represents the next scene that we want to move to.</p>
 <p>Used as a way to identify the target scene by the <a class="el" href="class_scene_manager.html" title="Manager of Scenes. ">SceneManager</a>. </p>
+
+</div>
+</div>
+<a id="a4d9417e5e266363d6967278a073200ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d9417e5e266363d6967278a073200ca">&#9670;&nbsp;</a></span>m_UPDATE_DT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Scene::m_UPDATE_DT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to update time step.</p>
 
 </div>
 </div>

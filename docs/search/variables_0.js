@@ -11,7 +11,9 @@ var searchData=
   ['m_5fscenemanager',['m_sceneManager',['../class_application.html#a591af670b88bdfd127207a907e763b92',1,'Application']]],
   ['m_5fscenemap',['m_sceneMap',['../class_scene_manager.html#ac22c447f076828df45d75ad847867016',1,'SceneManager']]],
   ['m_5fsfwindow',['m_sfWindow',['../class_window.html#ae88c361b79abd76077d81bd608171d25',1,'Window']]],
+  ['m_5fsquare',['m_square',['../class_game_scene.html#af35e80b79177e7eb79147b533f11868c',1,'GameScene']]],
   ['m_5fsupportedresolutions',['m_supportedResolutions',['../class_window.html#afb1e1ea74c7b266f71bc21c87a57a265',1,'Window']]],
   ['m_5ftexturerenderer',['m_textureRenderer',['../class_window.html#a328bc625cf152d7b15d13495e7f0f99a',1,'Window']]],
+  ['m_5fupdate_5fdt',['m_UPDATE_DT',['../class_scene.html#a4d9417e5e266363d6967278a073200ca',1,'Scene']]],
   ['m_5fwindow',['m_window',['../class_application.html#ae241faf20715e823c23e25e2a0c36c45',1,'Application::m_window()'],['../class_scene_manager.html#a31ede4b20d379b2191a4d82bc8caae1c',1,'SceneManager::m_window()']]]
 ];

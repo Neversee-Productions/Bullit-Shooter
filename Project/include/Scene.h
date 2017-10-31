@@ -16,10 +16,25 @@ public:
 	Scene(const std::string & sceneName);
 	const std::string & getName() const;
 	virtual const std::string & getNextSceneName();
-	virtual void start() = 0;
-	virtual void stop() = 0;
-	virtual void update() = 0;
-	virtual void draw(Window & window, const float & deltaTime) = 0;
+	virtual void start() abstract;
+	virtual void stop() abstract;
+	virtual void update() abstract;
+	virtual void draw(Window & window, const float & deltaTime) abstract;
+
+protected:
+	/// <summary>
+	/// @brief Represents the next scene that we want to move to.
+	/// 
+	/// Used as a way to identify the target scene by the SceneManager.
+	/// </summary>
+	std::string m_nextSceneName;
+
+	/// <summary>
+	/// @brief Reference to update time step.
+	/// 
+	/// 
+	/// </summary>
+	const float m_UPDATE_DT;
 
 private:
 	/// <summary>
@@ -29,12 +44,6 @@ private:
 	/// </summary>
 	std::string m_name;
 
-	/// <summary>
-	/// @brief Represents the next scene that we want to move to.
-	/// 
-	/// Used as a way to identify the target scene by the SceneManager.
-	/// </summary>
-	std::string m_nextSceneName;
 };
 
 #endif // !SCENE_H

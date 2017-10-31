@@ -17,7 +17,9 @@ SceneManager::SceneManager(
 	, m_currentScene(nullptr)
 	, m_sceneMap()
 {
-	// Create Game Scene here.
+	std::shared_ptr<GameScene> gameScene = std::make_shared<GameScene>();
+	addScene(gameScene);
+	loadScene(gameScene->getName());
 }
 
 /// <summary>
@@ -29,7 +31,7 @@ SceneManager::SceneManager(
 /// </summary>
 /// <param name="name">Name of the scene we are looking for.</param>
 /// <returns>Reference to the Scene found.</returns>
-Scene & SceneManager::getScene(const std::string & name) const
+Scene & SceneManager::getScene(const std::string & name)
 {
 	auto itt = m_sceneMap.find(name);
 	if (itt != m_sceneMap.end())
@@ -52,7 +54,7 @@ Scene & SceneManager::getScene(const std::string & name) const
 /// <returns>Reference to currently active Scene.</returns>
 Scene & SceneManager::getActive() const
 {
-	return *m_currentScene;
+	return *(m_currentScene);
 }
 
 /// <summary>
@@ -64,16 +66,7 @@ Scene & SceneManager::getActive() const
 /// <param name="scenePt">Defines our new scene to be added.</param>
 void SceneManager::addScene(std::shared_ptr<Scene> scenePt)
 {
-	if (m_sceneMap.empty())
-	{
-		m_sceneMap[scenePt->getName()] = scenePt;
-		m_currentScene = (m_sceneMap.begin()->second);
-	}
-	else
-	{
-		m_sceneMap[scenePt->getName()] = scenePt;
-	}
-
+	m_sceneMap[scenePt->getName()] = scenePt;
 }
 
 /// <summary>
@@ -89,7 +82,10 @@ void SceneManager::loadScene(const std::string & name)
 	auto itt = m_sceneMap.find(name);
 	if (itt != m_sceneMap.end())
 	{
-		m_currentScene->stop();
+		if (m_currentScene != nullptr)
+		{
+			m_currentScene->stop();
+		}
 		m_currentScene = (itt->second);
 		m_currentScene->start();
 	}

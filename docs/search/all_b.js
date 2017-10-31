@@ -8,6 +8,6 @@ var searchData=
   ['scenemanager_2ecpp',['SceneManager.cpp',['../_scene_manager_8cpp.html',1,'']]],
   ['scenemanager_2eh',['SceneManager.h',['../_scene_manager_8h.html',1,'']]],
   ['scenemap',['SceneMap',['../class_scene_manager.html#acfc25bb38f6c5e4b41341ebff5fe487f',1,'SceneManager']]],
-  ['start',['start',['../class_scene.html#a2ec5c2aa1fe770f3f72e1ce71138ae94',1,'Scene']]],
-  ['stop',['stop',['../class_scene.html#a989867d07c5049832adcabb67e95e718',1,'Scene']]]
+  ['start',['start',['../class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718',1,'Scene::start()'],['../class_game_scene.html#a687556c806a99bc5f3fbfec177386599',1,'GameScene::start()']]],
+  ['stop',['stop',['../class_scene.html#a1a8e54f62795f26cebcc8da8e9109335',1,'Scene::stop()'],['../class_game_scene.html#a430cdee724052d31089edc8e6b0a4bdc',1,'GameScene::stop()']]]
 ];

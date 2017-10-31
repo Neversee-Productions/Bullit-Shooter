@@ -1,8 +1,7 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
-#include "SFML\System\Clock.hpp"
-#include "SFML\System\Time.hpp"
+#include "SFML\System.hpp"
 #include "KeyHandler.h"
 #include "Window.h"
 #include "SceneManager.h"
@@ -20,13 +19,14 @@ public:
 	~Application();
 	void run();
 
-private:
 	/// <summary>
 	/// @brief Represents the time step for one update tick.
 	/// 
 	/// 
 	/// </summary>
 	static const float s_UPDATE_DT;
+
+private:
 
 	/// <summary>
 	/// @brief Handles the input of keys.
@@ -48,6 +48,7 @@ private:
 	/// will controll what update and rendering is performed.
 	/// </summary>
 	SceneManager m_sceneManager;
+
 };
 
 #endif // !APPLICATION_H

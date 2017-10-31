@@ -24,6 +24,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\SceneManager.cpp" />
+    <ClCompile Include="src\Scenes\GameScene.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +35,7 @@
     <ClInclude Include="include\KeyHandler.h" />
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\SceneManager.h" />
+    <ClInclude Include="include\Scenes\GameScene.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

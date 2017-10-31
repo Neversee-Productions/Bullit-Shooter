@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['scene',['Scene',['../class_scene.html',1,'']]],
-  ['scenemanager',['SceneManager',['../class_scene_manager.html',1,'']]]
+  ['keyhandler',['KeyHandler',['../class_key_handler.html',1,'']]]
 ];

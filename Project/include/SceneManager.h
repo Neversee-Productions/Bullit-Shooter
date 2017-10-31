@@ -5,8 +5,7 @@
 #include <map>
 #include <string>
 #include "Scene.h"
-#include "Window.h"
-#include "KeyHandler.h"
+#include "Scenes\GameScene.h"
 
 /// 
 /// @brief Manager of Scenes.
@@ -19,15 +18,15 @@ class SceneManager
 {
 public:
 	SceneManager(Window & window, KeyHandler & keyHandler);
-	Scene & getScene(const std::string & name) const;
-	Scene & getActive() const;
-	void addScene(std::shared_ptr<Scene> scenePt);
-	void loadScene(const std::string & name);
-	void goToNextScene();
 	void update();
 	void draw(const float & deltaTime);
 
 private:
+	Scene & getScene(const std::string & name);
+	Scene & getActive() const;
+	void addScene(std::shared_ptr<Scene> scenePt);
+	void loadScene(const std::string & name);
+	void goToNextScene();
 
 	/// <summary>
 	/// @brief Reference to a created Window.
@@ -65,7 +64,6 @@ private:
 	/// </summary>
 	SceneMap m_sceneMap;
 
-	
 };
 
 #endif // !SCENEMANAGER_H

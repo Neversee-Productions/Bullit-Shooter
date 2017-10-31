@@ -2,6 +2,7 @@
 #define WINDOW_H
 
 #include <list>
+#include <Windows.h>
 #include "SFML\Window\Event.hpp"
 #include "SFML\Graphics\RenderWindow.hpp"
 #include "SFML\Graphics\RenderTexture.hpp"

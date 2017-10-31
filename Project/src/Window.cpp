@@ -26,7 +26,7 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	// define our current resolution.
 	///////////////////////////////////////////////////////
-	m_resolution = sf::VideoMode::getDesktopMode();
+	m_resolution = sf::VideoMode(1366u, 768u);
 
 	///////////////////////////////////////////////////////
 	// create our window with pre-defined settings
@@ -34,13 +34,15 @@ Window::Window(KeyHandler & keyHandler)
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8u;
 	
-	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Close, settings);
+	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Default, settings);
+	changeStyle(sf::Style::None);
 
 	///////////////////////////////////////////////////////
 	// create and initialize our render texture
 	///////////////////////////////////////////////////////
 	auto& windowSize = m_sfWindow.getSize();
 	m_renderTexture.create(windowSize.x, windowSize.y, false);
+	m_renderTexture.setSmooth(true);
 
 	///////////////////////////////////////////////////////
 	// initialize our texture renderer
@@ -107,18 +109,56 @@ void Window::processEvents()
 }
 
 /// <summary>
-/// @brief Windows OS hack.
+/// @brief Will alter the style of the sfml window by using its window handle,
+///		required to be able to change the window style at runtime without 
+///		having to destroy/create the sfml window.
 /// 
-/// Will alter the style of the sfml window by using its window handle,
-/// required to be able to change the window style at runtime without 
-/// having to destroy/create the sfml window.
+/// Complex Operating System dependant function,
+/// where we adjst the SFML Window, using Windows OS handler,
+/// acquire the window's system handle and
+/// added appropriate windows Uint32 Flag for each window component based
+/// on the passed sfml Style.
 /// 
 /// @warning If peformed on a OS different than Windows the window is not changed.
 /// </summary>
 /// <param name="newStyle">Flag for the new style that the window will be changed to.</param>
 void Window::changeStyle(const sf::Uint32 & newStyle)
 {
-	// to be implemented.
+	// Verifies that operation is running on Windows Operating System
+#ifdef _WIN32
+
+	// store window handler
+	sf::WindowHandle handle = m_sfWindow.getSystemHandle();
+	// create a unsigned 32-bit integer to be used as flags for window style.
+	unsigned int win32Style = WS_VISIBLE;
+
+	if (newStyle == sf::Style::None)
+	{
+		win32Style |= WS_POPUP;
+	}
+	else
+	{
+		if (newStyle & sf::Style::Titlebar)
+		{
+			win32Style |= WS_CAPTION | WS_MINIMIZEBOX;
+		}
+		if (newStyle & sf::Style::Resize)
+		{
+			win32Style |= WS_THICKFRAME | WS_MAXIMIZEBOX;
+		}
+		if (newStyle & sf::Style::Close)
+		{
+			win32Style |= WS_SYSMENU;
+		}
+	}
+
+	// Changes the Windows OS system handle specific to the Window's style
+	SetWindowLongPtr(handle, GWL_STYLE, win32Style);
+
+	// Force changes to take effect
+	SetWindowPos(handle, NULL, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_DRAWFRAME);
+
+#endif // _WIN32
 }
 
 /// <summary>
