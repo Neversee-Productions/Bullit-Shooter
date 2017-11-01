@@ -9,6 +9,7 @@ var class_scene_manager =
     [ "goToNextScene", "class_scene_manager.html#ab5a98ee1a0334f0b9d53d5ed4d5bd096", null ],
     [ "loadScene", "class_scene_manager.html#ac359429a768d09eaa82aa493885bf1c0", null ],
     [ "update", "class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637", null ],
+    [ "m_controller", "class_scene_manager.html#a4bf437806adce1ca5b4273c53c4bd7ef", null ],
     [ "m_currentScene", "class_scene_manager.html#a69467e0ba9a034a9dd4034b315985b06", null ],
     [ "m_keyHandler", "class_scene_manager.html#a35565c9dc730a0b8548a163f971f9072", null ],
     [ "m_sceneMap", "class_scene_manager.html#ac22c447f076828df45d75ad847867016", null ],

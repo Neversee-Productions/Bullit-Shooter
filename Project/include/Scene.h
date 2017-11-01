@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Window.h"
+#include "input\Controller.h"
 
 /// 
 /// @brief Defines a interface for SceneManager to use.

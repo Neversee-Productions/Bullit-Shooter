@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['_7eapplication',['~Application',['../class_application.html#a748bca84fefb9c12661cfaa2f623748d',1,'Application']]],
-  ['_7ekeyhandler',['~KeyHandler',['../class_key_handler.html#abcd8e7571a7a90ba891efa72f8d1bd51',1,'KeyHandler']]],
-  ['_7ewindow',['~Window',['../class_window.html#a245d821e6016fa1f6970ccbbedd635f6',1,'Window']]]
+  ['rightbumper',['RightBumper',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a509b4eb4dd040194b2aa506683ccfbad',1,'Controller.h']]],
+  ['rightthumbclick',['RightThumbClick',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0af090f806d9f9d4e9b3ccdc4ac0a26d23',1,'Controller.h']]],
+  ['rightthumbstickx',['RightThumbstickX',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a5da4964be663fd5a22475ad2c945cacd',1,'Controller.h']]],
+  ['rightthumbsticky',['RightThumbstickY',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a3f7611216b80d322bbb892baa40524af',1,'Controller.h']]],
+  ['run',['run',['../class_application.html#a68965449404743bf1add056784d6cf81',1,'Application']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['scene',['Scene',['../class_scene.html#af11ca42551a5754a60f0f07277c0cd41',1,'Scene']]],
-  ['scenemanager',['SceneManager',['../class_scene_manager.html#aa338407ccc4ec1811560e6bff3fb3591',1,'SceneManager']]],
-  ['start',['start',['../class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718',1,'Scene::start()'],['../class_game_scene.html#a687556c806a99bc5f3fbfec177386599',1,'GameScene::start()']]],
-  ['stop',['stop',['../class_scene.html#a1a8e54f62795f26cebcc8da8e9109335',1,'Scene::stop()'],['../class_game_scene.html#a430cdee724052d31089edc8e6b0a4bdc',1,'GameScene::stop()']]]
+  ['processevents',['processEvents',['../class_window.html#a381364c2704bed978cdf9df669c4b629',1,'Window']]],
+  ['processinput',['processInput',['../class_g_u_i.html#ad0a1f9fccecfe537a63386f6247320d4',1,'GUI::processInput()'],['../class_button.html#a4401656d11544001bc45ca94c45e1081',1,'Button::processInput()'],['../class_check_box.html#a1f3729c018453a41307d9094e19acfcb',1,'CheckBox::processInput()'],['../class_label.html#a0f17650c68706040c421007bf886161a',1,'Label::processInput()'],['../class_slider.html#a4656ebc3cf89164cbb9664e098d106a6',1,'Slider::processInput()'],['../class_widget.html#ab4722831226b0c9cbac41e24a27be0aa',1,'Widget::processInput()']]]
 ];

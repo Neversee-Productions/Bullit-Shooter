@@ -27,6 +27,7 @@ Window::Window(KeyHandler & keyHandler)
 	// define our current resolution.
 	///////////////////////////////////////////////////////
 	m_resolution = sf::VideoMode(1366u, 768u);
+	App::setWindowSize(m_resolution.width, m_resolution.height);
 
 	///////////////////////////////////////////////////////
 	// create our window with pre-defined settings
@@ -34,8 +35,7 @@ Window::Window(KeyHandler & keyHandler)
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8u;
 	
-	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Default, settings);
-	changeStyle(sf::Style::None);
+	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Close, settings);
 
 	///////////////////////////////////////////////////////
 	// create and initialize our render texture

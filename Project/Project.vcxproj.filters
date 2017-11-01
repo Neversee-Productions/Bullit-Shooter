@@ -19,6 +19,48 @@
     <Filter Include="Source Files\Scenes">
       <UniqueIdentifier>{73b2c5a7-1f99-4ef9-b5b2-b42caca10cf7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Scenes\SplashScene">
+      <UniqueIdentifier>{552eb076-f7b0-4d3b-aa3c-2f150439ba0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\MainMenuScene">
+      <UniqueIdentifier>{b5c881ee-e6b6-47cc-9cc3-d81fb51ec0da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\OptionsScene">
+      <UniqueIdentifier>{44e42c74-eb1f-4249-a3f9-9ca1b17de8c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\MainMenuScene">
+      <UniqueIdentifier>{7a099421-2877-4565-8bfe-51ed94b7d75d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\TitleScene">
+      <UniqueIdentifier>{ae6aae03-95ac-43a3-b2ca-deae18e96c06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\SplashScene">
+      <UniqueIdentifier>{ba6457e6-a168-4f59-8653-a4bf5163e4d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\OptionsScene">
+      <UniqueIdentifier>{368b6735-6ed0-462b-aa50-e4ea374fc3e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\TitleScene">
+      <UniqueIdentifier>{04fd44eb-3820-4718-8ecd-0b2738ff7223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui">
+      <UniqueIdentifier>{7d4383e2-e804-4722-85f5-d0343ae71884}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets">
+      <UniqueIdentifier>{2ccebe0a-8ca7-4537-8e54-8621a34cd06d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui">
+      <UniqueIdentifier>{42813bda-f108-48d4-bbc8-221cbab86f12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets">
+      <UniqueIdentifier>{d93bbf41-ddb0-4388-8f18-714710fe9a25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\input">
+      <UniqueIdentifier>{5ba4fac5-2e82-440d-8e29-2eb4eb92f6ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\input">
+      <UniqueIdentifier>{805d8cbb-119e-49d8-9ed8-9b2678289ca7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -30,9 +72,6 @@
     <ClCompile Include="src\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\KeyHandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\SceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -41,6 +80,36 @@
     </ClCompile>
     <ClCompile Include="src\Scenes\GameScene.cpp">
       <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\GUI.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\widgets\Button.cpp">
+      <Filter>Source Files\gui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\widgets\CheckBox.cpp">
+      <Filter>Source Files\gui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\widgets\Label.cpp">
+      <Filter>Source Files\gui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\widgets\Slider.cpp">
+      <Filter>Source Files\gui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\widgets\Widget.cpp">
+      <Filter>Source Files\gui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\KeyHandler.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\MainMenuScene\MainMenuScene.cpp">
+      <Filter>Source Files\Scenes\MainMenuScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\Controller.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -55,9 +124,6 @@
     <ClInclude Include="include\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\KeyHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\SceneManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -66,6 +132,36 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene.h">
       <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h">
+      <Filter>Header Files\Scenes\MainMenuScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gui\GUI.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gui\widgets\Button.h">
+      <Filter>Header Files\gui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gui\widgets\CheckBox.h">
+      <Filter>Header Files\gui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gui\widgets\Label.h">
+      <Filter>Header Files\gui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gui\widgets\Slider.h">
+      <Filter>Header Files\gui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gui\widgets\Widget.h">
+      <Filter>Header Files\gui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\input\KeyHandler.h">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\input\Controller.h">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\App.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

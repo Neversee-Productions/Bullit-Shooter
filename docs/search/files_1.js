@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gamescene_2ecpp',['GameScene.cpp',['../_game_scene_8cpp.html',1,'']]],
-  ['gamescene_2eh',['GameScene.h',['../_game_scene_8h.html',1,'']]]
+  ['button_2ecpp',['Button.cpp',['../_button_8cpp.html',1,'']]],
+  ['button_2eh',['Button.h',['../_button_8h.html',1,'']]]
 ];

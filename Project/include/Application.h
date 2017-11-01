@@ -2,9 +2,10 @@
 #define APPLICATION_H
 
 #include "SFML\System.hpp"
-#include "KeyHandler.h"
+#include "input\KeyHandler.h"
 #include "Window.h"
 #include "SceneManager.h"
+#include "App.h"
 
 /// 
 /// @brief Main application starter.
@@ -18,13 +19,6 @@ public:
 	Application();
 	~Application();
 	void run();
-
-	/// <summary>
-	/// @brief Represents the time step for one update tick.
-	/// 
-	/// 
-	/// </summary>
-	static const float s_UPDATE_DT;
 
 private:
 

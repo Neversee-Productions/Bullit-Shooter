@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['keyhandler',['KeyHandler',['../class_key_handler.html',1,'']]]
+  ['checkbox',['CheckBox',['../class_check_box.html',1,'']]],
+  ['controller',['Controller',['../class_controller.html',1,'']]]
 ];

@@ -19,23 +19,41 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="App.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\KeyHandler.cpp" />
+    <ClCompile Include="src\gui\GUI.cpp" />
+    <ClCompile Include="src\gui\widgets\Button.cpp" />
+    <ClCompile Include="src\gui\widgets\CheckBox.cpp" />
+    <ClCompile Include="src\gui\widgets\Label.cpp" />
+    <ClCompile Include="src\gui\widgets\Slider.cpp" />
+    <ClCompile Include="src\gui\widgets\Widget.cpp" />
+    <ClCompile Include="src\input\KeyHandler.cpp" />
+    <ClCompile Include="src\input\Controller.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\SceneManager.cpp" />
     <ClCompile Include="src\Scenes\GameScene.cpp" />
+    <ClCompile Include="src\Scenes\MainMenuScene\MainMenuScene.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\App.h" />
     <ClInclude Include="include\Application.h" />
-    <ClInclude Include="include\KeyHandler.h" />
+    <ClInclude Include="include\gui\GUI.h" />
+    <ClInclude Include="include\gui\widgets\Button.h" />
+    <ClInclude Include="include\gui\widgets\CheckBox.h" />
+    <ClInclude Include="include\gui\widgets\Label.h" />
+    <ClInclude Include="include\gui\widgets\Slider.h" />
+    <ClInclude Include="include\gui\widgets\Widget.h" />
+    <ClInclude Include="include\input\KeyHandler.h" />
+    <ClInclude Include="include\input\Controller.h" />
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\SceneManager.h" />
     <ClInclude Include="include\Scenes\GameScene.h" />
+    <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -103,7 +121,9 @@
     </Link>
     <PostBuildEvent>
       <Command>copy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
-copy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"</Command>
+copy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"
+cd "$(SolutionDir)"
+doxygen Doxyfile</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

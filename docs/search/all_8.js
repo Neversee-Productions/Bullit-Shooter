@@ -1,21 +1,9 @@
 var searchData=
 [
-  ['m_5fcurrentscene',['m_currentScene',['../class_scene_manager.html#a69467e0ba9a034a9dd4034b315985b06',1,'SceneManager']]],
-  ['m_5fkeyhandler',['m_keyHandler',['../class_application.html#aa2c60ca3a397f494523fc00f6c81f921',1,'Application::m_keyHandler()'],['../class_scene_manager.html#a35565c9dc730a0b8548a163f971f9072',1,'SceneManager::m_keyHandler()'],['../class_window.html#a2f326af91aa0b826314e713cf3f2d2e5',1,'Window::m_keyHandler()']]],
-  ['m_5fkeymap',['m_keyMap',['../class_key_handler.html#a4e9538df774f0f167178798e3e7014e3',1,'KeyHandler']]],
-  ['m_5fname',['m_name',['../class_scene.html#a59157f3f1fed1c8edd2accb000060f17',1,'Scene']]],
-  ['m_5fnextscenename',['m_nextSceneName',['../class_scene.html#ad7eb3717d9ea0ce02d321869b90f9b95',1,'Scene']]],
-  ['m_5fprevkeymap',['m_prevKeyMap',['../class_key_handler.html#a4d27e4f06420f0fcb602ec59d8bfc60f',1,'KeyHandler']]],
-  ['m_5frendertexture',['m_renderTexture',['../class_window.html#a81ae3ae4f15969f55a96d513ff5572e3',1,'Window']]],
-  ['m_5fresolution',['m_resolution',['../class_window.html#aec919f6e096ebd795331a00f5bc3d452',1,'Window']]],
-  ['m_5fscenemanager',['m_sceneManager',['../class_application.html#a591af670b88bdfd127207a907e763b92',1,'Application']]],
-  ['m_5fscenemap',['m_sceneMap',['../class_scene_manager.html#ac22c447f076828df45d75ad847867016',1,'SceneManager']]],
-  ['m_5fsfwindow',['m_sfWindow',['../class_window.html#ae88c361b79abd76077d81bd608171d25',1,'Window']]],
-  ['m_5fsquare',['m_square',['../class_game_scene.html#af35e80b79177e7eb79147b533f11868c',1,'GameScene']]],
-  ['m_5fsupportedresolutions',['m_supportedResolutions',['../class_window.html#afb1e1ea74c7b266f71bc21c87a57a265',1,'Window']]],
-  ['m_5ftexturerenderer',['m_textureRenderer',['../class_window.html#a328bc625cf152d7b15d13495e7f0f99a',1,'Window']]],
-  ['m_5fupdate_5fdt',['m_UPDATE_DT',['../class_scene.html#a4d9417e5e266363d6967278a073200ca',1,'Scene']]],
-  ['m_5fwindow',['m_window',['../class_application.html#ae241faf20715e823c23e25e2a0c36c45',1,'Application::m_window()'],['../class_scene_manager.html#a31ede4b20d379b2191a4d82bc8caae1c',1,'SceneManager::m_window()']]],
-  ['main',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['inactive',['INACTIVE',['../class_button.html#ad8312db93093c21df8b1d2be74ae1957a6b273343c454f9c53dcfc9c4ccf171d2',1,'Button::INACTIVE()'],['../class_check_box.html#a5f32b834874a254ec78a4cb05dba4796a6b273343c454f9c53dcfc9c4ccf171d2',1,'CheckBox::INACTIVE()'],['../class_slider.html#a539aebf9c6695ce748b4efa7bfe5aaf1a6b273343c454f9c53dcfc9c4ccf171d2',1,'Slider::INACTIVE()']]],
+  ['isanybuttonpressed',['isAnyButtonPressed',['../class_controller.html#a27cd70503f62e007fc082ef403ab8a8d',1,'Controller']]],
+  ['isconnected',['isConnected',['../class_controller.html#a7d038f37d2b4d68dd1588b57c062a0ee',1,'Controller']]],
+  ['isopen',['isOpen',['../class_window.html#a761d614931fb5a5daa70e4f580c3e78e',1,'Window']]],
+  ['ispressed',['isPressed',['../class_key_handler.html#a23060a9c29fb10d80ca94863f977f34e',1,'KeyHandler']]],
+  ['isprevpressed',['isPrevPressed',['../class_key_handler.html#a91a81713f668041ff64c710b8b7a6e77',1,'KeyHandler']]]
 ];

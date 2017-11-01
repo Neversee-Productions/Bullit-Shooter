@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['isopen',['isOpen',['../class_window.html#a761d614931fb5a5daa70e4f580c3e78e',1,'Window']]],
-  ['ispressed',['isPressed',['../class_key_handler.html#a23060a9c29fb10d80ca94863f977f34e',1,'KeyHandler']]],
-  ['isprevpressed',['isPrevPressed',['../class_key_handler.html#a91a81713f668041ff64c710b8b7a6e77',1,'KeyHandler']]]
+  ['fading',['fading',['../class_button.html#a254d338defb1d6c7149a3e71b9414de0',1,'Button::fading()'],['../class_check_box.html#aa58a540cf548a21605f9b8b7da4c78cd',1,'CheckBox::fading()'],['../class_slider.html#a8dfc1d7e548d22bbc52a8a529c6d9994',1,'Slider::fading()']]]
 ];

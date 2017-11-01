@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['scene_2ecpp',['Scene.cpp',['../_scene_8cpp.html',1,'']]],
-  ['scene_2eh',['Scene.h',['../_scene_8h.html',1,'']]],
-  ['scenemanager_2ecpp',['SceneManager.cpp',['../_scene_manager_8cpp.html',1,'']]],
-  ['scenemanager_2eh',['SceneManager.h',['../_scene_manager_8h.html',1,'']]]
+  ['keyhandler_2ecpp',['KeyHandler.cpp',['../_key_handler_8cpp.html',1,'']]],
+  ['keyhandler_2eh',['KeyHandler.h',['../_key_handler_8h.html',1,'']]]
 ];
