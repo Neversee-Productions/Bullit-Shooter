@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['scene',['Scene',['../class_scene.html#af11ca42551a5754a60f0f07277c0cd41',1,'Scene']]],
-  ['scenemanager',['SceneManager',['../class_scene_manager.html#aa338407ccc4ec1811560e6bff3fb3591',1,'SceneManager']]],
-  ['start',['start',['../class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718',1,'Scene::start()'],['../class_game_scene.html#a687556c806a99bc5f3fbfec177386599',1,'GameScene::start()']]],
-  ['stop',['stop',['../class_scene.html#a1a8e54f62795f26cebcc8da8e9109335',1,'Scene::stop()'],['../class_game_scene.html#a430cdee724052d31089edc8e6b0a4bdc',1,'GameScene::stop()']]]
+  ['player',['Player',['../class_player.html#a7440c280452f6ee2737dad2e2abe2962',1,'Player']]],
+  ['processevents',['processEvents',['../class_window.html#a381364c2704bed978cdf9df669c4b629',1,'Window']]]
 ];

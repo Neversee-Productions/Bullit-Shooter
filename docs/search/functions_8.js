@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['processevents',['processEvents',['../class_window.html#a381364c2704bed978cdf9df669c4b629',1,'Window']]]
+  ['loadscene',['loadScene',['../class_scene_manager.html#ac359429a768d09eaa82aa493885bf1c0',1,'SceneManager']]]
 ];

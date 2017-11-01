@@ -92,6 +92,19 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </ul>
 
 
+<h3><a id="index_b"></a>- b -</h3><ul>
+<li>Bullet()
+: <a class="el" href="class_bullet.html#acd7befc0bc18907cc1d871d37bbdddeb">Bullet</a>
+</li>
+<li>BulletManager()
+: <a class="el" href="class_bullet_manager.html#a4aae3d492898b93dd5730dc28f2cc910">BulletManager</a>
+</li>
+<li>BulletStandard()
+: <a class="el" href="class_bullet_standard.html#a7c4b11e258af0d0095c5583f1635ba83">BulletStandard</a>
+</li>
+</ul>
+
+
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>changeStyle()
 : <a class="el" href="class_window.html#ac547a5aacd051d9f5547c72fd06340a4">Window</a>
@@ -107,17 +120,29 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_window.html#afadfafa5a0b9472554759004aafb327e">Window</a>
 </li>
 <li>draw()
-: <a class="el" href="class_game_scene.html#a2740f717119ea52855329ccc915acafc">GameScene</a>
+: <a class="el" href="class_bullet.html#a9fc3493ff2058c3724f26342d2580768">Bullet</a>
+, <a class="el" href="class_bullet_manager.html#adc7565464b026ddc98b02a70c558c74a">BulletManager</a>
+, <a class="el" href="class_game_scene.html#a2740f717119ea52855329ccc915acafc">GameScene</a>
+, <a class="el" href="class_player.html#a5a4253c07c2dd1428de5d1dac00098c2">Player</a>
 , <a class="el" href="class_scene.html#a41f191abbae537f7ba192074149e3518">Scene</a>
 , <a class="el" href="class_scene_manager.html#a3983ac6a695c838682b09cee938beb3c">SceneManager</a>
+, <a class="el" href="class_ship.html#ae9a0712970979a6d24320ae208bd6899">Ship</a>
+, <a class="el" href="class_weapon.html#a091763bf26419b9df5b0ae1d9dac639a">Weapon</a>
 , <a class="el" href="class_window.html#ad1c40ec9b475f25d3dfec7ae5524896a">Window</a>
+</li>
+</ul>
+
+
+<h3><a id="index_f"></a>- f -</h3><ul>
+<li>fireBullet()
+: <a class="el" href="class_bullet_manager.html#ad7e3dda5d3404b43eb23f41ad2166c9c">BulletManager</a>
 </li>
 </ul>
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>GameScene()
-: <a class="el" href="class_game_scene.html#ac53cc300c8896048c0e21c67e49681b9">GameScene</a>
+: <a class="el" href="class_game_scene.html#aebd3972a13e0b6c8220c8d54d0b6e03e">GameScene</a>
 </li>
 <li>getActive()
 : <a class="el" href="class_scene_manager.html#a10a725b0d82a65ea7beb2969204d119f">SceneManager</a>
@@ -168,11 +193,22 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
+<li>m_active
+: <a class="el" href="class_bullet.html#ab21ea0edf0bd34fc1eae2945b5a7223c">Bullet</a>
+</li>
+<li>m_bulletManager
+: <a class="el" href="class_player.html#a6d27e83de4dc129a5976c1ea6d32cbd1">Player</a>
+</li>
+<li>m_bulletRect
+: <a class="el" href="class_bullet.html#af7700be879a8b993b4d46fa56bb92eed">Bullet</a>
+</li>
 <li>m_currentScene
 : <a class="el" href="class_scene_manager.html#a69467e0ba9a034a9dd4034b315985b06">SceneManager</a>
 </li>
 <li>m_keyHandler
 : <a class="el" href="class_application.html#aa2c60ca3a397f494523fc00f6c81f921">Application</a>
+, <a class="el" href="class_game_scene.html#ae13dc9d4dc184866c5117909d988c02c">GameScene</a>
+, <a class="el" href="class_player.html#a04e42601f7e36668e1205c6c5d662e1f">Player</a>
 , <a class="el" href="class_scene_manager.html#a35565c9dc730a0b8548a163f971f9072">SceneManager</a>
 , <a class="el" href="class_window.html#a2f326af91aa0b826314e713cf3f2d2e5">Window</a>
 </li>
@@ -184,6 +220,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>m_nextSceneName
 : <a class="el" href="class_scene.html#ad7eb3717d9ea0ce02d321869b90f9b95">Scene</a>
+</li>
+<li>m_player
+: <a class="el" href="class_game_scene.html#a814ec4e13fc13a8e8c2f29ef179abc8b">GameScene</a>
+</li>
+<li>m_position
+: <a class="el" href="class_bullet.html#a68d311a87ea5a50966fbfa6ace4cbb21">Bullet</a>
 </li>
 <li>m_prevKeyMap
 : <a class="el" href="class_key_handler.html#a4d27e4f06420f0fcb602ec59d8bfc60f">KeyHandler</a>
@@ -203,8 +245,17 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>m_sfWindow
 : <a class="el" href="class_window.html#ae88c361b79abd76077d81bd608171d25">Window</a>
 </li>
+<li>m_ship
+: <a class="el" href="class_player.html#ad2d2524643689b736c5d0eb2ae4e7d9b">Player</a>
+</li>
+<li>m_shipRect
+: <a class="el" href="class_ship.html#ab7a03c934538fd6100e1ed3b85f92fcb">Ship</a>
+</li>
 <li>m_square
 : <a class="el" href="class_game_scene.html#af35e80b79177e7eb79147b533f11868c">GameScene</a>
+</li>
+<li>m_standardBullets
+: <a class="el" href="class_bullet_manager.html#aef6fb8245d273c8b2a73a11b2303b74a">BulletManager</a>
 </li>
 <li>m_supportedResolutions
 : <a class="el" href="class_window.html#afb1e1ea74c7b266f71bc21c87a57a265">Window</a>
@@ -215,6 +266,15 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>m_UPDATE_DT
 : <a class="el" href="class_scene.html#a4d9417e5e266363d6967278a073200ca">Scene</a>
 </li>
+<li>m_weapon1
+: <a class="el" href="class_player.html#a43a948490af7100d684fc2034247f7bd">Player</a>
+</li>
+<li>m_weapon2
+: <a class="el" href="class_player.html#ac76d6da895ece772eb0bf43ded7510b0">Player</a>
+</li>
+<li>m_weaponRect
+: <a class="el" href="class_weapon.html#a5058de475ddd17fd9fed50e94f43338a">Weapon</a>
+</li>
 <li>m_window
 : <a class="el" href="class_application.html#ae241faf20715e823c23e25e2a0c36c45">Application</a>
 , <a class="el" href="class_scene_manager.html#a31ede4b20d379b2191a4d82bc8caae1c">SceneManager</a>
@@ -223,6 +283,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>Player()
+: <a class="el" href="class_player.html#a7440c280452f6ee2737dad2e2abe2962">Player</a>
+</li>
 <li>processEvents()
 : <a class="el" href="class_window.html#a381364c2704bed978cdf9df669c4b629">Window</a>
 </li>
@@ -249,6 +312,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>SceneMap
 : <a class="el" href="class_scene_manager.html#acfc25bb38f6c5e4b41341ebff5fe487f">SceneManager</a>
 </li>
+<li>Ship()
+: <a class="el" href="class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462">Ship</a>
+</li>
 <li>start()
 : <a class="el" href="class_game_scene.html#a687556c806a99bc5f3fbfec177386599">GameScene</a>
 , <a class="el" href="class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718">Scene</a>
@@ -262,7 +328,11 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a id="index_u"></a>- u -</h3><ul>
 <li>update()
-: <a class="el" href="class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a">GameScene</a>
+: <a class="el" href="class_bullet.html#afd0c9cc69ab38d691c508de787fd6b5f">Bullet</a>
+, <a class="el" href="class_bullet_manager.html#ae8638f3b70fe44a15413e1107ea806fe">BulletManager</a>
+, <a class="el" href="class_bullet_standard.html#a9d72b2eec35bd504fe44d2e194b87187">BulletStandard</a>
+, <a class="el" href="class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a">GameScene</a>
+, <a class="el" href="class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4">Player</a>
 , <a class="el" href="class_scene.html#ae72a3454e5d4e06d4125db5322fb0c91">Scene</a>
 , <a class="el" href="class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637">SceneManager</a>
 </li>
@@ -273,6 +343,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_w"></a>- w -</h3><ul>
+<li>Weapon()
+: <a class="el" href="class_weapon.html#a12e8d91eaec4d17f3507eee7ec9dc911">Weapon</a>
+</li>
 <li>Window()
 : <a class="el" href="class_window.html#ac88f9c5ae954731a6a8df093b2223eba">Window</a>
 </li>

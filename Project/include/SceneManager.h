@@ -5,7 +5,7 @@
 #include <map>
 #include <string>
 #include "Scene.h"
-#include "Scenes\GameScene.h"
+#include "Scenes\GameScene\GameScene.h"
 
 /// 
 /// @brief Manager of Scenes.

@@ -3,6 +3,7 @@
 
 #include "Scene.h"
 #include "SFML\Graphics\RectangleShape.hpp"
+#include "Player.h"
 
 ///
 /// @brief Main game scene.
@@ -13,7 +14,7 @@
 class GameScene : public Scene
 {
 public:
-	GameScene();
+	GameScene(KeyHandler& keyHandler);
 	void start() override;
 	void stop() override;
 	void update() override;
@@ -26,6 +27,20 @@ private:
 	/// 
 	/// </summary>
 	sf::RectangleShape m_square;
+
+	/// <summary>
+	/// @brief Represents the player object
+	/// 
+	/// 
+	/// </summary>
+	Player m_player;
+
+	/// <summary>
+	/// @brief reference to the key handler.
+	/// 
+	/// 
+	/// </summary>
+	KeyHandler& m_keyHandler;
 
 };
 

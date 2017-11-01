@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['gamescene',['GameScene',['../class_game_scene.html',1,'']]]
+  ['bullet',['Bullet',['../class_bullet.html',1,'']]],
+  ['bulletmanager',['BulletManager',['../class_bullet_manager.html',1,'']]],
+  ['bulletstandard',['BulletStandard',['../class_bullet_standard.html',1,'']]]
 ];

@@ -105,8 +105,8 @@ Inheritance diagram for GameScene:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac53cc300c8896048c0e21c67e49681b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ac53cc300c8896048c0e21c67e49681b9">GameScene</a> ()</td></tr>
-<tr class="separator:ac53cc300c8896048c0e21c67e49681b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd3972a13e0b6c8220c8d54d0b6e03e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#aebd3972a13e0b6c8220c8d54d0b6e03e">GameScene</a> (<a class="el" href="class_key_handler.html">KeyHandler</a> &amp;keyHandler)</td></tr>
+<tr class="separator:aebd3972a13e0b6c8220c8d54d0b6e03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a687556c806a99bc5f3fbfec177386599"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a687556c806a99bc5f3fbfec177386599">start</a> () override</td></tr>
 <tr class="separator:a687556c806a99bc5f3fbfec177386599"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a430cdee724052d31089edc8e6b0a4bdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a430cdee724052d31089edc8e6b0a4bdc">stop</a> () override</td></tr>
@@ -127,6 +127,10 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af35e80b79177e7eb79147b533f11868c"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#af35e80b79177e7eb79147b533f11868c">m_square</a></td></tr>
 <tr class="separator:af35e80b79177e7eb79147b533f11868c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a814ec4e13fc13a8e8c2f29ef179abc8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a814ec4e13fc13a8e8c2f29ef179abc8b">m_player</a></td></tr>
+<tr class="separator:a814ec4e13fc13a8e8c2f29ef179abc8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae13dc9d4dc184866c5117909d988c02c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ae13dc9d4dc184866c5117909d988c02c">m_keyHandler</a></td></tr>
+<tr class="separator:ae13dc9d4dc184866c5117909d988c02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -140,8 +144,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
 <p>Defines our main gameplay scene. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac53cc300c8896048c0e21c67e49681b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac53cc300c8896048c0e21c67e49681b9">&#9670;&nbsp;</a></span>GameScene()</h2>
+<a id="aebd3972a13e0b6c8220c8d54d0b6e03e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd3972a13e0b6c8220c8d54d0b6e03e">&#9670;&nbsp;</a></span>GameScene()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -149,7 +153,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">GameScene::GameScene </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>keyHandler</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -293,6 +298,52 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae13dc9d4dc184866c5117909d988c02c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13dc9d4dc184866c5117909d988c02c">&#9670;&nbsp;</a></span>m_keyHandler</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_key_handler.html">KeyHandler</a>&amp; GameScene::m_keyHandler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>reference to the key handler.</p>
+
+</div>
+</div>
+<a id="a814ec4e13fc13a8e8c2f29ef179abc8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a814ec4e13fc13a8e8c2f29ef179abc8b">&#9670;&nbsp;</a></span>m_player</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player.html">Player</a> GameScene::m_player</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Represents the player object</p>
+
+</div>
+</div>
 <a id="af35e80b79177e7eb79147b533f11868c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af35e80b79177e7eb79147b533f11868c">&#9670;&nbsp;</a></span>m_square</h2>
 
@@ -317,8 +368,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Project/include/Scenes/<a class="el" href="_game_scene_8h_source.html">GameScene.h</a></li>
-<li>Project/src/Scenes/<a class="el" href="_game_scene_8cpp.html">GameScene.cpp</a></li>
+<li>Project/include/Scenes/GameScene/<a class="el" href="_game_scene_8h_source.html">GameScene.h</a></li>
+<li>Project/src/Scenes/GameScene/<a class="el" href="_game_scene_8cpp.html">GameScene.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
