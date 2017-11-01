@@ -7,7 +7,8 @@
 #include "SFML\Graphics\RenderWindow.hpp"
 #include "SFML\Graphics\RenderTexture.hpp"
 #include "SFML\Graphics\Sprite.hpp"
-#include "KeyHandler.h"
+#include "App.h"
+#include "input\KeyHandler.h"
 
 /// 
 /// @brief Wrapper window class.

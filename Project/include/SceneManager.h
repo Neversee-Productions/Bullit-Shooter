@@ -6,6 +6,7 @@
 #include <string>
 #include "Scene.h"
 #include "Scenes\GameScene\GameScene.h"
+#include "Scenes\MainMenuScene\MainMenuScene.h"
 
 /// 
 /// @brief Manager of Scenes.
@@ -63,6 +64,11 @@ private:
 	/// Scenes in this map may or may not be initialized handle with care.
 	/// </summary>
 	SceneMap m_sceneMap;
+
+	/// <summary>
+	/// 
+	/// </summary>
+	std::shared_ptr<Controller> m_controller;
 
 };
 

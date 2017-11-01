@@ -1,30 +1,4 @@
 var searchData=
 [
-  ['m_5factive',['m_active',['../class_bullet.html#ab21ea0edf0bd34fc1eae2945b5a7223c',1,'Bullet']]],
-  ['m_5fbulletmanager',['m_bulletManager',['../class_player.html#a6d27e83de4dc129a5976c1ea6d32cbd1',1,'Player']]],
-  ['m_5fbulletrect',['m_bulletRect',['../class_bullet.html#af7700be879a8b993b4d46fa56bb92eed',1,'Bullet']]],
-  ['m_5fcurrentscene',['m_currentScene',['../class_scene_manager.html#a69467e0ba9a034a9dd4034b315985b06',1,'SceneManager']]],
-  ['m_5fkeyhandler',['m_keyHandler',['../class_application.html#aa2c60ca3a397f494523fc00f6c81f921',1,'Application::m_keyHandler()'],['../class_scene_manager.html#a35565c9dc730a0b8548a163f971f9072',1,'SceneManager::m_keyHandler()'],['../class_game_scene.html#ae13dc9d4dc184866c5117909d988c02c',1,'GameScene::m_keyHandler()'],['../class_player.html#a04e42601f7e36668e1205c6c5d662e1f',1,'Player::m_keyHandler()'],['../class_window.html#a2f326af91aa0b826314e713cf3f2d2e5',1,'Window::m_keyHandler()']]],
-  ['m_5fkeymap',['m_keyMap',['../class_key_handler.html#a4e9538df774f0f167178798e3e7014e3',1,'KeyHandler']]],
-  ['m_5fname',['m_name',['../class_scene.html#a59157f3f1fed1c8edd2accb000060f17',1,'Scene']]],
-  ['m_5fnextscenename',['m_nextSceneName',['../class_scene.html#ad7eb3717d9ea0ce02d321869b90f9b95',1,'Scene']]],
-  ['m_5fplayer',['m_player',['../class_game_scene.html#a814ec4e13fc13a8e8c2f29ef179abc8b',1,'GameScene']]],
-  ['m_5fposition',['m_position',['../class_bullet.html#a68d311a87ea5a50966fbfa6ace4cbb21',1,'Bullet']]],
-  ['m_5fprevkeymap',['m_prevKeyMap',['../class_key_handler.html#a4d27e4f06420f0fcb602ec59d8bfc60f',1,'KeyHandler']]],
-  ['m_5frendertexture',['m_renderTexture',['../class_window.html#a81ae3ae4f15969f55a96d513ff5572e3',1,'Window']]],
-  ['m_5fresolution',['m_resolution',['../class_window.html#aec919f6e096ebd795331a00f5bc3d452',1,'Window']]],
-  ['m_5fscenemanager',['m_sceneManager',['../class_application.html#a591af670b88bdfd127207a907e763b92',1,'Application']]],
-  ['m_5fscenemap',['m_sceneMap',['../class_scene_manager.html#ac22c447f076828df45d75ad847867016',1,'SceneManager']]],
-  ['m_5fsfwindow',['m_sfWindow',['../class_window.html#ae88c361b79abd76077d81bd608171d25',1,'Window']]],
-  ['m_5fship',['m_ship',['../class_player.html#ad2d2524643689b736c5d0eb2ae4e7d9b',1,'Player']]],
-  ['m_5fshiprect',['m_shipRect',['../class_ship.html#ab7a03c934538fd6100e1ed3b85f92fcb',1,'Ship']]],
-  ['m_5fsquare',['m_square',['../class_game_scene.html#af35e80b79177e7eb79147b533f11868c',1,'GameScene']]],
-  ['m_5fstandardbullets',['m_standardBullets',['../class_bullet_manager.html#aef6fb8245d273c8b2a73a11b2303b74a',1,'BulletManager']]],
-  ['m_5fsupportedresolutions',['m_supportedResolutions',['../class_window.html#afb1e1ea74c7b266f71bc21c87a57a265',1,'Window']]],
-  ['m_5ftexturerenderer',['m_textureRenderer',['../class_window.html#a328bc625cf152d7b15d13495e7f0f99a',1,'Window']]],
-  ['m_5fupdate_5fdt',['m_UPDATE_DT',['../class_scene.html#a4d9417e5e266363d6967278a073200ca',1,'Scene']]],
-  ['m_5fweapon1',['m_weapon1',['../class_player.html#a43a948490af7100d684fc2034247f7bd',1,'Player']]],
-  ['m_5fweapon2',['m_weapon2',['../class_player.html#ac76d6da895ece772eb0bf43ded7510b0',1,'Player']]],
-  ['m_5fweaponrect',['m_weaponRect',['../class_weapon.html#a5058de475ddd17fd9fed50e94f43338a',1,'Weapon']]],
-  ['m_5fwindow',['m_window',['../class_application.html#ae241faf20715e823c23e25e2a0c36c45',1,'Application::m_window()'],['../class_scene_manager.html#a31ede4b20d379b2191a4d82bc8caae1c',1,'SceneManager::m_window()']]]
+  ['dpad_5fthreshold',['DPAD_THRESHOLD',['../class_controller.html#a50ac5f1a92c735fc4e0015d1693947c1',1,'Controller']]]
 ];

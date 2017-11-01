@@ -1,7 +1,5 @@
 #include "Application.h"
 
-const float Application::s_UPDATE_DT = 1.0f / 60.0f;
-
 /// <summary>
 /// @brief Application constructor.
 /// 
@@ -34,7 +32,7 @@ void Application::run()
 	// Internal game loop clock.
 	sf::Clock clock;
 	// Fixed delta time step between update calls.
-	const float & updateDT = Application::s_UPDATE_DT;
+	const float & updateDT = App::getUpdateDeltaTime();
 	// Time elapsed since last' game loop call.
 	float lag = updateDT;
 	// Dynamic delta time step between render calls.

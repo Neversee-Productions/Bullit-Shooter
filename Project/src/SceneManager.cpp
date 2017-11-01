@@ -16,10 +16,16 @@ SceneManager::SceneManager(
 	, m_keyHandler(keyHandler)
 	, m_currentScene(nullptr)
 	, m_sceneMap()
+	, m_controller(nullptr)
 {
-	std::shared_ptr<GameScene> gameScene = std::make_shared<GameScene>(m_keyHandler);
-	addScene(gameScene);
-	loadScene(gameScene->getName());
+	m_controller = std::make_shared<Controller>();
+
+	std::shared_ptr<Scene> scenePt = std::make_shared<GameScene>(m_keyHandler);
+	addScene(scenePt);
+
+	scenePt = std::make_shared<MainMenuScene>(m_controller);
+	addScene(scenePt);
+	loadScene(scenePt->getName());
 }
 
 /// <summary>

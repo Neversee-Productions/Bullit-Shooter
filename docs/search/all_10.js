@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_7eapplication',['~Application',['../class_application.html#a748bca84fefb9c12661cfaa2f623748d',1,'Application']]],
-  ['_7ekeyhandler',['~KeyHandler',['../class_key_handler.html#abcd8e7571a7a90ba891efa72f8d1bd51',1,'KeyHandler']]],
-  ['_7ewindow',['~Window',['../class_window.html#a245d821e6016fa1f6970ccbbedd635f6',1,'Window']]]
+  ['thumb_5fthreshold',['THUMB_THRESHOLD',['../class_controller.html#a948ea829bde896e4e7bc25210ab26340',1,'Controller']]],
+  ['trigger',['Trigger',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0af698f67f5666aff10729d8a1cb1c14d2',1,'Controller.h']]],
+  ['triggers_5fthreshold',['TRIGGERS_THRESHOLD',['../class_controller.html#aeb2cc645bf3f3151a17216d815bfd69a',1,'Controller']]]
 ];

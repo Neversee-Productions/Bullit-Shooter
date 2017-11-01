@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['update',['update',['../class_scene.html#ae72a3454e5d4e06d4125db5322fb0c91',1,'Scene::update()'],['../class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637',1,'SceneManager::update()'],['../class_bullet.html#afd0c9cc69ab38d691c508de787fd6b5f',1,'Bullet::update()'],['../class_bullet_manager.html#ae8638f3b70fe44a15413e1107ea806fe',1,'BulletManager::update()'],['../class_bullet_standard.html#a9d72b2eec35bd504fe44d2e194b87187',1,'BulletStandard::update()'],['../class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a',1,'GameScene::update()'],['../class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4',1,'Player::update()']]],
-  ['updatekey',['updateKey',['../class_key_handler.html#a9286e652204a3e49b7674f47f0ac99fa',1,'KeyHandler']]]
+  ['rightbumper',['RightBumper',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a509b4eb4dd040194b2aa506683ccfbad',1,'Controller.h']]],
+  ['rightthumbclick',['RightThumbClick',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0af090f806d9f9d4e9b3ccdc4ac0a26d23',1,'Controller.h']]],
+  ['rightthumbstickx',['RightThumbstickX',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a5da4964be663fd5a22475ad2c945cacd',1,'Controller.h']]],
+  ['rightthumbsticky',['RightThumbstickY',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a3f7611216b80d322bbb892baa40524af',1,'Controller.h']]],
+  ['run',['run',['../class_application.html#a68965449404743bf1add056784d6cf81',1,'Application']]]
 ];

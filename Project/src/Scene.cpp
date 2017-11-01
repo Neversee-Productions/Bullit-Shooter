@@ -9,7 +9,7 @@
 Scene::Scene(const std::string & sceneName)
 	: m_name(sceneName)
 	, m_nextSceneName()
-	, m_UPDATE_DT(1.0f/60.0f)
+	, m_UPDATE_DT(App::getUpdateDeltaTime())
 {
 }
 
