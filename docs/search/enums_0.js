@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['actiontype',['ActionType',['../classthor_1_1_action.html#a9d244c8dd9175afee478c7118ff45057',1,'thor::Action']]],
-  ['attribute',['Attribute',['../structsf_1_1_context_settings.html#af2e91e57e8d26c40afe2ec8efaa32a2c',1,'sf::ContextSettings']]],
-  ['axis',['Axis',['../classsf_1_1_joystick.html#a48db337092c2e263774f94de6d50baa7',1,'sf::Joystick']]]
+  ['buttonmappings',['ButtonMappings',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0',1,'Controller.h']]],
+  ['buttonstate',['ButtonState',['../class_button.html#ad8312db93093c21df8b1d2be74ae1957',1,'Button']]]
 ];

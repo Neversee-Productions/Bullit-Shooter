@@ -1,11 +1,21 @@
 var dir_3137d5a23389289517bd5e0d06338240 =
 [
-    [ "Aurora", "dir_896c2ab1e2493f525d6a6732d2871450.html", "dir_896c2ab1e2493f525d6a6732d2871450" ],
-    [ "json", "dir_99ac3a7a9f37e5b935c3891f7ab619a3.html", "dir_99ac3a7a9f37e5b935c3891f7ab619a3" ],
-    [ "SFML", "dir_fff19846a13f23986eaea1af7bd75dd7.html", "dir_fff19846a13f23986eaea1af7bd75dd7" ],
-    [ "Thor", "dir_d94cb120da38cf2aa4b0502372326999.html", "dir_d94cb120da38cf2aa4b0502372326999" ],
-    [ "tinyheaders", "dir_18fc42e0d0a72da083c216ea519b70da.html", "dir_18fc42e0d0a72da083c216ea519b70da" ],
+    [ "gui", "dir_5329338edf3e824d7c07c8d6c825851b.html", "dir_5329338edf3e824d7c07c8d6c825851b" ],
+    [ "input", "dir_6c3fbd7c7c6cff31852766e46d56c52b.html", "dir_6c3fbd7c7c6cff31852766e46d56c52b" ],
+    [ "Scenes", "dir_8cc4350ce524c891f7dc9d8a40a7b8d2.html", "dir_8cc4350ce524c891f7dc9d8a40a7b8d2" ],
+    [ "App.h", "_app_8h.html", [
+      [ "App", "class_app.html", "class_app" ]
+    ] ],
     [ "Application.h", "_application_8h.html", [
       [ "Application", "class_application.html", "class_application" ]
+    ] ],
+    [ "Scene.h", "_scene_8h.html", [
+      [ "Scene", "class_scene.html", "class_scene" ]
+    ] ],
+    [ "SceneManager.h", "_scene_manager_8h.html", [
+      [ "SceneManager", "class_scene_manager.html", "class_scene_manager" ]
+    ] ],
+    [ "Window.h", "_window_8h.html", [
+      [ "Window", "class_window.html", "class_window" ]
     ] ]
 ];

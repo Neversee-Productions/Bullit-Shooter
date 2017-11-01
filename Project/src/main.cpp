@@ -13,16 +13,6 @@
 #pragma comment(lib,"sfml-network.lib")
 #pragma comment(lib,"thor.lib")
 #endif
-#pragma comment(lib,"_doxygen.lib")
-#pragma comment(lib,"doxycfg.lib")
-#pragma comment(lib,"md5.lib")
-#pragma comment(lib,"qtools.lib")
-#pragma comment(lib,"vhdlparser.lib")
-
-#include "SFML\Graphics.hpp"
-#include "Thor\Graphics.hpp"
-#include "json\json.hpp"
-#include "tinyheaders\tinyc2.h"
 
 #include "Application.h"
 
@@ -34,7 +24,7 @@
 /// ## Meet the team
 /// 
 /// * [Rafael Plugge](https://www.linkedin.com/in/rafael-plugge-512164106/)
-/// * Sebastian Kruzel
+/// * [Sebastian Kruzel](https://www.linkedin.com/in/sebastiankruzel/)
 /// 
 /// ## Required software
 /// 
@@ -65,5 +55,6 @@
 /// <param name="argv">c style string of the arguments passed into the application</param>
 int main(int argc, char** argv)
 {
-
+	Application& app = Application();
+	app.run();
 }

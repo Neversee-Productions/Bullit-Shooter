@@ -82,11 +82,15 @@ $(document).ready(function(){initNavTree('class_application.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_application-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Application Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Main application starter.  
+ <a href="class_application.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_application_8h_source.html">Application.h</a>&gt;</code></p>
 <table class="memberdecls">
@@ -98,8 +102,20 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a748bca84fefb9c12661cfaa2f623748d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68965449404743bf1add056784d6cf81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a68965449404743bf1add056784d6cf81">run</a> ()</td></tr>
 <tr class="separator:a68965449404743bf1add056784d6cf81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa2c60ca3a397f494523fc00f6c81f921"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_key_handler.html">KeyHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#aa2c60ca3a397f494523fc00f6c81f921">m_keyHandler</a></td></tr>
+<tr class="separator:aa2c60ca3a397f494523fc00f6c81f921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae241faf20715e823c23e25e2a0c36c45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_window.html">Window</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#ae241faf20715e823c23e25e2a0c36c45">m_window</a></td></tr>
+<tr class="separator:ae241faf20715e823c23e25e2a0c36c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a591af670b88bdfd127207a907e763b92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene_manager.html">SceneManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a591af670b88bdfd127207a907e763b92">m_sceneManager</a></td></tr>
+<tr class="separator:a591af670b88bdfd127207a907e763b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
+<p>Boots up application, setups main controller and window. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afa8cc05ce6b6092be5ecdfdae44e05f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa8cc05ce6b6092be5ecdfdae44e05f8">&#9670;&nbsp;</a></span>Application()</h2>
 
@@ -114,7 +130,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="class_application.html">Application</a> constructor.</p>
+<p><a class="el" href="class_application.html" title="Main application starter. ">Application</a> constructor.</p>
 
 </div>
 </div>
@@ -132,7 +148,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="class_application.html">Application</a> destructor.</p>
+<p><a class="el" href="class_application.html" title="Main application starter. ">Application</a> destructor.</p>
 
 </div>
 </div>
@@ -152,6 +168,79 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Main Entry point for entire application.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa2c60ca3a397f494523fc00f6c81f921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2c60ca3a397f494523fc00f6c81f921">&#9670;&nbsp;</a></span>m_keyHandler</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_key_handler.html">KeyHandler</a> Application::m_keyHandler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Handles the input of keys.</p>
+<p>Used to check if a particular key is pressed. </p>
+
+</div>
+</div>
+<a id="a591af670b88bdfd127207a907e763b92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a591af670b88bdfd127207a907e763b92">&#9670;&nbsp;</a></span>m_sceneManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scene_manager.html">SceneManager</a> Application::m_sceneManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Main application controller.</p>
+<p>will controll what update and rendering is performed. </p>
+
+</div>
+</div>
+<a id="ae241faf20715e823c23e25e2a0c36c45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae241faf20715e823c23e25e2a0c36c45">&#9670;&nbsp;</a></span>m_window</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_window.html">Window</a> Application::m_window</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_application.html" title="Main application starter. ">Application</a> window.</p>
+<p>Used in main loop to query for alive state. </p>
 
 </div>
 </div>

@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['j',['J',['../classsf_1_1_keyboard.html#acb4cacd7cc5802dec45724cf3314a142a948c634009beacdab42c3419253a5e85',1,'sf::Keyboard']]],
-  ['joystickbuttonpressed',['JoystickButtonPressed',['../classsf_1_1_event.html#af41fa9ed45c02449030699f671331d4aa6d46855f0253f065689b69cd09437222',1,'sf::Event']]],
-  ['joystickbuttonreleased',['JoystickButtonReleased',['../classsf_1_1_event.html#af41fa9ed45c02449030699f671331d4aa2246ef5ee33f7fa4b2a53f042ceeac3d',1,'sf::Event']]],
-  ['joystickconnected',['JoystickConnected',['../classsf_1_1_event.html#af41fa9ed45c02449030699f671331d4aaabb8877ec2f0c92904170deded09321e',1,'sf::Event']]],
-  ['joystickdisconnected',['JoystickDisconnected',['../classsf_1_1_event.html#af41fa9ed45c02449030699f671331d4aab6e161dab7abaf154cc1c7b554558cb6',1,'sf::Event']]],
-  ['joystickmoved',['JoystickMoved',['../classsf_1_1_event.html#af41fa9ed45c02449030699f671331d4aa4d6ad228485c135967831be16ec074dd',1,'sf::Event']]]
+  ['stackvertically',['StackVertically',['../class_g_u_i.html#a63cb7956b53b1a56aab3c353f3d242a9ae055d0cc4fa88ac0c0ae1294b304ae80',1,'GUI']]],
+  ['start',['Start',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0aa6122a65eaa676f700ae68d393054a37',1,'Controller.h']]],
+  ['stripdiagonal',['StripDiagonal',['../class_g_u_i.html#a63cb7956b53b1a56aab3c353f3d242a9a8edaefd8c89d5352866b596f3116a0c7',1,'GUI']]]
 ];
