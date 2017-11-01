@@ -45,7 +45,7 @@ Button::Button(	std::function<void()> function
 	m_rectanglePos.x = position.x;
 	m_rectanglePos.y = position.y;
 	//set color of highlight rectangle
-	m_highlightRectangle.setFillColor(sf::Color(255,255,0,m_highlightAlpha));
+	m_highlightRectangle.setFillColor(sf::Color(255u, 255u, 0u, m_highlightAlpha));
 	//set position of rectangle
 	m_rectangleMiddle.setPosition(m_rectanglePos);
 	//set position of highlight rect

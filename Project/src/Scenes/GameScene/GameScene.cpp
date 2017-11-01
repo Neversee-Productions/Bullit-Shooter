@@ -1,13 +1,15 @@
-#include "Scenes\GameScene.h"
+#include "Scenes\GameScene\GameScene.h"
 
 /// <summary>
 /// @brief Default constructor.
 /// 
 /// Constructs a base Scene using the name of "Game".
 /// </summary>
-GameScene::GameScene()
+GameScene::GameScene(KeyHandler& keyHandler)
 	: Scene("Game")
 	, m_square()
+	, m_player(keyHandler)
+	, m_keyHandler(keyHandler)
 {
 	m_square.setPosition(200.0f, 200.0f);
 	sf::Vector2f& size = sf::Vector2f(200.0f, 100.0f);
@@ -42,6 +44,7 @@ void GameScene::stop()
 void GameScene::update()
 {
 	m_square.rotate(720.0f * m_UPDATE_DT);
+	m_player.update();
 }
 
 /// <summary>
@@ -54,5 +57,6 @@ void GameScene::update()
 void GameScene::draw(Window & window, const float & deltaTime)
 {
 	window.draw(m_square);
+	m_player.draw(window, deltaTime);
 }
 

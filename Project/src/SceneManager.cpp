@@ -20,7 +20,7 @@ SceneManager::SceneManager(
 {
 	m_controller = std::make_shared<Controller>();
 
-	std::shared_ptr<Scene> scenePt = std::make_shared<GameScene>();
+	std::shared_ptr<Scene> scenePt = std::make_shared<GameScene>(m_keyHandler);
 	addScene(scenePt);
 
 	scenePt = std::make_shared<MainMenuScene>(m_controller);
