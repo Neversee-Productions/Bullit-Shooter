@@ -24,7 +24,13 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\SceneManager.cpp" />
-    <ClCompile Include="src\Scenes\GameScene.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Bullet.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\BulletManager.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\BulletStandard.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\GameScene.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Player.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Ship.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Weapon.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -35,7 +41,13 @@
     <ClInclude Include="include\KeyHandler.h" />
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\SceneManager.h" />
-    <ClInclude Include="include\Scenes\GameScene.h" />
+    <ClInclude Include="include\Scenes\GameScene\Bullet.h" />
+    <ClInclude Include="include\Scenes\GameScene\BulletManager.h" />
+    <ClInclude Include="include\Scenes\GameScene\BulletStandard.h" />
+    <ClInclude Include="include\Scenes\GameScene\GameScene.h" />
+    <ClInclude Include="include\Scenes\GameScene\Player.h" />
+    <ClInclude Include="include\Scenes\GameScene\Ship.h" />
+    <ClInclude Include="include\Scenes\GameScene\Weapon.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

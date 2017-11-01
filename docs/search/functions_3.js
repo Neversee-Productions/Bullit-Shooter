@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['gamescene',['GameScene',['../class_game_scene.html#ac53cc300c8896048c0e21c67e49681b9',1,'GameScene']]],
-  ['getactive',['getActive',['../class_scene_manager.html#a10a725b0d82a65ea7beb2969204d119f',1,'SceneManager']]],
-  ['getname',['getName',['../class_scene.html#a056dfc15c377165943f5276f477c105d',1,'Scene']]],
-  ['getnextscenename',['getNextSceneName',['../class_scene.html#a4281c0ec2142a6a53a3057557d7ff195',1,'Scene']]],
-  ['getscene',['getScene',['../class_scene_manager.html#a59f6fa7e18e85c7eec4be442f17d969e',1,'SceneManager']]],
-  ['gotonextscene',['goToNextScene',['../class_scene_manager.html#ab5a98ee1a0334f0b9d53d5ed4d5bd096',1,'SceneManager']]]
+  ['display',['display',['../class_window.html#afadfafa5a0b9472554759004aafb327e',1,'Window']]],
+  ['draw',['draw',['../class_scene.html#a41f191abbae537f7ba192074149e3518',1,'Scene::draw()'],['../class_scene_manager.html#a3983ac6a695c838682b09cee938beb3c',1,'SceneManager::draw()'],['../class_bullet.html#a9fc3493ff2058c3724f26342d2580768',1,'Bullet::draw()'],['../class_bullet_manager.html#adc7565464b026ddc98b02a70c558c74a',1,'BulletManager::draw()'],['../class_game_scene.html#a2740f717119ea52855329ccc915acafc',1,'GameScene::draw()'],['../class_player.html#a5a4253c07c2dd1428de5d1dac00098c2',1,'Player::draw()'],['../class_ship.html#ae9a0712970979a6d24320ae208bd6899',1,'Ship::draw()'],['../class_weapon.html#a091763bf26419b9df5b0ae1d9dac639a',1,'Weapon::draw()'],['../class_window.html#ad1c40ec9b475f25d3dfec7ae5524896a',1,'Window::draw()']]]
 ];

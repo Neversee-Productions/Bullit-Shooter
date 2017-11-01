@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keyhandler',['KeyHandler',['../class_key_handler.html',1,'']]]
+  ['gamescene',['GameScene',['../class_game_scene.html',1,'']]]
 ];

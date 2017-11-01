@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['keyhandler',['KeyHandler',['../class_key_handler.html#a9f90e60def9a242e88629dc6d6641789',1,'KeyHandler']]]
+  ['gamescene',['GameScene',['../class_game_scene.html#aebd3972a13e0b6c8220c8d54d0b6e03e',1,'GameScene']]],
+  ['getactive',['getActive',['../class_scene_manager.html#a10a725b0d82a65ea7beb2969204d119f',1,'SceneManager']]],
+  ['getname',['getName',['../class_scene.html#a056dfc15c377165943f5276f477c105d',1,'Scene']]],
+  ['getnextscenename',['getNextSceneName',['../class_scene.html#a4281c0ec2142a6a53a3057557d7ff195',1,'Scene']]],
+  ['getscene',['getScene',['../class_scene_manager.html#a59f6fa7e18e85c7eec4be442f17d969e',1,'SceneManager']]],
+  ['gotonextscene',['goToNextScene',['../class_scene_manager.html#ab5a98ee1a0334f0b9d53d5ed4d5bd096',1,'SceneManager']]]
 ];

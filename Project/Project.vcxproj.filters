@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Scenes">
       <UniqueIdentifier>{73b2c5a7-1f99-4ef9-b5b2-b42caca10cf7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Scenes\GameScene">
+      <UniqueIdentifier>{40ee4239-5eaa-4b1f-b4f2-56103029852d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\GameScene">
+      <UniqueIdentifier>{e1fcb47e-2cf4-41c1-bd9e-6ad2fd1b7ad5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -39,8 +45,26 @@
     <ClCompile Include="src\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scenes\GameScene.cpp">
-      <Filter>Source Files\Scenes</Filter>
+    <ClCompile Include="src\Scenes\GameScene\GameScene.cpp">
+      <Filter>Source Files\Scenes\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Player.cpp">
+      <Filter>Source Files\Scenes\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Weapon.cpp">
+      <Filter>Source Files\Scenes\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Ship.cpp">
+      <Filter>Source Files\Scenes\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullet.cpp">
+      <Filter>Source Files\Scenes\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\BulletManager.cpp">
+      <Filter>Source Files\Scenes\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\BulletStandard.cpp">
+      <Filter>Source Files\Scenes\GameScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,8 +88,26 @@
     <ClInclude Include="include\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene.h">
-      <Filter>Header Files\Scenes</Filter>
+    <ClInclude Include="include\Scenes\GameScene\GameScene.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Player.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Weapon.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Ship.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullet.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\BulletManager.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\BulletStandard.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
