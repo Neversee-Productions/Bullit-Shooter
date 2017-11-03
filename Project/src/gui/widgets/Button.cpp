@@ -24,7 +24,7 @@ const sf::IntRect gui::Button::s_TEXT_RECT_RIGHT = sf::IntRect(475, 0, 25, 129);
 gui::Button::Button(	std::function<void()> function
 				, sf::String message
 				, sf::Vector2f position
-				, sf::Font & font
+				, std::shared_ptr<sf::Font> font
 				, unsigned int fontSize
 				, std::shared_ptr<sf::Texture> texture
 				, sf::IntRect leftTextRect
@@ -55,19 +55,19 @@ gui::Button::Button(	std::function<void()> function
 	//set origin for button
 	m_rectangleMiddle.setOrigin(m_rectangleMiddle.getGlobalBounds().width / 2.0f, m_rectangleMiddle.getGlobalBounds().height / 2.0f);
 	//set texture of middle section
-	m_rectangleMiddle.setTexture(&(*texture), true);
+	m_rectangleMiddle.setTexture(texture.get(), true);
 	//set texture rectangle of middle section
 	m_rectangleMiddle.setTextureRect(middleTextRect);
 
 	//set up the left texture rectangle
-	m_rectangleLeft.setTexture(&(*texture), true);
+	m_rectangleLeft.setTexture(texture.get(), true);
 	m_rectangleLeft.setTextureRect(leftTextRect);
 	m_rectangleLeft.setSize(sf::Vector2f(leftTextRect.width,m_rectangleMiddle.getGlobalBounds().height));
 	m_rectangleLeft.setOrigin(m_rectangleLeft.getGlobalBounds().width / 2, m_rectangleLeft.getGlobalBounds().height / 2);
 	m_rectangleLeft.setPosition(m_rectangleMiddle.getPosition().x - (m_rectangleMiddle.getGlobalBounds().width / 2) - (m_rectangleLeft.getGlobalBounds().width / 2),m_rectangleMiddle.getPosition().y);
 
 	//set up the right texture rectangle
-	m_rectangleRight.setTexture(&(*texture), true);
+	m_rectangleRight.setTexture(texture.get(), true);
 	m_rectangleRight.setTextureRect(rightTextRect);
 	m_rectangleRight.setSize(sf::Vector2f(rightTextRect.width, m_rectangleMiddle.getGlobalBounds().height));
 	m_rectangleRight.setOrigin(m_rectangleRight.getGlobalBounds().width / 2, m_rectangleRight.getGlobalBounds().height / 2);
@@ -215,14 +215,20 @@ void gui::Button::fading()
 /// and call pointer-to-function
 /// </summary>
 /// <param name="controller">reference to controller, that is checked for input</param>
+/// <param name="keyhandler">reference to key handler, that is checked for input</param>
 /// <returns>returns true since button processes input</returns>
-bool gui::Button::processInput(Controller & controller)
+bool gui::Button::processInput(Controller & controller, KeyHandler & keyhandler)
 {
 	//processInput(controller);
-	if (controller.m_currentState.m_A && m_currentButtonState == ButtonState::HOVERED) //if button pressed while hovered then go to pressed state
+	if (m_currentButtonState == ButtonState::HOVERED)
 	{
-		m_currentButtonState = ButtonState::PRESSED;
-		m_function();
+		if (controller.m_currentState.m_A //if button pressed while hovered then go to pressed state
+			|| keyhandler.isPressed(sf::Keyboard::Key::Return)
+			)
+		{
+			m_currentButtonState = ButtonState::PRESSED;
+			m_function();
+		}
 	}
 	return true;
 }

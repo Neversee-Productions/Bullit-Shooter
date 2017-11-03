@@ -12,5 +12,5 @@ var searchData=
   ['getupdatedeltatime',['getUpdateDeltaTime',['../class_app.html#a8f144ef7b698c80e5414f00563474149',1,'App']]],
   ['getwindowsize',['getWindowSize',['../class_app.html#ae47a49a2f9ba8a96947d71cdce8a9707',1,'App']]],
   ['gotonextscene',['goToNextScene',['../class_scene_manager.html#ab5a98ee1a0334f0b9d53d5ed4d5bd096',1,'SceneManager']]],
-  ['gui',['GUI',['../classgui_1_1_g_u_i.html#a49272dfd28f421b92ca828c905988d57',1,'gui::GUI']]]
+  ['gui',['GUI',['../classgui_1_1_g_u_i.html#acc3d2a359b7705766fd16eb8942b9741',1,'gui::GUI']]]
 ];

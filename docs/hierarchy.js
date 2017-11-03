@@ -20,6 +20,7 @@ var hierarchy =
     [ "gui::GUI", "classgui_1_1_g_u_i.html", null ],
     [ "KeyHandler", "class_key_handler.html", null ],
     [ "Player", "class_player.html", null ],
+    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
       [ "MainMenuScene", "class_main_menu_scene.html", null ]

@@ -4,6 +4,7 @@ var class_window =
     [ "~Window", "class_window.html#a245d821e6016fa1f6970ccbbedd635f6", null ],
     [ "changeStyle", "class_window.html#ac547a5aacd051d9f5547c72fd06340a4", null ],
     [ "clear", "class_window.html#a38bc43bdd1a97e5de7f346ba4c3957ef", null ],
+    [ "close", "class_window.html#a35055c04498121d39741bfcd5082705b", null ],
     [ "display", "class_window.html#afadfafa5a0b9472554759004aafb327e", null ],
     [ "draw", "class_window.html#adfb2d5826942693e289d13f314a341f7", null ],
     [ "isOpen", "class_window.html#a761d614931fb5a5daa70e4f580c3e78e", null ],

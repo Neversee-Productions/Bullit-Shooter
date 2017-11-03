@@ -63,6 +63,6 @@ bool KeyHandler::isPressed(const sf::Keyboard::Key & key) const
 /// <returns>true if specified key was pressed, false otherwise</returns>
 bool KeyHandler::isPrevPressed(const sf::Keyboard::Key & key) const
 {
-	KeyMap::const_iterator citt = m_keyMap.find(key);
-	return (citt != m_keyMap.end() && citt->second);
+	KeyMap::const_iterator citt = m_prevKeyMap.find(key);
+	return (citt != m_prevKeyMap.end() && citt->second);
 }

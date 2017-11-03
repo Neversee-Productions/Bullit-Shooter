@@ -27,6 +27,7 @@ public:
 	void display();
 	bool isOpen() const;
 	void clear();
+	void close();
 
 private:
 

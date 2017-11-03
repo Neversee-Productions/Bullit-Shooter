@@ -18,7 +18,7 @@
 class SceneManager
 {
 public:
-	SceneManager(Window & window, KeyHandler & keyHandler);
+	SceneManager(Window & window, std::shared_ptr<KeyHandler> keyHandler);
 	void update();
 	void draw(const float & deltaTime);
 
@@ -37,11 +37,11 @@ private:
 	Window & m_window;
 
 	/// <summary>
-	/// @brief Reference to a created KeyHandler.
+	/// @brief Shared pointer to a created KeyHandler.
 	/// 
 	/// Required for our scenes to handle input.
 	/// </summary>
-	KeyHandler & m_keyHandler;
+	std::shared_ptr<KeyHandler> m_keyHandler;
 
 	/// <summary>
 	/// @brief Points to our current Scene.

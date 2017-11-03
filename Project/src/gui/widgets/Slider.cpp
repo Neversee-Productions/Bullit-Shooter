@@ -28,7 +28,7 @@ gui::Slider::Slider(	std::shared_ptr<sf::Texture> texture
 				,sf::IntRect emptyTextRect
 				,sf::IntRect filledTextRect
 				,sf::IntRect squareTextRect
-				,sf::Font & font
+				,std::shared_ptr<sf::Font> font
 				,sf::String name
 				,unsigned int fontSize
 				,sf::Vector2f position
@@ -277,17 +277,31 @@ void gui::Slider::fading()
 /// 
 /// check if this widget should process input
 /// </summary>
-/// <param name="controller"></param>
+/// <param name="controller">reference to controller, that is checked for input</param>
+/// <param name="keyhandler">reference to key handler, that is checked for input</param>
 /// <returns></returns>
-bool gui::Slider::processInput(Controller & controller)
+bool gui::Slider::processInput(Controller & controller, KeyHandler & keyhandler)
 {
 	if(m_currentState == SliderState::HOVERED)
 	{
-		if ((controller.m_currentState.m_dpadRight || controller.m_currentState.m_lTS.x > 50) && !m_moved) //if key pressed and slider hasnt moved yet
+		if (
+			(controller.m_currentState.m_dpadRight 
+				|| controller.m_currentState.m_lTS.x > 50
+				|| keyhandler.isPressed(sf::Keyboard::Key::Right)
+				|| keyhandler.isPressed(sf::Keyboard::Key::D)
+				)
+			&& !m_moved
+			) //if key pressed and slider hasnt moved yet
 		{
 			moveRight();
 		}
-		if ((controller.m_currentState.m_dpadLeft || controller.m_currentState.m_lTS.x < -50) && !m_moved) //if key pressed and slider not moved yet
+		if (
+			(controller.m_currentState.m_dpadLeft 
+				|| controller.m_currentState.m_lTS.x < -50
+				|| keyhandler.isPressed(sf::Keyboard::Key::Left)
+				|| keyhandler.isPressed(sf::Keyboard::Key::A))
+			&& !m_moved
+			) //if key pressed and slider not moved yet
 		{
 			moveLeft();
 		}

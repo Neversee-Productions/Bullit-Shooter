@@ -7,8 +7,9 @@
 /// </summary>
 /// <param name="controller">the controller to use</param>
 /// <param name="checkboxTexture">texture to use for the checkbox</param>
-gui::GUI::GUI(std::shared_ptr<Controller> controller, bool stripDraw)
+gui::GUI::GUI(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller, bool stripDraw)
 	: m_layoutNr(0)
+	, m_keyHandler(keyHandler)
 	, m_controller(controller)
 	, m_drawStrip(stripDraw)
 	, m_widgets()
@@ -50,7 +51,7 @@ void gui::GUI::update(const float & dt)
 
 	for (auto & widget : m_widgets)
 	{
-		widget->processInput(*m_controller);
+		widget->processInput(*m_controller, *m_keyHandler);
 		widget->update(dt);
 	}
 }
@@ -171,7 +172,7 @@ void gui::GUI::configure(const Layouts & layout, const unsigned int & windowWidt
 void gui::GUI::addLabel(	sf::String contents
 					, unsigned int fontSize
 					, sf::Vector2f position
-					, sf::Font & font
+					, std::shared_ptr<sf::Font> font
 					, sf::Color color)
 {
 	m_widgets.push_back(std::make_shared<Label>(contents,fontSize,position,font, color));
@@ -182,6 +183,7 @@ void gui::GUI::addLabel(	sf::String contents
 /// 
 /// takes in params for a button
 /// </summary>
+/// <param name="function">callback function called when button is pressed.</param>
 /// <param name="message">Message to display on the button</param>
 /// <param name="position">the centre of the button</param>
 /// <param name="font">font to use for label</param>
@@ -193,14 +195,25 @@ void gui::GUI::addLabel(	sf::String contents
 void gui::GUI::addButton(	std::function<void()> function
 						, sf::String message
 						, sf::Vector2f position
-						, sf::Font & font
+						, std::shared_ptr<sf::Font> font
 						, unsigned int fontSize
 						, std::shared_ptr<sf::Texture> texture
 						, sf::IntRect leftTextRect
 						, sf::IntRect middleTextRect
 						, sf::IntRect rightTextRect)
 {
-	m_widgets.push_back(std::make_shared<Button>(function, message, position, font, fontSize, texture, leftTextRect, middleTextRect, rightTextRect));
+	m_widgets.push_back(
+		std::make_shared<Button>(
+			function
+			, message
+			, position
+			, font
+			, fontSize
+			, texture
+			, leftTextRect
+			, middleTextRect
+			, rightTextRect)
+	);
 	m_layoutNr++;
 	linkWidget();
 }
@@ -220,7 +233,7 @@ void gui::GUI::addButton(	std::function<void()> function
 /// <param name="minValue">minimum value</param>
 /// <param name="maxValue">maximum value</param>
 /// <param name="currentValue">current slider value</param>
-void gui::GUI::addSlider(	sf::Font & font
+void gui::GUI::addSlider(	std::shared_ptr<sf::Font> font
 						, sf::String name
 						, unsigned int fontSize
 						, sf::Vector2f position
@@ -234,7 +247,22 @@ void gui::GUI::addSlider(	sf::Font & font
 						, sf::IntRect filledTextRect
 						, sf::IntRect squareTextRect)
 {
-	m_widgets.push_back(std::make_shared<Slider>(texture, emptyTextRect, filledTextRect, squareTextRect, font, name, fontSize, position, sliderWidth, sliderHeight, minValue, maxValue, currentValue));
+	m_widgets.push_back(
+		std::make_shared<Slider>(
+			texture
+			, emptyTextRect
+			, filledTextRect
+			, squareTextRect
+			, font
+			, name
+			, fontSize
+			, position
+			, sliderWidth
+			, sliderHeight
+			, minValue
+			, maxValue
+			, currentValue)
+	);
 	m_layoutNr++;
 	linkWidget();
 }
@@ -252,7 +280,7 @@ void gui::GUI::addSlider(	sf::Font & font
 /// <param name="offTexture">the off texture</param>
 /// <param name="state">current checkbox state (true = on/ false = off)</param>
 /// <param name="charSize">the size of characters</param>
-void gui::GUI::addCheckbox(	sf::Font font
+void gui::GUI::addCheckbox(	std::shared_ptr<sf::Font> font
 						, sf::String name
 						, sf::Vector2f position
 						, float scale
@@ -262,7 +290,18 @@ void gui::GUI::addCheckbox(	sf::Font font
 						, bool & state
 						, unsigned charSize)
 {
-	m_widgets.push_back(std::make_shared<CheckBox>(font, name, position, scale, texture, textRectOn, textRectOff, state, charSize));
+	m_widgets.push_back(
+		std::make_shared<CheckBox>(
+			font
+			, name
+			, position
+			, scale
+			, texture
+			, textRectOn
+			, textRectOff
+			, state
+			, charSize)
+	);
 	m_layoutNr++;
 	linkWidget();
 }
@@ -318,29 +357,87 @@ void gui::GUI::linkWidget()
 /// </summary>
 void gui::GUI::processInput()
 {
-	const float& JOYSTICK_THRESHOLD = 50.0f;
-	if (
-		(m_controller->m_currentState.m_dpadUp && !m_controller->m_previousState.m_dpadUp)
-		|| (m_controller->m_currentState.m_lTS.y < -JOYSTICK_THRESHOLD && m_controller->m_previousState.m_lTS.y >= -JOYSTICK_THRESHOLD)
-		)
+	if (m_controller->isConnected())
 	{
-		if (!m_selectedWidget->m_previous.expired())
+		const float& JOYSTICK_THRESHOLD = 50.0f;
+		const auto & DPAD_UP = m_controller->m_currentState.m_dpadUp;
+		const auto & PREV_DPAD_UP = m_controller->m_previousState.m_dpadUp;
+		const auto & DPAD_DOWN = m_controller->m_currentState.m_dpadDown;
+		const auto & PREV_DPAD_DOWN = m_controller->m_previousState.m_dpadDown;
+
+		const auto & LTS_Y = m_controller->m_currentState.m_lTS.y;
+		const auto & PREV_LTS_Y = m_controller->m_previousState.m_lTS.y;
+
+		if (
+			(DPAD_UP && !PREV_DPAD_UP)
+			|| (LTS_Y < -JOYSTICK_THRESHOLD && PREV_LTS_Y >= -JOYSTICK_THRESHOLD)
+			)
 		{
-			m_selectedWidget->loseFocus();
-			m_selectedWidget = m_selectedWidget->m_previous.lock();
+			moveToPrevWidgets();
+		}
+
+		if (
+			(DPAD_DOWN && !PREV_DPAD_DOWN)
+			|| (LTS_Y > JOYSTICK_THRESHOLD && PREV_LTS_Y <= JOYSTICK_THRESHOLD)
+			)
+		{
+			moveToNextWidgets();
 		}
 	}
-
-	if (
-		(m_controller->m_currentState.m_dpadDown && !m_controller->m_previousState.m_dpadDown)
-		|| (m_controller->m_currentState.m_lTS.y > JOYSTICK_THRESHOLD && m_controller->m_previousState.m_lTS.y <= JOYSTICK_THRESHOLD)
-		)
+	else
 	{
-		if (!m_selectedWidget->m_next.expired())
+		const auto & KEY_UP = m_keyHandler->isPressed(sf::Keyboard::Key::Up);
+		const auto & PREV_KEY_UP = m_keyHandler->isPrevPressed(sf::Keyboard::Key::Up);
+		const auto & KEY_DOWN = m_keyHandler->isPressed(sf::Keyboard::Key::Down);
+		const auto & PREV_KEY_DOWN = m_keyHandler->isPrevPressed(sf::Keyboard::Key::Down);
+
+		const auto & KEY_W = m_keyHandler->isPressed(sf::Keyboard::Key::W);
+		const auto & PREV_KEY_W = m_keyHandler->isPrevPressed(sf::Keyboard::Key::W);
+		const auto & KEY_S = m_keyHandler->isPressed(sf::Keyboard::Key::S);
+		const auto & PREV_KEY_S = m_keyHandler->isPrevPressed(sf::Keyboard::Key::S);
+
+		if (
+			(KEY_UP && !PREV_KEY_UP)
+			|| (KEY_W && !PREV_KEY_W)
+			)
 		{
-			m_selectedWidget->loseFocus();
-			m_selectedWidget = m_selectedWidget->m_next.lock();
+			moveToPrevWidgets();
 		}
+		if (
+			(KEY_DOWN && !PREV_KEY_DOWN)
+			|| (KEY_S && !PREV_KEY_S)
+			)
+		{
+			moveToNextWidgets();
+		}
+	}
+}
+
+/// <summary>
+/// @brief Moves selected widget to the previous one.
+/// 
+/// 
+/// </summary>
+void gui::GUI::moveToPrevWidgets()
+{
+	if (!m_selectedWidget->m_previous.expired())
+	{
+		m_selectedWidget->loseFocus();
+		m_selectedWidget = m_selectedWidget->m_previous.lock();
+	}
+}
+
+/// <summary>
+/// @brief Moves selected widget to the next one.
+/// 
+/// 
+/// </summary>
+void gui::GUI::moveToNextWidgets()
+{
+	if (!m_selectedWidget->m_next.expired())
+	{
+		m_selectedWidget->loseFocus();
+		m_selectedWidget = m_selectedWidget->m_next.lock();
 	}
 }
 

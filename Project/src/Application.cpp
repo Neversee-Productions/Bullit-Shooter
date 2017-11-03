@@ -6,8 +6,8 @@
 /// 
 /// </summary>
 Application::Application()
-	: m_keyHandler()
-	, m_window(m_keyHandler)
+	: m_keyHandler(std::make_shared<KeyHandler>())
+	, m_window(*m_keyHandler)
 	, m_sceneManager(m_window, m_keyHandler)
 {
 

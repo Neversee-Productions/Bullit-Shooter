@@ -5,7 +5,7 @@ var classgui_1_1_slider =
       [ "ACTIVE", "classgui_1_1_slider.html#aeb6783166b3e856dc1c36247f90e10fda18ff74f43da410c5529f7d6fca84f115", null ],
       [ "HOVERED", "classgui_1_1_slider.html#aeb6783166b3e856dc1c36247f90e10fda823d52d4c987a4bd0d42ca6f2a6cf58f", null ]
     ] ],
-    [ "Slider", "classgui_1_1_slider.html#a0c7e9f37c7846666ad469bb1497cf488", null ],
+    [ "Slider", "classgui_1_1_slider.html#a2d888e1c47963a4da758f75561eaff74", null ],
     [ "~Slider", "classgui_1_1_slider.html#a478f2d09650ba9bbc7eb44d1ad23f052", null ],
     [ "draw", "classgui_1_1_slider.html#a0c71034d60cc0d2b9f5a4990e162ef8f", null ],
     [ "draw", "classgui_1_1_slider.html#a8a21c1a4276013dd3bd29f97466690aa", null ],
@@ -15,7 +15,7 @@ var classgui_1_1_slider =
     [ "loseFocus", "classgui_1_1_slider.html#a467631426394b906ceda125bc19b4fab", null ],
     [ "moveLeft", "classgui_1_1_slider.html#a90d712eab516ac7c2be533b954ed57f6", null ],
     [ "moveRight", "classgui_1_1_slider.html#a7aab63dfcc69e3150ac54c9914def379", null ],
-    [ "processInput", "classgui_1_1_slider.html#a3b796cb897dd38ee6919f6bf79396b77", null ],
+    [ "processInput", "classgui_1_1_slider.html#a185aebd1d1539a73ba6bf138e1eb7761", null ],
     [ "setPosition", "classgui_1_1_slider.html#ac75a958a34009da813aa7c1f965448c4", null ],
     [ "update", "classgui_1_1_slider.html#a206ddd9edb88709eba2b512c030464db", null ],
     [ "m_bottomLabel", "classgui_1_1_slider.html#a70f14d748f4b483f4079ff92c74013fc", null ],

@@ -43,7 +43,7 @@ namespace gui
 		};
 
 		// constructor
-		GUI(std::shared_ptr<Controller>, bool stripDraw = false);
+		GUI(std::shared_ptr<KeyHandler>, std::shared_ptr<Controller>, bool stripDraw = false);
 
 		// destructor
 		~GUI();
@@ -60,13 +60,25 @@ namespace gui
 		void configure(const Layouts&, const unsigned int & windowWidth, const unsigned int & windowHeight);
 
 		// Add a label to widgets vector
-		void addLabel(sf::String contents, unsigned int fontSize, sf::Vector2f position, sf::Font & font, sf::Color color = sf::Color::White);
+		void addLabel(sf::String contents
+			, unsigned int fontSize
+			, sf::Vector2f position
+			, std::shared_ptr<sf::Font> font
+			, sf::Color color = sf::Color::White);
 
 		// Add a button to widgets vector
-		void addButton(std::function<void()> function, sf::String message, sf::Vector2f position, sf::Font & font, unsigned int fontSize, std::shared_ptr<sf::Texture> texture, sf::IntRect leftTextRect, sf::IntRect middleTextRect, sf::IntRect rightTextRect);
+		void addButton(std::function<void()> function
+			, sf::String message
+			, sf::Vector2f position
+			, std::shared_ptr<sf::Font> font
+			, unsigned int fontSize
+			, std::shared_ptr<sf::Texture> texture
+			, sf::IntRect leftTextRect
+			, sf::IntRect middleTextRect
+			, sf::IntRect rightTextRect);
 
 		// Add a slider to widgets vector
-		void addSlider(sf::Font & font
+		void addSlider(std::shared_ptr<sf::Font> font
 			, sf::String name
 			, unsigned int fontSize
 			, sf::Vector2f position
@@ -81,7 +93,7 @@ namespace gui
 			, sf::IntRect squareTextRect);
 
 		// Add a checkbox to the GUI
-		void addCheckbox(sf::Font font
+		void addCheckbox(std::shared_ptr<sf::Font> font
 			, sf::String name
 			, sf::Vector2f position
 			, float scale
@@ -90,11 +102,16 @@ namespace gui
 			, sf::IntRect textRectOff
 			, bool & state
 			, unsigned charSize);
+
 	private:
 		// link last widget, to its previous eligible element 
 		void linkWidget();
 		// processes xbox controller widget navigation
 		void processInput();
+		// move to the previous Widget
+		void moveToPrevWidgets();
+		// move to the next widget
+		void moveToNextWidgets();
 
 		/// <summary>
 		/// @brief vector of shared pointers to widgets.
@@ -117,6 +134,13 @@ namespace gui
 		/// 
 		/// </summary>
 		const sf::Vector2f m_screenMargin = sf::Vector2f(10.0f, 100.0f);
+
+		/// <summary>
+		/// @brief Shared pointer to keyHandler.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<KeyHandler> m_keyHandler;
 
 		/// <summary>
 		/// @brief Shared pointer to controller.

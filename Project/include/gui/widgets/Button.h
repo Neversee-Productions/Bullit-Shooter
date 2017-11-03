@@ -22,7 +22,7 @@ namespace gui
 		enum class ButtonState { INACTIVE, ACTIVE, HOVERED, PRESSED };
 
 		//constructor
-		Button(std::function<void()> function, sf::String message, sf::Vector2f position, sf::Font & font, unsigned int fontSize, std::shared_ptr<sf::Texture> texture, sf::IntRect leftTextRect, sf::IntRect middleTextRect, sf::IntRect rightTextRect);
+		Button(std::function<void()> function, sf::String message, sf::Vector2f position, std::shared_ptr<sf::Font> font, unsigned int fontSize, std::shared_ptr<sf::Texture> texture, sf::IntRect leftTextRect, sf::IntRect middleTextRect, sf::IntRect rightTextRect);
 
 		//draw the button
 		void draw(Window & window)const override;
@@ -43,7 +43,7 @@ namespace gui
 		void fading();
 
 		//method for processing the xbox controller inputs
-		bool processInput(Controller& controller) override;
+		bool processInput(Controller& controller, KeyHandler & keyhandler) override;
 
 		//set position
 		void setPosition(sf::Vector2f position) override;

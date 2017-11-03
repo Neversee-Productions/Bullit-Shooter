@@ -22,7 +22,7 @@ namespace gui
 		enum class CheckboxState { INACTIVE, ACTIVE, HOVERED };
 
 		//The default constructor
-		CheckBox(sf::Font font				//font of checkbox
+		CheckBox(std::shared_ptr<sf::Font> font				//font of checkbox
 			, sf::String name			//title of checkbox
 			, sf::Vector2f position		//position
 			, float scale				//scale (both width and height)
@@ -55,7 +55,7 @@ namespace gui
 		void fading();
 
 		//method for processing the xbox controller inputs
-		bool processInput(Controller& controller) override;
+		bool processInput(Controller& controller, KeyHandler & keyhandler) override;
 
 		//set position
 		void setPosition(sf::Vector2f position) override;

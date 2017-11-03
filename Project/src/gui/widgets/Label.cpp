@@ -17,15 +17,14 @@ gui::Label::Label()
 /// <param name="font">font</param>
 /// <param name="fontSize">char size</param>
 /// <param name="position">position on screen</param>
-gui::Label::Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, sf::Font & font, sf::Color color)
+gui::Label::Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, std::shared_ptr<sf::Font> font, sf::Color color)
 	: Widget()
 	, m_text()
 	, m_position(position)
 	, m_font(font)
 	, m_fontSize(fontSize)
 {
-	m_font = font;
-	m_text.setFont(m_font);
+	m_text.setFont(*m_font);
 	m_text.setFillColor(color);
 	m_text.setString(contents);
 	m_text.setPosition(position);
@@ -47,10 +46,11 @@ gui::Label::~Label()
 /// 
 /// 
 /// </summary>
-/// <param name="font">Defines our label's font.</param>
-void gui::Label::setFont(sf::Font font)
+/// <param name="sptrFont">Defines our label's font.</param>
+void gui::Label::setFont(std::shared_ptr<sf::Font> sptrFont)
 {
-	m_font = font;
+	m_font = sptrFont;
+	m_text.setFont(*m_font);
 }
 
 /// <summary>
@@ -156,7 +156,7 @@ void gui::Label::loseFocus()
 /// </summary>
 /// <param name="controller">reference to a controller</param>
 /// <returns>True if label processes input, False if label does not process input.</returns>
-bool gui::Label::processInput(Controller & controller)
+bool gui::Label::processInput(Controller & controller, KeyHandler & keyhandler)
 {
 	return false;
 }

@@ -21,13 +21,13 @@ namespace gui
 		Label();
 
 		//Constructor
-		Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, sf::Font & font, sf::Color color = sf::Color::White);
+		Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, std::shared_ptr<sf::Font> font, sf::Color color = sf::Color::White);
 
 		//Destructor
 		~Label();
 
 		//this method sets the font of the labels
-		void setFont(sf::Font font);
+		void setFont(std::shared_ptr<sf::Font> sptrFont);
 
 		//draw
 		void draw(Window& window) const override;
@@ -57,7 +57,7 @@ namespace gui
 		void loseFocus() override;
 
 		//method for processing the xbox controller inputs
-		bool processInput(Controller& controller) override;
+		bool processInput(Controller& controller, KeyHandler& keyhandler) override;
 
 		//set the origin of the label
 		void setOrigin();
@@ -70,7 +70,7 @@ namespace gui
 		sf::Vector2f m_position;
 
 		//font
-		sf::Font m_font;
+		std::shared_ptr<sf::Font> m_font;
 
 		//font size
 		unsigned int m_fontSize;

@@ -67,6 +67,15 @@
     <Filter Include="Header Files\Scenes\GameScene">
       <UniqueIdentifier>{9b774f0b-53e5-4927-bf81-dcf9319de2a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\gui">
+      <UniqueIdentifier>{7ec451e1-05ed-4700-8aaf-04153514fa3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\gui\textures">
+      <UniqueIdentifier>{f83848b8-1803-4f34-a915-8eafb9c600ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\gui\fonts">
+      <UniqueIdentifier>{e1cf3651-1514-419c-b767-542045d87560}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -205,5 +214,21 @@
     <ClInclude Include="include\Scenes\GameScene\Weapon.h">
       <Filter>Header Files\Scenes\GameScene</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\gui\textures\button.png">
+      <Filter>Resource Files\gui\textures</Filter>
+    </Image>
+    <Image Include="resources\gui\textures\checkbox.png">
+      <Filter>Resource Files\gui\textures</Filter>
+    </Image>
+    <Image Include="resources\gui\textures\slider.png">
+      <Filter>Resource Files\gui\textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\gui\fonts\QuartzMS.TTF">
+      <Filter>Resource Files\gui\fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>

@@ -68,6 +68,14 @@
     <ClInclude Include="include\Scenes\GameScene\Weapon.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\gui\textures\button.png" />
+    <Image Include="resources\gui\textures\checkbox.png" />
+    <Image Include="resources\gui\textures\slider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\gui\fonts\QuartzMS.TTF" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{B5228B17-2126-4533-8383-7F201E54F2D0}</ProjectGuid>

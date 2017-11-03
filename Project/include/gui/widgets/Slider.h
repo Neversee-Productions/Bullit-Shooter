@@ -25,7 +25,7 @@ namespace gui
 			sf::IntRect emptyTextRect,						//texture rectangle for the empty rectangle
 			sf::IntRect filledTextRect,						//texture rectangle for the filled rectangle
 			sf::IntRect squareTextRect,						//texture rectangle for the slider
-			sf::Font & font,					//font of label
+			std::shared_ptr<sf::Font> font,					//font of label
 			sf::String name,					//name of the slider (text of top label)
 			unsigned int fontSize,				//font size of labels
 			sf::Vector2f position,				//position of slider
@@ -58,7 +58,7 @@ namespace gui
 		void fading();
 
 		//method for processing the xbox controller inputs
-		bool processInput(Controller& controller) override;
+		bool processInput(Controller& controller, KeyHandler & keyhandler) override;
 
 		//set position
 		void setPosition(sf::Vector2f position);

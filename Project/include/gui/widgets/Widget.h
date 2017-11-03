@@ -5,6 +5,7 @@
 #include <memory>
 #include <functional>
 #include "input\Controller.h"
+#include "input\KeyHandler.h"
 #include "Window.h"
 
 namespace gui
@@ -26,7 +27,7 @@ namespace gui
 		Widget();
 
 		//virtual method for processing the xbox controller inputs
-		virtual bool processInput(Controller& controller) = 0;
+		virtual bool processInput(Controller& controller, KeyHandler& keyhandler) = 0;
 
 		//virtual widget focus method
 		virtual void getFocus() = 0;

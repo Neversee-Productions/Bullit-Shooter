@@ -16,7 +16,7 @@ const sf::IntRect gui::CheckBox::s_TEXT_RECT_OFF = sf::IntRect(50, 0, 50, 50);
 /// <param name="offTexture"></param>
 /// <param name="state"></param>
 /// <param name="charSize"></param>
-gui::CheckBox::CheckBox(sf::Font font, sf::String name, sf::Vector2f position, float scale, std::shared_ptr<sf::Texture> texture, sf::IntRect textRectOn, sf::IntRect textRectOff, bool & state, unsigned charSize)
+gui::CheckBox::CheckBox(std::shared_ptr<sf::Font> font, sf::String name, sf::Vector2f position, float scale, std::shared_ptr<sf::Texture> texture, sf::IntRect textRectOn, sf::IntRect textRectOff, bool & state, unsigned charSize)
 	: Label(name, charSize, position, font)
 	, m_position(position)
 	, m_scale(scale)
@@ -156,24 +156,34 @@ void gui::CheckBox::fading()
 /// <summary>
 /// Method to process the input
 /// </summary>
-/// <param name="controller"></param>
+/// <param name="controller">reference to controller, that is checked for input</param>
+/// <param name="keyhandler">reference to key handler, that is checked for input</param>
 /// <returns></returns>
-bool gui::CheckBox::processInput(Controller & controller)
+bool gui::CheckBox::processInput(Controller & controller, KeyHandler & keyhandler)
 {
 	//processInput(controller);
-	if (controller.m_currentState.m_A && !controller.m_previousState.m_A && m_currentState == CheckboxState::HOVERED) //if button pressed while hovered then go to pressed state
+	if (m_currentState == CheckboxState::HOVERED)
 	{
-		if (m_state == true)
+		if (
+			(controller.m_currentState.m_A
+				&& !controller.m_previousState.m_A)
+			||
+			(keyhandler.isPressed(sf::Keyboard::Key::Return)
+				&& !keyhandler.isPrevPressed(sf::Keyboard::Key::Return))
+			) //if button pressed while hovered then go to pressed state
 		{
-			m_state = false;
-			//m_rectangle.setTexture(&(*m_texture), true);
-			m_rectangle.setTextureRect(m_offTextRect);
-		}
-		else
-		{
-			m_state = true;
-			//m_rectangle.setTexture(&(*m_texture), true);
-			m_rectangle.setTextureRect(m_onTextRect);
+			if (m_state == true)
+			{
+				m_state = false;
+				//m_rectangle.setTexture(&(*m_texture), true);
+				m_rectangle.setTextureRect(m_offTextRect);
+			}
+			else
+			{
+				m_state = true;
+				//m_rectangle.setTexture(&(*m_texture), true);
+				m_rectangle.setTextureRect(m_onTextRect);
+			}
 		}
 	}
 	return true;

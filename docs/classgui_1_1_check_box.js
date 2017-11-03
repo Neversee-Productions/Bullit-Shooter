@@ -5,7 +5,7 @@ var classgui_1_1_check_box =
       [ "ACTIVE", "classgui_1_1_check_box.html#accbd66a73e578083004120350a74dbd7a18ff74f43da410c5529f7d6fca84f115", null ],
       [ "HOVERED", "classgui_1_1_check_box.html#accbd66a73e578083004120350a74dbd7a823d52d4c987a4bd0d42ca6f2a6cf58f", null ]
     ] ],
-    [ "CheckBox", "classgui_1_1_check_box.html#a0e5d4561cf2686bd4ee44fcbfd6d98fc", null ],
+    [ "CheckBox", "classgui_1_1_check_box.html#a8cf3f44c4d7f83b69cd1790ce5aa9406", null ],
     [ "~CheckBox", "classgui_1_1_check_box.html#afb6d37b79599650a2c432dcf2493a7df", null ],
     [ "draw", "classgui_1_1_check_box.html#a4af665ae487ddb205e7afbad60757150", null ],
     [ "draw", "classgui_1_1_check_box.html#ada3fe8321426631419d93b25c34c978c", null ],
@@ -13,7 +13,7 @@ var classgui_1_1_check_box =
     [ "getFocus", "classgui_1_1_check_box.html#a8f936786fc16555a9ed02923996331f8", null ],
     [ "getPosition", "classgui_1_1_check_box.html#abdb4a6c8701e174924714c8db000c8e8", null ],
     [ "loseFocus", "classgui_1_1_check_box.html#a6a5de0768f7072d84c8f382f15d09c1c", null ],
-    [ "processInput", "classgui_1_1_check_box.html#a51121907368500d1241016a65a56e132", null ],
+    [ "processInput", "classgui_1_1_check_box.html#a5f4b0a96fb34657f3183629a9c47fdcf", null ],
     [ "setPosition", "classgui_1_1_check_box.html#a0a91f521e1d5a10258fbf378422b4a15", null ],
     [ "update", "classgui_1_1_check_box.html#ac77e9b13ab5777d627d25a4e3c941270", null ],
     [ "m_currentState", "classgui_1_1_check_box.html#a589b8cce7cf314910c2d74d6a54e56d5", null ],

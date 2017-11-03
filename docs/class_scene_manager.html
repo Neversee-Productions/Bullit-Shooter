@@ -98,8 +98,8 @@ $(document).ready(function(){initNavTree('class_scene_manager.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa338407ccc4ec1811560e6bff3fb3591"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#aa338407ccc4ec1811560e6bff3fb3591">SceneManager</a> (<a class="el" href="class_window.html">Window</a> &amp;window, <a class="el" href="class_key_handler.html">KeyHandler</a> &amp;keyHandler)</td></tr>
-<tr class="separator:aa338407ccc4ec1811560e6bff3fb3591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44e88b925958a15af482c2c81024ed5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a44e88b925958a15af482c2c81024ed5c">SceneManager</a> (<a class="el" href="class_window.html">Window</a> &amp;window, std::shared_ptr&lt; <a class="el" href="class_key_handler.html">KeyHandler</a> &gt; keyHandler)</td></tr>
+<tr class="separator:a44e88b925958a15af482c2c81024ed5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1aca67532fca8ae38c1ef8b2a6eb637"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637">update</a> ()</td></tr>
 <tr class="separator:aa1aca67532fca8ae38c1ef8b2a6eb637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3983ac6a695c838682b09cee938beb3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a3983ac6a695c838682b09cee938beb3c">draw</a> (const float &amp;deltaTime)</td></tr>
@@ -127,8 +127,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a31ede4b20d379b2191a4d82bc8caae1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_window.html">Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a31ede4b20d379b2191a4d82bc8caae1c">m_window</a></td></tr>
 <tr class="separator:a31ede4b20d379b2191a4d82bc8caae1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35565c9dc730a0b8548a163f971f9072"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a35565c9dc730a0b8548a163f971f9072">m_keyHandler</a></td></tr>
-<tr class="separator:a35565c9dc730a0b8548a163f971f9072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6066c199ce652dcb11d889df711bf9d0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_key_handler.html">KeyHandler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a6066c199ce652dcb11d889df711bf9d0">m_keyHandler</a></td></tr>
+<tr class="separator:a6066c199ce652dcb11d889df711bf9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69467e0ba9a034a9dd4034b315985b06"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a69467e0ba9a034a9dd4034b315985b06">m_currentScene</a></td></tr>
 <tr class="separator:a69467e0ba9a034a9dd4034b315985b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac22c447f076828df45d75ad847867016"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene_manager.html#acfc25bb38f6c5e4b41341ebff5fe487f">SceneMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#ac22c447f076828df45d75ad847867016">m_sceneMap</a></td></tr>
@@ -164,8 +164,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa338407ccc4ec1811560e6bff3fb3591"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa338407ccc4ec1811560e6bff3fb3591">&#9670;&nbsp;</a></span>SceneManager()</h2>
+<a id="a44e88b925958a15af482c2c81024ed5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44e88b925958a15af482c2c81024ed5c">&#9670;&nbsp;</a></span>SceneManager()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +179,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_key_handler.html">KeyHandler</a> &gt;&#160;</td>
           <td class="paramname"><em>keyHandler</em>&#160;</td>
         </tr>
         <tr>
@@ -194,7 +194,7 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>to be stored as a reference to a created <a class="el" href="class_window.html" title="Wrapper window class. ">Window</a>.</td></tr>
-    <tr><td class="paramname">keyHandler</td><td>to be stored as a reference to a created <a class="el" href="class_key_handler.html" title="Manages key input. ">KeyHandler</a>.</td></tr>
+    <tr><td class="paramname">keyHandler</td><td>to be stored as a shared pointer to a created <a class="el" href="class_key_handler.html" title="Manages key input. ">KeyHandler</a>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -451,8 +451,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a35565c9dc730a0b8548a163f971f9072"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35565c9dc730a0b8548a163f971f9072">&#9670;&nbsp;</a></span>m_keyHandler</h2>
+<a id="a6066c199ce652dcb11d889df711bf9d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6066c199ce652dcb11d889df711bf9d0">&#9670;&nbsp;</a></span>m_keyHandler</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,7 +461,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_key_handler.html">KeyHandler</a>&amp; SceneManager::m_keyHandler</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_key_handler.html">KeyHandler</a>&gt; SceneManager::m_keyHandler</td>
         </tr>
       </table>
   </td>
@@ -470,7 +470,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Reference to a created <a class="el" href="class_key_handler.html" title="Manages key input. ">KeyHandler</a>.</p>
+<p>Shared pointer to a created <a class="el" href="class_key_handler.html" title="Manages key input. ">KeyHandler</a>.</p>
 <p>Required for our scenes to handle input. </p>
 
 </div>
