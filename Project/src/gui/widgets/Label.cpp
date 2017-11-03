@@ -5,7 +5,7 @@
 /// 
 /// 
 /// </summary>
-Label::Label()
+gui::Label::Label()
 {
 }
 
@@ -17,7 +17,7 @@ Label::Label()
 /// <param name="font">font</param>
 /// <param name="fontSize">char size</param>
 /// <param name="position">position on screen</param>
-Label::Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, sf::Font & font, sf::Color color)
+gui::Label::Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, sf::Font & font, sf::Color color)
 	: Widget()
 	, m_text()
 	, m_position(position)
@@ -38,7 +38,7 @@ Label::Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, 
 /// 
 /// 
 /// </summary>
-Label::~Label()
+gui::Label::~Label()
 {
 }
 
@@ -48,7 +48,7 @@ Label::~Label()
 /// 
 /// </summary>
 /// <param name="font">Defines our label's font.</param>
-void Label::setFont(sf::Font font)
+void gui::Label::setFont(sf::Font font)
 {
 	m_font = font;
 }
@@ -59,10 +59,21 @@ void Label::setFont(sf::Font font)
 /// 
 /// </summary>
 /// <param name="window">Reference to game window.</param>
-/// <param name="state">Render state.</param>
-void Label::draw(sf::RenderTarget & window, sf::RenderStates state) const
+void gui::Label::draw(Window & window) const
 {
-	window.draw(m_text, state);
+	window.draw(m_text);
+}
+
+/// <summary>
+/// @brief An overriden draw function draws the label to the render target.
+/// 
+/// 
+/// </summary>
+/// <param name="renderTarget">defines the target for rendering</param>
+/// <param name="renderState">defines the transformations that are applied to the renderer</param>
+void gui::Label::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderState) const
+{
+	renderTarget.draw(m_text, renderState);
 }
 
 /// <summary>
@@ -71,7 +82,7 @@ void Label::draw(sf::RenderTarget & window, sf::RenderStates state) const
 /// 
 /// </summary>
 /// <returns>Gets the size of the bounds of our label.</returns>
-sf::Vector2f Label::getSize()
+sf::Vector2f gui::Label::getSize()
 {
 	return sf::Vector2f(m_text.getLocalBounds().width, m_text.getLocalBounds().height);
 }
@@ -83,7 +94,7 @@ sf::Vector2f Label::getSize()
 /// </summary>
 /// <param name="x">defines the scale along x-axis.</param>
 /// <param name="y">defines the scale along y-axis.</param>
-void Label::setScale(float x, float y)
+void gui::Label::setScale(float x, float y)
 {
 	m_text.setScale(x, y);
 }
@@ -94,7 +105,7 @@ void Label::setScale(float x, float y)
 /// 
 /// </summary>
 /// <param name="position">defines the new position.</param>
-void Label::setPosition(sf::Vector2f position)
+void gui::Label::setPosition(sf::Vector2f position)
 {
 	m_position = position;
 	m_text.setPosition(m_position);
@@ -106,7 +117,7 @@ void Label::setPosition(sf::Vector2f position)
 /// 
 /// </summary>
 /// <returns>The position of the label.</returns>
-sf::Vector2f Label::getPosition()
+sf::Vector2f gui::Label::getPosition()
 {
 	return m_position;
 }
@@ -117,7 +128,7 @@ sf::Vector2f Label::getPosition()
 /// 
 /// </summary>
 /// <param name="string">defines the string of the text.</param>
-void Label::setText(sf::String string)
+void gui::Label::setText(sf::String string)
 {
 	m_text.setString(string);
 }
@@ -127,14 +138,14 @@ void Label::setText(sf::String string)
 /// 
 /// 
 /// </summary>
-void Label::getFocus()
+void gui::Label::getFocus()
 {
 }
 
 /// <summary>
 /// @brief label is not highlightable.
 /// </summary>
-void Label::loseFocus()
+void gui::Label::loseFocus()
 {
 }
 
@@ -145,7 +156,7 @@ void Label::loseFocus()
 /// </summary>
 /// <param name="controller">reference to a controller</param>
 /// <returns>True if label processes input, False if label does not process input.</returns>
-bool Label::processInput(Controller & controller)
+bool gui::Label::processInput(Controller & controller)
 {
 	return false;
 }
@@ -155,7 +166,7 @@ bool Label::processInput(Controller & controller)
 /// 
 /// 
 /// </summary>
-void Label::setOrigin()
+void gui::Label::setOrigin()
 {
 	m_text.setOrigin(m_text.getLocalBounds().width / 2, m_text.getLocalBounds().height / 2);
 }

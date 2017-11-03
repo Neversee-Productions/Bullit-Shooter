@@ -1,12 +1,12 @@
 var searchData=
 [
   ['a',['A',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a7fc56270e7a70fa81a5935b72eacbe29',1,'Controller.h']]],
-  ['active',['ACTIVE',['../class_button.html#ad8312db93093c21df8b1d2be74ae1957a18ff74f43da410c5529f7d6fca84f115',1,'Button::ACTIVE()'],['../class_check_box.html#a5f32b834874a254ec78a4cb05dba4796a18ff74f43da410c5529f7d6fca84f115',1,'CheckBox::ACTIVE()'],['../class_slider.html#a539aebf9c6695ce748b4efa7bfe5aaf1a18ff74f43da410c5529f7d6fca84f115',1,'Slider::ACTIVE()']]],
-  ['addbutton',['addButton',['../class_g_u_i.html#a2bb94ed5d262914c446392c4043d66b5',1,'GUI']]],
-  ['addcheckbox',['addCheckbox',['../class_g_u_i.html#a1a9bd080f2e06d2ce6a6ef5b22c26c43',1,'GUI']]],
-  ['addlabel',['addLabel',['../class_g_u_i.html#a3cdc7f8646aa6e93146c82128c454b23',1,'GUI']]],
+  ['active',['ACTIVE',['../classgui_1_1_button.html#a60171d5543ff80ff7317724e58a1a346a18ff74f43da410c5529f7d6fca84f115',1,'gui::Button::ACTIVE()'],['../classgui_1_1_check_box.html#accbd66a73e578083004120350a74dbd7a18ff74f43da410c5529f7d6fca84f115',1,'gui::CheckBox::ACTIVE()'],['../classgui_1_1_slider.html#aeb6783166b3e856dc1c36247f90e10fda18ff74f43da410c5529f7d6fca84f115',1,'gui::Slider::ACTIVE()']]],
+  ['addbutton',['addButton',['../classgui_1_1_g_u_i.html#aa59898db57adf5922e53039af949c7d9',1,'gui::GUI']]],
+  ['addcheckbox',['addCheckbox',['../classgui_1_1_g_u_i.html#a48a1743191ac876edc39722c3328f620',1,'gui::GUI']]],
+  ['addlabel',['addLabel',['../classgui_1_1_g_u_i.html#ae9c6f55026f42a6fadfbc36c974fbd26',1,'gui::GUI']]],
   ['addscene',['addScene',['../class_scene_manager.html#addf9694c43760b37417953ea69e94a8c',1,'SceneManager']]],
-  ['addslider',['addSlider',['../class_g_u_i.html#acda7a697d62074036a56c4c203aa71b5',1,'GUI']]],
+  ['addslider',['addSlider',['../classgui_1_1_g_u_i.html#a215d06778f11e54197ff44b29c57ee35',1,'gui::GUI']]],
   ['app',['App',['../class_app.html',1,'App'],['../class_app.html#acb8cbf3e285b91d0170ffe87df5989c5',1,'App::App()']]],
   ['app_2ecpp',['App.cpp',['../_app_8cpp.html',1,'']]],
   ['app_2eh',['App.h',['../_app_8h.html',1,'']]],

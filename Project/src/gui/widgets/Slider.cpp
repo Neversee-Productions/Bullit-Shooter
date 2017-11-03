@@ -1,9 +1,9 @@
 #include "gui\widgets\Slider.h"
 
 /// texture rectangle for slider
-const sf::IntRect Slider::s_TEXT_RECT_EMPTY = sf::IntRect(0, 0, 246, 36);
-const sf::IntRect Slider::s_TEXT_RECT_FILL = sf::IntRect(0, 46, 246, 36);
-const sf::IntRect Slider::s_TEXT_RECT_SQUARE = sf::IntRect(0, 92, 48, 48);
+const sf::IntRect gui::Slider::s_TEXT_RECT_EMPTY = sf::IntRect(0, 0, 246, 36);
+const sf::IntRect gui::Slider::s_TEXT_RECT_FILL = sf::IntRect(0, 46, 246, 36);
+const sf::IntRect gui::Slider::s_TEXT_RECT_SQUARE = sf::IntRect(0, 92, 48, 48);
 
 /// <summary>
 /// @brief The constructor of the slider.
@@ -24,7 +24,7 @@ const sf::IntRect Slider::s_TEXT_RECT_SQUARE = sf::IntRect(0, 92, 48, 48);
 /// <param name="minValue">mimimum value</param>
 /// <param name="maxValue">maximum value</param>
 /// <param name="currentValue">current value of slider</param>
-Slider::Slider(	std::shared_ptr<sf::Texture> texture
+gui::Slider::Slider(	std::shared_ptr<sf::Texture> texture
 				,sf::IntRect emptyTextRect
 				,sf::IntRect filledTextRect
 				,sf::IntRect squareTextRect
@@ -140,7 +140,7 @@ Slider::Slider(	std::shared_ptr<sf::Texture> texture
 /// 
 /// 
 /// </summary>
-Slider::~Slider()
+	gui::Slider::~Slider()
 {
 }
 
@@ -150,7 +150,7 @@ Slider::~Slider()
 /// 
 /// </summary>
 /// <param name="dt">time between frames</param>
-void Slider::update(float dt)
+void gui::Slider::update(const float & dt)
 {
 	switch (m_currentState)
 	{
@@ -185,20 +185,42 @@ void Slider::update(float dt)
 /// 
 /// </summary>
 /// <param name="window">window target of all draw calls</param>
-/// <param name="states">render states where all transformations are applied</param>
-void Slider::draw(sf::RenderTarget & window, sf::RenderStates states) const
+void gui::Slider::draw(Window & window) const
 {
-	m_LeftLabel->draw(window, states);
-	m_rightLabel->draw(window, states);
+	m_LeftLabel->draw(window);
+	m_rightLabel->draw(window);
 	window.draw(m_sliderBarEmpty);
 	window.draw(m_sliderBarFill);
 	if (m_currentState == SliderState::HOVERED) //highlight only when hovering
 	{
-		m_bottomLabel->draw(window, states);
+		m_bottomLabel->draw(window);
 		window.draw(m_highlightRectangle);
 	}
 	window.draw(m_slider);
-	m_topLabel->draw(window, states);
+	m_topLabel->draw(window);
+}
+
+
+/// <summary>
+/// @brief An overriden draw function draws the slider to the render target.
+/// 
+/// 
+/// </summary>
+/// <param name="renderTarget">defines the target for rendering</param>
+/// <param name="renderState">defines the transformations that are applied to the renderer</param>
+void gui::Slider::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderStates) const
+{
+	m_LeftLabel->draw(renderTarget, renderStates);
+	m_rightLabel->draw(renderTarget, renderStates);
+	renderTarget.draw(m_sliderBarEmpty, renderStates);
+	renderTarget.draw(m_sliderBarFill, renderStates);
+	if (m_currentState == SliderState::HOVERED) //highlight only when hovering
+	{
+		m_bottomLabel->draw(renderTarget, renderStates);
+		renderTarget.draw(m_highlightRectangle, renderStates);
+	}
+	renderTarget.draw(m_slider, renderStates);
+	m_topLabel->draw(renderTarget, renderStates);
 }
 
 /// <summary>
@@ -207,7 +229,7 @@ void Slider::draw(sf::RenderTarget & window, sf::RenderStates states) const
 /// This method will give focus to this object 
 /// causing its state to change to hovered
 /// </summary>
-void Slider::getFocus()
+void gui::Slider::getFocus()
 {
 	m_currentState = SliderState::HOVERED;
 }
@@ -218,7 +240,7 @@ void Slider::getFocus()
 /// This method will lose focus from this object
 /// causing its state to change to active
 /// </summary>
-void Slider::loseFocus()
+void gui::Slider::loseFocus()
 {
 	m_currentState = SliderState::ACTIVE;
 }
@@ -229,7 +251,7 @@ void Slider::loseFocus()
 /// This is the method that will
 /// make the transparency go up and down
 /// </summary>
-void Slider::fading()
+void gui::Slider::fading()
 {
 	//The flashing exit text
 	if (m_fadeOut) //if alpha to be increased
@@ -257,7 +279,7 @@ void Slider::fading()
 /// </summary>
 /// <param name="controller"></param>
 /// <returns></returns>
-bool Slider::processInput(Controller & controller)
+bool gui::Slider::processInput(Controller & controller)
 {
 	if(m_currentState == SliderState::HOVERED)
 	{
@@ -279,7 +301,7 @@ bool Slider::processInput(Controller & controller)
 /// 
 /// </summary>
 /// <param name="position"></param>
-void Slider::setPosition(sf::Vector2f position)
+void gui::Slider::setPosition(sf::Vector2f position)
 {
 	m_sliderBarEmpty.setPosition(position);
 	m_slider.setPosition(sf::Vector2f(m_sliderBarEmpty.getPosition().x - (m_sliderBarEmpty.getLocalBounds().width / 2), m_sliderBarEmpty.getPosition().y));
@@ -318,7 +340,7 @@ void Slider::setPosition(sf::Vector2f position)
 /// Return the centre position of the slider bar
 /// </summary>
 /// <returns></returns>
-sf::Vector2f Slider::getPosition()
+sf::Vector2f gui::Slider::getPosition()
 {
 	return m_sliderBarEmpty.getPosition();
 }
@@ -328,7 +350,7 @@ sf::Vector2f Slider::getPosition()
 /// 
 /// This method will move the the slider one jump to the right
 /// </summary>
-void Slider::moveRight()
+void gui::Slider::moveRight()
 {
 	if (m_slider.getPosition().x + m_jump <= m_sliderBarEmpty.getPosition().x + (m_sliderBarEmpty.getLocalBounds().width / 2)) //check if next step out of bounds if not move it
 	{
@@ -349,7 +371,7 @@ void Slider::moveRight()
 /// 
 /// This method will move the slider one step to the left
 /// </summary>
-void Slider::moveLeft()
+void gui::Slider::moveLeft()
 {
 	if (m_slider.getPosition().x - m_jump >= m_sliderBarEmpty.getPosition().x - (m_sliderBarEmpty.getLocalBounds().width / 2)) //check if step will get out of bounds
 	{

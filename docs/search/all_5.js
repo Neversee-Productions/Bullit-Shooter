@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fading',['fading',['../class_button.html#a254d338defb1d6c7149a3e71b9414de0',1,'Button::fading()'],['../class_check_box.html#aa58a540cf548a21605f9b8b7da4c78cd',1,'CheckBox::fading()'],['../class_slider.html#a8dfc1d7e548d22bbc52a8a529c6d9994',1,'Slider::fading()']]],
+  ['fading',['fading',['../classgui_1_1_button.html#a25d24e05be6384e7708e349ddb9b5e45',1,'gui::Button::fading()'],['../classgui_1_1_check_box.html#ae4404d1007963895a9ecd56d4c28c757',1,'gui::CheckBox::fading()'],['../classgui_1_1_slider.html#abd60416e493409aa8952d7a53ade74c3',1,'gui::Slider::fading()']]],
   ['firebullet',['fireBullet',['../class_bullet_manager.html#ad7e3dda5d3404b43eb23f41ad2166c9c',1,'BulletManager']]]
 ];

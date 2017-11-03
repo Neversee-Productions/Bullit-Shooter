@@ -166,8 +166,8 @@ void Window::changeStyle(const sf::Uint32 & newStyle)
 /// 
 /// Drawable is drawn on our render texture with default render state.
 /// </summary>
-/// <param name="drawable">target that will be rendered on next produced frame</param>
-void Window::draw(sf::Drawable & drawable)
+/// <param name="drawable">target that will be rendered on next produced frame.</param>
+void Window::draw(const sf::Drawable & drawable)
 {
 	m_renderTexture.draw(drawable, sf::RenderStates::Default);
 }

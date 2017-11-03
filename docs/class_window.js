@@ -5,7 +5,7 @@ var class_window =
     [ "changeStyle", "class_window.html#ac547a5aacd051d9f5547c72fd06340a4", null ],
     [ "clear", "class_window.html#a38bc43bdd1a97e5de7f346ba4c3957ef", null ],
     [ "display", "class_window.html#afadfafa5a0b9472554759004aafb327e", null ],
-    [ "draw", "class_window.html#ad1c40ec9b475f25d3dfec7ae5524896a", null ],
+    [ "draw", "class_window.html#adfb2d5826942693e289d13f314a341f7", null ],
     [ "isOpen", "class_window.html#a761d614931fb5a5daa70e4f580c3e78e", null ],
     [ "processEvents", "class_window.html#a381364c2704bed978cdf9df669c4b629", null ],
     [ "m_keyHandler", "class_window.html#a2f326af91aa0b826314e713cf3f2d2e5", null ],

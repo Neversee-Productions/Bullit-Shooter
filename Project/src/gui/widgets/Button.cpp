@@ -1,9 +1,9 @@
 #include "gui\widgets\Button.h"
 
 /// texture rectangle for button
-const sf::IntRect Button::s_TEXT_RECT_LEFT = sf::IntRect(0, 0, 25, 129);
-const sf::IntRect Button::s_TEXT_RECT_MID = sf::IntRect(25, 0, 450, 129);
-const sf::IntRect Button::s_TEXT_RECT_RIGHT = sf::IntRect(475, 0, 25, 129);
+const sf::IntRect gui::Button::s_TEXT_RECT_LEFT = sf::IntRect(0, 0, 25, 129);
+const sf::IntRect gui::Button::s_TEXT_RECT_MID = sf::IntRect(25, 0, 450, 129);
+const sf::IntRect gui::Button::s_TEXT_RECT_RIGHT = sf::IntRect(475, 0, 25, 129);
 
 
 /// <summary>
@@ -21,7 +21,7 @@ const sf::IntRect Button::s_TEXT_RECT_RIGHT = sf::IntRect(475, 0, 25, 129);
 /// <param name="leftTextRect">left side rectangle of button texture</param>
 /// <param name="middleTextRect">middle section rectangle of button texture</param>
 /// <param name="rightTextRect">right side rectangle of button texture</param>
-Button::Button(	std::function<void()> function
+gui::Button::Button(	std::function<void()> function
 				, sf::String message
 				, sf::Vector2f position
 				, sf::Font & font
@@ -87,8 +87,7 @@ Button::Button(	std::function<void()> function
 /// will draw the rectangle and the label
 /// </summary>
 /// <param name="window">window target of all draw calls</param>
-/// <param name="states">render states, contains all transformations to be applied</param>
-void Button::draw(sf::RenderTarget & window, sf::RenderStates states) const
+void gui::Button::draw(Window & window) const
 {
 	if (m_currentButtonState == ButtonState::HOVERED)
 	{
@@ -97,7 +96,26 @@ void Button::draw(sf::RenderTarget & window, sf::RenderStates states) const
 	window.draw(m_rectangleMiddle);
 	window.draw(m_rectangleLeft);
 	window.draw(m_rectangleRight);
-	Label::draw(window, states);
+	Label::draw(window);
+}
+
+/// <summary>
+/// @brief An overriden draw function draws the button to the render target.
+/// 
+/// 
+/// </summary>
+/// <param name="renderTarget">defines the target for rendering</param>
+/// <param name="renderState">defines the transformations that are applied to the renderer</param>
+void gui::Button::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderStates) const
+{
+	if (m_currentButtonState == ButtonState::HOVERED)
+	{
+		renderTarget.draw(m_highlightRectangle, renderStates);
+	}
+	renderTarget.draw(m_rectangleMiddle, renderStates);
+	renderTarget.draw(m_rectangleLeft, renderStates);
+	renderTarget.draw(m_rectangleRight, renderStates);
+	Label::draw(renderTarget, renderStates);
 }
 
 /// <summary>
@@ -106,7 +124,7 @@ void Button::draw(sf::RenderTarget & window, sf::RenderStates states) const
 /// Deals with different btn states
 /// </summary>
 /// <param name="dt">time between updates</param>
-void Button::update(float dt)
+void gui::Button::update(const float & dt)
 {
 	switch (m_currentButtonState)
 	{
@@ -146,7 +164,7 @@ void Button::update(float dt)
 /// This method will give focus to this object 
 /// causing its state to change to hovered
 /// </summary>
-void Button::getFocus()
+void gui::Button::getFocus()
 {
 	m_currentButtonState = ButtonState::HOVERED;
 }
@@ -157,7 +175,7 @@ void Button::getFocus()
 /// This method will lose focus from this object
 /// causing its state to change to active
 /// </summary>
-void Button::loseFocus()
+void gui::Button::loseFocus()
 {
 	m_currentButtonState = ButtonState::ACTIVE;
 }
@@ -169,7 +187,7 @@ void Button::loseFocus()
 /// make the transparency go up and down
 /// </summary>
 /// <param name="alpha"></param>
-void Button::fading()
+void gui::Button::fading()
 {
 	//The flashing exit text
 	if (m_fadeOut) //if alpha to be increased
@@ -198,7 +216,7 @@ void Button::fading()
 /// </summary>
 /// <param name="controller">reference to controller, that is checked for input</param>
 /// <returns>returns true since button processes input</returns>
-bool Button::processInput(Controller & controller)
+bool gui::Button::processInput(Controller & controller)
 {
 	//processInput(controller);
 	if (controller.m_currentState.m_A && m_currentButtonState == ButtonState::HOVERED) //if button pressed while hovered then go to pressed state
@@ -215,7 +233,7 @@ bool Button::processInput(Controller & controller)
 /// 
 /// </summary>
 /// <param name="position">defines new position</param>
-void Button::setPosition(sf::Vector2f position)
+void gui::Button::setPosition(sf::Vector2f position)
 {
 	//set label position
 	m_position = sf::Vector2f(position.x, position.y);
@@ -237,7 +255,7 @@ void Button::setPosition(sf::Vector2f position)
 /// 
 /// </summary>
 /// <returns>current position of button</returns>
-sf::Vector2f Button::getPosition()
+sf::Vector2f gui::Button::getPosition()
 {
 	return m_rectanglePos;
 }
@@ -249,7 +267,7 @@ sf::Vector2f Button::getPosition()
 /// </summary>
 /// <param name="x">defines new scale on the x-axis</param>
 /// <param name="y">defines new scale on the y-axis</param>
-void Button::scaleRectangles(float x, float y)
+void gui::Button::scaleRectangles(float x, float y)
 {
 	m_rectangleLeft.setScale(1.0f, y);
 	m_rectangleMiddle.setScale(x, y);
@@ -265,7 +283,7 @@ void Button::scaleRectangles(float x, float y)
 /// 
 /// </summary>
 /// <param name="color">defines new color</param>
-void Button::setRectangleColors(sf::Color color)
+void gui::Button::setRectangleColors(sf::Color color)
 {
 	m_rectangleMiddle.setFillColor(color);
 	m_rectangleLeft.setFillColor(color);

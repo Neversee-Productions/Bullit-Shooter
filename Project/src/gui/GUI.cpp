@@ -7,11 +7,13 @@
 /// </summary>
 /// <param name="controller">the controller to use</param>
 /// <param name="checkboxTexture">texture to use for the checkbox</param>
-GUI::GUI(std::shared_ptr<Controller> controller, bool stripDraw)
+gui::GUI::GUI(std::shared_ptr<Controller> controller, bool stripDraw)
 	: m_layoutNr(0)
 	, m_controller(controller)
 	, m_drawStrip(stripDraw)
+	, m_widgets()
 {
+	m_widgets.reserve(5);
 	if (m_drawStrip) //if we are drawing the strip then set it up
 	{
 		m_rectangleStrip = sf::RectangleShape(sf::Vector2f(500.0f, 1000.0f));
@@ -28,7 +30,7 @@ GUI::GUI(std::shared_ptr<Controller> controller, bool stripDraw)
 /// 
 /// 
 /// </summary>
-GUI::~GUI()
+gui::GUI::~GUI()
 {
 }
 
@@ -38,7 +40,7 @@ GUI::~GUI()
 /// 
 /// </summary>
 /// <param name="dt">represents time between frames</param>
-void GUI::update(const float & dt)
+void gui::GUI::update(const float & dt)
 {
 	if (m_selectedWidget)
 	{
@@ -59,16 +61,15 @@ void GUI::update(const float & dt)
 /// 
 /// </summary>
 /// <param name="window">window target of all draw calls</param>
-/// <param name="rendState">render states</param>
-void GUI::draw(sf::RenderTarget& window, sf::RenderStates rendState) const
+void gui::GUI::draw(Window & window) const
 {
 	if (m_drawStrip)
 	{
-		window.draw(m_rectangleStrip, rendState);
+		window.draw(m_rectangleStrip);
 	}
 	for (auto & widget : m_widgets)
 	{
-		widget->draw(window, rendState);
+		widget->draw(window);
 	}
 }
 
@@ -83,7 +84,7 @@ void GUI::draw(sf::RenderTarget& window, sf::RenderStates rendState) const
 /// </summary>
 /// <param name="layout">defines the type of layout</param>
 /// <param name="windowSize">defines the size of the window.</param>
-void GUI::configure(const Layouts & layout, const sf::Vector2u & windowSize)
+void gui::GUI::configure(const Layouts & layout, const sf::Vector2u & windowSize)
 {
 	sf::Vector2f screen = static_cast<sf::Vector2f>(windowSize);
 	sf::Vector2f margin(m_screenMargin);
@@ -152,7 +153,7 @@ void GUI::configure(const Layouts & layout, const sf::Vector2u & windowSize)
 /// <param name="layout">defines the type of layout</param>
 /// <param name="windowWidth">defines the width of the window</param>
 /// <param name="windowHeight">defines the height of the window</param>
-void GUI::configure(const Layouts & layout, const unsigned int & windowWidth, const unsigned int & windowHeight)
+void gui::GUI::configure(const Layouts & layout, const unsigned int & windowWidth, const unsigned int & windowHeight)
 {
 	configure(layout, sf::Vector2u(windowWidth, windowHeight));
 }
@@ -167,7 +168,7 @@ void GUI::configure(const Layouts & layout, const unsigned int & windowWidth, co
 /// <param name="position">position that label is centered on</param>
 /// <param name="font">reference to loaded font needed for label drawing</param>
 /// <param name="color">color of label (defaulted to white)</param>
-void GUI::addLabel(	sf::String contents
+void gui::GUI::addLabel(	sf::String contents
 					, unsigned int fontSize
 					, sf::Vector2f position
 					, sf::Font & font
@@ -189,7 +190,7 @@ void GUI::addLabel(	sf::String contents
 /// <param name="leftTextRect">texture rectangle for left edge of the button</param>
 /// <param name="middleTextRect">texture rectangle for the middle section of button</param>
 /// <param name="rightTextRect">texture rectangle for the right edge of the button</param>
-void GUI::addButton(	std::function<void()> function
+void gui::GUI::addButton(	std::function<void()> function
 						, sf::String message
 						, sf::Vector2f position
 						, sf::Font & font
@@ -219,7 +220,7 @@ void GUI::addButton(	std::function<void()> function
 /// <param name="minValue">minimum value</param>
 /// <param name="maxValue">maximum value</param>
 /// <param name="currentValue">current slider value</param>
-void GUI::addSlider(	sf::Font & font
+void gui::GUI::addSlider(	sf::Font & font
 						, sf::String name
 						, unsigned int fontSize
 						, sf::Vector2f position
@@ -251,7 +252,7 @@ void GUI::addSlider(	sf::Font & font
 /// <param name="offTexture">the off texture</param>
 /// <param name="state">current checkbox state (true = on/ false = off)</param>
 /// <param name="charSize">the size of characters</param>
-void GUI::addCheckbox(	sf::Font font
+void gui::GUI::addCheckbox(	sf::Font font
 						, sf::String name
 						, sf::Vector2f position
 						, float scale
@@ -271,7 +272,7 @@ void GUI::addCheckbox(	sf::Font font
 /// 
 /// 
 /// </summary>
-void GUI::linkWidget()
+void gui::GUI::linkWidget()
 {
 	// check that there is more than 1 eligible widget in the vector
 	if (m_layoutNr > 1)
@@ -315,7 +316,7 @@ void GUI::linkWidget()
 /// 
 /// 
 /// </summary>
-void GUI::processInput()
+void gui::GUI::processInput()
 {
 	const float& JOYSTICK_THRESHOLD = 50.0f;
 	if (

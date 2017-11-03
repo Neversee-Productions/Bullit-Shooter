@@ -11,9 +11,9 @@ var searchData=
   ['bulletstandard',['BulletStandard',['../class_bullet_standard.html',1,'BulletStandard'],['../class_bullet_standard.html#a7c4b11e258af0d0095c5583f1635ba83',1,'BulletStandard::BulletStandard()'],['../class_bullet_standard.html#acd2f0d5eec8c2bd6d721599f9cfa153f',1,'BulletStandard::BulletStandard(sf::Vector2f position)']]],
   ['bulletstandard_2ecpp',['BulletStandard.cpp',['../_bullet_standard_8cpp.html',1,'']]],
   ['bulletstandard_2eh',['BulletStandard.h',['../_bullet_standard_8h.html',1,'']]],
-  ['button',['Button',['../class_button.html',1,'Button'],['../class_button.html#ad52eec1c3baf70a2a390af8142dc4346',1,'Button::Button()']]],
+  ['button',['Button',['../classgui_1_1_button.html',1,'gui::Button'],['../classgui_1_1_button.html#a006de2fbfd3fef1f0c99fe90a8ee6998',1,'gui::Button::Button()']]],
   ['button_2ecpp',['Button.cpp',['../_button_8cpp.html',1,'']]],
   ['button_2eh',['Button.h',['../_button_8h.html',1,'']]],
   ['buttonmappings',['ButtonMappings',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0',1,'Controller.h']]],
-  ['buttonstate',['ButtonState',['../class_button.html#ad8312db93093c21df8b1d2be74ae1957',1,'Button']]]
+  ['buttonstate',['ButtonState',['../classgui_1_1_button.html#a60171d5543ff80ff7317724e58a1a346',1,'gui::Button']]]
 ];

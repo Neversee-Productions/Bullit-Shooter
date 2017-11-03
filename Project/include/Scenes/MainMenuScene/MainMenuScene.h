@@ -15,10 +15,10 @@ class MainMenuScene : public Scene
 {
 public:
 	MainMenuScene(std::shared_ptr<Controller> controller);
-	void start() override;
-	void stop() override;
-	void update() override;
-	void draw(Window & window, const float & deltaTime) override;
+	void start() final override;
+	void stop() final override;
+	void update() final override;
+	void draw(Window & window, const float & deltaTime) final override;
 
 private:
 	/// <summary>
@@ -26,7 +26,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	std::unique_ptr<GUI> m_gui;
+	std::unique_ptr<gui::GUI> m_gui;
 
 	/// <summary>
 	/// @brief Shared pointer to our controller.

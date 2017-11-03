@@ -2,6 +2,9 @@ var NAVTREE =
 [
   [ "Project", "index.html", [
     [ "3rd year Project", "index.html", null ],
+    [ "Namespaces", null, [
+      [ "Namespace List", "namespaces.html", "namespaces" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -29,7 +32,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_app_8cpp.html",
-"class_label.html#a7e9ad27eb8aa2976084967fcccb551c0"
+"classgui_1_1_button.html#ae9ef9a30e1541892f187e208f2254b84"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -20,12 +20,14 @@ MainMenuScene::MainMenuScene(std::shared_ptr<Controller> controller)
 /// </summary>
 void MainMenuScene::start()
 {
-	m_gui = std::make_unique<GUI>(m_controller);
+	m_gui = std::make_unique<gui::GUI>(m_controller);
 	auto & gui = *m_gui;
 
-	const auto& windowSize = App::getWindowSize();
-	gui.configure(GUI::Layouts::Custom, windowSize);
+	sf::Texture buttonTexture;
+	buttonTexture.loadFromFile("");
 
+	const auto& windowSize = App::getWindowSize();
+	gui.configure(gui::GUI::Layouts::Custom, windowSize);
 }
 
 /// <summary>
@@ -35,6 +37,7 @@ void MainMenuScene::start()
 /// </summary>
 void MainMenuScene::stop()
 {
+	m_gui.reset(nullptr);
 }
 
 /// <summary>
@@ -56,5 +59,6 @@ void MainMenuScene::update()
 /// <param name="deltaTime">reference to draw time step</param>
 void MainMenuScene::draw(Window & window, const float & deltaTime)
 {
+
 }
 
