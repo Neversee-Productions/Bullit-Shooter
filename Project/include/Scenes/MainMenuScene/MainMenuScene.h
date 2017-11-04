@@ -56,6 +56,7 @@ private:
 		std::shared_ptr<sf::Font> m_sptrButtonFont = std::make_shared<sf::Font>();
 		std::shared_ptr<sf::Texture> m_sptrButtonTexture = std::make_shared<sf::Texture>();
 	};
+
 	/// <summary>
 	/// @brief Unique pointer to our Resources struct.
 	/// 

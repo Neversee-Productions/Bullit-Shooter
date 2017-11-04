@@ -41,7 +41,7 @@ void MainMenuScene::start()
 	// used to avoid pointer syntax.
 	auto & resources = *m_resources;
 
-	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller);
+	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, true);
 	// store dereferenced pointer
 	// used to avoid pointer syntax.
 	auto & gui = *m_gui;
@@ -95,7 +95,7 @@ void MainMenuScene::start()
 	);
 
 	const auto& windowSize = App::getWindowSize();
-	gui.configure(gui::GUI::Layouts::StackVertically, windowSize);
+	gui.configure(gui::GUI::Layouts::StripDiagonal, windowSize);
 }
 
 /// <summary>

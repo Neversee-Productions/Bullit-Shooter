@@ -1,7 +1,8 @@
 #ifndef GUI_H
 #define GUI_H
 
-#include <SFML\Graphics.hpp>
+#include "SFML\Graphics.hpp"
+#include "Thor\Math\Trigonometry.hpp"
 #include "gui\widgets\Widget.h"
 #include "gui\widgets\Label.h"
 #include "gui\widgets\Button.h"

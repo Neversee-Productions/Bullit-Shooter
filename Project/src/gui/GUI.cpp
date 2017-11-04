@@ -13,16 +13,21 @@ gui::GUI::GUI(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller
 	, m_controller(controller)
 	, m_drawStrip(stripDraw)
 	, m_widgets()
+	, m_rectangleStrip()
 {
 	m_widgets.reserve(5);
 	if (m_drawStrip) //if we are drawing the strip then set it up
 	{
-		m_rectangleStrip = sf::RectangleShape(sf::Vector2f(500.0f, 1000.0f));
-		m_rectangleStrip.setPosition(400.0f, 300.0f);
-		m_rectangleStrip.setFillColor(sf::Color(250u, 50u, 0u, 100u));
+		const auto & windowSize = static_cast<sf::Vector2f>(App::getWindowSize());
+		const auto & aspectRatio = windowSize.y / windowSize.x;
+		m_rectangleStrip = sf::RectangleShape(sf::Vector2f(windowSize.x * 1.5f, windowSize.y * 0.5f));
+		m_rectangleStrip.setPosition(windowSize.x * 0.5f, windowSize.y * 0.5f);
+		m_rectangleStrip.setFillColor(sf::Color(0u, 50u, 250u, 100u));
 		m_rectangleStrip.setOutlineColor(sf::Color(255u, 255u, 0u, 100u));
 		m_rectangleStrip.setOutlineThickness(2.0f);
-		m_rectangleStrip.setOrigin(sf::Vector2f(m_rectangleStrip.getLocalBounds().width / 2, m_rectangleStrip.getLocalBounds().height / 2));
+		const auto & localRect = m_rectangleStrip.getLocalBounds();
+		m_rectangleStrip.setOrigin(sf::Vector2f(localRect.width / 2, localRect.height / 2));
+		m_rectangleStrip.setRotation(0.0f);
 	}
 }
 
@@ -87,7 +92,9 @@ void gui::GUI::draw(Window & window) const
 /// <param name="windowSize">defines the size of the window.</param>
 void gui::GUI::configure(const Layouts & layout, const sf::Vector2u & windowSize)
 {
-	sf::Vector2f screen = static_cast<sf::Vector2f>(windowSize);
+	const auto & screenSize = static_cast<sf::Vector2f>(windowSize);
+
+	sf::Vector2f screen = screenSize;
 	sf::Vector2f margin(m_screenMargin);
 	sf::Vector2f grid(0.0f, 0.0f);
 	sf::Vector2f offset(0.0f, 0.0f);
@@ -103,7 +110,7 @@ void gui::GUI::configure(const Layouts & layout, const sf::Vector2u & windowSize
 		screen -= (margin * 2.0f);
 		grid = (screen / static_cast<float>(m_layoutNr));
 		offset = (grid / 2.0f) + margin;
-		m_rectangleStrip.rotate(-60.0f);
+		m_rectangleStrip.rotate(thor::toDegree(std::atan(screen.y / screen.x)));
 		break;
 	case Layouts::Custom:
 	default:
