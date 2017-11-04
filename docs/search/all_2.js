@@ -2,6 +2,7 @@ var searchData=
 [
   ['b',['B',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a9d5ed678fe57bcca610140957afab571',1,'Controller.h']]],
   ['back',['Back',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a0557fa923dcee4d0f86b1409f5c2167f',1,'Controller.h']]],
+  ['btnback',['btnBack',['../class_options_scene.html#a046ba1d0e48e92208465a495e788ab68',1,'OptionsScene']]],
   ['btnexitgame',['btnExitGame',['../class_main_menu_scene.html#a6610cbd7990a242f688e87c3b8cd962a',1,'MainMenuScene']]],
   ['btnnewgame',['btnNewGame',['../class_main_menu_scene.html#a595eb3d30392e31b4031616c15faf494',1,'MainMenuScene']]],
   ['btnoptions',['btnOptions',['../class_main_menu_scene.html#ae56f78e3a8a42a5cc3dd950702efb913',1,'MainMenuScene']]],

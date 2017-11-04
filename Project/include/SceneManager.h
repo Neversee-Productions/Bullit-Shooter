@@ -7,6 +7,7 @@
 #include "Scene.h"
 #include "Scenes\GameScene\GameScene.h"
 #include "Scenes\MainMenuScene\MainMenuScene.h"
+#include "Scenes\OptionsScene\OptionsScene.h"
 
 /// 
 /// @brief Manager of Scenes.

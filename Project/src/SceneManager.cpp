@@ -26,6 +26,9 @@ SceneManager::SceneManager(
 	scenePt = std::make_shared<MainMenuScene>(m_keyHandler, m_controller);
 	addScene(scenePt);
 	loadScene(scenePt->getName());
+
+	scenePt = std::make_shared<OptionsScene>(m_keyHandler, m_controller);
+	addScene(scenePt);
 }
 
 /// <summary>

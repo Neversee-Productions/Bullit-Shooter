@@ -40,6 +40,7 @@
     <ClCompile Include="src\Scenes\GameScene\Player.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Ship.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Weapon.cpp" />
+    <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +67,7 @@
     <ClInclude Include="include\Scenes\GameScene\Player.h" />
     <ClInclude Include="include\Scenes\GameScene\Ship.h" />
     <ClInclude Include="include\Scenes\GameScene\Weapon.h" />
+    <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <ItemGroup>

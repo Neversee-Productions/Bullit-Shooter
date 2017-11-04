@@ -1,6 +1,17 @@
 var searchData=
 [
-  ['update',['update',['../classgui_1_1_g_u_i.html#af3d897979ff697f1b64e673f29ca8ccd',1,'gui::GUI::update()'],['../classgui_1_1_button.html#ab10f34b685d2c75e5a84c0c4ccf88ff1',1,'gui::Button::update()'],['../classgui_1_1_check_box.html#ac77e9b13ab5777d627d25a4e3c941270',1,'gui::CheckBox::update()'],['../classgui_1_1_slider.html#a206ddd9edb88709eba2b512c030464db',1,'gui::Slider::update()'],['../classgui_1_1_widget.html#a8b5b1bc9d917b343c3af565e9d2e9e78',1,'gui::Widget::update()'],['../class_controller.html#a7d04c17913f04f99429aa29fa8505484',1,'Controller::update()'],['../class_key_handler.html#a76bc07afddc3b4b607f46d8c5e06a8c2',1,'KeyHandler::update()'],['../class_scene.html#ae72a3454e5d4e06d4125db5322fb0c91',1,'Scene::update()'],['../class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637',1,'SceneManager::update()'],['../class_bullet.html#afd0c9cc69ab38d691c508de787fd6b5f',1,'Bullet::update()'],['../class_bullet_manager.html#ae8638f3b70fe44a15413e1107ea806fe',1,'BulletManager::update()'],['../class_bullet_standard.html#a9d72b2eec35bd504fe44d2e194b87187',1,'BulletStandard::update()'],['../class_game_scene.html#a31a272239cac07b320d01c5e632df22e',1,'GameScene::update()'],['../class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4',1,'Player::update()'],['../class_main_menu_scene.html#a583c4f8cdb58cb60f9fbecd0e8cfbcf2',1,'MainMenuScene::update()']]],
-  ['updatekey',['updateKey',['../class_key_handler.html#a9286e652204a3e49b7674f47f0ac99fa',1,'KeyHandler']]],
-  ['updateshape',['updateShape',['../classgui_1_1_widget.html#ad76ef53c8e689a3b002e155ed436e168',1,'gui::Widget']]]
+  ['scalerectangles',['scaleRectangles',['../classgui_1_1_button.html#a596aaf9fac8e7a09f5381e04f05ad2dc',1,'gui::Button']]],
+  ['scene',['Scene',['../class_scene.html#af11ca42551a5754a60f0f07277c0cd41',1,'Scene']]],
+  ['scenemanager',['SceneManager',['../class_scene_manager.html#a44e88b925958a15af482c2c81024ed5c',1,'SceneManager']]],
+  ['setfont',['setFont',['../classgui_1_1_label.html#a205a74c138b60e42efdcbe73ce3dd908',1,'gui::Label']]],
+  ['setorigin',['setOrigin',['../classgui_1_1_label.html#a79833054587410ea7fb517b74cbdc826',1,'gui::Label']]],
+  ['setposition',['setPosition',['../classgui_1_1_button.html#a50a0bd3c7d6ea8987af4eaed88286d25',1,'gui::Button::setPosition()'],['../classgui_1_1_check_box.html#a0a91f521e1d5a10258fbf378422b4a15',1,'gui::CheckBox::setPosition()'],['../classgui_1_1_label.html#a36e3de60902dab37bbf7e162d090beab',1,'gui::Label::setPosition()'],['../classgui_1_1_slider.html#ac75a958a34009da813aa7c1f965448c4',1,'gui::Slider::setPosition()']]],
+  ['setrectanglecolors',['setRectangleColors',['../classgui_1_1_button.html#af63df18be17e20aa05a1de3ed77062f3',1,'gui::Button']]],
+  ['setscale',['setScale',['../classgui_1_1_label.html#aba1df232b745dc8240fc7cbd08404217',1,'gui::Label']]],
+  ['settext',['setText',['../classgui_1_1_label.html#a1a39c68fa4d04fc1be8751de0dd776b0',1,'gui::Label']]],
+  ['setwindowsize',['setWindowSize',['../class_app.html#adc5ece8de07fd448e91efbe2c2ec3db9',1,'App']]],
+  ['ship',['Ship',['../class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462',1,'Ship']]],
+  ['slider',['Slider',['../classgui_1_1_slider.html#a2d888e1c47963a4da758f75561eaff74',1,'gui::Slider']]],
+  ['start',['start',['../class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718',1,'Scene::start()'],['../class_game_scene.html#a595f025ee226e910b1ae13af1e8ee5e0',1,'GameScene::start()'],['../class_main_menu_scene.html#a725c076e531354d64031071fa66feb67',1,'MainMenuScene::start()'],['../class_options_scene.html#a7bfda68e116220d7ed76410d6142615a',1,'OptionsScene::start()']]],
+  ['stop',['stop',['../class_scene.html#a1a8e54f62795f26cebcc8da8e9109335',1,'Scene::stop()'],['../class_game_scene.html#af2d4691481477cfa1d797e28593bb2e8',1,'GameScene::stop()'],['../class_main_menu_scene.html#a4a4c783bee20ab3af01c2b9de70d28db',1,'MainMenuScene::stop()'],['../class_options_scene.html#ad01e2842d7dadae3b50138ea42409997',1,'OptionsScene::stop()']]]
 ];

@@ -144,6 +144,9 @@
     <ClCompile Include="src\Scenes\GameScene\Weapon.cpp">
       <Filter>Source Files\Scenes\GameScene</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp">
+      <Filter>Source Files\Scenes\OptionsScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -213,6 +216,9 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Weapon.h">
       <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h">
+      <Filter>Header Files\Scenes\OptionsScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

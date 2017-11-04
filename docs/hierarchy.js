@@ -20,10 +20,12 @@ var hierarchy =
     [ "gui::GUI", "classgui_1_1_g_u_i.html", null ],
     [ "KeyHandler", "class_key_handler.html", null ],
     [ "Player", "class_player.html", null ],
+    [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
     [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
-      [ "MainMenuScene", "class_main_menu_scene.html", null ]
+      [ "MainMenuScene", "class_main_menu_scene.html", null ],
+      [ "OptionsScene", "class_options_scene.html", null ]
     ] ],
     [ "SceneManager", "class_scene_manager.html", null ],
     [ "Ship", "class_ship.html", null ],

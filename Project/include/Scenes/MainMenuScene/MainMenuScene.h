@@ -77,7 +77,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	std::unique_ptr<const float> m_delayTime;
+	const float m_DELAY_TIME;
 
 	/// <summary>
 	/// @brief Container for next scene name.

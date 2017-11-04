@@ -16,7 +16,7 @@ MainMenuScene::MainMenuScene(
 	, m_controller(controller)
 	, m_resources(nullptr)
 	, m_timer(nullptr)
-	, m_delayTime(std::make_unique<const float>(0.5f))
+	, m_DELAY_TIME(0.5f)
 	, m_nextName()
 {
 }
@@ -101,6 +101,7 @@ void MainMenuScene::stop()
 {
 	m_gui.reset(nullptr);
 	m_resources.reset(nullptr);
+	m_timer.reset(nullptr);
 }
 
 /// <summary>
@@ -113,9 +114,9 @@ void MainMenuScene::update()
 	if (m_timer)
 	{
 		const auto & timeInSeconds = m_timer->getElapsedTime().asSeconds();
-		if (timeInSeconds >= *m_delayTime)
+		if (timeInSeconds >= m_DELAY_TIME)
 		{
-			m_nextSceneName = m_nextName;
+			m_nextSceneName = std::move(m_nextName);
 		}
 	}
 	else
@@ -146,7 +147,7 @@ void MainMenuScene::draw(Window & window, const float & deltaTime)
 /// </summary>
 void MainMenuScene::btnNewGame()
 {
-	m_nextName = std::move("Game");
+	m_nextName = "Game";
 	m_timer = std::make_unique<sf::Clock>();
 }
 
@@ -159,7 +160,7 @@ void MainMenuScene::btnNewGame()
 /// </summary>
 void MainMenuScene::btnExitGame()
 {
-	m_nextName = std::move("Exit");
+	m_nextName = "Exit";
 	m_timer = std::make_unique<sf::Clock>();
 }
 
@@ -172,7 +173,7 @@ void MainMenuScene::btnExitGame()
 /// </summary>
 void MainMenuScene::btnOptions()
 {
-	m_nextName = std::move("Options");
+	m_nextName = "Options";
 	m_timer = std::make_unique<sf::Clock>();
 }
 

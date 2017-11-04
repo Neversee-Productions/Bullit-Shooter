@@ -10,7 +10,7 @@ var class_main_menu_scene =
     [ "stop", "class_main_menu_scene.html#a4a4c783bee20ab3af01c2b9de70d28db", null ],
     [ "update", "class_main_menu_scene.html#a583c4f8cdb58cb60f9fbecd0e8cfbcf2", null ],
     [ "m_controller", "class_main_menu_scene.html#a965a1496081cc4198571a1da23f17e52", null ],
-    [ "m_delayTime", "class_main_menu_scene.html#a609c69edb8d740d428dcda2e186a45e8", null ],
+    [ "m_DELAY_TIME", "class_main_menu_scene.html#af236e14ed9f988999b92421a55099921", null ],
     [ "m_gui", "class_main_menu_scene.html#a1b65e9fb6b9173e577e814174f68e2f4", null ],
     [ "m_keyHandler", "class_main_menu_scene.html#af81e8ac8cabd5397c0ce3e57fe8b5dd5", null ],
     [ "m_nextName", "class_main_menu_scene.html#a37932ef362a0900750b5914e05bac8f5", null ],

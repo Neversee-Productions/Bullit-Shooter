@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resources',['Resources',['../struct_main_menu_scene_1_1_resources.html',1,'MainMenuScene']]]
+  ['player',['Player',['../class_player.html',1,'']]]
 ];
