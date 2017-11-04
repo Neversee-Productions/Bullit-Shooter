@@ -47,16 +47,10 @@ void MainMenuScene::start()
 	auto & gui = *m_gui;
 
 	auto sptrButtonFont = resources.m_sptrButtonFont;
-	if (!sptrButtonFont->loadFromFile(BTN_FONT_PATH))
-	{
-		std::cout << "Failed to load:" << std::endl << " - " << BTN_FONT_PATH.c_str() << std::endl;
-	}
+	assert(sptrButtonFont->loadFromFile(BTN_FONT_PATH));
 
 	auto sptrButtonTexture = resources.m_sptrButtonTexture;
-	if (!sptrButtonTexture->loadFromFile(BTN_TEXTURE_PATH))
-	{
-		std::cout << "Failed to load:" << std::endl << " - " << BTN_TEXTURE_PATH.c_str() << std::endl;
-	}
+	assert(sptrButtonTexture->loadFromFile(BTN_TEXTURE_PATH));
 
 	m_gui->addButton(
 		std::bind(&MainMenuScene::btnNewGame, this),
