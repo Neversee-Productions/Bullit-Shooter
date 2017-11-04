@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['deltatime',['deltaTime',['../class_player.html#a9826d13da7dab6275a99aab6fdb66c2a',1,'Player']]],
   ['display',['display',['../class_window.html#afadfafa5a0b9472554759004aafb327e',1,'Window']]],
   ['dpad_5fthreshold',['DPAD_THRESHOLD',['../class_controller.html#a50ac5f1a92c735fc4e0015d1693947c1',1,'Controller']]],
   ['dpadx',['DpadX',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a33f8d8c4306ab613b3047083f66201ab',1,'Controller.h']]],

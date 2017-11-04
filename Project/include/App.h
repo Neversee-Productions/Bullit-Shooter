@@ -2,6 +2,7 @@
 #define APP_H
 
 #include "SFML\System\Vector2.hpp"
+#include "tinyheaders\tinyc2.h"
 
 /// 
 /// @brief Static container for all static variables.
@@ -19,6 +20,8 @@ public:
 	static void setWindowSize(const unsigned int & width, const unsigned int & height);
 	static const sf::Vector2u & getWindowSize();
 	static const float & getUpdateDeltaTime();
+	static const tinyh::c2AABB & getWindowC2Rect();
+	static void setWindowC2Rect(const sf::Vector2f& min, const sf::Vector2f& max);
 
 private:
 	/// <summary>
@@ -36,6 +39,13 @@ private:
 	/// </summary>
 	static const float s_updateDeltaTime;
 
+
+	/// <summary>
+	/// @brief define the collision rectangle window.
+	/// 
+	/// 
+	/// </summary>
+	static tinyh::c2AABB s_rectWindow;
 };
 
 #endif // !APP_H

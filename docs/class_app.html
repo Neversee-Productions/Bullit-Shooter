@@ -103,6 +103,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ae47a49a2f9ba8a96947d71cdce8a9707"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f144ef7b698c80e5414f00563474149"><td class="memItemLeft" align="right" valign="top">static const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_app.html#a8f144ef7b698c80e5414f00563474149">getUpdateDeltaTime</a> ()</td></tr>
 <tr class="separator:a8f144ef7b698c80e5414f00563474149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cb2c5e4aa61e9ee561cc2893ea98d2a"><td class="memItemLeft" align="right" valign="top">static const tinyh::c2AABB &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_app.html#a1cb2c5e4aa61e9ee561cc2893ea98d2a">getWindowC2Rect</a> ()</td></tr>
+<tr class="separator:a1cb2c5e4aa61e9ee561cc2893ea98d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb64dbd57a2b158956364bec8b8d6c42"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_app.html#acb64dbd57a2b158956364bec8b8d6c42">setWindowC2Rect</a> (const sf::Vector2f &amp;min, const sf::Vector2f &amp;max)</td></tr>
+<tr class="separator:acb64dbd57a2b158956364bec8b8d6c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -115,6 +119,8 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:ae002448d57b7484d2e9720b7ee82a78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04f4b5f0e04c4ff1bb1428a101f118da"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_app.html#a04f4b5f0e04c4ff1bb1428a101f118da">s_updateDeltaTime</a> = 1.0f / 60.0f</td></tr>
 <tr class="separator:a04f4b5f0e04c4ff1bb1428a101f118da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b4e765084e7bb26d4f069e39cc0f64"><td class="memItemLeft" align="right" valign="top">static tinyh::c2AABB&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_app.html#ae6b4e765084e7bb26d4f069e39cc0f64">s_rectWindow</a> = tinyh::c2AABB()</td></tr>
+<tr class="separator:ae6b4e765084e7bb26d4f069e39cc0f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
@@ -174,6 +180,33 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1cb2c5e4aa61e9ee561cc2893ea98d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb2c5e4aa61e9ee561cc2893ea98d2a">&#9670;&nbsp;</a></span>getWindowC2Rect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const tinyh::c2AABB &amp; App::getWindowC2Rect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>a gettter for the window rectangle.</p>
+<dl class="section return"><dt>Returns</dt><dd>the collision rectangle</dd></dl>
+
+</div>
+</div>
 <a id="ae47a49a2f9ba8a96947d71cdce8a9707"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae47a49a2f9ba8a96947d71cdce8a9707">&#9670;&nbsp;</a></span>getWindowSize()</h2>
 
@@ -198,6 +231,50 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Acquires the window size.</p>
 <dl class="section return"><dt>Returns</dt><dd>The window size as 2 unsigned integers.</dd></dl>
+
+</div>
+</div>
+<a id="acb64dbd57a2b158956364bec8b8d6c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb64dbd57a2b158956364bec8b8d6c42">&#9670;&nbsp;</a></span>setWindowC2Rect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void App::setWindowC2Rect </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>set the collision rectangle to be same as the window.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>minimum (top left) corner of screen</td></tr>
+    <tr><td class="paramname">max</td><td>maximum (bottom right) corner of screen</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -246,6 +323,29 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae6b4e765084e7bb26d4f069e39cc0f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6b4e765084e7bb26d4f069e39cc0f64">&#9670;&nbsp;</a></span>s_rectWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tinyh::c2AABB App::s_rectWindow = tinyh::c2AABB()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the collision rectangle window.</p>
+
+</div>
+</div>
 <a id="a04f4b5f0e04c4ff1bb1428a101f118da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a04f4b5f0e04c4ff1bb1428a101f118da">&#9670;&nbsp;</a></span>s_updateDeltaTime</h2>
 

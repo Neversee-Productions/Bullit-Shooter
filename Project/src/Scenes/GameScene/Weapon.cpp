@@ -1,6 +1,5 @@
 #include "Scenes\GameScene\Weapon.h"
 
-
 /// <summary>
 /// @brief Default constructor.
 /// 
@@ -9,6 +8,7 @@
 /// <param name="position">defines the position of the weapon rectangle</param>
 Weapon::Weapon(sf::Vector2f position)
 	: m_weaponRect()
+	, m_currentBullet(BulletTypes::Standard)
 {
 	m_weaponRect.setPosition(position);
 	m_weaponRect.setFillColor(sf::Color::Blue);

@@ -28,6 +28,7 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	m_resolution = sf::VideoMode(1366u, 768u);
 	App::setWindowSize(m_resolution.width, m_resolution.height);
+	App::setWindowC2Rect(sf::Vector2f(0.0f, 0.0f), static_cast<sf::Vector2f>(App::getWindowSize()));
 
 	///////////////////////////////////////////////////////
 	// create our window with pre-defined settings

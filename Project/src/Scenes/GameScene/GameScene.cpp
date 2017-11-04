@@ -7,15 +7,9 @@
 /// </summary>
 GameScene::GameScene(KeyHandler& keyHandler)
 	: Scene("Game")
-	, m_square()
 	, m_player(keyHandler)
 	, m_keyHandler(keyHandler)
 {
-	m_square.setPosition(200.0f, 200.0f);
-	sf::Vector2f& size = sf::Vector2f(200.0f, 100.0f);
-	m_square.setSize(size);
-	m_square.setOrigin(size / 2.0f);
-	m_square.setFillColor(sf::Color::Yellow);
 }
 
 /// <summary>
@@ -43,7 +37,6 @@ void GameScene::stop()
 /// </summary>
 void GameScene::update()
 {
-	m_square.rotate(720.0f * m_UPDATE_DT);
 	m_player.update();
 }
 
@@ -56,7 +49,6 @@ void GameScene::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void GameScene::draw(Window & window, const float & deltaTime)
 {
-	window.draw(m_square);
 	m_player.draw(window, deltaTime);
 }
 

@@ -23,8 +23,8 @@ SceneManager::SceneManager(
 	std::shared_ptr<Scene> scenePt = std::make_shared<GameScene>(m_keyHandler);
 	addScene(scenePt);
 
-	scenePt = std::make_shared<MainMenuScene>(m_controller);
-	addScene(scenePt);
+	//scenePt = std::make_shared<MainMenuScene>(m_controller);
+	//addScene(scenePt);
 	loadScene(scenePt->getName());
 }
 
