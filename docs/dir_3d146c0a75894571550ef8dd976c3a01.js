@@ -9,6 +9,7 @@ var dir_3d146c0a75894571550ef8dd976c3a01 =
     [ "BulletStandard.h", "_bullet_standard_8h.html", [
       [ "BulletStandard", "class_bullet_standard.html", "class_bullet_standard" ]
     ] ],
+    [ "BulletTypes.h", "_bullet_types_8h.html", "_bullet_types_8h" ],
     [ "GameScene.h", "_game_scene_8h.html", [
       [ "GameScene", "class_game_scene.html", "class_game_scene" ]
     ] ],

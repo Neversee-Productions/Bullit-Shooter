@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['s_5ffire_5frate',['s_FIRE_RATE',['../class_bullet_standard.html#aa349f2b8055b5aefe60baad5209ae610',1,'BulletStandard']]],
+  ['s_5frectwindow',['s_rectWindow',['../class_app.html#ae6b4e765084e7bb26d4f069e39cc0f64',1,'App']]],
   ['s_5ftext_5frect_5fempty',['s_TEXT_RECT_EMPTY',['../class_slider.html#abb614ee6e24fec048984479daa7982ba',1,'Slider']]],
   ['s_5ftext_5frect_5ffill',['s_TEXT_RECT_FILL',['../class_slider.html#a261bb2f82776ad0b71875dafafecf32a',1,'Slider']]],
   ['s_5ftext_5frect_5fleft',['s_TEXT_RECT_LEFT',['../class_button.html#a26129685fd9c4cd67bbc027ac1812c29',1,'Button']]],
@@ -18,12 +20,14 @@ var searchData=
   ['scenemanager_2ecpp',['SceneManager.cpp',['../_scene_manager_8cpp.html',1,'']]],
   ['scenemanager_2eh',['SceneManager.h',['../_scene_manager_8h.html',1,'']]],
   ['scenemap',['SceneMap',['../class_scene_manager.html#acfc25bb38f6c5e4b41341ebff5fe487f',1,'SceneManager']]],
+  ['setactive',['setActive',['../class_bullet.html#a3b790871b9487ef3cf5bf956354c8639',1,'Bullet']]],
   ['setfont',['setFont',['../class_label.html#a89776ece7519811507260f76ac76cefb',1,'Label']]],
   ['setorigin',['setOrigin',['../class_label.html#a00c1547be9b7eb40feb184f42aa86fbb',1,'Label']]],
-  ['setposition',['setPosition',['../class_button.html#ae294f27514d2065d0fe3e11ba94b3aca',1,'Button::setPosition()'],['../class_check_box.html#aaa285738a9445e43c140e88b9fce8ad5',1,'CheckBox::setPosition()'],['../class_label.html#ada5fce34e14e3b74bc8f9eb9f5454c07',1,'Label::setPosition()'],['../class_slider.html#aa3788bd12470e6b272d8ef40ed7c5009',1,'Slider::setPosition()']]],
+  ['setposition',['setPosition',['../class_button.html#ae294f27514d2065d0fe3e11ba94b3aca',1,'Button::setPosition()'],['../class_check_box.html#aaa285738a9445e43c140e88b9fce8ad5',1,'CheckBox::setPosition()'],['../class_label.html#ada5fce34e14e3b74bc8f9eb9f5454c07',1,'Label::setPosition()'],['../class_slider.html#aa3788bd12470e6b272d8ef40ed7c5009',1,'Slider::setPosition()'],['../class_bullet.html#a136075f4543000e01a91255b2044f98a',1,'Bullet::setPosition()']]],
   ['setrectanglecolors',['setRectangleColors',['../class_button.html#a5fa5cb5a35c349097ea41fff7c60f9e6',1,'Button']]],
   ['setscale',['setScale',['../class_label.html#a60f02d6927e3b5a7dcd4c44bec15339e',1,'Label']]],
   ['settext',['setText',['../class_label.html#a3ff4420b8e93e412a2132a333eee2bf4',1,'Label']]],
+  ['setwindowc2rect',['setWindowC2Rect',['../class_app.html#acb64dbd57a2b158956364bec8b8d6c42',1,'App']]],
   ['setwindowsize',['setWindowSize',['../class_app.html#adc5ece8de07fd448e91efbe2c2ec3db9',1,'App']]],
   ['ship',['Ship',['../class_ship.html',1,'Ship'],['../class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462',1,'Ship::Ship()']]],
   ['ship_2ecpp',['Ship.cpp',['../_ship_8cpp.html',1,'']]],
@@ -33,6 +37,7 @@ var searchData=
   ['slider_2eh',['Slider.h',['../_slider_8h.html',1,'']]],
   ['sliderstate',['SliderState',['../class_slider.html#a539aebf9c6695ce748b4efa7bfe5aaf1',1,'Slider']]],
   ['stackvertically',['StackVertically',['../class_g_u_i.html#a63cb7956b53b1a56aab3c353f3d242a9ae055d0cc4fa88ac0c0ae1294b304ae80',1,'GUI']]],
+  ['standard',['Standard',['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69ccaeb6d8ae6f20283755b339c0dc273988b',1,'BulletTypes.h']]],
   ['start',['start',['../class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718',1,'Scene::start()'],['../class_game_scene.html#a687556c806a99bc5f3fbfec177386599',1,'GameScene::start()'],['../class_main_menu_scene.html#a8f5f73f4f10332e34d6c59fd149e9c02',1,'MainMenuScene::start()'],['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0aa6122a65eaa676f700ae68d393054a37',1,'Start():&#160;Controller.h']]],
   ['stop',['stop',['../class_scene.html#a1a8e54f62795f26cebcc8da8e9109335',1,'Scene::stop()'],['../class_game_scene.html#a430cdee724052d31089edc8e6b0a4bdc',1,'GameScene::stop()'],['../class_main_menu_scene.html#aa2a92b7ba8a9cfd6353095412499bfd4',1,'MainMenuScene::stop()']]],
   ['stripdiagonal',['StripDiagonal',['../class_g_u_i.html#a63cb7956b53b1a56aab3c353f3d242a9a8edaefd8c89d5352866b596f3116a0c7',1,'GUI']]]

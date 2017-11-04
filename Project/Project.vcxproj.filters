@@ -67,6 +67,9 @@
     <Filter Include="Header Files\Scenes\GameScene">
       <UniqueIdentifier>{9b774f0b-53e5-4927-bf81-dcf9319de2a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\tinyh">
+      <UniqueIdentifier>{ea896656-eecd-42b2-9a7d-6a52cf984c30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -134,6 +137,9 @@
     </ClCompile>
     <ClCompile Include="src\Scenes\GameScene\Weapon.cpp">
       <Filter>Source Files\Scenes\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tinyheaders\tinyc2.cpp">
+      <Filter>Source Files\tinyh</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +209,9 @@
       <Filter>Header Files\Scenes\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Weapon.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\BulletTypes.h">
       <Filter>Header Files\Scenes\GameScene</Filter>
     </ClInclude>
   </ItemGroup>

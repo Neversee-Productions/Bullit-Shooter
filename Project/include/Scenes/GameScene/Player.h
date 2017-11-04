@@ -54,6 +54,13 @@ public:
 	/// 
 	/// </summary>
 	BulletManager m_bulletManager;
+
+	/// <summary>
+	/// @brief constant reference to delta time.
+	/// 
+	/// 
+	/// </summary>
+	const float & deltaTime;
 };
 
 #endif PLAYER_H

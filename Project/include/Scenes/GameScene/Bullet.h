@@ -3,6 +3,7 @@
 
 #include "SFML\Graphics.hpp"
 #include "Window.h"
+#include "BulletTypes.h"
 
 ///
 /// @brief Bullet class.
@@ -15,10 +16,14 @@ class Bullet
 {
 public:
 	Bullet();
-	Bullet(sf::Vector2f position);
+	Bullet(sf::Vector2f position, BulletTypes type);
 	virtual void update() abstract;
 	void draw(Window & window, const float & deltaTime);
-
+	tinyh::c2AABB getCollisionRect();
+	void setActive(bool active);
+	void updateBox();
+	void setPosition(const sf::Vector2f& pos);
+	bool isActive() const;
 protected:
 	/// <summary>
 	/// @brief represents the position.
@@ -40,5 +45,20 @@ protected:
 	/// 
 	/// </summary>
 	bool m_active;
+
+	/// <summary>
+	/// @brief define the bullet type.
+	/// 
+	/// 
+	/// </summary>
+	BulletTypes m_type;
+
+	/// <summary>
+	/// @brief the collision box of bullet.
+	/// 
+	/// 
+	/// </summary>
+	tinyh::c2AABB m_bulletC2Rect;
+
 };
 #endif // !BULLET_H
