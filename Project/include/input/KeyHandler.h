@@ -16,6 +16,7 @@ public:
 	KeyHandler();
 	~KeyHandler();
 	void updateKey(const sf::Keyboard::Key & key, const bool & isPressed);
+	void update();
 	bool isPressed(const sf::Keyboard::Key & key) const;
 	bool isPrevPressed(const sf::Keyboard::Key & key) const;
 

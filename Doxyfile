@@ -877,7 +877,8 @@ EXCLUDE                = .\Project\include\Aurora \
                          .\Project\include\json \
                          .\Project\include\SFML \
                          .\Project\include\Thor \
-                         .\Project\include\tinyheaders
+                         .\Project\include\tinyheaders \
+                         .\Project\src\tinyheaders
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

@@ -3,70 +3,78 @@
 
 #include "gui\widgets\Widget.h"
 
-/// <summary>
-/// @author Sebastian Kruzel
-/// @version 1.0
-/// @brief Label class.
-/// 
-/// 
-/// </summary>
-class Label : public Widget
+namespace gui
 {
-public:
-	//default constructor
-	Label();
 
-	//Constructor
-	Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, sf::Font & font, sf::Color color = sf::Color::White);
+	/// <summary>
+	/// @author Rafael Plugge
+	/// @author Sebastian Kruzel
+	/// @version 1.0
+	/// @brief Label class.
+	/// 
+	/// 
+	/// </summary>
+	class Label : public Widget
+	{
+	public:
+		//default constructor
+		Label();
 
-	//Destructor
-	~Label();
+		//Constructor
+		Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, std::shared_ptr<sf::Font> font, sf::Color color = sf::Color::White);
 
-	//this method sets the font of the labels
-	void setFont(sf::Font font);
+		//Destructor
+		~Label();
 
-	//draw
-	void draw(sf::RenderTarget& window, sf::RenderStates state) const override;
+		//this method sets the font of the labels
+		void setFont(std::shared_ptr<sf::Font> sptrFont);
 
-	//method that returns the dimensions of text
-	sf::Vector2f getSize();
+		//draw
+		void draw(Window& window) const override;
 
-	//setting scale
-	void setScale(float x, float y);
+		// drawable overrided function
+		void draw(sf::RenderTarget&, sf::RenderStates) const override;
 
-	//set position of label
-	virtual void setPosition(sf::Vector2f position);
+		//method that returns the dimensions of text
+		sf::Vector2f getSize();
 
-	//get position of label
-	virtual sf::Vector2f getPosition();
+		//setting scale
+		void setScale(float x, float y);
 
-	//set text of label
-	void setText(sf::String string);
+		//set position of label
+		virtual void setPosition(sf::Vector2f position);
 
-	//get focus method
-	void getFocus() override;
+		//get position of label
+		virtual sf::Vector2f getPosition();
 
-	//lose focus method
-	void loseFocus() override;
+		//set text of label
+		void setText(sf::String string);
 
-	//method for processing the xbox controller inputs
-	bool processInput(Controller& controller) override;
+		//get focus method
+		void getFocus() override;
 
-	//set the origin of the label
-	void setOrigin();
+		//lose focus method
+		void loseFocus() override;
 
-protected:
-	//Text object
-	sf::Text m_text;
+		//method for processing the xbox controller inputs
+		bool processInput(Controller& controller, KeyHandler& keyhandler) override;
 
-	//position of label
-	sf::Vector2f m_position;
+		//set the origin of the label
+		void setOrigin();
 
-	//font
-	sf::Font m_font;
+	protected:
+		//Text object
+		sf::Text m_text;
 
-	//font size
-	unsigned int m_fontSize;
-};
+		//position of label
+		sf::Vector2f m_position;
+
+		//font
+		std::shared_ptr<sf::Font> m_font;
+
+		//font size
+		unsigned int m_fontSize;
+	};
+}
 
 #endif // !LABEL_

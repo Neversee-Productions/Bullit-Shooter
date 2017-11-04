@@ -27,7 +27,7 @@ private:
 	/// 
 	/// Used to check if a particular key is pressed.
 	/// </summary>
-	KeyHandler m_keyHandler;
+	std::shared_ptr<KeyHandler> m_keyHandler;
 
 	/// <summary>
 	/// @brief Application window.

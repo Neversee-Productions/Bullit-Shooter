@@ -23,10 +23,11 @@ public:
 	~Window();
 	void processEvents();
 	void changeStyle(const sf::Uint32 & newStyle);
-	void draw(sf::Drawable & drawable);
+	void draw(const sf::Drawable & drawable);
 	void display();
 	bool isOpen() const;
 	void clear();
+	void close();
 
 private:
 

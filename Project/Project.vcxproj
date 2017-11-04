@@ -40,6 +40,8 @@
     <ClCompile Include="src\Scenes\GameScene\Player.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Ship.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Weapon.cpp" />
+    <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp" />
+    <ClCompile Include="src\tinyheaders\tinyc2.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +60,7 @@
     <ClInclude Include="include\input\Controller.h" />
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\SceneManager.h" />
+    <ClInclude Include="include\Scenes\GameScene\BulletTypes.h" />
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullet.h" />
     <ClInclude Include="include\Scenes\GameScene\BulletManager.h" />
@@ -66,7 +69,16 @@
     <ClInclude Include="include\Scenes\GameScene\Player.h" />
     <ClInclude Include="include\Scenes\GameScene\Ship.h" />
     <ClInclude Include="include\Scenes\GameScene\Weapon.h" />
+    <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h" />
     <ClInclude Include="include\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\gui\textures\button.png" />
+    <Image Include="resources\gui\textures\checkbox.png" />
+    <Image Include="resources\gui\textures\slider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\gui\fonts\QuartzMS.TTF" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -132,8 +144,8 @@
       <AdditionalLibraryDirectories>.\lib;.\libs\dbg;.\libs\dbg\doxygen;.\libs\dbg\sfml;.\libs\dbg\sfeMovie;.\libs\dbg\thor;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
-copy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"
+      <Command>C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"
 cd "$(SolutionDir)"
 doxygen Doxyfile</Command>
     </PostBuildEvent>
@@ -160,8 +172,8 @@ doxygen Doxyfile</Command>
       <AdditionalLibraryDirectories>.\lib;.\libs\rls;.\libs\rls\doxygen;.\libs\rls\sfml;.\libs\rls\sfeMovie;.\libs\rls\thor;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
-copy /Y "$(ProjectDir)dlls\rls\*.dll" "$(TargetDir)"</Command>
+      <Command>C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\rls\*.dll" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -42,6 +42,19 @@ void KeyHandler::updateKey(const sf::Keyboard::Key & key, const bool & isPressed
 }
 
 /// <summary>
+/// @brief Updates new keys presses to old ones.
+/// 
+/// 
+/// </summary>
+void KeyHandler::update()
+{
+	if (!m_keyMap.empty())
+	{
+		m_prevKeyMap = m_keyMap;
+	}
+}
+
+/// <summary>
 /// @brief Checks if a specific key was pressed.
 /// 
 /// Searches the map to check if the specified key was pressed. 
@@ -63,6 +76,6 @@ bool KeyHandler::isPressed(const sf::Keyboard::Key & key) const
 /// <returns>true if specified key was pressed, false otherwise</returns>
 bool KeyHandler::isPrevPressed(const sf::Keyboard::Key & key) const
 {
-	KeyMap::const_iterator citt = m_keyMap.find(key);
-	return (citt != m_keyMap.end() && citt->second);
+	KeyMap::const_iterator citt = m_prevKeyMap.find(key);
+	return (citt != m_prevKeyMap.end() && citt->second);
 }

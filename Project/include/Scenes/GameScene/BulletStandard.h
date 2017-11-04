@@ -16,6 +16,15 @@ class BulletStandard :
 public:
 	BulletStandard();
 	BulletStandard(sf::Vector2f position);
-	void update() override;
+	static float getFireRate();
+	void update() final override;
+
+private:
+	/// <summary>
+	/// @brief define a static constant fire rate.
+	/// 
+	/// 
+	/// </summary>
+	static const float s_FIRE_RATE;
 };
 #endif // ! BULLETSTANDARD_H

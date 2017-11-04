@@ -4,141 +4,148 @@
 #include "gui\widgets\Label.h"
 #include <memory>
 
-/// <summary>
-/// @author Sebastian Kruzel
-/// @version 1.0
-/// @brief Slider class.
-/// 
-/// A slider GUI element 
-/// can be used to go through different iterations of values
-/// </summary>
-class Slider : public Widget
+namespace gui
 {
-public:
-	//The different possible slider states
-	enum class SliderState { INACTIVE, ACTIVE, HOVERED};
-	Slider(
-		std::shared_ptr<sf::Texture> texture,			//shared pointer to the slider texture
-		sf::IntRect emptyTextRect,						//texture rectangle for the empty rectangle
-		sf::IntRect filledTextRect,						//texture rectangle for the filled rectangle
-		sf::IntRect squareTextRect,						//texture rectangle for the slider
-		sf::Font & font,					//font of label
-		sf::String name,					//name of the slider (text of top label)
-		unsigned int fontSize,				//font size of labels
-		sf::Vector2f position,				//position of slider
-		float sliderWidth,					//width of slider in pixels
-		float sliderHeight,					//height of slider in pixels
-		float minValue,						//minimum value of slider
-		float maxValue,						//maximum value of the slider
-		float& currentValue					//the value at which the slider starts
-	);
 
-	//destructor
-	~Slider();
+	/// <summary>
+	/// @author Sebastian Kruzel
+	/// @version 1.0
+	/// @brief Slider class.
+	/// 
+	/// A slider GUI element 
+	/// can be used to go through different iterations of values
+	/// </summary>
+	class Slider : public Widget
+	{
+	public:
+		//The different possible slider states
+		enum class SliderState { INACTIVE, ACTIVE, HOVERED };
+		Slider(
+			std::shared_ptr<sf::Texture> texture,			//shared pointer to the slider texture
+			sf::IntRect emptyTextRect,						//texture rectangle for the empty rectangle
+			sf::IntRect filledTextRect,						//texture rectangle for the filled rectangle
+			sf::IntRect squareTextRect,						//texture rectangle for the slider
+			std::shared_ptr<sf::Font> font,					//font of label
+			sf::String name,					//name of the slider (text of top label)
+			unsigned int fontSize,				//font size of labels
+			sf::Vector2f position,				//position of slider
+			float sliderWidth,					//width of slider in pixels
+			float sliderHeight,					//height of slider in pixels
+			float minValue,						//minimum value of slider
+			float maxValue,						//maximum value of the slider
+			float& currentValue					//the value at which the slider starts
+		);
 
-	//update method for slider
-	void update(float dt) override;
+		//destructor
+		~Slider();
 
-	//draw method
-	void draw(sf::RenderTarget& window, sf::RenderStates states)const override;
+		//update method for slider
+		void update(const float & dt) override;
 
-	//get focus method
-	void getFocus() override;
+		//draw method
+		void draw(Window& window)const override;
 
-	// lose focus method
-	void loseFocus() override;
+		// overriden drawable::draw method
+		void draw(sf::RenderTarget & renderTarget, sf::RenderStates renderStates)const override;
 
-	//method that has alpha go up and down
-	void fading();
+		//get focus method
+		void getFocus() override;
 
-	//method for processing the xbox controller inputs
-	bool processInput(Controller& controller) override;
+		// lose focus method
+		void loseFocus() override;
 
-	//set position
-	void setPosition(sf::Vector2f position);
+		//method that has alpha go up and down
+		void fading();
 
-	//get position
-	sf::Vector2f getPosition();
+		//method for processing the xbox controller inputs
+		bool processInput(Controller& controller, KeyHandler & keyhandler) override;
 
-	//move the slider right
-	void moveRight();
+		//set position
+		void setPosition(sf::Vector2f position);
 
-	//move the slider left
-	void moveLeft();
+		//get position
+		sf::Vector2f getPosition();
 
-	//texture rectangle for button
-	static const sf::IntRect s_TEXT_RECT_EMPTY;
-	static const sf::IntRect s_TEXT_RECT_FILL;
-	static const sf::IntRect s_TEXT_RECT_SQUARE;
+		//move the slider right
+		void moveRight();
 
-protected:
-	//Label to the left of the slider (usually the minimum value)
-	std::unique_ptr<Label> m_LeftLabel;
+		//move the slider left
+		void moveLeft();
 
-	//Label to the right of the slider (usually the maximum value)
-	std::unique_ptr<Label> m_rightLabel;
+		//texture rectangle for button
+		static const sf::IntRect s_TEXT_RECT_EMPTY;
+		static const sf::IntRect s_TEXT_RECT_FILL;
+		static const sf::IntRect s_TEXT_RECT_SQUARE;
 
-	//Label underneath the slider (usually the current value of slider)
-	std::unique_ptr<Label> m_bottomLabel;
+	protected:
+		//Label to the left of the slider (usually the minimum value)
+		std::unique_ptr<Label> m_LeftLabel;
 
-	//Label above the slider(name)
-	std::unique_ptr<Label> m_topLabel;
+		//Label to the right of the slider (usually the maximum value)
+		std::unique_ptr<Label> m_rightLabel;
 
-	//the slider empty rectangle
-	sf::RectangleShape m_sliderBarEmpty;
+		//Label underneath the slider (usually the current value of slider)
+		std::unique_ptr<Label> m_bottomLabel;
 
-	//the slider empty rectangle
-	sf::RectangleShape m_sliderBarFill;
+		//Label above the slider(name)
+		std::unique_ptr<Label> m_topLabel;
 
-	//the slider
-	sf::RectangleShape m_slider;
+		//the slider empty rectangle
+		sf::RectangleShape m_sliderBarEmpty;
 
-	//offset of label from slider
-	const float m_LABEL_OFFSET;
+		//the slider empty rectangle
+		sf::RectangleShape m_sliderBarFill;
 
-	//the jump between values
-	float m_jump;
+		//the slider
+		sf::RectangleShape m_slider;
 
-	//check if slider was moved
-	bool m_moved;
+		//offset of label from slider
+		const float m_LABEL_OFFSET;
 
-	//delta time
-	float m_timer;
+		//the jump between values
+		float m_jump;
 
-	//values for slider minimum maximum and curent values
-	int m_min;
-	int m_max;
-	float& m_current;
+		//check if slider was moved
+		bool m_moved;
 
-	//number to increase the value by
-	int m_valueJump;
+		//delta time
+		float m_timer;
 
-	//current slider state
-	SliderState m_currentState = SliderState::ACTIVE;
+		//values for slider minimum maximum and curent values
+		int m_min;
+		int m_max;
+		float& m_current;
 
-	//previous slider state
-	SliderState m_previousState = SliderState::ACTIVE;
+		//number to increase the value by
+		int m_valueJump;
 
-	//highlight rectangle
-	sf::RectangleShape m_highlightRectangle;
+		//current slider state
+		SliderState m_currentState = SliderState::ACTIVE;
 
-	//alpha of the highlight rectangle
-	float m_highlightAlpha;
+		//previous slider state
+		SliderState m_previousState = SliderState::ACTIVE;
 
-	//check if alpha to go down
-	bool m_fadeOut;
+		//highlight rectangle
+		sf::RectangleShape m_highlightRectangle;
 
-	//slider texture sheet
-	sf::Texture m_texture;
+		//alpha of the highlight rectangle
+		float m_highlightAlpha;
 
-	//texture rectangle of the empty rectangle
-	sf::IntRect m_emptyTextRect;
+		//check if alpha to go down
+		bool m_fadeOut;
 
-	//texture rectangle of the filled rectangle
-	sf::IntRect m_filledTextRect;
+		//slider texture sheet
+		sf::Texture m_texture;
 
-	//texture rectangle of the square slider
-	sf::IntRect m_squareTextRect;
-};
+		//texture rectangle of the empty rectangle
+		sf::IntRect m_emptyTextRect;
+
+		//texture rectangle of the filled rectangle
+		sf::IntRect m_filledTextRect;
+
+		//texture rectangle of the square slider
+		sf::IntRect m_squareTextRect;
+	};
+}
 
 #endif // !SLIDER_H

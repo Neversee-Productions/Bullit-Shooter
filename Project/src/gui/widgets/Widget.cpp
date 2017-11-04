@@ -8,7 +8,7 @@
 /// assign arguments to member variables
 /// initialise member variables via initialiser list
 /// </summary>
-Widget::Widget()
+gui::Widget::Widget()
 	: m_next()
 	, m_previous()
 {
@@ -18,20 +18,20 @@ Widget::Widget()
 /// @brief Nothing to update.
 /// </summary>
 /// <param name="dt"></param>
-void Widget::update(float dt)
+void gui::Widget::update(const float & dt)
 {
 }
 
 /// <summary>
 /// @brief Nothing to update.
 /// </summary>
-void Widget::updateShape()
+void gui::Widget::updateShape()
 {
 }
 
 /// <summary>
 /// @brief Destructor of a widget.
 /// </summary>
-Widget::~Widget()
+gui::Widget::~Widget()
 {
 }
