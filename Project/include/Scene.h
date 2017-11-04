@@ -2,6 +2,7 @@
 #define SCENE_H
 
 #include <string>
+#include <assert.h>
 #include "Window.h"
 #include "input\Controller.h"
 

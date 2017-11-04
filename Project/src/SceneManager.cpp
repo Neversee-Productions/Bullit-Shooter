@@ -7,10 +7,10 @@
 /// initializes its members.
 /// </summary>
 /// <param name="window">to be stored as a reference to a created Window.</param>
-/// <param name="keyHandler">to be stored as a reference to a created KeyHandler.</param>
+/// <param name="keyHandler">to be stored as a shared pointer to a created KeyHandler.</param>
 SceneManager::SceneManager(
 	Window & window,
-	KeyHandler & keyHandler
+	std::shared_ptr<KeyHandler> keyHandler
 )
 	: m_window(window)
 	, m_keyHandler(keyHandler)
@@ -20,12 +20,15 @@ SceneManager::SceneManager(
 {
 	m_controller = std::make_shared<Controller>();
 
-	std::shared_ptr<Scene> scenePt = std::make_shared<GameScene>(m_keyHandler);
+	std::shared_ptr<Scene> scenePt = std::make_shared<GameScene>(*m_keyHandler);
 	addScene(scenePt);
 
-	//scenePt = std::make_shared<MainMenuScene>(m_controller);
-	//addScene(scenePt);
+	scenePt = std::make_shared<MainMenuScene>(m_keyHandler, m_controller);
+	addScene(scenePt);
 	loadScene(scenePt->getName());
+
+	scenePt = std::make_shared<OptionsScene>(m_keyHandler, m_controller);
+	addScene(scenePt);
 }
 
 /// <summary>
@@ -95,6 +98,10 @@ void SceneManager::loadScene(const std::string & name)
 		m_currentScene = (itt->second);
 		m_currentScene->start();
 	}
+	else if (name == "Exit")
+	{
+		m_window.close();
+	}
 }
 
 /// <summary>
@@ -114,7 +121,15 @@ void SceneManager::goToNextScene()
 /// </summary>
 void SceneManager::update()
 {
-	m_currentScene->update();
+	if (m_currentScene->getNextSceneName() == "")
+	{
+		m_currentScene->update();
+	}
+	else
+	{
+		loadScene(m_currentScene->getNextSceneName());
+	}
+	m_keyHandler->update();
 }
 
 /// <summary>

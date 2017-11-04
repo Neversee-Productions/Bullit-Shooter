@@ -40,6 +40,7 @@
     <ClCompile Include="src\Scenes\GameScene\Player.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Ship.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Weapon.cpp" />
+    <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp" />
     <ClCompile Include="src\tinyheaders\tinyc2.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
@@ -68,7 +69,16 @@
     <ClInclude Include="include\Scenes\GameScene\Player.h" />
     <ClInclude Include="include\Scenes\GameScene\Ship.h" />
     <ClInclude Include="include\Scenes\GameScene\Weapon.h" />
+    <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h" />
     <ClInclude Include="include\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\gui\textures\button.png" />
+    <Image Include="resources\gui\textures\checkbox.png" />
+    <Image Include="resources\gui\textures\slider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\gui\fonts\QuartzMS.TTF" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

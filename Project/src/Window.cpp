@@ -33,7 +33,12 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	// create our window with pre-defined settings
 	///////////////////////////////////////////////////////
-	sf::ContextSettings settings;
+	sf::ContextSettings settings = sf::ContextSettings();
+	settings.majorVersion = 3u;
+	settings.minorVersion = 0u;
+	settings.attributeFlags = sf::ContextSettings::Attribute::Default;
+	settings.depthBits = 32u;
+	settings.stencilBits = 8u;
 	settings.antialiasingLevel = 8u;
 	
 	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Close, settings);
@@ -43,7 +48,7 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	auto& windowSize = m_sfWindow.getSize();
 	m_renderTexture.create(windowSize.x, windowSize.y, false);
-	m_renderTexture.setSmooth(true);
+	//m_renderTexture.setSmooth(true);
 
 	///////////////////////////////////////////////////////
 	// initialize our texture renderer
@@ -167,8 +172,8 @@ void Window::changeStyle(const sf::Uint32 & newStyle)
 /// 
 /// Drawable is drawn on our render texture with default render state.
 /// </summary>
-/// <param name="drawable">target that will be rendered on next produced frame</param>
-void Window::draw(sf::Drawable & drawable)
+/// <param name="drawable">target that will be rendered on next produced frame.</param>
+void Window::draw(const sf::Drawable & drawable)
 {
 	m_renderTexture.draw(drawable, sf::RenderStates::Default);
 }
@@ -181,7 +186,7 @@ void Window::draw(sf::Drawable & drawable)
 void Window::display()
 {
 	m_renderTexture.display();
-	m_sfWindow.draw(m_textureRenderer, sf::RenderStates::Default);
+	m_sfWindow.draw(m_textureRenderer);
 	m_sfWindow.display();
 }
 
@@ -204,4 +209,17 @@ bool Window::isOpen() const
 void Window::clear()
 {
 	m_renderTexture.clear();
+	m_sfWindow.clear();
+}
+
+/// <summary>
+/// @brief Closes current window.
+/// 
+/// 
+/// </summary>
+void Window::close()
+{
+	m_renderTexture.clear();
+	m_sfWindow.clear();
+	m_sfWindow.close();
 }

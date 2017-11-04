@@ -1,8 +1,8 @@
 #include "gui\widgets\CheckBox.h"
 
 /// texture rectangle for checkbox
-const sf::IntRect CheckBox::s_TEXT_RECT_ON = sf::IntRect(0, 0, 50, 50);
-const sf::IntRect CheckBox::s_TEXT_RECT_OFF = sf::IntRect(50, 0, 50, 50);
+const sf::IntRect gui::CheckBox::s_TEXT_RECT_ON = sf::IntRect(0, 0, 50, 50);
+const sf::IntRect gui::CheckBox::s_TEXT_RECT_OFF = sf::IntRect(50, 0, 50, 50);
 
 
 /// <summary>
@@ -16,7 +16,7 @@ const sf::IntRect CheckBox::s_TEXT_RECT_OFF = sf::IntRect(50, 0, 50, 50);
 /// <param name="offTexture"></param>
 /// <param name="state"></param>
 /// <param name="charSize"></param>
-CheckBox::CheckBox(sf::Font font, sf::String name, sf::Vector2f position, float scale, std::shared_ptr<sf::Texture> texture, sf::IntRect textRectOn, sf::IntRect textRectOff, bool & state, unsigned charSize)
+gui::CheckBox::CheckBox(std::shared_ptr<sf::Font> font, sf::String name, sf::Vector2f position, float scale, std::shared_ptr<sf::Texture> texture, sf::IntRect textRectOn, sf::IntRect textRectOff, bool & state, unsigned charSize)
 	: Label(name, charSize, position, font)
 	, m_position(position)
 	, m_scale(scale)
@@ -55,19 +55,20 @@ CheckBox::CheckBox(sf::Font font, sf::String name, sf::Vector2f position, float 
 /// <summary>
 /// destructor
 /// </summary>
-CheckBox::~CheckBox()
+gui::CheckBox::~CheckBox()
 {
 }
 
 /// <summary>
-/// Draw the checkbox elements
+/// @brief Draw the checkbox elements.
+/// 
+/// 
 /// </summary>
-/// <param name="window"></param>
-/// <param name="states"></param>
-void CheckBox::draw(sf::RenderTarget & window, sf::RenderStates states) const
+/// <param name="window">reference to target window.</param>
+void gui::CheckBox::draw(Window & window) const
 {
 	//draw the label
-	Label::draw(window, states);
+	Label::draw(window);
 	//if hovering draw the highlight rectangle
 	if (m_currentState == CheckboxState::HOVERED)
 	{
@@ -77,11 +78,32 @@ void CheckBox::draw(sf::RenderTarget & window, sf::RenderStates states) const
 	window.draw(m_rectangle);
 }
 
+
+/// <summary>
+/// @brief An overriden draw function draws the checkbox to the render target.
+/// 
+/// 
+/// </summary>
+/// <param name="renderTarget">defines the target for rendering</param>
+/// <param name="renderState">defines the transformations that are applied to the renderer</param>
+void gui::CheckBox::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderStates) const
+{
+	//draw the label
+	Label::draw(renderTarget, renderStates);
+	//if hovering draw the highlight rectangle
+	if (m_currentState == CheckboxState::HOVERED)
+	{
+		renderTarget.draw(m_highlightRectangle);
+	}
+	//draw the checkbox sprite
+	renderTarget.draw(m_rectangle);
+}
+
 /// <summary>
 /// Update the checkbox
 /// </summary>
 /// <param name="dt"></param>
-void CheckBox::update(float dt)
+void gui::CheckBox::update(const float & dt)
 {
 	if (m_currentState == CheckboxState::HOVERED)
 	{
@@ -93,7 +115,7 @@ void CheckBox::update(float dt)
 /// <summary>
 /// the method that switches state to hovered
 /// </summary>
-void CheckBox::getFocus()
+void gui::CheckBox::getFocus()
 {
 	m_currentState = CheckboxState::HOVERED;
 }
@@ -101,7 +123,7 @@ void CheckBox::getFocus()
 /// <summary>
 /// The method that switches state to active
 /// </summary>
-void CheckBox::loseFocus()
+void gui::CheckBox::loseFocus()
 {
 	m_currentState = CheckboxState::ACTIVE;
 }
@@ -110,7 +132,7 @@ void CheckBox::loseFocus()
 /// This the method will
 /// make the transparency go up and down
 /// </summary>
-void CheckBox::fading()
+void gui::CheckBox::fading()
 {
 	//The flashing exit text
 	if (m_fadeOut) //if alpha to be increased
@@ -134,24 +156,34 @@ void CheckBox::fading()
 /// <summary>
 /// Method to process the input
 /// </summary>
-/// <param name="controller"></param>
+/// <param name="controller">reference to controller, that is checked for input</param>
+/// <param name="keyhandler">reference to key handler, that is checked for input</param>
 /// <returns></returns>
-bool CheckBox::processInput(Controller & controller)
+bool gui::CheckBox::processInput(Controller & controller, KeyHandler & keyhandler)
 {
 	//processInput(controller);
-	if (controller.m_currentState.m_A && !controller.m_previousState.m_A && m_currentState == CheckboxState::HOVERED) //if button pressed while hovered then go to pressed state
+	if (m_currentState == CheckboxState::HOVERED)
 	{
-		if (m_state == true)
+		if (
+			(controller.m_currentState.m_A
+				&& !controller.m_previousState.m_A)
+			||
+			(keyhandler.isPressed(sf::Keyboard::Key::Return)
+				&& !keyhandler.isPrevPressed(sf::Keyboard::Key::Return))
+			) //if button pressed while hovered then go to pressed state
 		{
-			m_state = false;
-			//m_rectangle.setTexture(&(*m_texture), true);
-			m_rectangle.setTextureRect(m_offTextRect);
-		}
-		else
-		{
-			m_state = true;
-			//m_rectangle.setTexture(&(*m_texture), true);
-			m_rectangle.setTextureRect(m_onTextRect);
+			if (m_state == true)
+			{
+				m_state = false;
+				//m_rectangle.setTexture(&(*m_texture), true);
+				m_rectangle.setTextureRect(m_offTextRect);
+			}
+			else
+			{
+				m_state = true;
+				//m_rectangle.setTexture(&(*m_texture), true);
+				m_rectangle.setTextureRect(m_onTextRect);
+			}
 		}
 	}
 	return true;
@@ -162,7 +194,7 @@ bool CheckBox::processInput(Controller & controller)
 /// and its elements
 /// </summary>
 /// <param name="position"></param>
-void CheckBox::setPosition(sf::Vector2f position)
+void gui::CheckBox::setPosition(sf::Vector2f position)
 {
 	m_rectangle.setPosition(position);
 	Label::setPosition(sf::Vector2f(m_rectangle.getPosition().x - m_rectangle.getGlobalBounds().width - (Label::getSize().x / 2), m_rectangle.getPosition().y - 4));
@@ -173,7 +205,7 @@ void CheckBox::setPosition(sf::Vector2f position)
 /// return the centre of the checkbox
 /// </summary>
 /// <returns></returns>
-sf::Vector2f CheckBox::getPosition()
+sf::Vector2f gui::CheckBox::getPosition()
 {
 	return m_rectangle.getPosition();
 }

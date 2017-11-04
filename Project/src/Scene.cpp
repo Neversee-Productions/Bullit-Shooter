@@ -8,7 +8,7 @@
 /// <param name="sceneName">Defines the scene's name.</param>
 Scene::Scene(const std::string & sceneName)
 	: m_name(sceneName)
-	, m_nextSceneName()
+	, m_nextSceneName("")
 	, m_UPDATE_DT(App::getUpdateDeltaTime())
 {
 }

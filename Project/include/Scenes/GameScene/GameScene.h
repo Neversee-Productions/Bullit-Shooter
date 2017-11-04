@@ -16,10 +16,10 @@ class GameScene : public Scene
 {
 public:
 	GameScene(KeyHandler& keyHandler);
-	void start() override;
-	void stop() override;
-	void update() override;
-	void draw(Window & window, const float & deltaTime) override;
+	void start() final override;
+	void stop() final override;
+	void update() final override;
+	void draw(Window & window, const float & deltaTime) final override;
 
 private:
 	/// <summary>
