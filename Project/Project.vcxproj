@@ -41,6 +41,7 @@
     <ClCompile Include="src\Scenes\GameScene\Ship.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Weapon.cpp" />
     <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp" />
+    <ClCompile Include="src\tinyheaders\tinyc2.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +60,7 @@
     <ClInclude Include="include\input\Controller.h" />
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\SceneManager.h" />
+    <ClInclude Include="include\Scenes\GameScene\BulletTypes.h" />
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullet.h" />
     <ClInclude Include="include\Scenes\GameScene\BulletManager.h" />

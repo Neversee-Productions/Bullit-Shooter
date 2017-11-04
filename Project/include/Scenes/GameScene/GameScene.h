@@ -4,6 +4,7 @@
 #include "Scene.h"
 #include "SFML\Graphics\RectangleShape.hpp"
 #include "Player.h"
+#include "tinyheaders\tinyc2.h"
 
 ///
 /// @brief Main game scene.
@@ -22,13 +23,6 @@ public:
 
 private:
 	/// <summary>
-	/// @brief Represents a square on the screen.
-	/// 
-	/// 
-	/// </summary>
-	sf::RectangleShape m_square;
-
-	/// <summary>
 	/// @brief Represents the player object
 	/// 
 	/// 
@@ -41,7 +35,6 @@ private:
 	/// 
 	/// </summary>
 	KeyHandler& m_keyHandler;
-
 };
 
 #endif // !GAMESCENE_H

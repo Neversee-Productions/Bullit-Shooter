@@ -11,9 +11,11 @@ Player::Player(KeyHandler& keyHandler)
 	, m_weapon2()
 	, m_keyHandler(keyHandler)
 	, m_bulletManager()
+	, deltaTime(App::getUpdateDeltaTime())
 {
 	m_weapon1.m_weaponRect.setPosition(sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y - 100));
 	m_weapon2.m_weaponRect.setPosition(sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y + 100));
+	m_bulletManager.initBulletvector(m_weapon1.m_currentBullet);
 }
 
 /// <summary>
@@ -41,8 +43,8 @@ void Player::update()
 	if (m_keyHandler.isPressed(sf::Keyboard::Space))
 	{
 		//shoot a bullet plz
-		m_bulletManager.fireBullet(m_weapon1.m_weaponRect.getPosition());
-		m_bulletManager.fireBullet(m_weapon2.m_weaponRect.getPosition());
+		m_bulletManager.fireBullet(m_weapon1.m_weaponRect.getPosition(), m_weapon2.m_weaponRect.getPosition(), m_weapon1.m_currentBullet);
+		//m_bulletManager.fireBullet(m_weapon2.m_weaponRect.getPosition(), m_weapon1.m_currentBullet);
 	}
 	m_bulletManager.update();
 }

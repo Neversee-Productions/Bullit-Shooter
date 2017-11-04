@@ -3,6 +3,7 @@
 
 #include "Window.h"
 #include "SFML\Graphics\RectangleShape.hpp"
+#include "BulletTypes.h"
 
 ///
 /// @brief Weapon class.
@@ -23,5 +24,12 @@ public:
 	/// 
 	/// </summary>
 	sf::RectangleShape m_weaponRect;
+
+	/// <summary>
+	/// @brief hold the type of the current bullet.
+	/// 
+	/// 
+	/// </summary>
+	BulletTypes m_currentBullet;
 };
 #endif // !WEAPON_H
