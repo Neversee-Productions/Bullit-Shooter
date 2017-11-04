@@ -4,6 +4,7 @@ var searchData=
   ['back',['Back',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a0557fa923dcee4d0f86b1409f5c2167f',1,'Controller.h']]],
   ['btnexitgame',['btnExitGame',['../class_main_menu_scene.html#a6610cbd7990a242f688e87c3b8cd962a',1,'MainMenuScene']]],
   ['btnnewgame',['btnNewGame',['../class_main_menu_scene.html#a595eb3d30392e31b4031616c15faf494',1,'MainMenuScene']]],
+  ['btnoptions',['btnOptions',['../class_main_menu_scene.html#ae56f78e3a8a42a5cc3dd950702efb913',1,'MainMenuScene']]],
   ['bullet',['Bullet',['../class_bullet.html',1,'Bullet'],['../class_bullet.html#acd7befc0bc18907cc1d871d37bbdddeb',1,'Bullet::Bullet()'],['../class_bullet.html#ac1abcc579333c4d549d0c7e5f7760802',1,'Bullet::Bullet(sf::Vector2f position)']]],
   ['bullet_2ecpp',['Bullet.cpp',['../_bullet_8cpp.html',1,'']]],
   ['bullet_2eh',['Bullet.h',['../_bullet_8h.html',1,'']]],

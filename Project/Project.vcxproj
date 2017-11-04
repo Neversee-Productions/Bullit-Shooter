@@ -140,8 +140,8 @@
       <AdditionalLibraryDirectories>.\lib;.\libs\dbg;.\libs\dbg\doxygen;.\libs\dbg\sfml;.\libs\dbg\sfeMovie;.\libs\dbg\thor;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
-copy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"
+      <Command>C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"
 cd "$(SolutionDir)"
 doxygen Doxyfile</Command>
     </PostBuildEvent>
@@ -168,8 +168,8 @@ doxygen Doxyfile</Command>
       <AdditionalLibraryDirectories>.\lib;.\libs\rls;.\libs\rls\doxygen;.\libs\rls\sfml;.\libs\rls\sfeMovie;.\libs\rls\thor;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
-copy /Y "$(ProjectDir)dlls\rls\*.dll" "$(TargetDir)"</Command>
+      <Command>C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\rls\*.dll" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

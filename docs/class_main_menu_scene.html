@@ -136,6 +136,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a595eb3d30392e31b4031616c15faf494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6610cbd7990a242f688e87c3b8cd962a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a6610cbd7990a242f688e87c3b8cd962a">btnExitGame</a> ()</td></tr>
 <tr class="separator:a6610cbd7990a242f688e87c3b8cd962a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae56f78e3a8a42a5cc3dd950702efb913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#ae56f78e3a8a42a5cc3dd950702efb913">btnOptions</a> ()</td></tr>
+<tr class="separator:ae56f78e3a8a42a5cc3dd950702efb913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -147,6 +149,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a965a1496081cc4198571a1da23f17e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a601fb7206a4d0aae5c634b7472fff89f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="struct_main_menu_scene_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a601fb7206a4d0aae5c634b7472fff89f">m_resources</a></td></tr>
 <tr class="separator:a601fb7206a4d0aae5c634b7472fff89f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77847e54bc90d1ac9b4bd79f32642e7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; sf::Clock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#af77847e54bc90d1ac9b4bd79f32642e7">m_timer</a></td></tr>
+<tr class="separator:af77847e54bc90d1ac9b4bd79f32642e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a609c69edb8d740d428dcda2e186a45e8"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; const float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a609c69edb8d740d428dcda2e186a45e8">m_delayTime</a></td></tr>
+<tr class="separator:a609c69edb8d740d428dcda2e186a45e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37932ef362a0900750b5914e05bac8f5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a37932ef362a0900750b5914e05bac8f5">m_nextName</a></td></tr>
+<tr class="separator:a37932ef362a0900750b5914e05bac8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -248,6 +256,33 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>New game Button's callback function.</p>
 <p>The new game Button has a pointer to a function that is called when the new game Button is pressed this is the function that it calls </p>
+
+</div>
+</div>
+<a id="ae56f78e3a8a42a5cc3dd950702efb913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae56f78e3a8a42a5cc3dd950702efb913">&#9670;&nbsp;</a></span>btnOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenuScene::btnOptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Options Button's callback function.</p>
+<p>The options Button has a pointer to a function that is called when the options Button is pressed this is the function that it calls </p>
 
 </div>
 </div>
@@ -407,6 +442,29 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a609c69edb8d740d428dcda2e186a45e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a609c69edb8d740d428dcda2e186a45e8">&#9670;&nbsp;</a></span>m_delayTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;const float&gt; MainMenuScene::m_delayTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines the amount of time before scene switches.</p>
+
+</div>
+</div>
 <a id="a1b65e9fb6b9173e577e814174f68e2f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b65e9fb6b9173e577e814174f68e2f4">&#9670;&nbsp;</a></span>m_gui</h2>
 
@@ -454,6 +512,29 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a37932ef362a0900750b5914e05bac8f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37932ef362a0900750b5914e05bac8f5">&#9670;&nbsp;</a></span>m_nextName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string MainMenuScene::m_nextName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Container for next scene name.</p>
+
+</div>
+</div>
 <a id="a601fb7206a4d0aae5c634b7472fff89f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a601fb7206a4d0aae5c634b7472fff89f">&#9670;&nbsp;</a></span>m_resources</h2>
 
@@ -475,6 +556,29 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Unique pointer to our <a class="el" href="struct_main_menu_scene_1_1_resources.html">Resources</a> struct.</p>
 <p>Used as to determine the lifetime of its members. </p>
+
+</div>
+</div>
+<a id="af77847e54bc90d1ac9b4bd79f32642e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af77847e54bc90d1ac9b4bd79f32642e7">&#9670;&nbsp;</a></span>m_timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;sf::Clock&gt; MainMenuScene::m_timer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Timer before leaving scene.</p>
 
 </div>
 </div>

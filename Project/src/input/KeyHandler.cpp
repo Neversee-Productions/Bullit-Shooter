@@ -42,6 +42,19 @@ void KeyHandler::updateKey(const sf::Keyboard::Key & key, const bool & isPressed
 }
 
 /// <summary>
+/// @brief Updates new keys presses to old ones.
+/// 
+/// 
+/// </summary>
+void KeyHandler::update()
+{
+	if (!m_keyMap.empty())
+	{
+		m_prevKeyMap = m_keyMap;
+	}
+}
+
+/// <summary>
 /// @brief Checks if a specific key was pressed.
 /// 
 /// Searches the map to check if the specified key was pressed. 

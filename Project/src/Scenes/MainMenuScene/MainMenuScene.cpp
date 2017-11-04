@@ -6,12 +6,18 @@
 /// Requires a std::shared_ptr<Controller> so as to process input.
 /// </summary>
 /// <param name="controller">defines the controller</param>
-MainMenuScene::MainMenuScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller)
+MainMenuScene::MainMenuScene(
+	std::shared_ptr<KeyHandler> keyHandler
+	, std::shared_ptr<Controller> controller
+)
 	: Scene("MainMenu")
 	, m_gui(nullptr)
 	, m_keyHandler(keyHandler)
 	, m_controller(controller)
 	, m_resources(nullptr)
+	, m_timer(nullptr)
+	, m_delayTime(std::make_unique<const float>(0.5f))
+	, m_nextName()
 {
 }
 
@@ -27,6 +33,8 @@ void MainMenuScene::start()
 	const std::string BTN_FONT_PATH = GUI_PATH + "fonts/QuartzMS.ttf";
 	const std::string BTN_TEXTURE_PATH = GUI_PATH + "textures/button.png";
 	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
+
+	m_nextSceneName = "";
 
 	m_resources = std::make_unique<Resources>();
 	// store dereferenced pointer
@@ -51,8 +59,8 @@ void MainMenuScene::start()
 	}
 
 	m_gui->addButton(
-		std::bind(&MainMenuScene::btnExitGame, this),
-		"Exit Game",
+		std::bind(&MainMenuScene::btnNewGame, this),
+		"New Game",
 		zero,
 		sptrButtonFont,
 		24u,
@@ -63,8 +71,20 @@ void MainMenuScene::start()
 	);
 
 	m_gui->addButton(
-		std::bind(&MainMenuScene::btnNewGame, this),
-		"New Game",
+		std::bind(&MainMenuScene::btnOptions, this),
+		"Options",
+		zero,
+		sptrButtonFont,
+		24u,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+
+	m_gui->addButton(
+		std::bind(&MainMenuScene::btnExitGame, this),
+		"Exit Game",
 		zero,
 		sptrButtonFont,
 		24u,
@@ -96,8 +116,19 @@ void MainMenuScene::stop()
 /// </summary>
 void MainMenuScene::update()
 {
-	m_controller->update();
-	m_gui->update(m_UPDATE_DT);
+	if (m_timer)
+	{
+		const auto & timeInSeconds = m_timer->getElapsedTime().asSeconds();
+		if (timeInSeconds >= *m_delayTime)
+		{
+			m_nextSceneName = m_nextName;
+		}
+	}
+	else
+	{
+		m_controller->update();
+		m_gui->update(m_UPDATE_DT);
+	}
 }
 
 /// <summary>
@@ -121,7 +152,8 @@ void MainMenuScene::draw(Window & window, const float & deltaTime)
 /// </summary>
 void MainMenuScene::btnNewGame()
 {
-	m_nextSceneName = "Game";
+	m_nextName = std::move("Game");
+	m_timer = std::make_unique<sf::Clock>();
 }
 
 /// <summary>
@@ -133,6 +165,20 @@ void MainMenuScene::btnNewGame()
 /// </summary>
 void MainMenuScene::btnExitGame()
 {
-	m_nextSceneName = "Exit";
+	m_nextName = std::move("Exit");
+	m_timer = std::make_unique<sf::Clock>();
+}
+
+/// <summary>
+/// @brief Options Button's callback function.
+/// 
+/// The options Button has a pointer to a function
+/// that is called when the options Button is pressed
+/// this is the function that it calls
+/// </summary>
+void MainMenuScene::btnOptions()
+{
+	m_nextName = std::move("Options");
+	m_timer = std::make_unique<sf::Clock>();
 }
 

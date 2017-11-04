@@ -23,6 +23,7 @@ public:
 private:
 	void btnNewGame();
 	void btnExitGame();
+	void btnOptions();
 
 	/// <summary>
 	/// @brief Unique pointer to our GUI.
@@ -61,6 +62,29 @@ private:
 	/// Used as to determine the lifetime of its members.
 	/// </summary>
 	std::unique_ptr<Resources> m_resources;
+
+	/// <summary>
+	/// @brief Timer before leaving scene.
+	/// 
+	/// 
+	/// </summary>
+	std::unique_ptr<sf::Clock> m_timer;
+
+
+	/// <summary>
+	/// @brief Defines the amount of time before scene switches.
+	/// 
+	/// 
+	/// </summary>
+	std::unique_ptr<const float> m_delayTime;
+
+	/// <summary>
+	/// @brief Container for next scene name.
+	/// 
+	/// 
+	/// </summary>
+	std::string m_nextName;
+
 };
 
 #endif // !MAINMENUSCENE_H

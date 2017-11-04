@@ -126,6 +126,7 @@ void SceneManager::update()
 	{
 		loadScene(m_currentScene->getNextSceneName());
 	}
+	m_keyHandler->update();
 }
 
 /// <summary>
