@@ -13,6 +13,7 @@
 #pragma comment(lib,"sfml-network.lib")
 #pragma comment(lib,"thor.lib")
 #define NDEBUG
+#include <Windows.h>
 #endif
 
 #include "Application.h"
@@ -56,6 +57,10 @@
 /// <param name="argv">c style string of the arguments passed into the application</param>
 int main(int argc, char** argv)
 {
+#ifdef NDEBUG
+	ShowWindow(GetConsoleWindow(), SW_HIDE);
+#endif // !NDEBUG
+
 	Application& app = Application();
 	app.run();
 }
