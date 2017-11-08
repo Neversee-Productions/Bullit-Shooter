@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainmenuscene',['MainMenuScene',['../class_main_menu_scene.html',1,'']]]
+  ['label',['Label',['../classgui_1_1_label.html',1,'gui']]]
 ];

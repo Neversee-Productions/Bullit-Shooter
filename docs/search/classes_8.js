@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player',['Player',['../class_player.html',1,'']]]
+  ['optionsscene',['OptionsScene',['../class_options_scene.html',1,'']]]
 ];

@@ -83,6 +83,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 &#160;
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>DEG_TO_RAD
+: <a class="el" href="classbullets_1_1_bullet.html#adcc97cdca0642e03ca6fbf29a30e8008">bullets::Bullet</a>
+</li>
 <li>deltaTime
 : <a class="el" href="class_player.html#a9826d13da7dab6275a99aab6fdb66c2a">Player</a>
 </li>
@@ -97,7 +100,10 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="struct_game_pad_state.html#af6f7ccf8f4d763656ce269292c2ee30b">GamePadState</a>
 </li>
 <li>m_active
-: <a class="el" href="class_bullet.html#ab21ea0edf0bd34fc1eae2945b5a7223c">Bullet</a>
+: <a class="el" href="classbullets_1_1_bullet.html#a892f5a383bf15183acf426288b8b2c27">bullets::Bullet</a>
+</li>
+<li>m_angle
+: <a class="el" href="classbullets_1_1_bullet.html#a7eaa1f6ae67ec7c13f37f3bf61704ea9">bullets::Bullet</a>
 </li>
 <li>m_B
 : <a class="el" href="struct_game_pad_state.html#ad195fc90155dbc9592486904e2f2366d">GamePadState</a>
@@ -109,13 +115,13 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="classgui_1_1_slider.html#a70f14d748f4b483f4079ff92c74013fc">gui::Slider</a>
 </li>
 <li>m_bulletC2Rect
-: <a class="el" href="class_bullet.html#a2ae4a38fa1e9950c32019a4b2019d397">Bullet</a>
+: <a class="el" href="classbullets_1_1_bullet.html#a6d72379ed0bee15d114dfc9ca0840a2e">bullets::Bullet</a>
 </li>
 <li>m_bulletManager
 : <a class="el" href="class_player.html#a6d27e83de4dc129a5976c1ea6d32cbd1">Player</a>
 </li>
 <li>m_bulletRect
-: <a class="el" href="class_bullet.html#af7700be879a8b993b4d46fa56bb92eed">Bullet</a>
+: <a class="el" href="classbullets_1_1_bullet.html#a5e3aae95c73d3f1190bdeda96c6c2e46">bullets::Bullet</a>
 </li>
 <li>m_controller
 : <a class="el" href="classgui_1_1_g_u_i.html#a2a25d69b79031de4274d53db9ce26db9">gui::GUI</a>
@@ -158,6 +164,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 </li>
 <li>m_drawStrip
 : <a class="el" href="classgui_1_1_g_u_i.html#a0cf8fc128063fd6325dd20a7318ad44d">gui::GUI</a>
+</li>
+<li>m_empoweredBullets
+: <a class="el" href="class_bullet_manager.html#a2969bbb9910f69bedf31cec151e0384c">BulletManager</a>
 </li>
 <li>m_emptyTextRect
 : <a class="el" href="classgui_1_1_slider.html#a88740adc74863e5c6c30084e2f72de99">gui::Slider</a>
@@ -278,7 +287,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_game_scene.html#a814ec4e13fc13a8e8c2f29ef179abc8b">GameScene</a>
 </li>
 <li>m_position
-: <a class="el" href="class_bullet.html#a68d311a87ea5a50966fbfa6ace4cbb21">Bullet</a>
+: <a class="el" href="classbullets_1_1_bullet.html#a37850bb27e3903d69b55c2d76e238bd4">bullets::Bullet</a>
 , <a class="el" href="classgui_1_1_check_box.html#a7b9fc2dffad0a71a882a5a1772ab1817">gui::CheckBox</a>
 , <a class="el" href="classgui_1_1_label.html#a4bc64d38faf4e9a83d968c056f53243b">gui::Label</a>
 </li>
@@ -374,6 +383,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>m_sliderBarFill
 : <a class="el" href="classgui_1_1_slider.html#ad80e845fdbac03e407a495f98e9dba2b">gui::Slider</a>
 </li>
+<li>m_speed
+: <a class="el" href="classbullets_1_1_bullet.html#a0b67476aa9f0504417a9526b3203acd8">bullets::Bullet</a>
+</li>
 <li>m_sptrButtonFont
 : <a class="el" href="struct_main_menu_scene_1_1_resources.html#a65ff95ab45a68c3f763ec3cc8b16119f">MainMenuScene::Resources</a>
 , <a class="el" href="struct_options_scene_1_1_resources.html#a1b7b84221eab4399acaa4b7b5ea07748">OptionsScene::Resources</a>
@@ -386,7 +398,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="classgui_1_1_slider.html#ab6f25a49e95e5b7dbfc42cee00b24835">gui::Slider</a>
 </li>
 <li>m_standardBullets
-: <a class="el" href="class_bullet_manager.html#aef6fb8245d273c8b2a73a11b2303b74a">BulletManager</a>
+: <a class="el" href="class_bullet_manager.html#a9e2137fbdf9d7c32e4be91e294fbcbc7">BulletManager</a>
 </li>
 <li>m_start
 : <a class="el" href="struct_game_pad_state.html#aa569940068ccffe29982b52902d6d976">GamePadState</a>
@@ -419,13 +431,16 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="classgui_1_1_slider.html#a8bd413df6f7d285004a14aa01a9de2b8">gui::Slider</a>
 </li>
 <li>m_type
-: <a class="el" href="class_bullet.html#ada1f0ebf8340fb44fddd2af6b534280f">Bullet</a>
+: <a class="el" href="classbullets_1_1_bullet.html#ac70c4d94b81f7fca3d1e5845b9aefda9">bullets::Bullet</a>
 </li>
 <li>m_UPDATE_DT
 : <a class="el" href="class_scene.html#a4d9417e5e266363d6967278a073200ca">Scene</a>
 </li>
 <li>m_valueJump
 : <a class="el" href="classgui_1_1_slider.html#ae346b7555166978acef1bda4e75029f9">gui::Slider</a>
+</li>
+<li>m_velocity
+: <a class="el" href="classbullets_1_1_bullet.html#a4a39935b0bbd51d686e9e66577fa5045">bullets::Bullet</a>
 </li>
 <li>m_weapon1
 : <a class="el" href="class_player.html#a43a948490af7100d684fc2034247f7bd">Player</a>
@@ -470,7 +485,8 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>s_FIRE_RATE
-: <a class="el" href="class_bullet_standard.html#aa349f2b8055b5aefe60baad5209ae610">BulletStandard</a>
+: <a class="el" href="classbullets_1_1_empowered.html#a087ea7866da61a6bb319ae037afd7fb7">bullets::Empowered</a>
+, <a class="el" href="classbullets_1_1_standard.html#a4c5f5075ef08a3246b3db4219ee135e3">bullets::Standard</a>
 </li>
 <li>s_rectWindow
 : <a class="el" href="class_app.html#ae6b4e765084e7bb26d4f069e39cc0f64">App</a>

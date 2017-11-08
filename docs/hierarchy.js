@@ -2,8 +2,9 @@ var hierarchy =
 [
     [ "App", "class_app.html", null ],
     [ "Application", "class_application.html", null ],
-    [ "Bullet", "class_bullet.html", [
-      [ "BulletStandard", "class_bullet_standard.html", null ]
+    [ "bullets::Bullet", "classbullets_1_1_bullet.html", [
+      [ "bullets::Empowered", "classbullets_1_1_empowered.html", null ],
+      [ "bullets::Standard", "classbullets_1_1_standard.html", null ]
     ] ],
     [ "BulletManager", "class_bullet_manager.html", null ],
     [ "Controller", "class_controller.html", null ],

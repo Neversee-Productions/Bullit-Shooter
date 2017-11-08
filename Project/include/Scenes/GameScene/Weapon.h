@@ -3,7 +3,7 @@
 
 #include "Window.h"
 #include "SFML\Graphics\RectangleShape.hpp"
-#include "BulletTypes.h"
+#include "Bullets\BulletTypes.h"
 
 ///
 /// @brief Weapon class.

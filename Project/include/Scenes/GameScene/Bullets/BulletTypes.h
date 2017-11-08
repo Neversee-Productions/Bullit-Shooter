@@ -8,7 +8,8 @@
 ///
 enum class BulletTypes
 {
-	Standard //Defines the type BulletStandard
+	 Standard //Defines the type Standard
+	,Empowered //Defines an empowered bullet
 };
 
 #endif // !BULLETTYPES_H

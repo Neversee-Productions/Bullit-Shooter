@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['weapon',['Weapon',['../class_weapon.html',1,'Weapon'],['../class_weapon.html#a12e8d91eaec4d17f3507eee7ec9dc911',1,'Weapon::Weapon()']]],
-  ['weapon_2ecpp',['Weapon.cpp',['../_weapon_8cpp.html',1,'']]],
-  ['weapon_2eh',['Weapon.h',['../_weapon_8h.html',1,'']]],
-  ['widget',['Widget',['../classgui_1_1_widget.html',1,'gui::Widget'],['../classgui_1_1_widget.html#a3eb4d4efe93f6ada664df6058f8c5c33',1,'gui::Widget::Widget()']]],
-  ['widget_2ecpp',['Widget.cpp',['../_widget_8cpp.html',1,'']]],
-  ['widget_2eh',['Widget.h',['../_widget_8h.html',1,'']]],
-  ['window',['Window',['../class_window.html',1,'Window'],['../class_window.html#ac88f9c5ae954731a6a8df093b2223eba',1,'Window::Window()']]],
-  ['window_2ecpp',['Window.cpp',['../_window_8cpp.html',1,'']]],
-  ['window_2eh',['Window.h',['../_window_8h.html',1,'']]]
+  ['update',['update',['../classgui_1_1_g_u_i.html#af3d897979ff697f1b64e673f29ca8ccd',1,'gui::GUI::update()'],['../classgui_1_1_button.html#ab10f34b685d2c75e5a84c0c4ccf88ff1',1,'gui::Button::update()'],['../classgui_1_1_check_box.html#ac77e9b13ab5777d627d25a4e3c941270',1,'gui::CheckBox::update()'],['../classgui_1_1_slider.html#a206ddd9edb88709eba2b512c030464db',1,'gui::Slider::update()'],['../classgui_1_1_widget.html#a8b5b1bc9d917b343c3af565e9d2e9e78',1,'gui::Widget::update()'],['../class_controller.html#a7d04c17913f04f99429aa29fa8505484',1,'Controller::update()'],['../class_key_handler.html#a76bc07afddc3b4b607f46d8c5e06a8c2',1,'KeyHandler::update()'],['../class_scene.html#ae72a3454e5d4e06d4125db5322fb0c91',1,'Scene::update()'],['../class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637',1,'SceneManager::update()'],['../class_bullet_manager.html#ae8638f3b70fe44a15413e1107ea806fe',1,'BulletManager::update()'],['../classbullets_1_1_bullet.html#a5176e4323b31a7a86f7333f85bdc3491',1,'bullets::Bullet::update()'],['../class_game_scene.html#a31a272239cac07b320d01c5e632df22e',1,'GameScene::update()'],['../class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4',1,'Player::update()'],['../class_main_menu_scene.html#a583c4f8cdb58cb60f9fbecd0e8cfbcf2',1,'MainMenuScene::update()'],['../class_options_scene.html#a81bb4f5115c825e795daa79751195ca0',1,'OptionsScene::update()']]],
+  ['updatebox',['updateBox',['../classbullets_1_1_bullet.html#afa446d8e06cf333ea39897966487a2af',1,'bullets::Bullet']]],
+  ['updatekey',['updateKey',['../class_key_handler.html#a9286e652204a3e49b7674f47f0ac99fa',1,'KeyHandler']]],
+  ['updateshape',['updateShape',['../classgui_1_1_widget.html#ad76ef53c8e689a3b002e155ed436e168',1,'gui::Widget']]],
+  ['updatevelocityvector',['updateVelocityVector',['../classbullets_1_1_bullet.html#a9da1ed1d52f5047216d162171bbf1af4',1,'bullets::Bullet']]]
 ];

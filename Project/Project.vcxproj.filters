@@ -79,6 +79,12 @@
     <Filter Include="Source Files\tinyh">
       <UniqueIdentifier>{ea896656-eecd-42b2-9a7d-6a52cf984c30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Scenes\GameScene\Bullets">
+      <UniqueIdentifier>{8a0658ee-1037-4327-b2ec-1108f16c6f74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\GameScene\Bullets">
+      <UniqueIdentifier>{eca05614-a84c-4b9f-b3d9-197a89674253}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -129,12 +135,6 @@
     <ClCompile Include="src\Scenes\GameScene\BulletManager.cpp">
       <Filter>Source Files\Scenes\GameScene</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scenes\GameScene\Bullet.cpp">
-      <Filter>Source Files\Scenes\GameScene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\GameScene\BulletStandard.cpp">
-      <Filter>Source Files\Scenes\GameScene</Filter>
-    </ClCompile>
     <ClCompile Include="src\Scenes\GameScene\GameScene.cpp">
       <Filter>Source Files\Scenes\GameScene</Filter>
     </ClCompile>
@@ -152,6 +152,15 @@
     </ClCompile>
     <ClCompile Include="src\tinyheaders\tinyc2.cpp">
       <Filter>Source Files\tinyh</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\Bullet.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\Standard.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\Empowered.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -202,13 +211,7 @@
     <ClInclude Include="include\App.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\Bullet.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\BulletManager.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\BulletStandard.h">
       <Filter>Header Files\Scenes\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\GameScene.h">
@@ -223,11 +226,20 @@
     <ClInclude Include="include\Scenes\GameScene\Weapon.h">
       <Filter>Header Files\Scenes\GameScene</Filter>
     </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\BulletTypes.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
     <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h">
       <Filter>Header Files\Scenes\OptionsScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\Bullet.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\BulletTypes.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\Standard.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\Empowered.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
