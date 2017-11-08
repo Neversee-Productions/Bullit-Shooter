@@ -50,7 +50,7 @@
 /// <summary>
 /// @brief Entry point.
 /// 
-/// The Main Entry point for the application
+/// The Main Entry point for the application.
 /// @file
 /// </summary>
 /// <param name="argc">number of arguments passed into the application.</param>
