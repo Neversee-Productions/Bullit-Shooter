@@ -25,10 +25,11 @@ SceneManager::SceneManager(
 
 	scenePt = std::make_shared<MainMenuScene>(m_keyHandler, m_controller);
 	addScene(scenePt);
-	loadScene(scenePt->getName());
+	preLoadScene(scenePt->getName());
 
 	scenePt = std::make_shared<OptionsScene>(m_keyHandler, m_controller);
 	addScene(scenePt);
+	loadScene(scenePt->getName());
 }
 
 /// <summary>
@@ -45,7 +46,7 @@ Scene & SceneManager::getScene(const std::string & name)
 	auto itt = m_sceneMap.find(name);
 	if (itt != m_sceneMap.end())
 	{
-		return *(itt->second);
+		return *(itt->second.first);
 	}
 	else
 	{
@@ -75,7 +76,26 @@ Scene & SceneManager::getActive() const
 /// <param name="scenePt">Defines our new scene to be added.</param>
 void SceneManager::addScene(std::shared_ptr<Scene> scenePt)
 {
-	m_sceneMap[scenePt->getName()] = scenePt;
+	m_sceneMap[scenePt->getName()] = std::make_pair(scenePt, nullptr);
+}
+
+/// <summary>
+/// @brief Will start loading the resources for the particular Scene.
+/// 
+/// This goes and starts a resource loading thread, keeping our program running.
+/// </summary>
+/// <param name="name">defines the Scene to be pre-loaded.</param>
+void SceneManager::preLoadScene(const std::string & name)
+{
+	auto itt = m_sceneMap.find(name);
+	if (itt != m_sceneMap.end())
+	{
+		auto & mapValue = itt->second;
+		auto sptrScene = mapValue.first;
+		std::unique_ptr<std::thread> uptrThread = std::move(mapValue.second);
+		uptrThread = std::make_unique<std::thread>(&Scene::preStart, sptrScene);
+		mapValue.second.swap(uptrThread);
+	}
 }
 
 /// <summary>
@@ -95,7 +115,15 @@ void SceneManager::loadScene(const std::string & name)
 		{
 			m_currentScene->stop();
 		}
-		m_currentScene = (itt->second);
+		auto & mapValue = itt->second;
+		auto sptrScene = mapValue.first;
+		std::unique_ptr<std::thread> sptrThread = std::move(mapValue.second);
+		if (sptrThread)
+		{
+			sptrThread->join();
+			std::unique_ptr<std::thread>(nullptr).swap(sptrThread);
+		}
+		m_currentScene = sptrScene;
 		m_currentScene->start();
 	}
 	else if (name == "Exit")

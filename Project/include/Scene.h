@@ -18,6 +18,7 @@ public:
 	Scene(const std::string & sceneName);
 	const std::string & getName() const;
 	virtual const std::string & getNextSceneName();
+	virtual void preStart();
 	virtual void start() abstract;
 	virtual void stop() abstract;
 	virtual void update() abstract;

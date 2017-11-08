@@ -1,8 +1,10 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
+#include <thread>
 #include <memory>
 #include <map>
+#include <list>
 #include <string>
 #include "Scene.h"
 #include "Scenes\GameScene\GameScene.h"
@@ -27,6 +29,7 @@ private:
 	Scene & getScene(const std::string & name);
 	Scene & getActive() const;
 	void addScene(std::shared_ptr<Scene> scenePt);
+	void preLoadScene(const std::string & name);
 	void loadScene(const std::string & name);
 	void goToNextScene();
 
@@ -51,13 +54,21 @@ private:
 	/// and is the target for our update/draw calls.
 	/// </summary>
 	std::shared_ptr<Scene> m_currentScene;
-	
+
 	/// <summary>
-	/// @brief Alias for our map of Scene's.
+	/// @brief Alias for the value type of our map.
 	/// 
-	/// 
+	/// The first element is a pointer to a scene
+	/// while the second element is a ThreadList.
 	/// </summary>
-	typedef std::map<std::string, std::shared_ptr<Scene>> SceneMap;
+	typedef std::pair<std::shared_ptr<Scene>, std::unique_ptr<std::thread>> ScenePair;
+
+	/// <summary>
+	/// @brief Alias for our map of ScenePair's.
+	/// 
+	/// Our map will contain a value of type ScenePair.
+	/// </summary>
+	typedef std::map<std::string, ScenePair> SceneMap;
 
 	/// <summary>
 	/// @brief Container of all scenes.
@@ -67,6 +78,8 @@ private:
 	SceneMap m_sceneMap;
 
 	/// <summary>
+	/// @brief Shared pointer to a pre-created controller.
+	/// 
 	/// 
 	/// </summary>
 	std::shared_ptr<Controller> m_controller;

@@ -6,6 +6,8 @@ var class_main_menu_scene =
     [ "btnNewGame", "class_main_menu_scene.html#a595eb3d30392e31b4031616c15faf494", null ],
     [ "btnOptions", "class_main_menu_scene.html#ae56f78e3a8a42a5cc3dd950702efb913", null ],
     [ "draw", "class_main_menu_scene.html#a689a8c7161df5d014a24bf71cab8eae4", null ],
+    [ "load", "class_main_menu_scene.html#ac2732674db57250ebd0d53781449bccb", null ],
+    [ "preStart", "class_main_menu_scene.html#af036cd144fb8fb364e09f7a9abf79fb9", null ],
     [ "start", "class_main_menu_scene.html#a725c076e531354d64031071fa66feb67", null ],
     [ "stop", "class_main_menu_scene.html#a4a4c783bee20ab3af01c2b9de70d28db", null ],
     [ "update", "class_main_menu_scene.html#a583c4f8cdb58cb60f9fbecd0e8cfbcf2", null ],

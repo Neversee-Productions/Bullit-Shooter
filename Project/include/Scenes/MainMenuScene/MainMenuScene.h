@@ -15,12 +15,14 @@ class MainMenuScene : public Scene
 {
 public:
 	MainMenuScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller);
+	void preStart() final override;
 	void start() final override;
 	void stop() final override;
 	void update() final override;
 	void draw(Window & window, const float & deltaTime) final override;
 
 private:
+	void load();
 	void btnNewGame();
 	void btnExitGame();
 	void btnOptions();

@@ -23,6 +23,18 @@ MainMenuScene::MainMenuScene(
 }
 
 /// <summary>
+/// @brief Preloads resources on different thread.
+/// 
+/// </summary>
+void MainMenuScene::preStart()
+{
+	if (!m_resources)
+	{
+		this->load();
+	}
+}
+
+/// <summary>
 /// @brief Configures our MainMenuScene.
 /// 
 /// Setups appropriate resources for gui
@@ -30,67 +42,11 @@ MainMenuScene::MainMenuScene(
 /// </summary>
 void MainMenuScene::start()
 {
-	const std::string GUI_PATH("resources/gui/");
-	const std::string BTN_FONT_PATH = GUI_PATH + "fonts/QuartzMS.ttf";
-	const std::string BTN_TEXTURE_PATH = GUI_PATH + "textures/button.png";
-	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
-
-	m_nextSceneName = "";
-
-	m_resources = std::make_unique<Resources>();
-	// store dereferenced pointer
-	// used to avoid pointer syntax.
-	auto & resources = *m_resources;
-
-	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, true);
-	// store dereferenced pointer
-	// used to avoid pointer syntax.
-	auto & gui = *m_gui;
-
-	auto sptrButtonFont = resources.m_sptrButtonFont;
-	assert(sptrButtonFont->loadFromFile(BTN_FONT_PATH));
-
-	auto sptrButtonTexture = resources.m_sptrButtonTexture;
-	assert(sptrButtonTexture->loadFromFile(BTN_TEXTURE_PATH));
-
-	m_gui->addButton(
-		std::bind(&MainMenuScene::btnNewGame, this),
-		"New Game",
-		zero,
-		sptrButtonFont,
-		24u,
-		sptrButtonTexture,
-		gui::Button::s_TEXT_RECT_LEFT,
-		gui::Button::s_TEXT_RECT_MID,
-		gui::Button::s_TEXT_RECT_RIGHT
-	);
-
-	m_gui->addButton(
-		std::bind(&MainMenuScene::btnOptions, this),
-		"Options",
-		zero,
-		sptrButtonFont,
-		24u,
-		sptrButtonTexture,
-		gui::Button::s_TEXT_RECT_LEFT,
-		gui::Button::s_TEXT_RECT_MID,
-		gui::Button::s_TEXT_RECT_RIGHT
-	);
-
-	m_gui->addButton(
-		std::bind(&MainMenuScene::btnExitGame, this),
-		"Exit Game",
-		zero,
-		sptrButtonFont,
-		24u,
-		sptrButtonTexture,
-		gui::Button::s_TEXT_RECT_LEFT,
-		gui::Button::s_TEXT_RECT_MID,
-		gui::Button::s_TEXT_RECT_RIGHT
-	);
-
-	const auto& windowSize = App::getWindowSize();
-	gui.configure(gui::GUI::Layouts::StripDiagonal, windowSize);
+	// Resources not loaded, load them.
+	if (!m_resources)
+	{
+		this->load();
+	}
 }
 
 /// <summary>
@@ -137,6 +93,81 @@ void MainMenuScene::update()
 void MainMenuScene::draw(Window & window, const float & deltaTime)
 {
 	m_gui->draw(window);
+}
+
+/// <summary>
+/// @brief Load up MainMenuScene needs to run.
+/// 
+/// 
+/// </summary>
+void MainMenuScene::load()
+{
+	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
+
+	const std::string GUI_PATH("resources/gui/");
+	const std::string BTN_FONT_PATH = GUI_PATH + "fonts/QuartzMS.ttf";
+	const std::string BTN_TEXTURE_PATH = GUI_PATH + "textures/button.png";
+
+	m_nextSceneName = "";
+
+	// instatiate our resource pointers that will "own"
+	// the asset on the heap.
+	m_resources = std::make_unique<Resources>();
+	// store dereferenced pointer
+	// used to avoid pointer syntax.
+	auto & resources = *m_resources;
+
+	auto sptrButtonFont = resources.m_sptrButtonFont;
+	assert(sptrButtonFont->loadFromFile(BTN_FONT_PATH));
+
+	auto sptrButtonTexture = resources.m_sptrButtonTexture;
+	assert(sptrButtonTexture->loadFromFile(BTN_TEXTURE_PATH));
+
+
+	// instantiate our gui object and assign ownership.
+	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, true);
+	// store dereferenced pointer
+	// used to avoid pointer syntax.
+	auto & gui = *m_gui;
+
+	m_gui->addButton(
+		std::bind(&MainMenuScene::btnNewGame, this),
+		"New Game",
+		zero,
+		sptrButtonFont,
+		24u,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+
+	m_gui->addButton(
+		std::bind(&MainMenuScene::btnOptions, this),
+		"Options",
+		zero,
+		sptrButtonFont,
+		24u,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+
+	m_gui->addButton(
+		std::bind(&MainMenuScene::btnExitGame, this),
+		"Exit Game",
+		zero,
+		sptrButtonFont,
+		24u,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+
+	const auto& windowSize = App::getWindowSize();
+	gui.configure(gui::GUI::Layouts::StripDiagonal, windowSize);
 }
 
 /// <summary>

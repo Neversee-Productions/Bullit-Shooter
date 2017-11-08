@@ -35,3 +35,12 @@ const std::string & Scene::getNextSceneName()
 {
 	return m_nextSceneName;
 }
+
+/// <summary>
+/// @brief Will pre load all resources.
+/// 
+/// 
+/// </summary>
+void Scene::preStart()
+{
+}
