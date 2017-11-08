@@ -1,6 +1,5 @@
 #include "gui\widgets\Button.h"
 
-/// texture rectangle for button
 const sf::IntRect gui::Button::s_TEXT_RECT_LEFT = sf::IntRect(0, 0, 25, 129);
 const sf::IntRect gui::Button::s_TEXT_RECT_MID = sf::IntRect(25, 0, 450, 129);
 const sf::IntRect gui::Button::s_TEXT_RECT_RIGHT = sf::IntRect(475, 0, 25, 129);
@@ -77,8 +76,6 @@ gui::Button::Button(	std::function<void()> function
 	m_highlightRectangle.setSize(sf::Vector2f(m_rectangleMiddle.getSize().x + (m_rectangleLeft.getSize().x * 2), m_rectangleMiddle.getSize().y));
 	//set origin of highlight box
 	m_highlightRectangle.setOrigin(m_highlightRectangle.getGlobalBounds().width / 2, m_highlightRectangle.getGlobalBounds().height / 2);
-
-
 }
 
 /// <summary>
@@ -159,9 +156,9 @@ void gui::Button::update(const float & dt)
 }
 
 /// <summary>
-/// @brief gives button focus
+/// @brief gives button focus.
 /// 
-/// This method will give focus to this object 
+/// This method will give focus to this object
 /// causing its state to change to hovered
 /// </summary>
 void gui::Button::getFocus()
@@ -170,7 +167,7 @@ void gui::Button::getFocus()
 }
 
 /// <summary>
-/// @brief removes button focus
+/// @brief removes button focus.
 /// 
 /// This method will lose focus from this object
 /// causing its state to change to active
@@ -186,7 +183,6 @@ void gui::Button::loseFocus()
 /// This is the method that will
 /// make the transparency go up and down
 /// </summary>
-/// <param name="alpha"></param>
 void gui::Button::fading()
 {
 	//The flashing exit text
@@ -209,7 +205,7 @@ void gui::Button::fading()
 }
 
 /// <summary>
-/// @brief Proccesses button input
+/// @brief Proccesses button input.
 /// 
 /// if button is pressed, change state to pressed
 /// and call pointer-to-function

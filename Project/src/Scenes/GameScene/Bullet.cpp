@@ -26,11 +26,12 @@ Bullet::Bullet()
 }
 
 /// <summary>
-/// @brief overloaded constructor.
+/// @brief overloaded constructor
 /// 
 /// 
 /// </summary>
-/// <param name="position"></param>
+/// <param name="position">defines the position vector</param>
+/// <param name="type">define type of bullet to create</param>
 Bullet::Bullet(sf::Vector2f position, BulletTypes type)
 	: m_position(position)
 	, m_bulletRect()
@@ -103,10 +104,11 @@ void Bullet::updateBox()
 }
 
 /// <summary>
-/// @brief set position of bullet.
+/// @brief Set the position vector
 /// 
 /// 
 /// </summary>
+/// <param name="pos">defines the new position vector</param>
 void Bullet::setPosition(const sf::Vector2f& pos)
 {
 	m_position = pos;

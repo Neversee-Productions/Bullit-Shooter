@@ -33,7 +33,7 @@ var NAVTREEINDEX =
 [
 "_app_8cpp.html",
 "class_window.html#a2f326af91aa0b826314e713cf3f2d2e5",
-"struct_game_pad_state.html#a5549ec745ae2ec79ad1f29734b3e66de"
+"struct_game_pad_state.html#a60d3d1b3e18bb7c53603d75d0819268f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

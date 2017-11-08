@@ -16,14 +16,18 @@ gui::Widget::Widget()
 
 /// <summary>
 /// @brief Nothing to update.
+/// 
+/// 
 /// </summary>
-/// <param name="dt"></param>
+/// <param name="dt">delta time</param>
 void gui::Widget::update(const float & dt)
 {
 }
 
 /// <summary>
 /// @brief Nothing to update.
+/// 
+/// 
 /// </summary>
 void gui::Widget::updateShape()
 {
@@ -31,6 +35,8 @@ void gui::Widget::updateShape()
 
 /// <summary>
 /// @brief Destructor of a widget.
+/// 
+/// 
 /// </summary>
 gui::Widget::~Widget()
 {

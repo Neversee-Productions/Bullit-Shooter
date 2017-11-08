@@ -6,7 +6,7 @@
 namespace gui
 {
 
-	/// <summary>
+	///
 	/// @author Rafael Plugge
 	/// @author Sebastian Kruzel
 	/// @version 1.0
@@ -14,99 +14,147 @@ namespace gui
 	/// 
 	/// A class that creates a checkbox
 	/// the checkbox is a widget with 2 states on and off
-	/// </summary>
+	///
 	class CheckBox : public Label
 	{
 	public:
-		//The different possible checkbox states
-		enum class CheckboxState { INACTIVE, ACTIVE, HOVERED };
-
-		//The default constructor
-		CheckBox(std::shared_ptr<sf::Font> font				//font of checkbox
-			, sf::String name			//title of checkbox
-			, sf::Vector2f position		//position
-			, float scale				//scale (both width and height)
-			, std::shared_ptr<sf::Texture> onTexture		//shared pointer to the texture of the checkbox
-			, sf::IntRect textRectOn	//texture rectangle when the box is on
-			, sf::IntRect textRectOff	//texture rectangle when the box is off
-			, bool & state				//starting state of the checkbox (true on/ false off)
-			, unsigned charSize = 20u		//character size (default 20)
+		/// <summary>
+		/// @brief The different possible checkbox states.
+		/// 
+		/// 
+		/// </summary>
+		enum class CheckboxState 
+		{ 
+			INACTIVE ///Inactive state of checkbox (user cannot toggle)
+			, ACTIVE ///Active state of checkbox (user may toggle)
+			, HOVERED  ///Checkbox is being currently highlighted
+		};
+		CheckBox(std::shared_ptr<sf::Font> font
+			, sf::String name
+			, sf::Vector2f position
+			, float scale
+			, std::shared_ptr<sf::Texture> onTexture
+			, sf::IntRect textRectOn
+			, sf::IntRect textRectOff
+			, bool & state
+			, unsigned charSize = 20u
 		);
-
-		//the destructor
 		~CheckBox();
-
-		//draw the checkbox
 		void draw(Window & window)const override;
-
-		// draws the checkbox to the render target with the render states applied to it.
 		void draw(sf::RenderTarget& renderTarget, sf::RenderStates renderStates)const override;
-
-		//button update
 		void update(const float & dt) override;
-
-		//get focus method
 		void getFocus() override;
-
-		// lose focus method
 		void loseFocus() override;
-
-		//method that has alpha go up and down
 		void fading();
-
-		//method for processing the xbox controller inputs
 		bool processInput(Controller& controller, KeyHandler & keyhandler) override;
-
-		//set position
 		void setPosition(sf::Vector2f position) override;
-
-		//get position
 		sf::Vector2f getPosition() override;
 
-		/// texture rectangle for checkbox
+		/// <summary>
+		/// @brief texture rectangle of the on checkbox.
+		/// 
+		/// 
+		/// </summary>
 		static const sf::IntRect s_TEXT_RECT_ON;
+
+		/// <summary>
+		/// @brief texture rectangle of the off checkbox.
+		/// 
+		/// 
+		/// </summary>
 		static const sf::IntRect s_TEXT_RECT_OFF;
 
 	protected:
-		//center of the checkbox
+		/// <summary>
+		/// @brief center of the checkbox.
+		/// 
+		/// 
+		/// </summary>
 		sf::Vector2f m_position;
 
-		//scale of the textures
+		/// <summary>
+		/// @brief scale of the textures.
+		/// 
+		/// 
+		/// </summary>
 		float m_scale;
 
-		//the shared pointer for texture of checkbox
+		/// <summary>
+		/// @brief the shared pointer for texture of checkbox.
+		/// 
+		/// 
+		/// </summary>
 		std::shared_ptr<sf::Texture> m_texture;
 
-		//highlight rectangle
+		/// <summary>
+		/// @brief highlight rectangle.
+		/// 
+		/// 
+		/// </summary>
 		sf::RectangleShape m_highlightRectangle;
 
-		//alpha of the highlight rectangle
+		/// <summary>
+		/// @brief alpha of the highlight rectangle.
+		/// 
+		/// 
+		/// </summary>
 		float m_highlightAlpha;
 
-		//check if alpha to go down
+		/// <summary>
+		/// @brief check if alpha to go down.
+		/// 
+		/// 
+		/// </summary>
 		bool m_fadeOut;
 
-		//on off states of checkbox
+		/// <summary>
+		/// @brief on off states of checkbox.
+		/// 
+		/// 
+		/// </summary>
 		bool& m_state;
 
-		//sprite of the checkbox
+		/// <summary>
+		/// @brief sprite of the checkbox.
+		/// 
+		/// 
+		/// </summary>
 		sf::RectangleShape m_rectangle;
 
-		//offset of label from checkbox
+		/// <summary>
+		/// @brief offset of label from checkbox.
+		/// 
+		/// 
+		/// </summary>
 		const float m_LABEL_OFFSET = 20.0f;
 
-		//the highlight border
+		/// <summary>
+		/// @brief the highlight border.
+		/// 
+		/// 
+		/// </summary>
 		const float m_HIGHLIGHT_BORDER = 20.0f;
 
-		//the current checkbox state
+		/// <summary>
+		/// @brief the current checkbox state.
+		/// 
+		/// 
+		/// </summary>
 		CheckboxState m_currentState = CheckboxState::ACTIVE;
 
-		//texture rectangle for checkbox on
+		/// <summary>
+		/// @brief texture rectangle for checkbox on.
+		/// 
+		/// 
+		/// </summary>
 		sf::IntRect m_onTextRect;
 
-		//texture rectangle for checkbox off
+		/// <summary>
+		/// @brief texture rectangle for checkbox off.
+		/// 
+		/// 
+		/// </summary>
 		sf::IntRect m_offTextRect;
-
 	};
 }
 

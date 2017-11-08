@@ -28,7 +28,7 @@ BulletStandard::BulletStandard(sf::Vector2f position)
 /// 
 /// 
 /// </summary>
-/// <returns></returns>
+/// <returns>value of fire rate</returns>
 float BulletStandard::getFireRate()
 {
 	return s_FIRE_RATE;

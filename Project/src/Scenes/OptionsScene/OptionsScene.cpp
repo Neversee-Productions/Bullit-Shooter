@@ -1,5 +1,13 @@
 #include "Scenes\OptionsScene\OptionsScene.h"
 
+/// <summary>
+/// @brief default constructor.
+/// 
+/// Defines our options screen that is used to alter video and audio settings.
+/// 
+/// </summary>
+/// <param name="keyHandler">defines a pre-created key handler</param>
+/// <param name="controller">defines a pre-created controller</param>
 OptionsScene::OptionsScene(
 	std::shared_ptr<KeyHandler> keyHandler
 	, std::shared_ptr<Controller> controller

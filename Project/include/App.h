@@ -14,6 +14,11 @@
 class App
 {
 private:
+	/// <summary>
+	/// @brief default constructor.
+	/// 
+	/// @note app is purely static therefore constructor is private.
+	/// </summary>
 	App() {};
 
 public:

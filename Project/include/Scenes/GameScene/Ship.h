@@ -9,7 +9,6 @@
 /// @author Sebastian Kruzel
 /// 
 /// Defines the ship class.
-/// This class is just a square on the screen that represents the player ship for now
 /// 
 class Ship
 {

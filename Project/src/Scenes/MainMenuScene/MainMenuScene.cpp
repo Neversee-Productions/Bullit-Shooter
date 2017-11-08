@@ -3,9 +3,10 @@
 /// <summary>
 /// @brief Default constructor.
 /// 
-/// Requires a std::shared_ptr<Controller> so as to process input.
+/// Defines our main menu for the game.
 /// </summary>
-/// <param name="controller">defines the controller</param>
+/// <param name="keyHandler">defines a pre-created key handler</param>
+/// <param name="controller">defines a pre-created controller</param>
 MainMenuScene::MainMenuScene(
 	std::shared_ptr<KeyHandler> keyHandler
 	, std::shared_ptr<Controller> controller

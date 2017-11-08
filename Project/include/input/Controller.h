@@ -4,9 +4,12 @@
 #include "SFML\Graphics.hpp"
 #include "SFML\Window\Joystick.hpp"
 
-/// <summary>
-/// data to store the current state of the controller
-/// </summary>
+///
+/// @brief a struct of game pad state.
+/// @author Rafael Plugge
+/// 
+///
+/// 
 struct GamePadState
 {
 	GamePadState()
@@ -30,64 +33,178 @@ struct GamePadState
 		, m_rTS(0.0f, 0.0f)
 		, m_lTS(0.0f, 0.0f)
 	{}
+	/// <summary>
+	/// @brief Gamepad A button.
+	/// 
+	/// 
+	/// </summary>
+	bool m_A;
 
-	bool m_A; // Gamepad A button
-	bool m_B; // Gamepad B button
-	bool m_X; // Gamepad X button
-	bool m_Y; // Gamepad Y button
-	bool m_LB; // Gamepad Left Bumper
-	bool m_RB; // Gamepad Right Bumper
-	bool m_lTSClick; // Gamepad left thumbstick click
-	bool m_rTSClick; // Gamepad right thumbstick click
-	bool m_dpadUp; // Gamepad directional pad Up
-	bool m_dpadDown; // Gamepad directional pad Down
-	bool m_dpadLeft; // Gamepad directional pad Left
-	bool m_dpadRight; // Gamepad directional pad right
-	bool m_start; // Gamepad start button
-	bool m_back; // Gamepad back button
-	bool m_xbox; // Gamepad Xbox button
-	float m_rTrigger; // Gamepad right trigger axis value (-100-0)
-	float m_lTrigger; // Gamepad left trigger axis value (0-100)
-	sf::Vector2f m_rTS; // Gamepad right thumbstick
-	sf::Vector2f m_lTS; // Gamepad left thumbstick
+	/// <summary>
+	/// @brief Gamepad B button.
+	/// 
+	/// 
+	/// </summary>
+	bool m_B;
+
+	/// <summary>
+	/// @brief Gamepad X button.
+	/// 
+	/// 
+	/// </summary>
+	bool m_X;
+
+	/// <summary>
+	/// @brief Gamepad Y button.
+	/// 
+	/// 
+	/// </summary>
+	bool m_Y;
+
+	/// <summary>
+	/// @brief Gamepad Left Bumper.
+	/// 
+	/// 
+	/// </summary>
+	bool m_LB;
+
+	/// <summary>
+	/// @brief Gamepad Right Bumper.
+	/// 
+	/// 
+	/// </summary>
+	bool m_RB;
+
+	/// <summary>
+	/// @brief Gamepad left thumbstick click.
+	/// 
+	/// 
+	/// </summary>
+	bool m_lTSClick;
+
+	/// <summary>
+	/// @brief Gamepad right thumbstick click.
+	/// 
+	/// 
+	/// </summary>
+	bool m_rTSClick;
+
+	/// <summary>
+	/// @brief Gamepad directional pad Up.
+	/// 
+	/// 
+	/// </summary>
+	bool m_dpadUp;
+
+	/// <summary>
+	/// @brief Gamepad directional pad Down.
+	/// 
+	/// 
+	/// </summary>
+	bool m_dpadDown;
+
+	/// <summary>
+	/// @brief Gamepad directional pad Left.
+	/// 
+	/// 
+	/// </summary>
+	bool m_dpadLeft;
+
+	/// <summary>
+	/// @brief Gamepad directional pad right.
+	/// 
+	/// 
+	/// </summary>
+	bool m_dpadRight;
+
+	/// <summary>
+	/// @brief Gamepad start button.
+	/// 
+	/// 
+	/// </summary>
+	bool m_start;
+
+	/// <summary>
+	/// @brief Gamepad back button.
+	/// 
+	/// 
+	/// </summary>
+	bool m_back;
+
+	/// <summary>
+	/// @brief Gamepad Xbox button.
+	/// 
+	/// 
+	/// </summary>
+	bool m_xbox;
+
+	/// <summary>
+	/// @brief Gamepad right trigger axis value (-100-0).
+	/// 
+	/// 
+	/// </summary>
+	float m_rTrigger;
+
+	/// <summary>
+	/// @brief Gamepad left trigger axis value (0-100).
+	/// 
+	/// 
+	/// </summary>
+	float m_lTrigger;
+
+	/// <summary>
+	/// @brief Gamepad right thumbstick.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_rTS;
+
+	/// <summary>
+	/// @brief Gamepad left thumbstick.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_lTS;
 };
-
-/// <summary>
-/// Definition for Xbox 360 controller button mappings
-/// can be changed to support multiple types of controllers
-/// </summary>
 #define XBOX360_
 #ifdef XBOX360_
 
+/// <summary>
+/// @brief an enumerator to define button mappings.
+/// 
+/// 
+/// </summary>
 enum class ButtonMappings
 {
-	A = 0, // = 0
-	B, // = 1
-	X, // = 2
-	Y, // = 3
-	LeftBumper, // = 4
-	RightBumper, // = 5
-	Back, // = 6
-	Start, // = 7
-	LeftThumbClick, // = 8
-	RightThumbClick, // = 9
-	Trigger = 2, // Left Trigger = (0)-(100) Right Trigger = (0)-(-100)
-	LeftThumbstickX = 0, // Left Thumbstick = Axis::X(0)
-	LeftThumbstickY = 1, // Left Thumbstick = Axis::Y(1)
-	RightThumbstickX = 4, // Right Thumbstick = Axis::U(4)
-	RightThumbstickY = 3, // Right Thumbstick = Axis::R(3)
-	DpadY = 7, // Dpad Y = Axis::PovY(7)
-	DpadX = 6 // Dpad X = Axis::PovX(6)
+	A = 0, /// = 0
+	B, /// = 1
+	X, /// = 2
+	Y, /// = 3
+	LeftBumper, /// = 4
+	RightBumper, /// = 5
+	Back, /// = 6
+	Start, /// = 7
+	LeftThumbClick, /// = 8
+	RightThumbClick, /// = 9
+	Trigger = 2, /// Left Trigger = (0)-(100) Right Trigger = (0)-(-100)
+	LeftThumbstickX = 0, /// Left Thumbstick = Axis::X(0)
+	LeftThumbstickY = 1, /// Left Thumbstick = Axis::Y(1)
+	RightThumbstickX = 4, /// Right Thumbstick = Axis::U(4)
+	RightThumbstickY = 3, /// Right Thumbstick = Axis::R(3)
+	DpadY = 7, /// Dpad Y = Axis::PovY(7)
+	DpadX = 6 /// Dpad X = Axis::PovX(6)
 };
 #else
 
 #endif // XBOX360_
 
 
-/// <summary>
-/// Xbox controller class to query current state of controller
-/// to mimic the controller states like XNA
-/// </summary>
+///
+/// @brief controller class
+/// @author Rafael Plugge
+/// 
+///
+/// 
 class Controller
 {
 public:
@@ -98,31 +215,63 @@ public:
 	bool connect();
 	bool isAnyButtonPressed() const;
 
-	// index count for controller
+	/// <summary>
+	/// @brief index count for controller.
+	/// 
+	/// 
+	/// </summary>
 	unsigned int m_gamepadIndex;
 
-	// current gamepad state
+	/// <summary>
+	/// @brief current gamepad state.
+	/// 
+	/// 
+	/// </summary>
 	GamePadState m_currentState;
 
-	// previous gamepad state
+	/// <summary>
+	/// @brief previous gamepad state.
+	/// 
+	/// 
+	/// </summary>
 	GamePadState m_previousState;
 private:
-	// pete was here ?
+	/// <summary>
+	/// @brief pete was here ?.
+	/// 
+	/// 
+	/// </summary>
 	static const bool PETE_IS_COOL = true;
 
 	bool checkButton(const ButtonMappings &);
 	float checkAxis(const ButtonMappings &);
 
-	// Threshold at which the Dpad is considered pressed
+	/// <summary>
+	/// @brief Threshold at which the Dpad is considered pressed.
+	/// 
+	/// 
+	/// </summary>
 	const int DPAD_THRESHOLD = 50;
 
-	// Threshold at which the Trigger's are considered 0
+	/// <summary>
+	/// @brief Threshold at which the Trigger's are considered 0.
+	/// 
+	/// 
+	/// </summary>
 	const float TRIGGERS_THRESHOLD = 1.0f;
 
-	// Threshold at which the Thumbsticks are considered 0
+	/// <summary>
+	/// @brief Threshold at which the Thumbsticks are considered 0.
+	/// 
+	/// 
+	/// </summary>
 	const float THUMB_THRESHOLD = 30.0f;
 
-	// 4u is the Maximum number of supported controllers
+	/// <summary>
+	/// @brief 4u is the Maximum number of supported controllers.
+	/// 
+	/// 
+	/// </summary>
 	const unsigned int MAX_CONTROLLERS = 4u;
 };
 

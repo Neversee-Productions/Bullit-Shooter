@@ -1,6 +1,5 @@
 #include "gui\widgets\Slider.h"
 
-/// texture rectangle for slider
 const sf::IntRect gui::Slider::s_TEXT_RECT_EMPTY = sf::IntRect(0, 0, 246, 36);
 const sf::IntRect gui::Slider::s_TEXT_RECT_FILL = sf::IntRect(0, 46, 246, 36);
 const sf::IntRect gui::Slider::s_TEXT_RECT_SQUARE = sf::IntRect(0, 92, 48, 48);
@@ -11,14 +10,13 @@ const sf::IntRect gui::Slider::s_TEXT_RECT_SQUARE = sf::IntRect(0, 92, 48, 48);
 /// 
 /// </summary>
 /// <param name="texture">texture sheet</param>
-/// <param name="emptyTextRect">empty rectangle texture</param>
-/// <param name="filledTextRect">filled rectangle texture</param>
-/// <param name="squareTextRect">the moving square on the slider texture</param>
+/// <param name="emptyTextRect">empty texture rectangle</param>
+/// <param name="filledTextRect">filled texture rectangle</param>
+/// <param name="squareTextRect">the moving square on the slider texture rectangle</param>
 /// <param name="font">the font of label</param>
 /// <param name="name">name of slider</param>
 /// <param name="fontSize">size of font</param>
 /// <param name="position">slider name position</param>
-/// <param name="startingPos">starting value</param>
 /// <param name="sliderWidth">width of slider in pixels</param>
 /// <param name="sliderHeight">height of slider in pixels</param>
 /// <param name="minValue">mimimum value</param>
@@ -37,7 +35,7 @@ gui::Slider::Slider(	std::shared_ptr<sf::Texture> texture
 				,float minValue
 				,float maxValue 
 				,float& currentValue)
-	: m_LeftLabel(std::make_unique<Label>(std::to_string(static_cast<int>(minValue)), fontSize, position, font))
+	: m_leftLabel(std::make_unique<Label>(std::to_string(static_cast<int>(minValue)), fontSize, position, font))
 	, m_rightLabel(std::make_unique<Label>(std::to_string(static_cast<int>(maxValue)), fontSize, position, font))
 	, m_bottomLabel(std::make_unique<Label>(std::to_string(static_cast<int>(currentValue)), fontSize, position, font))
 	, m_topLabel(std::make_unique<Label>(name, fontSize, position, font))
@@ -112,8 +110,8 @@ gui::Slider::Slider(	std::shared_ptr<sf::Texture> texture
 	m_bottomLabel->setPosition(sf::Vector2f(m_slider.getPosition().x - (m_bottomLabel->getSize().x / 2),											//equal to the moving circle - half text width
 											m_sliderBarEmpty.getPosition().y + (m_bottomLabel->getSize().y / 2) + m_LABEL_OFFSET));					//slider pos.y + label height /2 + Label offset
 
-	m_LeftLabel->setPosition(sf::Vector2f(m_sliderBarEmpty.getPosition().x - (sliderWidth / 2) - (m_LeftLabel->getSize().x / 2) - m_LABEL_OFFSET,	//slider centre.x - slider width /2 - label width / 2 - offset
-										  m_sliderBarEmpty.getPosition().y - m_LeftLabel->getSize().y / 2));											//slider pos.y - label height / 2
+	m_leftLabel->setPosition(sf::Vector2f(m_sliderBarEmpty.getPosition().x - (sliderWidth / 2) - (m_leftLabel->getSize().x / 2) - m_LABEL_OFFSET,	//slider centre.x - slider width /2 - label width / 2 - offset
+										  m_sliderBarEmpty.getPosition().y - m_leftLabel->getSize().y / 2));											//slider pos.y - label height / 2
 
 	m_rightLabel->setPosition(sf::Vector2f(m_sliderBarEmpty.getPosition().x + (sliderWidth / 2) + (m_rightLabel->getSize().x / 2) + m_LABEL_OFFSET,	//slider centre.x + slider width /2 + label width / 2 + offset
 										  m_sliderBarEmpty.getPosition().y - m_rightLabel->getSize().y / 2));										//slider pos.y - label height / 2
@@ -187,7 +185,7 @@ void gui::Slider::update(const float & dt)
 /// <param name="window">window target of all draw calls</param>
 void gui::Slider::draw(Window & window) const
 {
-	m_LeftLabel->draw(window);
+	m_leftLabel->draw(window);
 	m_rightLabel->draw(window);
 	window.draw(m_sliderBarEmpty);
 	window.draw(m_sliderBarFill);
@@ -210,7 +208,7 @@ void gui::Slider::draw(Window & window) const
 /// <param name="renderState">defines the transformations that are applied to the renderer</param>
 void gui::Slider::draw(sf::RenderTarget & renderTarget, sf::RenderStates renderStates) const
 {
-	m_LeftLabel->draw(renderTarget, renderStates);
+	m_leftLabel->draw(renderTarget, renderStates);
 	m_rightLabel->draw(renderTarget, renderStates);
 	renderTarget.draw(m_sliderBarEmpty, renderStates);
 	renderTarget.draw(m_sliderBarFill, renderStates);
@@ -314,7 +312,7 @@ bool gui::Slider::processInput(Controller & controller, KeyHandler & keyhandler)
 /// 
 /// 
 /// </summary>
-/// <param name="position"></param>
+/// <param name="position">new position</param>
 void gui::Slider::setPosition(sf::Vector2f position)
 {
 	m_sliderBarEmpty.setPosition(position);
@@ -337,8 +335,8 @@ void gui::Slider::setPosition(sf::Vector2f position)
 	m_bottomLabel->setPosition(sf::Vector2f(m_slider.getPosition().x,																			//equal to the moving circle - half text width
 											m_sliderBarEmpty.getPosition().y + (m_bottomLabel->getSize().y / 2) + m_LABEL_OFFSET));														//slider pos.y + label height /2 + Label offset
 
-	m_LeftLabel->setPosition(sf::Vector2f(m_sliderBarEmpty.getPosition().x - (m_sliderBarEmpty.getLocalBounds().width / 2) - (m_LeftLabel->getSize().x / 2) - m_LABEL_OFFSET,				//slider centre.x - slider width /2 - label width / 2 - offset
-										  m_sliderBarEmpty.getPosition().y - m_LeftLabel->getSize().y / 2));																			//slider pos.y - label height / 2
+	m_leftLabel->setPosition(sf::Vector2f(m_sliderBarEmpty.getPosition().x - (m_sliderBarEmpty.getLocalBounds().width / 2) - (m_leftLabel->getSize().x / 2) - m_LABEL_OFFSET,				//slider centre.x - slider width /2 - label width / 2 - offset
+										  m_sliderBarEmpty.getPosition().y - m_leftLabel->getSize().y / 2));																			//slider pos.y - label height / 2
 
 	m_rightLabel->setPosition(sf::Vector2f(m_sliderBarEmpty.getPosition().x + (m_sliderBarEmpty.getLocalBounds().width / 2) + (m_rightLabel->getSize().x / 2) + m_LABEL_OFFSET,	//slider centre.x + slider width /2 + label width / 2 + offset
 										   m_sliderBarEmpty.getPosition().y - m_rightLabel->getSize().y / 2));																//slider pos.y - label height / 2
@@ -353,7 +351,7 @@ void gui::Slider::setPosition(sf::Vector2f position)
 /// 
 /// Return the centre position of the slider bar
 /// </summary>
-/// <returns></returns>
+/// <returns>center position of slider</returns>
 sf::Vector2f gui::Slider::getPosition()
 {
 	return m_sliderBarEmpty.getPosition();

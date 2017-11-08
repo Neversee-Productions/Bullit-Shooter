@@ -42,32 +42,17 @@ namespace gui
 			, StackVertically /// Stacks widgets vertically in the center of the screen.
 			, StripDiagonal /// Stacks widgets diagonally accross the center.
 		};
-
-		// constructor
 		GUI(std::shared_ptr<KeyHandler>, std::shared_ptr<Controller>, bool stripDraw = false);
-
-		// destructor
 		~GUI();
-
-		// Update GUI
 		void update(const float & dt);
-
-		// Draw the GUI
 		void draw(Window&) const;
-
-		// Configure the GUI
 		void configure(const Layouts&, const sf::Vector2u & windowSize);
-		// Configure the GUI
 		void configure(const Layouts&, const unsigned int & windowWidth, const unsigned int & windowHeight);
-
-		// Add a label to widgets vector
 		void addLabel(sf::String contents
 			, unsigned int fontSize
 			, sf::Vector2f position
 			, std::shared_ptr<sf::Font> font
 			, sf::Color color = sf::Color::White);
-
-		// Add a button to widgets vector
 		void addButton(std::function<void()> function
 			, sf::String message
 			, sf::Vector2f position
@@ -77,8 +62,6 @@ namespace gui
 			, sf::IntRect leftTextRect
 			, sf::IntRect middleTextRect
 			, sf::IntRect rightTextRect);
-
-		// Add a slider to widgets vector
 		void addSlider(std::shared_ptr<sf::Font> font
 			, sf::String name
 			, unsigned int fontSize
@@ -92,13 +75,11 @@ namespace gui
 			, sf::IntRect emptyTextRect
 			, sf::IntRect filledTextRect
 			, sf::IntRect squareTextRect);
-
-		// Add a checkbox to the GUI
 		void addCheckbox(std::shared_ptr<sf::Font> font
 			, sf::String name
 			, sf::Vector2f position
 			, float scale
-			, std::shared_ptr<sf::Texture> m_texture
+			, std::shared_ptr<sf::Texture> texture
 			, sf::IntRect textRectOn
 			, sf::IntRect textRectOff
 			, bool & state

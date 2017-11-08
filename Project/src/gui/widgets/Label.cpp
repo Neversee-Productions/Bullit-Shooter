@@ -14,9 +14,10 @@ gui::Label::Label()
 /// 
 /// </summary>
 /// <param name="contents">message to display</param>
-/// <param name="font">font</param>
 /// <param name="fontSize">char size</param>
 /// <param name="position">position on screen</param>
+/// <param name="font">font</param>
+/// <param name="color">color of the font</param>
 gui::Label::Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, std::shared_ptr<sf::Font> font, sf::Color color)
 	: Widget()
 	, m_text()

@@ -11,7 +11,7 @@
 /// @author Sebastian Kruzel
 /// 
 /// Defines the player class.
-/// This class will create the Weapon, Shield, Ship and BulletManager
+/// This class will create the Weapon, Shield, Ship and BulletManager.
 /// 
 class Player
 {

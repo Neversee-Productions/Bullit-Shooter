@@ -5,6 +5,7 @@
 /// 
 /// Will construct the player and initializes members
 /// </summary>
+/// <param name="keyHandler">Reference to the key handler</param>
 Player::Player(KeyHandler& keyHandler)
 	: m_ship()
 	, m_weapon1()
@@ -42,9 +43,7 @@ void Player::update()
 {
 	if (m_keyHandler.isPressed(sf::Keyboard::Space))
 	{
-		//shoot a bullet plz
 		m_bulletManager.fireBullet(m_weapon1.m_weaponRect.getPosition(), m_weapon2.m_weaponRect.getPosition(), m_weapon1.m_currentBullet);
-		//m_bulletManager.fireBullet(m_weapon2.m_weaponRect.getPosition(), m_weapon1.m_currentBullet);
 	}
 	m_bulletManager.update();
 }

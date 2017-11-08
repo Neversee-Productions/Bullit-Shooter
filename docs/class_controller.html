@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('class_controller.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Xbox controller class to query current state of controller to mimic the controller states like XNA  
+<p>controller class  
  <a href="class_controller.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_controller_8h_source.html">Controller.h</a>&gt;</code></p>
@@ -100,19 +100,14 @@ $(document).ready(function(){initNavTree('class_controller.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a994a83805e3c9b43f6c6ba90d7269c32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a994a83805e3c9b43f6c6ba90d7269c32">Controller</a> (unsigned int index=0u)</td></tr>
-<tr class="memdesc:a994a83805e3c9b43f6c6ba90d7269c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, setups member variables and initializes them  <a href="#a994a83805e3c9b43f6c6ba90d7269c32">More...</a><br /></td></tr>
 <tr class="separator:a994a83805e3c9b43f6c6ba90d7269c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ab87934c4f7a266cfdb86e0f36bc1b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">~Controller</a> ()</td></tr>
-<tr class="memdesc:a0ab87934c4f7a266cfdb86e0f36bc1b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor, deletes all member variables on the stack  <a href="#a0ab87934c4f7a266cfdb86e0f36bc1b5">More...</a><br /></td></tr>
 <tr class="separator:a0ab87934c4f7a266cfdb86e0f36bc1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d04c17913f04f99429aa29fa8505484"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a7d04c17913f04f99429aa29fa8505484">update</a> ()</td></tr>
-<tr class="memdesc:a7d04c17913f04f99429aa29fa8505484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the controller's previous and current states, if no controller is connected, attempt to reconnect  <a href="#a7d04c17913f04f99429aa29fa8505484">More...</a><br /></td></tr>
 <tr class="separator:a7d04c17913f04f99429aa29fa8505484"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d038f37d2b4d68dd1588b57c062a0ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a7d038f37d2b4d68dd1588b57c062a0ee">isConnected</a> ()</td></tr>
-<tr class="memdesc:a7d038f37d2b4d68dd1588b57c062a0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the currently indexed controller is still connected  <a href="#a7d038f37d2b4d68dd1588b57c062a0ee">More...</a><br /></td></tr>
 <tr class="separator:a7d038f37d2b4d68dd1588b57c062a0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe361cc0a3be46988bf35fee89c5dd19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#afe361cc0a3be46988bf35fee89c5dd19">connect</a> ()</td></tr>
-<tr class="memdesc:afe361cc0a3be46988bf35fee89c5dd19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks each controller slot for a connected controller picks the first one and connects it to this object  <a href="#afe361cc0a3be46988bf35fee89c5dd19">More...</a><br /></td></tr>
 <tr class="separator:afe361cc0a3be46988bf35fee89c5dd19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27cd70503f62e007fc082ef403ab8a8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a27cd70503f62e007fc082ef403ab8a8d">isAnyButtonPressed</a> () const</td></tr>
 <tr class="separator:a27cd70503f62e007fc082ef403ab8a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,7 +145,8 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:ab71bd82e0906683338dee2bb6ffc93f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a994a83805e3c9b43f6c6ba90d7269c32"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a994a83805e3c9b43f6c6ba90d7269c32">&#9670;&nbsp;</a></span>Controller()</h2>
 
@@ -166,9 +162,11 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Default constructor.</p>
+<p>setups member variables and initializes them </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td><a class="el" href="class_controller.html" title="Xbox controller class to query current state of controller to mimic the controller states like XNA ...">Controller</a> index </td></tr>
+    <tr><td class="paramname">index</td><td><a class="el" href="class_controller.html" title="controller class ">Controller</a> index </td></tr>
   </table>
   </dd>
 </dl>
@@ -189,6 +187,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Default destructor.</p>
+<p>deletes all member variables on the stack </p>
 
 </div>
 </div>
@@ -216,6 +216,15 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Checks the specified Axis for the current controller.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>Defines the underlying button identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>ButtonMappings</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the current position of the axis between -100 and 100.</dd></dl>
 
 </div>
 </div>
@@ -242,6 +251,15 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Checks if the passed button for the current controller is pressed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>Defines the underlying button identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>ButtonMappings</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the specified button for the current controller is pressed, else false.</dd></dl>
 
 </div>
 </div>
@@ -259,7 +277,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>Returns whether or not a controller was detected </dd></dl>
+<p>Checks each controller slot for a connected controller picks the first one and connects it to this object.</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns whether or not a controller was detected</dd></dl>
 
 </div>
 </div>
@@ -277,6 +296,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Checks if any of the button states is true or false.</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if any of the buttons is pressed, else it is false.</dd></dl>
 
 </div>
 </div>
@@ -294,6 +315,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Checks if the currently indexed controller is still connected.</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if current controller is connected, else false </dd></dl>
 
 </div>
@@ -312,6 +334,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Updates the controller's previous and current states.</p>
+<p>If no controller is connected, attempt to reconnect </p>
 
 </div>
 </div>
@@ -335,6 +359,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Threshold at which the Dpad is considered pressed.</p>
 
 </div>
 </div>
@@ -349,6 +374,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>current gamepad state.</p>
 
 </div>
 </div>
@@ -363,6 +389,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>index count for controller.</p>
 
 </div>
 </div>
@@ -377,6 +404,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>previous gamepad state.</p>
 
 </div>
 </div>
@@ -399,6 +427,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>4u is the Maximum number of supported controllers.</p>
 
 </div>
 </div>
@@ -421,6 +450,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>pete was here ?.</p>
 
 </div>
 </div>
@@ -443,6 +473,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Threshold at which the Thumbsticks are considered 0.</p>
 
 </div>
 </div>
@@ -465,6 +496,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Threshold at which the Trigger's are considered 0.</p>
 
 </div>
 </div>

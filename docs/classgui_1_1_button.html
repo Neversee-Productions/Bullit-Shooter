@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classgui_1_1_button.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p> 
+<p><a class="el" href="classgui_1_1_button.html" title="Button class. ">Button</a> class.  
  <a href="classgui_1_1_button.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_button_8h_source.html">Button.h</a>&gt;</code></p>
@@ -101,8 +101,8 @@ Inheritance diagram for gui::Button:</div>
  <div class="center">
   <img src="classgui_1_1_button.png" usemap="#gui::Button_map" alt=""/>
   <map id="gui::Button_map" name="gui::Button_map">
-<area href="classgui_1_1_label.html" alt="gui::Label" shape="rect" coords="0,112,73,136"/>
-<area href="classgui_1_1_widget.html" alt="gui::Widget" shape="rect" coords="0,56,73,80"/>
+<area href="classgui_1_1_label.html" title="Label class. " alt="gui::Label" shape="rect" coords="0,112,73,136"/>
+<area href="classgui_1_1_widget.html" title="Widget abstract class. " alt="gui::Widget" shape="rect" coords="0,56,73,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -179,7 +179,6 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a38d54d9e935d4cc776a6e7bc06b31ba5"><td class="memItemLeft" align="right" valign="top">static const sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_button.html#a38d54d9e935d4cc776a6e7bc06b31ba5">s_TEXT_RECT_LEFT</a> = sf::IntRect(0, 0, 25, 129)</td></tr>
-<tr class="memdesc:a38d54d9e935d4cc776a6e7bc06b31ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">texture rectangle for button  <a href="#a38d54d9e935d4cc776a6e7bc06b31ba5">More...</a><br /></td></tr>
 <tr class="separator:a38d54d9e935d4cc776a6e7bc06b31ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a086fa0cf58dcfb88dd6f5804fe805983"><td class="memItemLeft" align="right" valign="top">static const sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_button.html#a086fa0cf58dcfb88dd6f5804fe805983">s_TEXT_RECT_MID</a> = sf::IntRect(25, 0, 450, 129)</td></tr>
 <tr class="separator:a086fa0cf58dcfb88dd6f5804fe805983"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,7 +239,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd>
 <dd>
 Sebastian Kruzel </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0 <a class="el" href="classgui_1_1_button.html">Button</a> class</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a60171d5543ff80ff7317724e58a1a346"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60171d5543ff80ff7317724e58a1a346">&#9670;&nbsp;</a></span>ButtonState</h2>
@@ -261,11 +260,16 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>the different possible button states</p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a60171d5543ff80ff7317724e58a1a346a6b273343c454f9c53dcfc9c4ccf171d2"></a>INACTIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a60171d5543ff80ff7317724e58a1a346a18ff74f43da410c5529f7d6fca84f115"></a>ACTIVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a60171d5543ff80ff7317724e58a1a346a823d52d4c987a4bd0d42ca6f2a6cf58f"></a>HOVERED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a60171d5543ff80ff7317724e58a1a346a5381dc876ab002103a027265bc14ae52"></a>PRESSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a60171d5543ff80ff7317724e58a1a346a6b273343c454f9c53dcfc9c4ccf171d2"></a>INACTIVE&#160;</td><td class="fielddoc"><p>an inactive button state (cannot press) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a60171d5543ff80ff7317724e58a1a346a18ff74f43da410c5529f7d6fca84f115"></a>ACTIVE&#160;</td><td class="fielddoc"><p>an active button state (pressable) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a60171d5543ff80ff7317724e58a1a346a823d52d4c987a4bd0d42ca6f2a6cf58f"></a>HOVERED&#160;</td><td class="fielddoc"><p>currently highlighted </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a60171d5543ff80ff7317724e58a1a346a5381dc876ab002103a027265bc14ae52"></a>PRESSED&#160;</td><td class="fielddoc"><p>has been pressed </p>
+</td></tr>
 </table>
 
 </div>
@@ -456,12 +460,6 @@ Sebastian Kruzel </dd></dl>
 </div><div class="memdoc">
 <p>Controlls highlighter's transparency.</p>
 <p>This is the method that will make the transparency go up and down </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">alpha</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -487,7 +485,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>gives button focus</p>
+<p>gives button focus.</p>
 <p>This method will give focus to this object causing its state to change to hovered </p>
 
 <p>Implements <a class="el" href="classgui_1_1_widget.html#abf451d1fc6c86460f925b225d1d38191">gui::Widget</a>.</p>
@@ -545,7 +543,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>removes button focus</p>
+<p>removes button focus.</p>
 <p>This method will lose focus from this object causing its state to change to active </p>
 
 <p>Implements <a class="el" href="classgui_1_1_widget.html#a2e7574b55dfa70aaa91329e26c7cf957">gui::Widget</a>.</p>
@@ -585,7 +583,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Proccesses button input</p>
+<p>Proccesses button input.</p>
 <p>if button is pressed, change state to pressed and call pointer-to-function </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -753,6 +751,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Current and previous button states.</p>
 
 </div>
 </div>
@@ -775,6 +774,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>check if alpha to go down.</p>
 
 </div>
 </div>
@@ -797,6 +797,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>pointer to function that is called when button is pressed.</p>
 
 </div>
 </div>
@@ -819,6 +820,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>alpha of the highlight rectangle.</p>
 
 </div>
 </div>
@@ -841,6 +843,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>highlight rectangle.</p>
 
 </div>
 </div>
@@ -863,6 +866,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>texture rectangle of left edge.</p>
 
 </div>
 </div>
@@ -885,6 +889,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>a margin size same across all buttons.</p>
 
 </div>
 </div>
@@ -907,6 +912,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>texture rectangle of middle.</p>
 
 </div>
 </div>
@@ -929,6 +935,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Previous button state.</p>
 
 </div>
 </div>
@@ -951,6 +958,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>rectangle representing the left edge of the button.</p>
 
 </div>
 </div>
@@ -973,6 +981,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>rectangle representing the middle section of the button.</p>
 
 </div>
 </div>
@@ -995,6 +1004,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>position of the rectangle.</p>
 
 </div>
 </div>
@@ -1017,6 +1027,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>rectangle representing the right edge of the button.</p>
 
 </div>
 </div>
@@ -1039,6 +1050,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>texture rectangle of right edge.</p>
 
 </div>
 </div>
@@ -1061,6 +1073,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>texture of the button.</p>
 
 </div>
 </div>
@@ -1083,6 +1096,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>left side of button texture rectangle.</p>
 
 </div>
 </div>
@@ -1105,6 +1119,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>middle of button texture rectangle.</p>
 
 </div>
 </div>
@@ -1127,6 +1142,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>right side of button texture rectangle. </p>
 
 </div>
 </div>

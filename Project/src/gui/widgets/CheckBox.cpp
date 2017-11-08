@@ -1,21 +1,23 @@
 #include "gui\widgets\CheckBox.h"
 
-/// texture rectangle for checkbox
 const sf::IntRect gui::CheckBox::s_TEXT_RECT_ON = sf::IntRect(0, 0, 50, 50);
 const sf::IntRect gui::CheckBox::s_TEXT_RECT_OFF = sf::IntRect(50, 0, 50, 50);
 
 
 /// <summary>
-/// The checkbox constructor
+/// @brief The checkbox constructor.
+/// 
+/// 
 /// </summary>
 /// <param name="font">font of label</param>
 /// <param name="name">contents of label</param>
 /// <param name="position">centre of box sprite</param>
 /// <param name="scale">scale of sprite</param>
-/// <param name="onTexture">on texture</param>
-/// <param name="offTexture"></param>
-/// <param name="state"></param>
-/// <param name="charSize"></param>
+/// <param name="texture">shared pointer to a texture</param>
+/// <param name="textRectOn">on texture rectangle</param>
+/// <param name="textRectOff">off texture rectangle</param>
+/// <param name="state">state of checkbox true=on / false=off</param>
+/// <param name="charSize">label text size</param>
 gui::CheckBox::CheckBox(std::shared_ptr<sf::Font> font, sf::String name, sf::Vector2f position, float scale, std::shared_ptr<sf::Texture> texture, sf::IntRect textRectOn, sf::IntRect textRectOff, bool & state, unsigned charSize)
 	: Label(name, charSize, position, font)
 	, m_position(position)
@@ -53,7 +55,9 @@ gui::CheckBox::CheckBox(std::shared_ptr<sf::Font> font, sf::String name, sf::Vec
 }
 
 /// <summary>
-/// destructor
+/// @brief destructor.
+/// 
+/// 
 /// </summary>
 gui::CheckBox::~CheckBox()
 {
@@ -100,9 +104,11 @@ void gui::CheckBox::draw(sf::RenderTarget & renderTarget, sf::RenderStates rende
 }
 
 /// <summary>
-/// Update the checkbox
+/// @brief Update the checkbox.
+/// 
+/// 
 /// </summary>
-/// <param name="dt"></param>
+/// <param name="dt">reference to delta time</param>
 void gui::CheckBox::update(const float & dt)
 {
 	if (m_currentState == CheckboxState::HOVERED)
@@ -113,7 +119,9 @@ void gui::CheckBox::update(const float & dt)
 }
 
 /// <summary>
-/// the method that switches state to hovered
+/// @brief The method that switches state to hovered.
+/// 
+/// 
 /// </summary>
 void gui::CheckBox::getFocus()
 {
@@ -121,7 +129,9 @@ void gui::CheckBox::getFocus()
 }
 
 /// <summary>
-/// The method that switches state to active
+/// @brief The method that switches state to active.
+/// 
+/// 
 /// </summary>
 void gui::CheckBox::loseFocus()
 {
@@ -129,8 +139,9 @@ void gui::CheckBox::loseFocus()
 }
 
 /// <summary>
-/// This the method will
-/// make the transparency go up and down
+/// @brief This the method will make the transparency go up and down.
+/// 
+/// 
 /// </summary>
 void gui::CheckBox::fading()
 {
@@ -154,11 +165,13 @@ void gui::CheckBox::fading()
 }
 
 /// <summary>
-/// Method to process the input
+/// @brief Method to process the input
+/// 
+/// 
 /// </summary>
 /// <param name="controller">reference to controller, that is checked for input</param>
 /// <param name="keyhandler">reference to key handler, that is checked for input</param>
-/// <returns></returns>
+/// <returns>returns true if check box processes input</returns>
 bool gui::CheckBox::processInput(Controller & controller, KeyHandler & keyhandler)
 {
 	//processInput(controller);
@@ -190,10 +203,11 @@ bool gui::CheckBox::processInput(Controller & controller, KeyHandler & keyhandle
 }
 
 /// <summary>
-/// Method to set position of the checkbox
-/// and its elements
+/// @brief Method to set position of the checkbox and its elements.
+/// 
+/// 
 /// </summary>
-/// <param name="position"></param>
+/// <param name="position">new position</param>
 void gui::CheckBox::setPosition(sf::Vector2f position)
 {
 	m_rectangle.setPosition(position);
@@ -202,9 +216,11 @@ void gui::CheckBox::setPosition(sf::Vector2f position)
 }
 
 /// <summary>
-/// return the centre of the checkbox
+/// @brief returns the centre of the checkbox.
+/// 
+/// 
 /// </summary>
-/// <returns></returns>
+/// <returns>center of rectangle</returns>
 sf::Vector2f gui::CheckBox::getPosition()
 {
 	return m_rectangle.getPosition();

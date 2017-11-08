@@ -2,7 +2,9 @@
 
 
 /// <summary>
-/// Default constructor,
+/// @brief Default constructor.
+/// 
+/// 
 /// setups member variables and initializes them
 /// </summary>
 /// <param name="index"> Controller index </param>
@@ -14,7 +16,9 @@ Controller::Controller(unsigned int index) :
 }
 
 /// <summary>
-/// Default destructor,
+/// @brief Default destructor.
+/// 
+/// 
 /// deletes all member variables on the stack
 /// </summary>
 Controller::~Controller()
@@ -22,8 +26,10 @@ Controller::~Controller()
 }
 
 /// <summary>
-/// Updates the controller's previous and current states,
-/// if no controller is connected,
+/// @brief Updates the controller's previous and current states.
+/// 
+/// 
+/// If no controller is connected,
 /// attempt to reconnect
 /// </summary>
 void Controller::update()
@@ -146,7 +152,9 @@ void Controller::update()
 }
 
 /// <summary>
-/// Checks if the currently indexed controller is still connected
+/// @brief Checks if the currently indexed controller is still connected.
+/// 
+/// 
 /// </summary>
 /// <returns>
 /// Returns true if current controller is connected,
@@ -158,11 +166,13 @@ bool Controller::isConnected()
 }
 
 /// <summary>
-/// Checks each controller slot
-/// for a connected controller
-/// picks the first one and connects it to this object
+/// @brief Checks each controller slot
+///		for a connected controller
+///		picks the first one and connects it to this object.
+/// 
+/// 
 /// </summary>
-/// <returns> Returns whether or not a controller was detected </returns>
+/// <returns>Returns whether or not a controller was detected</returns>
 bool Controller::connect()
 {
 	for (unsigned i = 0u; i < MAX_CONTROLLERS; i++)
@@ -176,6 +186,12 @@ bool Controller::connect()
 	return false;
 }
 
+/// <summary>
+/// @brief Checks if any of the button states is true or false.
+/// 
+/// 
+/// </summary>
+/// <returns>Returns true if any of the buttons is pressed, else it is false.</returns>
 bool Controller::isAnyButtonPressed() const
 {
 	bool buttonPressed = false;
@@ -201,11 +217,25 @@ bool Controller::isAnyButtonPressed() const
 
 }
 
+/// <summary>
+/// @brief Checks if the passed button for the current controller is pressed.
+/// 
+/// 
+/// </summary>
+/// <param name="button">Defines the underlying button identifier. @see ButtonMappings</param>
+/// <returns>Returns true if the specified button for the current controller is pressed, else false.</returns>
 bool Controller::checkButton(const ButtonMappings & button)
 {
 	return sf::Joystick::isButtonPressed(m_gamepadIndex, static_cast<unsigned int>(button));
 }
 
+/// <summary>
+/// @brief Checks the specified Axis for the current controller.
+/// 
+/// 
+/// </summary>
+/// <param name="button">Defines the underlying button identifier. @see ButtonMappings</param>
+/// <returns>Returns the current position of the axis between -100 and 100.</returns>
 float Controller::checkAxis(const ButtonMappings & button)
 {
 	return sf::Joystick::getAxisPosition(m_gamepadIndex, static_cast<sf::Joystick::Axis>(button));

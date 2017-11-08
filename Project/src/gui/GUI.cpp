@@ -234,12 +234,15 @@ void gui::GUI::addButton(	std::function<void()> function
 /// <param name="name">name of label</param>
 /// <param name="fontSize">font size</param>
 /// <param name="position">position of name label</param>
-/// <param name="startingPos">starting position of slider</param>
 /// <param name="sliderWidth">slider width</param>
 /// <param name="sliderHeight">slider height</param>
 /// <param name="minValue">minimum value</param>
 /// <param name="maxValue">maximum value</param>
 /// <param name="currentValue">current slider value</param>
+/// <param name="texture">shared pointer to a texture</param>
+/// <param name="emptyTextureRect">empty slider texture rectangle</param>
+/// <param name="filledTextureRect">filled slider texture rectangle</param>
+/// <param name="squareTextRect">texture rectangle of the indicator</param>
 void gui::GUI::addSlider(	std::shared_ptr<sf::Font> font
 						, sf::String name
 						, unsigned int fontSize
@@ -283,8 +286,9 @@ void gui::GUI::addSlider(	std::shared_ptr<sf::Font> font
 /// <param name="name">contents of label</param>
 /// <param name="position">position of checkbox (center)</param>
 /// <param name="scale">scale of the checkbox sprite</param>
-/// <param name="onTexture">the on texture</param>
-/// <param name="offTexture">the off texture</param>
+/// <param name="texture">texture of checkbox</param>
+/// <param name="textRectOn">the on texture</param>
+/// <param name="textRectOff">the off texture</param>
 /// <param name="state">current checkbox state (true = on/ false = off)</param>
 /// <param name="charSize">the size of characters</param>
 void gui::GUI::addCheckbox(	std::shared_ptr<sf::Font> font

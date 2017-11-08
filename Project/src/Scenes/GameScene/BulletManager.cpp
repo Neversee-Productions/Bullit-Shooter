@@ -16,6 +16,9 @@ BulletManager::BulletManager()
 /// 
 /// 
 /// </summary>
+/// <param name="position1">define first gun position</param>
+/// <param name="position2">define second gun position</param>
+/// <param name="type">define type of bullet</param>
 void BulletManager::fireBullet(const sf::Vector2f& position1,const sf::Vector2f& position2,const BulletTypes& type)
 {
 	switch (type)
@@ -71,9 +74,12 @@ void BulletManager::initBulletvector(BulletTypes type)
 }
 
 /// <summary>
+/// @brief reuse the bullet
 /// 
+/// resets the position and sets active to true.
 /// </summary>
-/// <param name="pos"></param>
+/// <param name="bullet">reference to bullet</param>
+/// <param name="pos">new position</param>
 void BulletManager::reuseBullet(Bullet& bullet,sf::Vector2f pos)
 {
 	bullet.setPosition(pos);
@@ -98,7 +104,7 @@ void BulletManager::draw(Window & window, const float & deltaTime)
 /// <summary>
 /// @brief method to update all bullets.
 /// 
-/// 
+/// update active bullets and check collision with window.
 /// </summary>
 void BulletManager::update()
 {

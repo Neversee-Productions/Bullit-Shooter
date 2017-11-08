@@ -32,7 +32,7 @@ public:
 	std::vector<BulletStandard> m_standardBullets;
 
 	/// <summary>
-	/// @brief how long since last fire
+	/// @brief how long since last fire.
 	/// 
 	/// 
 	/// </summary>

@@ -209,6 +209,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>method that will add bullet to vector</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position1</td><td>define first gun position</td></tr>
+    <tr><td class="paramname">position2</td><td>define second gun position</td></tr>
+    <tr><td class="paramname">type</td><td>define type of bullet</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -263,9 +271,12 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>reuse the bullet</p>
+<p>resets the position and sets active to true. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td></td></tr>
+    <tr><td class="paramname">bullet</td><td>reference to bullet</td></tr>
+    <tr><td class="paramname">pos</td><td>new position</td></tr>
   </table>
   </dd>
 </dl>
@@ -287,6 +298,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>method to update all bullets.</p>
+<p>update active bullets and check collision with window. </p>
 
 </div>
 </div>
@@ -317,7 +329,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>how long since last fire</p>
+<p>how long since last fire.</p>
 
 </div>
 </div>

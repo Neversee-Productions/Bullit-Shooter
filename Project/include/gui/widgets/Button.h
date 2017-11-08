@@ -7,108 +7,166 @@
 namespace gui
 {
 
-	/// <summary>
+	///
 	/// @author Rafael Plugge
 	/// @author Sebastian Kruzel
 	/// @version 1.0
 	/// @brief Button class
 	/// 
 	/// 
-	/// </summary>
+	/// 
 	class Button : public Label
 	{
 	public:
-		//The different possible button states
-		enum class ButtonState { INACTIVE, ACTIVE, HOVERED, PRESSED };
-
-		//constructor
+		/// <summary>
+		/// @brief the different possible button states
+		/// 
+		/// 
+		/// </summary>
+		enum class ButtonState 
+		{
+			INACTIVE ///an inactive button state (cannot press)
+			, ACTIVE ///an active button state (pressable)
+			, HOVERED ///currently highlighted
+			, PRESSED ///has been pressed
+		};
 		Button(std::function<void()> function, sf::String message, sf::Vector2f position, std::shared_ptr<sf::Font> font, unsigned int fontSize, std::shared_ptr<sf::Texture> texture, sf::IntRect leftTextRect, sf::IntRect middleTextRect, sf::IntRect rightTextRect);
-
-		//draw the button
 		void draw(Window & window)const override;
-
-		// overriden sf::Drawable::draw method
 		void draw(sf::RenderTarget & renderTarget, sf::RenderStates renderStates)const override;
-
-		//button update
 		void update(const float & dt) override;
-
-		//get focus method
 		void getFocus() override;
-
-		// lose focus method
 		void loseFocus() override;
-
-		//method that has alpha go up and down
 		void fading();
-
-		//method for processing the xbox controller inputs
 		bool processInput(Controller& controller, KeyHandler & keyhandler) override;
-
-		//set position
 		void setPosition(sf::Vector2f position) override;
-
-		//get position
 		sf::Vector2f getPosition() override;
-
-		//deal with scaling rectangles
 		void scaleRectangles(float x, float y);
-
-		//sets color of rectangles
 		void setRectangleColors(sf::Color color);
 
-
-		/// texture rectangle for button
+		/// <summary>
+		/// @brief left side of button texture rectangle.
+		/// 
+		/// 
+		/// </summary>
 		static const sf::IntRect s_TEXT_RECT_LEFT;
+
+		/// <summary>
+		/// @brief middle of button texture rectangle.
+		/// 
+		/// 
+		/// </summary>
 		static const sf::IntRect s_TEXT_RECT_MID;
+
+		/// <summary>
+		/// @brief right side of button texture rectangle.
+		/// </summary>
 		static const sf::IntRect s_TEXT_RECT_RIGHT;
 
 	protected:
-		//rectangle representing the middle section of the button
+		/// <summary>
+		/// @brief rectangle representing the middle section of the button.
+		/// 
+		/// 
+		/// </summary>
 		sf::RectangleShape m_rectangleMiddle;
 
-		//rectangle representing the left edge of the button
+		/// <summary>
+		/// @brief rectangle representing the left edge of the button.
+		/// 
+		/// 
+		/// </summary>
 		sf::RectangleShape m_rectangleLeft;
 
-		//rectangle representing the right edge of the button
+		/// <summary>
+		/// @brief rectangle representing the right edge of the button.
+		/// 
+		/// 
+		/// </summary>
 		sf::RectangleShape m_rectangleRight;
 
-		//position of the rectangle
+		/// <summary>
+		/// @brief position of the rectangle.
+		/// 
+		/// 
+		/// </summary>
 		sf::Vector2f m_rectanglePos;
 
-		//a margin size same across all buttons
+		/// <summary>
+		/// @brief a margin size same across all buttons.
+		/// 
+		/// 
+		/// </summary>
 		const float m_MARGIN_SIZE;
 
-		//Current and previous button states
+		/// <summary>
+		/// @brief Current and previous button states.
+		/// 
+		/// 
+		/// </summary>
 		ButtonState m_currentButtonState = ButtonState::ACTIVE;
 
-		//Previous button state
+		/// <summary>
+		/// @brief Previous button state.
+		/// 
+		/// 
+		/// </summary>
 		ButtonState m_previousButtonState = ButtonState::ACTIVE;
 
-		//highlight rectangle
+		/// <summary>
+		/// @brief highlight rectangle.
+		/// 
+		/// 
+		/// </summary>
 		sf::RectangleShape m_highlightRectangle;
 
-		//alpha of the highlight rectangle
+		/// <summary>
+		/// @brief alpha of the highlight rectangle.
+		/// 
+		/// 
+		/// </summary>
 		float m_highlightAlpha;
 
-		//check if alpha to go down
+		/// <summary>
+		/// @brief check if alpha to go down.
+		/// 
+		/// 
+		/// </summary>
 		bool m_fadeOut;
 
-		// pointer to function that is called when button is pressed
+		/// <summary>
+		/// @brief pointer to function that is called when button is pressed.
+		/// 
+		/// 
+		/// </summary>
 		std::function<void()> m_function;
 
-		//texture of the button
+		/// <summary>
+		/// @brief texture of the button.
+		/// 
+		/// 
+		/// </summary>
 		sf::Texture m_texture;
 
-		//texture rectangle of left edge
+		/// <summary>
+		/// @brief texture rectangle of left edge.
+		/// 
+		/// 
+		/// </summary>
 		sf::IntRect m_leftTextRect;
 
-		//texture rectangle of middle
+		/// <summary>
+		/// @brief texture rectangle of middle.
+		/// 
+		/// 
+		/// </summary>
 		sf::IntRect m_middleTextRect;
 
-		//texture rectangle of right edge
+		/// <summary>
+		/// @brief texture rectangle of right edge.
+		/// 
+		/// 
+		/// </summary>
 		sf::IntRect m_rightTextRect;
-
 	};
 }
 

@@ -124,8 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab0d91b38eabd88688cb5e4df48b1725b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48f28ef9a62b0ec6f0f56415d857c8ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_g_u_i.html#a48f28ef9a62b0ec6f0f56415d857c8ce">addSlider</a> (std::shared_ptr&lt; sf::Font &gt; font, sf::String name, unsigned int fontSize, sf::Vector2f position, float sliderWidth, float sliderHeight, float minValue, float maxValue, float &amp;currentValue, std::shared_ptr&lt; sf::Texture &gt; texture, sf::IntRect emptyTextRect, sf::IntRect filledTextRect, sf::IntRect squareTextRect)</td></tr>
 <tr class="separator:a48f28ef9a62b0ec6f0f56415d857c8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af371c20f6e1aa344ebd1b10f290ee803"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_g_u_i.html#af371c20f6e1aa344ebd1b10f290ee803">addCheckbox</a> (std::shared_ptr&lt; sf::Font &gt; font, sf::String name, sf::Vector2f position, float scale, std::shared_ptr&lt; sf::Texture &gt; m_texture, sf::IntRect textRectOn, sf::IntRect textRectOff, bool &amp;state, unsigned charSize)</td></tr>
-<tr class="separator:af371c20f6e1aa344ebd1b10f290ee803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2513d585d1f25778ca6f5fa27eda7a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_g_u_i.html#aa2513d585d1f25778ca6f5fa27eda7a3">addCheckbox</a> (std::shared_ptr&lt; sf::Font &gt; font, sf::String name, sf::Vector2f position, float scale, std::shared_ptr&lt; sf::Texture &gt; texture, sf::IntRect textRectOn, sf::IntRect textRectOff, bool &amp;state, unsigned charSize)</td></tr>
+<tr class="separator:aa2513d585d1f25778ca6f5fa27eda7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -342,8 +342,8 @@ Sebastian Kruzel </dd></dl>
 
 </div>
 </div>
-<a id="af371c20f6e1aa344ebd1b10f290ee803"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af371c20f6e1aa344ebd1b10f290ee803">&#9670;&nbsp;</a></span>addCheckbox()</h2>
+<a id="aa2513d585d1f25778ca6f5fa27eda7a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2513d585d1f25778ca6f5fa27eda7a3">&#9670;&nbsp;</a></span>addCheckbox()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,8 +416,9 @@ Sebastian Kruzel </dd></dl>
     <tr><td class="paramname">name</td><td>contents of label</td></tr>
     <tr><td class="paramname">position</td><td>position of checkbox (center)</td></tr>
     <tr><td class="paramname">scale</td><td>scale of the checkbox sprite</td></tr>
-    <tr><td class="paramname">onTexture</td><td>the on texture</td></tr>
-    <tr><td class="paramname">offTexture</td><td>the off texture</td></tr>
+    <tr><td class="paramname">texture</td><td>texture of checkbox</td></tr>
+    <tr><td class="paramname">textRectOn</td><td>the on texture</td></tr>
+    <tr><td class="paramname">textRectOff</td><td>the off texture</td></tr>
     <tr><td class="paramname">state</td><td>current checkbox state (true = on/ false = off)</td></tr>
     <tr><td class="paramname">charSize</td><td>the size of characters</td></tr>
   </table>
@@ -582,12 +583,15 @@ Sebastian Kruzel </dd></dl>
     <tr><td class="paramname">name</td><td>name of label</td></tr>
     <tr><td class="paramname">fontSize</td><td>font size</td></tr>
     <tr><td class="paramname">position</td><td>position of name label</td></tr>
-    <tr><td class="paramname">startingPos</td><td>starting position of slider</td></tr>
     <tr><td class="paramname">sliderWidth</td><td>slider width</td></tr>
     <tr><td class="paramname">sliderHeight</td><td>slider height</td></tr>
     <tr><td class="paramname">minValue</td><td>minimum value</td></tr>
     <tr><td class="paramname">maxValue</td><td>maximum value</td></tr>
     <tr><td class="paramname">currentValue</td><td>current slider value</td></tr>
+    <tr><td class="paramname">texture</td><td>shared pointer to a texture</td></tr>
+    <tr><td class="paramname">emptyTextureRect</td><td>empty slider texture rectangle</td></tr>
+    <tr><td class="paramname">filledTextureRect</td><td>filled slider texture rectangle</td></tr>
+    <tr><td class="paramname">squareTextRect</td><td>texture rectangle of the indicator</td></tr>
   </table>
   </dd>
 </dl>
@@ -989,7 +993,7 @@ Sebastian Kruzel </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classgui_1_1_widget.html">Widget</a> that the controller is currently selected.</p>
+<p><a class="el" href="classgui_1_1_widget.html" title="Widget abstract class. ">Widget</a> that the controller is currently selected.</p>
 <p>Points to our selected widget, is null if there are no selectable widgets. </p>
 
 </div>

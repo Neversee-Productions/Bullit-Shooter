@@ -53,7 +53,18 @@ private:
 	/// </summary>
 	struct Resources
 	{
+		/// <summary>
+		/// @brief shared pointer to font.
+		/// 
+		/// 
+		/// </summary>
 		std::shared_ptr<sf::Font> m_sptrButtonFont = std::make_shared<sf::Font>();
+
+		/// <summary>
+		/// @brief shared pointer to texture.
+		/// 
+		/// 
+		/// </summary>
 		std::shared_ptr<sf::Texture> m_sptrButtonTexture = std::make_shared<sf::Texture>();
 	};
 
