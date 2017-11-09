@@ -14,6 +14,6 @@ var searchData=
   ['setwindowsize',['setWindowSize',['../class_app.html#adc5ece8de07fd448e91efbe2c2ec3db9',1,'App']]],
   ['ship',['Ship',['../class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462',1,'Ship']]],
   ['slider',['Slider',['../classgui_1_1_slider.html#a2d888e1c47963a4da758f75561eaff74',1,'gui::Slider']]],
-  ['start',['start',['../class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718',1,'Scene::start()'],['../class_game_scene.html#a595f025ee226e910b1ae13af1e8ee5e0',1,'GameScene::start()'],['../class_main_menu_scene.html#a725c076e531354d64031071fa66feb67',1,'MainMenuScene::start()'],['../class_options_scene.html#a7bfda68e116220d7ed76410d6142615a',1,'OptionsScene::start()']]],
+  ['start',['start',['../class_scene.html#a8e8d1644799fd1b097535a387f80bc4d',1,'Scene::start()'],['../class_game_scene.html#a18967f8879389db3e8b9d6a3d1ff58c0',1,'GameScene::start()'],['../class_main_menu_scene.html#a7c8cf0e0bc5e4bb26891ee639b4ec837',1,'MainMenuScene::start()'],['../class_options_scene.html#a5d4604473ff5a10c686de5120472deb6',1,'OptionsScene::start()']]],
   ['stop',['stop',['../class_scene.html#a1a8e54f62795f26cebcc8da8e9109335',1,'Scene::stop()'],['../class_game_scene.html#af2d4691481477cfa1d797e28593bb2e8',1,'GameScene::stop()'],['../class_main_menu_scene.html#a4a4c783bee20ab3af01c2b9de70d28db',1,'MainMenuScene::stop()'],['../class_options_scene.html#ad01e2842d7dadae3b50138ea42409997',1,'OptionsScene::stop()']]]
 ];

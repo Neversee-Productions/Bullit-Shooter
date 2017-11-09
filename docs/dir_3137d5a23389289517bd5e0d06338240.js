@@ -13,7 +13,8 @@ var dir_3137d5a23389289517bd5e0d06338240 =
       [ "Scene", "class_scene.html", "class_scene" ]
     ] ],
     [ "SceneManager.h", "_scene_manager_8h.html", [
-      [ "SceneManager", "class_scene_manager.html", "class_scene_manager" ]
+      [ "SceneManager", "class_scene_manager.html", "class_scene_manager" ],
+      [ "ManagedScene", "struct_scene_manager_1_1_managed_scene.html", "struct_scene_manager_1_1_managed_scene" ]
     ] ],
     [ "Window.h", "_window_8h.html", [
       [ "Window", "class_window.html", "class_window" ]

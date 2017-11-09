@@ -1,5 +1,12 @@
 var NAVTREEINDEX1 =
 {
+"class_scene_manager.html#af57ac59c9d6cf7ada088bb78c6f1350a":[2,0,14,3],
+"class_ship.html":[2,0,15],
+"class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462":[2,0,15,0],
+"class_ship.html#ab7a03c934538fd6100e1ed3b85f92fcb":[2,0,15,2],
+"class_ship.html#ae9a0712970979a6d24320ae208bd6899":[2,0,15,1],
+"class_weapon.html":[2,0,16],
+"class_weapon.html#a091763bf26419b9df5b0ae1d9dac639a":[2,0,16,1],
 "class_weapon.html#a12e8d91eaec4d17f3507eee7ec9dc911":[2,0,16,0],
 "class_weapon.html#a17c50d12732395f94cf4e04665416406":[2,0,16,2],
 "class_weapon.html#a5058de475ddd17fd9fed50e94f43338a":[2,0,16,3],
@@ -241,13 +248,6 @@ var NAVTREEINDEX1 =
 "main_8cpp.html":[3,0,0,1,5],
 "main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[3,0,0,1,5,1],
 "main_8cpp.html#a8de3ed741dadc9c979a4ff17c0a9116e":[3,0,0,1,5,0],
-"namespacegui.html":[2,0,0],
 "namespacegui.html":[1,0,0],
-"namespaces.html":[1,0],
-"pages.html":[],
-"struct_game_pad_state.html":[2,0,7],
-"struct_game_pad_state.html#a09f106342e5809eba0615900ff67d622":[2,0,7,11],
-"struct_game_pad_state.html#a0a4eddeaeb340f08cdefd7ec561ddfca":[2,0,7,9],
-"struct_game_pad_state.html#a0ebf3cbd36c7e823a4494fd312f43c11":[2,0,7,6],
-"struct_game_pad_state.html#a189fc9c32e1efabb19adf79ef2966548":[2,0,7,7]
+"namespacegui.html":[2,0,0]
 };

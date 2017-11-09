@@ -1,0 +1,14 @@
+{
+	"textures":
+	{
+		"button": "resources/gui/textures/button.png"
+	},
+	"sounds":
+	{
+	},
+	"fonts":
+	{
+		"button": "resources/gui/fonts/QuartzMS.TTF"
+	},
+	"fontsize": 24
+}

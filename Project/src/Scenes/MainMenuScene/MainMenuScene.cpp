@@ -26,11 +26,12 @@ MainMenuScene::MainMenuScene(
 /// @brief Preloads resources on different thread.
 /// 
 /// </summary>
-void MainMenuScene::preStart()
+/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
+void MainMenuScene::preStart(const std::string & resourceFilePath)
 {
 	if (!m_resources)
 	{
-		this->load();
+		this->load(resourceFilePath);
 	}
 }
 
@@ -40,12 +41,13 @@ void MainMenuScene::preStart()
 /// Setups appropriate resources for gui
 /// and defines a layout for the gui.
 /// </summary>
-void MainMenuScene::start()
+/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
+void MainMenuScene::start(const std::string & resourceFilePath)
 {
 	// Resources not loaded, load them.
 	if (!m_resources)
 	{
-		this->load();
+		this->load(resourceFilePath);
 	}
 }
 
@@ -56,9 +58,9 @@ void MainMenuScene::start()
 /// </summary>
 void MainMenuScene::stop()
 {
-	m_gui.reset(nullptr);
-	m_resources.reset(nullptr);
-	m_timer.reset(nullptr);
+	std::unique_ptr<gui::GUI>(nullptr).swap(m_gui);
+	std::unique_ptr<Resources>(nullptr).swap(m_resources);
+	std::unique_ptr<sf::Clock>(nullptr).swap(m_timer);
 }
 
 /// <summary>
@@ -96,19 +98,18 @@ void MainMenuScene::draw(Window & window, const float & deltaTime)
 }
 
 /// <summary>
-/// @brief Load up MainMenuScene needs to run.
+/// @brief Load up what MainMenuScene needs to run.
 /// 
 /// 
 /// </summary>
-void MainMenuScene::load()
+/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
+void MainMenuScene::load(const std::string & resourceFilePath)
 {
-	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
-
-	const std::string GUI_PATH("resources/gui/");
-	const std::string BTN_FONT_PATH = GUI_PATH + "fonts/QuartzMS.ttf";
-	const std::string BTN_TEXTURE_PATH = GUI_PATH + "textures/button.png";
-
-	m_nextSceneName = "";
+	std::ifstream rawFile(resourceFilePath);
+	json::json jsonLoader;
+	rawFile >> jsonLoader;
+	auto & textureLoader = jsonLoader["textures"];
+	auto & fontLoader = jsonLoader["fonts"];
 
 	// instatiate our resource pointers that will "own"
 	// the asset on the heap.
@@ -117,12 +118,27 @@ void MainMenuScene::load()
 	// used to avoid pointer syntax.
 	auto & resources = *m_resources;
 
-	auto sptrButtonFont = resources.m_sptrButtonFont;
-	assert(sptrButtonFont->loadFromFile(BTN_FONT_PATH));
-
 	auto sptrButtonTexture = resources.m_sptrButtonTexture;
-	assert(sptrButtonTexture->loadFromFile(BTN_TEXTURE_PATH));
+	assert(sptrButtonTexture->loadFromFile(textureLoader["button"]));
 
+	auto sptrButtonFont = resources.m_sptrButtonFont;
+	assert(sptrButtonFont->loadFromFile(fontLoader["button"]));
+
+	loadGui(resources, jsonLoader["fontsize"].get<unsigned int>());
+}
+
+/// <summary>
+/// @brief Loadups GUI.
+/// 
+/// @warning Assumes external assets are already loaded.
+/// </summary>
+/// <param name="resources">defines reference to our external assets.</param>
+/// <param name="fontSize">defines the size of our gui::GUI's font</param>
+void MainMenuScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)
+{
+	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
+	auto sptrButtonFont = resources.m_sptrButtonFont;
+	auto sptrButtonTexture = resources.m_sptrButtonTexture;
 
 	// instantiate our gui object and assign ownership.
 	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, true);
@@ -135,7 +151,7 @@ void MainMenuScene::load()
 		"New Game",
 		zero,
 		sptrButtonFont,
-		24u,
+		fontSize,
 		sptrButtonTexture,
 		gui::Button::s_TEXT_RECT_LEFT,
 		gui::Button::s_TEXT_RECT_MID,
@@ -147,7 +163,7 @@ void MainMenuScene::load()
 		"Options",
 		zero,
 		sptrButtonFont,
-		24u,
+		fontSize,
 		sptrButtonTexture,
 		gui::Button::s_TEXT_RECT_LEFT,
 		gui::Button::s_TEXT_RECT_MID,
@@ -159,7 +175,7 @@ void MainMenuScene::load()
 		"Exit Game",
 		zero,
 		sptrButtonFont,
-		24u,
+		fontSize,
 		sptrButtonTexture,
 		gui::Button::s_TEXT_RECT_LEFT,
 		gui::Button::s_TEXT_RECT_MID,

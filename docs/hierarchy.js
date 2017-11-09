@@ -19,7 +19,9 @@ var hierarchy =
     [ "GamePadState", "struct_game_pad_state.html", null ],
     [ "gui::GUI", "classgui_1_1_g_u_i.html", null ],
     [ "KeyHandler", "class_key_handler.html", null ],
+    [ "SceneManager::ManagedScene", "struct_scene_manager_1_1_managed_scene.html", null ],
     [ "Player", "class_player.html", null ],
+    [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
     [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
     [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [

@@ -4,7 +4,7 @@
 #include <thread>
 #include <memory>
 #include <map>
-#include <list>
+#include <fstream>
 #include <string>
 #include "Scene.h"
 #include "Scenes\GameScene\GameScene.h"
@@ -20,15 +20,32 @@
 /// 
 class SceneManager
 {
+private:
+
+	/// <summary>
+	/// @brief Contains our managed scene.
+	/// 
+	/// Contains our scene,
+	/// its resource loading thread and
+	/// its resource loader.
+	/// </summary>
+	struct ManagedScene
+	{
+		std::shared_ptr<Scene> m_scene;
+		std::unique_ptr<std::thread> m_thread;
+		std::unique_ptr<std::string> m_resourcePath;
+	};
+
 public:
 	SceneManager(Window & window, std::shared_ptr<KeyHandler> keyHandler);
 	void update();
 	void draw(const float & deltaTime);
 
 private:
+	void addAllScenes();
 	Scene & getScene(const std::string & name);
 	Scene & getActive() const;
-	void addScene(std::shared_ptr<Scene> scenePt);
+	void addScene(std::shared_ptr<Scene> sptrScene, std::unique_ptr<std::string> uptrResources);
 	void preLoadScene(const std::string & name);
 	void loadScene(const std::string & name);
 	void goToNextScene();
@@ -55,20 +72,13 @@ private:
 	/// </summary>
 	std::shared_ptr<Scene> m_currentScene;
 
-	/// <summary>
-	/// @brief Alias for the value type of our map.
-	/// 
-	/// The first element is a pointer to a scene
-	/// while the second element is a ThreadList.
-	/// </summary>
-	typedef std::pair<std::shared_ptr<Scene>, std::unique_ptr<std::thread>> ScenePair;
 
 	/// <summary>
 	/// @brief Alias for our map of ScenePair's.
 	/// 
-	/// Our map will contain a value of type ScenePair.
+	/// Our map will contain a value of type SceneTuple.
 	/// </summary>
-	typedef std::map<std::string, ScenePair> SceneMap;
+	typedef std::map<std::string, ManagedScene> SceneMap;
 
 	/// <summary>
 	/// @brief Container of all scenes.

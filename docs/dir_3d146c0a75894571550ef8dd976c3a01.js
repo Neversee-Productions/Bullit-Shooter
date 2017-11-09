@@ -11,7 +11,8 @@ var dir_3d146c0a75894571550ef8dd976c3a01 =
     ] ],
     [ "BulletTypes.h", "_bullet_types_8h.html", "_bullet_types_8h" ],
     [ "GameScene.h", "_game_scene_8h.html", [
-      [ "GameScene", "class_game_scene.html", "class_game_scene" ]
+      [ "GameScene", "class_game_scene.html", "class_game_scene" ],
+      [ "Resources", "struct_game_scene_1_1_resources.html", "struct_game_scene_1_1_resources" ]
     ] ],
     [ "Player.h", "_player_8h.html", [
       [ "Player", "class_player.html", "class_player" ]

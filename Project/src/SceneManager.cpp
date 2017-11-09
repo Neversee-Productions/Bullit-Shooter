@@ -19,17 +19,53 @@ SceneManager::SceneManager(
 	, m_controller(nullptr)
 {
 	m_controller = std::make_shared<Controller>();
+	addAllScenes();
+	
+	std::string firstScene = "Options";
+	for (auto itt = m_sceneMap.begin(), end = m_sceneMap.end(); itt != end; ++itt)
+	{
+		auto & mapPair = *itt;
+		if (mapPair.first == firstScene)
+		{
+			loadScene(mapPair.first);
+		}
+		else
+		{
+			preLoadScene(mapPair.first);
+		}
+	}
+}
 
-	std::shared_ptr<Scene> scenePt = std::make_shared<GameScene>(*m_keyHandler);
-	addScene(scenePt);
+/// <summary>
+/// @brief Adds all scenes to our scene map.
+/// 
+/// 
+/// </summary>
+void SceneManager::addAllScenes()
+{
+	std::shared_ptr<Scene> sptrScene(nullptr);
+	std::unique_ptr<std::string> uptrResources(nullptr);
 
-	scenePt = std::make_shared<MainMenuScene>(m_keyHandler, m_controller);
-	addScene(scenePt);
-	preLoadScene(scenePt->getName());
+	// load our scenes paths
 
-	scenePt = std::make_shared<OptionsScene>(m_keyHandler, m_controller);
-	addScene(scenePt);
-	loadScene(scenePt->getName());
+	std::ifstream rawFile("resources/json/scenes.json");
+	json::json jsonLoader;
+	rawFile >> jsonLoader;
+	
+	// MainMenu Scene
+	sptrScene = std::make_shared<MainMenuScene>(m_keyHandler, m_controller);
+	uptrResources = std::make_unique<std::string>(jsonLoader.at("MainMenu").get<std::string>());
+	addScene(sptrScene, std::move(uptrResources));
+
+	// Options Scene
+	sptrScene = std::make_shared<OptionsScene>(m_keyHandler, m_controller);
+	uptrResources = std::make_unique<std::string>(jsonLoader.at("Options").get<std::string>());
+	addScene(sptrScene, std::move(uptrResources));
+
+	// Game Scene
+	sptrScene = std::make_shared<GameScene>(*m_keyHandler);
+	uptrResources = std::make_unique<std::string>(jsonLoader.at("Game").get<std::string>());
+	addScene(sptrScene, std::move(uptrResources));
 }
 
 /// <summary>
@@ -46,7 +82,7 @@ Scene & SceneManager::getScene(const std::string & name)
 	auto itt = m_sceneMap.find(name);
 	if (itt != m_sceneMap.end())
 	{
-		return *(itt->second.first);
+		return *(itt->second.m_scene);
 	}
 	else
 	{
@@ -73,10 +109,16 @@ Scene & SceneManager::getActive() const
 /// The scene is added to our list, however this scene is not activated.
 /// Note: if a scene with the same name exists it is overwritten.
 /// </summary>
-/// <param name="scenePt">Defines our new scene to be added.</param>
-void SceneManager::addScene(std::shared_ptr<Scene> scenePt)
+/// <param name="sptrScene">Defines our new scene to be added.</param>
+void SceneManager::addScene(
+	std::shared_ptr<Scene> sptrScene
+	, std::unique_ptr<std::string> uptrResources
+)
 {
-	m_sceneMap[scenePt->getName()] = std::make_pair(scenePt, nullptr);
+	ManagedScene managedScene;
+	managedScene.m_scene = sptrScene;
+	managedScene.m_resourcePath.swap(uptrResources);
+	m_sceneMap[sptrScene->getName()] = std::move(managedScene);
 }
 
 /// <summary>
@@ -91,10 +133,11 @@ void SceneManager::preLoadScene(const std::string & name)
 	if (itt != m_sceneMap.end())
 	{
 		auto & mapValue = itt->second;
-		auto sptrScene = mapValue.first;
-		std::unique_ptr<std::thread> uptrThread = std::move(mapValue.second);
-		uptrThread = std::make_unique<std::thread>(&Scene::preStart, sptrScene);
-		mapValue.second.swap(uptrThread);
+		auto sptrScene = mapValue.m_scene;
+		const auto & resourcePath = *mapValue.m_resourcePath;
+		std::unique_ptr<std::thread> uptrThread = std::move(mapValue.m_thread);
+		uptrThread = std::make_unique<std::thread>(&Scene::preStart, sptrScene, resourcePath);
+		mapValue.m_thread.swap(uptrThread);
 	}
 }
 
@@ -116,15 +159,16 @@ void SceneManager::loadScene(const std::string & name)
 			m_currentScene->stop();
 		}
 		auto & mapValue = itt->second;
-		auto sptrScene = mapValue.first;
-		std::unique_ptr<std::thread> sptrThread = std::move(mapValue.second);
+		auto sptrScene = mapValue.m_scene;
+		const auto & resourcePath = *mapValue.m_resourcePath;
+		std::unique_ptr<std::thread> sptrThread = std::move(mapValue.m_thread);
 		if (sptrThread)
 		{
 			sptrThread->join();
 			std::unique_ptr<std::thread>(nullptr).swap(sptrThread);
 		}
 		m_currentScene = sptrScene;
-		m_currentScene->start();
+		m_currentScene->start(resourcePath);
 	}
 	else if (name == "Exit")
 	{

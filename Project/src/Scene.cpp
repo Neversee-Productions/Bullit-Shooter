@@ -41,6 +41,6 @@ const std::string & Scene::getNextSceneName()
 /// 
 /// 
 /// </summary>
-void Scene::preStart()
+void Scene::preStart(const std::string & resourceFilePath)
 {
 }

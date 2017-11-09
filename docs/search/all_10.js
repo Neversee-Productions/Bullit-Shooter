@@ -19,8 +19,7 @@ var searchData=
   ['scenemanager',['SceneManager',['../class_scene_manager.html',1,'SceneManager'],['../class_scene_manager.html#a44e88b925958a15af482c2c81024ed5c',1,'SceneManager::SceneManager()']]],
   ['scenemanager_2ecpp',['SceneManager.cpp',['../_scene_manager_8cpp.html',1,'']]],
   ['scenemanager_2eh',['SceneManager.h',['../_scene_manager_8h.html',1,'']]],
-  ['scenemap',['SceneMap',['../class_scene_manager.html#a010bb605176c7bd7ea2ed68a1f6d5423',1,'SceneManager']]],
-  ['scenepair',['ScenePair',['../class_scene_manager.html#a4af70f6519150089c9a7a7ea3ed344eb',1,'SceneManager']]],
+  ['scenemap',['SceneMap',['../class_scene_manager.html#a0953387440995080986c2fd0697f9704',1,'SceneManager']]],
   ['setactive',['setActive',['../class_bullet.html#a3b790871b9487ef3cf5bf956354c8639',1,'Bullet']]],
   ['setfont',['setFont',['../classgui_1_1_label.html#a205a74c138b60e42efdcbe73ce3dd908',1,'gui::Label']]],
   ['setorigin',['setOrigin',['../classgui_1_1_label.html#a79833054587410ea7fb517b74cbdc826',1,'gui::Label']]],
@@ -39,7 +38,7 @@ var searchData=
   ['sliderstate',['SliderState',['../classgui_1_1_slider.html#aeb6783166b3e856dc1c36247f90e10fd',1,'gui::Slider']]],
   ['stackvertically',['StackVertically',['../classgui_1_1_g_u_i.html#a50ccb43299016dc44fe4b21e0213169bae055d0cc4fa88ac0c0ae1294b304ae80',1,'gui::GUI']]],
   ['standard',['Standard',['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69ccaeb6d8ae6f20283755b339c0dc273988b',1,'BulletTypes.h']]],
-  ['start',['start',['../class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718',1,'Scene::start()'],['../class_game_scene.html#a595f025ee226e910b1ae13af1e8ee5e0',1,'GameScene::start()'],['../class_main_menu_scene.html#a725c076e531354d64031071fa66feb67',1,'MainMenuScene::start()'],['../class_options_scene.html#a7bfda68e116220d7ed76410d6142615a',1,'OptionsScene::start()'],['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0aa6122a65eaa676f700ae68d393054a37',1,'Start():&#160;Controller.h']]],
+  ['start',['start',['../class_scene.html#a8e8d1644799fd1b097535a387f80bc4d',1,'Scene::start()'],['../class_game_scene.html#a18967f8879389db3e8b9d6a3d1ff58c0',1,'GameScene::start()'],['../class_main_menu_scene.html#a7c8cf0e0bc5e4bb26891ee639b4ec837',1,'MainMenuScene::start()'],['../class_options_scene.html#a5d4604473ff5a10c686de5120472deb6',1,'OptionsScene::start()'],['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0aa6122a65eaa676f700ae68d393054a37',1,'Start():&#160;Controller.h']]],
   ['stop',['stop',['../class_scene.html#a1a8e54f62795f26cebcc8da8e9109335',1,'Scene::stop()'],['../class_game_scene.html#af2d4691481477cfa1d797e28593bb2e8',1,'GameScene::stop()'],['../class_main_menu_scene.html#a4a4c783bee20ab3af01c2b9de70d28db',1,'MainMenuScene::stop()'],['../class_options_scene.html#ad01e2842d7dadae3b50138ea42409997',1,'OptionsScene::stop()']]],
   ['stripdiagonal',['StripDiagonal',['../classgui_1_1_g_u_i.html#a50ccb43299016dc44fe4b21e0213169ba8edaefd8c89d5352866b596f3116a0c7',1,'gui::GUI']]]
 ];

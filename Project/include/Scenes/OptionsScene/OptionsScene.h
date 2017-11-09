@@ -12,14 +12,40 @@
 /// 
 class OptionsScene : public Scene
 {
+private:
+	/// <summary>
+	/// @brief Container of shared pointers to our resources.
+	/// 
+	/// 
+	/// </summary>
+	struct Resources
+	{
+		/// <summary>
+		/// @brief shared pointer to font.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<sf::Font> m_sptrButtonFont = std::make_shared<sf::Font>();
+
+		/// <summary>
+		/// @brief shared pointer to texture.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<sf::Texture> m_sptrButtonTexture = std::make_shared<sf::Texture>();
+	};
+
 public:
 	OptionsScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller);
-	void start() final override;
+	void preStart(const std::string & resourceFilePath) final override;
+	void start(const std::string & resourceFilePath) final override;
 	void stop() final override;
 	void update() final override;
 	void draw(Window & window, const float & deltaTime) final override;
 
 private:
+	void load(const std::string & resourceFilePath);
+	void loadGui(Resources & resources, const sf::Uint32 & fontSize);
 	void btnBack();
 
 	/// <summary>
@@ -42,28 +68,6 @@ private:
 	/// Needed to process input on our widgets.
 	/// </summary>
 	std::shared_ptr<Controller> m_controller;
-
-	/// <summary>
-	/// @brief Container of shared pointers to our resources.
-	/// 
-	/// 
-	/// </summary>
-	struct Resources
-	{
-		/// <summary>
-		/// @brief shared pointer to font.
-		/// 
-		/// 
-		/// </summary>
-		std::shared_ptr<sf::Font> m_sptrButtonFont = std::make_shared<sf::Font>();
-
-		/// <summary>
-		/// @brief shared pointer to texture.
-		/// 
-		/// 
-		/// </summary>
-		std::shared_ptr<sf::Texture> m_sptrButtonTexture = std::make_shared<sf::Texture>();
-	};
 
 	/// <summary>
 	/// @brief Unique pointer to our Resources struct.

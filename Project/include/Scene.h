@@ -3,6 +3,8 @@
 
 #include <string>
 #include <assert.h>
+#include <fstream>
+#include "json\json.hpp"
 #include "Window.h"
 #include "input\Controller.h"
 
@@ -18,8 +20,8 @@ public:
 	Scene(const std::string & sceneName);
 	const std::string & getName() const;
 	virtual const std::string & getNextSceneName();
-	virtual void preStart();
-	virtual void start() abstract;
+	virtual void preStart(const std::string & resourceFilePath);
+	virtual void start(const std::string & resourceFilePath) abstract;
 	virtual void stop() abstract;
 	virtual void update() abstract;
 	virtual void draw(Window & window, const float & deltaTime) abstract;
