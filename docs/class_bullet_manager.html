@@ -112,19 +112,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a69cfc18f9b76e70e3b2858217f6e2780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507393ed5ccbe692e93f7763ed714435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a507393ed5ccbe692e93f7763ed714435">fireEmpowered</a> (const sf::Vector2f &amp;pos1, const sf::Vector2f &amp;pos2)</td></tr>
 <tr class="separator:a507393ed5ccbe692e93f7763ed714435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a749d3b448c882b5b72c0777bcb648433"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a749d3b448c882b5b72c0777bcb648433">setEmpowered</a> (<a class="el" href="classbullets_1_1_empowered.html">bullets::Empowered</a> &amp;bullet, const float &amp;angle, const sf::Vector2f &amp;pos)</td></tr>
-<tr class="separator:a749d3b448c882b5b72c0777bcb648433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a1c306efeb419cf4df73cb940669dc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a7a1c306efeb419cf4df73cb940669dc3">setEmpowered</a> (<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet, const float &amp;angle, const sf::Vector2f &amp;pos)</td></tr>
+<tr class="separator:a7a1c306efeb419cf4df73cb940669dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a9e2137fbdf9d7c32e4be91e294fbcbc7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classbullets_1_1_standard.html">bullets::Standard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a9e2137fbdf9d7c32e4be91e294fbcbc7">m_standardBullets</a></td></tr>
-<tr class="separator:a9e2137fbdf9d7c32e4be91e294fbcbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2969bbb9910f69bedf31cec151e0384c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classbullets_1_1_empowered.html">bullets::Empowered</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a2969bbb9910f69bedf31cec151e0384c">m_empoweredBullets</a></td></tr>
-<tr class="separator:a2969bbb9910f69bedf31cec151e0384c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc312c9d67f9c48ff35d0316be779779"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#adc312c9d67f9c48ff35d0316be779779">m_timeSinceFire</a></td></tr>
 <tr class="separator:adc312c9d67f9c48ff35d0316be779779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada6972d3c7730d60d0085c27e3348861"><td class="memItemLeft" align="right" valign="top">const tinyh::c2AABB &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ada6972d3c7730d60d0085c27e3348861">m_windowC2Rect</a></td></tr>
 <tr class="separator:ada6972d3c7730d60d0085c27e3348861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a094aedb5357033af0d21ffd714890105"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a094aedb5357033af0d21ffd714890105">m_bulletMap</a></td></tr>
+<tr class="memdesc:a094aedb5357033af0d21ffd714890105"><td class="mdescLeft">&#160;</td><td class="mdescRight">of bullet types to bullets.  <a href="#a094aedb5357033af0d21ffd714890105">More...</a><br /></td></tr>
+<tr class="separator:a094aedb5357033af0d21ffd714890105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
@@ -365,8 +364,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a749d3b448c882b5b72c0777bcb648433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a749d3b448c882b5b72c0777bcb648433">&#9670;&nbsp;</a></span>setEmpowered()</h2>
+<a id="a7a1c306efeb419cf4df73cb940669dc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a1c306efeb419cf4df73cb940669dc3">&#9670;&nbsp;</a></span>setEmpowered()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,7 +373,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void BulletManager::setEmpowered </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classbullets_1_1_empowered.html">bullets::Empowered</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;&#160;</td>
           <td class="paramname"><em>bullet</em>, </td>
         </tr>
         <tr>
@@ -428,33 +427,17 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2969bbb9910f69bedf31cec151e0384c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2969bbb9910f69bedf31cec151e0384c">&#9670;&nbsp;</a></span>m_empoweredBullets</h2>
+<a id="a094aedb5357033af0d21ffd714890105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a094aedb5357033af0d21ffd714890105">&#9670;&nbsp;</a></span>m_bulletMap</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classbullets_1_1_empowered.html">bullets::Empowered</a>&gt; BulletManager::m_empoweredBullets</td>
+          <td class="memname">std::map&lt;<a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::vector&lt;std::unique_ptr&lt;<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a>&gt; &gt; &gt; BulletManager::m_bulletMap</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>vector of empowered bullets.</p>
-
-</div>
-</div>
-<a id="a9e2137fbdf9d7c32e4be91e294fbcbc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e2137fbdf9d7c32e4be91e294fbcbc7">&#9670;&nbsp;</a></span>m_standardBullets</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classbullets_1_1_standard.html">bullets::Standard</a>&gt; BulletManager::m_standardBullets</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>vector of bullets.</p>
 
 </div>
 </div>

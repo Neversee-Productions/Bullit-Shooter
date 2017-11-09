@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"index.html":[],
-"index.html":[0],
 "main_8cpp.html":[3,0,0,1,5],
 "main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[3,0,0,1,5,1],
 "main_8cpp.html#a8de3ed741dadc9c979a4ff17c0a9116e":[3,0,0,1,5,0],

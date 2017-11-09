@@ -5,7 +5,7 @@ var searchData=
   ['scenemanager',['SceneManager',['../class_scene_manager.html#a44e88b925958a15af482c2c81024ed5c',1,'SceneManager']]],
   ['setactive',['setActive',['../classbullets_1_1_bullet.html#a38376bfa6bf1c9de4fdd0124940e29cc',1,'bullets::Bullet']]],
   ['setangle',['setAngle',['../classbullets_1_1_bullet.html#a72d0c4cb269cad6e25fdaaff4f94cbd2',1,'bullets::Bullet']]],
-  ['setempowered',['setEmpowered',['../class_bullet_manager.html#a749d3b448c882b5b72c0777bcb648433',1,'BulletManager']]],
+  ['setempowered',['setEmpowered',['../class_bullet_manager.html#a7a1c306efeb419cf4df73cb940669dc3',1,'BulletManager']]],
   ['setfont',['setFont',['../classgui_1_1_label.html#a205a74c138b60e42efdcbe73ce3dd908',1,'gui::Label']]],
   ['setorigin',['setOrigin',['../classgui_1_1_label.html#a79833054587410ea7fb517b74cbdc826',1,'gui::Label']]],
   ['setposition',['setPosition',['../classgui_1_1_button.html#a50a0bd3c7d6ea8987af4eaed88286d25',1,'gui::Button::setPosition()'],['../classgui_1_1_check_box.html#a0a91f521e1d5a10258fbf378422b4a15',1,'gui::CheckBox::setPosition()'],['../classgui_1_1_label.html#a36e3de60902dab37bbf7e162d090beab',1,'gui::Label::setPosition()'],['../classgui_1_1_slider.html#ac75a958a34009da813aa7c1f965448c4',1,'gui::Slider::setPosition()'],['../classbullets_1_1_bullet.html#ad3ef7337502d9979702dbb1d095bfc5b',1,'bullets::Bullet::setPosition()']]],

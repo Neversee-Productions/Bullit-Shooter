@@ -2,12 +2,13 @@
 #define BULLETMANAGER_H
 
 #include <vector>
-#include <memory.h>
+#include <memory>
 #include "Bullets/Bullet.h"
 #include "Bullets/Standard.h"
 #include "Window.h"
 #include "Bullets/BulletTypes.h"
 #include "Bullets/Empowered.h"
+
 
 ///
 /// @brief The bullet manager class.
@@ -26,21 +27,7 @@ public:
 	void update();
 	void fireStandard(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
 	void fireEmpowered(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
-	void setEmpowered(bullets::Empowered& bullet ,const float& angle, const sf::Vector2f& pos);
-
-	/// <summary>
-	/// @brief vector of bullets.
-	/// 
-	/// 
-	/// </summary>
-	std::vector<bullets::Standard> m_standardBullets;
-
-	/// <summary>
-	/// @brief vector of empowered bullets.
-	/// 
-	/// 
-	/// </summary>
-	std::vector<bullets::Empowered> m_empoweredBullets;
+	void setEmpowered(bullets::Bullet& bullet ,const float& angle, const sf::Vector2f& pos);
 
 	/// <summary>
 	/// @brief how long since last fire.
@@ -55,6 +42,13 @@ public:
 	/// 
 	/// </summary>
 	const tinyh::c2AABB& m_windowC2Rect;
+
+	/// <summary>
+	/// @map of bullet types to bullets.
+	/// 
+	/// 
+	/// </summary>
+	std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> m_bulletMap;
 };
 #endif // !BULLETMANAGER_H
 

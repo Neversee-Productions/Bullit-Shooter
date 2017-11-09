@@ -18,7 +18,6 @@ namespace bullets
 	{
 	public:
 		Bullet();
-		Bullet(sf::Vector2f position, BulletTypes type);
 		virtual void update();
 		void draw(Window & window, const float & deltaTime);
 		tinyh::c2AABB getCollisionRect();

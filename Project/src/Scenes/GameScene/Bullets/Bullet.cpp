@@ -20,36 +20,7 @@ bullets::Bullet::Bullet()
 {
 	m_bulletRect.setPosition(0.0f,0.0f);
 	m_bulletRect.setFillColor(sf::Color::White);
-	m_bulletRect.setSize(sf::Vector2f(10.0f, 10.0f));
-	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
-
-	//define the bullet collision rectangle
-	const auto & bulletRect = m_bulletRect.getGlobalBounds();
-	m_bulletC2Rect.min.x = bulletRect.left;
-	m_bulletC2Rect.min.y = bulletRect.top;
-	m_bulletC2Rect.max.x = bulletRect.left + bulletRect.width;
-	m_bulletC2Rect.max.x = bulletRect.top + bulletRect.height;
-}
-
-/// <summary>
-/// @brief overloaded constructor
-/// 
-/// 
-/// </summary>
-/// <param name="position">defines the position vector</param>
-/// <param name="type">define type of bullet to create</param>
-bullets::Bullet::Bullet(sf::Vector2f position, BulletTypes type)
-	: m_position(position)
-	, m_bulletRect()
-	, m_active(false)
-	, m_type(type)
-	, m_bulletC2Rect()
-	, m_velocity(0.0f,0.0f)
-	,m_speed(0)
-{
-	m_bulletRect.setPosition(position);
-	m_bulletRect.setFillColor(sf::Color::White);
-	m_bulletRect.setSize(sf::Vector2f(10.0f, 10.0f));
+	m_bulletRect.setSize(sf::Vector2f(5.0f, 5.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 	//define the bullet collision rectangle
@@ -81,10 +52,7 @@ void bullets::Bullet::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void bullets::Bullet::draw(Window & window, const float & deltaTime)
 {
-	if (m_active)
-	{
-		window.draw(m_bulletRect);
-	}
+	window.draw(m_bulletRect);
 }
 
 /// <summary>

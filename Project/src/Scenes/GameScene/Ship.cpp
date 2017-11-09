@@ -11,7 +11,7 @@ Ship::Ship()
 {
 	m_shipRect.setFillColor(sf::Color::Red);
 	m_shipRect.setPosition(sf::Vector2f(100.0f, 400.0f));
-	m_shipRect.setSize(sf::Vector2f(100.0f, 50.0f));
+	m_shipRect.setSize(sf::Vector2f(50.0f, 25.0f));
 	m_shipRect.setOrigin(m_shipRect.getSize().x / 2, m_shipRect.getSize().y / 2);
 }
 

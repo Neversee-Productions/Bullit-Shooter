@@ -21,12 +21,18 @@ BulletManager::BulletManager()
 /// <param name="type">define type of bullet</param>
 void BulletManager::fireBullet(const sf::Vector2f& position1,const sf::Vector2f& position2,const BulletTypes& type)
 {
-	if (m_timeSinceFire > bullets::Standard::getFireRate())
+	if (m_bulletMap.find(type) == m_bulletMap.end()) //if bullet vector has not been instanciated, then do so.
+	{
+		initBulletvector(type);
+	}
+
+	if (m_timeSinceFire > bullets::Standard::getFireRate()) //if its time to fire do it.
 	{
 		switch (type)
 		{
 		case BulletTypes::Standard:
 			fireStandard(position1, position2);
+			//fireStandard(m_bullets.get(type), position1, position2);
 			break;
 		case BulletTypes::Empowered:
 			fireEmpowered(position1, position2);
@@ -47,13 +53,33 @@ void BulletManager::initBulletvector(BulletTypes type)
 {
 	switch (type)
 	{
+
 	case BulletTypes::Standard:
-		m_standardBullets.reserve(10);
-		m_standardBullets.resize(10);
+	{
+		std::vector<std::unique_ptr<bullets::Bullet>> vStandard;
+		vStandard.reserve(10);
+		vStandard.resize(10);
+		for (auto itt = vStandard.begin(), end = vStandard.end(); itt != end; ++itt)
+		{
+			//auto & vectorUniquePtrBullet = *itt;
+			//std::unique_ptr<bullets::Bullet> uptrBullet = std::make_unique<bullets::Standard>();
+			//vectorUniquePtrBullet.swap(uptrBullet);
+			itt->swap(std::unique_ptr<bullets::Bullet>(std::make_unique<bullets::Standard>()));
+		}
+		m_bulletMap.insert(std::make_pair(type, std::move(vStandard)));
 		break;
+	}
 	case BulletTypes::Empowered:
-		m_empoweredBullets.reserve(18);
-		m_empoweredBullets.resize(18);
+	{
+		std::vector<std::unique_ptr<bullets::Bullet>> vEmpowered;
+		vEmpowered.reserve(24);
+		vEmpowered.resize(24);
+		for (auto itt = vEmpowered.begin(), end = vEmpowered.end(); itt != end; ++itt)
+		{
+			itt->swap(std::unique_ptr<bullets::Bullet>(std::make_unique<bullets::Empowered>()));
+		}
+		m_bulletMap.insert(std::make_pair(type, std::move(vEmpowered)));
+	}
 	default:
 		break;
 	}
@@ -81,13 +107,18 @@ void BulletManager::reuseBullet(bullets::Bullet& bullet,sf::Vector2f pos)
 /// <param name="deltaTime">define reference to draw time step.</param>
 void BulletManager::draw(Window & window, const float & deltaTime)
 {
-	for (auto & bullet : m_standardBullets)
+	
+	for (const auto & pair : m_bulletMap)
 	{
-		bullet.draw(window, deltaTime);
-	}
-	for (auto & bullet : m_empoweredBullets)
-	{
-		bullet.draw(window, deltaTime);
+		auto & bulletVector = pair.second;
+		for (auto itt = bulletVector.begin(), end = bulletVector.end(); itt != end; ++itt)
+		{
+			auto & derivedBullet = **itt;
+			if (derivedBullet.isActive())
+			{
+				derivedBullet.draw(window, deltaTime);
+			}
+		}
 	}
 }
 
@@ -99,32 +130,23 @@ void BulletManager::draw(Window & window, const float & deltaTime)
 void BulletManager::update()
 {
 	m_timeSinceFire += App::getUpdateDeltaTime();
-	for (auto & bullet : m_standardBullets)
-	{
-		if (bullet.isActive())
-		{
-			if (!tinyh::c2AABBtoAABB(m_windowC2Rect, bullet.getCollisionRect()))
-			{
-				bullet.setActive(false);
-			}
-			else
-			{
-				bullet.update();
-			}
-		}
-	}
 
-	for (auto & bullet : m_empoweredBullets)
+	for (const auto & pair : m_bulletMap)
 	{
-		if (bullet.isActive())
+		auto & bulletVector = pair.second;
+		for (auto itt = bulletVector.begin(), end = bulletVector.end(); itt != end; ++itt)
 		{
-			if (!tinyh::c2AABBtoAABB(m_windowC2Rect, bullet.getCollisionRect()))
+			auto & derivedBullet = **itt;
+			if (derivedBullet.isActive())
 			{
-				bullet.setActive(false);
-			}
-			else
-			{
-				bullet.update();
+				if (!tinyh::c2AABBtoAABB(m_windowC2Rect, derivedBullet.getCollisionRect()))
+				{
+					derivedBullet.setActive(false);
+				}
+				else
+				{
+					derivedBullet.update();
+				}
 			}
 		}
 	}
@@ -140,8 +162,9 @@ void BulletManager::update()
 void BulletManager::fireStandard(const sf::Vector2f & pos1, const sf::Vector2f & pos2)
 {
 	int numFired = 0; //local variable to see how many bullets were fired used to determine if 2 turrets shot
-	for (auto & bullet : m_standardBullets)
+	for (auto & uptrBullet : m_bulletMap.at(BulletTypes::Standard))
 	{
+		auto & bullet = *uptrBullet;
 		if (!bullet.isActive())
 		{
 			if (numFired == 0)
@@ -175,8 +198,9 @@ void BulletManager::fireEmpowered(const sf::Vector2f & pos1, const sf::Vector2f 
 	int numFired = 0; //local variable to see how many bullets were fired used to determine if 2 turrets shot
 	bool oneFired = false; //local bool to check if one turret already fired all 3 bullets
 	bool finishedFiring = false;
-	for (auto & bullet : m_empoweredBullets)
+	for (auto & uptrBullet : m_bulletMap.at(BulletTypes::Empowered))
 	{
+		auto & bullet = *uptrBullet;
 		if (!bullet.isActive())
 		{
 			switch (numFired)
@@ -220,7 +244,7 @@ void BulletManager::fireEmpowered(const sf::Vector2f & pos1, const sf::Vector2f 
 /// <param name="bullet">reference to a bullet</param>
 /// <param name="angle">reference to the angle to fire</param>
 /// <param name="pos">reference to the position to fire at</param>
-void BulletManager::setEmpowered(bullets::Empowered & bullet, const float & angle, const sf::Vector2f& pos)
+void BulletManager::setEmpowered(bullets::Bullet & bullet, const float & angle, const sf::Vector2f& pos)
 {
 	bullet.setPosition(pos);
 	bullet.setAngle(angle);

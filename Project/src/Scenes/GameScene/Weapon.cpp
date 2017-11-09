@@ -12,7 +12,7 @@ Weapon::Weapon(sf::Vector2f position)
 {
 	m_weaponRect.setPosition(position);
 	m_weaponRect.setFillColor(sf::Color::Blue);
-	m_weaponRect.setSize(sf::Vector2f(50.0f, 50.0f));
+	m_weaponRect.setSize(sf::Vector2f(25.0f, 25.0f));
 	m_weaponRect.setOrigin(m_weaponRect.getSize().x / 2, m_weaponRect.getSize().y / 2);
 }
 

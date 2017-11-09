@@ -1,7 +1,6 @@
 var classbullets_1_1_bullet =
 [
     [ "Bullet", "classbullets_1_1_bullet.html#a462ca59bc035c25f2d3fcfd351c6b243", null ],
-    [ "Bullet", "classbullets_1_1_bullet.html#a3ce27e5f6a0a38f379d3275f2d6556ce", null ],
     [ "draw", "classbullets_1_1_bullet.html#abb70aa96964976513ce6f067d13743ba", null ],
     [ "getCollisionRect", "classbullets_1_1_bullet.html#ab9913ac51dc0bd3824dff9f51393ce4e", null ],
     [ "isActive", "classbullets_1_1_bullet.html#aaa99b721acc4f2ceba75fd95cb55b015", null ],

@@ -14,8 +14,8 @@ Player::Player(KeyHandler& keyHandler)
 	, m_bulletManager()
 	, deltaTime(App::getUpdateDeltaTime())
 {
-	m_weapon1.m_weaponRect.setPosition(sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y - 100));
-	m_weapon2.m_weaponRect.setPosition(sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y + 100));
+	m_weapon1.m_weaponRect.setPosition(sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y - 50));
+	m_weapon2.m_weaponRect.setPosition(sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y + 50));
 	m_bulletManager.initBulletvector(m_weapon1.m_currentBullet);
 }
 

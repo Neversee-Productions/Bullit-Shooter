@@ -7,10 +7,9 @@ var class_bullet_manager =
     [ "fireStandard", "class_bullet_manager.html#a69cfc18f9b76e70e3b2858217f6e2780", null ],
     [ "initBulletvector", "class_bullet_manager.html#ab78a89d8d0b0a700f4bc62bf1c50fb2a", null ],
     [ "reuseBullet", "class_bullet_manager.html#a2cf961d2667a1f6e10b73ee786079861", null ],
-    [ "setEmpowered", "class_bullet_manager.html#a749d3b448c882b5b72c0777bcb648433", null ],
+    [ "setEmpowered", "class_bullet_manager.html#a7a1c306efeb419cf4df73cb940669dc3", null ],
     [ "update", "class_bullet_manager.html#ae8638f3b70fe44a15413e1107ea806fe", null ],
-    [ "m_empoweredBullets", "class_bullet_manager.html#a2969bbb9910f69bedf31cec151e0384c", null ],
-    [ "m_standardBullets", "class_bullet_manager.html#a9e2137fbdf9d7c32e4be91e294fbcbc7", null ],
+    [ "m_bulletMap", "class_bullet_manager.html#a094aedb5357033af0d21ffd714890105", null ],
     [ "m_timeSinceFire", "class_bullet_manager.html#adc312c9d67f9c48ff35d0316be779779", null ],
     [ "m_windowC2Rect", "class_bullet_manager.html#ada6972d3c7730d60d0085c27e3348861", null ]
 ];
