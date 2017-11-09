@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\Scenes\GameScene\Bullets\DeathOrb.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\gui\GUI.cpp" />
@@ -34,6 +35,8 @@
     <ClCompile Include="src\SceneManager.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\Bullet.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\Empowered.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Bullets\FireBlast.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Bullets\HolySphere.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\Standard.cpp" />
     <ClCompile Include="src\Scenes\MainMenuScene\MainMenuScene.cpp" />
     <ClCompile Include="src\Scenes\GameScene\BulletManager.cpp" />
@@ -63,7 +66,10 @@
     <ClInclude Include="include\SceneManager.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\Bullet.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\BulletTypes.h" />
+    <ClInclude Include="include\Scenes\GameScene\Bullets\DeathOrb.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\Empowered.h" />
+    <ClInclude Include="include\Scenes\GameScene\Bullets\FireBlast.h" />
+    <ClInclude Include="include\Scenes\GameScene\Bullets\HolySphere.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\Standard.h" />
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />
     <ClInclude Include="include\Scenes\GameScene\BulletManager.h" />

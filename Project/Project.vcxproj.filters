@@ -162,6 +162,15 @@
     <ClCompile Include="src\Scenes\GameScene\Bullets\Empowered.cpp">
       <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
     </ClCompile>
+    <ClCompile Include="include\Scenes\GameScene\Bullets\DeathOrb.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\FireBlast.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\HolySphere.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -239,6 +248,15 @@
       <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Bullets\Empowered.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\DeathOrb.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\FireBlast.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\HolySphere.h">
       <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,7 +8,8 @@
 /// <param name="position">defines the position of the weapon rectangle</param>
 Weapon::Weapon(sf::Vector2f position)
 	: m_weaponRect()
-	, m_currentBullet(BulletTypes::Empowered)
+	, m_currentBullet(BulletTypes::HolySphere)
+	, m_position(position)
 {
 	m_weaponRect.setPosition(position);
 	m_weaponRect.setFillColor(sf::Color::Blue);
@@ -26,4 +27,14 @@ Weapon::Weapon(sf::Vector2f position)
 void Weapon::draw(Window & window, const float & deltaTime)
 {
 	window.draw(m_weaponRect);
+}
+
+/// <summary>
+/// @brief update position vector.
+/// 
+/// 
+/// </summary>
+void Weapon::update(const sf::Vector2f& pos)
+{
+	m_weaponRect.setPosition(pos);
 }

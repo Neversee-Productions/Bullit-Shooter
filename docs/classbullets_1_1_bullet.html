@@ -100,8 +100,11 @@ Inheritance diagram for bullets::Bullet:</div>
  <div class="center">
   <img src="classbullets_1_1_bullet.png" usemap="#bullets::Bullet_map" alt=""/>
   <map id="bullets::Bullet_map" name="bullets::Bullet_map">
-<area href="classbullets_1_1_empowered.html" title="empowered bullet class. " alt="bullets::Empowered" shape="rect" coords="0,56,120,80"/>
-<area href="classbullets_1_1_standard.html" title="standard bullet class. " alt="bullets::Standard" shape="rect" coords="130,56,250,80"/>
+<area href="classbullets_1_1_death_orb.html" title="DeathOrb class. " alt="bullets::DeathOrb" shape="rect" coords="0,56,121,80"/>
+<area href="classbullets_1_1_empowered.html" title="empowered bullet class. " alt="bullets::Empowered" shape="rect" coords="131,56,252,80"/>
+<area href="classbullets_1_1_fire_blast.html" title="FireBlast bullet class. " alt="bullets::FireBlast" shape="rect" coords="262,56,383,80"/>
+<area href="classbullets_1_1_holy_sphere.html" title="HolySphere bullet class. " alt="bullets::HolySphere" shape="rect" coords="393,56,514,80"/>
+<area href="classbullets_1_1_standard.html" title="standard bullet class. " alt="bullets::Standard" shape="rect" coords="524,56,645,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -115,7 +118,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abb70aa96964976513ce6f067d13743ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9913ac51dc0bd3824dff9f51393ce4e"><td class="memItemLeft" align="right" valign="top">tinyh::c2AABB&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#ab9913ac51dc0bd3824dff9f51393ce4e">getCollisionRect</a> ()</td></tr>
 <tr class="separator:ab9913ac51dc0bd3824dff9f51393ce4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38376bfa6bf1c9de4fdd0124940e29cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a38376bfa6bf1c9de4fdd0124940e29cc">setActive</a> (bool active)</td></tr>
+<tr class="memitem:a38376bfa6bf1c9de4fdd0124940e29cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a38376bfa6bf1c9de4fdd0124940e29cc">setActive</a> (bool active)</td></tr>
 <tr class="separator:a38376bfa6bf1c9de4fdd0124940e29cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa446d8e06cf333ea39897966487a2af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#afa446d8e06cf333ea39897966487a2af">updateBox</a> ()</td></tr>
 <tr class="separator:afa446d8e06cf333ea39897966487a2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,6 +257,9 @@ Static Protected Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void bullets::Bullet::setActive </td>
@@ -263,6 +269,11 @@ Static Protected Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>set the active of bullet.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -271,6 +282,8 @@ Static Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Reimplemented in <a class="el" href="classbullets_1_1_holy_sphere.html#af57ca962b77edc22bd8def8544f40bf5">bullets::HolySphere</a>.</p>
 
 </div>
 </div>
@@ -348,6 +361,8 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>default update.</p>
 <p>updates bullet position based on velocity </p>
+
+<p>Reimplemented in <a class="el" href="classbullets_1_1_holy_sphere.html#a4dd17767e131da308604ee4c7d881a36">bullets::HolySphere</a>, and <a class="el" href="classbullets_1_1_death_orb.html#a71e4d572261576cb27bf1c978a638786">bullets::DeathOrb</a>.</p>
 
 </div>
 </div>

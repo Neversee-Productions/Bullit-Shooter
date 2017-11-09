@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['mainmenuscene',['MainMenuScene',['../class_main_menu_scene.html#a555ff0255e49f81f47a4d3ad016a5e5f',1,'MainMenuScene']]],
-  ['moveleft',['moveLeft',['../classgui_1_1_slider.html#a90d712eab516ac7c2be533b954ed57f6',1,'gui::Slider']]],
-  ['moveright',['moveRight',['../classgui_1_1_slider.html#a7aab63dfcc69e3150ac54c9914def379',1,'gui::Slider']]],
-  ['movetonextwidgets',['moveToNextWidgets',['../classgui_1_1_g_u_i.html#a8b044c590e06df5d6b9f6f3240c0d273',1,'gui::GUI']]],
-  ['movetoprevwidgets',['moveToPrevWidgets',['../classgui_1_1_g_u_i.html#a26126d3649a6c44c717b50200060e246',1,'gui::GUI']]]
+  ['label',['Label',['../classgui_1_1_label.html#addb92b228cf58df38d5c87f32ef9793d',1,'gui::Label::Label()'],['../classgui_1_1_label.html#a3cbf622aef364b29a7c0acc226c999d7',1,'gui::Label::Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, std::shared_ptr&lt; sf::Font &gt; font, sf::Color color=sf::Color::White)']]],
+  ['linkwidget',['linkWidget',['../classgui_1_1_g_u_i.html#a424ee163df62b48f6be76c9c98bac048',1,'gui::GUI']]],
+  ['loadscene',['loadScene',['../class_scene_manager.html#ac359429a768d09eaa82aa493885bf1c0',1,'SceneManager']]],
+  ['losefocus',['loseFocus',['../classgui_1_1_button.html#a73187326a00396c94df8a6dea3fc2132',1,'gui::Button::loseFocus()'],['../classgui_1_1_check_box.html#a6a5de0768f7072d84c8f382f15d09c1c',1,'gui::CheckBox::loseFocus()'],['../classgui_1_1_label.html#af0bf1020eb68aa653489ed5f76a9a525',1,'gui::Label::loseFocus()'],['../classgui_1_1_slider.html#a467631426394b906ceda125bc19b4fab',1,'gui::Slider::loseFocus()'],['../classgui_1_1_widget.html#a2e7574b55dfa70aaa91329e26c7cf957',1,'gui::Widget::loseFocus()']]]
 ];

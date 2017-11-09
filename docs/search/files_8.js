@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['optionsscene_2ecpp',['OptionsScene.cpp',['../_options_scene_8cpp.html',1,'']]],
-  ['optionsscene_2eh',['OptionsScene.h',['../_options_scene_8h.html',1,'']]]
+  ['keyhandler_2ecpp',['KeyHandler.cpp',['../_key_handler_8cpp.html',1,'']]],
+  ['keyhandler_2eh',['KeyHandler.h',['../_key_handler_8h.html',1,'']]]
 ];

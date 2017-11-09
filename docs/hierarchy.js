@@ -3,7 +3,10 @@ var hierarchy =
     [ "App", "class_app.html", null ],
     [ "Application", "class_application.html", null ],
     [ "bullets::Bullet", "classbullets_1_1_bullet.html", [
+      [ "bullets::DeathOrb", "classbullets_1_1_death_orb.html", null ],
       [ "bullets::Empowered", "classbullets_1_1_empowered.html", null ],
+      [ "bullets::FireBlast", "classbullets_1_1_fire_blast.html", null ],
+      [ "bullets::HolySphere", "classbullets_1_1_holy_sphere.html", null ],
       [ "bullets::Standard", "classbullets_1_1_standard.html", null ]
     ] ],
     [ "BulletManager", "class_bullet_manager.html", null ],

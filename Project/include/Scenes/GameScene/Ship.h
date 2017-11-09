@@ -15,6 +15,9 @@ class Ship
 public:
 	Ship();
 	void draw(Window & window, const float & deltaTime);
+	void moveUp();
+	void moveDown();
+	void update();
 
 	/// <summary>
 	/// @brief Represents the ship.
@@ -22,6 +25,20 @@ public:
 	/// 
 	/// </summary>
 	sf::RectangleShape m_shipRect;
+
+	/// <summary>
+	/// @brief define players speed.
+	/// 
+	/// 
+	/// </summary>
+	float m_speed;
+
+	/// <summary>
+	/// @brief define position.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_position;
 };
 
 #endif SHIP_H

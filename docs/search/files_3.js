@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['empowered_2ecpp',['Empowered.cpp',['../_empowered_8cpp.html',1,'']]],
-  ['empowered_2eh',['Empowered.h',['../_empowered_8h.html',1,'']]]
+  ['deathorb_2ecpp',['DeathOrb.cpp',['../_death_orb_8cpp.html',1,'']]],
+  ['deathorb_2eh',['DeathOrb.h',['../_death_orb_8h.html',1,'']]]
 ];

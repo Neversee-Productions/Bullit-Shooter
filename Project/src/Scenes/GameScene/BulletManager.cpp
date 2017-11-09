@@ -26,20 +26,40 @@ void BulletManager::fireBullet(const sf::Vector2f& position1,const sf::Vector2f&
 		initBulletvector(type);
 	}
 
-	if (m_timeSinceFire > bullets::Standard::getFireRate()) //if its time to fire do it.
+	switch (type)
 	{
-		switch (type)
+	case BulletTypes::Standard:
+		if (m_timeSinceFire > bullets::Standard::getFireRate()) //if its time to fire do it.
 		{
-		case BulletTypes::Standard:
 			fireStandard(position1, position2);
-			//fireStandard(m_bullets.get(type), position1, position2);
-			break;
-		case BulletTypes::Empowered:
-			fireEmpowered(position1, position2);
-			break;
-		default:
-			break;
 		}
+		break;
+	case BulletTypes::Empowered:
+		if (m_timeSinceFire > bullets::Empowered::getFireRate()) //if its time to fire do it.
+		{
+			fireEmpowered(position1, position2);
+		}
+		break;
+	case BulletTypes::DeathOrb:
+		if (m_timeSinceFire > bullets::DeathOrb::getFireRate()) //if its time to fire do it.
+		{
+			fireDeathOrb(position1, position2);
+		}
+		break;
+	case BulletTypes::FireBlast:
+		if (m_timeSinceFire > bullets::FireBlast::getFireRate()) //if its time to fire do it.
+		{
+			fireFireBlast(position1, position2);
+		}
+		break;
+	case BulletTypes::HolySphere:
+		if (m_timeSinceFire > bullets::HolySphere::getFireRate()) //if its time to fire do it.
+		{
+			fireHolySphere(position1, position2);
+		}
+		break;
+	default:
+		break;
 	}
 }
 
@@ -57,8 +77,8 @@ void BulletManager::initBulletvector(BulletTypes type)
 	case BulletTypes::Standard:
 	{
 		std::vector<std::unique_ptr<bullets::Bullet>> vStandard;
-		vStandard.reserve(10);
-		vStandard.resize(10);
+		vStandard.reserve(14);
+		vStandard.resize(14);
 		for (auto itt = vStandard.begin(), end = vStandard.end(); itt != end; ++itt)
 		{
 			//auto & vectorUniquePtrBullet = *itt;
@@ -79,6 +99,42 @@ void BulletManager::initBulletvector(BulletTypes type)
 			itt->swap(std::unique_ptr<bullets::Bullet>(std::make_unique<bullets::Empowered>()));
 		}
 		m_bulletMap.insert(std::make_pair(type, std::move(vEmpowered)));
+	}
+	case BulletTypes::DeathOrb:
+	{
+		std::vector<std::unique_ptr<bullets::Bullet>> vDeathOrb;
+		vDeathOrb.reserve(24);
+		vDeathOrb.resize(24);
+		for (auto itt = vDeathOrb.begin(), end = vDeathOrb.end(); itt != end; ++itt)
+		{
+			itt->swap(std::unique_ptr<bullets::Bullet>(std::make_unique<bullets::DeathOrb>()));
+		}
+		m_bulletMap.insert(std::make_pair(type, std::move(vDeathOrb)));
+		break;
+	}
+	case BulletTypes::FireBlast:
+	{
+		std::vector<std::unique_ptr<bullets::Bullet>> vFireBlast;
+		vFireBlast.reserve(30);
+		vFireBlast.resize(30);
+		for (auto itt = vFireBlast.begin(), end = vFireBlast.end(); itt != end; ++itt)
+		{
+			itt->swap(std::unique_ptr<bullets::Bullet>(std::make_unique<bullets::FireBlast>()));
+		}
+		m_bulletMap.insert(std::make_pair(type, std::move(vFireBlast)));
+		break;
+	}
+	case BulletTypes::HolySphere:
+	{
+		std::vector<std::unique_ptr<bullets::Bullet>> vHolySphere;
+		vHolySphere.reserve(10);
+		vHolySphere.resize(10);
+		for (auto itt = vHolySphere.begin(), end = vHolySphere.end(); itt != end; ++itt)
+		{
+			itt->swap(std::unique_ptr<bullets::Bullet>(std::make_unique<bullets::HolySphere>()));
+		}
+		m_bulletMap.insert(std::make_pair(type, std::move(vHolySphere)));
+		break;
 	}
 	default:
 		break;
@@ -130,7 +186,16 @@ void BulletManager::draw(Window & window, const float & deltaTime)
 void BulletManager::update()
 {
 	m_timeSinceFire += App::getUpdateDeltaTime();
+	updateWindowCollisions();
+}
 
+/// <summary>
+/// @brief check if bullets left the window.
+/// 
+/// 
+/// </summary>
+void BulletManager::updateWindowCollisions()
+{
 	for (const auto & pair : m_bulletMap)
 	{
 		auto & bulletVector = pair.second;
@@ -189,7 +254,7 @@ void BulletManager::fireStandard(const sf::Vector2f & pos1, const sf::Vector2f &
 /// @brief empowered bullet fire method.
 /// 
 /// fires 3 bullets at each weapon
-/// 2 of the bullets will be offset by -30 and 30 degrees
+/// 2 of the bullets will be offset by -5 and 5 degrees
 /// </summary>
 /// <param name="pos1">reference to first weapons position</param>
 /// <param name="pos2">reference to second weapons position</param>
@@ -250,5 +315,104 @@ void BulletManager::setEmpowered(bullets::Bullet & bullet, const float & angle, 
 	bullet.setAngle(angle);
 	bullet.updateVelocityVector();
 	bullet.setActive(true);
+}
+
+/// <summary>
+/// @brief empowered bullet fire method.
+/// 
+/// fires 1 bullets at each weapon
+/// </summary>
+/// <param name="pos1">reference to first weapons position</param>
+/// <param name="pos2">reference to second weapons position</param>
+void BulletManager::fireDeathOrb(const sf::Vector2f & pos1, const sf::Vector2f & pos2)
+{
+	int numFired = 0; //local variable to see how many bullets were fired used to determine if 2 turrets shot
+	for (auto & uptrBullet : m_bulletMap.at(BulletTypes::DeathOrb))
+	{
+		auto & bullet = *uptrBullet;
+		if (!bullet.isActive())
+		{
+			if (numFired == 0)
+			{
+				bullet.setPosition(pos1);
+				bullet.setActive(true);
+				numFired++;
+			}
+			else if (numFired == 1)
+			{
+				bullet.setPosition(pos2);
+				bullet.setActive(true);
+				numFired++;
+				break;
+			}
+		}
+	}
+	m_timeSinceFire = 0;
+}
+
+/// <summary>
+/// @brief fireblast bullet fire method.
+/// 
+/// fires 1 fireblast at each weapon
+/// </summary>
+/// <param name="pos1">reference to first weapons position</param>
+/// <param name="pos2">reference to second weapons position</param>
+void BulletManager::fireFireBlast(const sf::Vector2f & pos1, const sf::Vector2f & pos2)
+{
+	int numFired = 0; //local variable to see how many bullets were fired used to determine if 2 turrets shot
+	for (auto & uptrBullet : m_bulletMap.at(BulletTypes::FireBlast))
+	{
+		auto & bullet = *uptrBullet;
+		if (!bullet.isActive())
+		{
+			if (numFired == 0)
+			{
+				bullet.setPosition(pos1);
+				bullet.setActive(true);
+				numFired++;
+			}
+			else if (numFired == 1)
+			{
+				bullet.setPosition(pos2);
+				bullet.setActive(true);
+				numFired++;
+				break;
+			}
+		}
+	}
+	m_timeSinceFire = 0;
+}
+
+/// <summary>
+/// @brief fireblast bullet fire method.
+/// 
+/// fires 1 fireblast at each weapon
+/// </summary>
+/// <param name="pos1">reference to first weapons position</param>
+/// <param name="pos2">reference to second weapons position</param>
+void BulletManager::fireHolySphere(const sf::Vector2f & pos1, const sf::Vector2f & pos2)
+{
+	int numFired = 0; //local variable to see how many bullets were fired used to determine if 2 turrets shot
+	for (auto & uptrBullet : m_bulletMap.at(BulletTypes::HolySphere))
+	{
+		auto & bullet = *uptrBullet;
+		if (!bullet.isActive())
+		{
+			if (numFired == 0)
+			{
+				bullet.setPosition(pos1);
+				bullet.setActive(true);
+				numFired++;
+			}
+			else if (numFired == 1)
+			{
+				bullet.setPosition(pos2);
+				bullet.setActive(true);
+				numFired++;
+				break;
+			}
+		}
+	}
+	m_timeSinceFire = 0;
 }
 

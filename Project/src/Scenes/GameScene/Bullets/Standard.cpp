@@ -1,6 +1,6 @@
 #include "Scenes\GameScene\Bullets\Standard.h"
 
-const float bullets::Standard::s_FIRE_RATE = 1.0f;
+const float bullets::Standard::s_FIRE_RATE = 0.5f;
 
 /// <summary>
 /// @brief this is the default constructor.

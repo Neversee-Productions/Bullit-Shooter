@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['empowered',['Empowered',['../classbullets_1_1_empowered.html',1,'bullets']]]
+  ['deathorb',['DeathOrb',['../classbullets_1_1_death_orb.html',1,'bullets']]]
 ];

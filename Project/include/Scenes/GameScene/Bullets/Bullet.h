@@ -21,7 +21,7 @@ namespace bullets
 		virtual void update();
 		void draw(Window & window, const float & deltaTime);
 		tinyh::c2AABB getCollisionRect();
-		void setActive(bool active);
+		virtual void setActive(bool active);
 		void updateBox();
 		void setPosition(const sf::Vector2f& pos);
 		void setAngle(const float& angle);

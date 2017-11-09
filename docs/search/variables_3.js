@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['s_5ffire_5frate',['s_FIRE_RATE',['../classbullets_1_1_empowered.html#a087ea7866da61a6bb319ae037afd7fb7',1,'bullets::Empowered::s_FIRE_RATE()'],['../classbullets_1_1_standard.html#a4c5f5075ef08a3246b3db4219ee135e3',1,'bullets::Standard::s_FIRE_RATE()']]],
+  ['s_5ffire_5frate',['s_FIRE_RATE',['../classbullets_1_1_death_orb.html#abf3300c01f9823a4bc6c5d97320ead84',1,'bullets::DeathOrb::s_FIRE_RATE()'],['../classbullets_1_1_empowered.html#a087ea7866da61a6bb319ae037afd7fb7',1,'bullets::Empowered::s_FIRE_RATE()'],['../classbullets_1_1_fire_blast.html#a47ba13dd3a7815416c08fa1e9b50b8d7',1,'bullets::FireBlast::s_FIRE_RATE()'],['../classbullets_1_1_standard.html#a4c5f5075ef08a3246b3db4219ee135e3',1,'bullets::Standard::s_FIRE_RATE()']]],
   ['s_5frectwindow',['s_rectWindow',['../class_app.html#ae6b4e765084e7bb26d4f069e39cc0f64',1,'App']]],
   ['s_5ftext_5frect_5fempty',['s_TEXT_RECT_EMPTY',['../classgui_1_1_slider.html#ad4110d5c12af149300777189d5f4d49f',1,'gui::Slider']]],
   ['s_5ftext_5frect_5ffill',['s_TEXT_RECT_FILL',['../classgui_1_1_slider.html#a49d63504570a9240d9fe5f9aa1ab51db',1,'gui::Slider']]],

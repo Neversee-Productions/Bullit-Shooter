@@ -108,12 +108,20 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adc7565464b026ddc98b02a70c558c74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8638f3b70fe44a15413e1107ea806fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ae8638f3b70fe44a15413e1107ea806fe">update</a> ()</td></tr>
 <tr class="separator:ae8638f3b70fe44a15413e1107ea806fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a918189f778d2c5f3258092535dfc9c55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a918189f778d2c5f3258092535dfc9c55">updateWindowCollisions</a> ()</td></tr>
+<tr class="separator:a918189f778d2c5f3258092535dfc9c55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69cfc18f9b76e70e3b2858217f6e2780"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a69cfc18f9b76e70e3b2858217f6e2780">fireStandard</a> (const sf::Vector2f &amp;pos1, const sf::Vector2f &amp;pos2)</td></tr>
 <tr class="separator:a69cfc18f9b76e70e3b2858217f6e2780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507393ed5ccbe692e93f7763ed714435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a507393ed5ccbe692e93f7763ed714435">fireEmpowered</a> (const sf::Vector2f &amp;pos1, const sf::Vector2f &amp;pos2)</td></tr>
 <tr class="separator:a507393ed5ccbe692e93f7763ed714435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a1c306efeb419cf4df73cb940669dc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a7a1c306efeb419cf4df73cb940669dc3">setEmpowered</a> (<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet, const float &amp;angle, const sf::Vector2f &amp;pos)</td></tr>
 <tr class="separator:a7a1c306efeb419cf4df73cb940669dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac860eb6863a7b1ce04fea9421c513b9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ac860eb6863a7b1ce04fea9421c513b9b">fireDeathOrb</a> (const sf::Vector2f &amp;pos1, const sf::Vector2f &amp;pos2)</td></tr>
+<tr class="separator:ac860eb6863a7b1ce04fea9421c513b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8701aa055a20db2839c6061504d019e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a8701aa055a20db2839c6061504d019e7">fireFireBlast</a> (const sf::Vector2f &amp;pos1, const sf::Vector2f &amp;pos2)</td></tr>
+<tr class="separator:a8701aa055a20db2839c6061504d019e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c4c74e6fd63e745aa776f19d7642144"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a6c4c74e6fd63e745aa776f19d7642144">fireHolySphere</a> (const sf::Vector2f &amp;pos1, const sf::Vector2f &amp;pos2)</td></tr>
+<tr class="separator:a6c4c74e6fd63e745aa776f19d7642144"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -227,6 +235,43 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac860eb6863a7b1ce04fea9421c513b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac860eb6863a7b1ce04fea9421c513b9b">&#9670;&nbsp;</a></span>fireDeathOrb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BulletManager::fireDeathOrb </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>pos1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>pos2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>empowered bullet fire method.</p>
+<p>fires 1 bullets at each weapon </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos1</td><td>reference to first weapons position</td></tr>
+    <tr><td class="paramname">pos2</td><td>reference to second weapons position</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a507393ed5ccbe692e93f7763ed714435"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a507393ed5ccbe692e93f7763ed714435">&#9670;&nbsp;</a></span>fireEmpowered()</h2>
 
@@ -253,7 +298,81 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>empowered bullet fire method.</p>
-<p>fires 3 bullets at each weapon 2 of the bullets will be offset by -30 and 30 degrees </p>
+<p>fires 3 bullets at each weapon 2 of the bullets will be offset by -5 and 5 degrees </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos1</td><td>reference to first weapons position</td></tr>
+    <tr><td class="paramname">pos2</td><td>reference to second weapons position</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8701aa055a20db2839c6061504d019e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8701aa055a20db2839c6061504d019e7">&#9670;&nbsp;</a></span>fireFireBlast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BulletManager::fireFireBlast </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>pos1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>pos2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fireblast bullet fire method.</p>
+<p>fires 1 fireblast at each weapon </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos1</td><td>reference to first weapons position</td></tr>
+    <tr><td class="paramname">pos2</td><td>reference to second weapons position</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6c4c74e6fd63e745aa776f19d7642144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c4c74e6fd63e745aa776f19d7642144">&#9670;&nbsp;</a></span>fireHolySphere()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BulletManager::fireHolySphere </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>pos1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>pos2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fireblast bullet fire method.</p>
+<p>fires 1 fireblast at each weapon </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pos1</td><td>reference to first weapons position</td></tr>
@@ -423,6 +542,24 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>method to update all bullets.</p>
 <p>update active bullets and check collision with window. </p>
+
+</div>
+</div>
+<a id="a918189f778d2c5f3258092535dfc9c55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a918189f778d2c5f3258092535dfc9c55">&#9670;&nbsp;</a></span>updateWindowCollisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BulletManager::updateWindowCollisions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>check if bullets left the window.</p>
 
 </div>
 </div>

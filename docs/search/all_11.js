@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['s_5ffire_5frate',['s_FIRE_RATE',['../classbullets_1_1_empowered.html#a087ea7866da61a6bb319ae037afd7fb7',1,'bullets::Empowered::s_FIRE_RATE()'],['../classbullets_1_1_standard.html#a4c5f5075ef08a3246b3db4219ee135e3',1,'bullets::Standard::s_FIRE_RATE()']]],
+  ['s_5ffire_5frate',['s_FIRE_RATE',['../classbullets_1_1_death_orb.html#abf3300c01f9823a4bc6c5d97320ead84',1,'bullets::DeathOrb::s_FIRE_RATE()'],['../classbullets_1_1_empowered.html#a087ea7866da61a6bb319ae037afd7fb7',1,'bullets::Empowered::s_FIRE_RATE()'],['../classbullets_1_1_fire_blast.html#a47ba13dd3a7815416c08fa1e9b50b8d7',1,'bullets::FireBlast::s_FIRE_RATE()'],['../classbullets_1_1_standard.html#a4c5f5075ef08a3246b3db4219ee135e3',1,'bullets::Standard::s_FIRE_RATE()']]],
   ['s_5frectwindow',['s_rectWindow',['../class_app.html#ae6b4e765084e7bb26d4f069e39cc0f64',1,'App']]],
   ['s_5ftext_5frect_5fempty',['s_TEXT_RECT_EMPTY',['../classgui_1_1_slider.html#ad4110d5c12af149300777189d5f4d49f',1,'gui::Slider']]],
   ['s_5ftext_5frect_5ffill',['s_TEXT_RECT_FILL',['../classgui_1_1_slider.html#a49d63504570a9240d9fe5f9aa1ab51db',1,'gui::Slider']]],
@@ -20,7 +20,7 @@ var searchData=
   ['scenemanager_2ecpp',['SceneManager.cpp',['../_scene_manager_8cpp.html',1,'']]],
   ['scenemanager_2eh',['SceneManager.h',['../_scene_manager_8h.html',1,'']]],
   ['scenemap',['SceneMap',['../class_scene_manager.html#acfc25bb38f6c5e4b41341ebff5fe487f',1,'SceneManager']]],
-  ['setactive',['setActive',['../classbullets_1_1_bullet.html#a38376bfa6bf1c9de4fdd0124940e29cc',1,'bullets::Bullet']]],
+  ['setactive',['setActive',['../classbullets_1_1_bullet.html#a38376bfa6bf1c9de4fdd0124940e29cc',1,'bullets::Bullet::setActive()'],['../classbullets_1_1_holy_sphere.html#af57ca962b77edc22bd8def8544f40bf5',1,'bullets::HolySphere::setActive()']]],
   ['setangle',['setAngle',['../classbullets_1_1_bullet.html#a72d0c4cb269cad6e25fdaaff4f94cbd2',1,'bullets::Bullet']]],
   ['setempowered',['setEmpowered',['../class_bullet_manager.html#a7a1c306efeb419cf4df73cb940669dc3',1,'BulletManager']]],
   ['setfont',['setFont',['../classgui_1_1_label.html#a205a74c138b60e42efdcbe73ce3dd908',1,'gui::Label']]],
