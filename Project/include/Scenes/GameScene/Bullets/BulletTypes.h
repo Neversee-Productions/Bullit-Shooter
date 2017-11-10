@@ -9,10 +9,11 @@
 enum class BulletTypes
 {
 	  Standard //Defines the type Standard
-	, Empowered //Defines an empowered bullet
-	, DeathOrb //Defines death orb bullet
-	, FireBlast //Defines Fireblast bullet
-	, HolySphere //Defines Holy Sphere bullet
+	, Empowered //Defines an Empowered type
+	, DeathOrb //Defines DeathOrb type
+	, FireBlast //Defines FireBlast type
+	, HolySphere //Defines HolySphere type
+	, MagmaShot //Defines MagmaShot type
 };
 
 #endif // !BULLETTYPES_H

@@ -5,9 +5,6 @@ var searchData=
   ['fireblast_2ecpp',['FireBlast.cpp',['../_fire_blast_8cpp.html',1,'']]],
   ['fireblast_2eh',['FireBlast.h',['../_fire_blast_8h.html',1,'']]],
   ['firebullet',['fireBullet',['../class_bullet_manager.html#aee0e75edd198df85c62f91e5e1d02b11',1,'BulletManager']]],
-  ['firedeathorb',['fireDeathOrb',['../class_bullet_manager.html#ac860eb6863a7b1ce04fea9421c513b9b',1,'BulletManager']]],
   ['fireempowered',['fireEmpowered',['../class_bullet_manager.html#a507393ed5ccbe692e93f7763ed714435',1,'BulletManager']]],
-  ['firefireblast',['fireFireBlast',['../class_bullet_manager.html#a8701aa055a20db2839c6061504d019e7',1,'BulletManager']]],
-  ['fireholysphere',['fireHolySphere',['../class_bullet_manager.html#a6c4c74e6fd63e745aa776f19d7642144',1,'BulletManager']]],
-  ['firestandard',['fireStandard',['../class_bullet_manager.html#a69cfc18f9b76e70e3b2858217f6e2780',1,'BulletManager']]]
+  ['fireone',['fireOne',['../class_bullet_manager.html#ac752231cf91a59e7eb5113f18a7b5f1d',1,'BulletManager']]]
 ];

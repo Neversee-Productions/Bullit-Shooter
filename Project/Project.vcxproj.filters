@@ -171,6 +171,9 @@
     <ClCompile Include="src\Scenes\GameScene\Bullets\HolySphere.cpp">
       <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\MagmaShot.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -257,6 +260,9 @@
       <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Bullets\HolySphere.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\MagmaShot.h">
       <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
     </ClInclude>
   </ItemGroup>

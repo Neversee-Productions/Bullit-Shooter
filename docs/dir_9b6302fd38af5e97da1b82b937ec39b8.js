@@ -17,6 +17,9 @@ var dir_9b6302fd38af5e97da1b82b937ec39b8 =
     [ "HolySphere.h", "_holy_sphere_8h.html", [
       [ "HolySphere", "classbullets_1_1_holy_sphere.html", "classbullets_1_1_holy_sphere" ]
     ] ],
+    [ "MagmaShot.h", "_magma_shot_8h.html", [
+      [ "MagmaShot", "classbullets_1_1_magma_shot.html", "classbullets_1_1_magma_shot" ]
+    ] ],
     [ "Standard.h", "_standard_8h.html", [
       [ "Standard", "classbullets_1_1_standard.html", "classbullets_1_1_standard" ]
     ] ]

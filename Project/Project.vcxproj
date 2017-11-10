@@ -37,6 +37,7 @@
     <ClCompile Include="src\Scenes\GameScene\Bullets\Empowered.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\FireBlast.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\HolySphere.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Bullets\MagmaShot.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\Standard.cpp" />
     <ClCompile Include="src\Scenes\MainMenuScene\MainMenuScene.cpp" />
     <ClCompile Include="src\Scenes\GameScene\BulletManager.cpp" />
@@ -70,6 +71,7 @@
     <ClInclude Include="include\Scenes\GameScene\Bullets\Empowered.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\FireBlast.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\HolySphere.h" />
+    <ClInclude Include="include\Scenes\GameScene\Bullets\MagmaShot.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\Standard.h" />
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />
     <ClInclude Include="include\Scenes\GameScene\BulletManager.h" />

@@ -39,5 +39,8 @@ public:
 	/// 
 	/// </summary>
 	sf::Vector2f m_position;
+
+	//REMOVE TEMPTIME
+	float TEMPTIME;
 };
 #endif // !WEAPON_H

@@ -8,8 +8,9 @@
 /// <param name="position">defines the position of the weapon rectangle</param>
 Weapon::Weapon(sf::Vector2f position)
 	: m_weaponRect()
-	, m_currentBullet(BulletTypes::HolySphere)
+	, m_currentBullet(BulletTypes::Standard)
 	, m_position(position)
+	, TEMPTIME(0.0f)
 {
 	m_weaponRect.setPosition(position);
 	m_weaponRect.setFillColor(sf::Color::Blue);
@@ -36,5 +37,16 @@ void Weapon::draw(Window & window, const float & deltaTime)
 /// </summary>
 void Weapon::update(const sf::Vector2f& pos)
 {
+	//REMOVE TEMPTIME
+	TEMPTIME += App::getUpdateDeltaTime();
+	if (TEMPTIME >= 5.0f)
+	{
+		auto bulletTypeNum = static_cast<int>(m_currentBullet);
+		m_currentBullet = static_cast<BulletTypes>(++bulletTypeNum);
+		TEMPTIME = 0.0f;
+	}
+	//REMOVE TEMPTIME
+
+
 	m_weaponRect.setPosition(pos);
 }

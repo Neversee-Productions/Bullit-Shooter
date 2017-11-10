@@ -1,6 +1,14 @@
 #include "Scenes\GameScene\Bullets\HolySphere.h"
 
-const float bullets::HolySphere::s_FIRE_RATE = 0.5f;
+const float bullets::HolySphere::s_FIRE_RATE = 1.0f;
+const float bullets::HolySphere::s_MAX_SIZE = 50.0f;
+const sf::Vector2f bullets::HolySphere::s_SIZE_CHANGE = sf::Vector2f(1.0f, 1.0f);
+const sf::Vector2f bullets::HolySphere::s_DEFAULT_SIZE = sf::Vector2f(5.0f, 5.0f);
+const float bullets::HolySphere::s_DEF_TTL = 1.0f;
+const float bullets::HolySphere::s_ALPHA_DECREASE = 10.0f;
+const float bullets::HolySphere::s_MIN_ALPHA = 5.0f;
+
+
 
 /// <summary>
 /// @brief this is the default constructor.
@@ -9,19 +17,16 @@ const float bullets::HolySphere::s_FIRE_RATE = 0.5f;
 /// </summary>
 bullets::HolySphere::HolySphere()
 	: Bullet()
+	, m_timeToLive(s_DEF_TTL)
+	, m_alpha(255.0f)
 {
-	m_speed = 16.0f;
+	m_speed = 3.0f;
 	m_velocity.x = m_speed;
 
 	//different size to parent
-	m_bulletRect.setSize(sf::Vector2f(5.0f, 5.0f));
+	m_bulletRect.setSize(s_DEFAULT_SIZE);
 
-	//change collision rectangle
-	const auto & bulletRect = m_bulletRect.getGlobalBounds();
-	m_bulletC2Rect.min.x = bulletRect.left;
-	m_bulletC2Rect.min.y = bulletRect.top;
-	m_bulletC2Rect.max.x = bulletRect.left + bulletRect.width;
-	m_bulletC2Rect.max.y = bulletRect.top + bulletRect.height;
+	updateBox();
 }
 
 /// <summary>
@@ -32,11 +37,24 @@ bullets::HolySphere::HolySphere()
 /// </summary>
 void bullets::HolySphere::update()
 {
+	//decrease time to live
+	m_timeToLive -= App::getUpdateDeltaTime();
 	m_position += m_velocity;
 	m_bulletRect.setPosition(m_position.x, m_position.y);
-	if (m_bulletRect.getSize() != sf::Vector2f(15.0f,15.0f))
+	//if not max size increase the size
+	if (m_bulletRect.getSize().x <= s_MAX_SIZE)
 	{
-		m_bulletRect.setSize(m_bulletRect.getSize() + sf::Vector2f(0.8f, 0.8f));
+		m_bulletRect.setSize(m_bulletRect.getSize() + s_SIZE_CHANGE);
+		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
+	}
+	if (m_timeToLive <= 0.0f)
+	{
+		m_alpha -= s_ALPHA_DECREASE;
+		m_bulletRect.setFillColor(sf::Color(255, 255, 255, m_alpha));
+		if (m_alpha < s_MIN_ALPHA)
+		{
+			setActive(false);
+		}
 	}
 	updateBox();
 }
@@ -62,7 +80,9 @@ void bullets::HolySphere::setActive(bool active)
 {
 	if (active == false)
 	{
-		m_bulletRect.setSize(sf::Vector2f(sf::Vector2f(5.0f, 5.0f)));
+		m_bulletRect.setSize(s_SIZE_CHANGE);
+		m_timeToLive = s_DEF_TTL;
+		m_alpha = 255.0f;
 	}
 	m_active = active;
 }

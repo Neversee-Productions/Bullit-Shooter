@@ -17,11 +17,7 @@ bullets::DeathOrb::DeathOrb()
 	m_bulletRect.setSize(sf::Vector2f(10.0f, 10.0f));
 	
 	//change collision rectangle
-	const auto & bulletRect = m_bulletRect.getGlobalBounds();
-	m_bulletC2Rect.min.x = bulletRect.left;
-	m_bulletC2Rect.min.y = bulletRect.top;
-	m_bulletC2Rect.max.x = bulletRect.left + bulletRect.width;
-	m_bulletC2Rect.max.x = bulletRect.top + bulletRect.height;
+	updateBox();
 }
 
 /// <summary>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['magmashot',['MagmaShot',['../classbullets_1_1_magma_shot.html#a890517672f9e6e6dc2dafadc86b357b4',1,'bullets::MagmaShot']]],
   ['main',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
   ['mainmenuscene',['MainMenuScene',['../class_main_menu_scene.html#a555ff0255e49f81f47a4d3ad016a5e5f',1,'MainMenuScene']]],
   ['movedown',['moveDown',['../class_ship.html#af9ecf9bca8a9d9c737ad892f6f83e14f',1,'Ship']]],

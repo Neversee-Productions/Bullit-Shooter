@@ -11,6 +11,7 @@
 #include "Bullets/DeathOrb.h"
 #include "Bullets/FireBlast.h"
 #include "Bullets/HolySphere.h"
+#include "Bullets/MagmaShot.h"
 
 ///
 /// @brief The bullet manager class.
@@ -27,13 +28,12 @@ public:
 	void reuseBullet(bullets::Bullet& bullet, sf::Vector2f pos);
 	void draw(Window & window, const float & deltaTime);
 	void update();
+	template<typename data_type>
+	void initBulletMapVector(const BulletTypes& type, const int& size);
 	void updateWindowCollisions();
-	void fireStandard(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
+	void fireOne(const sf::Vector2f& pos1, const sf::Vector2f& pos2, const BulletTypes& type);
 	void fireEmpowered(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
 	void setEmpowered(bullets::Bullet& bullet ,const float& angle, const sf::Vector2f& pos);
-	void fireDeathOrb(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
-	void fireFireBlast(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
-	void fireHolySphere(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
 
 	/// <summary>
 	/// @brief how long since last fire.
