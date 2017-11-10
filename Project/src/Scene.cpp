@@ -37,6 +37,17 @@ const std::string & Scene::getNextSceneName()
 }
 
 /// <summary>
+/// @brief Tells SceneManager to change current scene.
+/// 
+/// Note this will cause a instant scene change.
+/// </summary>
+/// <param name="nextSceneName">Defines the name of the next scene.</param>
+void Scene::setNextSceneName(const std::string & nextSceneName)
+{
+	m_nextSceneName = std::move(nextSceneName);
+}
+
+/// <summary>
 /// @brief Will pre load all resources.
 /// 
 /// 

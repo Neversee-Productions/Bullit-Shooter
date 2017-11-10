@@ -55,12 +55,12 @@ void KeyHandler::update()
 }
 
 /// <summary>
-/// @brief Checks if a specific key was pressed.
+/// @brief Checks if a specific key is pressed.
 /// 
-/// Searches the map to check if the specified key was pressed. 
+/// Searches the map to check if the specified key is pressed. 
 /// </summary>
 /// <param name="key">An SFML key</param>
-/// <returns>true if specified key was pressed, false otherwise</returns>
+/// <returns>true if specified key is pressed, false otherwise</returns>
 bool KeyHandler::isPressed(const sf::Keyboard::Key & key) const
 {
 	KeyMap::const_iterator citt = m_keyMap.find(key);
@@ -78,4 +78,22 @@ bool KeyHandler::isPrevPressed(const sf::Keyboard::Key & key) const
 {
 	KeyMap::const_iterator citt = m_prevKeyMap.find(key);
 	return (citt != m_prevKeyMap.end() && citt->second);
+}
+
+/// <summary>
+/// @brief Checks if any key is pressed.
+/// 
+/// Searches the map for any key-value pair whose value is true.
+/// </summary>
+/// <returns>true if any value in our map is true, false if all values in our map are false.</returns>
+bool KeyHandler::isAnyPressed() const
+{
+	for (auto itt = m_keyMap.begin(), end = m_keyMap.end(); itt != end; ++itt)
+	{
+		if (itt->second)
+		{
+			return true;
+		}
+	}
+	return false;
 }

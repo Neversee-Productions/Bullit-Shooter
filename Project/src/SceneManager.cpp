@@ -21,7 +21,7 @@ SceneManager::SceneManager(
 	m_controller = std::make_shared<Controller>();
 	addAllScenes();
 	
-	std::string firstScene = "Options";
+	const std::string firstScene = "Splash";
 	for (auto itt = m_sceneMap.begin(), end = m_sceneMap.end(); itt != end; ++itt)
 	{
 		auto & mapPair = *itt;
@@ -48,23 +48,33 @@ void SceneManager::addAllScenes()
 
 	// load our scenes paths
 
-	std::ifstream rawFile("resources/json/scenes.json");
+	std::ifstream rawFile("resources/scenes.json");
 	json::json jsonLoader;
 	rawFile >> jsonLoader;
 	
+	// Splash Scene
+	sptrScene = std::make_shared<SplashScene>();
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
+	addScene(sptrScene, std::move(uptrResources));
+
+	// Title Scene
+	sptrScene = std::make_shared<TitleScene>(m_keyHandler, m_controller);
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
+	addScene(sptrScene, std::move(uptrResources));
+
 	// MainMenu Scene
 	sptrScene = std::make_shared<MainMenuScene>(m_keyHandler, m_controller);
-	uptrResources = std::make_unique<std::string>(jsonLoader.at("MainMenu").get<std::string>());
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
 	addScene(sptrScene, std::move(uptrResources));
 
 	// Options Scene
 	sptrScene = std::make_shared<OptionsScene>(m_keyHandler, m_controller);
-	uptrResources = std::make_unique<std::string>(jsonLoader.at("Options").get<std::string>());
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
 	addScene(sptrScene, std::move(uptrResources));
 
 	// Game Scene
 	sptrScene = std::make_shared<GameScene>(*m_keyHandler);
-	uptrResources = std::make_unique<std::string>(jsonLoader.at("Game").get<std::string>());
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
 	addScene(sptrScene, std::move(uptrResources));
 }
 
@@ -168,6 +178,14 @@ void SceneManager::loadScene(const std::string & name)
 			std::unique_ptr<std::thread>(nullptr).swap(sptrThread);
 		}
 		m_currentScene = sptrScene;
+		if (m_currentScene->getName() == "Splash")
+		{
+			m_window.changeStyle(sf::Style::None);
+		}
+		else
+		{
+			m_window.changeStyle(sf::Style::Close);
+		}
 		m_currentScene->start(resourcePath);
 	}
 	else if (name == "Exit")

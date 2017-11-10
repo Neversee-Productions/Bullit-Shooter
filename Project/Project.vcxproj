@@ -41,6 +41,8 @@
     <ClCompile Include="src\Scenes\GameScene\Ship.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Weapon.cpp" />
     <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp" />
+    <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp" />
+    <ClCompile Include="src\Scenes\TitleScene\TitleScene.cpp" />
     <ClCompile Include="src\tinyheaders\tinyc2.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
@@ -70,6 +72,8 @@
     <ClInclude Include="include\Scenes\GameScene\Ship.h" />
     <ClInclude Include="include\Scenes\GameScene\Weapon.h" />
     <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h" />
+    <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h" />
+    <ClInclude Include="include\Scenes\TitleScene\TitleScene.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <ItemGroup>

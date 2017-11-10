@@ -32,7 +32,7 @@ void OptionsScene::preStart(const std::string & resourceFilePath)
 {
 	if (!m_resources)
 	{
-		this->load(resourceFilePath);
+		this->setup(resourceFilePath);
 	}
 }
 
@@ -47,7 +47,7 @@ void OptionsScene::start(const std::string & resourceFilePath)
 {
 	if (!m_resources)
 	{
-		this->load(resourceFilePath);
+		this->setup(resourceFilePath);
 	}
 }
 
@@ -75,7 +75,7 @@ void OptionsScene::update()
 		const auto & timeInSeconds = m_timer->getElapsedTime().asSeconds();
 		if (timeInSeconds >= m_DELAY_TIME)
 		{
-			m_nextSceneName = std::move(m_nextName);
+			this->goToNextScene();
 			m_timer.reset(nullptr);
 		}
 	}
@@ -99,18 +99,30 @@ void OptionsScene::draw(Window & window, const float & deltaTime)
 }
 
 /// <summary>
+/// @brief Tells the SceneManager to change to another Scene.
+/// 
+/// 
+/// </summary>
+void OptionsScene::goToNextScene()
+{
+	Scene::setNextSceneName(m_nextName);
+}
+
+/// <summary>
 /// @brief Loads up all assets necessary for OptionsScene.
 /// 
 /// 
 /// </summary>
 /// <param name="resourceFilePath">defines the path to the json file for this scene</param>
-void OptionsScene::load(const std::string & resourceFilePath)
+void OptionsScene::setup(const std::string & resourceFilePath)
 {
+	Scene::setNextSceneName("");
+
 	std::ifstream fileRaw(resourceFilePath);
 	json::json jsonLoader;
 	fileRaw >> jsonLoader;
-	auto & textureLoader = jsonLoader["textures"];
-	auto & fontLoader = jsonLoader["fonts"];
+	auto & textureLoader = jsonLoader.at("textures");
+	auto & fontLoader = jsonLoader.at("fonts");
 
 	m_resources = std::make_unique<Resources>();
 	// store dereferenced pointer
@@ -118,12 +130,12 @@ void OptionsScene::load(const std::string & resourceFilePath)
 	auto & resources = *m_resources;
 
 	auto sptrButtonFont = resources.m_sptrButtonFont;
-	assert(sptrButtonFont->loadFromFile(fontLoader["button"]));
+	assert(sptrButtonFont->loadFromFile(fontLoader.at("button")));
 
 	auto sptrButtonTexture = resources.m_sptrButtonTexture;
-	assert(sptrButtonTexture->loadFromFile(textureLoader["button"]));
+	assert(sptrButtonTexture->loadFromFile(textureLoader.at("button")));
 
-	loadGui(resources, jsonLoader["fontsize"].get<unsigned int>());
+	loadGui(resources, jsonLoader.at("fontsize").get<unsigned int>());
 }
 
 void OptionsScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)

@@ -45,7 +45,8 @@ public:
 	void draw(Window & window, const float & deltaTime) final override;
 
 private:
-	void load(const std::string & resourceFilePath);
+	void goToNextScene() final override;
+	void setup(const std::string & resourceFilePath);
 	void loadGui(Resources & resources, const sf::Uint32 & fontSize);
 	void btnNewGame();
 	void btnExitGame();

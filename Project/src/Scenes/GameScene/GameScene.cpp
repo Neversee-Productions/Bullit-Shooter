@@ -71,6 +71,16 @@ void GameScene::draw(Window & window, const float & deltaTime)
 }
 
 /// <summary>
+/// @brief Tells the SceneManager to change to another Scene.
+/// 
+/// 
+/// </summary>
+void GameScene::goToNextScene()
+{
+	Scene::setNextSceneName("");
+}
+
+/// <summary>
 /// @brief Loads all external assets.
 /// 
 /// 

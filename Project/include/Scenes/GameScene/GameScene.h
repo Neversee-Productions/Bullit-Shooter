@@ -40,6 +40,7 @@ public:
 	void draw(Window & window, const float & deltaTime) final override;
 
 private:
+	void goToNextScene() final override;
 	void load(const std::string & resourceFilePath);
 	/// <summary>
 	/// @brief Represents the player object

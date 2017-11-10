@@ -29,10 +29,7 @@ MainMenuScene::MainMenuScene(
 /// <param name="resourceFilePath">defines the path to the json file for this scene</param>
 void MainMenuScene::preStart(const std::string & resourceFilePath)
 {
-	if (!m_resources)
-	{
-		this->load(resourceFilePath);
-	}
+	this->setup(resourceFilePath);
 }
 
 /// <summary>
@@ -44,11 +41,8 @@ void MainMenuScene::preStart(const std::string & resourceFilePath)
 /// <param name="resourceFilePath">defines the path to the json file for this scene</param>
 void MainMenuScene::start(const std::string & resourceFilePath)
 {
-	// Resources not loaded, load them.
-	if (!m_resources)
-	{
-		this->load(resourceFilePath);
-	}
+	Scene::setNextSceneName("");
+	this->setup(resourceFilePath);
 }
 
 /// <summary>
@@ -58,9 +52,15 @@ void MainMenuScene::start(const std::string & resourceFilePath)
 /// </summary>
 void MainMenuScene::stop()
 {
-	std::unique_ptr<gui::GUI>(nullptr).swap(m_gui);
-	std::unique_ptr<Resources>(nullptr).swap(m_resources);
-	std::unique_ptr<sf::Clock>(nullptr).swap(m_timer);
+	if ("Game" == Scene::getNextSceneName())
+	{
+		std::unique_ptr<Resources>(nullptr).swap(m_resources);
+	}
+	else
+	{
+		std::unique_ptr<gui::GUI>(nullptr).swap(m_gui);
+		std::unique_ptr<sf::Clock>(nullptr).swap(m_timer);
+	}
 }
 
 /// <summary>
@@ -75,7 +75,7 @@ void MainMenuScene::update()
 		const auto & timeInSeconds = m_timer->getElapsedTime().asSeconds();
 		if (timeInSeconds >= m_DELAY_TIME)
 		{
-			m_nextSceneName = std::move(m_nextName);
+			this->goToNextScene();
 		}
 	}
 	else
@@ -98,33 +98,46 @@ void MainMenuScene::draw(Window & window, const float & deltaTime)
 }
 
 /// <summary>
+/// @brief Tells the SceneManager to change to another Scene.
+/// 
+/// 
+/// </summary>
+void MainMenuScene::goToNextScene()
+{
+	Scene::setNextSceneName(m_nextName);
+}
+
+/// <summary>
 /// @brief Load up what MainMenuScene needs to run.
 /// 
 /// 
 /// </summary>
 /// <param name="resourceFilePath">defines the path to the json file for this scene</param>
-void MainMenuScene::load(const std::string & resourceFilePath)
+void MainMenuScene::setup(const std::string & resourceFilePath)
 {
+
 	std::ifstream rawFile(resourceFilePath);
 	json::json jsonLoader;
 	rawFile >> jsonLoader;
-	auto & textureLoader = jsonLoader["textures"];
-	auto & fontLoader = jsonLoader["fonts"];
+	auto & textureLoader = jsonLoader.at("textures");
+	auto & fontLoader = jsonLoader.at("fonts");
 
-	// instatiate our resource pointers that will "own"
-	// the asset on the heap.
-	m_resources = std::make_unique<Resources>();
-	// store dereferenced pointer
-	// used to avoid pointer syntax.
-	auto & resources = *m_resources;
+	if (!m_resources)
+	{
+		// instatiate our resource pointers that will "own"
+		// the asset on the heap.
+		m_resources = std::make_unique<Resources>();
 
-	auto sptrButtonTexture = resources.m_sptrButtonTexture;
-	assert(sptrButtonTexture->loadFromFile(textureLoader["button"]));
+		auto sptrButtonTexture = m_resources->m_sptrButtonTexture;
+		assert(sptrButtonTexture->loadFromFile(textureLoader.at("button")));
 
-	auto sptrButtonFont = resources.m_sptrButtonFont;
-	assert(sptrButtonFont->loadFromFile(fontLoader["button"]));
-
-	loadGui(resources, jsonLoader["fontsize"].get<unsigned int>());
+		auto sptrButtonFont = m_resources->m_sptrButtonFont;
+		assert(sptrButtonFont->loadFromFile(fontLoader.at("button")));
+	}
+	if (!m_gui)
+	{
+		loadGui(*m_resources, jsonLoader.at("fontsize").get<unsigned int>());
+	}
 }
 
 /// <summary>

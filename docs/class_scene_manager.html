@@ -113,8 +113,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:a0953387440995080986c2fd0697f9704"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <a class="el" href="struct_scene_manager_1_1_managed_scene.html">ManagedScene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a0953387440995080986c2fd0697f9704">SceneMap</a></td></tr>
-<tr class="separator:a0953387440995080986c2fd0697f9704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6287afb28c74e208cf21f05ae443506"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; std::string, <a class="el" href="struct_scene_manager_1_1_managed_scene.html">ManagedScene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#aa6287afb28c74e208cf21f05ae443506">SceneMap</a></td></tr>
+<tr class="separator:aa6287afb28c74e208cf21f05ae443506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -141,7 +141,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a6066c199ce652dcb11d889df711bf9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69467e0ba9a034a9dd4034b315985b06"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a69467e0ba9a034a9dd4034b315985b06">m_currentScene</a></td></tr>
 <tr class="separator:a69467e0ba9a034a9dd4034b315985b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac22c447f076828df45d75ad847867016"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene_manager.html#a0953387440995080986c2fd0697f9704">SceneMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#ac22c447f076828df45d75ad847867016">m_sceneMap</a></td></tr>
+<tr class="memitem:ac22c447f076828df45d75ad847867016"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene_manager.html#aa6287afb28c74e208cf21f05ae443506">SceneMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#ac22c447f076828df45d75ad847867016">m_sceneMap</a></td></tr>
 <tr class="separator:ac22c447f076828df45d75ad847867016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bf437806adce1ca5b4273c53c4bd7ef"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_controller.html">Controller</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a4bf437806adce1ca5b4273c53c4bd7ef">m_controller</a></td></tr>
 <tr class="separator:a4bf437806adce1ca5b4273c53c4bd7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,8 +150,8 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
 <p>Manages the changing of scenes and is our main application controller. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a0953387440995080986c2fd0697f9704"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0953387440995080986c2fd0697f9704">&#9670;&nbsp;</a></span>SceneMap</h2>
+<a id="aa6287afb28c74e208cf21f05ae443506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6287afb28c74e208cf21f05ae443506">&#9670;&nbsp;</a></span>SceneMap</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +160,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::map&lt;std::string, <a class="el" href="struct_scene_manager_1_1_managed_scene.html">ManagedScene</a>&gt; <a class="el" href="class_scene_manager.html#a0953387440995080986c2fd0697f9704">SceneManager::SceneMap</a></td>
+          <td class="memname">typedef std::unordered_map&lt;std::string, <a class="el" href="struct_scene_manager_1_1_managed_scene.html">ManagedScene</a>&gt; <a class="el" href="class_scene_manager.html#aa6287afb28c74e208cf21f05ae443506">SceneManager::SceneMap</a></td>
         </tr>
       </table>
   </td>
@@ -567,7 +567,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_scene_manager.html#a0953387440995080986c2fd0697f9704">SceneMap</a> SceneManager::m_sceneMap</td>
+          <td class="memname"><a class="el" href="class_scene_manager.html#aa6287afb28c74e208cf21f05ae443506">SceneMap</a> SceneManager::m_sceneMap</td>
         </tr>
       </table>
   </td>

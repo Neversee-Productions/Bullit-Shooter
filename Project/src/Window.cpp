@@ -41,7 +41,7 @@ Window::Window(KeyHandler & keyHandler)
 	settings.stencilBits = 8u;
 	settings.antialiasingLevel = 8u;
 	
-	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Close, settings);
+	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::None, settings);
 
 	///////////////////////////////////////////////////////
 	// create and initialize our render texture
@@ -125,7 +125,7 @@ void Window::processEvents()
 /// added appropriate windows Uint32 Flag for each window component based
 /// on the passed sfml Style.
 /// 
-/// @warning If peformed on a OS different than Windows the window is not changed.
+/// @warning If peformed on a OS different than Windows the window is closed than re-created instead.
 /// </summary>
 /// <param name="newStyle">Flag for the new style that the window will be changed to.</param>
 void Window::changeStyle(const sf::Uint32 & newStyle)
@@ -154,7 +154,7 @@ void Window::changeStyle(const sf::Uint32 & newStyle)
 		}
 		if (newStyle & sf::Style::Close)
 		{
-			win32Style |= WS_SYSMENU;
+			win32Style |= WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX;
 		}
 	}
 
@@ -164,7 +164,15 @@ void Window::changeStyle(const sf::Uint32 & newStyle)
 	// Force changes to take effect
 	SetWindowPos(handle, NULL, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_DRAWFRAME);
 
-#endif // _WIN32
+#else 
+	// perform standard way for other platforms
+	// will close than re-create the window, much less smoother.
+
+	sf::ContextSettings settings = m_sfWindow.getSettings();
+	m_sfWindow.close();
+	m_sfWindow.create(m_resolution, "Stock_name", newStyle, settings);
+
+#endif
 }
 
 /// <summary>

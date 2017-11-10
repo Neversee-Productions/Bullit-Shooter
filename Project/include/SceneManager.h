@@ -3,10 +3,12 @@
 
 #include <thread>
 #include <memory>
-#include <map>
+#include <unordered_map>
 #include <fstream>
 #include <string>
 #include "Scene.h"
+#include "Scenes\SplashScreen\SplashScene.h"
+#include "Scenes\TitleScene\TitleScene.h"
 #include "Scenes\GameScene\GameScene.h"
 #include "Scenes\MainMenuScene\MainMenuScene.h"
 #include "Scenes\OptionsScene\OptionsScene.h"
@@ -78,7 +80,7 @@ private:
 	/// 
 	/// Our map will contain a value of type SceneTuple.
 	/// </summary>
-	typedef std::map<std::string, ManagedScene> SceneMap;
+	typedef std::unordered_map<std::string, ManagedScene> SceneMap;
 
 	/// <summary>
 	/// @brief Container of all scenes.

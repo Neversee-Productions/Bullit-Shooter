@@ -131,9 +131,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a056dfc15c377165943f5276f477c105d inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4281c0ec2142a6a53a3057557d7ff195 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a4281c0ec2142a6a53a3057557d7ff195">getNextSceneName</a> ()</td></tr>
 <tr class="separator:a4281c0ec2142a6a53a3057557d7ff195 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a997ae314fd37f012c8cbde5d93556819 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a997ae314fd37f012c8cbde5d93556819">setNextSceneName</a> (const std::string &amp;nextSceneName)</td></tr>
+<tr class="separator:a997ae314fd37f012c8cbde5d93556819 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a1720031b70e644e1b6975b15decdda62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a1720031b70e644e1b6975b15decdda62">goToNextScene</a> () final override</td></tr>
+<tr class="separator:a1720031b70e644e1b6975b15decdda62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac626200cf693987e96b8fa44c2825b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#aac626200cf693987e96b8fa44c2825b7">load</a> (const std::string &amp;resourceFilePath)</td></tr>
 <tr class="separator:aac626200cf693987e96b8fa44c2825b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -149,8 +153,6 @@ Private Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_scene"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_scene')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_scene.html">Scene</a></td></tr>
-<tr class="memitem:ad7eb3717d9ea0ce02d321869b90f9b95 inherit pro_attribs_class_scene"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ad7eb3717d9ea0ce02d321869b90f9b95">m_nextSceneName</a></td></tr>
-<tr class="separator:ad7eb3717d9ea0ce02d321869b90f9b95 inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d9417e5e266363d6967278a073200ca inherit pro_attribs_class_scene"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a4d9417e5e266363d6967278a073200ca">m_UPDATE_DT</a></td></tr>
 <tr class="separator:a4d9417e5e266363d6967278a073200ca inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -222,6 +224,34 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="class_scene.html#a41f191abbae537f7ba192074149e3518">Scene</a>.</p>
+
+</div>
+</div>
+<a id="a1720031b70e644e1b6975b15decdda62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1720031b70e644e1b6975b15decdda62">&#9670;&nbsp;</a></span>goToNextScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::goToNextScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tells the <a class="el" href="class_scene_manager.html" title="Manager of Scenes. ">SceneManager</a> to change to another <a class="el" href="class_scene.html" title="Defines a interface for SceneManager to use. ">Scene</a>.</p>
+
+<p>Implements <a class="el" href="class_scene.html#a296905face0ec648e564c059a9404b44">Scene</a>.</p>
 
 </div>
 </div>

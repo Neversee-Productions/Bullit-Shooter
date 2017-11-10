@@ -109,6 +109,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a23060a9c29fb10d80ca94863f977f34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91a81713f668041ff64c710b8b7a6e77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_key_handler.html#a91a81713f668041ff64c710b8b7a6e77">isPrevPressed</a> (const sf::Keyboard::Key &amp;key) const</td></tr>
 <tr class="separator:a91a81713f668041ff64c710b8b7a6e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b72c706dd0ceae61d743d7569935a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_key_handler.html#ae9b72c706dd0ceae61d743d7569935a1">isAnyPressed</a> () const</td></tr>
+<tr class="separator:ae9b72c706dd0ceae61d743d7569935a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -189,6 +191,26 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae9b72c706dd0ceae61d743d7569935a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9b72c706dd0ceae61d743d7569935a1">&#9670;&nbsp;</a></span>isAnyPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool KeyHandler::isAnyPressed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks if any key is pressed.</p>
+<p>Searches the map for any key-value pair whose value is true. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if any value in our map is true, false if all values in our map are false.</dd></dl>
+
+</div>
+</div>
 <a id="a23060a9c29fb10d80ca94863f977f34e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23060a9c29fb10d80ca94863f977f34e">&#9670;&nbsp;</a></span>isPressed()</h2>
 
@@ -204,15 +226,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Checks if a specific key was pressed.</p>
-<p>Searches the map to check if the specified key was pressed. </p>
+<p>Checks if a specific key is pressed.</p>
+<p>Searches the map to check if the specified key is pressed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>An SFML key</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if specified key was pressed, false otherwise</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if specified key is pressed, false otherwise</dd></dl>
 
 </div>
 </div>

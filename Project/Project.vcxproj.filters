@@ -153,6 +153,12 @@
     <ClCompile Include="src\tinyheaders\tinyc2.cpp">
       <Filter>Source Files\tinyh</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\TitleScene\TitleScene.cpp">
+      <Filter>Source Files\Scenes\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp">
+      <Filter>Source Files\Scenes\SplashScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -228,6 +234,12 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h">
       <Filter>Header Files\Scenes\OptionsScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\TitleScene\TitleScene.h">
+      <Filter>Header Files\Scenes\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h">
+      <Filter>Header Files\Scenes\SplashScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

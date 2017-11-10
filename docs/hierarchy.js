@@ -23,11 +23,15 @@ var hierarchy =
     [ "Player", "class_player.html", null ],
     [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
     [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
+    [ "SplashScene::Resources", "struct_splash_scene_1_1_resources.html", null ],
+    [ "TitleScene::Resources", "struct_title_scene_1_1_resources.html", null ],
     [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
       [ "MainMenuScene", "class_main_menu_scene.html", null ],
-      [ "OptionsScene", "class_options_scene.html", null ]
+      [ "OptionsScene", "class_options_scene.html", null ],
+      [ "SplashScene", "class_splash_scene.html", null ],
+      [ "TitleScene", "class_title_scene.html", null ]
     ] ],
     [ "SceneManager", "class_scene_manager.html", null ],
     [ "Ship", "class_ship.html", null ],
