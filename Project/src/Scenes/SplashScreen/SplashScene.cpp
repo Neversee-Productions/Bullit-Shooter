@@ -111,27 +111,23 @@ void SplashScene::goToNextScene()
 /// 
 /// </summary>
 /// <param name="resourceFilePath">defines the path to the json file for this scene.</param>
-void SplashScene::setup(const std::string & resourceFilePath)
+void SplashScene::setup(const std::string & filePath)
 {
+	auto & resourceHandler = ResourceHandler::get();
 	Scene::setNextSceneName("");
 
 	if (!m_resources)
 	{
-		std::ifstream rawFile(resourceFilePath);
+		std::ifstream rawFile(filePath);
 		json::json jsonLoader;
 		rawFile >> jsonLoader;
-		auto & textureLoader = jsonLoader.at("textures");
 
 		// instatiate our resource pointers that will "own"
 		// the asset on the heap.
 		m_resources = std::make_unique<Resources>();
-		// store dereferenced pointer
-		// used to avoid pointer syntax.
-		auto & resources = *m_resources;
 
-		auto sptrBackgroundTexture = resources.m_backgroundTexture;
-		const std::string & texture = textureLoader.at("background");
-		assert(sptrBackgroundTexture->loadFromFile(textureLoader.at("background")));
+		m_resources->m_backgroundTexture = resourceHandler.loadUp<thor::BigTexture>(jsonLoader, "splash_background");
+		assert(nullptr != m_resources->m_backgroundTexture);
 
 		const auto & windowSize = static_cast<sf::Vector2f>(App::getWindowSize());
 
@@ -146,7 +142,7 @@ void SplashScene::setup(const std::string & resourceFilePath)
 		// Setup Background Sprite
 		m_backgroundSprite = std::make_unique<thor::BigSprite>();
 		auto & backgroundSprite = *m_backgroundSprite;
-		backgroundSprite.setTexture(*sptrBackgroundTexture);
+		backgroundSprite.setTexture(*m_resources->m_backgroundTexture);
 		const auto & backgroundBox = backgroundSprite.getLocalBounds();
 		backgroundSprite.setOrigin(backgroundBox.width * 0.5f, backgroundBox.height * 0.5f);
 		backgroundSprite.setPosition(windowSize.x * 0.5f, windowSize.y * 0.5f);

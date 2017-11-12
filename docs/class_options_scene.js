@@ -7,7 +7,7 @@ var class_options_scene =
     [ "goToNextScene", "class_options_scene.html#a5846a8c0e6f02f6bb69838d2b310126e", null ],
     [ "loadGui", "class_options_scene.html#a4359da629788bc6b697d212d9cbdc23e", null ],
     [ "preStart", "class_options_scene.html#a809dbaf3fda2ad88ef5d706d2bd351ae", null ],
-    [ "setup", "class_options_scene.html#a8d526125f5c4eff7a73d85b15452b6d9", null ],
+    [ "setup", "class_options_scene.html#a03d8095744d6bbd4cb2540ff7088ed0a", null ],
     [ "start", "class_options_scene.html#a5d4604473ff5a10c686de5120472deb6", null ],
     [ "stop", "class_options_scene.html#ad01e2842d7dadae3b50138ea42409997", null ],
     [ "update", "class_options_scene.html#a81bb4f5115c825e795daa79751195ca0", null ],

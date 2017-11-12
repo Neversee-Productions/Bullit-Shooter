@@ -52,15 +52,9 @@ void MainMenuScene::start(const std::string & resourceFilePath)
 /// </summary>
 void MainMenuScene::stop()
 {
-	if ("Game" == Scene::getNextSceneName())
-	{
-		std::unique_ptr<Resources>(nullptr).swap(m_resources);
-	}
-	else
-	{
-		std::unique_ptr<gui::GUI>(nullptr).swap(m_gui);
-		std::unique_ptr<sf::Clock>(nullptr).swap(m_timer);
-	}
+	std::unique_ptr<gui::GUI>(nullptr).swap(m_gui);
+	std::unique_ptr<sf::Clock>(nullptr).swap(m_timer);
+	std::unique_ptr<Resources>(nullptr).swap(m_resources);
 }
 
 /// <summary>
@@ -115,12 +109,11 @@ void MainMenuScene::goToNextScene()
 /// <param name="resourceFilePath">defines the path to the json file for this scene</param>
 void MainMenuScene::setup(const std::string & resourceFilePath)
 {
+	auto & resourceHandler = ResourceHandler::get();
 
 	std::ifstream rawFile(resourceFilePath);
 	json::json jsonLoader;
 	rawFile >> jsonLoader;
-	auto & textureLoader = jsonLoader.at("textures");
-	auto & fontLoader = jsonLoader.at("fonts");
 
 	if (!m_resources)
 	{
@@ -128,11 +121,11 @@ void MainMenuScene::setup(const std::string & resourceFilePath)
 		// the asset on the heap.
 		m_resources = std::make_unique<Resources>();
 
-		auto sptrButtonTexture = m_resources->m_sptrButtonTexture;
-		assert(sptrButtonTexture->loadFromFile(textureLoader.at("button")));
+		m_resources->m_sptrButtonTexture = resourceHandler.loadUp<sf::Texture>(jsonLoader, "button");
+		assert(nullptr != m_resources->m_sptrButtonTexture);
 
-		auto sptrButtonFont = m_resources->m_sptrButtonFont;
-		assert(sptrButtonFont->loadFromFile(fontLoader.at("button")));
+		m_resources->m_sptrButtonFont = resourceHandler.loadUp<sf::Font>(jsonLoader, "button");
+		assert(nullptr != m_resources->m_sptrButtonFont);
 	}
 	if (!m_gui)
 	{

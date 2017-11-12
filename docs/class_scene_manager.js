@@ -3,6 +3,7 @@ var class_scene_manager =
     [ "ManagedScene", "struct_scene_manager_1_1_managed_scene.html", "struct_scene_manager_1_1_managed_scene" ],
     [ "SceneMap", "class_scene_manager.html#aa6287afb28c74e208cf21f05ae443506", null ],
     [ "SceneManager", "class_scene_manager.html#a44e88b925958a15af482c2c81024ed5c", null ],
+    [ "~SceneManager", "class_scene_manager.html#a2bb376a85d29e85f47753e26c7539229", null ],
     [ "addAllScenes", "class_scene_manager.html#af57ac59c9d6cf7ada088bb78c6f1350a", null ],
     [ "addScene", "class_scene_manager.html#adaaf8f135824e5f98635880d01ac1396", null ],
     [ "draw", "class_scene_manager.html#a3983ac6a695c838682b09cee938beb3c", null ],

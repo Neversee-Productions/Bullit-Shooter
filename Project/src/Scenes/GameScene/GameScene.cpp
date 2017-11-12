@@ -22,7 +22,7 @@ void GameScene::preStart(const std::string & resourceFilePath)
 {
 	if (!m_resources)
 	{
-		this->load(resourceFilePath);
+		this->setup(resourceFilePath);
 	}
 }
 
@@ -35,7 +35,7 @@ void GameScene::start(const std::string & resourceFilePath)
 {
 	if (!m_resources)
 	{
-		this->load(resourceFilePath);
+		this->setup(resourceFilePath);
 	}
 }
 
@@ -85,8 +85,8 @@ void GameScene::goToNextScene()
 /// 
 /// 
 /// </summary>
-/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
-void GameScene::load(const std::string & resourceFilePath)
+/// <param name="filePath">defines the path to the json file for this scene</param>
+void GameScene::setup(const std::string & filePath)
 {
 }
 

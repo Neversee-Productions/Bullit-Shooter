@@ -92,6 +92,9 @@ $(document).ready(function(){initNavTree('class_splash_scene.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Represents our splash scene.  
+ <a href="class_splash_scene.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_splash_scene_8h_source.html">SplashScene.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SplashScene:</div>
@@ -106,6 +109,7 @@ Inheritance diagram for SplashScene:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_splash_scene_1_1_resources.html">Resources</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of shared pointers to our resources.  <a href="struct_splash_scene_1_1_resources.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -143,8 +147,8 @@ Private Types</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a57cf79cf736737a5b585583761585c63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_splash_scene.html#a57cf79cf736737a5b585583761585c63">goToNextScene</a> () final override</td></tr>
 <tr class="separator:a57cf79cf736737a5b585583761585c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4788ce521df559ff633c560f83dea237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_splash_scene.html#a4788ce521df559ff633c560f83dea237">setup</a> (const std::string &amp;resourceFilePath)</td></tr>
-<tr class="separator:a4788ce521df559ff633c560f83dea237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cd5fa8700c5493ca9b7aca19ef1dca2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_splash_scene.html#a9cd5fa8700c5493ca9b7aca19ef1dca2">setup</a> (const std::string &amp;filePath)</td></tr>
+<tr class="separator:a9cd5fa8700c5493ca9b7aca19ef1dca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -165,7 +169,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a4d9417e5e266363d6967278a073200ca inherit pro_attribs_class_scene"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a4d9417e5e266363d6967278a073200ca">m_UPDATE_DT</a></td></tr>
 <tr class="separator:a4d9417e5e266363d6967278a073200ca inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
+<p>Will fade our logo in and out than proceed to next scene. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a9b7c8f34a295dac9f58d1520449dbb8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b7c8f34a295dac9f58d1520449dbb8a">&#9670;&nbsp;</a></span>FadeState</h2>
 
@@ -185,6 +192,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Determine what state the fade transition is in.</p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9b7c8f34a295dac9f58d1520449dbb8aa294f48edd972b58ced15c2284db56f82"></a>FadeIn&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a9b7c8f34a295dac9f58d1520449dbb8aaf8be2875b8fa26739660f6f090938475"></a>FadeOut&#160;</td><td class="fielddoc"></td></tr>
@@ -322,8 +330,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a4788ce521df559ff633c560f83dea237"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4788ce521df559ff633c560f83dea237">&#9670;&nbsp;</a></span>setup()</h2>
+<a id="a9cd5fa8700c5493ca9b7aca19ef1dca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cd5fa8700c5493ca9b7aca19ef1dca2">&#9670;&nbsp;</a></span>setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +343,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void SplashScene::setup </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>resourceFilePath</em></td><td>)</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -559,7 +567,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Unique pointer to our <a class="el" href="struct_splash_scene_1_1_resources.html">Resources</a>.</p>
+<p>Unique pointer to our <a class="el" href="struct_splash_scene_1_1_resources.html" title="Container of shared pointers to our resources. ">Resources</a>.</p>
 <p>Used as to determine the lifetime of its members. </p>
 
 </div>

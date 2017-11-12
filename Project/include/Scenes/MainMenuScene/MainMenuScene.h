@@ -14,11 +14,12 @@
 class MainMenuScene : public Scene
 {
 private:
-	/// <summary>
+	/// 
 	/// @brief Container of shared pointers to our resources.
+	/// @author Rafael Plugge
 	/// 
 	/// 
-	/// </summary>
+	/// 
 	struct Resources
 	{
 		/// <summary>
@@ -26,14 +27,14 @@ private:
 		/// 
 		/// 
 		/// </summary>
-		std::shared_ptr<sf::Font> m_sptrButtonFont = std::make_shared<sf::Font>();
+		std::shared_ptr<sf::Font> m_sptrButtonFont;
 
 		/// <summary>
 		/// @brief shared pointer to texture.
 		/// 
 		/// 
 		/// </summary>
-		std::shared_ptr<sf::Texture> m_sptrButtonTexture = std::make_shared<sf::Texture>();
+		std::shared_ptr<sf::Texture> m_sptrButtonTexture;
 	};
 
 public:

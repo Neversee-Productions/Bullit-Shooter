@@ -104,30 +104,27 @@ void TitleScene::goToNextScene()
 /// 
 /// 
 /// </summary>
-/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
-void TitleScene::setup(const std::string & resourceFilePath)
+/// <param name="filePath">defines the path to the json file for this scene</param>
+void TitleScene::setup(const std::string & filePath)
 {
+	auto & resourceHandler = ResourceHandler::get();
+
 	Scene::setNextSceneName("");
 
-	std::ifstream rawFile(resourceFilePath);
+	std::ifstream rawFile(filePath);
 	json::json jsonLoader;
 	rawFile >> jsonLoader;
-	auto & textureLoader = jsonLoader.at("textures");
-	auto & fontLoader = jsonLoader.at("fonts");
 
 	// instatiate our resource pointers that will "own"
 	// the asset on the heap.
 	m_resources = std::make_unique<Resources>();
-	// store dereferenced pointer
-	// used to avoid pointer syntax.
-	auto & resources = *m_resources;
 
-	auto sptrBackgroundTexture = resources.m_sptrBackgroundTexture;
-	assert(sptrBackgroundTexture->loadFromFile(textureLoader.at("background")));
-	auto sptrTitleTexture = resources.m_sptrTitleTexture;
-	assert(sptrTitleTexture->loadFromFile(textureLoader.at("title")));
-	auto sptrTextFont = resources.m_sptrTextFont;
-	assert(sptrTextFont->loadFromFile(fontLoader.at("text")));
+	m_resources->m_sptrBackgroundTexture = resourceHandler.loadUp<thor::BigTexture>(jsonLoader, "background");
+	assert(nullptr != m_resources->m_sptrBackgroundTexture);
+	m_resources->m_sptrTitleTexture = resourceHandler.loadUp<thor::BigTexture>(jsonLoader, "title");
+	assert(nullptr != m_resources->m_sptrTitleTexture);
+	m_resources->m_sptrTextFont = resourceHandler.loadUp<sf::Font>(jsonLoader, "text");
+	assert(nullptr != m_resources->m_sptrTextFont);
 
 	// Storing a constant reference to the windows dimensions as floats
 	const auto & windowSize = static_cast<sf::Vector2f>(App::getWindowSize());
@@ -138,7 +135,7 @@ void TitleScene::setup(const std::string & resourceFilePath)
 	// Setup Background Sprite
 	m_backgroundSprite = std::make_unique<thor::BigSprite>();
 	auto & backgroundSprite = *m_backgroundSprite;
-	backgroundSprite.setTexture(*sptrBackgroundTexture);
+	backgroundSprite.setTexture(*(m_resources->m_sptrBackgroundTexture));
 	const auto & boxBackground = backgroundSprite.getLocalBounds();
 	backgroundSprite.setOrigin(boxBackground.width * 0.5f, boxBackground.height * 0.5f);
 	backgroundSprite.setPosition(windowCenter);
@@ -146,7 +143,7 @@ void TitleScene::setup(const std::string & resourceFilePath)
 	// Setup Title Sprite
 	m_titleSprite = std::make_unique<thor::BigSprite>();
 	auto & titleSprite = *m_titleSprite;
-	titleSprite.setTexture(*sptrTitleTexture);
+	titleSprite.setTexture(*(m_resources->m_sptrTitleTexture));
 	const auto & boxTitle = titleSprite.getLocalBounds();
 	titleSprite.setOrigin(boxTitle.width * 0.5f, boxTitle.height);
 	titleSprite.setPosition(windowCenter);
@@ -154,7 +151,7 @@ void TitleScene::setup(const std::string & resourceFilePath)
 	// Setup continue Text
 	m_continueText = std::make_unique<sf::Text>();
 	auto & continueText = *m_continueText;
-	continueText.setFont(*sptrTextFont);
+	continueText.setFont(*(m_resources->m_sptrTextFont));
 	continueText.setCharacterSize(jsonLoader.at("fontsize").get<unsigned int>());
 	continueText.setString("Press any key to continue");
 	const auto & boxText = continueText.getLocalBounds();

@@ -19,7 +19,7 @@ SceneManager::SceneManager(
 	, m_controller(nullptr)
 {
 	m_controller = std::make_shared<Controller>();
-	addAllScenes();
+	this->addAllScenes();
 	
 	const std::string firstScene = "Splash";
 	for (auto itt = m_sceneMap.begin(), end = m_sceneMap.end(); itt != end; ++itt)
@@ -27,12 +27,45 @@ SceneManager::SceneManager(
 		auto & mapPair = *itt;
 		if (mapPair.first == firstScene)
 		{
-			loadScene(mapPair.first);
+			this->loadScene(mapPair.first);
 		}
 		else
 		{
-			preLoadScene(mapPair.first);
+			// Cannot pre load options scene
+			// this is due to how sf::Font works internally
+			// as it is NOT THREAD SAFE 
+			// each letter in the font is loaded as needed
+			// therefore with both main menu and options gui using
+			// the same font for their buttons a data race occurs
+			// causing a crash when the font is given the letters
+			// it needs to load from each button in both main menu and options
+			if (mapPair.first != "Options")
+			{
+				// This line will startup all of the scenes
+				// into background loading of assets.
+				this->preLoadScene(mapPair.first);
+			}
 		}
+	}
+}
+
+/// <summary>
+/// @brief Default destructor.
+/// 
+/// Will cleanup our map of scenes,
+/// also makes sure that all of our threads are joined before removing them.
+/// </summary>
+SceneManager::~SceneManager()
+{
+	for (auto itt = m_sceneMap.begin(); itt != m_sceneMap.end(); )
+	{
+		auto & managedScene = itt->second;
+		if (managedScene.m_thread)
+		{
+			managedScene.m_thread->join();
+			std::unique_ptr<std::thread>().swap(managedScene.m_thread);
+		}
+		itt = m_sceneMap.erase(itt);
 	}
 }
 
@@ -55,27 +88,27 @@ void SceneManager::addAllScenes()
 	// Splash Scene
 	sptrScene = std::make_shared<SplashScene>();
 	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
-	addScene(sptrScene, std::move(uptrResources));
+	this->addScene(sptrScene, std::move(uptrResources));
 
 	// Title Scene
 	sptrScene = std::make_shared<TitleScene>(m_keyHandler, m_controller);
 	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
-	addScene(sptrScene, std::move(uptrResources));
+	this->addScene(sptrScene, std::move(uptrResources));
 
 	// MainMenu Scene
 	sptrScene = std::make_shared<MainMenuScene>(m_keyHandler, m_controller);
 	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
-	addScene(sptrScene, std::move(uptrResources));
+	this->addScene(sptrScene, std::move(uptrResources));
 
 	// Options Scene
 	sptrScene = std::make_shared<OptionsScene>(m_keyHandler, m_controller);
 	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
-	addScene(sptrScene, std::move(uptrResources));
+	this->addScene(sptrScene, std::move(uptrResources));
 
 	// Game Scene
 	sptrScene = std::make_shared<GameScene>(*m_keyHandler);
 	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
-	addScene(sptrScene, std::move(uptrResources));
+	this->addScene(sptrScene, std::move(uptrResources));
 }
 
 /// <summary>
@@ -171,11 +204,11 @@ void SceneManager::loadScene(const std::string & name)
 		auto & mapValue = itt->second;
 		auto sptrScene = mapValue.m_scene;
 		const auto & resourcePath = *mapValue.m_resourcePath;
-		std::unique_ptr<std::thread> sptrThread = std::move(mapValue.m_thread);
-		if (sptrThread)
+		std::unique_ptr<std::thread> uptrThread = std::move(mapValue.m_thread);
+		if (uptrThread)
 		{
-			sptrThread->join();
-			std::unique_ptr<std::thread>(nullptr).swap(sptrThread);
+			uptrThread->join();
+			std::unique_ptr<std::thread>().swap(uptrThread);
 		}
 		m_currentScene = sptrScene;
 		if (m_currentScene->getName() == "Splash")
@@ -218,6 +251,7 @@ void SceneManager::update()
 	else
 	{
 		loadScene(m_currentScene->getNextSceneName());
+		m_currentScene->update();
 	}
 	m_keyHandler->update();
 }

@@ -108,6 +108,7 @@ Inheritance diagram for GameScene:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources.html">Resources</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of shared pointers to our resources.  <a href="struct_game_scene_1_1_resources.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -138,8 +139,8 @@ Public Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a1720031b70e644e1b6975b15decdda62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a1720031b70e644e1b6975b15decdda62">goToNextScene</a> () final override</td></tr>
 <tr class="separator:a1720031b70e644e1b6975b15decdda62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac626200cf693987e96b8fa44c2825b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#aac626200cf693987e96b8fa44c2825b7">load</a> (const std::string &amp;resourceFilePath)</td></tr>
-<tr class="separator:aac626200cf693987e96b8fa44c2825b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08213e60be0211836cebe55b28887cae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a08213e60be0211836cebe55b28887cae">setup</a> (const std::string &amp;filePath)</td></tr>
+<tr class="separator:a08213e60be0211836cebe55b28887cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -255,39 +256,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aac626200cf693987e96b8fa44c2825b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac626200cf693987e96b8fa44c2825b7">&#9670;&nbsp;</a></span>load()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::load </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>resourceFilePath</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Loads all external assets.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resourceFilePath</td><td>defines the path to the json file for this scene</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="aa047fdbc6f7cdae8eb76eda686eb49d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa047fdbc6f7cdae8eb76eda686eb49d5">&#9670;&nbsp;</a></span>preStart()</h2>
 
@@ -320,6 +288,39 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Reimplemented from <a class="el" href="class_scene.html#a8085b58c34fde232253669e9d55fa85d">Scene</a>.</p>
+
+</div>
+</div>
+<a id="a08213e60be0211836cebe55b28887cae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08213e60be0211836cebe55b28887cae">&#9670;&nbsp;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::setup </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Loads all external assets.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>defines the path to the json file for this scene</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -476,7 +477,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Unique pointer to our <a class="el" href="struct_game_scene_1_1_resources.html">Resources</a> struct.</p>
+<p>Unique pointer to our <a class="el" href="struct_game_scene_1_1_resources.html" title="Container of shared pointers to our resources. ">Resources</a> struct.</p>
 <p>Used as to determine the lifetime of its members. </p>
 
 </div>

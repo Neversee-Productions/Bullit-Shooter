@@ -9,6 +9,10 @@ var dir_3137d5a23389289517bd5e0d06338240 =
     [ "Application.h", "_application_8h.html", [
       [ "Application", "class_application.html", "class_application" ]
     ] ],
+    [ "ResourceHandler.h", "_resource_handler_8h.html", [
+      [ "ResourceHandler", "class_resource_handler.html", "class_resource_handler" ],
+      [ "MutexHolderPair", "struct_resource_handler_1_1_mutex_holder_pair.html", "struct_resource_handler_1_1_mutex_holder_pair" ]
+    ] ],
     [ "Scene.h", "_scene_8h.html", [
       [ "Scene", "class_scene.html", "class_scene" ]
     ] ],

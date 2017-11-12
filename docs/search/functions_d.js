@@ -11,7 +11,7 @@ var searchData=
   ['setrectanglecolors',['setRectangleColors',['../classgui_1_1_button.html#af63df18be17e20aa05a1de3ed77062f3',1,'gui::Button']]],
   ['setscale',['setScale',['../classgui_1_1_label.html#aba1df232b745dc8240fc7cbd08404217',1,'gui::Label']]],
   ['settext',['setText',['../classgui_1_1_label.html#a1a39c68fa4d04fc1be8751de0dd776b0',1,'gui::Label']]],
-  ['setup',['setup',['../class_main_menu_scene.html#a05620321a10b77b5ee2e49baef002725',1,'MainMenuScene::setup()'],['../class_options_scene.html#a8d526125f5c4eff7a73d85b15452b6d9',1,'OptionsScene::setup()'],['../class_splash_scene.html#a4788ce521df559ff633c560f83dea237',1,'SplashScene::setup()'],['../class_title_scene.html#afa5635768545648c9b138cdb292ce249',1,'TitleScene::setup()']]],
+  ['setup',['setup',['../class_game_scene.html#a08213e60be0211836cebe55b28887cae',1,'GameScene::setup()'],['../class_main_menu_scene.html#a05620321a10b77b5ee2e49baef002725',1,'MainMenuScene::setup()'],['../class_options_scene.html#a03d8095744d6bbd4cb2540ff7088ed0a',1,'OptionsScene::setup()'],['../class_splash_scene.html#a9cd5fa8700c5493ca9b7aca19ef1dca2',1,'SplashScene::setup()'],['../class_title_scene.html#a02d3a68720d3023e153f06aaeef832c5',1,'TitleScene::setup()']]],
   ['setwindowc2rect',['setWindowC2Rect',['../class_app.html#acb64dbd57a2b158956364bec8b8d6c42',1,'App']]],
   ['setwindowsize',['setWindowSize',['../class_app.html#adc5ece8de07fd448e91efbe2c2ec3db9',1,'App']]],
   ['ship',['Ship',['../class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462',1,'Ship']]],

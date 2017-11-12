@@ -1,6 +1,7 @@
 var searchData=
 [
   ['s_5ffire_5frate',['s_FIRE_RATE',['../class_bullet_standard.html#aa349f2b8055b5aefe60baad5209ae610',1,'BulletStandard']]],
+  ['s_5finstance',['s_instance',['../class_resource_handler.html#a58a35b535a836c1e7044abd677a367e9',1,'ResourceHandler']]],
   ['s_5frectwindow',['s_rectWindow',['../class_app.html#ae6b4e765084e7bb26d4f069e39cc0f64',1,'App']]],
   ['s_5ftext_5frect_5fempty',['s_TEXT_RECT_EMPTY',['../classgui_1_1_slider.html#ad4110d5c12af149300777189d5f4d49f',1,'gui::Slider']]],
   ['s_5ftext_5frect_5ffill',['s_TEXT_RECT_FILL',['../classgui_1_1_slider.html#a49d63504570a9240d9fe5f9aa1ab51db',1,'gui::Slider']]],
@@ -28,7 +29,7 @@ var searchData=
   ['setrectanglecolors',['setRectangleColors',['../classgui_1_1_button.html#af63df18be17e20aa05a1de3ed77062f3',1,'gui::Button']]],
   ['setscale',['setScale',['../classgui_1_1_label.html#aba1df232b745dc8240fc7cbd08404217',1,'gui::Label']]],
   ['settext',['setText',['../classgui_1_1_label.html#a1a39c68fa4d04fc1be8751de0dd776b0',1,'gui::Label']]],
-  ['setup',['setup',['../class_main_menu_scene.html#a05620321a10b77b5ee2e49baef002725',1,'MainMenuScene::setup()'],['../class_options_scene.html#a8d526125f5c4eff7a73d85b15452b6d9',1,'OptionsScene::setup()'],['../class_splash_scene.html#a4788ce521df559ff633c560f83dea237',1,'SplashScene::setup()'],['../class_title_scene.html#afa5635768545648c9b138cdb292ce249',1,'TitleScene::setup()']]],
+  ['setup',['setup',['../class_game_scene.html#a08213e60be0211836cebe55b28887cae',1,'GameScene::setup()'],['../class_main_menu_scene.html#a05620321a10b77b5ee2e49baef002725',1,'MainMenuScene::setup()'],['../class_options_scene.html#a03d8095744d6bbd4cb2540ff7088ed0a',1,'OptionsScene::setup()'],['../class_splash_scene.html#a9cd5fa8700c5493ca9b7aca19ef1dca2',1,'SplashScene::setup()'],['../class_title_scene.html#a02d3a68720d3023e153f06aaeef832c5',1,'TitleScene::setup()']]],
   ['setwindowc2rect',['setWindowC2Rect',['../class_app.html#acb64dbd57a2b158956364bec8b8d6c42',1,'App']]],
   ['setwindowsize',['setWindowSize',['../class_app.html#adc5ece8de07fd448e91efbe2c2ec3db9',1,'App']]],
   ['ship',['Ship',['../class_ship.html',1,'Ship'],['../class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462',1,'Ship::Ship()']]],
@@ -38,6 +39,7 @@ var searchData=
   ['slider_2ecpp',['Slider.cpp',['../_slider_8cpp.html',1,'']]],
   ['slider_2eh',['Slider.h',['../_slider_8h.html',1,'']]],
   ['sliderstate',['SliderState',['../classgui_1_1_slider.html#aeb6783166b3e856dc1c36247f90e10fd',1,'gui::Slider']]],
+  ['soundholder',['SoundHolder',['../class_resource_handler.html#a0eb9a6de43cf0022d808a63fa6cf8654',1,'ResourceHandler']]],
   ['splashscene',['SplashScene',['../class_splash_scene.html',1,'SplashScene'],['../class_splash_scene.html#ae221a2966ce3d59f06c66ad253f5b83f',1,'SplashScene::SplashScene()']]],
   ['splashscene_2ecpp',['SplashScene.cpp',['../_splash_scene_8cpp.html',1,'']]],
   ['splashscene_2eh',['SplashScene.h',['../_splash_scene_8h.html',1,'']]],

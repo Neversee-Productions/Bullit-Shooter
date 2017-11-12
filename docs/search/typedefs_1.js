@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scenemap',['SceneMap',['../class_scene_manager.html#aa6287afb28c74e208cf21f05ae443506',1,'SceneManager']]]
+  ['fontholder',['FontHolder',['../class_resource_handler.html#a1a873bdd707d76abd4cd9b1efa876782',1,'ResourceHandler']]]
 ];

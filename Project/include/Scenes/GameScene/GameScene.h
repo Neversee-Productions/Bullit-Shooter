@@ -15,11 +15,12 @@
 class GameScene : public Scene
 {
 private:
-	/// <summary>
+	/// 
+	/// @author Rafael Plugge
 	/// @brief Container of shared pointers to our resources.
 	/// 
 	/// 
-	/// </summary>
+	/// 
 	struct Resources
 	{
 
@@ -28,7 +29,7 @@ private:
 		/// 
 		/// 
 		/// </summary>
-		std::shared_ptr<sf::Texture> m_sptrShipTexture = std::make_shared<sf::Texture>();
+		std::shared_ptr<sf::Texture> m_sptrShipTexture;
 	};
 
 public:
@@ -41,7 +42,7 @@ public:
 
 private:
 	void goToNextScene() final override;
-	void load(const std::string & resourceFilePath);
+	void setup(const std::string & filePath);
 	/// <summary>
 	/// @brief Represents the player object
 	/// 

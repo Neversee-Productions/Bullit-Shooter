@@ -5,7 +5,7 @@ var class_title_scene =
     [ "draw", "class_title_scene.html#ae190d3001c3a27a24176e2f9b39c3907", null ],
     [ "goToNextScene", "class_title_scene.html#aa0f671118e3c6189e5fbe939667e8c86", null ],
     [ "preStart", "class_title_scene.html#afbcce313c31908c58347e84ddd25d39f", null ],
-    [ "setup", "class_title_scene.html#afa5635768545648c9b138cdb292ce249", null ],
+    [ "setup", "class_title_scene.html#a02d3a68720d3023e153f06aaeef832c5", null ],
     [ "start", "class_title_scene.html#a668aa87847c45d2ff3416946e23f63eb", null ],
     [ "stop", "class_title_scene.html#acefc90e3641c2e50a0924918fe0ac6ee", null ],
     [ "update", "class_title_scene.html#a54f43bb05d23c6441f0dcf2e82122b8f", null ],

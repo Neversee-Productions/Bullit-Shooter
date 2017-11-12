@@ -58,9 +58,9 @@ void OptionsScene::start(const std::string & resourceFilePath)
 /// </summary>
 void OptionsScene::stop()
 {
-	m_gui.reset(nullptr);
-	m_resources.reset(nullptr);
-	m_timer.reset(nullptr);
+	std::unique_ptr<gui::GUI>().swap(m_gui);
+	std::unique_ptr<Resources>().swap(m_resources);
+	std::unique_ptr<sf::Clock>().swap(m_timer);
 }
 
 /// <summary>
@@ -113,29 +113,25 @@ void OptionsScene::goToNextScene()
 /// 
 /// 
 /// </summary>
-/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
-void OptionsScene::setup(const std::string & resourceFilePath)
+/// <param name="filePath">defines the path to the json file for this scene</param>
+void OptionsScene::setup(const std::string & filePath)
 {
+	auto & resourceHandler = ResourceHandler::get();
 	Scene::setNextSceneName("");
 
-	std::ifstream fileRaw(resourceFilePath);
+	std::ifstream fileRaw(filePath);
 	json::json jsonLoader;
 	fileRaw >> jsonLoader;
-	auto & textureLoader = jsonLoader.at("textures");
-	auto & fontLoader = jsonLoader.at("fonts");
 
 	m_resources = std::make_unique<Resources>();
-	// store dereferenced pointer
-	// used to avoid pointer syntax.
-	auto & resources = *m_resources;
 
-	auto sptrButtonFont = resources.m_sptrButtonFont;
-	assert(sptrButtonFont->loadFromFile(fontLoader.at("button")));
+	m_resources->m_sptrButtonFont = resourceHandler.loadUp<sf::Font>(jsonLoader, "button");
+	assert(nullptr != m_resources->m_sptrButtonFont);
 
-	auto sptrButtonTexture = resources.m_sptrButtonTexture;
-	assert(sptrButtonTexture->loadFromFile(textureLoader.at("button")));
+	m_resources->m_sptrButtonTexture = resourceHandler.loadUp<sf::Texture>(jsonLoader, "button");
+	assert(nullptr != m_resources->m_sptrButtonTexture);
 
-	loadGui(resources, jsonLoader.at("fontsize").get<unsigned int>());
+	loadGui(*m_resources, jsonLoader.at("fontsize").get<unsigned int>());
 }
 
 void OptionsScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)

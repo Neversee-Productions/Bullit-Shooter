@@ -108,6 +108,7 @@ Inheritance diagram for OptionsScene:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_options_scene_1_1_resources.html">Resources</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of shared pointers to our resources.  <a href="struct_options_scene_1_1_resources.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -138,8 +139,8 @@ Public Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a5846a8c0e6f02f6bb69838d2b310126e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_options_scene.html#a5846a8c0e6f02f6bb69838d2b310126e">goToNextScene</a> () final override</td></tr>
 <tr class="separator:a5846a8c0e6f02f6bb69838d2b310126e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d526125f5c4eff7a73d85b15452b6d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_options_scene.html#a8d526125f5c4eff7a73d85b15452b6d9">setup</a> (const std::string &amp;resourceFilePath)</td></tr>
-<tr class="separator:a8d526125f5c4eff7a73d85b15452b6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03d8095744d6bbd4cb2540ff7088ed0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_options_scene.html#a03d8095744d6bbd4cb2540ff7088ed0a">setup</a> (const std::string &amp;filePath)</td></tr>
+<tr class="separator:a03d8095744d6bbd4cb2540ff7088ed0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4359da629788bc6b697d212d9cbdc23e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_options_scene.html#a4359da629788bc6b697d212d9cbdc23e">loadGui</a> (<a class="el" href="struct_options_scene_1_1_resources.html">Resources</a> &amp;resources, const sf::Uint32 &amp;fontSize)</td></tr>
 <tr class="separator:a4359da629788bc6b697d212d9cbdc23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a046ba1d0e48e92208465a495e788ab68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_options_scene.html#a046ba1d0e48e92208465a495e788ab68">btnBack</a> ()</td></tr>
@@ -381,8 +382,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8d526125f5c4eff7a73d85b15452b6d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d526125f5c4eff7a73d85b15452b6d9">&#9670;&nbsp;</a></span>setup()</h2>
+<a id="a03d8095744d6bbd4cb2540ff7088ed0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03d8095744d6bbd4cb2540ff7088ed0a">&#9670;&nbsp;</a></span>setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -394,7 +395,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void OptionsScene::setup </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>resourceFilePath</em></td><td>)</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -407,7 +408,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Loads up all assets necessary for <a class="el" href="class_options_scene.html" title="Represents our Options scene. ">OptionsScene</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">resourceFilePath</td><td>defines the path to the json file for this scene</td></tr>
+    <tr><td class="paramname">filePath</td><td>defines the path to the json file for this scene</td></tr>
   </table>
   </dd>
 </dl>
@@ -643,7 +644,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Unique pointer to our <a class="el" href="struct_options_scene_1_1_resources.html">Resources</a> struct.</p>
+<p>Unique pointer to our <a class="el" href="struct_options_scene_1_1_resources.html" title="Container of shared pointers to our resources. ">Resources</a> struct.</p>
 <p>Used as to determine the lifetime of its members. </p>
 
 </div>

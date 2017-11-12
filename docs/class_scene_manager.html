@@ -100,12 +100,15 @@ $(document).ready(function(){initNavTree('class_scene_manager.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_scene_manager_1_1_managed_scene.html">ManagedScene</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains our managed scene.  <a href="struct_scene_manager_1_1_managed_scene.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a44e88b925958a15af482c2c81024ed5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a44e88b925958a15af482c2c81024ed5c">SceneManager</a> (<a class="el" href="class_window.html">Window</a> &amp;window, std::shared_ptr&lt; <a class="el" href="class_key_handler.html">KeyHandler</a> &gt; keyHandler)</td></tr>
 <tr class="separator:a44e88b925958a15af482c2c81024ed5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb376a85d29e85f47753e26c7539229"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a2bb376a85d29e85f47753e26c7539229">~SceneManager</a> ()</td></tr>
+<tr class="separator:a2bb376a85d29e85f47753e26c7539229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1aca67532fca8ae38c1ef8b2a6eb637"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637">update</a> ()</td></tr>
 <tr class="separator:aa1aca67532fca8ae38c1ef8b2a6eb637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3983ac6a695c838682b09cee938beb3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_manager.html#a3983ac6a695c838682b09cee938beb3c">draw</a> (const float &amp;deltaTime)</td></tr>
@@ -209,6 +212,25 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a2bb376a85d29e85f47753e26c7539229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb376a85d29e85f47753e26c7539229">&#9670;&nbsp;</a></span>~SceneManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SceneManager::~SceneManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Default destructor.</p>
+<p>Will cleanup our map of scenes, also makes sure that all of our threads are joined before removing them. </p>
 
 </div>
 </div>

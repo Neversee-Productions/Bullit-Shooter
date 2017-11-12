@@ -3,11 +3,19 @@
 
 #include "Scene.h"
 
+/// 
+/// @brief Represents our splash scene.
+/// @author Rafael Plugge
+/// 
+/// Will fade our logo in and out than proceed to next scene.
+/// 
 class SplashScene : public Scene
 {
 private:
 	/// <summary>
-	/// @brief 
+	/// @brief Determine what state the fade transition is in.
+	/// 
+	/// 
 	/// </summary>
 	enum class FadeState
 	{
@@ -25,13 +33,14 @@ public:
 
 private:
 	void goToNextScene() final override;
-	void setup(const std::string & resourceFilePath);
+	void setup(const std::string & filePath);
 
-	/// <summary>
+	/// 
 	/// @brief Container of shared pointers to our resources.
+	/// @author Rafael Plugge
 	/// 
 	/// 
-	/// </summary>
+	/// 
 	struct Resources
 	{
 		/// <summary>

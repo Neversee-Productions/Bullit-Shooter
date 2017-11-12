@@ -3,14 +3,23 @@
 
 #include "Scene.h"
 
+/// 
+/// @brief Represents our title scene.
+/// @author Rafael Plugge
+/// 
+/// Will display our game title and a background,
+/// waiting for the player to press any key to continue
+/// onto the next scene.
+/// 
 class TitleScene : public Scene
 {
 private:
-	/// <summary>
+	/// 
 	/// @brief Container of shared pointers to our resources.
+	/// @author Rafael Plugge
 	/// 
 	/// 
-	/// </summary>
+	/// 
 	struct Resources
 	{
 		/// <summary>
@@ -18,23 +27,21 @@ private:
 		/// 
 		/// 
 		/// </summary>
-		std::shared_ptr<thor::BigTexture> m_sptrBackgroundTexture =
-			std::make_shared<thor::BigTexture>();
+		std::shared_ptr<thor::BigTexture> m_sptrBackgroundTexture;
 
 		/// <summary>
 		/// @brief shared pointer to big title texture.
 		/// 
 		/// 
 		/// </summary>
-		std::shared_ptr<thor::BigTexture> m_sptrTitleTexture =
-			std::make_shared<thor::BigTexture>();
+		std::shared_ptr<thor::BigTexture> m_sptrTitleTexture;
 
 		/// <summary>
 		/// @brief shared pointer to title font.
 		/// 
 		/// 
 		/// </summary>
-		std::shared_ptr<sf::Font> m_sptrTextFont = std::make_shared<sf::Font>();
+		std::shared_ptr<sf::Font> m_sptrTextFont;
 	};
 
 public:
@@ -47,7 +54,7 @@ public:
 
 private:
 	void goToNextScene() final override;
-	void setup(const std::string & resourceFilePath);
+	void setup(const std::string & filePath);
 
 	/// <summary>
 	/// @brief Shared pointer to our key handler.

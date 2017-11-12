@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <fstream>
 #include <string>
+#include "ResourceHandler.h"
 #include "Scene.h"
 #include "Scenes\SplashScreen\SplashScene.h"
 #include "Scenes\TitleScene\TitleScene.h"
@@ -24,13 +25,14 @@ class SceneManager
 {
 private:
 
-	/// <summary>
+	/// 
 	/// @brief Contains our managed scene.
+	/// @author Rafael Plugge
 	/// 
 	/// Contains our scene,
 	/// its resource loading thread and
 	/// its resource loader.
-	/// </summary>
+	/// 
 	struct ManagedScene
 	{
 		std::shared_ptr<Scene> m_scene;
@@ -40,6 +42,7 @@ private:
 
 public:
 	SceneManager(Window & window, std::shared_ptr<KeyHandler> keyHandler);
+	~SceneManager();
 	void update();
 	void draw(const float & deltaTime);
 

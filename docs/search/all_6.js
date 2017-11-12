@@ -4,6 +4,7 @@ var searchData=
   ['gamescene',['GameScene',['../class_game_scene.html',1,'GameScene'],['../class_game_scene.html#aebd3972a13e0b6c8220c8d54d0b6e03e',1,'GameScene::GameScene()']]],
   ['gamescene_2ecpp',['GameScene.cpp',['../_game_scene_8cpp.html',1,'']]],
   ['gamescene_2eh',['GameScene.h',['../_game_scene_8h.html',1,'']]],
+  ['get',['get',['../class_resource_handler.html#abd1c8ec7342772fc6d281f53f1c576fb',1,'ResourceHandler']]],
   ['getactive',['getActive',['../class_scene_manager.html#a10a725b0d82a65ea7beb2969204d119f',1,'SceneManager']]],
   ['getcollisionrect',['getCollisionRect',['../class_bullet.html#aa9dec7fffa8a458897b0452d0312caeb',1,'Bullet']]],
   ['getfirerate',['getFireRate',['../class_bullet_standard.html#ab4c25d37ecf6ff829a17b07d6d68046d',1,'BulletStandard']]],
