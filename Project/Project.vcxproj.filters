@@ -162,9 +162,6 @@
     <ClCompile Include="src\Scenes\GameScene\Bullets\Empowered.cpp">
       <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
     </ClCompile>
-    <ClCompile Include="include\Scenes\GameScene\Bullets\DeathOrb.cpp">
-      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
-    </ClCompile>
     <ClCompile Include="src\Scenes\GameScene\Bullets\FireBlast.cpp">
       <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
     </ClCompile>
@@ -172,6 +169,24 @@
       <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
     </ClCompile>
     <ClCompile Include="src\Scenes\GameScene\Bullets\MagmaShot.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\DeathOrb.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\NapalmSphere.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\CometShot.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\NullWave.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\StaticSphere.cpp">
+      <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Bullets\PyroBlast.cpp">
       <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
     </ClCompile>
   </ItemGroup>
@@ -263,6 +278,21 @@
       <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Bullets\MagmaShot.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\NapalmSphere.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\CometShot.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\NullWave.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\StaticSphere.h">
+      <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Bullets\PyroBlast.h">
       <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
     </ClInclude>
   </ItemGroup>

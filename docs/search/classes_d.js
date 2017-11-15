@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['resources',['Resources',['../struct_main_menu_scene_1_1_resources.html',1,'MainMenuScene::Resources'],['../struct_options_scene_1_1_resources.html',1,'OptionsScene::Resources']]]
+  ['player',['Player',['../class_player.html',1,'']]],
+  ['pyroblast',['PyroBlast',['../classbullets_1_1_pyro_blast.html',1,'bullets']]]
 ];

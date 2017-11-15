@@ -20,11 +20,12 @@ bullets::HolySphere::HolySphere()
 	, m_timeToLive(s_DEF_TTL)
 	, m_alpha(255.0f)
 {
-	m_speed = 3.0f;
+	m_speed = 4.5f;
 	m_velocity.x = m_speed;
 
 	//different size to parent
 	m_bulletRect.setSize(s_DEFAULT_SIZE);
+	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 	updateBox();
 }
@@ -80,7 +81,8 @@ void bullets::HolySphere::setActive(bool active)
 {
 	if (active == false)
 	{
-		m_bulletRect.setSize(s_SIZE_CHANGE);
+		m_bulletRect.setSize(s_DEFAULT_SIZE);
+		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_timeToLive = s_DEF_TTL;
 		m_alpha = 255.0f;
 	}

@@ -110,17 +110,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a890517672f9e6e6dc2dafadc86b357b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf5acafd0a253b4b51e28cdc2c77ae63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_magma_shot.html#acf5acafd0a253b4b51e28cdc2c77ae63">update</a> () override</td></tr>
 <tr class="separator:acf5acafd0a253b4b51e28cdc2c77ae63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dfe6b2f433482e6d1559c1ad939517f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_magma_shot.html#a6dfe6b2f433482e6d1559c1ad939517f">setActive</a> (bool active) override</td></tr>
+<tr class="separator:a6dfe6b2f433482e6d1559c1ad939517f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6652356a69f1d92b99af05e69ccc67d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_magma_shot.html#a6652356a69f1d92b99af05e69ccc67d9">explode</a> (bool check)</td></tr>
 <tr class="separator:a6652356a69f1d92b99af05e69ccc67d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classbullets_1_1_bullet"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbullets_1_1_bullet')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a></td></tr>
 <tr class="memitem:a462ca59bc035c25f2d3fcfd351c6b243 inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a462ca59bc035c25f2d3fcfd351c6b243">Bullet</a> ()</td></tr>
 <tr class="separator:a462ca59bc035c25f2d3fcfd351c6b243 inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb70aa96964976513ce6f067d13743ba inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#abb70aa96964976513ce6f067d13743ba">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
+<tr class="memitem:abb70aa96964976513ce6f067d13743ba inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#abb70aa96964976513ce6f067d13743ba">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
 <tr class="separator:abb70aa96964976513ce6f067d13743ba inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9913ac51dc0bd3824dff9f51393ce4e inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">tinyh::c2AABB&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#ab9913ac51dc0bd3824dff9f51393ce4e">getCollisionRect</a> ()</td></tr>
 <tr class="separator:ab9913ac51dc0bd3824dff9f51393ce4e inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38376bfa6bf1c9de4fdd0124940e29cc inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a38376bfa6bf1c9de4fdd0124940e29cc">setActive</a> (bool active)</td></tr>
-<tr class="separator:a38376bfa6bf1c9de4fdd0124940e29cc inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa446d8e06cf333ea39897966487a2af inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#afa446d8e06cf333ea39897966487a2af">updateBox</a> ()</td></tr>
 <tr class="separator:afa446d8e06cf333ea39897966487a2af inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3ef7337502d9979702dbb1d095bfc5b inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#ad3ef7337502d9979702dbb1d095bfc5b">setPosition</a> (const sf::Vector2f &amp;pos)</td></tr>
@@ -141,6 +141,8 @@ Static Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad5299693b1586ab5569f85eb48059005"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_magma_shot.html#ad5299693b1586ab5569f85eb48059005">m_explode</a></td></tr>
 <tr class="separator:ad5299693b1586ab5569f85eb48059005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec29cbab8a67d5ea31cabb2345a2bd6d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_magma_shot.html#aec29cbab8a67d5ea31cabb2345a2bd6d">TIMETOLIVE</a></td></tr>
+<tr class="separator:aec29cbab8a67d5ea31cabb2345a2bd6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -239,6 +241,42 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a6dfe6b2f433482e6d1559c1ad939517f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dfe6b2f433482e6d1559c1ad939517f">&#9670;&nbsp;</a></span>setActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bullets::MagmaShot::setActive </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>active</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>overloaded set active method.</p>
+<p>This method will check if active is being set to false if yes then reset sphere to original size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">active</td><td>determines the active state of bullet</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classbullets_1_1_bullet.html#a38376bfa6bf1c9de4fdd0124940e29cc">bullets::Bullet</a>.</p>
+
+</div>
+</div>
 <a id="acf5acafd0a253b4b51e28cdc2c77ae63"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf5acafd0a253b4b51e28cdc2c77ae63">&#9670;&nbsp;</a></span>update()</h2>
 
@@ -281,6 +319,20 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Defines if the bullet is in an exploding state.</p>
+
+</div>
+</div>
+<a id="aec29cbab8a67d5ea31cabb2345a2bd6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec29cbab8a67d5ea31cabb2345a2bd6d">&#9670;&nbsp;</a></span>TIMETOLIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float bullets::MagmaShot::TIMETOLIVE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -100,12 +100,17 @@ Inheritance diagram for bullets::Bullet:</div>
  <div class="center">
   <img src="classbullets_1_1_bullet.png" usemap="#bullets::Bullet_map" alt=""/>
   <map id="bullets::Bullet_map" name="bullets::Bullet_map">
-<area href="classbullets_1_1_death_orb.html" title="DeathOrb class. " alt="bullets::DeathOrb" shape="rect" coords="0,56,121,80"/>
-<area href="classbullets_1_1_empowered.html" title="empowered bullet class. " alt="bullets::Empowered" shape="rect" coords="131,56,252,80"/>
-<area href="classbullets_1_1_fire_blast.html" title="FireBlast bullet class. " alt="bullets::FireBlast" shape="rect" coords="262,56,383,80"/>
-<area href="classbullets_1_1_holy_sphere.html" title="HolySphere bullet class. " alt="bullets::HolySphere" shape="rect" coords="393,56,514,80"/>
-<area href="classbullets_1_1_magma_shot.html" title="MagmaShot bullet class. " alt="bullets::MagmaShot" shape="rect" coords="524,56,645,80"/>
-<area href="classbullets_1_1_standard.html" title="standard bullet class. " alt="bullets::Standard" shape="rect" coords="655,56,776,80"/>
+<area href="classbullets_1_1_comet_shot.html" title="CometShot class. " alt="bullets::CometShot" shape="rect" coords="147,56,284,80"/>
+<area href="classbullets_1_1_death_orb.html" title="DeathOrb class. " alt="bullets::DeathOrb" shape="rect" coords="147,112,284,136"/>
+<area href="classbullets_1_1_empowered.html" title="empowered bullet class. " alt="bullets::Empowered" shape="rect" coords="147,168,284,192"/>
+<area href="classbullets_1_1_fire_blast.html" title="FireBlast bullet class. " alt="bullets::FireBlast" shape="rect" coords="147,224,284,248"/>
+<area href="classbullets_1_1_holy_sphere.html" title="HolySphere bullet class. " alt="bullets::HolySphere" shape="rect" coords="147,280,284,304"/>
+<area href="classbullets_1_1_magma_shot.html" title="MagmaShot bullet class. " alt="bullets::MagmaShot" shape="rect" coords="147,336,284,360"/>
+<area href="classbullets_1_1_napalm_sphere.html" title="NapalmSphere class. " alt="bullets::NapalmSphere" shape="rect" coords="147,392,284,416"/>
+<area href="classbullets_1_1_null_wave.html" alt="bullets::NullWave" shape="rect" coords="147,448,284,472"/>
+<area href="classbullets_1_1_pyro_blast.html" title="StaticSphere class. " alt="bullets::PyroBlast" shape="rect" coords="147,504,284,528"/>
+<area href="classbullets_1_1_standard.html" title="standard bullet class. " alt="bullets::Standard" shape="rect" coords="147,560,284,584"/>
+<area href="classbullets_1_1_static_sphere.html" title="StaticSphere class. " alt="bullets::StaticSphere" shape="rect" coords="147,616,284,640"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -115,7 +120,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a462ca59bc035c25f2d3fcfd351c6b243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5176e4323b31a7a86f7333f85bdc3491"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a5176e4323b31a7a86f7333f85bdc3491">update</a> ()</td></tr>
 <tr class="separator:a5176e4323b31a7a86f7333f85bdc3491"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb70aa96964976513ce6f067d13743ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#abb70aa96964976513ce6f067d13743ba">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
+<tr class="memitem:abb70aa96964976513ce6f067d13743ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#abb70aa96964976513ce6f067d13743ba">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
 <tr class="separator:abb70aa96964976513ce6f067d13743ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9913ac51dc0bd3824dff9f51393ce4e"><td class="memItemLeft" align="right" valign="top">tinyh::c2AABB&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#ab9913ac51dc0bd3824dff9f51393ce4e">getCollisionRect</a> ()</td></tr>
 <tr class="separator:ab9913ac51dc0bd3824dff9f51393ce4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,6 +189,9 @@ Static Protected Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void bullets::Bullet::draw </td>
@@ -203,6 +211,11 @@ Static Protected Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Render entities.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -212,6 +225,8 @@ Static Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Reimplemented in <a class="el" href="classbullets_1_1_static_sphere.html#a047f263277633489f9990065d5ddd48e">bullets::StaticSphere</a>.</p>
 
 </div>
 </div>
@@ -284,7 +299,7 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classbullets_1_1_holy_sphere.html#af57ca962b77edc22bd8def8544f40bf5">bullets::HolySphere</a>.</p>
+<p>Reimplemented in <a class="el" href="classbullets_1_1_holy_sphere.html#af57ca962b77edc22bd8def8544f40bf5">bullets::HolySphere</a>, <a class="el" href="classbullets_1_1_static_sphere.html#a615119059150c28afbc43066608a03a2">bullets::StaticSphere</a>, <a class="el" href="classbullets_1_1_magma_shot.html#a6dfe6b2f433482e6d1559c1ad939517f">bullets::MagmaShot</a>, <a class="el" href="classbullets_1_1_napalm_sphere.html#af14c981390d155f3b09c22537737c13e">bullets::NapalmSphere</a>, and <a class="el" href="classbullets_1_1_pyro_blast.html#afee6e9df2affe928ea58992045f78be4">bullets::PyroBlast</a>.</p>
 
 </div>
 </div>
@@ -363,7 +378,7 @@ Static Protected Attributes</h2></td></tr>
 <p>default update.</p>
 <p>updates bullet position based on velocity </p>
 
-<p>Reimplemented in <a class="el" href="classbullets_1_1_holy_sphere.html#a4dd17767e131da308604ee4c7d881a36">bullets::HolySphere</a>, <a class="el" href="classbullets_1_1_death_orb.html#a71e4d572261576cb27bf1c978a638786">bullets::DeathOrb</a>, and <a class="el" href="classbullets_1_1_magma_shot.html#acf5acafd0a253b4b51e28cdc2c77ae63">bullets::MagmaShot</a>.</p>
+<p>Reimplemented in <a class="el" href="classbullets_1_1_holy_sphere.html#a4dd17767e131da308604ee4c7d881a36">bullets::HolySphere</a>, <a class="el" href="classbullets_1_1_death_orb.html#a71e4d572261576cb27bf1c978a638786">bullets::DeathOrb</a>, <a class="el" href="classbullets_1_1_napalm_sphere.html#a21c9459156af91906ba8096e078561af">bullets::NapalmSphere</a>, <a class="el" href="classbullets_1_1_comet_shot.html#a0546931c863b0b8eef818d601d32550f">bullets::CometShot</a>, <a class="el" href="classbullets_1_1_magma_shot.html#acf5acafd0a253b4b51e28cdc2c77ae63">bullets::MagmaShot</a>, <a class="el" href="classbullets_1_1_pyro_blast.html#aabab03154f290dd877b075434f8dbbc3">bullets::PyroBlast</a>, <a class="el" href="classbullets_1_1_static_sphere.html#a018155faef0e4847342296e5b8573f9f">bullets::StaticSphere</a>, and <a class="el" href="classbullets_1_1_null_wave.html#af1c8ab480f814e4e0cd18863a114797c">bullets::NullWave</a>.</p>
 
 </div>
 </div>

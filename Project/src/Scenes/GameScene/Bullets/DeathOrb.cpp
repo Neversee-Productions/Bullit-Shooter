@@ -1,6 +1,6 @@
-#include "DeathOrb.h"
+#include "Scenes\GameScene\Bullets\DeathOrb.h"
 
-const float bullets::DeathOrb::s_FIRE_RATE = 0.5f;
+const float bullets::DeathOrb::s_FIRE_RATE = 1.0f;
 
 /// <summary>
 /// @brief this is the default constructor.
@@ -15,6 +15,7 @@ bullets::DeathOrb::DeathOrb()
 
 	//different size to parent
 	m_bulletRect.setSize(sf::Vector2f(10.0f, 10.0f));
+	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 	
 	//change collision rectangle
 	updateBox();

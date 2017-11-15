@@ -176,6 +176,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 </li>
 <li>m_explode
 : <a class="el" href="classbullets_1_1_magma_shot.html#ad5299693b1586ab5569f85eb48059005">bullets::MagmaShot</a>
+, <a class="el" href="classbullets_1_1_pyro_blast.html#a148199fcf78d9a6730f5d13313a401b9">bullets::PyroBlast</a>
 </li>
 <li>m_fadeOut
 : <a class="el" href="classgui_1_1_button.html#aafb8c807cdc03854df3e10ffc887aeb7">gui::Button</a>
@@ -267,6 +268,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>m_min
 : <a class="el" href="classgui_1_1_slider.html#a19b167667c32994b656f88d23c13f237">gui::Slider</a>
 </li>
+<li>m_moveable
+: <a class="el" href="classbullets_1_1_napalm_sphere.html#aece2e52daccb2d2a5a9435d10e1b2568">bullets::NapalmSphere</a>
+</li>
 <li>m_moved
 : <a class="el" href="classgui_1_1_slider.html#acbbf3c52dc81e0250a08b37ea2ee5fdc">gui::Slider</a>
 </li>
@@ -311,6 +315,15 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 </li>
 <li>m_prevKeyMap
 : <a class="el" href="class_key_handler.html#a4d27e4f06420f0fcb602ec59d8bfc60f">KeyHandler</a>
+</li>
+<li>m_pulse
+: <a class="el" href="classbullets_1_1_static_sphere.html#afecc3adc2b0b3a15107a7715a5fe5875">bullets::StaticSphere</a>
+</li>
+<li>m_pulseCircle
+: <a class="el" href="classbullets_1_1_static_sphere.html#ac4e8049bae5ab9fdfbd5f7f95102fb83">bullets::StaticSphere</a>
+</li>
+<li>m_pulseTimer
+: <a class="el" href="classbullets_1_1_static_sphere.html#a1974c3383680a7888c60a82608a2915b">bullets::StaticSphere</a>
 </li>
 <li>m_RB
 : <a class="el" href="struct_game_pad_state.html#a3a70809e44405f156b99219929216df3">GamePadState</a>
@@ -425,6 +438,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>m_textureRenderer
 : <a class="el" href="class_window.html#a328bc625cf152d7b15d13495e7f0f99a">Window</a>
 </li>
+<li>m_timeAlive
+: <a class="el" href="classbullets_1_1_napalm_sphere.html#ad518197349a6c6d4c9fa77b7972f774a">bullets::NapalmSphere</a>
+</li>
 <li>m_timer
 : <a class="el" href="classgui_1_1_slider.html#a4255c9cb97d499917b0c5f47df00759d">gui::Slider</a>
 , <a class="el" href="class_main_menu_scene.html#af77847e54bc90d1ac9b4bd79f32642e7">MainMenuScene</a>
@@ -499,11 +515,19 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>s_DEFAULT_SIZE
+: <a class="el" href="classbullets_1_1_napalm_sphere.html#a9131a75d3337bdc397749c236429f3a7">bullets::NapalmSphere</a>
+</li>
 <li>s_FIRE_RATE
-: <a class="el" href="classbullets_1_1_death_orb.html#abf3300c01f9823a4bc6c5d97320ead84">bullets::DeathOrb</a>
+: <a class="el" href="classbullets_1_1_comet_shot.html#a75b82a650a7f01a87b7199a2bb54d47a">bullets::CometShot</a>
+, <a class="el" href="classbullets_1_1_death_orb.html#abf3300c01f9823a4bc6c5d97320ead84">bullets::DeathOrb</a>
 , <a class="el" href="classbullets_1_1_empowered.html#a087ea7866da61a6bb319ae037afd7fb7">bullets::Empowered</a>
 , <a class="el" href="classbullets_1_1_fire_blast.html#a47ba13dd3a7815416c08fa1e9b50b8d7">bullets::FireBlast</a>
+, <a class="el" href="classbullets_1_1_napalm_sphere.html#ad5deafca1ef24375ce978414e777786e">bullets::NapalmSphere</a>
+, <a class="el" href="classbullets_1_1_null_wave.html#a2e53a239dd6d85f8574fd2b3a4d8fe80">bullets::NullWave</a>
+, <a class="el" href="classbullets_1_1_pyro_blast.html#aac5015b9a9f425d443166080d3fbf7f6">bullets::PyroBlast</a>
 , <a class="el" href="classbullets_1_1_standard.html#a4c5f5075ef08a3246b3db4219ee135e3">bullets::Standard</a>
+, <a class="el" href="classbullets_1_1_static_sphere.html#a3b47b05ec4edd6aeb5747db35220d0ea">bullets::StaticSphere</a>
 </li>
 <li>s_rectWindow
 : <a class="el" href="class_app.html#ae6b4e765084e7bb26d4f069e39cc0f64">App</a>
@@ -547,6 +571,11 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 </li>
 <li>THUMB_THRESHOLD
 : <a class="el" href="class_controller.html#a948ea829bde896e4e7bc25210ab26340">Controller</a>
+</li>
+<li>TIMETOLIVE
+: <a class="el" href="classbullets_1_1_magma_shot.html#aec29cbab8a67d5ea31cabb2345a2bd6d">bullets::MagmaShot</a>
+, <a class="el" href="classbullets_1_1_napalm_sphere.html#a13ecd5854a3dcbab409ffe8428240f68">bullets::NapalmSphere</a>
+, <a class="el" href="classbullets_1_1_pyro_blast.html#a1ba904150a8dd68724828ec8e53bdc36">bullets::PyroBlast</a>
 </li>
 <li>TRIGGERS_THRESHOLD
 : <a class="el" href="class_controller.html#aeb2cc645bf3f3151a17216d815bfd69a">Controller</a>

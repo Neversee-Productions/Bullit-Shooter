@@ -19,6 +19,7 @@ namespace bullets
 		MagmaShot();
 		void update() override;
 		static float getFireRate();
+		void setActive(bool active) override;
 		void explode(bool check);
 
 		/// <summary>
@@ -34,6 +35,23 @@ namespace bullets
 		/// 
 		/// </summary>
 		static const float bullets::MagmaShot::s_FIRE_RATE;
+
+		//REMOVE LATER USED INSTEAD OF COLLISIONS TO CHECK RESPONSE
+		float TIMETOLIVE;
+
+		/// <summary>
+		/// @brief determine rate of size change during explosion state.
+		/// 
+		///
+		/// </summary>
+		static const sf::Vector2f bullets::MagmaShot::s_SIZE_CHANGE;
+
+		/// <summary>
+		/// @brief defines default starting size.
+		/// 
+		/// 
+		/// </summary>
+		static const sf::Vector2f bullets::MagmaShot::s_DEFAULT_SIZE;
 
 	};
 

@@ -14,6 +14,11 @@ enum class BulletTypes
 	, FireBlast //Defines FireBlast type
 	, HolySphere //Defines HolySphere type
 	, MagmaShot //Defines MagmaShot type
+	, NapalmSphere //Defines NapalmSphere type 
+	, CometShot //Defines CometShot type
+	, NullWave //Define a NullWave type
+	, StaticSphere //Define a StaticSphere type
+	, PyroBlast //Defines the PyroBlast type
 };
 
 #endif // !BULLETTYPES_H

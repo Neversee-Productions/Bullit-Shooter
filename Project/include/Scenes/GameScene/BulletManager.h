@@ -12,6 +12,11 @@
 #include "Bullets/FireBlast.h"
 #include "Bullets/HolySphere.h"
 #include "Bullets/MagmaShot.h"
+#include "Bullets/CometShot.h"
+#include "Bullets/NapalmSphere.h"
+#include "Bullets/NullWave.h"
+#include "Bullets/StaticSphere.h"
+#include "Bullets/PyroBlast.h"
 
 ///
 /// @brief The bullet manager class.

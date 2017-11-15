@@ -19,7 +19,7 @@ namespace bullets
 	public:
 		Bullet();
 		virtual void update();
-		void draw(Window & window, const float & deltaTime);
+		virtual void draw(Window & window, const float & deltaTime);
 		tinyh::c2AABB getCollisionRect();
 		virtual void setActive(bool active);
 		void updateBox();

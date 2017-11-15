@@ -64,6 +64,36 @@ void BulletManager::fireBullet(const sf::Vector2f& position1,const sf::Vector2f&
 			fireOne(position1, position2, type);
 		}
 	break;
+	case BulletTypes::NapalmSphere:
+		if (m_timeSinceFire > bullets::NapalmSphere::getFireRate())
+		{
+			fireOne(position1, position2, type);
+		}
+		break;
+	case BulletTypes::CometShot:
+		if (m_timeSinceFire > bullets::CometShot::getFireRate())
+		{
+			fireOne(position1, position2, type);
+		}
+		break;
+	case BulletTypes::NullWave:
+		if (m_timeSinceFire > bullets::NullWave::getFireRate())
+		{
+			fireOne(position1, position2, type);
+		}
+		break;
+	case BulletTypes::StaticSphere:
+		if (m_timeSinceFire > bullets::StaticSphere::getFireRate())
+		{
+			fireOne(position1, position2, type);
+		}
+		break;
+	case BulletTypes::PyroBlast:
+		if (m_timeSinceFire > bullets::PyroBlast::getFireRate())
+		{
+			fireOne(position1, position2, type);
+		}
+		break;
 	default:
 		break;
 	}
@@ -96,6 +126,21 @@ void BulletManager::initBulletvector(BulletTypes type)
 		break;
 	case BulletTypes::MagmaShot:
 		initBulletMapVector<bullets::MagmaShot>(type, 10);
+		break;
+	case BulletTypes::CometShot:
+		initBulletMapVector<bullets::CometShot>(type, 35);
+		break;
+	case BulletTypes::NapalmSphere:
+		initBulletMapVector<bullets::NapalmSphere>(type, 20);
+		break;
+	case BulletTypes::NullWave:
+		initBulletMapVector<bullets::NullWave>(type, 10);
+		break;
+	case BulletTypes::StaticSphere:
+		initBulletMapVector<bullets::StaticSphere>(type, 10);
+		break;
+	case BulletTypes::PyroBlast:
+		initBulletMapVector<bullets::PyroBlast>(type, 10);
 		break;
 	default:
 		break;
