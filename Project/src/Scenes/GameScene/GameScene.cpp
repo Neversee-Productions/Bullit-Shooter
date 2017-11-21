@@ -33,6 +33,7 @@ void GameScene::preStart(const std::string & resourceFilePath)
 /// </summary>
 void GameScene::start(const std::string & resourceFilePath)
 {
+	Scene::setNextSceneName("");
 	if (!m_resources)
 	{
 		this->setup(resourceFilePath);
@@ -88,5 +89,25 @@ void GameScene::goToNextScene()
 /// <param name="filePath">defines the path to the json file for this scene</param>
 void GameScene::setup(const std::string & filePath)
 {
+	auto & resourceHandler = ResourceHandler::get();
+
+	std::ifstream rawFile(filePath);
+	json::json jsonLoader;
+	rawFile >> jsonLoader;
+
+	if (!m_resources)
+	{
+		m_resources = std::make_unique<Resources>();
+		std::unique_ptr<Resources::Ship> uptrShip = std::move(m_resources->m_uptrShip);
+		uptrShip->m_sptrShipTexture = resourceHandler.loadUp<sf::Texture>(jsonLoader, "ship");
+		assert(nullptr != uptrShip->m_sptrShipTexture);
+
+		uptrShip->m_sptrShipAnimator = std::make_shared<SpriteAnimator>();
+		const auto & duration = jsonLoader.at("animation").at("ship").at("duration").get<float>();
+		uptrShip->m_sptrShipAnimator->addAnimation("ship", *resourceHandler.loadUp<thor::FrameAnimation>(jsonLoader, "ship"), sf::seconds(duration));
+		assert(nullptr != uptrShip->m_sptrShipAnimator);
+
+		m_resources->m_uptrShip = std::move(uptrShip);
+	}
 }
 

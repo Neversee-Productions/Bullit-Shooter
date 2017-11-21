@@ -5,6 +5,7 @@
     "animation": {
         "ship":
         {
+            "duration": 2.0,
             "width": 402,
             "height": 530,
             "frames":

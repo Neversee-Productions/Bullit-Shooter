@@ -31,6 +31,7 @@ var hierarchy =
     [ "KeyHandler", "class_key_handler.html", null ],
     [ "SceneManager::ManagedScene", "struct_scene_manager_1_1_managed_scene.html", null ],
     [ "ResourceHandler::MutexHolderPair< holder_type >", "struct_resource_handler_1_1_mutex_holder_pair.html", null ],
+    [ "ResourceHandler::MutexHolderPair< AnimationHolder >", "struct_resource_handler_1_1_mutex_holder_pair.html", null ],
     [ "ResourceHandler::MutexHolderPair< BigTextureHolder >", "struct_resource_handler_1_1_mutex_holder_pair.html", null ],
     [ "ResourceHandler::MutexHolderPair< FontHolder >", "struct_resource_handler_1_1_mutex_holder_pair.html", null ],
     [ "ResourceHandler::MutexHolderPair< SoundHolder >", "struct_resource_handler_1_1_mutex_holder_pair.html", null ],
