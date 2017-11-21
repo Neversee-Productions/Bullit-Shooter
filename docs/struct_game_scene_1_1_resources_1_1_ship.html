@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project: GameScene::Resources Struct Reference</title>
+<title>Project: GameScene::Resources::Ship Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('struct_game_scene_1_1_resources.html','');});
+$(document).ready(function(){initNavTree('struct_game_scene_1_1_resources_1_1_ship.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -81,43 +81,55 @@ $(document).ready(function(){initNavTree('struct_game_scene_1_1_resources.html',
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_game_scene_1_1_resources-members.html">List of all members</a>  </div>
+<a href="struct_game_scene_1_1_resources_1_1_ship-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GameScene::Resources Struct Reference</div>  </div>
+<div class="title">GameScene::Resources::Ship Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Container of shared pointers to our resources.  
- <a href="struct_game_scene_1_1_resources.html#details">More...</a></p>
+<p>Container of shared pointers to ship resources.  
+ <a href="struct_game_scene_1_1_resources_1_1_ship.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_game_scene_8h_source.html">GameScene.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources_1_1_ship.html">Ship</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of shared pointers to ship resources.  <a href="struct_game_scene_1_1_resources_1_1_ship.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a5a05e99795aa7071aa185df74e9a971e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="struct_game_scene_1_1_resources_1_1_ship.html">GameScene::Resources::Ship</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources.html#a5a05e99795aa7071aa185df74e9a971e">m_uptrShip</a></td></tr>
-<tr class="separator:a5a05e99795aa7071aa185df74e9a971e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ac4620dc764288e25ac5bff350d41c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Texture &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources_1_1_ship.html#a76ac4620dc764288e25ac5bff350d41c">m_sptrShipTexture</a> = nullptr</td></tr>
+<tr class="separator:a76ac4620dc764288e25ac5bff350d41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b6011c56055b276650f346b9d8145aa"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_game_scene.html#ae80b80d6c05ec923abba6a082935b8fb">SpriteAnimator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources_1_1_ship.html#a6b6011c56055b276650f346b9d8145aa">m_sptrShipAnimator</a> = nullptr</td></tr>
+<tr class="separator:a6b6011c56055b276650f346b9d8145aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd></dl>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a5a05e99795aa7071aa185df74e9a971e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a05e99795aa7071aa185df74e9a971e">&#9670;&nbsp;</a></span>m_uptrShip</h2>
+<a id="a6b6011c56055b276650f346b9d8145aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b6011c56055b276650f346b9d8145aa">&#9670;&nbsp;</a></span>m_sptrShipAnimator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="struct_game_scene_1_1_resources_1_1_ship.html">GameScene::Resources::Ship</a>&gt; GameScene::Resources::m_uptrShip</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_game_scene.html#ae80b80d6c05ec923abba6a082935b8fb">SpriteAnimator</a>&gt; GameScene::Resources::Ship::m_sptrShipAnimator = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">            std::make_unique&lt;GameScene::Resources::Ship&gt;()</div></div><!-- fragment --><p>unique pointer to ship resources.</p>
+<p>shared pointer to ship animator </p>
+
+</div>
+</div>
+<a id="a76ac4620dc764288e25ac5bff350d41c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ac4620dc764288e25ac5bff350d41c">&#9670;&nbsp;</a></span>m_sptrShipTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;sf::Texture&gt; GameScene::Resources::Ship::m_sptrShipTexture = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>shared pointer to ship texture.</p>
 
 </div>
 </div>
@@ -129,7 +141,7 @@ Public Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="class_game_scene.html">GameScene</a></li><li class="navelem"><a class="el" href="struct_game_scene_1_1_resources.html">Resources</a></li>
+    <li class="navelem"><a class="el" href="class_game_scene.html">GameScene</a></li><li class="navelem"><a class="el" href="struct_game_scene_1_1_resources.html">Resources</a></li><li class="navelem"><a class="el" href="struct_game_scene_1_1_resources_1_1_ship.html">Ship</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

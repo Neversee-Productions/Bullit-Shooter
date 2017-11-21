@@ -18,7 +18,10 @@ public:
 	Weapon(sf::Vector2f position = sf::Vector2f(0.0f, 0.0f));
 	void draw(Window & window, const float & deltaTime);
 	void update(const sf::Vector2f& pos);
-
+	void setRectPos(sf::Vector2f pos);
+	const sf::Vector2f & getPosition();
+	const BulletTypes & getBulletType();
+private:
 	/// <summary>
 	/// @brief define the weapon rectangle.
 	/// 

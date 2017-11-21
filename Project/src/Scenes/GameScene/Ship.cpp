@@ -59,4 +59,15 @@ void Ship::update()
 	m_shipRect.setPosition(m_position);
 }
 
+/// <summary>
+/// @brief return the position of the ship rectangle.
+/// 
+/// 
+/// </summary>
+/// <returns>returns the ship rectangles position</returns>
+const sf::Vector2f & Ship::getShipRect()
+{
+	return m_shipRect.getPosition();
+}
+
 

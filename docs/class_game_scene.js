@@ -1,7 +1,7 @@
 var class_game_scene =
 [
     [ "Resources", "struct_game_scene_1_1_resources.html", "struct_game_scene_1_1_resources" ],
-    [ "BigSpriteAnimator", "class_game_scene.html#ac40ef2f753ea440c8c5a4743f8472acb", null ],
+    [ "SpriteAnimator", "class_game_scene.html#ae80b80d6c05ec923abba6a082935b8fb", null ],
     [ "GameScene", "class_game_scene.html#aebd3972a13e0b6c8220c8d54d0b6e03e", null ],
     [ "draw", "class_game_scene.html#af58b670ba277a007dba8fdf05e5a60c5", null ],
     [ "goToNextScene", "class_game_scene.html#a1720031b70e644e1b6975b15decdda62", null ],

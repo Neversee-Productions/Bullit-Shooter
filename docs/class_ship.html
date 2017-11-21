@@ -82,7 +82,7 @@ $(document).ready(function(){initNavTree('class_ship.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_ship-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Ship Class Reference</div>  </div>
@@ -106,9 +106,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af9ecf9bca8a9d9c737ad892f6f83e14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ee2f77fa9920030dc3ff8268b2f73a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a3ee2f77fa9920030dc3ff8268b2f73a4">update</a> ()</td></tr>
 <tr class="separator:a3ee2f77fa9920030dc3ff8268b2f73a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4244807b4f32aeacff83374b21c53b"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a8b4244807b4f32aeacff83374b21c53b">getShipRect</a> ()</td></tr>
+<tr class="separator:a8b4244807b4f32aeacff83374b21c53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:ab7a03c934538fd6100e1ed3b85f92fcb"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ab7a03c934538fd6100e1ed3b85f92fcb">m_shipRect</a></td></tr>
 <tr class="separator:ab7a03c934538fd6100e1ed3b85f92fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0de29cfa62b6e3d510ad9ab89de21822"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a0de29cfa62b6e3d510ad9ab89de21822">m_speed</a></td></tr>
@@ -175,6 +177,25 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a8b4244807b4f32aeacff83374b21c53b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b4244807b4f32aeacff83374b21c53b">&#9670;&nbsp;</a></span>getShipRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::Vector2f &amp; Ship::getShipRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>return the position of the ship rectangle.</p>
+<dl class="section return"><dt>Returns</dt><dd>returns the ship rectangles position</dd></dl>
+
+</div>
+</div>
 <a id="af9ecf9bca8a9d9c737ad892f6f83e14f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9ecf9bca8a9d9c737ad892f6f83e14f">&#9670;&nbsp;</a></span>moveDown()</h2>
 
@@ -235,11 +256,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">sf::Vector2f Ship::m_position</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>define position.</p>
 
@@ -250,11 +279,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">sf::RectangleShape Ship::m_shipRect</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Represents the ship.</p>
 
@@ -265,11 +302,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float Ship::m_speed</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>define players speed.</p>
 
