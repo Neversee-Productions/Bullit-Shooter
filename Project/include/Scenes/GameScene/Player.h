@@ -61,6 +61,20 @@ public:
 	/// 
 	/// </summary>
 	const float & deltaTime;
+	
+	/// <summary>
+	/// @brief position of top weapon.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_weapon1Pos;
+
+	/// <summary>
+	/// @brief position of bottom weapon.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_weapon2Pos;
 };
 
 #endif PLAYER_H

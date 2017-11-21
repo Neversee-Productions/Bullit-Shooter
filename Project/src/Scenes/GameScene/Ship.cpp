@@ -8,10 +8,12 @@
 /// </summary>
 Ship::Ship()
 	: m_shipRect()
+	, m_speed(4.0f)
+	, m_position(sf::Vector2f(100.0f, 400.0f))
 {
 	m_shipRect.setFillColor(sf::Color::Red);
-	m_shipRect.setPosition(sf::Vector2f(100.0f, 400.0f));
-	m_shipRect.setSize(sf::Vector2f(100.0f, 50.0f));
+	m_shipRect.setPosition(m_position);
+	m_shipRect.setSize(sf::Vector2f(50.0f, 25.0f));
 	m_shipRect.setOrigin(m_shipRect.getSize().x / 2, m_shipRect.getSize().y / 2);
 }
 
@@ -26,3 +28,35 @@ void Ship::draw(Window & window, const float & deltaTime)
 {
 	window.draw(m_shipRect);
 }
+
+/// <summary>
+/// @brief simple method that moves the player up.
+/// 
+/// 
+/// </summary>
+void Ship::moveUp()
+{
+	m_position.y -= m_speed;
+}
+
+/// <summary>
+/// @brief sumple method that moves the player down.
+/// 
+/// 
+/// </summary>
+void Ship::moveDown()
+{
+	m_position.y += m_speed;
+}
+
+/// <summary>
+/// @brief update position.
+/// 
+/// 
+/// </summary>
+void Ship::update()
+{
+	m_shipRect.setPosition(m_position);
+}
+
+

@@ -37,7 +37,7 @@ Window::Window(KeyHandler & keyHandler)
 	settings.majorVersion = 3u;
 	settings.minorVersion = 0u;
 	settings.attributeFlags = sf::ContextSettings::Attribute::Default;
-	settings.depthBits = 32u;
+	settings.depthBits = 24u;
 	settings.stencilBits = 8u;
 	settings.antialiasingLevel = 8u;
 	
