@@ -1,15 +1,9 @@
 var dir_3d146c0a75894571550ef8dd976c3a01 =
 [
-    [ "Bullet.h", "_bullet_8h.html", [
-      [ "Bullet", "class_bullet.html", "class_bullet" ]
-    ] ],
+    [ "Bullets", "dir_9b6302fd38af5e97da1b82b937ec39b8.html", "dir_9b6302fd38af5e97da1b82b937ec39b8" ],
     [ "BulletManager.h", "_bullet_manager_8h.html", [
       [ "BulletManager", "class_bullet_manager.html", "class_bullet_manager" ]
     ] ],
-    [ "BulletStandard.h", "_bullet_standard_8h.html", [
-      [ "BulletStandard", "class_bullet_standard.html", "class_bullet_standard" ]
-    ] ],
-    [ "BulletTypes.h", "_bullet_types_8h.html", "_bullet_types_8h" ],
     [ "GameScene.h", "_game_scene_8h.html", [
       [ "GameScene", "class_game_scene.html", "class_game_scene" ]
     ] ],

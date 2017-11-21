@@ -3,7 +3,7 @@
 
 #include "Window.h"
 #include "SFML\Graphics\RectangleShape.hpp"
-#include "BulletTypes.h"
+#include "Bullets\BulletTypes.h"
 
 ///
 /// @brief Weapon class.
@@ -17,6 +17,7 @@ class Weapon
 public:
 	Weapon(sf::Vector2f position = sf::Vector2f(0.0f, 0.0f));
 	void draw(Window & window, const float & deltaTime);
+	void update(const sf::Vector2f& pos);
 
 	/// <summary>
 	/// @brief define the weapon rectangle.
@@ -31,5 +32,15 @@ public:
 	/// 
 	/// </summary>
 	BulletTypes m_currentBullet;
+
+	/// <summary>
+	/// @brief defines position vector.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_position;
+
+	//REMOVE TEMPTIME
+	float TEMPTIME;
 };
 #endif // !WEAPON_H

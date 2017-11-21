@@ -2,8 +2,18 @@ var hierarchy =
 [
     [ "App", "class_app.html", null ],
     [ "Application", "class_application.html", null ],
-    [ "Bullet", "class_bullet.html", [
-      [ "BulletStandard", "class_bullet_standard.html", null ]
+    [ "bullets::Bullet", "classbullets_1_1_bullet.html", [
+      [ "bullets::CometShot", "classbullets_1_1_comet_shot.html", null ],
+      [ "bullets::DeathOrb", "classbullets_1_1_death_orb.html", null ],
+      [ "bullets::Empowered", "classbullets_1_1_empowered.html", null ],
+      [ "bullets::FireBlast", "classbullets_1_1_fire_blast.html", null ],
+      [ "bullets::HolySphere", "classbullets_1_1_holy_sphere.html", null ],
+      [ "bullets::MagmaShot", "classbullets_1_1_magma_shot.html", null ],
+      [ "bullets::NapalmSphere", "classbullets_1_1_napalm_sphere.html", null ],
+      [ "bullets::NullWave", "classbullets_1_1_null_wave.html", null ],
+      [ "bullets::PyroBlast", "classbullets_1_1_pyro_blast.html", null ],
+      [ "bullets::Standard", "classbullets_1_1_standard.html", null ],
+      [ "bullets::StaticSphere", "classbullets_1_1_static_sphere.html", null ]
     ] ],
     [ "BulletManager", "class_bullet_manager.html", null ],
     [ "Controller", "class_controller.html", null ],
@@ -20,8 +30,8 @@ var hierarchy =
     [ "gui::GUI", "classgui_1_1_g_u_i.html", null ],
     [ "KeyHandler", "class_key_handler.html", null ],
     [ "Player", "class_player.html", null ],
-    [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
     [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
+    [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
       [ "MainMenuScene", "class_main_menu_scene.html", null ],

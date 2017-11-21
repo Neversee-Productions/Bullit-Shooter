@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fading',['fading',['../classgui_1_1_button.html#a25d24e05be6384e7708e349ddb9b5e45',1,'gui::Button::fading()'],['../classgui_1_1_check_box.html#ae4404d1007963895a9ecd56d4c28c757',1,'gui::CheckBox::fading()'],['../classgui_1_1_slider.html#abd60416e493409aa8952d7a53ade74c3',1,'gui::Slider::fading()']]],
-  ['firebullet',['fireBullet',['../class_bullet_manager.html#aee0e75edd198df85c62f91e5e1d02b11',1,'BulletManager']]]
+  ['empowered',['Empowered',['../classbullets_1_1_empowered.html#a9216584c1df74eeb28cda87aff278200',1,'bullets::Empowered']]],
+  ['explode',['explode',['../classbullets_1_1_magma_shot.html#a6652356a69f1d92b99af05e69ccc67d9',1,'bullets::MagmaShot']]]
 ];

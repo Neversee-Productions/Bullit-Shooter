@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['reusebullet',['reuseBullet',['../class_bullet_manager.html#a632f371d019173bc0b41fd74ab6f23f3',1,'BulletManager']]],
-  ['run',['run',['../class_application.html#a68965449404743bf1add056784d6cf81',1,'Application']]]
+  ['napalmsphere',['NapalmSphere',['../classbullets_1_1_napalm_sphere.html#a7acda0abd582842e0a9cab2f5e62e183',1,'bullets::NapalmSphere']]],
+  ['nullwave',['NullWave',['../classbullets_1_1_null_wave.html#ad50a4d3e508453afa1211985fe9aea1e',1,'bullets::NullWave']]]
 ];

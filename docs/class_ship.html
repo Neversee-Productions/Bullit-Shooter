@@ -100,11 +100,21 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab7608fcfc4d27c678aacaf9bfd68a462"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9a0712970979a6d24320ae208bd6899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ae9a0712970979a6d24320ae208bd6899">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
 <tr class="separator:ae9a0712970979a6d24320ae208bd6899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c26377c47413abf8129036bd4cdc65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a75c26377c47413abf8129036bd4cdc65">moveUp</a> ()</td></tr>
+<tr class="separator:a75c26377c47413abf8129036bd4cdc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9ecf9bca8a9d9c737ad892f6f83e14f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#af9ecf9bca8a9d9c737ad892f6f83e14f">moveDown</a> ()</td></tr>
+<tr class="separator:af9ecf9bca8a9d9c737ad892f6f83e14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee2f77fa9920030dc3ff8268b2f73a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a3ee2f77fa9920030dc3ff8268b2f73a4">update</a> ()</td></tr>
+<tr class="separator:a3ee2f77fa9920030dc3ff8268b2f73a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ab7a03c934538fd6100e1ed3b85f92fcb"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ab7a03c934538fd6100e1ed3b85f92fcb">m_shipRect</a></td></tr>
 <tr class="separator:ab7a03c934538fd6100e1ed3b85f92fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de29cfa62b6e3d510ad9ab89de21822"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a0de29cfa62b6e3d510ad9ab89de21822">m_speed</a></td></tr>
+<tr class="separator:a0de29cfa62b6e3d510ad9ab89de21822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a1eb695d4909bee43e7f5cd28dd66b"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a42a1eb695d4909bee43e7f5cd28dd66b">m_position</a></td></tr>
+<tr class="separator:a42a1eb695d4909bee43e7f5cd28dd66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
@@ -165,7 +175,76 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af9ecf9bca8a9d9c737ad892f6f83e14f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9ecf9bca8a9d9c737ad892f6f83e14f">&#9670;&nbsp;</a></span>moveDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::moveDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>sumple method that moves the player down.</p>
+
+</div>
+</div>
+<a id="a75c26377c47413abf8129036bd4cdc65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75c26377c47413abf8129036bd4cdc65">&#9670;&nbsp;</a></span>moveUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::moveUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>simple method that moves the player up.</p>
+
+</div>
+</div>
+<a id="a3ee2f77fa9920030dc3ff8268b2f73a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ee2f77fa9920030dc3ff8268b2f73a4">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>update position.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a42a1eb695d4909bee43e7f5cd28dd66b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a1eb695d4909bee43e7f5cd28dd66b">&#9670;&nbsp;</a></span>m_position</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f Ship::m_position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>define position.</p>
+
+</div>
+</div>
 <a id="ab7a03c934538fd6100e1ed3b85f92fcb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7a03c934538fd6100e1ed3b85f92fcb">&#9670;&nbsp;</a></span>m_shipRect</h2>
 
@@ -178,6 +257,21 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Represents the ship.</p>
+
+</div>
+</div>
+<a id="a0de29cfa62b6e3d510ad9ab89de21822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de29cfa62b6e3d510ad9ab89de21822">&#9670;&nbsp;</a></span>m_speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Ship::m_speed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>define players speed.</p>
 
 </div>
 </div>

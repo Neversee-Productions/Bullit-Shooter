@@ -1,11 +1,10 @@
 var annotated_dup =
 [
+    [ "bullets", "namespacebullets.html", "namespacebullets" ],
     [ "gui", "namespacegui.html", "namespacegui" ],
     [ "App", "class_app.html", "class_app" ],
     [ "Application", "class_application.html", "class_application" ],
-    [ "Bullet", "class_bullet.html", "class_bullet" ],
     [ "BulletManager", "class_bullet_manager.html", "class_bullet_manager" ],
-    [ "BulletStandard", "class_bullet_standard.html", "class_bullet_standard" ],
     [ "Controller", "class_controller.html", "class_controller" ],
     [ "GamePadState", "struct_game_pad_state.html", "struct_game_pad_state" ],
     [ "GameScene", "class_game_scene.html", "class_game_scene" ],

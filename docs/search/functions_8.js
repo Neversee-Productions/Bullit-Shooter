@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['label',['Label',['../classgui_1_1_label.html#addb92b228cf58df38d5c87f32ef9793d',1,'gui::Label::Label()'],['../classgui_1_1_label.html#a3cbf622aef364b29a7c0acc226c999d7',1,'gui::Label::Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, std::shared_ptr&lt; sf::Font &gt; font, sf::Color color=sf::Color::White)']]],
-  ['linkwidget',['linkWidget',['../classgui_1_1_g_u_i.html#a424ee163df62b48f6be76c9c98bac048',1,'gui::GUI']]],
-  ['loadscene',['loadScene',['../class_scene_manager.html#ac359429a768d09eaa82aa493885bf1c0',1,'SceneManager']]],
-  ['losefocus',['loseFocus',['../classgui_1_1_button.html#a73187326a00396c94df8a6dea3fc2132',1,'gui::Button::loseFocus()'],['../classgui_1_1_check_box.html#a6a5de0768f7072d84c8f382f15d09c1c',1,'gui::CheckBox::loseFocus()'],['../classgui_1_1_label.html#af0bf1020eb68aa653489ed5f76a9a525',1,'gui::Label::loseFocus()'],['../classgui_1_1_slider.html#a467631426394b906ceda125bc19b4fab',1,'gui::Slider::loseFocus()'],['../classgui_1_1_widget.html#a2e7574b55dfa70aaa91329e26c7cf957',1,'gui::Widget::loseFocus()']]]
+  ['initbulletmapvector',['initBulletMapVector',['../class_bullet_manager.html#ac42e3dfcdf93fd8d4e20ba19cc72031b',1,'BulletManager']]],
+  ['initbulletvector',['initBulletvector',['../class_bullet_manager.html#ab78a89d8d0b0a700f4bc62bf1c50fb2a',1,'BulletManager']]],
+  ['isactive',['isActive',['../classbullets_1_1_bullet.html#aaa99b721acc4f2ceba75fd95cb55b015',1,'bullets::Bullet']]],
+  ['isanybuttonpressed',['isAnyButtonPressed',['../class_controller.html#a27cd70503f62e007fc082ef403ab8a8d',1,'Controller']]],
+  ['isconnected',['isConnected',['../class_controller.html#a7d038f37d2b4d68dd1588b57c062a0ee',1,'Controller']]],
+  ['isopen',['isOpen',['../class_window.html#a761d614931fb5a5daa70e4f580c3e78e',1,'Window']]],
+  ['ispressed',['isPressed',['../class_key_handler.html#a23060a9c29fb10d80ca94863f977f34e',1,'KeyHandler']]],
+  ['isprevpressed',['isPrevPressed',['../class_key_handler.html#a91a81713f668041ff64c710b8b7a6e77',1,'KeyHandler']]]
 ];

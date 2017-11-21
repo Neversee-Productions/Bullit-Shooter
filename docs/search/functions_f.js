@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['weapon',['Weapon',['../class_weapon.html#a12e8d91eaec4d17f3507eee7ec9dc911',1,'Weapon']]],
-  ['widget',['Widget',['../classgui_1_1_widget.html#a3eb4d4efe93f6ada664df6058f8c5c33',1,'gui::Widget']]],
-  ['window',['Window',['../class_window.html#ac88f9c5ae954731a6a8df093b2223eba',1,'Window']]]
+  ['reusebullet',['reuseBullet',['../class_bullet_manager.html#a2cf961d2667a1f6e10b73ee786079861',1,'BulletManager']]],
+  ['run',['run',['../class_application.html#a68965449404743bf1add056784d6cf81',1,'Application']]]
 ];
