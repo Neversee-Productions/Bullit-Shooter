@@ -1,10 +1,15 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
+#include <thread>
 #include <memory>
-#include <map>
+#include <unordered_map>
+#include <fstream>
 #include <string>
+#include "ResourceHandler.h"
 #include "Scene.h"
+#include "Scenes\SplashScreen\SplashScene.h"
+#include "Scenes\TitleScene\TitleScene.h"
 #include "Scenes\GameScene\GameScene.h"
 #include "Scenes\MainMenuScene\MainMenuScene.h"
 #include "Scenes\OptionsScene\OptionsScene.h"
@@ -18,15 +23,35 @@
 /// 
 class SceneManager
 {
+private:
+
+	/// 
+	/// @brief Contains our managed scene.
+	/// @author Rafael Plugge
+	/// 
+	/// Contains our scene,
+	/// its resource loading thread and
+	/// its resource loader.
+	/// 
+	struct ManagedScene
+	{
+		std::shared_ptr<Scene> m_scene;
+		std::unique_ptr<std::thread> m_thread;
+		std::unique_ptr<std::string> m_resourcePath;
+	};
+
 public:
 	SceneManager(Window & window, std::shared_ptr<KeyHandler> keyHandler);
+	~SceneManager();
 	void update();
 	void draw(const float & deltaTime);
 
 private:
+	void addAllScenes();
 	Scene & getScene(const std::string & name);
 	Scene & getActive() const;
-	void addScene(std::shared_ptr<Scene> scenePt);
+	void addScene(std::shared_ptr<Scene> sptrScene, std::unique_ptr<std::string> uptrResources);
+	void preLoadScene(const std::string & name);
 	void loadScene(const std::string & name);
 	void goToNextScene();
 
@@ -51,13 +76,14 @@ private:
 	/// and is the target for our update/draw calls.
 	/// </summary>
 	std::shared_ptr<Scene> m_currentScene;
-	
+
+
 	/// <summary>
-	/// @brief Alias for our map of Scene's.
+	/// @brief Alias for our map of ScenePair's.
 	/// 
-	/// 
+	/// Our map will contain a value of type SceneTuple.
 	/// </summary>
-	typedef std::map<std::string, std::shared_ptr<Scene>> SceneMap;
+	typedef std::unordered_map<std::string, ManagedScene> SceneMap;
 
 	/// <summary>
 	/// @brief Container of all scenes.
@@ -67,6 +93,8 @@ private:
 	SceneMap m_sceneMap;
 
 	/// <summary>
+	/// @brief Shared pointer to a pre-created controller.
+	/// 
 	/// 
 	/// </summary>
 	std::shared_ptr<Controller> m_controller;

@@ -60,7 +60,6 @@ int main(int argc, char** argv)
 #ifdef NDEBUG
 	ShowWindow(GetConsoleWindow(), SW_HIDE);
 #endif // !NDEBUG
-
 	Application& app = Application();
 	app.run();
 }

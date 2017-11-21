@@ -24,50 +24,31 @@ OptionsScene::OptionsScene(
 }
 
 /// <summary>
+/// @brief Preloads resources on different thread.
+/// 
+/// </summary>
+/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
+void OptionsScene::preStart(const std::string & resourceFilePath)
+{
+	if (!m_resources)
+	{
+		this->setup(resourceFilePath);
+	}
+}
+
+/// <summary>
 /// @brief Configures our OptionsScene.
 /// 
 /// Setups appropriate resources for gui
 /// and defines a layout for the gui.
 /// </summary>
-void OptionsScene::start()
+/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
+void OptionsScene::start(const std::string & resourceFilePath)
 {
-	const std::string GUI_PATH("resources/gui/");
-	const std::string BTN_FONT_PATH = GUI_PATH + "fonts/QuartzMS.ttf";
-	const std::string BTN_TEXTURE_PATH = GUI_PATH + "textures/button.png";
-	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
-
-	m_nextSceneName = "";
-
-	m_resources = std::make_unique<Resources>();
-	// store dereferenced pointer
-	// used to avoid pointer syntax.
-	auto & resources = *m_resources;
-
-	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, true);
-	// store dereferenced pointer
-	// used to avoid pointer syntax.
-	auto & gui = *m_gui;
-
-	auto sptrButtonFont = resources.m_sptrButtonFont;
-	assert(sptrButtonFont->loadFromFile(BTN_FONT_PATH));
-
-	auto sptrButtonTexture = resources.m_sptrButtonTexture;
-	assert(sptrButtonTexture->loadFromFile(BTN_TEXTURE_PATH));
-
-	gui.addButton(
-		std::bind(&OptionsScene::btnBack, this),
-		"Back",
-		zero,
-		sptrButtonFont,
-		24u,
-		sptrButtonTexture,
-		gui::Button::s_TEXT_RECT_LEFT,
-		gui::Button::s_TEXT_RECT_MID,
-		gui::Button::s_TEXT_RECT_RIGHT
-	);
-
-	const auto& windowSize = App::getWindowSize();
-	gui.configure(gui::GUI::Layouts::StackVertically, windowSize);
+	if (!m_resources)
+	{
+		this->setup(resourceFilePath);
+	}
 }
 
 /// <summary>
@@ -77,9 +58,9 @@ void OptionsScene::start()
 /// </summary>
 void OptionsScene::stop()
 {
-	m_gui.reset(nullptr);
-	m_resources.reset(nullptr);
-	m_timer.reset(nullptr);
+	std::unique_ptr<gui::GUI>().swap(m_gui);
+	std::unique_ptr<Resources>().swap(m_resources);
+	std::unique_ptr<sf::Clock>().swap(m_timer);
 }
 
 /// <summary>
@@ -94,7 +75,7 @@ void OptionsScene::update()
 		const auto & timeInSeconds = m_timer->getElapsedTime().asSeconds();
 		if (timeInSeconds >= m_DELAY_TIME)
 		{
-			m_nextSceneName = std::move(m_nextName);
+			this->goToNextScene();
 			m_timer.reset(nullptr);
 		}
 	}
@@ -115,6 +96,71 @@ void OptionsScene::update()
 void OptionsScene::draw(Window & window, const float & deltaTime)
 {
 	m_gui->draw(window);
+}
+
+/// <summary>
+/// @brief Tells the SceneManager to change to another Scene.
+/// 
+/// 
+/// </summary>
+void OptionsScene::goToNextScene()
+{
+	Scene::setNextSceneName(m_nextName);
+}
+
+/// <summary>
+/// @brief Loads up all assets necessary for OptionsScene.
+/// 
+/// 
+/// </summary>
+/// <param name="filePath">defines the path to the json file for this scene</param>
+void OptionsScene::setup(const std::string & filePath)
+{
+	auto & resourceHandler = ResourceHandler::get();
+	Scene::setNextSceneName("");
+
+	std::ifstream fileRaw(filePath);
+	json::json jsonLoader;
+	fileRaw >> jsonLoader;
+
+	m_resources = std::make_unique<Resources>();
+
+	m_resources->m_sptrButtonFont = resourceHandler.loadUp<sf::Font>(jsonLoader, "button");
+	assert(nullptr != m_resources->m_sptrButtonFont);
+
+	m_resources->m_sptrButtonTexture = resourceHandler.loadUp<sf::Texture>(jsonLoader, "button");
+	assert(nullptr != m_resources->m_sptrButtonTexture);
+
+	loadGui(*m_resources, jsonLoader.at("fontsize").get<unsigned int>());
+}
+
+void OptionsScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)
+{
+	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
+	auto sptrButtonFont = resources.m_sptrButtonFont;
+	auto sptrButtonTexture = resources.m_sptrButtonTexture;
+
+	// instantiate our gui object and assign ownership.
+	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, true);
+	// store dereferenced pointer
+	// used to avoid pointer syntax.
+	auto & gui = *m_gui;
+
+	gui.addButton(
+		std::bind(&OptionsScene::btnBack, this),
+		"Back",
+		zero,
+		sptrButtonFont,
+		fontSize,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+
+	const auto& windowSize = App::getWindowSize();
+	gui.configure(gui::GUI::Layouts::StackVertically, windowSize);
+
 }
 
 /// <summary>

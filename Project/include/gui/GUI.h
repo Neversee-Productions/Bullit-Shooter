@@ -152,6 +152,13 @@ namespace gui
 		/// Defaulted to false in constructor.
 		/// </summary>
 		bool m_drawStrip;
+
+		/// <summary>
+		/// @brief Determines what layout the gui is currently configured to.
+		/// 
+		/// Defaulted to Layouts::Custom.
+		/// </summary>
+		Layouts m_layout;
 	};
 
 }

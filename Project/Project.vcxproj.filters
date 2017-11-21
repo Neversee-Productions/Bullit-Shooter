@@ -79,6 +79,30 @@
     <Filter Include="Source Files\tinyh">
       <UniqueIdentifier>{ea896656-eecd-42b2-9a7d-6a52cf984c30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\scenes">
+      <UniqueIdentifier>{3cd0912c-4ad7-43e0-a95d-eb3d5f40bcaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\MainMenu">
+      <UniqueIdentifier>{6373db25-51ea-46e7-a295-00fc59fb2abf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Title">
+      <UniqueIdentifier>{fca74113-5f38-47a2-abcd-58258bfbd56e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Splash">
+      <UniqueIdentifier>{fcbb99db-c222-4e12-a5ba-54b194f4c10e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Options">
+      <UniqueIdentifier>{00d51f87-3b17-4281-8734-cdc488315c13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Splash\textures">
+      <UniqueIdentifier>{0da45943-b28c-4112-9cb5-e8900929faa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Title\textures">
+      <UniqueIdentifier>{47ac035e-d7e0-411f-bdb2-2fc41515aa57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Title\fonts">
+      <UniqueIdentifier>{9a611d8e-0840-445e-b563-7e664be94087}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\Scenes\GameScene\Bullets">
       <UniqueIdentifier>{8a0658ee-1037-4327-b2ec-1108f16c6f74}</UniqueIdentifier>
     </Filter>
@@ -153,6 +177,15 @@
     <ClCompile Include="src\tinyheaders\tinyc2.cpp">
       <Filter>Source Files\tinyh</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\TitleScene\TitleScene.cpp">
+      <Filter>Source Files\Scenes\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp">
+      <Filter>Source Files\Scenes\SplashScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\Scenes\GameScene\Bullets\Bullet.cpp">
       <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
     </ClCompile>
@@ -193,6 +226,21 @@
   <ItemGroup>
     <None Include="..\README.md">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\scenes.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\scenes\MainMenu\MainMenu.json">
+      <Filter>Resource Files\scenes\MainMenu</Filter>
+    </None>
+    <None Include="resources\scenes\Options\Options.json">
+      <Filter>Resource Files\scenes\Options</Filter>
+    </None>
+    <None Include="resources\scenes\Splash\Splash.json">
+      <Filter>Resource Files\scenes\Splash</Filter>
+    </None>
+    <None Include="resources\scenes\Title\Title.json">
+      <Filter>Resource Files\scenes\Title</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +304,15 @@
     <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h">
       <Filter>Header Files\Scenes\OptionsScene</Filter>
     </ClInclude>
+    <ClInclude Include="include\Scenes\TitleScene\TitleScene.h">
+      <Filter>Header Files\Scenes\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h">
+      <Filter>Header Files\Scenes\SplashScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ResourceHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Bullets\Bullet.h">
       <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
     </ClInclude>
@@ -306,10 +363,22 @@
     <Image Include="resources\gui\textures\slider.png">
       <Filter>Resource Files\gui\textures</Filter>
     </Image>
+    <Image Include="resources\scenes\Splash\textures\splash_screen.png">
+      <Filter>Resource Files\scenes\Splash\textures</Filter>
+    </Image>
+    <Image Include="resources\scenes\Title\textures\background.jpg">
+      <Filter>Resource Files\scenes\Title\textures</Filter>
+    </Image>
+    <Image Include="resources\scenes\Title\textures\title.png">
+      <Filter>Resource Files\scenes\Title\textures</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\gui\fonts\QuartzMS.TTF">
       <Filter>Resource Files\gui\fonts</Filter>
+    </Font>
+    <Font Include="resources\scenes\Title\fonts\text.ttf">
+      <Filter>Resource Files\scenes\Title\fonts</Filter>
     </Font>
   </ItemGroup>
 </Project>
