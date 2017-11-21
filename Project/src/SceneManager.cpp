@@ -38,7 +38,7 @@ SceneManager::SceneManager(
 			// therefore with both main menu and options gui using
 			// the same font for their buttons a data race occurs
 			// causing a crash when the font is given the letters
-			// it needs to load from each button in both main menu and options
+			// it needs to load from each button in both main menu and options.
 			if (mapPair.first != "Options")
 			{
 				// This line will startup all of the scenes
