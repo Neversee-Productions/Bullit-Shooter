@@ -30,6 +30,7 @@
     <ClCompile Include="src\input\KeyHandler.cpp" />
     <ClCompile Include="src\input\Controller.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ResourceHandler.cpp" />
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\SceneManager.cpp" />
     <ClCompile Include="src\Scenes\MainMenuScene\MainMenuScene.cpp" />
@@ -41,11 +42,18 @@
     <ClCompile Include="src\Scenes\GameScene\Ship.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Weapon.cpp" />
     <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp" />
+    <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp" />
+    <ClCompile Include="src\Scenes\TitleScene\TitleScene.cpp" />
     <ClCompile Include="src\tinyheaders\tinyc2.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+    <None Include="resources\scenes.json" />
+    <None Include="resources\scenes\MainMenu\MainMenu.json" />
+    <None Include="resources\scenes\Options\Options.json" />
+    <None Include="resources\scenes\Splash\Splash.json" />
+    <None Include="resources\scenes\Title\Title.json" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\App.h" />
@@ -58,6 +66,7 @@
     <ClInclude Include="include\gui\widgets\Widget.h" />
     <ClInclude Include="include\input\KeyHandler.h" />
     <ClInclude Include="include\input\Controller.h" />
+    <ClInclude Include="include\ResourceHandler.h" />
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\SceneManager.h" />
     <ClInclude Include="include\Scenes\GameScene\BulletTypes.h" />
@@ -70,15 +79,21 @@
     <ClInclude Include="include\Scenes\GameScene\Ship.h" />
     <ClInclude Include="include\Scenes\GameScene\Weapon.h" />
     <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h" />
+    <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h" />
+    <ClInclude Include="include\Scenes\TitleScene\TitleScene.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\gui\textures\button.png" />
     <Image Include="resources\gui\textures\checkbox.png" />
     <Image Include="resources\gui\textures\slider.png" />
+    <Image Include="resources\scenes\Splash\textures\splash_screen.png" />
+    <Image Include="resources\scenes\Title\textures\background.jpg" />
+    <Image Include="resources\scenes\Title\textures\title.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\gui\fonts\QuartzMS.TTF" />
+    <Font Include="resources\scenes\Title\fonts\text.ttf" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

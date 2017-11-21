@@ -22,6 +22,7 @@ var classgui_1_1_g_u_i =
     [ "m_controller", "classgui_1_1_g_u_i.html#a2a25d69b79031de4274d53db9ce26db9", null ],
     [ "m_drawStrip", "classgui_1_1_g_u_i.html#a0cf8fc128063fd6325dd20a7318ad44d", null ],
     [ "m_keyHandler", "classgui_1_1_g_u_i.html#a58d151fb08241194448987dfc1a51174", null ],
+    [ "m_layout", "classgui_1_1_g_u_i.html#a03d87df4dc32d201d08886ea24189345", null ],
     [ "m_layoutNr", "classgui_1_1_g_u_i.html#aa8772402b10f06c910ebd8ef58be83aa", null ],
     [ "m_rectangleStrip", "classgui_1_1_g_u_i.html#ad86351bb29495deac5b830a7cd61ace7", null ],
     [ "m_screenMargin", "classgui_1_1_g_u_i.html#a06cf86cbfc0583f77e0e7b1b6f82387a", null ],

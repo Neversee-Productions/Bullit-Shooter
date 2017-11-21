@@ -14,6 +14,7 @@ gui::GUI::GUI(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller
 	, m_drawStrip(stripDraw)
 	, m_widgets()
 	, m_rectangleStrip()
+	, m_layout(Layouts::Custom)
 {
 	m_widgets.reserve(5);
 	if (m_drawStrip) //if we are drawing the strip then set it up
@@ -92,6 +93,8 @@ void gui::GUI::draw(Window & window) const
 /// <param name="windowSize">defines the size of the window.</param>
 void gui::GUI::configure(const Layouts & layout, const sf::Vector2u & windowSize)
 {
+	m_layout = layout;
+
 	const auto & screenSize = static_cast<sf::Vector2f>(windowSize);
 
 	sf::Vector2f screen = screenSize;
@@ -397,26 +400,43 @@ void gui::GUI::processInput()
 	}
 	else
 	{
+
+		const auto & IS_DIAGONAL = (m_layout == Layouts::StripDiagonal);
+
 		const auto & KEY_UP = m_keyHandler->isPressed(sf::Keyboard::Key::Up);
 		const auto & PREV_KEY_UP = m_keyHandler->isPrevPressed(sf::Keyboard::Key::Up);
 		const auto & KEY_DOWN = m_keyHandler->isPressed(sf::Keyboard::Key::Down);
 		const auto & PREV_KEY_DOWN = m_keyHandler->isPrevPressed(sf::Keyboard::Key::Down);
+
+		const auto & KEY_LEFT = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::Left);
+		const auto & PREV_KEY_LEFT = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::Left);
+		const auto & KEY_RIGHT = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::Right);
+		const auto & PREV_KEY_RIGHT = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::Right);
 
 		const auto & KEY_W = m_keyHandler->isPressed(sf::Keyboard::Key::W);
 		const auto & PREV_KEY_W = m_keyHandler->isPrevPressed(sf::Keyboard::Key::W);
 		const auto & KEY_S = m_keyHandler->isPressed(sf::Keyboard::Key::S);
 		const auto & PREV_KEY_S = m_keyHandler->isPrevPressed(sf::Keyboard::Key::S);
 
+		const auto & KEY_A = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::A);
+		const auto & PREV_KEY_A = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::A);
+		const auto & KEY_D = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::D);
+		const auto & PREV_KEY_D = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::D);
+
 		if (
 			(KEY_UP && !PREV_KEY_UP)
+			|| (KEY_LEFT && !PREV_KEY_LEFT)
 			|| (KEY_W && !PREV_KEY_W)
+			|| (KEY_A && !PREV_KEY_A)
 			)
 		{
 			moveToPrevWidgets();
 		}
 		if (
 			(KEY_DOWN && !PREV_KEY_DOWN)
+			|| (KEY_RIGHT && !PREV_KEY_RIGHT)
 			|| (KEY_S && !PREV_KEY_S)
+			|| (KEY_D && !PREV_KEY_D)
 			)
 		{
 			moveToNextWidgets();

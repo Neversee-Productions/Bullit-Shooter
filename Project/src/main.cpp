@@ -54,13 +54,12 @@
 /// @file
 /// </summary>
 /// <param name="argc">number of arguments passed into the application.</param>
-/// <param name="argv">c style string of the arguments passed into the application</param>
+/// <param name="argv">c style string of the arguments passed into the application.</param>
 int main(int argc, char** argv)
 {
 #ifdef NDEBUG
 	ShowWindow(GetConsoleWindow(), SW_HIDE);
 #endif // !NDEBUG
-
 	Application& app = Application();
 	app.run();
 }

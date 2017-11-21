@@ -1,6 +1,7 @@
 var searchData=
 [
   ['s_5ffire_5frate',['s_FIRE_RATE',['../class_bullet_standard.html#aa349f2b8055b5aefe60baad5209ae610',1,'BulletStandard']]],
+  ['s_5finstance',['s_instance',['../class_resource_handler.html#a58a35b535a836c1e7044abd677a367e9',1,'ResourceHandler']]],
   ['s_5frectwindow',['s_rectWindow',['../class_app.html#ae6b4e765084e7bb26d4f069e39cc0f64',1,'App']]],
   ['s_5ftext_5frect_5fempty',['s_TEXT_RECT_EMPTY',['../classgui_1_1_slider.html#ad4110d5c12af149300777189d5f4d49f',1,'gui::Slider']]],
   ['s_5ftext_5frect_5ffill',['s_TEXT_RECT_FILL',['../classgui_1_1_slider.html#a49d63504570a9240d9fe5f9aa1ab51db',1,'gui::Slider']]],
