@@ -5,6 +5,7 @@
 #include "SFML\Graphics\RectangleShape.hpp"
 #include "Player.h"
 #include "tinyheaders\tinyc2.h"
+#include "Asteroid.h"
 
 ///
 /// @brief Main game scene.
@@ -63,6 +64,13 @@ private:
 	/// Used as to determine the lifetime of its members.
 	/// </summary>
 	std::unique_ptr<Resources> m_resources;
+
+	/// <summary>
+	/// @brief defines an asteroid.
+	/// 
+	/// 
+	/// </summary>
+	Asteroid m_asteroid;
 };
 
 #endif // !GAMESCENE_H

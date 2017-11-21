@@ -7,5 +7,6 @@ var searchData=
   ['addscene',['addScene',['../class_scene_manager.html#adaaf8f135824e5f98635880d01ac1396',1,'SceneManager']]],
   ['addslider',['addSlider',['../classgui_1_1_g_u_i.html#a48f28ef9a62b0ec6f0f56415d857c8ce',1,'gui::GUI']]],
   ['app',['App',['../class_app.html#acb8cbf3e285b91d0170ffe87df5989c5',1,'App']]],
-  ['application',['Application',['../class_application.html#afa8cc05ce6b6092be5ecdfdae44e05f8',1,'Application']]]
+  ['application',['Application',['../class_application.html#afa8cc05ce6b6092be5ecdfdae44e05f8',1,'Application']]],
+  ['asteroid',['Asteroid',['../class_asteroid.html#a603c2eb87a4ed26c5b3fb06e953d611c',1,'Asteroid']]]
 ];

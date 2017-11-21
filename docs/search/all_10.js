@@ -11,7 +11,7 @@ var searchData=
   ['resourcehandler',['ResourceHandler',['../class_resource_handler.html',1,'ResourceHandler'],['../class_resource_handler.html#a0a33aab3f38dba04b5dc3f4496d324df',1,'ResourceHandler::ResourceHandler()']]],
   ['resourcehandler_2ecpp',['ResourceHandler.cpp',['../_resource_handler_8cpp.html',1,'']]],
   ['resourcehandler_2eh',['ResourceHandler.h',['../_resource_handler_8h.html',1,'']]],
-  ['resources',['Resources',['../struct_game_scene_1_1_resources.html',1,'GameScene::Resources'],['../struct_main_menu_scene_1_1_resources.html',1,'MainMenuScene::Resources'],['../struct_options_scene_1_1_resources.html',1,'OptionsScene::Resources'],['../struct_splash_scene_1_1_resources.html',1,'SplashScene::Resources'],['../struct_title_scene_1_1_resources.html',1,'TitleScene::Resources']]],
+  ['resources',['Resources',['../struct_game_scene_1_1_resources.html',1,'GameScene::Resources'],['../struct_main_menu_scene_1_1_resources.html',1,'MainMenuScene::Resources'],['../struct_splash_scene_1_1_resources.html',1,'SplashScene::Resources'],['../struct_title_scene_1_1_resources.html',1,'TitleScene::Resources'],['../struct_options_scene_1_1_resources.html',1,'OptionsScene::Resources']]],
   ['reusebullet',['reuseBullet',['../class_bullet_manager.html#a2cf961d2667a1f6e10b73ee786079861',1,'BulletManager']]],
   ['rightbumper',['RightBumper',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a509b4eb4dd040194b2aa506683ccfbad',1,'Controller.h']]],
   ['rightthumbclick',['RightThumbClick',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0af090f806d9f9d4e9b3ccdc4ac0a26d23',1,'Controller.h']]],

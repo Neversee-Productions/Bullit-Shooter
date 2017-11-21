@@ -40,6 +40,7 @@ public:
 	void fireEmpowered(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
 	void setEmpowered(bullets::Bullet& bullet ,const float& angle, const sf::Vector2f& pos);
 
+private:
 	/// <summary>
 	/// @brief how long since last fire.
 	/// 

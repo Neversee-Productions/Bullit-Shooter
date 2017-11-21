@@ -19,6 +19,7 @@ public:
 	Player(KeyHandler& keyHandler);
 	void draw(Window & window, const float & deltaTime);
 	void update();
+private:
 
 	/// <summary>
 	/// @brief Defines the ship object.

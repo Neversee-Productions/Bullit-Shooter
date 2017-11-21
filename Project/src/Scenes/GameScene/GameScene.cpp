@@ -10,12 +10,15 @@ GameScene::GameScene(KeyHandler& keyHandler)
 	, m_player(keyHandler)
 	, m_keyHandler(keyHandler)
 	, m_resources(nullptr)
+	, m_asteroid()
 {
+	m_asteroid.setActive(true);
+	m_asteroid.setVelocity(sf::Vector2f(-5.0f, 1.0f));
 }
 
 /// <summary>
 /// @brief Preloads resources on different thread.
-/// 
+///
 /// </summary>
 /// <param name="resourceFilePath">defines the path to the json file for this scene</param>
 void GameScene::preStart(const std::string & resourceFilePath)
@@ -56,6 +59,7 @@ void GameScene::stop()
 void GameScene::update()
 {
 	m_player.update();
+	m_asteroid.update();
 }
 
 /// <summary>
@@ -68,6 +72,7 @@ void GameScene::update()
 void GameScene::draw(Window & window, const float & deltaTime)
 {
 	m_player.draw(window, deltaTime);
+	m_asteroid.draw(window, deltaTime);
 }
 
 /// <summary>
