@@ -50,3 +50,36 @@ void Weapon::update(const sf::Vector2f& pos)
 
 	m_weaponRect.setPosition(pos);
 }
+
+/// <summary>
+/// @brief sets new position of rectangle.
+/// 
+/// 
+/// </summary>
+/// <param name="pos">defines new position</param>
+void Weapon::setRectPos(sf::Vector2f pos)
+{
+	m_weaponRect.setPosition(pos);
+}
+
+/// <summary>
+/// @brief returns the rectangles position.
+/// 
+/// 
+/// </summary>
+/// <returns>returns a constant reference to the position</returns>
+const sf::Vector2f & Weapon::getPosition()
+{
+	return m_weaponRect.getPosition();
+}
+
+/// <summary>
+/// @brief return the weapons current type.
+/// 
+/// 
+/// </summary>
+/// <returns>Constant reference to the bullet type</returns>
+const BulletTypes & Weapon::getBulletType()
+{
+	return m_currentBullet;
+}

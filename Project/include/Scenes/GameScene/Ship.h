@@ -18,7 +18,9 @@ public:
 	void moveUp();
 	void moveDown();
 	void update();
+	const sf::Vector2f & getShipRect();
 
+private:
 	/// <summary>
 	/// @brief Represents the ship.
 	/// 
