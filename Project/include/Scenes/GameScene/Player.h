@@ -19,6 +19,7 @@ public:
 	Player(KeyHandler& keyHandler);
 	void draw(Window & window, const float & deltaTime);
 	void update();
+	const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & getBulletMap();
 private:
 
 	/// <summary>

@@ -3,6 +3,7 @@
 
 #include "SFML\Graphics.hpp"
 #include "Window.h"
+#include <stdlib.h>
 
 ///
 /// @brief An asteroid entity class.
@@ -18,8 +19,14 @@ public:
 	void draw(Window & window, const float & deltaTime);
 	void setVelocity(sf::Vector2f vel);
 	void setActive(bool active);
-private:
+	void updateCollisionCircle();
+	void generateRandomVel();
+	void generateRandomPos();
+	void reuseAsteroid();
+	void updateWindowCollisions();
+	tinyh::c2Circle getCollisionCircle();
 
+private:
 	/// <summary>
 	/// @brief define rectangle to draw texture on.
 	/// 
@@ -54,6 +61,20 @@ private:
 	/// 
 	/// </summary>
 	bool m_active;
+
+	/// <summary>
+	/// @brief define the collision circle.
+	/// 
+	/// 
+	/// </summary>
+	tinyh::c2Circle m_collisionCircle;
+
+	/// <summary>
+	/// @brief window collision box.
+	/// 
+	/// 
+	/// </summary>
+	tinyh::c2AABB m_windowC2Rect;
 };
 
 #endif // !ASTEROIDS_H

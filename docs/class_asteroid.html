@@ -106,6 +106,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa1aec16c7ae1d887f4a56f927fd6c9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad774feb18aebd32bfcdf056c6097c37d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ad774feb18aebd32bfcdf056c6097c37d">setActive</a> (bool active)</td></tr>
 <tr class="separator:ad774feb18aebd32bfcdf056c6097c37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62156d3f0c9cf7f475a6bc172f372e28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a62156d3f0c9cf7f475a6bc172f372e28">updateCollisionCircle</a> ()</td></tr>
+<tr class="separator:a62156d3f0c9cf7f475a6bc172f372e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42186d68ba22d3a1c5dfb20ae8a0ff72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a42186d68ba22d3a1c5dfb20ae8a0ff72">generateRandomVel</a> ()</td></tr>
+<tr class="separator:a42186d68ba22d3a1c5dfb20ae8a0ff72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66677a18808fbfa7df569b920b833ea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a66677a18808fbfa7df569b920b833ea8">generateRandomPos</a> ()</td></tr>
+<tr class="separator:a66677a18808fbfa7df569b920b833ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c591c4e40e58f7e8cd6946f74735b7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a1c591c4e40e58f7e8cd6946f74735b7a">reuseAsteroid</a> ()</td></tr>
+<tr class="separator:a1c591c4e40e58f7e8cd6946f74735b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a693c1df43589c9f9417bbba59a3b61b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a693c1df43589c9f9417bbba59a3b61b0">updateWindowCollisions</a> ()</td></tr>
+<tr class="separator:a693c1df43589c9f9417bbba59a3b61b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f818e720d1916035e88010b7cef1b7f"><td class="memItemLeft" align="right" valign="top">tinyh::c2Circle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a8f818e720d1916035e88010b7cef1b7f">getCollisionCircle</a> ()</td></tr>
+<tr class="separator:a8f818e720d1916035e88010b7cef1b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -119,6 +131,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac3e457510348bac65ce659bb679c81dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4ab0f4e46a5d6a3b0410ddbca949c4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#af4ab0f4e46a5d6a3b0410ddbca949c4a">m_active</a></td></tr>
 <tr class="separator:af4ab0f4e46a5d6a3b0410ddbca949c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c2388afb2c00cc1779912110bfb527"><td class="memItemLeft" align="right" valign="top">tinyh::c2Circle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#af2c2388afb2c00cc1779912110bfb527">m_collisionCircle</a></td></tr>
+<tr class="separator:af2c2388afb2c00cc1779912110bfb527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17d2ded1192f1c0b20f7193e546295a4"><td class="memItemLeft" align="right" valign="top">tinyh::c2AABB&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a17d2ded1192f1c0b20f7193e546295a4">m_windowC2Rect</a></td></tr>
+<tr class="separator:a17d2ded1192f1c0b20f7193e546295a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
@@ -176,6 +192,82 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a66677a18808fbfa7df569b920b833ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66677a18808fbfa7df569b920b833ea8">&#9670;&nbsp;</a></span>generateRandomPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::generateRandomPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>generate random position.</p>
+<p>Generates a random y position x will always be the same when spawning a new asteroid. </p>
+
+</div>
+</div>
+<a id="a42186d68ba22d3a1c5dfb20ae8a0ff72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42186d68ba22d3a1c5dfb20ae8a0ff72">&#9670;&nbsp;</a></span>generateRandomVel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::generateRandomVel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>generates a random velocity.</p>
+<p>Velocity is not fully random and will be constrained to go more or less towards the screen. </p>
+
+</div>
+</div>
+<a id="a8f818e720d1916035e88010b7cef1b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f818e720d1916035e88010b7cef1b7f">&#9670;&nbsp;</a></span>getCollisionCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tinyh::c2Circle Asteroid::getCollisionCircle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>returns a constant reference to the collision rectangle.</p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to collision box</dd></dl>
+
+</div>
+</div>
+<a id="a1c591c4e40e58f7e8cd6946f74735b7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c591c4e40e58f7e8cd6946f74735b7a">&#9670;&nbsp;</a></span>reuseAsteroid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::reuseAsteroid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>method to reuse an asteroid.</p>
+<p>generates new position and velocity values sets the active to true. </p>
 
 </div>
 </div>
@@ -241,6 +333,43 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a62156d3f0c9cf7f475a6bc172f372e28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62156d3f0c9cf7f475a6bc172f372e28">&#9670;&nbsp;</a></span>updateCollisionCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::updateCollisionCircle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>updates the position of the collision circle.</p>
+
+</div>
+</div>
+<a id="a693c1df43589c9f9417bbba59a3b61b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a693c1df43589c9f9417bbba59a3b61b0">&#9670;&nbsp;</a></span>updateWindowCollisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::updateWindowCollisions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Update collision with window.</p>
+<p>If asteroid is offscreen it becomes inactive. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="af4ab0f4e46a5d6a3b0410ddbca949c4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4ab0f4e46a5d6a3b0410ddbca949c4a">&#9670;&nbsp;</a></span>m_active</h2>
@@ -285,6 +414,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>define asteroid shape.</p>
+
+</div>
+</div>
+<a id="af2c2388afb2c00cc1779912110bfb527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c2388afb2c00cc1779912110bfb527">&#9670;&nbsp;</a></span>m_collisionCircle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tinyh::c2Circle Asteroid::m_collisionCircle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the collision circle.</p>
 
 </div>
 </div>
@@ -354,6 +506,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>define the velocity of asteroid.</p>
+
+</div>
+</div>
+<a id="a17d2ded1192f1c0b20f7193e546295a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17d2ded1192f1c0b20f7193e546295a4">&#9670;&nbsp;</a></span>m_windowC2Rect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tinyh::c2AABB Asteroid::m_windowC2Rect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>window collision box.</p>
 
 </div>
 </div>

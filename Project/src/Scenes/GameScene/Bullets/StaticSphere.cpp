@@ -12,6 +12,7 @@ bullets::StaticSphere::StaticSphere()
 	: Bullet()
 	, m_pulse(false)
 	, m_pulseTimer(0.0f)
+	, m_pulseCircleCollider()
 {
 	m_speed = 6.0f;
 	m_velocity.x = m_speed;
@@ -26,6 +27,10 @@ bullets::StaticSphere::StaticSphere()
 	m_pulseCircle.setFillColor(sf::Color(0u, 0u, 0u, 0u));
 	m_pulseCircle.setPosition(m_position);
 	m_pulseCircle.setOrigin(m_pulseCircle.getRadius(), m_pulseCircle.getRadius());
+
+	m_pulseCircleCollider.p.x = m_pulseCircle.getPosition().x;
+	m_pulseCircleCollider.p.y = m_pulseCircle.getPosition().y;
+	m_pulseCircleCollider.r = m_pulseCircle.getRadius();
 
 	//change collision rectangle
 	updateBox();
@@ -46,11 +51,19 @@ void bullets::StaticSphere::update()
 		m_pulseCircle.setOrigin(m_pulseCircle.getRadius(), m_pulseCircle.getRadius());
 		m_pulseCircle.setPosition(m_position);
 		m_pulse = true;
+
+		m_pulseCircleCollider.p.x = m_pulseCircle.getPosition().x;
+		m_pulseCircleCollider.p.y = m_pulseCircle.getPosition().y;
+		m_pulseCircleCollider.r = m_pulseCircle.getRadius();
 	}
 	if (m_pulseCircle.getRadius() > 100)
 	{
 		m_pulseCircle.setRadius(0.0f);
 		m_pulseTimer = 0.0f;
+
+		m_pulseCircleCollider.p.x = m_pulseCircle.getPosition().x;
+		m_pulseCircleCollider.p.y = m_pulseCircle.getPosition().y;
+		m_pulseCircleCollider.r = m_pulseCircle.getRadius();
 	}
 	updateBox();
 }
@@ -97,4 +110,17 @@ void bullets::StaticSphere::setActive(bool active)
 		m_pulseTimer = 0.0f;
 	}
 	m_active = active;
+}
+
+/// <summary>
+/// @brief overriden circle collision.
+/// 
+/// This version will have to take into account the pulse circle as well
+/// as the bullet shape itself,
+/// </summary>
+/// <param name="other">circle to check collision against</param>
+/// <returns>If collision is happening returns true</returns>
+bool bullets::StaticSphere::checkCircleCollision(const tinyh::c2Circle & other)
+{
+	return false;
 }

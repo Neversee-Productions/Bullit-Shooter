@@ -51,6 +51,8 @@ void bullets::PyroBlast::update()
 			setActive(false);
 		}
 	}
+	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
+	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 	updateBox();
 }
 
@@ -76,7 +78,7 @@ void bullets::PyroBlast::setActive(bool active)
 {
 	if (!active)
 	{
-		m_bulletRect.setSize(sf::Vector2f(20.0f, 10.0f));
+		m_bulletRect.setSize(sf::Vector2f(20.0f, 15.0f));
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_explode = false;
 		TIMETOLIVE = 3.0f;

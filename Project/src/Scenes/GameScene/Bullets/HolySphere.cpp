@@ -57,6 +57,8 @@ void bullets::HolySphere::update()
 			setActive(false);
 		}
 	}
+	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
+	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 	updateBox();
 }
 

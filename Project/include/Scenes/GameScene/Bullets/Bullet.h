@@ -27,6 +27,7 @@ namespace bullets
 		void setAngle(const float& angle);
 		void updateVelocityVector();
 		bool isActive() const;
+		virtual bool checkCircleCollision(const tinyh::c2Circle & other);
 	protected:
 		/// <summary>
 		/// @brief represents the position.
@@ -90,6 +91,9 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_angle;
+
+
+		sf::RectangleShape tempRect;
 	};
 }
 #endif // !BULLET_H

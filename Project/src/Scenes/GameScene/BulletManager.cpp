@@ -291,6 +291,17 @@ void BulletManager::setEmpowered(bullets::Bullet & bullet, const float & angle, 
 }
 
 /// <summary>
+/// @brief get a constant reference to the bullets.
+/// 
+/// 
+/// </summary>
+/// <returns>map of bullets</returns>
+const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>>& BulletManager::getBulletMap()
+{
+	return m_bulletMap;
+}
+
+/// <summary>
 /// @brief Initialise vector inside map based on the type.
 /// 
 /// This method will insert a vector of unique pointers to standard bullets

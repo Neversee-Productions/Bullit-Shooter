@@ -40,6 +40,8 @@ public:
 	void stop() final override;
 	void update() final override;
 	void draw(Window & window, const float & deltaTime) final override;
+	void updateCollisions();
+	void bulletAsteroidsCollision();
 
 private:
 	void goToNextScene() final override;
@@ -71,6 +73,13 @@ private:
 	/// 
 	/// </summary>
 	Asteroid m_asteroid;
+
+	/// <summary>
+	/// @brief constant reference to the window.
+	/// 
+	/// 
+	/// </summary>
+	const tinyh::c2AABB& m_windowC2Rect;
 };
 
 #endif // !GAMESCENE_H

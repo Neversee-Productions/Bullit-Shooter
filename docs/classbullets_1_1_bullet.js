@@ -1,6 +1,7 @@
 var classbullets_1_1_bullet =
 [
     [ "Bullet", "classbullets_1_1_bullet.html#a462ca59bc035c25f2d3fcfd351c6b243", null ],
+    [ "checkCircleCollision", "classbullets_1_1_bullet.html#acfdff6141121c2eb89f1abcec498d606", null ],
     [ "draw", "classbullets_1_1_bullet.html#abb70aa96964976513ce6f067d13743ba", null ],
     [ "getCollisionRect", "classbullets_1_1_bullet.html#ab9913ac51dc0bd3824dff9f51393ce4e", null ],
     [ "isActive", "classbullets_1_1_bullet.html#aaa99b721acc4f2ceba75fd95cb55b015", null ],
@@ -18,5 +19,6 @@ var classbullets_1_1_bullet =
     [ "m_position", "classbullets_1_1_bullet.html#a37850bb27e3903d69b55c2d76e238bd4", null ],
     [ "m_speed", "classbullets_1_1_bullet.html#a0b67476aa9f0504417a9526b3203acd8", null ],
     [ "m_type", "classbullets_1_1_bullet.html#ac70c4d94b81f7fca3d1e5845b9aefda9", null ],
-    [ "m_velocity", "classbullets_1_1_bullet.html#a4a39935b0bbd51d686e9e66577fa5045", null ]
+    [ "m_velocity", "classbullets_1_1_bullet.html#a4a39935b0bbd51d686e9e66577fa5045", null ],
+    [ "tempRect", "classbullets_1_1_bullet.html#a31e316bcf4267f76131795414cdb6def", null ]
 ];
