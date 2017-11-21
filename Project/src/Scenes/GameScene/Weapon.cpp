@@ -9,10 +9,12 @@
 Weapon::Weapon(sf::Vector2f position)
 	: m_weaponRect()
 	, m_currentBullet(BulletTypes::Standard)
+	, m_position(position)
+	, TEMPTIME(0.0f)
 {
 	m_weaponRect.setPosition(position);
 	m_weaponRect.setFillColor(sf::Color::Blue);
-	m_weaponRect.setSize(sf::Vector2f(50.0f, 50.0f));
+	m_weaponRect.setSize(sf::Vector2f(25.0f, 25.0f));
 	m_weaponRect.setOrigin(m_weaponRect.getSize().x / 2, m_weaponRect.getSize().y / 2);
 }
 
@@ -26,4 +28,25 @@ Weapon::Weapon(sf::Vector2f position)
 void Weapon::draw(Window & window, const float & deltaTime)
 {
 	window.draw(m_weaponRect);
+}
+
+/// <summary>
+/// @brief update position vector.
+/// 
+/// 
+/// </summary>
+void Weapon::update(const sf::Vector2f& pos)
+{
+	//REMOVE TEMPTIME
+	TEMPTIME += App::getUpdateDeltaTime();
+	if (TEMPTIME >= 7.0f)
+	{
+		auto bulletTypeNum = static_cast<int>(m_currentBullet);
+		m_currentBullet = static_cast<BulletTypes>(++bulletTypeNum);
+		TEMPTIME = 0.0f;
+	}
+	//REMOVE TEMPTIME
+
+
+	m_weaponRect.setPosition(pos);
 }

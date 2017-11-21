@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['rightbumper',['RightBumper',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a509b4eb4dd040194b2aa506683ccfbad',1,'Controller.h']]],
-  ['rightthumbclick',['RightThumbClick',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0af090f806d9f9d4e9b3ccdc4ac0a26d23',1,'Controller.h']]],
-  ['rightthumbstickx',['RightThumbstickX',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a5da4964be663fd5a22475ad2c945cacd',1,'Controller.h']]],
-  ['rightthumbsticky',['RightThumbstickY',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a3f7611216b80d322bbb892baa40524af',1,'Controller.h']]]
+  ['leftbumper',['LeftBumper',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a91aac15641d2e4fce8e8aef22a4ce4c7',1,'Controller.h']]],
+  ['leftthumbclick',['LeftThumbClick',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a96c92f8394ed7297b3c15e10704d0217',1,'Controller.h']]],
+  ['leftthumbstickx',['LeftThumbstickX',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0ae93ef3eb25e5b5a77059d8e90c55800b',1,'Controller.h']]],
+  ['leftthumbsticky',['LeftThumbstickY',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a1786afb91e567308bb6a4db730136585',1,'Controller.h']]]
 ];
