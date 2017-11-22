@@ -38,13 +38,13 @@ void Weapon::draw(Window & window, const float & deltaTime)
 void Weapon::update(const sf::Vector2f& pos)
 {
 	//REMOVE TEMPTIME
-	TEMPTIME += App::getUpdateDeltaTime();
-	if (TEMPTIME >= 7.0f)
-	{
-		auto bulletTypeNum = static_cast<int>(m_currentBullet);
-		m_currentBullet = static_cast<BulletTypes>(++bulletTypeNum);
-		TEMPTIME = 0.0f;
-	}
+	//TEMPTIME += App::getUpdateDeltaTime();
+	//if (TEMPTIME >= 7.0f)
+	//{
+	//	auto bulletTypeNum = static_cast<int>(m_currentBullet);
+	//	m_currentBullet = static_cast<BulletTypes>(++bulletTypeNum);
+	//	TEMPTIME = 0.0f;
+	//}
 	//REMOVE TEMPTIME
 
 

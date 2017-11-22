@@ -28,9 +28,7 @@ bullets::StaticSphere::StaticSphere()
 	m_pulseCircle.setPosition(m_position);
 	m_pulseCircle.setOrigin(m_pulseCircle.getRadius(), m_pulseCircle.getRadius());
 
-	m_pulseCircleCollider.p.x = m_pulseCircle.getPosition().x;
-	m_pulseCircleCollider.p.y = m_pulseCircle.getPosition().y;
-	m_pulseCircleCollider.r = m_pulseCircle.getRadius();
+	updateCollisionCircle();
 
 	//change collision rectangle
 	updateBox();
@@ -52,18 +50,14 @@ void bullets::StaticSphere::update()
 		m_pulseCircle.setPosition(m_position);
 		m_pulse = true;
 
-		m_pulseCircleCollider.p.x = m_pulseCircle.getPosition().x;
-		m_pulseCircleCollider.p.y = m_pulseCircle.getPosition().y;
-		m_pulseCircleCollider.r = m_pulseCircle.getRadius();
+		updateCollisionCircle();
 	}
 	if (m_pulseCircle.getRadius() > 100)
 	{
 		m_pulseCircle.setRadius(0.0f);
 		m_pulseTimer = 0.0f;
 
-		m_pulseCircleCollider.p.x = m_pulseCircle.getPosition().x;
-		m_pulseCircleCollider.p.y = m_pulseCircle.getPosition().y;
-		m_pulseCircleCollider.r = m_pulseCircle.getRadius();
+		updateCollisionCircle();
 	}
 	updateBox();
 }
@@ -113,6 +107,18 @@ void bullets::StaticSphere::setActive(bool active)
 }
 
 /// <summary>
+/// @brief this function will update the collision circle.
+/// 
+/// Change the radius and position of our collision circle.
+/// </summary>
+void bullets::StaticSphere::updateCollisionCircle()
+{
+	m_pulseCircleCollider.p.x = m_pulseCircle.getPosition().x;
+	m_pulseCircleCollider.p.y = m_pulseCircle.getPosition().y;
+	m_pulseCircleCollider.r = m_pulseCircle.getRadius();
+}
+
+/// <summary>
 /// @brief overriden circle collision.
 /// 
 /// This version will have to take into account the pulse circle as well
@@ -122,5 +128,9 @@ void bullets::StaticSphere::setActive(bool active)
 /// <returns>If collision is happening returns true</returns>
 bool bullets::StaticSphere::checkCircleCollision(const tinyh::c2Circle & other)
 {
+	if (tinyh::c2CircletoAABB(other, m_bulletC2Rect) || tinyh::c2CircletoCircle(other, m_pulseCircleCollider))
+	{
+		return true;
+	}
 	return false;
 }

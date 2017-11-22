@@ -25,6 +25,7 @@ public:
 	void reuseAsteroid();
 	void updateWindowCollisions();
 	tinyh::c2Circle getCollisionCircle();
+	void decrementHealth(float dmg);
 
 private:
 	/// <summary>
@@ -75,6 +76,13 @@ private:
 	/// 
 	/// </summary>
 	tinyh::c2AABB m_windowC2Rect;
+
+	/// <summary>
+	/// @brief Define the health.
+	/// 
+	/// 
+	/// </summary>
+	float m_health;
 };
 
 #endif // !ASTEROIDS_H

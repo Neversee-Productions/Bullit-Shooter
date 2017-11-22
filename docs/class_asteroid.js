@@ -1,6 +1,7 @@
 var class_asteroid =
 [
     [ "Asteroid", "class_asteroid.html#a603c2eb87a4ed26c5b3fb06e953d611c", null ],
+    [ "decrementHealth", "class_asteroid.html#ac3a324d84ad137062b64e56321593504", null ],
     [ "draw", "class_asteroid.html#a8fb65c8b468aba5d13b1f47a05597c91", null ],
     [ "generateRandomPos", "class_asteroid.html#a66677a18808fbfa7df569b920b833ea8", null ],
     [ "generateRandomVel", "class_asteroid.html#a42186d68ba22d3a1c5dfb20ae8a0ff72", null ],
@@ -14,6 +15,7 @@ var class_asteroid =
     [ "m_active", "class_asteroid.html#af4ab0f4e46a5d6a3b0410ddbca949c4a", null ],
     [ "m_circle", "class_asteroid.html#a25c0ef10347868332d4e2d637695f67f", null ],
     [ "m_collisionCircle", "class_asteroid.html#af2c2388afb2c00cc1779912110bfb527", null ],
+    [ "m_health", "class_asteroid.html#acb5188ed5bbd7b0b05b64aa47dc6a202", null ],
     [ "m_position", "class_asteroid.html#ac3e457510348bac65ce659bb679c81dd", null ],
     [ "m_rectangle", "class_asteroid.html#af1168c2dc99f7b121da4dd90676b6e65", null ],
     [ "m_velocity", "class_asteroid.html#a8dd7cd60da2412c5859e078a5902f03d", null ],

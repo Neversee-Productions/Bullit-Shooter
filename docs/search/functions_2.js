@@ -4,7 +4,7 @@ var searchData=
   ['checkaxis',['checkAxis',['../class_controller.html#ad7fa88acdb9c93d2da272985b96909e1',1,'Controller']]],
   ['checkbox',['CheckBox',['../classgui_1_1_check_box.html#a8cf3f44c4d7f83b69cd1790ce5aa9406',1,'gui::CheckBox']]],
   ['checkbutton',['checkButton',['../class_controller.html#a5821259b803cb317ef99f2c7e6d2e75b',1,'Controller']]],
-  ['checkcirclecollision',['checkCircleCollision',['../classbullets_1_1_bullet.html#acfdff6141121c2eb89f1abcec498d606',1,'bullets::Bullet']]],
+  ['checkcirclecollision',['checkCircleCollision',['../classbullets_1_1_bullet.html#acfdff6141121c2eb89f1abcec498d606',1,'bullets::Bullet::checkCircleCollision()'],['../classbullets_1_1_static_sphere.html#a895405895ddf27330e7b22e4965e6ee1',1,'bullets::StaticSphere::checkCircleCollision()']]],
   ['clear',['clear',['../class_window.html#a38bc43bdd1a97e5de7f346ba4c3957ef',1,'Window']]],
   ['close',['close',['../class_window.html#a35055c04498121d39741bfcd5082705b',1,'Window']]],
   ['cometshot',['CometShot',['../classbullets_1_1_comet_shot.html#a50b138bd70681d6baf62063e9d1d9f29',1,'bullets::CometShot']]],

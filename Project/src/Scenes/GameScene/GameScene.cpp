@@ -103,12 +103,54 @@ void GameScene::bulletAsteroidsCollision()
 			auto & derivedBullet = **itt;
 			if (derivedBullet.isActive())
 			{
-				if (tinyh::c2CircletoAABB(m_asteroid.getCollisionCircle(), derivedBullet.getCollisionRect()))
+				if (derivedBullet.checkCircleCollision(m_asteroid.getCollisionCircle()))
 				{
-					if (derivedBullet.checkCircleCollision(m_asteroid.getCollisionCircle()))
+					switch (pair.first)
 					{
+					case BulletTypes::Standard:
+						//m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						m_asteroid.decrementHealth(derivedBullet.getDamage());
+						derivedBullet.setActive(false);
+						break;
+					case BulletTypes::Empowered:
 						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
 						derivedBullet.setActive(false);
+						break;
+					case BulletTypes::DeathOrb:
+						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						break;
+					case BulletTypes::FireBlast:
+						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						derivedBullet.setActive(false);
+						break;
+					case BulletTypes::HolySphere:
+						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						break;
+					case BulletTypes::MagmaShot:
+						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						derivedBullet.setActive(false);
+						break;
+					case BulletTypes::NapalmSphere:
+						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						derivedBullet.setActive(false);
+						break;
+					case BulletTypes::CometShot:
+						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						derivedBullet.setActive(false);
+						break;
+					case BulletTypes::NullWave:
+						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						derivedBullet.setActive(false);
+						break;
+					case BulletTypes::StaticSphere:
+						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						break;
+					case BulletTypes::PyroBlast:
+						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						derivedBullet.setActive(false);
+						break;
+					default:
+						break;
 					}
 				}
 			}

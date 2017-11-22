@@ -21,6 +21,7 @@ namespace bullets
 		void draw(Window & window, const float & deltaTime) override;
 		static float getFireRate();
 		void setActive(bool active) override;
+		void updateCollisionCircle();
 		bool checkCircleCollision(const tinyh::c2Circle & other)final override;
 	private:
 		/// <summary>

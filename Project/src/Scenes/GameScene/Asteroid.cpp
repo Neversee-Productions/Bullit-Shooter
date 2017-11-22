@@ -10,10 +10,11 @@ Asteroid::Asteroid()
 	: m_rectangle(sf::Vector2f(200.0f, 200.0f))
 	, m_circle(10.0f)
 	, m_velocity(0.0f, 0.0f)
-	, m_position(300.0f,300.0f)
+	, m_position(300.0f, 300.0f)
 	, m_active(false)
 	, m_collisionCircle()
 	, m_windowC2Rect()
+	, m_health(10.0f)
 
 {
 	const auto & windowRect = App::getWindowC2Rect();
@@ -46,6 +47,10 @@ void Asteroid::update()
 		m_circle.setPosition(m_position);
 		updateCollisionCircle();
 		updateWindowCollisions();
+		if (m_health <= 0)
+		{
+			reuseAsteroid();
+		}
 	}
 	else
 	{
@@ -137,6 +142,7 @@ void Asteroid::reuseAsteroid()
 {
 	generateRandomVel();
 	generateRandomPos();
+	m_health = 10.0f;
 	m_active = true;
 }
 
@@ -162,5 +168,16 @@ void Asteroid::updateWindowCollisions()
 tinyh::c2Circle Asteroid::getCollisionCircle()
 {
 	return m_collisionCircle;
+}
+
+/// <summary>
+/// @brief Decrement health by a certain value.
+/// 
+/// 
+/// </summary>
+/// <param name="dmg">amount of health to decrement</param>
+void Asteroid::decrementHealth(float dmg)
+{
+	m_health -= dmg;
 }
 

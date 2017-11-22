@@ -118,6 +118,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a693c1df43589c9f9417bbba59a3b61b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f818e720d1916035e88010b7cef1b7f"><td class="memItemLeft" align="right" valign="top">tinyh::c2Circle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a8f818e720d1916035e88010b7cef1b7f">getCollisionCircle</a> ()</td></tr>
 <tr class="separator:a8f818e720d1916035e88010b7cef1b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3a324d84ad137062b64e56321593504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ac3a324d84ad137062b64e56321593504">decrementHealth</a> (float dmg)</td></tr>
+<tr class="separator:ac3a324d84ad137062b64e56321593504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -135,6 +137,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af2c2388afb2c00cc1779912110bfb527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17d2ded1192f1c0b20f7193e546295a4"><td class="memItemLeft" align="right" valign="top">tinyh::c2AABB&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a17d2ded1192f1c0b20f7193e546295a4">m_windowC2Rect</a></td></tr>
 <tr class="separator:a17d2ded1192f1c0b20f7193e546295a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb5188ed5bbd7b0b05b64aa47dc6a202"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#acb5188ed5bbd7b0b05b64aa47dc6a202">m_health</a></td></tr>
+<tr class="separator:acb5188ed5bbd7b0b05b64aa47dc6a202"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
@@ -159,6 +163,31 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac3a324d84ad137062b64e56321593504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3a324d84ad137062b64e56321593504">&#9670;&nbsp;</a></span>decrementHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::decrementHealth </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dmg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Decrement health by a certain value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dmg</td><td>amount of health to decrement</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8fb65c8b468aba5d13b1f47a05597c91"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fb65c8b468aba5d13b1f47a05597c91">&#9670;&nbsp;</a></span>draw()</h2>
 
@@ -437,6 +466,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>define the collision circle.</p>
+
+</div>
+</div>
+<a id="acb5188ed5bbd7b0b05b64aa47dc6a202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb5188ed5bbd7b0b05b64aa47dc6a202">&#9670;&nbsp;</a></span>m_health</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Asteroid::m_health</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define the health.</p>
 
 </div>
 </div>
