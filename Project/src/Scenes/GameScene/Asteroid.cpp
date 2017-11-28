@@ -1,5 +1,7 @@
 #include "Scenes\GameScene\Asteroid.h"
 
+float const Asteroid::INVULNERABILITY_FRAMES = 0.09f;
+
 
 /// <summary>
 /// @brief Default constructor.
@@ -15,7 +17,8 @@ Asteroid::Asteroid()
 	, m_collisionCircle()
 	, m_windowC2Rect()
 	, m_health(10.0f)
-
+	, m_invulnerable(false)
+	, m_invulnTimer(0.0f)
 {
 	const auto & windowRect = App::getWindowC2Rect();
 	const auto & extraWidth = m_rectangle.getGlobalBounds().width * 2.0f;
@@ -40,6 +43,20 @@ Asteroid::Asteroid()
 /// </summary>
 void Asteroid::update()
 {
+	if (m_invulnerable)
+	{
+		m_circle.setFillColor(sf::Color::Blue);
+		m_invulnTimer += App::getUpdateDeltaTime();
+		if (m_invulnTimer >= INVULNERABILITY_FRAMES)
+		{
+			m_invulnerable = false;
+			m_invulnTimer = 0.0f;
+		}
+	}
+	else
+	{
+		m_circle.setFillColor(sf::Color::Red);
+	}
 	if (m_active)
 	{
 		m_position += m_velocity;
@@ -178,6 +195,31 @@ tinyh::c2Circle Asteroid::getCollisionCircle()
 /// <param name="dmg">amount of health to decrement</param>
 void Asteroid::decrementHealth(float dmg)
 {
-	m_health -= dmg;
+	if (!m_invulnerable)
+	{
+		m_health -= dmg;
+		m_invulnerable = true;
+	}
+}
+
+/// <summary>
+/// @brief check if currently invulnerable
+/// 
+/// 
+/// </summary>
+/// <returns>returns the invulnerability bool</returns>
+bool Asteroid::isInvulnerable()
+{
+	return m_invulnerable;
+}
+
+/// <summary>
+/// @brief knocks the asteroid back by a few pixels.
+/// 
+/// 
+/// </summary>
+void Asteroid::knockback()
+{
+	m_velocity.x += 1.5f;
 }
 

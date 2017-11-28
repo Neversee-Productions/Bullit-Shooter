@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('class_asteroid.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_asteroid-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Asteroid Class Reference</div>  </div>
@@ -120,6 +121,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8f818e720d1916035e88010b7cef1b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3a324d84ad137062b64e56321593504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ac3a324d84ad137062b64e56321593504">decrementHealth</a> (float dmg)</td></tr>
 <tr class="separator:ac3a324d84ad137062b64e56321593504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e885bbb96ced5ddee6edf78d83ec218"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a3e885bbb96ced5ddee6edf78d83ec218">isInvulnerable</a> ()</td></tr>
+<tr class="separator:a3e885bbb96ced5ddee6edf78d83ec218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6574d8c3cc3cff9ab5b01aca1ac7ba46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a6574d8c3cc3cff9ab5b01aca1ac7ba46">knockback</a> ()</td></tr>
+<tr class="separator:a6574d8c3cc3cff9ab5b01aca1ac7ba46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -139,6 +144,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a17d2ded1192f1c0b20f7193e546295a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb5188ed5bbd7b0b05b64aa47dc6a202"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#acb5188ed5bbd7b0b05b64aa47dc6a202">m_health</a></td></tr>
 <tr class="separator:acb5188ed5bbd7b0b05b64aa47dc6a202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e16fbf2e5a961ab8099538abb594425"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a9e16fbf2e5a961ab8099538abb594425">m_invulnerable</a></td></tr>
+<tr class="separator:a9e16fbf2e5a961ab8099538abb594425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51f5725ecb89f48e85d15998ab3aee6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ae51f5725ecb89f48e85d15998ab3aee6">m_invulnTimer</a></td></tr>
+<tr class="separator:ae51f5725ecb89f48e85d15998ab3aee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a92858a0bbfd0567abe520ac9935f496b"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a92858a0bbfd0567abe520ac9935f496b">INVULNERABILITY_FRAMES</a> = 0.09f</td></tr>
+<tr class="separator:a92858a0bbfd0567abe520ac9935f496b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
@@ -281,6 +295,43 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3e885bbb96ced5ddee6edf78d83ec218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e885bbb96ced5ddee6edf78d83ec218">&#9670;&nbsp;</a></span>isInvulnerable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Asteroid::isInvulnerable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>check if currently invulnerable</p>
+<dl class="section return"><dt>Returns</dt><dd>returns the invulnerability bool</dd></dl>
+
+</div>
+</div>
+<a id="a6574d8c3cc3cff9ab5b01aca1ac7ba46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6574d8c3cc3cff9ab5b01aca1ac7ba46">&#9670;&nbsp;</a></span>knockback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::knockback </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>knocks the asteroid back by a few pixels.</p>
+
+</div>
+</div>
 <a id="a1c591c4e40e58f7e8cd6946f74735b7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c591c4e40e58f7e8cd6946f74735b7a">&#9670;&nbsp;</a></span>reuseAsteroid()</h2>
 
@@ -400,6 +451,29 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a92858a0bbfd0567abe520ac9935f496b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92858a0bbfd0567abe520ac9935f496b">&#9670;&nbsp;</a></span>INVULNERABILITY_FRAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float const Asteroid::INVULNERABILITY_FRAMES = 0.09f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define frames to be invurnerable.</p>
+
+</div>
+</div>
 <a id="af4ab0f4e46a5d6a3b0410ddbca949c4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4ab0f4e46a5d6a3b0410ddbca949c4a">&#9670;&nbsp;</a></span>m_active</h2>
 
@@ -489,6 +563,52 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Define the health.</p>
+
+</div>
+</div>
+<a id="a9e16fbf2e5a961ab8099538abb594425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e16fbf2e5a961ab8099538abb594425">&#9670;&nbsp;</a></span>m_invulnerable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Asteroid::m_invulnerable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define if currently invurnerable</p>
+
+</div>
+</div>
+<a id="ae51f5725ecb89f48e85d15998ab3aee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51f5725ecb89f48e85d15998ab3aee6">&#9670;&nbsp;</a></span>m_invulnTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Asteroid::m_invulnTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define time that invulnerability was active.</p>
 
 </div>
 </div>

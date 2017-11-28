@@ -73,8 +73,8 @@ void GameScene::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void GameScene::draw(Window & window, const float & deltaTime)
 {
-	m_player.draw(window, deltaTime);
 	m_asteroid.draw(window, deltaTime);
+	m_player.draw(window, deltaTime);
 }
 
 /// <summary>
@@ -103,51 +103,37 @@ void GameScene::bulletAsteroidsCollision()
 			auto & derivedBullet = **itt;
 			if (derivedBullet.isActive())
 			{
-				if (derivedBullet.checkCircleCollision(m_asteroid.getCollisionCircle()))
+				if (!m_asteroid.isInvulnerable() && derivedBullet.checkCircleCollision(m_asteroid.getCollisionCircle()))
 				{
 					switch (pair.first)
 					{
 					case BulletTypes::Standard:
-						//m_asteroid.reuseAsteroid(); //for now spawn new asteroid
-						m_asteroid.decrementHealth(derivedBullet.getDamage());
-						derivedBullet.setActive(false);
-						break;
 					case BulletTypes::Empowered:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
-						derivedBullet.setActive(false);
+					case BulletTypes::FireBlast:
+						collisionResponse(m_asteroid, derivedBullet);
 						break;
 					case BulletTypes::DeathOrb:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
-						break;
-					case BulletTypes::FireBlast:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
-						derivedBullet.setActive(false);
-						break;
 					case BulletTypes::HolySphere:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						m_asteroid.decrementHealth(derivedBullet.getDamage());
 						break;
 					case BulletTypes::MagmaShot:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
-						derivedBullet.setActive(false);
+						collisionResponse(m_asteroid, dynamic_cast<bullets::MagmaShot&>(derivedBullet)); //dynamic casting a parameter to magma shot reference from base bullet reference
 						break;
 					case BulletTypes::NapalmSphere:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
-						derivedBullet.setActive(false);
+						collisionResponse(m_asteroid, dynamic_cast<bullets::NapalmSphere&>(derivedBullet));
 						break;
 					case BulletTypes::CometShot:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
-						derivedBullet.setActive(false);
+						collisionResponse(m_asteroid, derivedBullet);
+						m_asteroid.knockback();
 						break;
 					case BulletTypes::NullWave:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
-						derivedBullet.setActive(false);
+						collisionResponse(m_asteroid, derivedBullet);
 						break;
 					case BulletTypes::StaticSphere:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
+						m_asteroid.decrementHealth(derivedBullet.getDamage());
 						break;
 					case BulletTypes::PyroBlast:
-						m_asteroid.reuseAsteroid(); //for now spawn new asteroid
-						derivedBullet.setActive(false);
+						collisionResponse(m_asteroid, dynamic_cast<bullets::PyroBlast&>(derivedBullet));
 						break;
 					default:
 						break;
@@ -156,6 +142,58 @@ void GameScene::bulletAsteroidsCollision()
 			}
 		}
 	}
+}
+
+/// <summary>
+/// @brief default collision response for most bullets.
+/// 
+/// Damages the asteroid and disappears.
+/// </summary>
+/// <param name="asteroid">reference to the asteroid collided with</param>
+/// <param name="bullet">reference to the bullet that has collided</param>
+void GameScene::collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet)
+{
+	asteroid.decrementHealth(bullet.getDamage());
+	bullet.setActive(false);
+}
+
+/// <summary>
+/// @brief overloaded collision response for magma shot.
+/// 
+/// Damages asteroid and explodes on impact.
+/// </summary>
+/// <param name="asteroid">reference to the asteroid collided with</param>
+/// <param name="bullet">reference to the bullet that has collided</param>
+void GameScene::collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet)
+{
+	m_asteroid.decrementHealth(bullet.getDamage());
+	bullet.explode(true);
+}
+
+/// <summary>
+/// @brief overloaded collision response for Napalm Sphere.
+/// 
+/// Damages asteroid and explodes on impact.
+/// </summary>
+/// <param name="asteroid">reference to the asteroid collided with</param>
+/// <param name="bullet">reference to the bullet that has collided</param>
+void GameScene::collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet)
+{
+	m_asteroid.decrementHealth(bullet.getDamage());
+	bullet.explode(true);
+}
+
+/// <summary>
+/// @brief overloaded collision response for PyroBlast.
+/// 
+/// Damages asteroid and explodes on impact.
+/// </summary>
+/// <param name="asteroid">reference to the asteroid collided with</param>
+/// <param name="bullet">reference to the bullet that has collided</param>
+void GameScene::collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet)
+{
+	m_asteroid.decrementHealth(bullet.getDamage());
+	bullet.explode(true);
 }
 
 /// <summary>

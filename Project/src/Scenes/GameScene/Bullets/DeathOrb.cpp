@@ -10,7 +10,7 @@ const float bullets::DeathOrb::s_FIRE_RATE = 1.0f;
 bullets::DeathOrb::DeathOrb()
 	: Bullet()
 {
-	m_speed = 4.0f;
+	m_speed = 6.0f;
 	m_velocity.x = m_speed;
 
 	//different size to parent

@@ -20,6 +20,7 @@ namespace bullets
 		static float getFireRate();
 		void update() override;
 		void setActive(bool active) override;
+		void explode(bool check);
 	private:
 		/// <summary>
 		/// @brief define a static constant fire rate.
@@ -36,11 +37,11 @@ namespace bullets
 		static const sf::Vector2f s_DEFAULT_SIZE;
 
 		/// <summary>
-		/// @brief defines if the bullet should move.
+		/// @brief defines if bullet is to explode.
 		/// 
 		/// 
 		/// </summary>
-		bool m_moveable;
+		bool m_explode;
 		
 		/// <summary>
 		/// @brief determine how long the bullet was stationary.
@@ -48,9 +49,6 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_timeAlive;
-
-		//DELETE TIMETOLIVE
-		float TIMETOLIVE;
 	};
 }
 

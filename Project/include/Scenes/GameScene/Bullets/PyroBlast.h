@@ -20,6 +20,7 @@ namespace bullets
 		void update() override;
 		static float getFireRate();
 		void setActive(bool active) override;
+		void explode(bool check);
 	private:
 		/// <summary>
 		/// @brief define a static constant fire rate.
@@ -27,9 +28,6 @@ namespace bullets
 		/// 
 		/// </summary>
 		static const float s_FIRE_RATE;
-
-		//DELETE TIME TO LIVE
-		float TIMETOLIVE;
 
 		/// <summary>
 		/// @brief determine if should explode.

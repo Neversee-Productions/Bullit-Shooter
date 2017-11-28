@@ -13,7 +13,6 @@ const sf::Vector2f bullets::MagmaShot::s_DEFAULT_SIZE = sf::Vector2f(15.0f,15.0f
 bullets::MagmaShot::MagmaShot()
 	: Bullet()
 	, m_explode(false)
-	, TIMETOLIVE(4.0f)
 {
 	m_speed = 4.0f;
 	updateVelocityVector();
@@ -33,11 +32,6 @@ bullets::MagmaShot::MagmaShot()
 /// </summary>
 void bullets::MagmaShot::update()
 {
-	TIMETOLIVE -= App::getUpdateDeltaTime();
-	if (TIMETOLIVE <= 0)
-	{
-		m_explode = true;
-	}
 	if (!m_explode)
 	{
 		Bullet::update();
@@ -80,7 +74,6 @@ void bullets::MagmaShot::setActive(bool active)
 		m_bulletRect.setSize(s_DEFAULT_SIZE);
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_explode = false;
-		TIMETOLIVE = 4.0f; //DELETE WHEN NOT TESTING
 	}
 	m_active = active;
 }

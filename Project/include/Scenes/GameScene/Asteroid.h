@@ -26,6 +26,8 @@ public:
 	void updateWindowCollisions();
 	tinyh::c2Circle getCollisionCircle();
 	void decrementHealth(float dmg);
+	bool isInvulnerable();
+	void knockback();
 
 private:
 	/// <summary>
@@ -83,6 +85,27 @@ private:
 	/// 
 	/// </summary>
 	float m_health;
+
+	/// <summary>
+	/// @brief Define if currently invurnerable
+	/// 
+	/// 
+	/// </summary>
+	bool m_invulnerable;
+
+	/// <summary>
+	/// @brief Define frames to be invurnerable.
+	/// 
+	/// 
+	/// </summary>
+	static const float INVULNERABILITY_FRAMES;
+
+	/// <summary>
+	/// @brief Define time that invulnerability was active.
+	/// 
+	/// 
+	/// </summary>
+	float m_invulnTimer;
 };
 
 #endif // !ASTEROIDS_H

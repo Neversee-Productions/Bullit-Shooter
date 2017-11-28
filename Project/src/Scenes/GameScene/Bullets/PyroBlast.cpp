@@ -9,7 +9,6 @@ const float bullets::PyroBlast::s_FIRE_RATE = 4.0f;
 /// </summary>
 bullets::PyroBlast::PyroBlast()
 	: Bullet()
-	, TIMETOLIVE(3.0f)
 	, m_explode(false)
 {
 	m_speed = 4.0f;
@@ -30,11 +29,6 @@ bullets::PyroBlast::PyroBlast()
 /// </summary>
 void bullets::PyroBlast::update()
 {
-	TIMETOLIVE -= App::getUpdateDeltaTime();
-	if (TIMETOLIVE <= 0)
-	{
-		m_explode = true;
-	}
 	if (!m_explode)
 	{
 		Bullet::update();
@@ -81,7 +75,17 @@ void bullets::PyroBlast::setActive(bool active)
 		m_bulletRect.setSize(sf::Vector2f(20.0f, 15.0f));
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_explode = false;
-		TIMETOLIVE = 3.0f;
 	}
 	m_active = active;
+}
+
+/// <summary>
+/// @brief this method simply sets explode bool to true.
+/// 
+/// 
+/// </summary>
+/// <param name="check">Defines the new explode bool value</param>
+void bullets::PyroBlast::explode(bool check)
+{
+	m_explode = check;
 }
