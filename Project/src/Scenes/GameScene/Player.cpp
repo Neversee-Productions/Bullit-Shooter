@@ -16,12 +16,11 @@ Player::Player(KeyHandler& keyHandler)
 	, m_weapon1Pos(sf::Vector2f(0.0f,0.0f))
 	, m_weapon2Pos(sf::Vector2f(0.0f,0.0f))
 {
-	m_weapon1Pos = sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y - 50);
-	m_weapon2Pos = sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y + 50);
-	m_weapon1.m_weaponRect.setPosition(m_weapon1Pos);
-	m_weapon2.m_weaponRect.setPosition(m_weapon2Pos);
-	m_bulletManager.initBulletvector(m_weapon1.m_currentBullet);
-	
+	m_weapon1Pos = sf::Vector2f(m_ship.getShipRect().x, m_ship.getShipRect().y - 50);
+	m_weapon2Pos = sf::Vector2f(m_ship.getShipRect().x, m_ship.getShipRect().y + 50);
+	m_weapon1.setRectPos(m_weapon1Pos);
+	m_weapon2.setRectPos(m_weapon1Pos);
+	m_bulletManager.initBulletvector(m_weapon1.getBulletType());
 }
 
 /// <summary>
@@ -49,7 +48,7 @@ void Player::update()
 	
 	if (m_keyHandler.isPressed(sf::Keyboard::Space))
 	{
-		m_bulletManager.fireBullet(m_weapon1.m_weaponRect.getPosition(), m_weapon2.m_weaponRect.getPosition(), m_weapon1.m_currentBullet);
+		m_bulletManager.fireBullet(m_weapon1.getPosition(), m_weapon2.getPosition(), m_weapon1.getBulletType());
 	}
 	if (m_keyHandler.isPressed(sf::Keyboard::Up))
 	{
@@ -60,8 +59,8 @@ void Player::update()
 		m_ship.moveDown();
 	}
 	m_ship.update();
-	m_weapon1Pos = sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y - 50);
-	m_weapon2Pos = sf::Vector2f(m_ship.m_shipRect.getPosition().x, m_ship.m_shipRect.getPosition().y + 50);
+	m_weapon1Pos = sf::Vector2f(m_ship.getShipRect().x, m_ship.getShipRect().y - 50);
+	m_weapon2Pos = sf::Vector2f(m_ship.getShipRect().x, m_ship.getShipRect().y + 50);
 	m_weapon1.update(m_weapon1Pos);
 	m_weapon2.update(m_weapon2Pos);
 	m_bulletManager.update();

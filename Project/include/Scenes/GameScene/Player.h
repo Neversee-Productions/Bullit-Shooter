@@ -22,6 +22,7 @@ public:
 	const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & getBulletMap();
 private:
 
+private:
 	/// <summary>
 	/// @brief Defines the ship object.
 	/// 

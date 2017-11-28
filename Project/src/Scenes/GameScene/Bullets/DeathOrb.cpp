@@ -42,4 +42,6 @@ void bullets::DeathOrb::update()
 	m_position += m_velocity * UPDATE_DT;
 	m_bulletRect.setPosition(m_position.x, m_position.y);
 	updateBox();
+	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
+	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 }
