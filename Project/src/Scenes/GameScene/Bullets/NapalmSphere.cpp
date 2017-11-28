@@ -10,12 +10,12 @@ const sf::Vector2f bullets::NapalmSphere::s_DEFAULT_SIZE = sf::Vector2f(10.0f, 1
 /// </summary>
 bullets::NapalmSphere::NapalmSphere()
 	: Bullet()
-	, m_moveable(true)
+	, m_explode(false)
 	, m_timeAlive(0.0f)
-	, TIMETOLIVE(2.0f)
 {
-	m_speed = 8.0f;
-	updateVelocityVector();
+	m_speed = 8.0f * 60.0f;
+	//updateVelocityVector();
+	m_velocity.y = -m_speed;
 
 	//different size to parent
 	m_bulletRect.setSize(s_DEFAULT_SIZE);
@@ -43,12 +43,7 @@ float bullets::NapalmSphere::getFireRate()
 /// </summary>
 void bullets::NapalmSphere::update()
 {
-	TIMETOLIVE -= App::getUpdateDeltaTime();
-	if (TIMETOLIVE <= 0)
-	{
-		m_moveable = false;
-	}
-	if (m_moveable)
+	if (!m_explode)
 	{
 		Bullet::update();
 	}
@@ -63,6 +58,8 @@ void bullets::NapalmSphere::update()
 			setActive(false);
 		}
 	}
+	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
+	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 }
 
 /// <summary>
@@ -77,11 +74,21 @@ void bullets::NapalmSphere::setActive(bool active)
 	if (active == false)
 	{
 		m_timeAlive = 0.0f;
-		m_moveable = true;
 		m_bulletRect.setSize(s_DEFAULT_SIZE);
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
-		TIMETOLIVE = 4.0f; //DELETE WHEN NOT TESTING
+		m_explode = false;
 	}
 	m_active = active;
+}
+
+/// <summary>
+/// @brief this method simply sets explode bool to true.
+/// 
+/// 
+/// </summary>
+/// <param name="check">Defines the new explode bool value</param>
+void bullets::NapalmSphere::explode(bool check)
+{
+	m_explode = check;
 }
 

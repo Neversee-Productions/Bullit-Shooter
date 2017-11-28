@@ -10,8 +10,8 @@ const float bullets::FireBlast::s_FIRE_RATE = 0.1f;
 bullets::FireBlast::FireBlast()
 	: Bullet()
 {
-	m_speed = 16.0f;
-	m_velocity.x = m_speed;
+	m_speed = 16.0f * 60.0f;
+	m_velocity.y = -m_speed;
 
 	//different size to parent
 	m_bulletRect.setSize(sf::Vector2f(10.0f, 5.0f));

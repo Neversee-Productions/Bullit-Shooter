@@ -21,6 +21,8 @@ namespace bullets
 		void draw(Window & window, const float & deltaTime) override;
 		static float getFireRate();
 		void setActive(bool active) override;
+		void updateCollisionCircle();
+		bool checkCircleCollision(const tinyh::c2Circle & other)final override;
 	private:
 		/// <summary>
 		/// @brief define a static constant fire rate.
@@ -49,6 +51,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		sf::CircleShape m_pulseCircle;
+
+		/// <summary>
+		/// @brief colider for the static circle.
+		/// 
+		/// 
+		/// </summary>
+		tinyh::c2Circle m_pulseCircleCollider;
 	};
 }
 #endif // !STATICSPHERE_H

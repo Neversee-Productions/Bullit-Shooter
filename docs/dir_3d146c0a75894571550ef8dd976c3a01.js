@@ -1,6 +1,12 @@
 var dir_3d146c0a75894571550ef8dd976c3a01 =
 [
     [ "Bullets", "dir_9b6302fd38af5e97da1b82b937ec39b8.html", "dir_9b6302fd38af5e97da1b82b937ec39b8" ],
+    [ "Asteroid.h", "_asteroid_8h.html", [
+      [ "Asteroid", "class_asteroid.html", "class_asteroid" ]
+    ] ],
+    [ "AsteroidManager.h", "_asteroid_manager_8h.html", [
+      [ "AsteroidManager", "class_asteroid_manager.html", "class_asteroid_manager" ]
+    ] ],
     [ "BulletManager.h", "_bullet_manager_8h.html", [
       [ "BulletManager", "class_bullet_manager.html", "class_bullet_manager" ]
     ] ],

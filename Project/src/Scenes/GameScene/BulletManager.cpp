@@ -244,22 +244,22 @@ void BulletManager::fireEmpowered(const sf::Vector2f & pos1, const sf::Vector2f 
 			switch (numFired)
 			{
 			case 0:
-				setEmpowered(bullet, -5, pos1);
+				setEmpowered(bullet, -95, pos1);
 				break;
 			case 1:
-				setEmpowered(bullet, 0, pos1);
+				setEmpowered(bullet, -90, pos1);
 				break;
 			case 2:
-				setEmpowered(bullet, 5, pos1);
+				setEmpowered(bullet, -85, pos1);
 				break;
 			case 3:
-				setEmpowered(bullet, -5, pos2);
+				setEmpowered(bullet, -95, pos2);
 				break;
 			case 4:
-				setEmpowered(bullet, 0, pos2);
+				setEmpowered(bullet, -90, pos2);
 				break;
 			case 5:
-				setEmpowered(bullet, 5, pos2);
+				setEmpowered(bullet, -85, pos2);
 				break;
 			default:
 				break;
@@ -291,6 +291,17 @@ void BulletManager::setEmpowered(bullets::Bullet & bullet, const float & angle, 
 }
 
 /// <summary>
+/// @brief get a constant reference to the bullets.
+/// 
+/// 
+/// </summary>
+/// <returns>map of bullets</returns>
+const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>>& BulletManager::getBulletMap()
+{
+	return m_bulletMap;
+}
+
+/// <summary>
 /// @brief Initialise vector inside map based on the type.
 /// 
 /// This method will insert a vector of unique pointers to standard bullets
@@ -302,14 +313,14 @@ void BulletManager::setEmpowered(bullets::Bullet & bullet, const float & angle, 
 template<typename data_type>
 void BulletManager::initBulletMapVector(const BulletTypes& type, const int& size)
 {
-		std::vector<std::unique_ptr<bullets::Bullet>> bulletVec;
-		bulletVec.reserve(size);
-		bulletVec.resize(size);
-		for (auto itt = bulletVec.begin(), end = bulletVec.end(); itt != end; ++itt)
-		{
-			itt->swap(std::unique_ptr<bullets::Bullet>(std::make_unique<data_type>()));
-		}
-		m_bulletMap.insert(std::make_pair(type, std::move(bulletVec)));
+	std::vector<std::unique_ptr<bullets::Bullet>> bulletVec;
+	bulletVec.reserve(size);
+	bulletVec.resize(size);
+	for (auto itt = bulletVec.begin(), end = bulletVec.end(); itt != end; ++itt)
+	{
+		itt->swap(std::unique_ptr<bullets::Bullet>(std::make_unique<data_type>()));
+	}
+	m_bulletMap.insert(std::make_pair(type, std::move(bulletVec)));
 }
 
 /// <summary>

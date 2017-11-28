@@ -67,3 +67,14 @@ void Player::update()
 
 }
 
+/// <summary>
+/// @brief get a constant reference to the bullets.
+/// 
+/// 
+/// </summary>
+/// <returns>map of bullets</returns>
+const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & Player::getBulletMap()
+{
+	return m_bulletManager.getBulletMap();
+}
+

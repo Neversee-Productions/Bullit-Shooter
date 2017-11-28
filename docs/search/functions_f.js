@@ -9,6 +9,7 @@ var searchData=
   ['loadup_3c_20sf_3a_3atexture_20_3e',['loadUp&lt; sf::Texture &gt;',['../_resource_handler_8cpp.html#a7cb3fdd1b7cefb1d90e1f6bae9351a74',1,'ResourceHandler.cpp']]],
   ['loadup_3c_20thor_3a_3abigtexture_20_3e',['loadUp&lt; thor::BigTexture &gt;',['../_resource_handler_8cpp.html#a4ee55f778a2dca4dbc3565c436b0e2a4',1,'ResourceHandler.cpp']]],
   ['resourcehandler',['ResourceHandler',['../class_resource_handler.html#a0a33aab3f38dba04b5dc3f4496d324df',1,'ResourceHandler']]],
+  ['reuseasteroid',['reuseAsteroid',['../class_asteroid.html#a1c591c4e40e58f7e8cd6946f74735b7a',1,'Asteroid']]],
   ['reusebullet',['reuseBullet',['../class_bullet_manager.html#a2cf961d2667a1f6e10b73ee786079861',1,'BulletManager']]],
   ['run',['run',['../class_application.html#a68965449404743bf1add056784d6cf81',1,'Application']]]
 ];

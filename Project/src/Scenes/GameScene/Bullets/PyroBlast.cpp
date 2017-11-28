@@ -9,14 +9,13 @@ const float bullets::PyroBlast::s_FIRE_RATE = 4.0f;
 /// </summary>
 bullets::PyroBlast::PyroBlast()
 	: Bullet()
-	, TIMETOLIVE(3.0f)
 	, m_explode(false)
 {
-	m_speed = 4.0f;
-	m_velocity.x = m_speed;
+	m_speed = 4.0f * 60.0f;
+	m_velocity.y = -m_speed;
 
 	//different size to parent
-	m_bulletRect.setSize(sf::Vector2f(20.0f, 15.0f));
+	m_bulletRect.setSize(sf::Vector2f(15.0f, 20.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 	//change collision rectangle
@@ -30,11 +29,6 @@ bullets::PyroBlast::PyroBlast()
 /// </summary>
 void bullets::PyroBlast::update()
 {
-	TIMETOLIVE -= App::getUpdateDeltaTime();
-	if (TIMETOLIVE <= 0)
-	{
-		m_explode = true;
-	}
 	if (!m_explode)
 	{
 		Bullet::update();
@@ -51,6 +45,8 @@ void bullets::PyroBlast::update()
 			setActive(false);
 		}
 	}
+	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
+	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 	updateBox();
 }
 
@@ -76,10 +72,20 @@ void bullets::PyroBlast::setActive(bool active)
 {
 	if (!active)
 	{
-		m_bulletRect.setSize(sf::Vector2f(20.0f, 10.0f));
+		m_bulletRect.setSize(sf::Vector2f(20.0f, 15.0f));
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_explode = false;
-		TIMETOLIVE = 3.0f;
 	}
 	m_active = active;
+}
+
+/// <summary>
+/// @brief this method simply sets explode bool to true.
+/// 
+/// 
+/// </summary>
+/// <param name="check">Defines the new explode bool value</param>
+void bullets::PyroBlast::explode(bool check)
+{
+	m_explode = check;
 }

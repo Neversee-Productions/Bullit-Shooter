@@ -5,6 +5,7 @@ var class_bullet_manager =
     [ "fireBullet", "class_bullet_manager.html#aee0e75edd198df85c62f91e5e1d02b11", null ],
     [ "fireEmpowered", "class_bullet_manager.html#a507393ed5ccbe692e93f7763ed714435", null ],
     [ "fireOne", "class_bullet_manager.html#ac752231cf91a59e7eb5113f18a7b5f1d", null ],
+    [ "getBulletMap", "class_bullet_manager.html#a55909cda5bcaa595efe6187880f2d812", null ],
     [ "initBulletMapVector", "class_bullet_manager.html#ac42e3dfcdf93fd8d4e20ba19cc72031b", null ],
     [ "initBulletvector", "class_bullet_manager.html#ab78a89d8d0b0a700f4bc62bf1c50fb2a", null ],
     [ "reuseBullet", "class_bullet_manager.html#a2cf961d2667a1f6e10b73ee786079861", null ],

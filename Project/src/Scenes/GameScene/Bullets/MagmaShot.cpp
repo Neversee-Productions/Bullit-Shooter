@@ -13,10 +13,10 @@ const sf::Vector2f bullets::MagmaShot::s_DEFAULT_SIZE = sf::Vector2f(15.0f,15.0f
 bullets::MagmaShot::MagmaShot()
 	: Bullet()
 	, m_explode(false)
-	, TIMETOLIVE(4.0f)
 {
-	m_speed = 4.0f;
-	updateVelocityVector();
+	m_speed = 4.0f * 60.0f;
+	//updateVelocityVector();
+	m_velocity.y = -m_speed;
 
 	//different size to parent
 	m_bulletRect.setSize(s_DEFAULT_SIZE);
@@ -33,11 +33,6 @@ bullets::MagmaShot::MagmaShot()
 /// </summary>
 void bullets::MagmaShot::update()
 {
-	TIMETOLIVE -= App::getUpdateDeltaTime();
-	if (TIMETOLIVE <= 0)
-	{
-		m_explode = true;
-	}
 	if (!m_explode)
 	{
 		Bullet::update();
@@ -52,6 +47,8 @@ void bullets::MagmaShot::update()
 	{
 		setActive(false);
 	}
+	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
+	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 }
 
 /// <summary>
@@ -78,7 +75,6 @@ void bullets::MagmaShot::setActive(bool active)
 		m_bulletRect.setSize(s_DEFAULT_SIZE);
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_explode = false;
-		TIMETOLIVE = 4.0f; //DELETE WHEN NOT TESTING
 	}
 	m_active = active;
 }

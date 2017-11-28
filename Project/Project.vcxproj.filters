@@ -222,6 +222,12 @@
     <ClCompile Include="src\Scenes\GameScene\Bullets\PyroBlast.cpp">
       <Filter>Source Files\Scenes\GameScene\Bullets</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Asteroid.cpp">
+      <Filter>Source Files\Scenes\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\AsteroidManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -351,6 +357,12 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Bullets\PyroBlast.h">
       <Filter>Header Files\Scenes\GameScene\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Asteroid.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\AsteroidManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
