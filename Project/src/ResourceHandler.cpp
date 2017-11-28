@@ -29,6 +29,7 @@ ResourceHandler::ResourceHandler()
 	, m_pairFontHolder()
 	, m_pairSoundHolder()
 	, m_pairAnimationHolder()
+	, m_pairShaderHolder()
 	, m_ID_STRATEGY(thor::Resources::KnownIdStrategy::Reuse)
 {
 }
@@ -123,11 +124,13 @@ template<> std::shared_ptr<thor::BigTexture> ResourceHandler::loadUp<thor::BigTe
 }
 
 /// <summary>
+/// @brief Our loader of assets.
+/// 
 /// 
 /// </summary>
-/// <param name="jsonParser"></param>
-/// <param name="id"></param>
-/// <returns></returns>
+/// <param name="jsonParser">Defines the json parser.</param>
+/// <param name="id">Defines the id of the data we are loading</param>
+/// <returns>Returns a shared pointer to our loaded resource.</returns>
 template<> std::shared_ptr<thor::FrameAnimation> ResourceHandler::loadUp<thor::FrameAnimation>(json::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<thor::FrameAnimation> return_value;
@@ -143,17 +146,41 @@ template<> std::shared_ptr<thor::FrameAnimation> ResourceHandler::loadUp<thor::F
 }
 
 /// <summary>
+/// @brief Our loader of assets.
+/// 
 /// 
 /// </summary>
-/// <param name="jsonParser"></param>
-/// <param name="id"></param>
-/// <returns></returns>
+/// <param name="jsonParser">Defines the json parser.</param>
+/// <param name="id">Defines the id of the data we are loading</param>
+/// <returns>Returns a shared pointer to our loaded resource.</returns>
 template<> std::shared_ptr<std::vector<sf::IntRect>> ResourceHandler::loadUp<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<std::vector<sf::IntRect>> return_value;
 	try
 	{
 		return_value = std::make_shared<std::vector<sf::IntRect>>(load<std::vector<sf::IntRect>>(jsonParser, id));
+	}
+	catch (...) // catch any and all possible exceptions.
+	{
+		return nullptr;
+	}
+	return return_value;
+}
+
+/// <summary>
+/// @brief Our loader of assets.
+/// 
+/// 
+/// </summary>
+/// <param name="jsonParser">Defines the json parser.</param>
+/// <param name="id">Defines the id of the data we are loading</param>
+/// <returns>Returns a shared pointer to our loaded resource.</returns>
+template<> std::shared_ptr<sf::Shader> ResourceHandler::loadUp<sf::Shader>(json::json & jsonParser, const std::string & id)
+{
+	std::shared_ptr<sf::Shader> return_value;
+	try
+	{
+		return_value = load<std::shared_ptr<sf::Shader>>(jsonParser, id);
 	}
 	catch (...) // catch any and all possible exceptions.
 	{
@@ -223,6 +250,31 @@ template<> std::vector<sf::IntRect> & ResourceHandler::load<std::vector<sf::IntR
 		}
 
 		return frames;
+	}
+}
+
+template<> std::shared_ptr<sf::Shader>& ResourceHandler::load<std::shared_ptr<sf::Shader>>(json::json & jsonParser, const std::string & id)
+{
+	std::lock_guard<std::mutex> lock(m_pairShaderHolder.m_mutex);
+	auto & map = *(m_pairShaderHolder.m_holder);
+	auto & ittPair = map.find(id);
+	if (ittPair != map.end())
+	{
+		return ittPair->second;
+	}
+	else
+	{
+		std::shared_ptr<sf::Shader>& sptrShader = (map[id] = std::make_shared<sf::Shader>());
+		if (nullptr != sptrShader)
+		{
+			const auto & jsonShaders = jsonParser.at("shaders").at(id);
+			const auto & vertexShaderFilePath = jsonShaders.at("vertex").get<std::string>();
+			const auto & fragmentShaderFilePath = jsonShaders.at("fragment").get<std::string>();
+
+			assert(sptrShader->loadFromFile(vertexShaderFilePath, fragmentShaderFilePath));
+		}
+
+		return sptrShader;
 	}
 }
 

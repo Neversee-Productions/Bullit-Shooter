@@ -4,9 +4,8 @@
 #include "Scene.h"
 #include "SFML\Graphics\RectangleShape.hpp"
 #include "Thor\Animations.hpp"
-#include "Player.h"
 #include "tinyheaders\tinyc2.h"
-#include "Asteroid.h"
+#include "Entities\Entities.h"
 
 ///
 /// @brief Main game scene.
@@ -33,12 +32,15 @@ private:
 	struct Resources
 	{
 		/// <summary>
-		/// @brief unique pointer to player resources.
+		/// @brief shared pointer to player resources.
 		/// 
 		/// 
 		/// </summary>
 		std::shared_ptr<Player::Resources> m_sptrPlayer =
 			std::make_shared<Player::Resources>();
+
+		std::shared_ptr<Background::Resources> m_sptrBackground =
+			std::make_shared<Background::Resources>();
 	};
 
 public:
@@ -58,6 +60,7 @@ public:
 private:
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
+
 	/// <summary>
 	/// @brief Represents the player object
 	/// 
@@ -85,6 +88,13 @@ private:
 	/// 
 	/// </summary>
 	Asteroid m_asteroid;
+
+	/// <summary>
+	/// @brief defines the background of GameScene.
+	/// 
+	/// 
+	/// </summary>
+	Background m_background;
 
 	/// <summary>
 	/// @brief constant reference to the window.

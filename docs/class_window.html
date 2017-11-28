@@ -106,6 +106,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac547a5aacd051d9f5547c72fd06340a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfb2d5826942693e289d13f314a341f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#adfb2d5826942693e289d13f314a341f7">draw</a> (const sf::Drawable &amp;drawable)</td></tr>
 <tr class="separator:adfb2d5826942693e289d13f314a341f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae736a308a17d5f8e60dbc94cb96e6704"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#ae736a308a17d5f8e60dbc94cb96e6704">draw</a> (const sf::Drawable &amp;drawable, const sf::RenderStates &amp;renderState)</td></tr>
+<tr class="separator:ae736a308a17d5f8e60dbc94cb96e6704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afadfafa5a0b9472554759004aafb327e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#afadfafa5a0b9472554759004aafb327e">display</a> ()</td></tr>
 <tr class="separator:afadfafa5a0b9472554759004aafb327e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a761d614931fb5a5daa70e4f580c3e78e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a761d614931fb5a5daa70e4f580c3e78e">isOpen</a> () const</td></tr>
@@ -264,7 +266,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="adfb2d5826942693e289d13f314a341f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfb2d5826942693e289d13f314a341f7">&#9670;&nbsp;</a></span>draw()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb2d5826942693e289d13f314a341f7">&#9670;&nbsp;</a></span>draw() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,6 +285,43 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">drawable</td><td>target that will be rendered on next produced frame.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae736a308a17d5f8e60dbc94cb96e6704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae736a308a17d5f8e60dbc94cb96e6704">&#9670;&nbsp;</a></span>draw() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::draw </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Drawable &amp;&#160;</td>
+          <td class="paramname"><em>drawable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::RenderStates &amp;&#160;</td>
+          <td class="paramname"><em>renderState</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Draws the drawable on the render texture.</p>
+<p>Drawable is drawn on our render texture with the passed render state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">drawable</td><td>target that will be rendered on next produced frame.</td></tr>
+    <tr><td class="paramname">renderState</td><td>the render state we want to apply to our target.</td></tr>
   </table>
   </dd>
 </dl>

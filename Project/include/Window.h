@@ -24,6 +24,7 @@ public:
 	void processEvents();
 	void changeStyle(const sf::Uint32 & newStyle);
 	void draw(const sf::Drawable & drawable);
+	void draw(const sf::Drawable & drawable, const sf::RenderStates & renderState);
 	void display();
 	bool isOpen() const;
 	void clear();

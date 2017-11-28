@@ -200,6 +200,18 @@ void Window::draw(const sf::Drawable & drawable)
 }
 
 /// <summary>
+/// @brief Draws the drawable on the render texture.
+/// 
+/// Drawable is drawn on our render texture with the passed render state.
+/// </summary>
+/// <param name="drawable">target that will be rendered on next produced frame.</param>
+/// <param name="renderState">the render state we want to apply to our target.</param>
+void Window::draw(const sf::Drawable & drawable, const sf::RenderStates & renderState)
+{
+	m_renderTexture.draw(drawable, renderState);
+}
+
+/// <summary>
 /// @brief Finalizes internal rendering processes.
 /// 
 /// Gets render texture drawn into our window and our window produces the frame.
