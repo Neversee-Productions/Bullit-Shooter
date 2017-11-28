@@ -39,7 +39,9 @@ public:
 	void fireOne(const sf::Vector2f& pos1, const sf::Vector2f& pos2, const BulletTypes& type);
 	void fireEmpowered(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
 	void setEmpowered(bullets::Bullet& bullet ,const float& angle, const sf::Vector2f& pos);
+	const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & getBulletMap();
 
+private:
 	/// <summary>
 	/// @brief how long since last fire.
 	/// 

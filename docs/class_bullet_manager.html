@@ -82,7 +82,7 @@ $(document).ready(function(){initNavTree('class_bullet_manager.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_bullet_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">BulletManager Class Reference</div>  </div>
@@ -119,9 +119,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a507393ed5ccbe692e93f7763ed714435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a1c306efeb419cf4df73cb940669dc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a7a1c306efeb419cf4df73cb940669dc3">setEmpowered</a> (<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet, const float &amp;angle, const sf::Vector2f &amp;pos)</td></tr>
 <tr class="separator:a7a1c306efeb419cf4df73cb940669dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55909cda5bcaa595efe6187880f2d812"><td class="memItemLeft" align="right" valign="top">const std::map&lt; <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &gt; &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a55909cda5bcaa595efe6187880f2d812">getBulletMap</a> ()</td></tr>
+<tr class="separator:a55909cda5bcaa595efe6187880f2d812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:adc312c9d67f9c48ff35d0316be779779"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#adc312c9d67f9c48ff35d0316be779779">m_timeSinceFire</a></td></tr>
 <tr class="separator:adc312c9d67f9c48ff35d0316be779779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada6972d3c7730d60d0085c27e3348861"><td class="memItemLeft" align="right" valign="top">const tinyh::c2AABB &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ada6972d3c7730d60d0085c27e3348861">m_windowC2Rect</a></td></tr>
@@ -309,6 +311,25 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a55909cda5bcaa595efe6187880f2d812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55909cda5bcaa595efe6187880f2d812">&#9670;&nbsp;</a></span>getBulletMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt; <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &gt; &gt; &gt; &amp; BulletManager::getBulletMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get a constant reference to the bullets.</p>
+<dl class="section return"><dt>Returns</dt><dd>map of bullets</dd></dl>
 
 </div>
 </div>
@@ -505,11 +526,19 @@ template&lt;typename data_type &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::map&lt;<a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::vector&lt;std::unique_ptr&lt;<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a>&gt; &gt; &gt; BulletManager::m_bulletMap</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -519,11 +548,19 @@ template&lt;typename data_type &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float BulletManager::m_timeSinceFire</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>how long since last fire.</p>
 
@@ -534,11 +571,19 @@ template&lt;typename data_type &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const tinyh::c2AABB&amp; BulletManager::m_windowC2Rect</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>constant reference to the window.</p>
 

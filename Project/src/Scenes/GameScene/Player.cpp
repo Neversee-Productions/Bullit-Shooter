@@ -21,6 +21,7 @@ Player::Player(KeyHandler& keyHandler)
 	m_weapon1.m_weaponRect.setPosition(m_weapon1Pos);
 	m_weapon2.m_weaponRect.setPosition(m_weapon2Pos);
 	m_bulletManager.initBulletvector(m_weapon1.m_currentBullet);
+	
 }
 
 /// <summary>
@@ -65,5 +66,16 @@ void Player::update()
 	m_weapon2.update(m_weapon2Pos);
 	m_bulletManager.update();
 
+}
+
+/// <summary>
+/// @brief get a constant reference to the bullets.
+/// 
+/// 
+/// </summary>
+/// <returns>map of bullets</returns>
+const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & Player::getBulletMap()
+{
+	return m_bulletManager.getBulletMap();
 }
 

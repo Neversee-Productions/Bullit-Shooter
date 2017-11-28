@@ -87,13 +87,20 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="struct_game_pad_state.html#af6f7ccf8f4d763656ce269292c2ee30b">GamePadState</a>
 </li>
 <li>m_active
-: <a class="el" href="classbullets_1_1_bullet.html#a892f5a383bf15183acf426288b8b2c27">bullets::Bullet</a>
+: <a class="el" href="class_asteroid.html#af4ab0f4e46a5d6a3b0410ddbca949c4a">Asteroid</a>
+, <a class="el" href="classbullets_1_1_bullet.html#a892f5a383bf15183acf426288b8b2c27">bullets::Bullet</a>
 </li>
 <li>m_alpha
 : <a class="el" href="classbullets_1_1_holy_sphere.html#a6ac826a104a7ec68398ecddd4a1b3e29">bullets::HolySphere</a>
 </li>
 <li>m_angle
 : <a class="el" href="classbullets_1_1_bullet.html#a7eaa1f6ae67ec7c13f37f3bf61704ea9">bullets::Bullet</a>
+</li>
+<li>m_asteroid
+: <a class="el" href="class_game_scene.html#a24dc2afe03d6831304709da5157b3ce1">GameScene</a>
+</li>
+<li>m_asteroidsVector
+: <a class="el" href="class_asteroid_manager.html#a27af80be979b9f62d9c4515235b4efad">AsteroidManager</a>
 </li>
 <li>m_B
 : <a class="el" href="struct_game_pad_state.html#ad195fc90155dbc9592486904e2f2366d">GamePadState</a>
@@ -126,6 +133,12 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_bulletRect
 : <a class="el" href="classbullets_1_1_bullet.html#a5e3aae95c73d3f1190bdeda96c6c2e46">bullets::Bullet</a>
 </li>
+<li>m_circle
+: <a class="el" href="class_asteroid.html#a25c0ef10347868332d4e2d637695f67f">Asteroid</a>
+</li>
+<li>m_collisionCircle
+: <a class="el" href="class_asteroid.html#af2c2388afb2c00cc1779912110bfb527">Asteroid</a>
+</li>
 <li>m_continueText
 : <a class="el" href="class_title_scene.html#a26339e7ac9e0fb76c236d16ca53662f7">TitleScene</a>
 </li>
@@ -153,6 +166,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 , <a class="el" href="classgui_1_1_check_box.html#a589b8cce7cf314910c2d74d6a54e56d5">gui::CheckBox</a>
 , <a class="el" href="classgui_1_1_slider.html#adea92301504508a2417743c7b1d6d856">gui::Slider</a>
 </li>
+<li>m_damage
+: <a class="el" href="classbullets_1_1_bullet.html#a407cabba03002e045941e9fbe2e68368">bullets::Bullet</a>
+</li>
 <li>m_DELAY_TIME
 : <a class="el" href="class_main_menu_scene.html#af236e14ed9f988999b92421a55099921">MainMenuScene</a>
 , <a class="el" href="class_options_scene.html#aa76250f0eca3dc6bf2948800a256564b">OptionsScene</a>
@@ -177,6 +193,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_explode
 : <a class="el" href="classbullets_1_1_magma_shot.html#ad5299693b1586ab5569f85eb48059005">bullets::MagmaShot</a>
+, <a class="el" href="classbullets_1_1_napalm_sphere.html#aecaaf1b7ae0bcc2d6bcf8a870d6bca21">bullets::NapalmSphere</a>
 , <a class="el" href="classbullets_1_1_pyro_blast.html#a148199fcf78d9a6730f5d13313a401b9">bullets::PyroBlast</a>
 </li>
 <li>m_fadeOut
@@ -206,6 +223,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="class_main_menu_scene.html#a1b65e9fb6b9173e577e814174f68e2f4">MainMenuScene</a>
 , <a class="el" href="class_options_scene.html#a77e97dc8740720d57011ff815152bdc2">OptionsScene</a>
 </li>
+<li>m_health
+: <a class="el" href="class_asteroid.html#acb5188ed5bbd7b0b05b64aa47dc6a202">Asteroid</a>
+</li>
 <li>m_HIGHLIGHT_BORDER
 : <a class="el" href="classgui_1_1_check_box.html#a3edf41d4d4079e52bb6bcf0ef79b5071">gui::CheckBox</a>
 </li>
@@ -227,6 +247,12 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_incrementColor
 : <a class="el" href="class_splash_scene.html#ae6a4d115fbf158669915d1eab9b738ea">SplashScene</a>
+</li>
+<li>m_invulnerable
+: <a class="el" href="class_asteroid.html#a9e16fbf2e5a961ab8099538abb594425">Asteroid</a>
+</li>
+<li>m_invulnTimer
+: <a class="el" href="class_asteroid.html#ae51f5725ecb89f48e85d15998ab3aee6">Asteroid</a>
 </li>
 <li>m_jump
 : <a class="el" href="classgui_1_1_slider.html#a66b3de03bc0aa89c215ea5346d0795b7">gui::Slider</a>
@@ -285,9 +311,6 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_min
 : <a class="el" href="classgui_1_1_slider.html#a19b167667c32994b656f88d23c13f237">gui::Slider</a>
 </li>
-<li>m_moveable
-: <a class="el" href="classbullets_1_1_napalm_sphere.html#aece2e52daccb2d2a5a9435d10e1b2568">bullets::NapalmSphere</a>
-</li>
 <li>m_moved
 : <a class="el" href="classgui_1_1_slider.html#acbbf3c52dc81e0250a08b37ea2ee5fdc">gui::Slider</a>
 </li>
@@ -329,7 +352,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="class_game_scene.html#a814ec4e13fc13a8e8c2f29ef179abc8b">GameScene</a>
 </li>
 <li>m_position
-: <a class="el" href="classbullets_1_1_bullet.html#a37850bb27e3903d69b55c2d76e238bd4">bullets::Bullet</a>
+: <a class="el" href="class_asteroid.html#ac3e457510348bac65ce659bb679c81dd">Asteroid</a>
+, <a class="el" href="classbullets_1_1_bullet.html#a37850bb27e3903d69b55c2d76e238bd4">bullets::Bullet</a>
 , <a class="el" href="classgui_1_1_check_box.html#a7b9fc2dffad0a71a882a5a1772ab1817">gui::CheckBox</a>
 , <a class="el" href="classgui_1_1_label.html#a4bc64d38faf4e9a83d968c056f53243b">gui::Label</a>
 , <a class="el" href="class_ship.html#a42a1eb695d4909bee43e7f5cd28dd66b">Ship</a>
@@ -354,6 +378,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_pulseCircle
 : <a class="el" href="classbullets_1_1_static_sphere.html#ac4e8049bae5ab9fdfbd5f7f95102fb83">bullets::StaticSphere</a>
 </li>
+<li>m_pulseCircleCollider
+: <a class="el" href="classbullets_1_1_static_sphere.html#ac2332abde9d17c8ea38cc8998958c6c7">bullets::StaticSphere</a>
+</li>
 <li>m_pulseTimer
 : <a class="el" href="classbullets_1_1_static_sphere.html#a1974c3383680a7888c60a82608a2915b">bullets::StaticSphere</a>
 </li>
@@ -361,7 +388,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="struct_game_pad_state.html#a3a70809e44405f156b99219929216df3">GamePadState</a>
 </li>
 <li>m_rectangle
-: <a class="el" href="classgui_1_1_check_box.html#a5fb3d60a4dc6303003bc7f39bea88b0a">gui::CheckBox</a>
+: <a class="el" href="class_asteroid.html#af1168c2dc99f7b121da4dd90676b6e65">Asteroid</a>
+, <a class="el" href="classgui_1_1_check_box.html#a5fb3d60a4dc6303003bc7f39bea88b0a">gui::CheckBox</a>
 </li>
 <li>m_rectangleLeft
 : <a class="el" href="classgui_1_1_button.html#aee1c938c1fe2ebc4484fc8b770e2791b">gui::Button</a>
@@ -524,7 +552,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="classgui_1_1_slider.html#ae346b7555166978acef1bda4e75029f9">gui::Slider</a>
 </li>
 <li>m_velocity
-: <a class="el" href="classbullets_1_1_bullet.html#a4a39935b0bbd51d686e9e66577fa5045">bullets::Bullet</a>
+: <a class="el" href="class_asteroid.html#a8dd7cd60da2412c5859e078a5902f03d">Asteroid</a>
+, <a class="el" href="classbullets_1_1_bullet.html#a4a39935b0bbd51d686e9e66577fa5045">bullets::Bullet</a>
 </li>
 <li>m_weapon1
 : <a class="el" href="class_player.html#a43a948490af7100d684fc2034247f7bd">Player</a>
@@ -549,7 +578,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 , <a class="el" href="class_scene_manager.html#a31ede4b20d379b2191a4d82bc8caae1c">SceneManager</a>
 </li>
 <li>m_windowC2Rect
-: <a class="el" href="class_bullet_manager.html#ada6972d3c7730d60d0085c27e3348861">BulletManager</a>
+: <a class="el" href="class_asteroid.html#a17d2ded1192f1c0b20f7193e546295a4">Asteroid</a>
+, <a class="el" href="class_bullet_manager.html#ada6972d3c7730d60d0085c27e3348861">BulletManager</a>
+, <a class="el" href="class_game_scene.html#a2eba18e031ee0d957b6fc74d21c443db">GameScene</a>
 </li>
 <li>m_X
 : <a class="el" href="struct_game_pad_state.html#a261a275aed8dffe0524626ef1f22af25">GamePadState</a>

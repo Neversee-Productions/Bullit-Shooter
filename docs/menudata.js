@@ -53,6 +53,7 @@ var menudata={children:[
 {text:"~",url:"functions_func_0x7e.html#index_0x7e"}]},
 {text:"Variables",url:"functions_vars.html",children:[
 {text:"d",url:"functions_vars.html#index_d"},
+{text:"i",url:"functions_vars_i.html#index_i"},
 {text:"m",url:"functions_vars_m.html#index_m"},
 {text:"p",url:"functions_vars_p.html#index_p"},
 {text:"s",url:"functions_vars_s.html#index_s"},

@@ -136,6 +136,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9da1ed1d52f5047216d162171bbf1af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa99b721acc4f2ceba75fd95cb55b015"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#aaa99b721acc4f2ceba75fd95cb55b015">isActive</a> () const</td></tr>
 <tr class="separator:aaa99b721acc4f2ceba75fd95cb55b015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfdff6141121c2eb89f1abcec498d606"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#acfdff6141121c2eb89f1abcec498d606">checkCircleCollision</a> (const tinyh::c2Circle &amp;other)</td></tr>
+<tr class="separator:acfdff6141121c2eb89f1abcec498d606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0328f0a71bcea3ade26173f975c98ced"><td class="memItemLeft" align="right" valign="top">const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a0328f0a71bcea3ade26173f975c98ced">getDamage</a> ()</td></tr>
+<tr class="separator:a0328f0a71bcea3ade26173f975c98ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -155,6 +159,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a0b67476aa9f0504417a9526b3203acd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7eaa1f6ae67ec7c13f37f3bf61704ea9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a7eaa1f6ae67ec7c13f37f3bf61704ea9">m_angle</a></td></tr>
 <tr class="separator:a7eaa1f6ae67ec7c13f37f3bf61704ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a407cabba03002e045941e9fbe2e68368"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a407cabba03002e045941e9fbe2e68368">m_damage</a></td></tr>
+<tr class="separator:a407cabba03002e045941e9fbe2e68368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e316bcf4267f76131795414cdb6def"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a31e316bcf4267f76131795414cdb6def">tempRect</a></td></tr>
+<tr class="separator:a31e316bcf4267f76131795414cdb6def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
@@ -184,6 +192,42 @@ Static Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="acfdff6141121c2eb89f1abcec498d606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfdff6141121c2eb89f1abcec498d606">&#9670;&nbsp;</a></span>checkCircleCollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bullets::Bullet::checkCircleCollision </td>
+          <td>(</td>
+          <td class="paramtype">const tinyh::c2Circle &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check collision against a circle.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the circle to collide with</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if collided</dd></dl>
+
+<p>Reimplemented in <a class="el" href="classbullets_1_1_static_sphere.html#a895405895ddf27330e7b22e4965e6ee1">bullets::StaticSphere</a>.</p>
+
+</div>
+</div>
 <a id="abb70aa96964976513ce6f067d13743ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb70aa96964976513ce6f067d13743ba">&#9670;&nbsp;</a></span>draw()</h2>
 
@@ -246,6 +290,25 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>get the collision box.</p>
 <dl class="section return"><dt>Returns</dt><dd>The collision box</dd></dl>
+
+</div>
+</div>
+<a id="a0328f0a71bcea3ade26173f975c98ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0328f0a71bcea3ade26173f975c98ced">&#9670;&nbsp;</a></span>getDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float &amp; bullets::Bullet::getDamage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>access damage of the bullet.</p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -534,6 +597,29 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a407cabba03002e045941e9fbe2e68368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a407cabba03002e045941e9fbe2e68368">&#9670;&nbsp;</a></span>m_damage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float bullets::Bullet::m_damage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define damage of bullet.</p>
+
+</div>
+</div>
 <a id="a37850bb27e3903d69b55c2d76e238bd4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a37850bb27e3903d69b55c2d76e238bd4">&#9670;&nbsp;</a></span>m_position</h2>
 
@@ -623,6 +709,28 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>velocity of the bullet</p>
+
+</div>
+</div>
+<a id="a31e316bcf4267f76131795414cdb6def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e316bcf4267f76131795414cdb6def">&#9670;&nbsp;</a></span>tempRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape bullets::Bullet::tempRect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
