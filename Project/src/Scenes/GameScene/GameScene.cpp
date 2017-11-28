@@ -11,6 +11,7 @@ GameScene::GameScene(KeyHandler& keyHandler)
 	, m_keyHandler(keyHandler)
 	, m_resources(nullptr)
 	, m_asteroid()
+	, m_background()
 	, m_windowC2Rect(App::getViewC2Rect())
 {
 	m_asteroid.setActive(true);
@@ -60,6 +61,7 @@ void GameScene::stop()
 /// </summary>
 void GameScene::update()
 {
+	m_background.update();
 	m_player.update();
 	m_asteroid.update();
 	updateCollisions();
@@ -74,6 +76,7 @@ void GameScene::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void GameScene::draw(Window & window, const float & deltaTime)
 {
+	m_background.draw(window, deltaTime);
 	m_asteroid.draw(window, deltaTime);
 	m_player.draw(window, deltaTime);
 }
@@ -239,8 +242,15 @@ void GameScene::setup(const std::string & filePath)
 		frames.insert(frames.begin(), loadedFrames->begin(), loadedFrames->end());
 		assert(nullptr != sptrShip->m_uptrFrames);
 
+		std::ifstream backgroundRawFile(gameSceneJsonLoader.at("background").get<std::string>());
+		json::json backgroundJson;
+		backgroundRawFile >> backgroundJson;
+
+		auto sptrBackground = m_resources->m_sptrBackground;
+		sptrBackground->m_sptrBgShader = resourceHandler.loadUp<sf::Shader>(backgroundJson, "background");
 	}
 
+	m_background.init(m_resources->m_sptrBackground);
 	m_player.init(m_resources->m_sptrPlayer);
 }
 

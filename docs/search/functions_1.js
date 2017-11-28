@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['background',['Background',['../class_background.html#a05b686e4ce0cbdb3b1fa14a93fdf98a1',1,'Background']]],
   ['btnback',['btnBack',['../class_options_scene.html#a046ba1d0e48e92208465a495e788ab68',1,'OptionsScene']]],
   ['btnexitgame',['btnExitGame',['../class_main_menu_scene.html#a6610cbd7990a242f688e87c3b8cd962a',1,'MainMenuScene']]],
   ['btnnewgame',['btnNewGame',['../class_main_menu_scene.html#a595eb3d30392e31b4031616c15faf494',1,'MainMenuScene']]],

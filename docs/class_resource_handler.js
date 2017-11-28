@@ -5,6 +5,7 @@ var class_resource_handler =
     [ "BigTextureHolder", "class_resource_handler.html#a1d2a78f5214441f6460260f491b0fbfc", null ],
     [ "FontHolder", "class_resource_handler.html#a1a873bdd707d76abd4cd9b1efa876782", null ],
     [ "FrameHolder", "class_resource_handler.html#aaf6faa01115e9dd0bff19282bd68920c", null ],
+    [ "ShaderHolder", "class_resource_handler.html#ab7559361372e2f7a69bcafe2e41f97e9", null ],
     [ "SoundHolder", "class_resource_handler.html#a0eb9a6de43cf0022d808a63fa6cf8654", null ],
     [ "TextureHolder", "class_resource_handler.html#a98a9d30df19bc82fa8b3632ab89af1ef", null ],
     [ "ResourceHandler", "class_resource_handler.html#a0a33aab3f38dba04b5dc3f4496d324df", null ],
@@ -12,6 +13,7 @@ var class_resource_handler =
     [ "load", "class_resource_handler.html#a82affa198d8b8fbec725386ff673c0b1", null ],
     [ "load", "class_resource_handler.html#a499afbc247d36de0d55d449abeac72df", null ],
     [ "load", "class_resource_handler.html#ab2d5d17792860e3c6c7c9c934ef8fb05", null ],
+    [ "load", "class_resource_handler.html#a5ac2d8f662db0d12b20f04cb1137c98a", null ],
     [ "load", "class_resource_handler.html#ab7b92350717c1cb0a0551f76fb2690e9", null ],
     [ "load", "class_resource_handler.html#a474a822f83f699c47acd71a9166fff25", null ],
     [ "load", "class_resource_handler.html#a8c27f786a72c1fca048d9f37a395ac83", null ],
@@ -23,6 +25,7 @@ var class_resource_handler =
     [ "m_pairBigTextureHolder", "class_resource_handler.html#a9fe7bf40042d9ec8c59bd2bfc1e3eae3", null ],
     [ "m_pairFontHolder", "class_resource_handler.html#af639134c474851e59ec901b9603358fb", null ],
     [ "m_pairFrameHolder", "class_resource_handler.html#afb1e71a6e4e1a3987f3c23ba156cb86c", null ],
+    [ "m_pairShaderHolder", "class_resource_handler.html#a506efe3ae32c2d88030370db99ef8ce6", null ],
     [ "m_pairSoundHolder", "class_resource_handler.html#a59043d905be80301a5b69a73cbbc143f", null ],
     [ "m_pairTextureHolder", "class_resource_handler.html#af957c90eb1423b21ef18093f282a211e", null ],
     [ "s_instance", "class_resource_handler.html#a58a35b535a836c1e7044abd677a367e9", null ]

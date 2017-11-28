@@ -130,6 +130,8 @@ Private Types</h2></td></tr>
 <tr class="separator:a1346d9b270681956e66c660fc40d7aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf6faa01115e9dd0bff19282bd68920c"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; std::string, std::vector&lt; sf::IntRect &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#aaf6faa01115e9dd0bff19282bd68920c">FrameHolder</a></td></tr>
 <tr class="separator:aaf6faa01115e9dd0bff19282bd68920c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7559361372e2f7a69bcafe2e41f97e9"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; std::string, std::shared_ptr&lt; sf::Shader &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#ab7559361372e2f7a69bcafe2e41f97e9">ShaderHolder</a></td></tr>
+<tr class="separator:ab7559361372e2f7a69bcafe2e41f97e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -144,6 +146,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ab2d5d17792860e3c6c7c9c934ef8fb05"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
 <tr class="memitem:ab2d5d17792860e3c6c7c9c934ef8fb05"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; sf::IntRect &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#ab2d5d17792860e3c6c7c9c934ef8fb05">load</a> (json::json &amp;jsonParser, const std::string &amp;id)</td></tr>
 <tr class="separator:ab2d5d17792860e3c6c7c9c934ef8fb05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac2d8f662db0d12b20f04cb1137c98a"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:a5ac2d8f662db0d12b20f04cb1137c98a"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Shader &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a5ac2d8f662db0d12b20f04cb1137c98a">load</a> (json::json &amp;jsonParser, const std::string &amp;id)</td></tr>
+<tr class="separator:a5ac2d8f662db0d12b20f04cb1137c98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7b92350717c1cb0a0551f76fb2690e9"><td class="memTemplParams" colspan="2">template&lt;typename data_type &gt; </td></tr>
 <tr class="memitem:ab7b92350717c1cb0a0551f76fb2690e9"><td class="memTemplItemLeft" align="right" valign="top">data_type &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#ab7b92350717c1cb0a0551f76fb2690e9">load</a> (const std::string &amp;id, const std::string &amp;filePath)</td></tr>
 <tr class="separator:ab7b92350717c1cb0a0551f76fb2690e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,6 +179,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a51401386049ac6d89788370a82201422"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb1e71a6e4e1a3987f3c23ba156cb86c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt; <a class="el" href="class_resource_handler.html#aaf6faa01115e9dd0bff19282bd68920c">FrameHolder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#afb1e71a6e4e1a3987f3c23ba156cb86c">m_pairFrameHolder</a></td></tr>
 <tr class="separator:afb1e71a6e4e1a3987f3c23ba156cb86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a506efe3ae32c2d88030370db99ef8ce6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt; <a class="el" href="class_resource_handler.html#ab7559361372e2f7a69bcafe2e41f97e9">ShaderHolder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a506efe3ae32c2d88030370db99ef8ce6">m_pairShaderHolder</a></td></tr>
+<tr class="separator:a506efe3ae32c2d88030370db99ef8ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a531dae66f8789c7ca2a74d11a37e47c3"><td class="memItemLeft" align="right" valign="top">const thor::Resources::KnownIdStrategy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a531dae66f8789c7ca2a74d11a37e47c3">m_ID_STRATEGY</a></td></tr>
 <tr class="separator:a531dae66f8789c7ca2a74d11a37e47c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -278,8 +285,32 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Defines a alias for our vector of rectangles.</p>
+<p>Defines a alias for our map of vector of rectangles.</p>
 <p>This resource holder contains each frame of a particular animation. </p>
+
+</div>
+</div>
+<a id="ab7559361372e2f7a69bcafe2e41f97e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7559361372e2f7a69bcafe2e41f97e9">&#9670;&nbsp;</a></span>ShaderHolder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::unordered_map&lt;std::string, std::shared_ptr&lt;sf::Shader&gt; &gt; <a class="el" href="class_resource_handler.html#ab7559361372e2f7a69bcafe2e41f97e9">ResourceHandler::ShaderHolder</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines a alias for our map of shaders.</p>
+<p>This resource holder contains a shared pointer to a shader followed by its id. </p>
 
 </div>
 </div>
@@ -388,7 +419,7 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a82affa198d8b8fbec725386ff673c0b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82affa198d8b8fbec725386ff673c0b1">&#9670;&nbsp;</a></span>load() <span class="overload">[1/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a82affa198d8b8fbec725386ff673c0b1">&#9670;&nbsp;</a></span>load() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,7 +473,7 @@ template&lt;typename data_type &gt; </div>
 </div>
 </div>
 <a id="a499afbc247d36de0d55d449abeac72df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a499afbc247d36de0d55d449abeac72df">&#9670;&nbsp;</a></span>load() <span class="overload">[2/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a499afbc247d36de0d55d449abeac72df">&#9670;&nbsp;</a></span>load() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -490,7 +521,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="ab2d5d17792860e3c6c7c9c934ef8fb05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2d5d17792860e3c6c7c9c934ef8fb05">&#9670;&nbsp;</a></span>load() <span class="overload">[3/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d5d17792860e3c6c7c9c934ef8fb05">&#9670;&nbsp;</a></span>load() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -537,8 +568,56 @@ template&lt;&gt; </div>
 
 </div>
 </div>
+<a id="a5ac2d8f662db0d12b20f04cb1137c98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac2d8f662db0d12b20f04cb1137c98a">&#9670;&nbsp;</a></span>load() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;sf::Shader&gt;&amp; ResourceHandler::load </td>
+          <td>(</td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>jsonParser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Loads a particular resource.</p>
+<p>Defined as forward declaration of explicit template instatiation. Loads both fragment and vertex shader into the a sfml shader and stores it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonParser</td><td>defines the json file that our resource holder uses.</td></tr>
+    <tr><td class="paramname">id</td><td>defines its id in our resource holder.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to our loaded resource.</dd></dl>
+
+</div>
+</div>
 <a id="ab7b92350717c1cb0a0551f76fb2690e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7b92350717c1cb0a0551f76fb2690e9">&#9670;&nbsp;</a></span>load() <span class="overload">[4/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b92350717c1cb0a0551f76fb2690e9">&#9670;&nbsp;</a></span>load() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -592,7 +671,7 @@ template&lt;typename data_type &gt; </div>
 </div>
 </div>
 <a id="a474a822f83f699c47acd71a9166fff25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a474a822f83f699c47acd71a9166fff25">&#9670;&nbsp;</a></span>load() <span class="overload">[5/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a474a822f83f699c47acd71a9166fff25">&#9670;&nbsp;</a></span>load() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -640,7 +719,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="a8c27f786a72c1fca048d9f37a395ac83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c27f786a72c1fca048d9f37a395ac83">&#9670;&nbsp;</a></span>load() <span class="overload">[6/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c27f786a72c1fca048d9f37a395ac83">&#9670;&nbsp;</a></span>load() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -688,7 +767,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="ae9505b2ec94f8e5362a4de38e23d17a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9505b2ec94f8e5362a4de38e23d17a6">&#9670;&nbsp;</a></span>load() <span class="overload">[7/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9505b2ec94f8e5362a4de38e23d17a6">&#9670;&nbsp;</a></span>load() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -736,7 +815,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="a012dec569e2cc2a022e71490f08a6be5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a012dec569e2cc2a022e71490f08a6be5">&#9670;&nbsp;</a></span>load() <span class="overload">[8/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a012dec569e2cc2a022e71490f08a6be5">&#9670;&nbsp;</a></span>load() <span class="overload">[9/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -944,6 +1023,29 @@ template&lt;typename data_type &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Our Pair with its mutex and a unique pointer to our <a class="el" href="class_resource_handler.html#aaf6faa01115e9dd0bff19282bd68920c">ResourceHandler::FrameHolder</a>.</p>
+
+</div>
+</div>
+<a id="a506efe3ae32c2d88030370db99ef8ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a506efe3ae32c2d88030370db99ef8ce6">&#9670;&nbsp;</a></span>m_pairShaderHolder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt;<a class="el" href="class_resource_handler.html#ab7559361372e2f7a69bcafe2e41f97e9">ShaderHolder</a>&gt; ResourceHandler::m_pairShaderHolder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Our Pair with its mutex and a unique pointer to our <a class="el" href="class_resource_handler.html#ab7559361372e2f7a69bcafe2e41f97e9">ResourceHandler::ShaderHolder</a>.</p>
 
 </div>
 </div>

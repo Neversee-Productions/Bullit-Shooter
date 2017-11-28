@@ -1,7 +1,7 @@
 var searchData=
 [
   ['incframe',['incFrame',['../class_ship.html#ac9b1b10790df77a672bcdcf6a9ef868f',1,'Ship']]],
-  ['init',['init',['../class_player.html#add091bd8b92b2ee8e6d809b8c162eed5',1,'Player::init()'],['../class_ship.html#a71807fb1fd5357cf7d62f0fdc42fd758',1,'Ship::init()']]],
+  ['init',['init',['../class_background.html#a9e48d290fdba0d7cb52032c6fa454c62',1,'Background::init()'],['../class_player.html#add091bd8b92b2ee8e6d809b8c162eed5',1,'Player::init()'],['../class_ship.html#a71807fb1fd5357cf7d62f0fdc42fd758',1,'Ship::init()']]],
   ['initasteroidvector',['initAsteroidVector',['../class_asteroid_manager.html#ac1022463f462f024de3d91e83708b110',1,'AsteroidManager']]],
   ['initbulletmapvector',['initBulletMapVector',['../class_bullet_manager.html#ac42e3dfcdf93fd8d4e20ba19cc72031b',1,'BulletManager']]],
   ['initbulletvector',['initBulletvector',['../class_bullet_manager.html#ab78a89d8d0b0a700f4bc62bf1c50fb2a',1,'BulletManager']]],

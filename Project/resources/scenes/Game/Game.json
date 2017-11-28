@@ -1,3 +1,4 @@
 {
-    "player": "resources/scenes/game/player/player.json"
+    "player": "resources/scenes/game/player/player.json",
+    "background": "resources/scenes/game/background/background.json"
 }

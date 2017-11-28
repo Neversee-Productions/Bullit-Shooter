@@ -39,6 +39,7 @@ var searchData=
   ['setvelocity',['setVelocity',['../class_asteroid.html#aa1aec16c7ae1d887f4a56f927fd6c9c5',1,'Asteroid']]],
   ['setviewc2rect',['setViewC2Rect',['../class_app.html#a7e9cab266816de576d5da6482fee1eb9',1,'App']]],
   ['setviewsize',['setViewSize',['../class_app.html#a57b3f984530d645babaf2679a39c1136',1,'App']]],
+  ['shaderholder',['ShaderHolder',['../class_resource_handler.html#ab7559361372e2f7a69bcafe2e41f97e9',1,'ResourceHandler']]],
   ['ship',['Ship',['../class_ship.html',1,'Ship'],['../class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462',1,'Ship::Ship()']]],
   ['ship_2ecpp',['Ship.cpp',['../_ship_8cpp.html',1,'']]],
   ['ship_2eh',['Ship.h',['../_ship_8h.html',1,'']]],
