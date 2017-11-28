@@ -26,7 +26,7 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	// define our current resolution.
 	///////////////////////////////////////////////////////
-	m_resolution = sf::VideoMode(1366u, 768u);
+	m_resolution = fullscreenRes.at(0);
 	App::setWindowSize(m_resolution.width, m_resolution.height);
 	App::setWindowC2Rect(sf::Vector2f(0.0f, 0.0f), static_cast<sf::Vector2f>(App::getWindowSize()));
 
@@ -41,23 +41,28 @@ Window::Window(KeyHandler & keyHandler)
 	settings.stencilBits = 8u;
 	settings.antialiasingLevel = 8u;
 	
-	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::None, settings);
+	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Fullscreen, settings);
 
 	///////////////////////////////////////////////////////
 	// create and initialize our render texture
 	///////////////////////////////////////////////////////
-	auto& windowSize = m_sfWindow.getSize();
-	m_renderTexture.create(windowSize.x, windowSize.y, false);
+	const sf::Vector2u textureOriginalSize = sf::Vector2u(1366u, 768u);
+	m_renderTexture.create(textureOriginalSize.x, textureOriginalSize.y, false);
 	//m_renderTexture.setSmooth(true);
 
 	///////////////////////////////////////////////////////
 	// initialize our texture renderer
 	///////////////////////////////////////////////////////
+	
+	const auto & textureSize = static_cast<sf::Vector2f>(m_renderTexture.getSize());
+	const auto & windowSize = static_cast<sf::Vector2f>(m_sfWindow.getSize());
+	const sf::Vector2f textureScalar(windowSize.x / textureSize.x, windowSize.y / textureSize.y);
+	
 	m_textureRenderer.setColor(sf::Color::White);
 	m_textureRenderer.setPosition(0.0f, 0.0f);
 	m_textureRenderer.setOrigin(0.0f, 0.0f);
 	m_textureRenderer.setRotation(0.0f);
-	m_textureRenderer.setScale(1.0f, 1.0f);
+	m_textureRenderer.setScale(textureScalar);
 	m_textureRenderer.setTexture(m_renderTexture.getTexture(), true);
 }
 
