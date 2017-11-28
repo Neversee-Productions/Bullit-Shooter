@@ -14,8 +14,9 @@ bullets::MagmaShot::MagmaShot()
 	: Bullet()
 	, m_explode(false)
 {
-	m_speed = 4.0f;
-	updateVelocityVector();
+	m_speed = 4.0f * 60.0f;
+	//updateVelocityVector();
+	m_velocity.y = -m_speed;
 
 	//different size to parent
 	m_bulletRect.setSize(s_DEFAULT_SIZE);

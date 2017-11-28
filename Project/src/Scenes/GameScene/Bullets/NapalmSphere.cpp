@@ -13,8 +13,9 @@ bullets::NapalmSphere::NapalmSphere()
 	, m_explode(false)
 	, m_timeAlive(0.0f)
 {
-	m_speed = 8.0f;
-	updateVelocityVector();
+	m_speed = 8.0f * 60.0f;
+	//updateVelocityVector();
+	m_velocity.y = -m_speed;
 
 	//different size to parent
 	m_bulletRect.setSize(s_DEFAULT_SIZE);

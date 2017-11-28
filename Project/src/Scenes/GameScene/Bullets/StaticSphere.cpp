@@ -14,8 +14,8 @@ bullets::StaticSphere::StaticSphere()
 	, m_pulseTimer(0.0f)
 	, m_pulseCircleCollider()
 {
-	m_speed = 6.0f;
-	m_velocity.x = m_speed;
+	m_speed = 6.0f * 60.0f;
+	m_velocity.y = -m_speed;
 
 	//different size to parent
 	m_bulletRect.setSize(sf::Vector2f(30.0f, 30.0f));
@@ -41,7 +41,7 @@ bullets::StaticSphere::StaticSphere()
 /// </summary>
 void bullets::StaticSphere::update()
 {
-	m_pulseTimer += App::getUpdateDeltaTime();
+	m_pulseTimer += UPDATE_DT;
 	Bullet::update();
 	if (m_pulseTimer > 0.3f)
 	{
