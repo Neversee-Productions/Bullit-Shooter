@@ -81,6 +81,7 @@ $(document).ready(function(){initNavTree('class_player.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_player-members.html">List of all members</a>  </div>
@@ -94,10 +95,18 @@ $(document).ready(function(){initNavTree('class_player.html','');});
 
 <p><code>#include &lt;<a class="el" href="_player_8h_source.html">Player.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_1_1_resources.html">Resources</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the resources the player needs.  <a href="struct_player_1_1_resources.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7440c280452f6ee2737dad2e2abe2962"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7440c280452f6ee2737dad2e2abe2962">Player</a> (<a class="el" href="class_key_handler.html">KeyHandler</a> &amp;keyHandler)</td></tr>
 <tr class="separator:a7440c280452f6ee2737dad2e2abe2962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add091bd8b92b2ee8e6d809b8c162eed5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#add091bd8b92b2ee8e6d809b8c162eed5">init</a> (std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Resources</a> &gt; resources)</td></tr>
+<tr class="separator:add091bd8b92b2ee8e6d809b8c162eed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a4253c07c2dd1428de5d1dac00098c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a5a4253c07c2dd1428de5d1dac00098c2">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;<a class="el" href="class_player.html#a9826d13da7dab6275a99aab6fdb66c2a">deltaTime</a>)</td></tr>
 <tr class="separator:a5a4253c07c2dd1428de5d1dac00098c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82c3476f3e65a4e2ac6bcd040771bdd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4">update</a> ()</td></tr>
@@ -123,7 +132,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8754267e4de59502f355825e61c54324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
+<dd>
+Rafael Plugge</dd></dl>
 <p>Defines the player class. This class will create the <a class="el" href="class_weapon.html" title="Weapon class. ">Weapon</a>, Shield, <a class="el" href="class_ship.html" title="Ship class. ">Ship</a> and <a class="el" href="class_bullet_manager.html" title="The bullet manager class. ">BulletManager</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7440c280452f6ee2737dad2e2abe2962"></a>
@@ -183,6 +194,32 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">window</td><td>define reference to our target <a class="el" href="class_window.html" title="Wrapper window class. ">Window</a>.</td></tr>
     <tr><td class="paramname">deltaTime</td><td>define reference to draw time step.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="add091bd8b92b2ee8e6d809b8c162eed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add091bd8b92b2ee8e6d809b8c162eed5">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::init </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Resources</a> &gt;&#160;</td>
+          <td class="paramname"><em>uptrResources</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize player.</p>
+<p>Defines all the players resources. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uptrResources</td><td>shared pointer to all the necessary player resources.</td></tr>
   </table>
   </dd>
 </dl>

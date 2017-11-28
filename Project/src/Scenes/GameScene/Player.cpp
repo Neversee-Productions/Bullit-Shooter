@@ -24,6 +24,17 @@ Player::Player(KeyHandler& keyHandler)
 }
 
 /// <summary>
+/// @brief Initialize player.
+/// 
+/// Defines all the players resources.
+/// </summary>
+/// <param name="uptrResources">shared pointer to all the necessary player resources.</param>
+void Player::init(std::shared_ptr<Resources> uptrResources)
+{
+	m_ship.init(uptrResources->m_ship);
+}
+
+/// <summary>
 /// @brief Render entities.
 /// 
 /// 
@@ -45,18 +56,19 @@ void Player::draw(Window & window, const float & deltaTime)
 /// </summary>
 void Player::update()
 {
-	
+	const bool & KEY_UP = m_keyHandler.isPressed(sf::Keyboard::Up);
+	const bool & KEY_DOWN = m_keyHandler.isPressed(sf::Keyboard::Down);
+	const bool & KEY_LEFT = m_keyHandler.isPressed(sf::Keyboard::Left);
+	const bool & KEY_RIGHT = m_keyHandler.isPressed(sf::Keyboard::Right);
+
+	m_ship.move(Ship::Direction::Up, KEY_UP);
+	m_ship.move(Ship::Direction::Down, KEY_DOWN);
+	m_ship.move(Ship::Direction::Left, KEY_LEFT);
+	m_ship.move(Ship::Direction::Right, KEY_RIGHT);
+
 	if (m_keyHandler.isPressed(sf::Keyboard::Space))
 	{
 		m_bulletManager.fireBullet(m_weapon1.getPosition(), m_weapon2.getPosition(), m_weapon1.getBulletType());
-	}
-	if (m_keyHandler.isPressed(sf::Keyboard::Up))
-	{
-		m_ship.moveUp();
-	}
-	if (m_keyHandler.isPressed(sf::Keyboard::Down))
-	{
-		m_ship.moveDown();
 	}
 	m_ship.update();
 	m_weapon1Pos = sf::Vector2f(m_ship.getShipRect().x, m_ship.getShipRect().y - 50);

@@ -25,12 +25,8 @@
 #include "Thor\Resources\ResourceHolder.hpp"
 #include "Thor\Resources\ResourceLoader.hpp"
 #include "Thor\Resources.hpp"
-
+// json parser
 #include "json\json.hpp"
-
-#include "Thor\Animations.hpp"
-#include "Thor\Graphics.hpp"
-#include "Thor\Config.hpp"
 
 /// 
 /// @brief Will handle loading of all resources.
@@ -70,8 +66,8 @@ private:
 	/// (thor::FrameAnimation)
 	/// </summary>
 	/// <typeparam name="data_type">Defines the type of our data.</typeparam>
-	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
 	/// <param name="jsonParser">Defines the the json parser that contains our id's information.</param>
+	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
 	/// <returns>Reference to our loaded data.</returns>
 	template<typename data_type>
 	data_type & load(json::json & jsonParser, const std::string & id);
@@ -83,10 +79,21 @@ private:
 	/// Loads all the frames for a id's animation into ResourceHandler::m_pairAnimationHolder.
 	/// @see ResourceHandler::load
 	/// </summary>
-	/// <param name="id">defines its id in our resource holder.</param>
 	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
+	/// <param name="id">defines its id in our resource holder.</param>
 	/// <returns>Reference to our loaded resource.</returns>
 	template<> thor::FrameAnimation & load<thor::FrameAnimation>(json::json & jsonParser, const std::string & id);
+
+	/// <summary>
+	/// @brief Loads a particular resource.
+	/// 
+	/// Defined as forward declaration of explicit template instatiation.
+	/// Loads all the frames for a id's animation into
+	/// </summary>
+	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
+	/// <param name="id">defines its id in our resource holder.</param>
+	/// <returns>Reference to our loaded resource.</returns>
+	template<> std::vector<sf::IntRect> & load<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id);
 
 	/// <summary>
 	/// @brief Template loader.
@@ -189,6 +196,13 @@ private:
 	/// </summary>
 	typedef std::unordered_map<std::string, thor::FrameAnimation> AnimationHolder;
 
+	/// <summary>
+	/// @brief Defines a alias for our vector of rectangles.
+	/// 
+	/// This resource holder contains each frame of a particular animation.
+	/// </summary>
+	typedef std::unordered_map<std::string, std::vector<sf::IntRect>> FrameHolder;
+
 	/// 
 	/// @author Rafael Plugge
 	/// @brief Defines a holder with its own mutex.
@@ -247,6 +261,13 @@ private:
 	/// 
 	/// </summary>
 	MutexHolderPair<AnimationHolder> m_pairAnimationHolder;
+
+	/// <summary>
+	/// @brief Our Pair with its mutex and a unique pointer to our ResourceHandler::FrameHolder.
+	/// 
+	/// 
+	/// </summary>
+	MutexHolderPair<FrameHolder> m_pairFrameHolder;
 
 	/// <summary>
 	/// @brief Our predefined Id Strategy.

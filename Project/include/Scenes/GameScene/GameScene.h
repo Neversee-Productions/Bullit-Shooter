@@ -23,8 +23,6 @@ private:
 	/// </summary>
 	typedef thor::Animator<sf::Sprite, std::string> SpriteAnimator;
 
-	
-
 	/// 
 	/// @author Rafael Plugge
 	/// @brief Container of shared pointers to our resources.
@@ -33,33 +31,13 @@ private:
 	/// 
 	struct Resources
 	{
-		/// 
-		/// @author Rafael Plugge
-		/// @brief Container of shared pointers to ship resources.
-		/// 
-		/// 
-		struct Ship
-		{
-			/// <summary>
-			/// @brief shared pointer to ship texture.
-			/// 
-			/// 
-			/// </summary>
-			std::shared_ptr<sf::Texture> m_sptrShipTexture = nullptr;
-
-			/// <summary>
-			/// @brief shared pointer to ship animator
-			/// </summary>
-			std::shared_ptr<SpriteAnimator> m_sptrShipAnimator = nullptr;
-
-		};
 		/// <summary>
-		/// @brief unique pointer to ship resources.
+		/// @brief unique pointer to player resources.
 		/// 
 		/// 
 		/// </summary>
-		std::unique_ptr<GameScene::Resources::Ship> m_uptrShip =
-			std::make_unique<GameScene::Resources::Ship>();
+		std::shared_ptr<Player::Resources> m_sptrPlayer =
+			std::make_shared<Player::Resources>();
 	};
 
 public:

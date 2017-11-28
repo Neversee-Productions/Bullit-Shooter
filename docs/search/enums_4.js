@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sliderstate',['SliderState',['../classgui_1_1_slider.html#aeb6783166b3e856dc1c36247f90e10fd',1,'gui::Slider']]]
+  ['layouts',['Layouts',['../classgui_1_1_g_u_i.html#a50ccb43299016dc44fe4b21e0213169b',1,'gui::GUI']]]
 ];

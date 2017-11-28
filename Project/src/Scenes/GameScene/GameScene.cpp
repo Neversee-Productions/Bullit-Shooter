@@ -92,22 +92,29 @@ void GameScene::setup(const std::string & filePath)
 	auto & resourceHandler = ResourceHandler::get();
 
 	std::ifstream rawFile(filePath);
-	json::json jsonLoader;
-	rawFile >> jsonLoader;
+	json::json gameSceneJsonLoader;
+	rawFile >> gameSceneJsonLoader;
 
 	if (!m_resources)
 	{
+		std::ifstream playerRawFile(gameSceneJsonLoader.at("player").get<std::string>());
+		json::json playerJson;
+		playerRawFile >> playerJson;
+
 		m_resources = std::make_unique<Resources>();
-		std::unique_ptr<Resources::Ship> uptrShip = std::move(m_resources->m_uptrShip);
-		uptrShip->m_sptrShipTexture = resourceHandler.loadUp<sf::Texture>(jsonLoader, "ship");
-		assert(nullptr != uptrShip->m_sptrShipTexture);
+		auto sptrPlayer = m_resources->m_sptrPlayer;
+		auto sptrShip = sptrPlayer->m_ship;
+		sptrShip->m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerJson, "ship");
+		assert(nullptr != sptrShip->m_sptrTexture);
 
-		uptrShip->m_sptrShipAnimator = std::make_shared<SpriteAnimator>();
-		const auto & duration = jsonLoader.at("animation").at("ship").at("duration").get<float>();
-		uptrShip->m_sptrShipAnimator->addAnimation("ship", *resourceHandler.loadUp<thor::FrameAnimation>(jsonLoader, "ship"), sf::seconds(duration));
-		assert(nullptr != uptrShip->m_sptrShipAnimator);
+		sptrShip->m_uptrFrames = std::make_unique<Ship::ShipFrames>();
+		auto & frames = *sptrShip->m_uptrFrames;
+		auto loadedFrames = resourceHandler.loadUp<Ship::ShipFrames>(playerJson, "ship");
+		frames.insert(frames.begin(), loadedFrames->begin(), loadedFrames->end());
+		assert(nullptr != sptrShip->m_uptrFrames);
 
-		m_resources->m_uptrShip = std::move(uptrShip);
 	}
+
+	m_player.init(m_resources->m_sptrPlayer);
 }
 

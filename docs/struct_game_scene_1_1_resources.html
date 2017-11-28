@@ -81,7 +81,6 @@ $(document).ready(function(){initNavTree('struct_game_scene_1_1_resources.html',
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_game_scene_1_1_resources-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -92,32 +91,26 @@ $(document).ready(function(){initNavTree('struct_game_scene_1_1_resources.html',
 <p>Container of shared pointers to our resources.  
  <a href="struct_game_scene_1_1_resources.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources_1_1_ship.html">Ship</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of shared pointers to ship resources.  <a href="struct_game_scene_1_1_resources_1_1_ship.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a5a05e99795aa7071aa185df74e9a971e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="struct_game_scene_1_1_resources_1_1_ship.html">GameScene::Resources::Ship</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources.html#a5a05e99795aa7071aa185df74e9a971e">m_uptrShip</a></td></tr>
-<tr class="separator:a5a05e99795aa7071aa185df74e9a971e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f1104bf85333cb3fd35e80eba42ac52"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Player::Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources.html#a4f1104bf85333cb3fd35e80eba42ac52">m_sptrPlayer</a></td></tr>
+<tr class="separator:a4f1104bf85333cb3fd35e80eba42ac52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd></dl>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a5a05e99795aa7071aa185df74e9a971e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a05e99795aa7071aa185df74e9a971e">&#9670;&nbsp;</a></span>m_uptrShip</h2>
+<a id="a4f1104bf85333cb3fd35e80eba42ac52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f1104bf85333cb3fd35e80eba42ac52">&#9670;&nbsp;</a></span>m_sptrPlayer</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="struct_game_scene_1_1_resources_1_1_ship.html">GameScene::Resources::Ship</a>&gt; GameScene::Resources::m_uptrShip</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_player_1_1_resources.html">Player::Resources</a>&gt; GameScene::Resources::m_sptrPlayer</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">            std::make_unique&lt;GameScene::Resources::Ship&gt;()</div></div><!-- fragment --><p>unique pointer to ship resources.</p>
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">            std::make_shared&lt;Player::Resources&gt;()</div></div><!-- fragment --><p>unique pointer to player resources.</p>
 
 </div>
 </div>

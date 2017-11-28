@@ -122,6 +122,12 @@ template<> std::shared_ptr<thor::BigTexture> ResourceHandler::loadUp<thor::BigTe
 	return return_value;
 }
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="jsonParser"></param>
+/// <param name="id"></param>
+/// <returns></returns>
 template<> std::shared_ptr<thor::FrameAnimation> ResourceHandler::loadUp<thor::FrameAnimation>(json::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<thor::FrameAnimation> return_value;
@@ -136,7 +142,25 @@ template<> std::shared_ptr<thor::FrameAnimation> ResourceHandler::loadUp<thor::F
 	return return_value;
 }
 
-
+/// <summary>
+/// 
+/// </summary>
+/// <param name="jsonParser"></param>
+/// <param name="id"></param>
+/// <returns></returns>
+template<> std::shared_ptr<std::vector<sf::IntRect>> ResourceHandler::loadUp<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id)
+{
+	std::shared_ptr<std::vector<sf::IntRect>> return_value;
+	try
+	{
+		return_value = std::make_shared<std::vector<sf::IntRect>>(load<std::vector<sf::IntRect>>(jsonParser, id));
+	}
+	catch (...) // catch any and all possible exceptions.
+	{
+		return nullptr;
+	}
+	return return_value;
+}
 
 template<> thor::FrameAnimation & ResourceHandler::load<thor::FrameAnimation>(json::json & jsonParser, const std::string & id)
 {
@@ -167,6 +191,38 @@ template<> thor::FrameAnimation & ResourceHandler::load<thor::FrameAnimation>(js
 		}
 
 		return frameAnimation;
+	}
+}
+
+
+template<> std::vector<sf::IntRect> & ResourceHandler::load<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id)
+{
+	std::lock_guard<std::mutex> lock(m_pairFrameHolder.m_mutex);
+	auto & map = *(m_pairFrameHolder.m_holder);
+	auto & ittPair = map.find(id);
+	if (ittPair != map.end())
+	{
+		return ittPair->second;
+	}
+	else
+	{
+		std::vector<sf::IntRect> & frames = map[id];
+		const auto & jsonAnimation = jsonParser.at("animation").at(id);
+		const auto & width = jsonAnimation.at("width").get<int>();
+		const auto & height = jsonAnimation.at("height").get<int>();
+		const auto & jsonFrames = jsonAnimation.at("frames");
+		for (
+			auto itt = jsonFrames.begin(), end = jsonFrames.end();
+			itt != end;
+			++itt
+			)
+		{
+			auto x = itt->at("x").get<int>();
+			auto y = itt->at("y").get<int>();
+			frames.push_back(sf::IntRect(x, y, width, height));
+		}
+
+		return frames;
 	}
 }
 
