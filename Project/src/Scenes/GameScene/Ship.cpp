@@ -14,13 +14,13 @@ Ship::Ship()
 	, m_shipFrames(nullptr)
 	, m_texture(nullptr)
 	, m_currentFrame(0.0f)
-	, m_FRAME_CHANGE(25.0f)
+	, m_FRAME_CHANGE(40.0f)
 	, m_FRAME_STILL(nullptr)
 	, m_ID("ship")
 	, m_pressed()
 {
 	m_shipRect.setPosition(m_position);
-	m_shipRect.setSize(sf::Vector2f(25.0f, 50.0f));
+	m_shipRect.setSize(sf::Vector2f(75.0f, 100.0f));
 	m_shipRect.setOrigin(m_shipRect.getSize().x / 2, m_shipRect.getSize().y / 2);
 }
 

@@ -16,8 +16,6 @@ Player::Player(KeyHandler& keyHandler)
 	, m_weapon1Pos(sf::Vector2f(0.0f,0.0f))
 	, m_weapon2Pos(sf::Vector2f(0.0f,0.0f))
 {
-	m_weapon1Pos = sf::Vector2f(m_ship.getShipRect().x, m_ship.getShipRect().y - 50);
-	m_weapon2Pos = sf::Vector2f(m_ship.getShipRect().x, m_ship.getShipRect().y + 50);
 	m_weapon1.setRectPos(m_weapon1Pos);
 	m_weapon2.setRectPos(m_weapon1Pos);
 	m_bulletManager.initBulletvector(m_weapon1.getBulletType());
@@ -56,23 +54,32 @@ void Player::draw(Window & window, const float & deltaTime)
 /// </summary>
 void Player::update()
 {
-	const bool & KEY_UP = m_keyHandler.isPressed(sf::Keyboard::Up);
-	const bool & KEY_DOWN = m_keyHandler.isPressed(sf::Keyboard::Down);
-	const bool & KEY_LEFT = m_keyHandler.isPressed(sf::Keyboard::Left);
-	const bool & KEY_RIGHT = m_keyHandler.isPressed(sf::Keyboard::Right);
+	const bool & KEY_UP = 
+		m_keyHandler.isPressed(sf::Keyboard::Up)
+		|| m_keyHandler.isPressed(sf::Keyboard::W);
+	const bool & KEY_DOWN =
+		m_keyHandler.isPressed(sf::Keyboard::Down)
+		|| m_keyHandler.isPressed(sf::Keyboard::S);
+	const bool & KEY_LEFT =
+		m_keyHandler.isPressed(sf::Keyboard::Left)
+		|| m_keyHandler.isPressed(sf::Keyboard::A);
+	const bool & KEY_RIGHT =
+		m_keyHandler.isPressed(sf::Keyboard::Right)
+		|| m_keyHandler.isPressed(sf::Keyboard::D);
+	const bool & KEY_FIRE = m_keyHandler.isPressed(sf::Keyboard::Space);
 
 	m_ship.move(Ship::Direction::Up, KEY_UP);
 	m_ship.move(Ship::Direction::Down, KEY_DOWN);
 	m_ship.move(Ship::Direction::Left, KEY_LEFT);
 	m_ship.move(Ship::Direction::Right, KEY_RIGHT);
 
-	if (m_keyHandler.isPressed(sf::Keyboard::Space))
+	if (KEY_FIRE)
 	{
 		m_bulletManager.fireBullet(m_weapon1.getPosition(), m_weapon2.getPosition(), m_weapon1.getBulletType());
 	}
 	m_ship.update();
-	m_weapon1Pos = sf::Vector2f(m_ship.getShipRect().x, m_ship.getShipRect().y - 50);
-	m_weapon2Pos = sf::Vector2f(m_ship.getShipRect().x, m_ship.getShipRect().y + 50);
+	m_weapon1Pos = sf::Vector2f(m_ship.getShipRect().x - 50, m_ship.getShipRect().y);
+	m_weapon2Pos = sf::Vector2f(m_ship.getShipRect().x + 50, m_ship.getShipRect().y);
 	m_weapon1.update(m_weapon1Pos);
 	m_weapon2.update(m_weapon2Pos);
 	m_bulletManager.update();
