@@ -6,6 +6,7 @@ var class_asteroid =
     [ "generateRandomPos", "class_asteroid.html#a66677a18808fbfa7df569b920b833ea8", null ],
     [ "generateRandomVel", "class_asteroid.html#a42186d68ba22d3a1c5dfb20ae8a0ff72", null ],
     [ "getCollisionCircle", "class_asteroid.html#a8f818e720d1916035e88010b7cef1b7f", null ],
+    [ "isActive", "class_asteroid.html#a1f5bf2b4c9e945148a640bd970aafbee", null ],
     [ "isInvulnerable", "class_asteroid.html#a3e885bbb96ced5ddee6edf78d83ec218", null ],
     [ "knockback", "class_asteroid.html#a6574d8c3cc3cff9ab5b01aca1ac7ba46", null ],
     [ "reuseAsteroid", "class_asteroid.html#a1c591c4e40e58f7e8cd6946f74735b7a", null ],
@@ -24,5 +25,6 @@ var class_asteroid =
     [ "m_position", "class_asteroid.html#ac3e457510348bac65ce659bb679c81dd", null ],
     [ "m_rectangle", "class_asteroid.html#af1168c2dc99f7b121da4dd90676b6e65", null ],
     [ "m_velocity", "class_asteroid.html#a8dd7cd60da2412c5859e078a5902f03d", null ],
-    [ "m_windowC2Rect", "class_asteroid.html#a17d2ded1192f1c0b20f7193e546295a4", null ]
+    [ "m_windowC2Rect", "class_asteroid.html#a17d2ded1192f1c0b20f7193e546295a4", null ],
+    [ "UPDATE_DT", "class_asteroid.html#abf0f15cc417c725f8a4b0eb34715ba15", null ]
 ];

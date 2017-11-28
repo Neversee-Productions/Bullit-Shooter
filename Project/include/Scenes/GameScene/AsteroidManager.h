@@ -17,8 +17,11 @@ class AsteroidManager
 public:
 	AsteroidManager();
 	void initAsteroidVector();
+	const std::vector<std::unique_ptr<Asteroid>>& getAsteroidVector();
+
 private:
 	std::vector<std::unique_ptr<Asteroid>> m_asteroidsVector;
+
 };
 
 #endif // !ASTEROID_MANAGER_H
