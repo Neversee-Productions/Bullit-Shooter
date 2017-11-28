@@ -81,7 +81,10 @@ $(document).ready(function(){initNavTree('class_ship.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_ship-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -94,34 +97,159 @@ $(document).ready(function(){initNavTree('class_ship.html','');});
 
 <p><code>#include &lt;<a class="el" href="_ship_8h_source.html">Ship.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ship_1_1_keys_pressed.html">KeysPressed</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a set of bools for keys pressed.  <a href="struct_ship_1_1_keys_pressed.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ship_1_1_resources.html">Resources</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the resources the ship needs.  <a href="struct_ship_1_1_resources.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a743997210406247a228feea2a2fef570"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a743997210406247a228feea2a2fef570">Direction</a> { <a class="el" href="class_ship.html#a743997210406247a228feea2a2fef570a258f49887ef8d14ac268c92b02503aaa">Direction::Up</a>, 
+<a class="el" href="class_ship.html#a743997210406247a228feea2a2fef570a08a38277b0309070706f6652eeae9a53">Direction::Down</a>, 
+<a class="el" href="class_ship.html#a743997210406247a228feea2a2fef570a945d5e233cf7d6240f6b783b36a374ff">Direction::Left</a>, 
+<a class="el" href="class_ship.html#a743997210406247a228feea2a2fef570a92b09c7c48c520c3c55e497875da437c">Direction::Right</a>
+ }<tr class="memdesc:a743997210406247a228feea2a2fef570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a ship direction.  <a href="class_ship.html#a743997210406247a228feea2a2fef570">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a743997210406247a228feea2a2fef570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fde830aad90f4d25e64feb67c4869f6"><td class="memItemLeft" align="right" valign="top">typedef thor::Animator&lt; sf::RectangleShape, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a0fde830aad90f4d25e64feb67c4869f6">ShipAnimator</a></td></tr>
+<tr class="separator:a0fde830aad90f4d25e64feb67c4869f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b923ed87a736077daa5efe2fe7680a"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; sf::IntRect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a27b923ed87a736077daa5efe2fe7680a">ShipFrames</a></td></tr>
+<tr class="separator:a27b923ed87a736077daa5efe2fe7680a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab7608fcfc4d27c678aacaf9bfd68a462"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462">Ship</a> ()</td></tr>
 <tr class="separator:ab7608fcfc4d27c678aacaf9bfd68a462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71807fb1fd5357cf7d62f0fdc42fd758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a71807fb1fd5357cf7d62f0fdc42fd758">init</a> (std::shared_ptr&lt; <a class="el" href="struct_ship_1_1_resources.html">Resources</a> &gt; resources)</td></tr>
+<tr class="separator:a71807fb1fd5357cf7d62f0fdc42fd758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9a0712970979a6d24320ae208bd6899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ae9a0712970979a6d24320ae208bd6899">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
 <tr class="separator:ae9a0712970979a6d24320ae208bd6899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee2f77fa9920030dc3ff8268b2f73a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a3ee2f77fa9920030dc3ff8268b2f73a4">update</a> ()</td></tr>
+<tr class="separator:a3ee2f77fa9920030dc3ff8268b2f73a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a237e1ba8f03d5e62e2d348e66c95083c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a237e1ba8f03d5e62e2d348e66c95083c">move</a> (const <a class="el" href="class_ship.html#a743997210406247a228feea2a2fef570">Direction</a> &amp;direction, const bool &amp;state)</td></tr>
+<tr class="separator:a237e1ba8f03d5e62e2d348e66c95083c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4244807b4f32aeacff83374b21c53b"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a8b4244807b4f32aeacff83374b21c53b">getShipRect</a> ()</td></tr>
+<tr class="separator:a8b4244807b4f32aeacff83374b21c53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2c6ba1e12e5ac5c70addeb37ca250d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a3d2c6ba1e12e5ac5c70addeb37ca250d">setTexture</a> (std::shared_ptr&lt; sf::Texture &gt; sptrTexture)</td></tr>
+<tr class="separator:a3d2c6ba1e12e5ac5c70addeb37ca250d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68638250e3a2b4b6e3d382d7cf53abe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a68638250e3a2b4b6e3d382d7cf53abe5">setFrames</a> (std::unique_ptr&lt; <a class="el" href="class_ship.html#a27b923ed87a736077daa5efe2fe7680a">ShipFrames</a> &gt; uptrShipFrames)</td></tr>
+<tr class="separator:a68638250e3a2b4b6e3d382d7cf53abe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ade787d0256047d5e0c92e0af82427e63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ade787d0256047d5e0c92e0af82427e63">processInput</a> (const <a class="el" href="struct_ship_1_1_keys_pressed.html">KeysPressed</a> &amp;)</td></tr>
+<tr class="separator:ade787d0256047d5e0c92e0af82427e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75c26377c47413abf8129036bd4cdc65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a75c26377c47413abf8129036bd4cdc65">moveUp</a> ()</td></tr>
 <tr class="separator:a75c26377c47413abf8129036bd4cdc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9ecf9bca8a9d9c737ad892f6f83e14f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#af9ecf9bca8a9d9c737ad892f6f83e14f">moveDown</a> ()</td></tr>
 <tr class="separator:af9ecf9bca8a9d9c737ad892f6f83e14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ee2f77fa9920030dc3ff8268b2f73a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a3ee2f77fa9920030dc3ff8268b2f73a4">update</a> ()</td></tr>
-<tr class="separator:a3ee2f77fa9920030dc3ff8268b2f73a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b4244807b4f32aeacff83374b21c53b"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a8b4244807b4f32aeacff83374b21c53b">getShipRect</a> ()</td></tr>
-<tr class="separator:a8b4244807b4f32aeacff83374b21c53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c2c948125e113966035cde59fee420"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a70c2c948125e113966035cde59fee420">moveLeft</a> ()</td></tr>
+<tr class="separator:a70c2c948125e113966035cde59fee420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefe208ae015ae3d3475f4593327b4f23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#aefe208ae015ae3d3475f4593327b4f23">moveRight</a> ()</td></tr>
+<tr class="separator:aefe208ae015ae3d3475f4593327b4f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7963cc9d019b5c2c7df85daa8815578f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a7963cc9d019b5c2c7df85daa8815578f">decFrame</a> ()</td></tr>
+<tr class="separator:a7963cc9d019b5c2c7df85daa8815578f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b1b10790df77a672bcdcf6a9ef868f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ac9b1b10790df77a672bcdcf6a9ef868f">incFrame</a> ()</td></tr>
+<tr class="separator:ac9b1b10790df77a672bcdcf6a9ef868f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a7d6c53355337e2fba47164275374dcb3"><td class="memItemLeft" align="right" valign="top">const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a7d6c53355337e2fba47164275374dcb3">m_UPDATE_DT</a></td></tr>
+<tr class="separator:a7d6c53355337e2fba47164275374dcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7a03c934538fd6100e1ed3b85f92fcb"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ab7a03c934538fd6100e1ed3b85f92fcb">m_shipRect</a></td></tr>
 <tr class="separator:ab7a03c934538fd6100e1ed3b85f92fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0de29cfa62b6e3d510ad9ab89de21822"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a0de29cfa62b6e3d510ad9ab89de21822">m_speed</a></td></tr>
 <tr class="separator:a0de29cfa62b6e3d510ad9ab89de21822"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42a1eb695d4909bee43e7f5cd28dd66b"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a42a1eb695d4909bee43e7f5cd28dd66b">m_position</a></td></tr>
 <tr class="separator:a42a1eb695d4909bee43e7f5cd28dd66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29ba5d7d7dba09e01a2abe041a63f22"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::vector&lt; sf::IntRect &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ae29ba5d7d7dba09e01a2abe041a63f22">m_shipFrames</a></td></tr>
+<tr class="separator:ae29ba5d7d7dba09e01a2abe041a63f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceef0ccec889b552f917f0213136cb8e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Texture &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#aceef0ccec889b552f917f0213136cb8e">m_texture</a></td></tr>
+<tr class="separator:aceef0ccec889b552f917f0213136cb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f89b4845f1fb7c739892c7a83ae6731"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a6f89b4845f1fb7c739892c7a83ae6731">m_currentFrame</a></td></tr>
+<tr class="separator:a6f89b4845f1fb7c739892c7a83ae6731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f93c201c1b473ff131105b6bc2ccf25"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a6f93c201c1b473ff131105b6bc2ccf25">m_FRAME_CHANGE</a></td></tr>
+<tr class="separator:a6f93c201c1b473ff131105b6bc2ccf25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7dcbbb6c6c0dec54196070eb2016deb"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; const float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ab7dcbbb6c6c0dec54196070eb2016deb">m_FRAME_STILL</a></td></tr>
+<tr class="separator:ab7dcbbb6c6c0dec54196070eb2016deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4122710284b1603ff3dd4b66bda1043"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ae4122710284b1603ff3dd4b66bda1043">m_ID</a></td></tr>
+<tr class="separator:ae4122710284b1603ff3dd4b66bda1043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78e2e496b786d3a6d184772c7a907153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ship_1_1_keys_pressed.html">KeysPressed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a78e2e496b786d3a6d184772c7a907153">m_pressed</a></td></tr>
+<tr class="separator:a78e2e496b786d3a6d184772c7a907153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
+<dd>
+Rafael Plugge</dd></dl>
 <p>Defines the ship class. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a0fde830aad90f4d25e64feb67c4869f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fde830aad90f4d25e64feb67c4869f6">&#9670;&nbsp;</a></span>ShipAnimator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef thor::Animator&lt;sf::RectangleShape, std::string&gt; <a class="el" href="class_ship.html#a0fde830aad90f4d25e64feb67c4869f6">Ship::ShipAnimator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Alias for thor::Animator.</p>
+<p>Uses thor animator on sfml rectangle shape using the std::string as the key. </p>
+
+</div>
+</div>
+<a id="a27b923ed87a736077daa5efe2fe7680a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b923ed87a736077daa5efe2fe7680a">&#9670;&nbsp;</a></span>ShipFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;sf::IntRect&gt; <a class="el" href="class_ship.html#a27b923ed87a736077daa5efe2fe7680a">Ship::ShipFrames</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Alias for std::vector.</p>
+<p>Uses a vector as a container for texture frames. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a743997210406247a228feea2a2fef570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a743997210406247a228feea2a2fef570">&#9670;&nbsp;</a></span>Direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_ship.html#a743997210406247a228feea2a2fef570">Ship::Direction</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section author"><dt>Author</dt><dd>Rafael Plugge Can be up, down, left or right </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a743997210406247a228feea2a2fef570a258f49887ef8d14ac268c92b02503aaa"></a>Up&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a743997210406247a228feea2a2fef570a08a38277b0309070706f6652eeae9a53"></a>Down&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a743997210406247a228feea2a2fef570a945d5e233cf7d6240f6b783b36a374ff"></a>Left&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a743997210406247a228feea2a2fef570a92b09c7c48c520c3c55e497875da437c"></a>Right&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab7608fcfc4d27c678aacaf9bfd68a462"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7608fcfc4d27c678aacaf9bfd68a462">&#9670;&nbsp;</a></span>Ship()</h2>
 
@@ -141,6 +269,32 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7963cc9d019b5c2c7df85daa8815578f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7963cc9d019b5c2c7df85daa8815578f">&#9670;&nbsp;</a></span>decFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::decFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Decrements current frame.</p>
+
+</div>
+</div>
 <a id="ae9a0712970979a6d24320ae208bd6899"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9a0712970979a6d24320ae208bd6899">&#9670;&nbsp;</a></span>draw()</h2>
 
@@ -196,11 +350,101 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac9b1b10790df77a672bcdcf6a9ef868f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b1b10790df77a672bcdcf6a9ef868f">&#9670;&nbsp;</a></span>incFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::incFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Increments current frame.</p>
+
+</div>
+</div>
+<a id="a71807fb1fd5357cf7d62f0fdc42fd758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71807fb1fd5357cf7d62f0fdc42fd758">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::init </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_ship_1_1_resources.html">Resources</a> &gt;&#160;</td>
+          <td class="paramname"><em>resources</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initializes the ships internal animators and textures.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resources</td><td>defines reference to ship resources.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a237e1ba8f03d5e62e2d348e66c95083c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a237e1ba8f03d5e62e2d348e66c95083c">&#9670;&nbsp;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_ship.html#a743997210406247a228feea2a2fef570">Direction</a> &amp;&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defines what direction we want the ship to move in.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>defines the direction</td></tr>
+    <tr><td class="paramname">state</td><td>defines the state on whether or not we want to go or stop going in that direction</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af9ecf9bca8a9d9c737ad892f6f83e14f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9ecf9bca8a9d9c737ad892f6f83e14f">&#9670;&nbsp;</a></span>moveDown()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Ship::moveDown </td>
@@ -209,8 +453,65 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>sumple method that moves the player down.</p>
+
+</div>
+</div>
+<a id="a70c2c948125e113966035cde59fee420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c2c948125e113966035cde59fee420">&#9670;&nbsp;</a></span>moveLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::moveLeft </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>sumple method that moves the player left.</p>
+
+</div>
+</div>
+<a id="aefe208ae015ae3d3475f4593327b4f23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefe208ae015ae3d3475f4593327b4f23">&#9670;&nbsp;</a></span>moveRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::moveRight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>sumple method that moves the player right.</p>
 
 </div>
 </div>
@@ -219,6 +520,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Ship::moveUp </td>
@@ -227,8 +531,98 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>simple method that moves the player up.</p>
+
+</div>
+</div>
+<a id="ade787d0256047d5e0c92e0af82427e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade787d0256047d5e0c92e0af82427e63">&#9670;&nbsp;</a></span>processInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::processInput </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_ship_1_1_keys_pressed.html">KeysPressed</a> &amp;&#160;</td>
+          <td class="paramname"><em>keysPressed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Where ship processes input.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keysPressed</td><td>defines the struct of pressed keys.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a68638250e3a2b4b6e3d382d7cf53abe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68638250e3a2b4b6e3d382d7cf53abe5">&#9670;&nbsp;</a></span>setFrames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::setFrames </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_ship.html#a27b923ed87a736077daa5efe2fe7680a">ShipFrames</a> &gt;&#160;</td>
+          <td class="paramname"><em>uptrShipFrames</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the current animator to the uptrAnimator.</p>
+<dl class="section warning"><dt>Warning</dt><dd>uptrAnimator is set to nullptr after this function call. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uptrShipFrames</td><td>unique pointer to a animator.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3d2c6ba1e12e5ac5c70addeb37ca250d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d2c6ba1e12e5ac5c70addeb37ca250d">&#9670;&nbsp;</a></span>setTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ship::setTexture </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; sf::Texture &gt;&#160;</td>
+          <td class="paramname"><em>sptrTexture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the current ship texture to the sptrTexture.</p>
+<p>Stores a shared pointer to this texture. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sptrTexture</td><td>shared pointer to a initialized texture</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -251,6 +645,99 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6f89b4845f1fb7c739892c7a83ae6731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f89b4845f1fb7c739892c7a83ae6731">&#9670;&nbsp;</a></span>m_currentFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Ship::m_currentFrame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines the current frame of ship animation.</p>
+<p><a class="el" href="class_ship.html" title="Ship class. ">Ship</a> is converted to integer when accessing vector of frames. </p>
+
+</div>
+</div>
+<a id="a6f93c201c1b473ff131105b6bc2ccf25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f93c201c1b473ff131105b6bc2ccf25">&#9670;&nbsp;</a></span>m_FRAME_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Ship::m_FRAME_CHANGE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines the amount the frame changes in 1 second.</p>
+
+</div>
+</div>
+<a id="ab7dcbbb6c6c0dec54196070eb2016deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7dcbbb6c6c0dec54196070eb2016deb">&#9670;&nbsp;</a></span>m_FRAME_STILL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;const float&gt; Ship::m_FRAME_STILL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines the frame that the ship is still.</p>
+
+</div>
+</div>
+<a id="ae4122710284b1603ff3dd4b66bda1043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4122710284b1603ff3dd4b66bda1043">&#9670;&nbsp;</a></span>m_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Ship::m_ID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ID for ship animation.</p>
+
+</div>
+</div>
 <a id="a42a1eb695d4909bee43e7f5cd28dd66b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42a1eb695d4909bee43e7f5cd28dd66b">&#9670;&nbsp;</a></span>m_position</h2>
 
@@ -271,6 +758,52 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>define position.</p>
+
+</div>
+</div>
+<a id="a78e2e496b786d3a6d184772c7a907153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e2e496b786d3a6d184772c7a907153">&#9670;&nbsp;</a></span>m_pressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_ship_1_1_keys_pressed.html">KeysPressed</a> Ship::m_pressed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines a struct of pressed keys. </p>
+
+</div>
+</div>
+<a id="ae29ba5d7d7dba09e01a2abe041a63f22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29ba5d7d7dba09e01a2abe041a63f22">&#9670;&nbsp;</a></span>m_shipFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;std::vector&lt;sf::IntRect&gt; &gt; Ship::m_shipFrames</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines all the frames of the ship.</p>
 
 </div>
 </div>
@@ -317,6 +850,54 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>define players speed.</p>
+
+</div>
+</div>
+<a id="aceef0ccec889b552f917f0213136cb8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceef0ccec889b552f917f0213136cb8e">&#9670;&nbsp;</a></span>m_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;sf::Texture&gt; Ship::m_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>shared pointer to ship texture.</p>
+<p>Must be set with <a class="el" href="class_ship.html#a3d2c6ba1e12e5ac5c70addeb37ca250d">Ship::setTexture</a> else it will be nullptr. </p>
+
+</div>
+</div>
+<a id="a7d6c53355337e2fba47164275374dcb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6c53355337e2fba47164275374dcb3">&#9670;&nbsp;</a></span>m_UPDATE_DT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float&amp; Ship::m_UPDATE_DT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Delta time update.</p>
+<p>Time in seconds between each update call. </p>
 
 </div>
 </div>

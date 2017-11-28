@@ -3,6 +3,7 @@
 
 #include "Scene.h"
 #include "SFML\Graphics\RectangleShape.hpp"
+#include "Thor\Animations.hpp"
 #include "Player.h"
 #include "tinyheaders\tinyc2.h"
 #include "Asteroid.h"
@@ -16,6 +17,13 @@
 class GameScene : public Scene
 {
 private:
+	/// <summary>
+	/// @brief Defines a alias for our thor::Animator.
+	/// 
+	/// This animator will animate
+	/// </summary>
+	typedef thor::Animator<sf::Sprite, std::string> SpriteAnimator;
+
 	/// 
 	/// @author Rafael Plugge
 	/// @brief Container of shared pointers to our resources.
@@ -24,13 +32,13 @@ private:
 	/// 
 	struct Resources
 	{
-
 		/// <summary>
-		/// @brief shared pointer to ship texture.
+		/// @brief unique pointer to player resources.
 		/// 
 		/// 
 		/// </summary>
-		std::shared_ptr<sf::Texture> m_sptrShipTexture;
+		std::shared_ptr<Player::Resources> m_sptrPlayer =
+			std::make_shared<Player::Resources>();
 	};
 
 public:

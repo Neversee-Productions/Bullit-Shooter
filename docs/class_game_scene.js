@@ -1,6 +1,7 @@
 var class_game_scene =
 [
     [ "Resources", "struct_game_scene_1_1_resources.html", "struct_game_scene_1_1_resources" ],
+    [ "SpriteAnimator", "class_game_scene.html#ae80b80d6c05ec923abba6a082935b8fb", null ],
     [ "GameScene", "class_game_scene.html#aebd3972a13e0b6c8220c8d54d0b6e03e", null ],
     [ "bulletAsteroidsCollision", "class_game_scene.html#ab7231c6cf599365a4f9d003784348fef", null ],
     [ "collisionResponse", "class_game_scene.html#a939afc3d229df0b1531fe3c129e5daa6", null ],

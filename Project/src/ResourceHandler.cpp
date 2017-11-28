@@ -28,6 +28,7 @@ ResourceHandler::ResourceHandler()
 	, m_pairBigTextureHolder()
 	, m_pairFontHolder()
 	, m_pairSoundHolder()
+	, m_pairAnimationHolder()
 	, m_ID_STRATEGY(thor::Resources::KnownIdStrategy::Reuse)
 {
 }
@@ -121,12 +122,115 @@ template<> std::shared_ptr<thor::BigTexture> ResourceHandler::loadUp<thor::BigTe
 	return return_value;
 }
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="jsonParser"></param>
+/// <param name="id"></param>
+/// <returns></returns>
+template<> std::shared_ptr<thor::FrameAnimation> ResourceHandler::loadUp<thor::FrameAnimation>(json::json & jsonParser, const std::string & id)
+{
+	std::shared_ptr<thor::FrameAnimation> return_value;
+	try
+	{
+		return_value = std::make_shared<thor::FrameAnimation>(load<thor::FrameAnimation>(jsonParser, id));
+	}
+	catch (...) // catch any and all possible exceptions.
+	{
+		return nullptr;
+	}
+	return return_value;
+}
+
+/// <summary>
+/// 
+/// </summary>
+/// <param name="jsonParser"></param>
+/// <param name="id"></param>
+/// <returns></returns>
+template<> std::shared_ptr<std::vector<sf::IntRect>> ResourceHandler::loadUp<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id)
+{
+	std::shared_ptr<std::vector<sf::IntRect>> return_value;
+	try
+	{
+		return_value = std::make_shared<std::vector<sf::IntRect>>(load<std::vector<sf::IntRect>>(jsonParser, id));
+	}
+	catch (...) // catch any and all possible exceptions.
+	{
+		return nullptr;
+	}
+	return return_value;
+}
+
+template<> thor::FrameAnimation & ResourceHandler::load<thor::FrameAnimation>(json::json & jsonParser, const std::string & id)
+{
+	std::lock_guard<std::mutex> lock(m_pairAnimationHolder.m_mutex);
+	auto & map = *(m_pairAnimationHolder.m_holder);
+	auto & ittPair = map.find(id);
+	if (ittPair != map.end())
+	{
+		return ittPair->second;
+	}
+	else
+	{
+		thor::FrameAnimation & frameAnimation = map[id];
+		const auto & jsonAnimation = jsonParser.at("animation").at(id);
+		const auto & width = jsonAnimation.at("width").get<int>();
+		const auto & height = jsonAnimation.at("height").get<int>();
+		const auto & jsonFrames = jsonAnimation.at("frames");
+		float count = 0.0f;
+		for (
+			auto itt = jsonFrames.begin(), end = jsonFrames.end();
+			itt != end;
+			++itt, ++count
+			)
+		{
+			auto x = itt->at("x").get<int>();
+			auto y = itt->at("y").get<int>();
+			frameAnimation.addFrame(count, sf::IntRect(x, y, width, height));
+		}
+
+		return frameAnimation;
+	}
+}
+
+
+template<> std::vector<sf::IntRect> & ResourceHandler::load<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id)
+{
+	std::lock_guard<std::mutex> lock(m_pairFrameHolder.m_mutex);
+	auto & map = *(m_pairFrameHolder.m_holder);
+	auto & ittPair = map.find(id);
+	if (ittPair != map.end())
+	{
+		return ittPair->second;
+	}
+	else
+	{
+		std::vector<sf::IntRect> & frames = map[id];
+		const auto & jsonAnimation = jsonParser.at("animation").at(id);
+		const auto & width = jsonAnimation.at("width").get<int>();
+		const auto & height = jsonAnimation.at("height").get<int>();
+		const auto & jsonFrames = jsonAnimation.at("frames");
+		for (
+			auto itt = jsonFrames.begin(), end = jsonFrames.end();
+			itt != end;
+			++itt
+			)
+		{
+			auto x = itt->at("x").get<int>();
+			auto y = itt->at("y").get<int>();
+			frames.push_back(sf::IntRect(x, y, width, height));
+		}
+
+		return frames;
+	}
+}
+
 template<> sf::Texture & ResourceHandler::load<sf::Texture>(const std::string & id, const std::string & filePath)
 {
 	std::lock_guard<std::mutex> lock(m_pairTextureHolder.m_mutex);
 	return m_pairTextureHolder.m_holder->acquire(id, thor::Resources::fromFile<sf::Texture>(filePath), m_ID_STRATEGY);
 }
-
 
 template<> thor::BigTexture & ResourceHandler::load<thor::BigTexture>(const std::string & id, const std::string & filePath)
 {

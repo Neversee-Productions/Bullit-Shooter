@@ -20,7 +20,7 @@ Asteroid::Asteroid()
 	, m_invulnerable(false)
 	, m_invulnTimer(0.0f)
 {
-	const auto & windowRect = App::getWindowC2Rect();
+	const auto & windowRect = App::getViewC2Rect();
 	const auto & extraWidth = m_rectangle.getGlobalBounds().width * 2.0f;
 	m_windowC2Rect.min.x = 0.0f;
 	m_windowC2Rect.min.y = 0.0f;
@@ -143,9 +143,9 @@ void Asteroid::generateRandomVel()
 /// </summary>
 void Asteroid::generateRandomPos()
 {
-	m_position.x = App::getWindowSize().x + m_rectangle.getGlobalBounds().width; //x stays same offscreen value
+	m_position.x = App::getViewSize().x + m_rectangle.getGlobalBounds().width; //x stays same offscreen value
 	
-	int temp = rand() % App::getWindowSize().y; //generate number between 0 and bottom of screen
+	int temp = rand() % App::getViewSize().y; //generate number between 0 and bottom of screen
 	m_position.y = temp;
 }
 
@@ -220,6 +220,6 @@ bool Asteroid::isInvulnerable()
 /// </summary>
 void Asteroid::knockback()
 {
-	m_velocity.x += 1.5f;
+	m_velocity.y -= 1.5f;
 }
 

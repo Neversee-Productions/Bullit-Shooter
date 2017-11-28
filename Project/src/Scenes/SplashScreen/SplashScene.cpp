@@ -129,7 +129,7 @@ void SplashScene::setup(const std::string & filePath)
 		m_resources->m_backgroundTexture = resourceHandler.loadUp<thor::BigTexture>(jsonLoader, "splash_background");
 		assert(nullptr != m_resources->m_backgroundTexture);
 
-		const auto & windowSize = static_cast<sf::Vector2f>(App::getWindowSize());
+		const auto & windowSize = static_cast<sf::Vector2f>(App::getViewSize());
 
 		// Setup Background Color
 		m_backgroundColor = std::make_unique<sf::Color>();

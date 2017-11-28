@@ -15,10 +15,13 @@ var dir_3d146c0a75894571550ef8dd976c3a01 =
       [ "Resources", "struct_game_scene_1_1_resources.html", "struct_game_scene_1_1_resources" ]
     ] ],
     [ "Player.h", "_player_8h.html", [
-      [ "Player", "class_player.html", "class_player" ]
+      [ "Player", "class_player.html", "class_player" ],
+      [ "Resources", "struct_player_1_1_resources.html", "struct_player_1_1_resources" ]
     ] ],
     [ "Ship.h", "_ship_8h.html", [
-      [ "Ship", "class_ship.html", "class_ship" ]
+      [ "Ship", "class_ship.html", "class_ship" ],
+      [ "KeysPressed", "struct_ship_1_1_keys_pressed.html", "struct_ship_1_1_keys_pressed" ],
+      [ "Resources", "struct_ship_1_1_resources.html", "struct_ship_1_1_resources" ]
     ] ],
     [ "Weapon.h", "_weapon_8h.html", [
       [ "Weapon", "class_weapon.html", "class_weapon" ]

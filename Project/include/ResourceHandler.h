@@ -9,16 +9,23 @@
 #include <set>
 // For shared_ptr
 #include <memory>
+// For std::unordered_map
+#include <unordered_map>
+// For std::string
+#include <string>
+// For std::ifstream
+#include <fstream>
 // Resources we load
 #include "SFML\Graphics\Texture.hpp"
 #include "SFML\Graphics\Font.hpp"
 #include "SFML\Audio\SoundBuffer.hpp"
 #include "Thor\Graphics\BigTexture.hpp"
+#include "Thor\Animations\FrameAnimation.hpp"
 // thor resource handler
 #include "Thor\Resources\ResourceHolder.hpp"
 #include "Thor\Resources\ResourceLoader.hpp"
 #include "Thor\Resources.hpp"
-
+// json parser
 #include "json\json.hpp"
 
 /// 
@@ -40,7 +47,7 @@ public:
 	/// Loads up our data using the appropriate resource holder based on one of the acceptable types.
 	/// This function is exception safe, as in it returns a nullptr if a exception is given.
 	/// 
-	/// @warning The only acceptable types are: sf::Texture, sf::Font, sf::SoundBuffer and thor::BigTexture.
+	/// @warning The only acceptable types are: sf::Texture, sf::Font, sf::SoundBuffer, thor::BigTexture and thor::FrameAnimation.
 	/// </summary>
 	/// <typeparam name="data_type">Defines the type of data we will load.</typeparam>
 	/// <param name="jsonParser">Defines the json parser that contains our id's file path.</param>
@@ -55,6 +62,42 @@ private:
 	/// <summary>
 	/// @brief Template loader.
 	/// 
+	/// Loads up our data using the appropriate resource holder based on one of the acceptable types:
+	/// (thor::FrameAnimation)
+	/// </summary>
+	/// <typeparam name="data_type">Defines the type of our data.</typeparam>
+	/// <param name="jsonParser">Defines the the json parser that contains our id's information.</param>
+	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
+	/// <returns>Reference to our loaded data.</returns>
+	template<typename data_type>
+	data_type & load(json::json & jsonParser, const std::string & id);
+
+	/// <summary>
+	/// @brief Loads a particular resource.
+	/// 
+	/// Defined as forward declaration of explicit template instatiation.
+	/// Loads all the frames for a id's animation into ResourceHandler::m_pairAnimationHolder.
+	/// @see ResourceHandler::load
+	/// </summary>
+	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
+	/// <param name="id">defines its id in our resource holder.</param>
+	/// <returns>Reference to our loaded resource.</returns>
+	template<> thor::FrameAnimation & load<thor::FrameAnimation>(json::json & jsonParser, const std::string & id);
+
+	/// <summary>
+	/// @brief Loads a particular resource.
+	/// 
+	/// Defined as forward declaration of explicit template instatiation.
+	/// Loads all the frames for a id's animation into
+	/// </summary>
+	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
+	/// <param name="id">defines its id in our resource holder.</param>
+	/// <returns>Reference to our loaded resource.</returns>
+	template<> std::vector<sf::IntRect> & load<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id);
+
+	/// <summary>
+	/// @brief Template loader.
+	/// 
 	/// Loads up our data using the appropriate resource holder based on one of the acceptable type:
 	/// (sf::Texture, sf::Font, sf::SoundBuffer and thor::BigTexture)
 	/// </summary>
@@ -64,7 +107,6 @@ private:
 	/// <returns>Reference to our loaded data.</returns>
 	template<typename data_type>
 	data_type & load(const std::string & id, const std::string & filePath);
-
 
 	/// <summary>
 	/// @brief Loads a particular resource.
@@ -147,6 +189,20 @@ private:
 	/// </summary>
 	typedef thor::ResourceHolder<sf::SoundBuffer, std::string, thor::Resources::CentralOwner> SoundHolder;
 
+	/// <summary>
+	/// @brief Defines a alias for our thor::FrameAnimation.
+	/// 
+	/// This resource holder contains each frame of a particular frame animation.
+	/// </summary>
+	typedef std::unordered_map<std::string, thor::FrameAnimation> AnimationHolder;
+
+	/// <summary>
+	/// @brief Defines a alias for our vector of rectangles.
+	/// 
+	/// This resource holder contains each frame of a particular animation.
+	/// </summary>
+	typedef std::unordered_map<std::string, std::vector<sf::IntRect>> FrameHolder;
+
 	/// 
 	/// @author Rafael Plugge
 	/// @brief Defines a holder with its own mutex.
@@ -198,6 +254,20 @@ private:
 	/// 
 	/// </summary>
 	MutexHolderPair<SoundHolder> m_pairSoundHolder;
+
+	/// <summary>
+	/// @brief Our Pair with its mutex and a unique pointer to our ResourceHandler::AnimationHolder.
+	/// 
+	/// 
+	/// </summary>
+	MutexHolderPair<AnimationHolder> m_pairAnimationHolder;
+
+	/// <summary>
+	/// @brief Our Pair with its mutex and a unique pointer to our ResourceHandler::FrameHolder.
+	/// 
+	/// 
+	/// </summary>
+	MutexHolderPair<FrameHolder> m_pairFrameHolder;
 
 	/// <summary>
 	/// @brief Our predefined Id Strategy.

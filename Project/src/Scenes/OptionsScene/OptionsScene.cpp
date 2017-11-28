@@ -158,7 +158,7 @@ void OptionsScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)
 		gui::Button::s_TEXT_RECT_RIGHT
 	);
 
-	const auto& windowSize = App::getWindowSize();
+	const auto& windowSize = App::getViewSize();
 	gui.configure(gui::GUI::Layouts::StackVertically, windowSize);
 
 }

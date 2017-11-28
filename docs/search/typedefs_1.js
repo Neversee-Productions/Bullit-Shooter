@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fontholder',['FontHolder',['../class_resource_handler.html#a1a873bdd707d76abd4cd9b1efa876782',1,'ResourceHandler']]]
+  ['bigtextureholder',['BigTextureHolder',['../class_resource_handler.html#a1d2a78f5214441f6460260f491b0fbfc',1,'ResourceHandler']]]
 ];

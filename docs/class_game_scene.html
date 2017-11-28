@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('class_game_scene.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_game_scene-members.html">List of all members</a>  </div>
@@ -147,6 +148,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a997ae314fd37f012c8cbde5d93556819 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a997ae314fd37f012c8cbde5d93556819">setNextSceneName</a> (const std::string &amp;nextSceneName)</td></tr>
 <tr class="separator:a997ae314fd37f012c8cbde5d93556819 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:ae80b80d6c05ec923abba6a082935b8fb"><td class="memItemLeft" align="right" valign="top">typedef thor::Animator&lt; sf::Sprite, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ae80b80d6c05ec923abba6a082935b8fb">SpriteAnimator</a></td></tr>
+<tr class="separator:ae80b80d6c05ec923abba6a082935b8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a1720031b70e644e1b6975b15decdda62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a1720031b70e644e1b6975b15decdda62">goToNextScene</a> () final override</td></tr>
@@ -176,7 +182,32 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
 <p>Defines our main gameplay scene. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ae80b80d6c05ec923abba6a082935b8fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae80b80d6c05ec923abba6a082935b8fb">&#9670;&nbsp;</a></span>SpriteAnimator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef thor::Animator&lt;sf::Sprite, std::string&gt; <a class="el" href="class_game_scene.html#ae80b80d6c05ec923abba6a082935b8fb">GameScene::SpriteAnimator</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines a alias for our thor::Animator.</p>
+<p>This animator will animate </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aebd3972a13e0b6c8220c8d54d0b6e03e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aebd3972a13e0b6c8220c8d54d0b6e03e">&#9670;&nbsp;</a></span>GameScene()</h2>
 

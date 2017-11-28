@@ -7,7 +7,7 @@
 /// </summary>
 BulletManager::BulletManager()
 	: m_timeSinceFire(10.0f)
-	, m_windowC2Rect(App::getWindowC2Rect())
+	, m_windowC2Rect(App::getViewC2Rect())
 {
 }
 
