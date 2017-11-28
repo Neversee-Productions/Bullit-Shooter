@@ -10,8 +10,8 @@ const float bullets::Standard::s_FIRE_RATE = 0.5f;
 bullets::Standard::Standard()
 	: Bullet()
 {
-	m_speed = 8.0f;
-	m_velocity.x = m_speed;
+	m_speed = 8.0f * 60.0f;
+	m_velocity.y = -m_speed;
 }
 
 /// <summary>

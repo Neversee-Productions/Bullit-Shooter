@@ -101,6 +101,13 @@ namespace bullets
 		/// </summary>
 		float m_damage;
 
+		/// <summary>
+		/// @brief constant reference to update delta time.
+		/// 
+		/// 
+		/// </summary>
+		const float & UPDATE_DT;
+
 		sf::RectangleShape tempRect;
 	};
 }

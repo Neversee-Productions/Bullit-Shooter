@@ -20,8 +20,8 @@ bullets::HolySphere::HolySphere()
 	, m_timeToLive(s_DEF_TTL)
 	, m_alpha(255.0f)
 {
-	m_speed = 4.5f;
-	m_velocity.x = m_speed;
+	m_speed = 4.5f * 60.0f;
+	m_velocity.y = -m_speed;
 
 	//different size to parent
 	m_bulletRect.setSize(s_DEFAULT_SIZE);
@@ -39,8 +39,8 @@ bullets::HolySphere::HolySphere()
 void bullets::HolySphere::update()
 {
 	//decrease time to live
-	m_timeToLive -= App::getUpdateDeltaTime();
-	m_position += m_velocity;
+	m_timeToLive -= UPDATE_DT;
+	m_position += m_velocity * UPDATE_DT;
 	m_bulletRect.setPosition(m_position.x, m_position.y);
 	//if not max size increase the size
 	if (m_bulletRect.getSize().x <= s_MAX_SIZE)

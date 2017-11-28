@@ -1,6 +1,0 @@
-var searchData=
-[
-  ['bullet',['Bullet',['../classbullets_1_1_bullet.html',1,'bullets']]],
-  ['bulletmanager',['BulletManager',['../class_bullet_manager.html',1,'']]],
-  ['button',['Button',['../classgui_1_1_button.html',1,'gui']]]
-];

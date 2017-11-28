@@ -19,6 +19,7 @@ bullets::Bullet::Bullet()
 	, m_angle(0)
 	, tempRect()
 	, m_damage(1.0f)
+	, UPDATE_DT(App::getUpdateDeltaTime())
 {
 	m_bulletRect.setPosition(0.0f,0.0f);
 	m_bulletRect.setFillColor(sf::Color::White);
@@ -40,7 +41,7 @@ bullets::Bullet::Bullet()
 /// </summary>
 void bullets::Bullet::update()
 {
-	m_position += m_velocity;
+	m_position += m_velocity * UPDATE_DT;
 	m_bulletRect.setPosition(m_position.x, m_position.y);
 	updateBox();
 	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
