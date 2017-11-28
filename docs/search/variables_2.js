@@ -5,6 +5,7 @@ var searchData=
   ['m_5falpha',['m_alpha',['../classbullets_1_1_holy_sphere.html#a6ac826a104a7ec68398ecddd4a1b3e29',1,'bullets::HolySphere']]],
   ['m_5fangle',['m_angle',['../classbullets_1_1_bullet.html#a7eaa1f6ae67ec7c13f37f3bf61704ea9',1,'bullets::Bullet']]],
   ['m_5fasteroid',['m_asteroid',['../class_game_scene.html#a24dc2afe03d6831304709da5157b3ce1',1,'GameScene']]],
+  ['m_5fasteroidsvector',['m_asteroidsVector',['../class_asteroid_manager.html#a27af80be979b9f62d9c4515235b4efad',1,'AsteroidManager']]],
   ['m_5fb',['m_B',['../struct_game_pad_state.html#ad195fc90155dbc9592486904e2f2366d',1,'GamePadState']]],
   ['m_5fback',['m_back',['../struct_game_pad_state.html#acfeeec0457da03a308999b9a6dd867e7',1,'GamePadState']]],
   ['m_5fbackgroundcolor',['m_backgroundColor',['../class_splash_scene.html#ab6445c0aaa84c95d15b67a868c19d84e',1,'SplashScene']]],

@@ -3,6 +3,7 @@ var hierarchy =
     [ "App", "class_app.html", null ],
     [ "Application", "class_application.html", null ],
     [ "Asteroid", "class_asteroid.html", null ],
+    [ "AsteroidManager", "class_asteroid_manager.html", null ],
     [ "bullets::Bullet", "classbullets_1_1_bullet.html", [
       [ "bullets::CometShot", "classbullets_1_1_comet_shot.html", null ],
       [ "bullets::DeathOrb", "classbullets_1_1_death_orb.html", null ],
@@ -39,10 +40,10 @@ var hierarchy =
     [ "Player", "class_player.html", null ],
     [ "ResourceHandler", "class_resource_handler.html", null ],
     [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
-    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
+    [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
     [ "SplashScene::Resources", "struct_splash_scene_1_1_resources.html", null ],
     [ "TitleScene::Resources", "struct_title_scene_1_1_resources.html", null ],
-    [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
+    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
       [ "MainMenuScene", "class_main_menu_scene.html", null ],

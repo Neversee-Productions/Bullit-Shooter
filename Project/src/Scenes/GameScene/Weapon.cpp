@@ -8,7 +8,7 @@
 /// <param name="position">defines the position of the weapon rectangle</param>
 Weapon::Weapon(sf::Vector2f position)
 	: m_weaponRect()
-	, m_currentBullet(BulletTypes::Standard)
+	, m_currentBullet(BulletTypes::Empowered)
 	, m_position(position)
 	, TEMPTIME(0.0f)
 {
@@ -41,9 +41,9 @@ void Weapon::update(const sf::Vector2f& pos)
 	TEMPTIME += App::getUpdateDeltaTime();
 	if (TEMPTIME >= 7.0f)
 	{
-		auto bulletTypeNum = static_cast<int>(m_currentBullet);
-		m_currentBullet = static_cast<BulletTypes>(++bulletTypeNum);
-		TEMPTIME = 0.0f;
+		//auto bulletTypeNum = static_cast<int>(m_currentBullet);
+		//m_currentBullet = static_cast<BulletTypes>(++bulletTypeNum);
+		//TEMPTIME = 0.0f;
 	}
 	//REMOVE TEMPTIME
 

@@ -313,10 +313,6 @@ const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>>& Bull
 template<typename data_type>
 void BulletManager::initBulletMapVector(const BulletTypes& type, const int& size)
 {
-		
-	//std::unique_ptr<bullets::Bullet> base = std::make_unique<bullets::Bullet>(data_type());
-	//std::unique_ptr<data_type> derived = dynamic_cast<std::unique_ptr<data_type>>(base);
-
 	std::vector<std::unique_ptr<bullets::Bullet>> bulletVec;
 	bulletVec.reserve(size);
 	bulletVec.resize(size);

@@ -5,6 +5,7 @@ var annotated_dup =
     [ "App", "class_app.html", "class_app" ],
     [ "Application", "class_application.html", "class_application" ],
     [ "Asteroid", "class_asteroid.html", "class_asteroid" ],
+    [ "AsteroidManager", "class_asteroid_manager.html", "class_asteroid_manager" ],
     [ "BulletManager", "class_bullet_manager.html", "class_bullet_manager" ],
     [ "Controller", "class_controller.html", "class_controller" ],
     [ "GamePadState", "struct_game_pad_state.html", "struct_game_pad_state" ],

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['initasteroidvector',['initAsteroidVector',['../class_asteroid_manager.html#ac1022463f462f024de3d91e83708b110',1,'AsteroidManager']]],
   ['initbulletmapvector',['initBulletMapVector',['../class_bullet_manager.html#ac42e3dfcdf93fd8d4e20ba19cc72031b',1,'BulletManager']]],
   ['initbulletvector',['initBulletvector',['../class_bullet_manager.html#ab78a89d8d0b0a700f4bc62bf1c50fb2a',1,'BulletManager']]],
   ['isactive',['isActive',['../classbullets_1_1_bullet.html#aaa99b721acc4f2ceba75fd95cb55b015',1,'bullets::Bullet']]],

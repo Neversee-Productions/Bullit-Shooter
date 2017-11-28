@@ -34,6 +34,7 @@
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\SceneManager.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Asteroid.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\AsteroidManager.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\Bullet.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\CometShot.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\DeathOrb.cpp" />
@@ -81,6 +82,7 @@
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\SceneManager.h" />
     <ClInclude Include="include\Scenes\GameScene\Asteroid.h" />
+    <ClInclude Include="include\Scenes\GameScene\AsteroidManager.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\Bullet.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\BulletTypes.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\CometShot.h" />
