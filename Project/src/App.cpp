@@ -11,7 +11,7 @@ tinyh::c2AABB App::s_rectView = tinyh::c2AABB();
 /// 
 /// 
 /// </summary>
-/// <param name="width">defines the width of the window</param>
+/// <param name="width">defines the width of the window.</param>
 /// <param name="height">defines the height of the window.</param>
 void App::setViewSize(const unsigned int & width, const unsigned int & height)
 {
