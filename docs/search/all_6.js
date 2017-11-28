@@ -10,5 +10,6 @@ var searchData=
   ['firebullet',['fireBullet',['../class_bullet_manager.html#aee0e75edd198df85c62f91e5e1d02b11',1,'BulletManager']]],
   ['fireempowered',['fireEmpowered',['../class_bullet_manager.html#a507393ed5ccbe692e93f7763ed714435',1,'BulletManager']]],
   ['fireone',['fireOne',['../class_bullet_manager.html#ac752231cf91a59e7eb5113f18a7b5f1d',1,'BulletManager']]],
-  ['fontholder',['FontHolder',['../class_resource_handler.html#a1a873bdd707d76abd4cd9b1efa876782',1,'ResourceHandler']]]
+  ['fontholder',['FontHolder',['../class_resource_handler.html#a1a873bdd707d76abd4cd9b1efa876782',1,'ResourceHandler']]],
+  ['frameholder',['FrameHolder',['../class_resource_handler.html#aaf6faa01115e9dd0bff19282bd68920c',1,'ResourceHandler']]]
 ];

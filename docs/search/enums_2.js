@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fadestate',['FadeState',['../class_splash_scene.html#a9b7c8f34a295dac9f58d1520449dbb8a',1,'SplashScene']]]
+  ['direction',['Direction',['../class_ship.html#a743997210406247a228feea2a2fef570',1,'Ship']]]
 ];

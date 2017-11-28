@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['layouts',['Layouts',['../classgui_1_1_g_u_i.html#a50ccb43299016dc44fe4b21e0213169b',1,'gui::GUI']]]
+  ['fadestate',['FadeState',['../class_splash_scene.html#a9b7c8f34a295dac9f58d1520449dbb8a',1,'SplashScene']]]
 ];

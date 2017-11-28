@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bigtextureholder',['BigTextureHolder',['../class_resource_handler.html#a1d2a78f5214441f6460260f491b0fbfc',1,'ResourceHandler']]]
+  ['animationholder',['AnimationHolder',['../class_resource_handler.html#a1346d9b270681956e66c660fc40d7aee',1,'ResourceHandler']]]
 ];

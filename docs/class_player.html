@@ -81,8 +81,9 @@ $(document).ready(function(){initNavTree('class_player.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_player-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Player Class Reference</div>  </div>
@@ -94,17 +95,25 @@ $(document).ready(function(){initNavTree('class_player.html','');});
 
 <p><code>#include &lt;<a class="el" href="_player_8h_source.html">Player.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_1_1_resources.html">Resources</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the resources the player needs.  <a href="struct_player_1_1_resources.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7440c280452f6ee2737dad2e2abe2962"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7440c280452f6ee2737dad2e2abe2962">Player</a> (<a class="el" href="class_key_handler.html">KeyHandler</a> &amp;keyHandler)</td></tr>
 <tr class="separator:a7440c280452f6ee2737dad2e2abe2962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add091bd8b92b2ee8e6d809b8c162eed5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#add091bd8b92b2ee8e6d809b8c162eed5">init</a> (std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Resources</a> &gt; resources)</td></tr>
+<tr class="separator:add091bd8b92b2ee8e6d809b8c162eed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a4253c07c2dd1428de5d1dac00098c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a5a4253c07c2dd1428de5d1dac00098c2">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;<a class="el" href="class_player.html#a9826d13da7dab6275a99aab6fdb66c2a">deltaTime</a>)</td></tr>
 <tr class="separator:a5a4253c07c2dd1428de5d1dac00098c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82c3476f3e65a4e2ac6bcd040771bdd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4">update</a> ()</td></tr>
 <tr class="separator:a82c3476f3e65a4e2ac6bcd040771bdd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:ad2d2524643689b736c5d0eb2ae4e7d9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ship.html">Ship</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad2d2524643689b736c5d0eb2ae4e7d9b">m_ship</a></td></tr>
 <tr class="separator:ad2d2524643689b736c5d0eb2ae4e7d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43a948490af7100d684fc2034247f7bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_weapon.html">Weapon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a43a948490af7100d684fc2034247f7bd">m_weapon1</a></td></tr>
@@ -123,7 +132,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a8754267e4de59502f355825e61c54324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
+<dd>
+Rafael Plugge</dd></dl>
 <p>Defines the player class. This class will create the <a class="el" href="class_weapon.html" title="Weapon class. ">Weapon</a>, Shield, <a class="el" href="class_ship.html" title="Ship class. ">Ship</a> and <a class="el" href="class_bullet_manager.html" title="The bullet manager class. ">BulletManager</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7440c280452f6ee2737dad2e2abe2962"></a>
@@ -189,6 +200,32 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="add091bd8b92b2ee8e6d809b8c162eed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add091bd8b92b2ee8e6d809b8c162eed5">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::init </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Resources</a> &gt;&#160;</td>
+          <td class="paramname"><em>uptrResources</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize player.</p>
+<p>Defines all the players resources. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uptrResources</td><td>shared pointer to all the necessary player resources.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a82c3476f3e65a4e2ac6bcd040771bdd4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a82c3476f3e65a4e2ac6bcd040771bdd4">&#9670;&nbsp;</a></span>update()</h2>
 
@@ -213,11 +250,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const float&amp; Player::deltaTime</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>constant reference to delta time.</p>
 
@@ -228,11 +273,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_bullet_manager.html">BulletManager</a> Player::m_bulletManager</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>the bullet manager object.</p>
 
@@ -243,11 +296,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_key_handler.html">KeyHandler</a>&amp; Player::m_keyHandler</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>reference to the key handler.</p>
 
@@ -258,11 +319,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_ship.html">Ship</a> Player::m_ship</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Defines the ship object.</p>
 
@@ -273,11 +342,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_weapon.html">Weapon</a> Player::m_weapon1</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Defines the Weapon1 (weapon above the player).</p>
 
@@ -288,11 +365,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">sf::Vector2f Player::m_weapon1Pos</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>position of top weapon.</p>
 
@@ -303,11 +388,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_weapon.html">Weapon</a> Player::m_weapon2</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Defines the Weapon1 (weapon below the player).</p>
 
@@ -318,11 +411,19 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">sf::Vector2f Player::m_weapon2Pos</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>position of bottom weapon.</p>
 

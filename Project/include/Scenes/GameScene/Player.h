@@ -9,6 +9,7 @@
 ///
 /// @brief Player class.
 /// @author Sebastian Kruzel
+/// @author Rafael Plugge
 /// 
 /// Defines the player class.
 /// This class will create the Weapon, Shield, Ship and BulletManager.
@@ -16,10 +17,34 @@
 class Player
 {
 public:
+	/// 
+	/// @author Rafael Plugge
+	/// @brief Determines the resources the player needs.
+	/// 
+	/// 
+	struct Resources
+	{
+		/// <summary>
+		/// @brief Unique pointer to ship resources.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<Ship::Resources> m_ship = std::make_shared<Ship::Resources>();
+
+		//std::unique_ptr<Weapon::Resources> m_weapon =
+		//	std::make_unique<Weapon::Resources>();
+
+		//std::unique_ptr<bullets::Bullet::Resources> m_bullet =
+		//	std::make_unique<bullets::Bullet::Resources>();
+	};
+
+public:
 	Player(KeyHandler& keyHandler);
+	void init(std::shared_ptr<Resources> resources);
 	void draw(Window & window, const float & deltaTime);
 	void update();
 
+private:
 	/// <summary>
 	/// @brief Defines the ship object.
 	/// 
