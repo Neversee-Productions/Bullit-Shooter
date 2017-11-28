@@ -6,6 +6,7 @@
 #include "Thor\Animations.hpp"
 #include "Player.h"
 #include "tinyheaders\tinyc2.h"
+#include "Asteroid.h"
 
 ///
 /// @brief Main game scene.
@@ -47,6 +48,12 @@ public:
 	void stop() final override;
 	void update() final override;
 	void draw(Window & window, const float & deltaTime) final override;
+	void updateCollisions();
+	void bulletAsteroidsCollision();
+	void collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet);
+	void collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet);
+	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
+	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
 
 private:
 	void goToNextScene() final override;
@@ -71,6 +78,20 @@ private:
 	/// Used as to determine the lifetime of its members.
 	/// </summary>
 	std::unique_ptr<Resources> m_resources;
+
+	/// <summary>
+	/// @brief defines an asteroid.
+	/// 
+	/// 
+	/// </summary>
+	Asteroid m_asteroid;
+
+	/// <summary>
+	/// @brief constant reference to the window.
+	/// 
+	/// 
+	/// </summary>
+	const tinyh::c2AABB& m_windowC2Rect;
 };
 
 #endif // !GAMESCENE_H

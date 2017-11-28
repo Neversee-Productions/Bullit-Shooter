@@ -27,6 +27,9 @@ namespace bullets
 		void setAngle(const float& angle);
 		void updateVelocityVector();
 		bool isActive() const;
+		virtual bool checkCircleCollision(const tinyh::c2Circle & other);
+		const float & getDamage();
+
 	protected:
 		/// <summary>
 		/// @brief represents the position.
@@ -90,6 +93,22 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_angle;
+
+		/// <summary>
+		/// @brief define damage of bullet.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
+
+		/// <summary>
+		/// @brief constant reference to update delta time.
+		/// 
+		/// 
+		/// </summary>
+		const float & UPDATE_DT;
+
+		sf::RectangleShape tempRect;
 	};
 }
 #endif // !BULLET_H

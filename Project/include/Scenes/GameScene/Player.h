@@ -43,6 +43,8 @@ public:
 	void init(std::shared_ptr<Resources> resources);
 	void draw(Window & window, const float & deltaTime);
 	void update();
+	const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & getBulletMap();
+private:
 
 private:
 	/// <summary>

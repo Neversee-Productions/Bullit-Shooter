@@ -118,6 +118,12 @@
     <Filter Include="Header Files\Scenes\GameScene\Entities\Player\Bullets">
       <UniqueIdentifier>{8a0658ee-1037-4327-b2ec-1108f16c6f74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Scenes\GameScene\Entities\Asteroids">
+      <UniqueIdentifier>{1d00606e-08c9-4d50-b7c9-afb76153f92c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\GameScene\Asteroids">
+      <UniqueIdentifier>{7b8c3f8b-899e-49ed-99aa-cafcf1a31a90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -230,6 +236,12 @@
     </ClCompile>
     <ClCompile Include="src\Scenes\GameScene\Weapon.cpp">
       <Filter>Source Files\Scenes\GameScene\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Asteroid.cpp">
+      <Filter>Source Files\Scenes\GameScene\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\AsteroidManager.cpp">
+      <Filter>Source Files\Scenes\GameScene\Asteroids</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +372,12 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\BulletManager.h">
       <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Asteroid.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\AsteroidManager.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Asteroids</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

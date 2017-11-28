@@ -36,9 +36,6 @@ namespace bullets
 		/// </summary>
 		static const float bullets::MagmaShot::s_FIRE_RATE;
 
-		//REMOVE LATER USED INSTEAD OF COLLISIONS TO CHECK RESPONSE
-		float TIMETOLIVE;
-
 		/// <summary>
 		/// @brief determine rate of size change during explosion state.
 		/// 

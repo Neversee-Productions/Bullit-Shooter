@@ -17,6 +17,9 @@ bullets::Bullet::Bullet()
 	, m_velocity(0.0f,0.0f)
 	, m_speed(0)
 	, m_angle(0)
+	, tempRect()
+	, m_damage(1.0f)
+	, UPDATE_DT(App::getUpdateDeltaTime())
 {
 	m_bulletRect.setPosition(0.0f,0.0f);
 	m_bulletRect.setFillColor(sf::Color::White);
@@ -24,11 +27,11 @@ bullets::Bullet::Bullet()
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 	//define the bullet collision rectangle
-	const auto & bulletRect = m_bulletRect.getGlobalBounds();
-	m_bulletC2Rect.min.x = bulletRect.left;
-	m_bulletC2Rect.min.y = bulletRect.top;
-	m_bulletC2Rect.max.x = bulletRect.left + bulletRect.width;
-	m_bulletC2Rect.max.x = bulletRect.top + bulletRect.height;
+	updateBox();
+
+	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
+	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.x - m_bulletC2Rect.min.y));
+	tempRect.setFillColor(sf::Color::Yellow);
 }
 
 /// <summary>
@@ -38,9 +41,11 @@ bullets::Bullet::Bullet()
 /// </summary>
 void bullets::Bullet::update()
 {
-	m_position += m_velocity;
+	m_position += m_velocity * UPDATE_DT;
 	m_bulletRect.setPosition(m_position.x, m_position.y);
 	updateBox();
+	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
+	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 }
 
 /// <summary>
@@ -53,6 +58,7 @@ void bullets::Bullet::update()
 void bullets::Bullet::draw(Window & window, const float & deltaTime)
 {
 	window.draw(m_bulletRect);
+	window.draw(tempRect);
 }
 
 /// <summary>
@@ -88,7 +94,7 @@ void bullets::Bullet::updateBox()
 	m_bulletC2Rect.min.x = bulletRect.left;
 	m_bulletC2Rect.min.y = bulletRect.top;
 	m_bulletC2Rect.max.x = bulletRect.left + bulletRect.width;
-	m_bulletC2Rect.max.x = bulletRect.top + bulletRect.height;
+	m_bulletC2Rect.max.y = bulletRect.top + bulletRect.height;
 }
 
 /// <summary>
@@ -136,6 +142,33 @@ void bullets::Bullet::updateVelocityVector()
 bool bullets::Bullet::isActive() const
 {
 	return m_active;
+}
+
+/// <summary>
+/// @brief check collision against a circle.
+/// 
+///
+/// </summary>
+/// <param name="other">the circle to collide with</param>
+/// <returns>true if collided</returns>
+bool bullets::Bullet::checkCircleCollision(const tinyh::c2Circle & other)
+{
+	if (tinyh::c2CircletoAABB(other, m_bulletC2Rect))
+	{
+		return true;
+	}
+	return false;
+}
+
+/// <summary>
+/// @brief access damage of the bullet.
+/// 
+/// 
+/// </summary>
+/// <returns></returns>
+const float & bullets::Bullet::getDamage()
+{
+	return m_damage;
 }
 
 

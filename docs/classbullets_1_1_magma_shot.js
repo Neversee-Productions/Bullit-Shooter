@@ -5,6 +5,5 @@ var classbullets_1_1_magma_shot =
     [ "getFireRate", "classbullets_1_1_magma_shot.html#af7b6899a557218be4254f650615e3eae", null ],
     [ "setActive", "classbullets_1_1_magma_shot.html#a6dfe6b2f433482e6d1559c1ad939517f", null ],
     [ "update", "classbullets_1_1_magma_shot.html#acf5acafd0a253b4b51e28cdc2c77ae63", null ],
-    [ "m_explode", "classbullets_1_1_magma_shot.html#ad5299693b1586ab5569f85eb48059005", null ],
-    [ "TIMETOLIVE", "classbullets_1_1_magma_shot.html#aec29cbab8a67d5ea31cabb2345a2bd6d", null ]
+    [ "m_explode", "classbullets_1_1_magma_shot.html#ad5299693b1586ab5569f85eb48059005", null ]
 ];

@@ -10,8 +10,8 @@ const float bullets::DeathOrb::s_FIRE_RATE = 1.0f;
 bullets::DeathOrb::DeathOrb()
 	: Bullet()
 {
-	m_speed = 4.0f;
-	m_velocity.x = m_speed;
+	m_speed = 6.0f * 60.0f;
+	m_velocity.y = -m_speed;
 
 	//different size to parent
 	m_bulletRect.setSize(sf::Vector2f(10.0f, 10.0f));
@@ -39,7 +39,9 @@ float bullets::DeathOrb::getFireRate()
 /// </summary>
 void bullets::DeathOrb::update()
 {
-	m_position += m_velocity;
+	m_position += m_velocity * UPDATE_DT;
 	m_bulletRect.setPosition(m_position.x, m_position.y);
 	updateBox();
+	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
+	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 }

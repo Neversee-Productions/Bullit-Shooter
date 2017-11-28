@@ -26,9 +26,10 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	// define our current resolution.
 	///////////////////////////////////////////////////////
+	// windowed mode
+	//m_resolution = sf::VideoMode(1366u, 768u);
+	// fullscreen mode
 	m_resolution = fullscreenRes.at(0);
-	App::setWindowSize(m_resolution.width, m_resolution.height);
-	App::setWindowC2Rect(sf::Vector2f(0.0f, 0.0f), static_cast<sf::Vector2f>(App::getWindowSize()));
 
 	///////////////////////////////////////////////////////
 	// create our window with pre-defined settings
@@ -64,6 +65,13 @@ Window::Window(KeyHandler & keyHandler)
 	m_textureRenderer.setRotation(0.0f);
 	m_textureRenderer.setScale(textureScalar);
 	m_textureRenderer.setTexture(m_renderTexture.getTexture(), true);
+
+	///////////////////////////////////////////////////////
+	// initialize Views Size
+	///////////////////////////////////////////////////////
+	const auto & viewSize = m_renderTexture.getSize();
+	App::setViewSize(viewSize.x, viewSize.y);
+	App::setViewC2Rect(sf::Vector2f(0.0f, 0.0f), static_cast<sf::Vector2f>(App::getViewSize()));
 }
 
 /// <summary>

@@ -11,7 +11,7 @@ const float bullets::Empowered::s_FIRE_RATE = 1.0f;
 bullets::Empowered::Empowered()
 	: Bullet()
 {
-	m_speed = 6.0f;
+	m_speed = 6.0f * 60.0f;
 }
 
 /// <summary>

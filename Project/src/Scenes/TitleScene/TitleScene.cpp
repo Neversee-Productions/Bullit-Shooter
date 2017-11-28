@@ -127,7 +127,7 @@ void TitleScene::setup(const std::string & filePath)
 	assert(nullptr != m_resources->m_sptrTextFont);
 
 	// Storing a constant reference to the windows dimensions as floats
-	const auto & windowSize = static_cast<sf::Vector2f>(App::getWindowSize());
+	const auto & windowSize = static_cast<sf::Vector2f>(App::getViewSize());
 	
 	// storing a constant of the center position of the window
 	const auto windowCenter = windowSize * 0.5f;

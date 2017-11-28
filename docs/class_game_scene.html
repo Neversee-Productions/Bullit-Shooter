@@ -126,6 +126,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a31a272239cac07b320d01c5e632df22e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af58b670ba277a007dba8fdf05e5a60c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#af58b670ba277a007dba8fdf05e5a60c5">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime) final override</td></tr>
 <tr class="separator:af58b670ba277a007dba8fdf05e5a60c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aff89b2744bed5991838d0ab142fc53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8aff89b2744bed5991838d0ab142fc53">updateCollisions</a> ()</td></tr>
+<tr class="separator:a8aff89b2744bed5991838d0ab142fc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7231c6cf599365a4f9d003784348fef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ab7231c6cf599365a4f9d003784348fef">bulletAsteroidsCollision</a> ()</td></tr>
+<tr class="separator:ab7231c6cf599365a4f9d003784348fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939afc3d229df0b1531fe3c129e5daa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a939afc3d229df0b1531fe3c129e5daa6">collisionResponse</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
+<tr class="separator:a939afc3d229df0b1531fe3c129e5daa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8591af2894985a551835b5d7c67138e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8591af2894985a551835b5d7c67138e7">collisionResponse</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_magma_shot.html">bullets::MagmaShot</a> &amp;bullet)</td></tr>
+<tr class="separator:a8591af2894985a551835b5d7c67138e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04bbb69fd2e324c8480995d6c1ea7d14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a04bbb69fd2e324c8480995d6c1ea7d14">collisionResponse</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_napalm_sphere.html">bullets::NapalmSphere</a> &amp;bullet)</td></tr>
+<tr class="separator:a04bbb69fd2e324c8480995d6c1ea7d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c06cce94ec2a1c24f9c575d977d7a35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a0c06cce94ec2a1c24f9c575d977d7a35">collisionResponse</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_pyro_blast.html">bullets::PyroBlast</a> &amp;bullet)</td></tr>
+<tr class="separator:a0c06cce94ec2a1c24f9c575d977d7a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scene"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scene')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scene.html">Scene</a></td></tr>
 <tr class="memitem:af11ca42551a5754a60f0f07277c0cd41 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#af11ca42551a5754a60f0f07277c0cd41">Scene</a> (const std::string &amp;sceneName)</td></tr>
 <tr class="separator:af11ca42551a5754a60f0f07277c0cd41 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +168,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae13dc9d4dc184866c5117909d988c02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9cfd2613e470aa84181a7a465ce76ac"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="struct_game_scene_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ac9cfd2613e470aa84181a7a465ce76ac">m_resources</a></td></tr>
 <tr class="separator:ac9cfd2613e470aa84181a7a465ce76ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24dc2afe03d6831304709da5157b3ce1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_asteroid.html">Asteroid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a24dc2afe03d6831304709da5157b3ce1">m_asteroid</a></td></tr>
+<tr class="separator:a24dc2afe03d6831304709da5157b3ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eba18e031ee0d957b6fc74d21c443db"><td class="memItemLeft" align="right" valign="top">const tinyh::c2AABB &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a2eba18e031ee0d957b6fc74d21c443db">m_windowC2Rect</a></td></tr>
+<tr class="separator:a2eba18e031ee0d957b6fc74d21c443db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -213,6 +229,172 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab7231c6cf599365a4f9d003784348fef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7231c6cf599365a4f9d003784348fef">&#9670;&nbsp;</a></span>bulletAsteroidsCollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::bulletAsteroidsCollision </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>update collisions between bullets and asteroids.</p>
+
+</div>
+</div>
+<a id="a939afc3d229df0b1531fe3c129e5daa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a939afc3d229df0b1531fe3c129e5daa6">&#9670;&nbsp;</a></span>collisionResponse() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::collisionResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
+          <td class="paramname"><em>asteroid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;&#160;</td>
+          <td class="paramname"><em>bullet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>default collision response for most bullets.</p>
+<p>Damages the asteroid and disappears. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asteroid</td><td>reference to the asteroid collided with</td></tr>
+    <tr><td class="paramname">bullet</td><td>reference to the bullet that has collided</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8591af2894985a551835b5d7c67138e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8591af2894985a551835b5d7c67138e7">&#9670;&nbsp;</a></span>collisionResponse() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::collisionResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
+          <td class="paramname"><em>asteroid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbullets_1_1_magma_shot.html">bullets::MagmaShot</a> &amp;&#160;</td>
+          <td class="paramname"><em>bullet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>overloaded collision response for magma shot.</p>
+<p>Damages asteroid and explodes on impact. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asteroid</td><td>reference to the asteroid collided with</td></tr>
+    <tr><td class="paramname">bullet</td><td>reference to the bullet that has collided</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a04bbb69fd2e324c8480995d6c1ea7d14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04bbb69fd2e324c8480995d6c1ea7d14">&#9670;&nbsp;</a></span>collisionResponse() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::collisionResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
+          <td class="paramname"><em>asteroid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbullets_1_1_napalm_sphere.html">bullets::NapalmSphere</a> &amp;&#160;</td>
+          <td class="paramname"><em>bullet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>overloaded collision response for Napalm Sphere.</p>
+<p>Damages asteroid and explodes on impact. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asteroid</td><td>reference to the asteroid collided with</td></tr>
+    <tr><td class="paramname">bullet</td><td>reference to the bullet that has collided</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0c06cce94ec2a1c24f9c575d977d7a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c06cce94ec2a1c24f9c575d977d7a35">&#9670;&nbsp;</a></span>collisionResponse() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::collisionResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
+          <td class="paramname"><em>asteroid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbullets_1_1_pyro_blast.html">bullets::PyroBlast</a> &amp;&#160;</td>
+          <td class="paramname"><em>bullet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>overloaded collision response for PyroBlast.</p>
+<p>Damages asteroid and explodes on impact. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asteroid</td><td>reference to the asteroid collided with</td></tr>
+    <tr><td class="paramname">bullet</td><td>reference to the bullet that has collided</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af58b670ba277a007dba8fdf05e5a60c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af58b670ba277a007dba8fdf05e5a60c5">&#9670;&nbsp;</a></span>draw()</h2>
 
@@ -442,7 +624,48 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a8aff89b2744bed5991838d0ab142fc53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aff89b2744bed5991838d0ab142fc53">&#9670;&nbsp;</a></span>updateCollisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::updateCollisions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Update game collisions.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a24dc2afe03d6831304709da5157b3ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24dc2afe03d6831304709da5157b3ce1">&#9670;&nbsp;</a></span>m_asteroid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_asteroid.html">Asteroid</a> GameScene::m_asteroid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>defines an asteroid.</p>
+
+</div>
+</div>
 <a id="ae13dc9d4dc184866c5117909d988c02c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae13dc9d4dc184866c5117909d988c02c">&#9670;&nbsp;</a></span>m_keyHandler</h2>
 
@@ -510,6 +733,29 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Unique pointer to our <a class="el" href="struct_game_scene_1_1_resources.html" title="Container of shared pointers to our resources. ">Resources</a> struct.</p>
 <p>Used as to determine the lifetime of its members. </p>
+
+</div>
+</div>
+<a id="a2eba18e031ee0d957b6fc74d21c443db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eba18e031ee0d957b6fc74d21c443db">&#9670;&nbsp;</a></span>m_windowC2Rect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const tinyh::c2AABB&amp; GameScene::m_windowC2Rect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>constant reference to the window.</p>
 
 </div>
 </div>

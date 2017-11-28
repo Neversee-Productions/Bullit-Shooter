@@ -22,11 +22,11 @@ private:
 	App() {};
 
 public:
-	static void setWindowSize(const unsigned int & width, const unsigned int & height);
-	static const sf::Vector2u & getWindowSize();
+	static void setViewSize(const unsigned int & width, const unsigned int & height);
+	static const sf::Vector2u & getViewSize();
 	static const float & getUpdateDeltaTime();
-	static const tinyh::c2AABB & getWindowC2Rect();
-	static void setWindowC2Rect(const sf::Vector2f& min, const sf::Vector2f& max);
+	static const tinyh::c2AABB & getViewC2Rect();
+	static void setViewC2Rect(const sf::Vector2f& min, const sf::Vector2f& max);
 
 private:
 	/// <summary>
@@ -35,7 +35,7 @@ private:
 	/// Will be used by many different classes,
 	/// to perform any window size dependant operations.
 	/// </summary>
-	static sf::Vector2u s_windowSize;
+	static sf::Vector2u s_viewSize;
 
 	/// <summary>
 	/// @brief Represents the time step for one update tick.
@@ -50,7 +50,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	static tinyh::c2AABB s_rectWindow;
+	static tinyh::c2AABB s_rectView;
 };
 
 #endif // !APP_H

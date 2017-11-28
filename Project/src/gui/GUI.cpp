@@ -19,7 +19,7 @@ gui::GUI::GUI(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller
 	m_widgets.reserve(5);
 	if (m_drawStrip) //if we are drawing the strip then set it up
 	{
-		const auto & windowSize = static_cast<sf::Vector2f>(App::getWindowSize());
+		const auto & windowSize = static_cast<sf::Vector2f>(App::getViewSize());
 		const auto & aspectRatio = windowSize.y / windowSize.x;
 		m_rectangleStrip = sf::RectangleShape(sf::Vector2f(windowSize.x * 1.5f, windowSize.y * 0.5f));
 		m_rectangleStrip.setPosition(windowSize.x * 0.5f, windowSize.y * 0.5f);
