@@ -52,6 +52,7 @@ public:
 	void draw(Window & window, const float & deltaTime) final override;
 	void updateCollisions();
 	void bulletAsteroidsCollision();
+	void playerAsteroidCollision();
 	void collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);

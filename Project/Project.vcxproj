@@ -47,6 +47,7 @@
     <ClCompile Include="src\Scenes\GameScene\Bullets\PyroBlast.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\Standard.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Bullets\StaticSphere.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Shield.cpp" />
     <ClCompile Include="src\Scenes\MainMenuScene\MainMenuScene.cpp" />
     <ClCompile Include="src\Scenes\GameScene\BulletManager.cpp" />
     <ClCompile Include="src\Scenes\GameScene\GameScene.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="include\Scenes\GameScene\Bullets\PyroBlast.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\Standard.h" />
     <ClInclude Include="include\Scenes\GameScene\Bullets\StaticSphere.h" />
+    <ClInclude Include="include\Scenes\GameScene\Shield.h" />
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />
     <ClInclude Include="include\Scenes\GameScene\BulletManager.h" />
     <ClInclude Include="include\Scenes\GameScene\GameScene.h" />

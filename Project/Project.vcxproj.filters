@@ -243,6 +243,9 @@
     <ClCompile Include="src\Scenes\GameScene\AsteroidManager.cpp">
       <Filter>Source Files\Scenes\GameScene\Asteroids</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Shield.cpp">
+      <Filter>Source Files\Scenes\GameScene\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -378,6 +381,9 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\AsteroidManager.h">
       <Filter>Header Files\Scenes\GameScene\Entities\Asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Shield.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

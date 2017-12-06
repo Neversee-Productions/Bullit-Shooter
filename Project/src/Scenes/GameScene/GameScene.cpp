@@ -64,6 +64,10 @@ void GameScene::stop()
 /// </summary>
 void GameScene::update()
 {
+	if (m_player.getShieldHealth() <= 0)
+	{
+		m_player.setAlive(false);
+	}
 	m_asteroidSpawnTimer += UPDATE_DT;
 	if (m_asteroidSpawnTimer >= m_asteroidSpawnFrequency)
 	{
@@ -121,6 +125,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 void GameScene::updateCollisions()
 {
 	bulletAsteroidsCollision();
+	playerAsteroidCollision();
 }
 
 /// <summary>
@@ -183,6 +188,28 @@ void GameScene::bulletAsteroidsCollision()
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+/// <summary>
+/// @brief this method checks collisions with all active asteroids.
+/// 
+/// 
+/// </summary>
+void GameScene::playerAsteroidCollision()
+{
+	auto & asteroidVector = m_asteroidManager.getAsteroidVector();
+	for (auto itt = asteroidVector.begin(), end2 = asteroidVector.end(); itt != end2; ++itt)
+	{
+		auto & asteroid = **itt;
+		if (asteroid.isActive())
+		{
+			if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
+			{
+				m_player.decrementShield(25.0f);
+				asteroid.decrementHealth(10.0f);
 			}
 		}
 	}

@@ -42,7 +42,7 @@ Window::Window(KeyHandler & keyHandler)
 	settings.stencilBits = 8u;
 	settings.antialiasingLevel = 8u;
 	
-	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Fullscreen, settings);
+	m_sfWindow.create(m_resolution, "Bullit \" \" Shooter", sf::Style::Fullscreen, settings);
 
 	///////////////////////////////////////////////////////
 	// create and initialize our render texture

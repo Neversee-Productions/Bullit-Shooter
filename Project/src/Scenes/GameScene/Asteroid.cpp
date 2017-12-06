@@ -83,7 +83,7 @@ void Asteroid::draw(Window & window, const float & deltaTime)
 {
 	if (m_active)
 	{
-		window.draw(m_rectangle);
+		//window.draw(m_rectangle);
 		window.draw(m_circle);
 	}
 }
@@ -217,7 +217,7 @@ bool Asteroid::isInvulnerable()
 /// </summary>
 void Asteroid::knockback()
 {
-	m_velocity.y -= 1.5f;
+	m_velocity.y -= 15.0f;
 }
 
 /// <summary>

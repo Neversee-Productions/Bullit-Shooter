@@ -247,9 +247,9 @@ void Ship::incFrame()
 /// 
 /// </summary>
 /// <returns>returns the ship rectangles position</returns>
-const sf::Vector2f & Ship::getShipRect()
+const sf::RectangleShape & Ship::getShipRect()
 {
-	return m_shipRect.getPosition();
+	return m_shipRect;
 }
 
 /// <summary>

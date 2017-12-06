@@ -11,6 +11,7 @@ var class_game_scene =
     [ "draw", "class_game_scene.html#af58b670ba277a007dba8fdf05e5a60c5", null ],
     [ "generateRandomTimer", "class_game_scene.html#a77ab292bd9b967b90663ac915ff1b25e", null ],
     [ "goToNextScene", "class_game_scene.html#a1720031b70e644e1b6975b15decdda62", null ],
+    [ "playerAsteroidCollision", "class_game_scene.html#ad3c7f1444e67a8462e4611dbe9319bc4", null ],
     [ "preStart", "class_game_scene.html#aa047fdbc6f7cdae8eb76eda686eb49d5", null ],
     [ "setup", "class_game_scene.html#a08213e60be0211836cebe55b28887cae", null ],
     [ "start", "class_game_scene.html#a18967f8879389db3e8b9d6a3d1ff58c0", null ],
