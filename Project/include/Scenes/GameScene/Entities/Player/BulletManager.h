@@ -3,9 +3,10 @@
 
 #include <vector>
 #include <memory>
+#include "Window.h"
+#include "Weapon.h"
 #include "Bullets/Bullet.h"
 #include "Bullets/Standard.h"
-#include "Window.h"
 #include "Bullets/BulletTypes.h"
 #include "Bullets/Empowered.h"
 #include "Bullets/DeathOrb.h"
@@ -28,7 +29,7 @@ class BulletManager
 {
 public:
 	BulletManager();
-	void fireBullet(const sf::Vector2f& position1,const sf::Vector2f& position2,const BulletTypes& type);
+	void fireBullet(Weapon& weapon1, Weapon & weapon2, const BulletTypes& type);
 	void initBulletvector(BulletTypes type);
 	void reuseBullet(bullets::Bullet& bullet, sf::Vector2f pos);
 	void draw(Window & window, const float & deltaTime);

@@ -7,7 +7,7 @@ var searchData=
   ['fireblast',['FireBlast',['../classbullets_1_1_fire_blast.html',1,'bullets::FireBlast'],['../classbullets_1_1_fire_blast.html#aee5c419c26fd0556a3cda6d480b3ae8b',1,'bullets::FireBlast::FireBlast()'],['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca35a3c23e996af8b46311b1fdbdedabee',1,'FireBlast():&#160;BulletTypes.h']]],
   ['fireblast_2ecpp',['FireBlast.cpp',['../_fire_blast_8cpp.html',1,'']]],
   ['fireblast_2eh',['FireBlast.h',['../_fire_blast_8h.html',1,'']]],
-  ['firebullet',['fireBullet',['../class_bullet_manager.html#aee0e75edd198df85c62f91e5e1d02b11',1,'BulletManager']]],
+  ['firebullet',['fireBullet',['../class_bullet_manager.html#a5821be7f60c44744f7b1817afe54864e',1,'BulletManager']]],
   ['fireempowered',['fireEmpowered',['../class_bullet_manager.html#a507393ed5ccbe692e93f7763ed714435',1,'BulletManager']]],
   ['fireone',['fireOne',['../class_bullet_manager.html#ac752231cf91a59e7eb5113f18a7b5f1d',1,'BulletManager']]],
   ['fontholder',['FontHolder',['../class_resource_handler.html#a1a873bdd707d76abd4cd9b1efa876782',1,'ResourceHandler']]],

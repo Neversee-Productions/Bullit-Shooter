@@ -12,6 +12,7 @@ var class_game_scene =
     [ "goToNextScene", "class_game_scene.html#a1720031b70e644e1b6975b15decdda62", null ],
     [ "preStart", "class_game_scene.html#aa047fdbc6f7cdae8eb76eda686eb49d5", null ],
     [ "setup", "class_game_scene.html#a08213e60be0211836cebe55b28887cae", null ],
+    [ "setupWeapon", "class_game_scene.html#a7084ec08aaf208f289ee972af8df59a9", null ],
     [ "start", "class_game_scene.html#a18967f8879389db3e8b9d6a3d1ff58c0", null ],
     [ "stop", "class_game_scene.html#af2d4691481477cfa1d797e28593bb2e8", null ],
     [ "update", "class_game_scene.html#a31a272239cac07b320d01c5e632df22e", null ],

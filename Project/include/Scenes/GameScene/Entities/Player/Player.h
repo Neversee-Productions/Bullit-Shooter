@@ -25,17 +25,22 @@ public:
 	struct Resources
 	{
 		/// <summary>
-		/// @brief Unique pointer to ship resources.
+		/// @brief Shared pointer to ship resources.
 		/// 
 		/// 
 		/// </summary>
 		std::shared_ptr<Ship::Resources> m_ship = std::make_shared<Ship::Resources>();
 
-		//std::unique_ptr<Weapon::Resources> m_weapon =
-		//	std::make_unique<Weapon::Resources>();
+		/// <summary>
+		/// @brief shared pointer to weapon resources.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<Weapon::Resources> m_weapon =
+			std::make_shared<Weapon::Resources>();
 
-		//std::unique_ptr<bullets::Bullet::Resources> m_bullet =
-		//	std::make_unique<bullets::Bullet::Resources>();
+		//std::shared_ptr<bullets::Bullet::Resources> m_bullet =
+		//	std::make_shared<bullets::Bullet::Resources>();
 	};
 
 public:
@@ -55,18 +60,18 @@ private:
 	Ship m_ship;
 
 	/// <summary>
-	/// @brief Defines the Weapon1 (weapon above the player).
+	/// @brief Defines the Weapon1 (weapon left of the player).
 	/// 
 	/// 
 	/// </summary>
-	Weapon m_weapon1;
+	Weapon m_weaponLeft;
 
 	/// <summary>
-	/// @brief Defines the Weapon1 (weapon below the player).
+	/// @brief Defines the Weapon1 (weapon right of the player).
 	/// 
 	/// 
 	/// </summary>
-	Weapon m_weapon2;
+	Weapon m_weaponRight;
 
 	/// <summary>
 	/// @brief reference to the key handler.
@@ -94,14 +99,14 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	sf::Vector2f m_weapon1Pos;
+	sf::Vector2f m_weaponLeftPos;
 
 	/// <summary>
 	/// @brief position of bottom weapon.
 	/// 
 	/// 
 	/// </summary>
-	sf::Vector2f m_weapon2Pos;
+	sf::Vector2f m_weaponRightPos;
 };
 
 #endif PLAYER_H

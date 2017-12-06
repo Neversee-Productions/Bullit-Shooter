@@ -206,7 +206,7 @@ private:
 	/// 
 	/// This resource holder contains each frame of a particular frame animation.
 	/// </summary>
-	typedef std::unordered_map<std::string, thor::FrameAnimation> AnimationHolder;
+	typedef std::unordered_map<std::string, thor::FrameAnimation> ThorFrameHolder;
 
 	/// <summary>
 	/// @brief Defines a alias for our map of vector of rectangles.
@@ -279,7 +279,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	MutexHolderPair<AnimationHolder> m_pairAnimationHolder;
+	MutexHolderPair<ThorFrameHolder> m_pairAnimationHolder;
 
 	/// <summary>
 	/// @brief Our Pair with its mutex and a unique pointer to our ResourceHandler::FrameHolder.
