@@ -22,6 +22,7 @@
 ///
 /// @brief The bullet manager class.
 /// @author Sebastian Kruzel
+/// @author Rafael Plugge
 /// 
 /// A class to manage bullets.
 /// 

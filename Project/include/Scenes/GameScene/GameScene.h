@@ -9,6 +9,7 @@
 
 ///
 /// @brief Main game scene.
+/// @author Sebastian Kruzel
 /// @author Rafael Plugge
 /// 
 /// Defines our main gameplay scene.

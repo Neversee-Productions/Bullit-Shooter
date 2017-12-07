@@ -35,7 +35,7 @@ public:
 	/// 
 	/// 
 	/// </summary>
-	static int const MAX_WEAPONS = 3;
+	static int const MAX_WEAPONS = 4;
 
 	/// <summary>
 	/// @brief Alias for thor::Animator.
@@ -95,8 +95,18 @@ public:
 			std::shared_ptr<sf::Texture> m_sptrTexture = nullptr;
 		};
 
+		/// <summary>
+		/// @brief Define alias for animation container.
+		/// 
+		/// 
+		/// </summary>
 		typedef std::pair<std::unique_ptr<Animation>, std::unique_ptr<Animation>> WeaponAnimation;
-
+		
+		/// <summary>
+		/// @brief Defines vector of unique pointers to our weapon animations.
+		/// 
+		/// 
+		/// </summary>
 		std::vector<std::unique_ptr<WeaponAnimation>> m_weaponAnimations;
 	};
 
