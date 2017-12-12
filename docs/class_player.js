@@ -5,6 +5,7 @@ var class_player =
     [ "draw", "class_player.html#a5a4253c07c2dd1428de5d1dac00098c2", null ],
     [ "getBulletMap", "class_player.html#afa684cfe07e806cff11e8973e4761aaa", null ],
     [ "init", "class_player.html#add091bd8b92b2ee8e6d809b8c162eed5", null ],
+    [ "switchWeaponInput", "class_player.html#af7fcd21eac1a7cf26a111ae8d97cdbae", null ],
     [ "update", "class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4", null ],
     [ "deltaTime", "class_player.html#a9826d13da7dab6275a99aab6fdb66c2a", null ],
     [ "m_bulletManager", "class_player.html#a6d27e83de4dc129a5976c1ea6d32cbd1", null ],

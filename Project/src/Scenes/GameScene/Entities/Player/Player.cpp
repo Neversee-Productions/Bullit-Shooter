@@ -73,6 +73,8 @@ void Player::update()
 		|| m_keyHandler.isPressed(sf::Keyboard::D);
 	const bool & KEY_FIRE = m_keyHandler.isPressed(sf::Keyboard::Space);
 
+	switchWeaponInput();
+
 	m_ship.move(Ship::Direction::Up, KEY_UP);
 	m_ship.move(Ship::Direction::Down, KEY_DOWN);
 	m_ship.move(Ship::Direction::Left, KEY_LEFT);
@@ -100,5 +102,103 @@ void Player::update()
 const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & Player::getBulletMap()
 {
 	return m_bulletManager.getBulletMap();
+}
+
+void Player::switchWeaponInput()
+{
+	typedef sf::Keyboard::Key Key;
+
+	bool const & KEY_ONE =
+		m_keyHandler.isPressed(Key::Num1)
+		&& m_keyHandler.isPrevPressed(Key::Num1);
+	bool const & KEY_TWO =
+		m_keyHandler.isPressed(Key::Num2)
+		&& m_keyHandler.isPrevPressed(Key::Num2);
+	bool const & KEY_THREE =
+		m_keyHandler.isPressed(Key::Num3)
+		&& m_keyHandler.isPrevPressed(Key::Num3);
+	bool const & KEY_FOUR =
+		m_keyHandler.isPressed(Key::Num4)
+		&& m_keyHandler.isPrevPressed(Key::Num4);
+	bool const & KEY_FIVE =
+		m_keyHandler.isPressed(Key::Num5)
+		&& m_keyHandler.isPrevPressed(Key::Num5);
+	bool const & KEY_SIX =
+		m_keyHandler.isPressed(Key::Num6)
+		&& m_keyHandler.isPrevPressed(Key::Num6);
+	bool const & KEY_SEVEN =
+		m_keyHandler.isPressed(Key::Num7)
+		&& m_keyHandler.isPrevPressed(Key::Num7);
+	bool const & KEY_EIGHT =
+		m_keyHandler.isPressed(Key::Num8)
+		&& m_keyHandler.isPrevPressed(Key::Num8);
+	bool const & KEY_NINE =
+		m_keyHandler.isPressed(Key::Num9)
+		&& m_keyHandler.isPrevPressed(Key::Num9);
+	bool const & KEY_ZERO =
+		m_keyHandler.isPressed(Key::Num0)
+		&& m_keyHandler.isPrevPressed(Key::Num0);
+	bool const & KEY_DASH =
+		m_keyHandler.isPressed(Key::Dash)
+		&& m_keyHandler.isPrevPressed(Key::Dash);
+	bool const & KEY_EQUALS =
+		m_keyHandler.isPressed(Key::Equal)
+		&& m_keyHandler.isPrevPressed(Key::Equal);
+
+	if (KEY_ONE)
+	{
+		m_weaponLeft.setType(BulletTypes::Standard);
+		m_weaponRight.setType(BulletTypes::Standard);
+	}
+	else if (KEY_TWO)
+	{
+		m_weaponLeft.setType(BulletTypes::Empowered);
+		m_weaponRight.setType(BulletTypes::Empowered);
+	}
+	else if (KEY_THREE)
+	{
+		m_weaponLeft.setType(BulletTypes::DeathOrb);
+		m_weaponRight.setType(BulletTypes::DeathOrb);
+	}
+	else if (KEY_FOUR)
+	{
+		m_weaponLeft.setType(BulletTypes::FireBlast);
+		m_weaponRight.setType(BulletTypes::FireBlast);
+	}
+	else if (KEY_FIVE)
+	{
+		m_weaponLeft.setType(BulletTypes::HolySphere);
+		m_weaponRight.setType(BulletTypes::HolySphere);
+	}
+	else if (KEY_SIX)
+	{
+		m_weaponLeft.setType(BulletTypes::MagmaShot);
+		m_weaponRight.setType(BulletTypes::MagmaShot);
+	}
+	else if (KEY_SEVEN)
+	{
+		m_weaponLeft.setType(BulletTypes::NapalmSphere);
+		m_weaponRight.setType(BulletTypes::NapalmSphere);
+	}
+	else if (KEY_EIGHT)
+	{
+		m_weaponLeft.setType(BulletTypes::CometShot);
+		m_weaponRight.setType(BulletTypes::CometShot);
+	}
+	else if (KEY_NINE)
+	{
+		m_weaponLeft.setType(BulletTypes::NullWave);
+		m_weaponRight.setType(BulletTypes::NullWave);
+	}
+	else if (KEY_ZERO)
+	{
+		m_weaponLeft.setType(BulletTypes::StaticSphere);
+		m_weaponRight.setType(BulletTypes::StaticSphere);
+	}
+	else if (KEY_DASH)
+	{
+		m_weaponLeft.setType(BulletTypes::PyroBlast);
+		m_weaponRight.setType(BulletTypes::PyroBlast);
+	}
 }
 

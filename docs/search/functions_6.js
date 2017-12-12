@@ -20,6 +20,7 @@ var searchData=
   ['getscene',['getScene',['../class_scene_manager.html#a59f6fa7e18e85c7eec4be442f17d969e',1,'SceneManager']]],
   ['getshiprect',['getShipRect',['../class_ship.html#a8b4244807b4f32aeacff83374b21c53b',1,'Ship']]],
   ['getsize',['getSize',['../classgui_1_1_label.html#a762c8ea73d28b6312d5f323670e002c4',1,'gui::Label']]],
+  ['getstyle',['getStyle',['../class_window.html#a8c2db4cd369bc7627efa38ee7df08739',1,'Window']]],
   ['getupdatedeltatime',['getUpdateDeltaTime',['../class_app.html#a8f144ef7b698c80e5414f00563474149',1,'App']]],
   ['getviewc2rect',['getViewC2Rect',['../class_app.html#a0656955b498a6a4a10b26089e624779c',1,'App']]],
   ['getviewsize',['getViewSize',['../class_app.html#a5ed1598aaff7e98ea2c9f4f28210491d',1,'App']]],

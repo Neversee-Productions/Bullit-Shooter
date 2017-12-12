@@ -12,7 +12,6 @@ Weapon::Weapon(sf::Vector2f position, bool const & flipped)
 	, m_position(position)
 	, m_animator(nullptr)
 	, m_resources(nullptr)
-	, TEMPTIME(0.0f)
 {
 	m_weaponRect.setPosition(position);
 	m_weaponRect.setSize(sf::Vector2f(25.0f, 50.0f));
@@ -118,24 +117,6 @@ void Weapon::draw(Window & window, const float & deltaTime)
 /// </summary>
 void Weapon::update(const sf::Vector2f& pos)
 {
-	//REMOVE TEMPTIME
-	TEMPTIME += App::getUpdateDeltaTime();
-	if (TEMPTIME >= 7.0f)
-	{
-		auto bulletTypeNum = static_cast<int>(m_currentBullet);
-		if (bulletTypeNum == static_cast<int>(BulletTypes::PyroBlast))
-		{
-			m_currentBullet = static_cast<BulletTypes>(0);
-		}
-		else
-		{
-			m_currentBullet = static_cast<BulletTypes>(++bulletTypeNum);
-		}
-		TEMPTIME = 0.0f;
-	}
-	//REMOVE TEMPTIME
-
-
 	m_weaponRect.setPosition(pos);
 }
 
@@ -228,4 +209,27 @@ const BulletTypes & Weapon::getBulletType()
 bool const Weapon::getIsFlipped() const
 {
 	return m_weaponRect.getScale().x < 0;
+}
+
+/// <summary>
+/// @brief Changes the type of weapon according to the bullet type.
+/// 
+/// Based on the bullet type, the weapon changes is current texture,
+/// and the associated animation that plays with that weapon type.
+/// </summary>
+/// <param name="bulletType">Defines a new bullet type and therefore its appropriate weapon type is selected.</param>
+void Weapon::setType(BulletTypes const & bulletType)
+{
+	m_currentBullet = bulletType;
+	auto weaponID = static_cast<int>(m_currentBullet);
+	if (weaponID >= Weapon::MAX_WEAPONS)
+	{
+		weaponID = 0;
+	}
+	auto & weaponBeginAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->first);
+	auto & weaponShootAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->second);
+	std::string const & beginID = weaponBeginAnimation.m_id;
+	std::string const & shootID = weaponShootAnimation.m_id;
+	m_weaponRect.setTexture(weaponBeginAnimation.m_sptrTexture.get(), true);
+	m_animator->playAnimation(beginID, false);
 }

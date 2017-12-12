@@ -50,6 +50,7 @@ public:
 	void update();
 	const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & getBulletMap();
 private:
+	void switchWeaponInput();
 
 private:
 	/// <summary>

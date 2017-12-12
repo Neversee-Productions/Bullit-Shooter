@@ -34,8 +34,10 @@ var searchData=
   ['setrectanglecolors',['setRectangleColors',['../classgui_1_1_button.html#af63df18be17e20aa05a1de3ed77062f3',1,'gui::Button']]],
   ['setrectpos',['setRectPos',['../class_weapon.html#a88ff982da20cd81f90569ffb14b0ffb5',1,'Weapon']]],
   ['setscale',['setScale',['../classgui_1_1_label.html#aba1df232b745dc8240fc7cbd08404217',1,'gui::Label']]],
+  ['setstyle',['setStyle',['../class_window.html#a6f2897af1f03ae26e22a80a5ea59e4f9',1,'Window']]],
   ['settext',['setText',['../classgui_1_1_label.html#a1a39c68fa4d04fc1be8751de0dd776b0',1,'gui::Label']]],
   ['settexture',['setTexture',['../class_ship.html#a3d2c6ba1e12e5ac5c70addeb37ca250d',1,'Ship']]],
+  ['settype',['setType',['../class_weapon.html#a52ef1339fb604f85d078d4997d929241',1,'Weapon']]],
   ['setup',['setup',['../class_game_scene.html#a08213e60be0211836cebe55b28887cae',1,'GameScene::setup()'],['../class_main_menu_scene.html#a05620321a10b77b5ee2e49baef002725',1,'MainMenuScene::setup()'],['../class_options_scene.html#a03d8095744d6bbd4cb2540ff7088ed0a',1,'OptionsScene::setup()'],['../class_splash_scene.html#a9cd5fa8700c5493ca9b7aca19ef1dca2',1,'SplashScene::setup()'],['../class_title_scene.html#a02d3a68720d3023e153f06aaeef832c5',1,'TitleScene::setup()']]],
   ['setupweapon',['setupWeapon',['../class_game_scene.html#a7084ec08aaf208f289ee972af8df59a9',1,'GameScene']]],
   ['setvelocity',['setVelocity',['../class_asteroid.html#aa1aec16c7ae1d887f4a56f927fd6c9c5',1,'Asteroid']]],
@@ -66,5 +68,6 @@ var searchData=
   ['staticsphere_2ecpp',['StaticSphere.cpp',['../_static_sphere_8cpp.html',1,'']]],
   ['staticsphere_2eh',['StaticSphere.h',['../_static_sphere_8h.html',1,'']]],
   ['stop',['stop',['../class_scene.html#a1a8e54f62795f26cebcc8da8e9109335',1,'Scene::stop()'],['../class_game_scene.html#af2d4691481477cfa1d797e28593bb2e8',1,'GameScene::stop()'],['../class_main_menu_scene.html#a4a4c783bee20ab3af01c2b9de70d28db',1,'MainMenuScene::stop()'],['../class_options_scene.html#ad01e2842d7dadae3b50138ea42409997',1,'OptionsScene::stop()'],['../class_splash_scene.html#a7b734d512a87782251f3a8cdf09366e3',1,'SplashScene::stop()'],['../class_title_scene.html#acefc90e3641c2e50a0924918fe0ac6ee',1,'TitleScene::stop()']]],
-  ['stripdiagonal',['StripDiagonal',['../classgui_1_1_g_u_i.html#a50ccb43299016dc44fe4b21e0213169ba8edaefd8c89d5352866b596f3116a0c7',1,'gui::GUI']]]
+  ['stripdiagonal',['StripDiagonal',['../classgui_1_1_g_u_i.html#a50ccb43299016dc44fe4b21e0213169ba8edaefd8c89d5352866b596f3116a0c7',1,'gui::GUI']]],
+  ['switchweaponinput',['switchWeaponInput',['../class_player.html#af7fcd21eac1a7cf26a111ae8d97cdbae',1,'Player']]]
 ];

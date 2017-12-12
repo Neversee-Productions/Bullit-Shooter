@@ -35,7 +35,7 @@ public:
 	/// 
 	/// 
 	/// </summary>
-	static int const MAX_WEAPONS = 4;
+	static int const MAX_WEAPONS = 11;
 
 	/// <summary>
 	/// @brief Alias for thor::Animator.
@@ -122,6 +122,7 @@ public:
 	const sf::Vector2f & getPosition();
 	const BulletTypes & getBulletType();
 	bool const getIsFlipped() const;
+	void setType(BulletTypes const & bulletType);
 private:
 	/// <summary>
 	/// @brief define the weapon rectangle.
@@ -157,8 +158,5 @@ private:
 	/// Will contain all our weapon animations.
 	/// </summary>
 	std::unique_ptr<WeaponAnimator> m_animator;
-
-	//REMOVE TEMPTIME
-	float TEMPTIME;
 };
 #endif // !WEAPON_H

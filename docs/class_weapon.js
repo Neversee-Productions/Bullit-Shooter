@@ -11,6 +11,7 @@ var class_weapon =
     [ "init", "class_weapon.html#a3e3f8a230e1ab8da20f8c68e23b19972", null ],
     [ "setFlipped", "class_weapon.html#a36d95af6d97faeff1528cbf3ad15a10c", null ],
     [ "setRectPos", "class_weapon.html#a88ff982da20cd81f90569ffb14b0ffb5", null ],
+    [ "setType", "class_weapon.html#a52ef1339fb604f85d078d4997d929241", null ],
     [ "shoot", "class_weapon.html#a063d0eb2cf432d72dc22f6ec565a1a16", null ],
     [ "shoot", "class_weapon.html#a658eaa7d1b4d80a57150318fed1345b3", null ],
     [ "update", "class_weapon.html#a2e56ccac7dd78294ac479faa639955f6", null ],
@@ -19,6 +20,5 @@ var class_weapon =
     [ "m_position", "class_weapon.html#a64e42f89ecdc9ab9715969d670933887", null ],
     [ "m_resources", "class_weapon.html#a4057988b09d7aa897ff2dbb56f29c080", null ],
     [ "m_weaponRect", "class_weapon.html#a5058de475ddd17fd9fed50e94f43338a", null ],
-    [ "MAX_WEAPONS", "class_weapon.html#ab6bbdafc1da2fb26d7d99b39ed7e8b5b", null ],
-    [ "TEMPTIME", "class_weapon.html#abb9a1cb0e5257afe8221cd209d8c688c", null ]
+    [ "MAX_WEAPONS", "class_weapon.html#ab6bbdafc1da2fb26d7d99b39ed7e8b5b", null ]
 ];

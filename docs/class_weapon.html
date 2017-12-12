@@ -134,10 +134,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a48a9cf1c2632688dbec93ae8a05307df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80ec295390667a49be2f794737b244e"><td class="memItemLeft" align="right" valign="top">bool const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#ad80ec295390667a49be2f794737b244e">getIsFlipped</a> () const</td></tr>
 <tr class="separator:ad80ec295390667a49be2f794737b244e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52ef1339fb604f85d078d4997d929241"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a52ef1339fb604f85d078d4997d929241">setType</a> (<a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;bulletType)</td></tr>
+<tr class="separator:a52ef1339fb604f85d078d4997d929241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ab6bbdafc1da2fb26d7d99b39ed7e8b5b"><td class="memItemLeft" align="right" valign="top">static int const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#ab6bbdafc1da2fb26d7d99b39ed7e8b5b">MAX_WEAPONS</a> = 4</td></tr>
+<tr class="memitem:ab6bbdafc1da2fb26d7d99b39ed7e8b5b"><td class="memItemLeft" align="right" valign="top">static int const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#ab6bbdafc1da2fb26d7d99b39ed7e8b5b">MAX_WEAPONS</a> = 11</td></tr>
 <tr class="separator:ab6bbdafc1da2fb26d7d99b39ed7e8b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -152,8 +154,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a4057988b09d7aa897ff2dbb56f29c080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9a7c027ab7ff27bb9877ad7c7f0032b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_weapon.html#ae36ed13660b34ab0b00d3794d425dbce">WeaponAnimator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#af9a7c027ab7ff27bb9877ad7c7f0032b">m_animator</a></td></tr>
 <tr class="separator:af9a7c027ab7ff27bb9877ad7c7f0032b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb9a1cb0e5257afe8221cd209d8c688c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#abb9a1cb0e5257afe8221cd209d8c688c">TEMPTIME</a></td></tr>
-<tr class="separator:abb9a1cb0e5257afe8221cd209d8c688c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
@@ -399,6 +399,32 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="a52ef1339fb604f85d078d4997d929241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52ef1339fb604f85d078d4997d929241">&#9670;&nbsp;</a></span>setType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Weapon::setType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;&#160;</td>
+          <td class="paramname"><em>bulletType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Changes the type of weapon according to the bullet type.</p>
+<p>Based on the bullet type, the weapon changes is current texture, and the associated animation that plays with that weapon type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bulletType</td><td>Defines a new bullet type and therefore its appropriate weapon type is selected.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a063d0eb2cf432d72dc22f6ec565a1a16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a063d0eb2cf432d72dc22f6ec565a1a16">&#9670;&nbsp;</a></span>shoot() <span class="overload">[1/2]</span></h2>
 
@@ -588,7 +614,7 @@ Rafael Plugge</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int const Weapon::MAX_WEAPONS = 4</td>
+          <td class="memname">int const Weapon::MAX_WEAPONS = 11</td>
         </tr>
       </table>
   </td>
@@ -598,28 +624,6 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>defines the max number of weapons.</p>
-
-</div>
-</div>
-<a id="abb9a1cb0e5257afe8221cd209d8c688c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb9a1cb0e5257afe8221cd209d8c688c">&#9670;&nbsp;</a></span>TEMPTIME</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Weapon::TEMPTIME</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

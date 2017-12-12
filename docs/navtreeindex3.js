@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"classgui_1_1_slider.html#abd60416e493409aa8952d7a53ade74c3":[2,0,1,4,5],
+"classgui_1_1_slider.html#ac402769db9c79ae2620fa71496f264ff":[2,0,1,4,18],
+"classgui_1_1_slider.html#ac75a958a34009da813aa7c1f965448c4":[2,0,1,4,12],
+"classgui_1_1_slider.html#acbbf3c52dc81e0250a08b37ea2ee5fdc":[2,0,1,4,27],
+"classgui_1_1_slider.html#ad4110d5c12af149300777189d5f4d49f":[2,0,1,4,37],
 "classgui_1_1_slider.html#ad80e845fdbac03e407a495f98e9dba2b":[2,0,1,4,32],
 "classgui_1_1_slider.html#ad82cbd8418403c0c5b6c1a80f86d562e":[2,0,1,4,29],
 "classgui_1_1_slider.html#adc4d1500c51db827b3e3d7e19fcc022e":[2,0,1,4,39],
@@ -119,8 +124,8 @@ var NAVTREEINDEX3 =
 "main_8cpp.html#a8de3ed741dadc9c979a4ff17c0a9116e":[3,0,0,1,5,0],
 "namespacebullets.html":[2,0,0],
 "namespacebullets.html":[1,0,0],
-"namespacegui.html":[2,0,1],
 "namespacegui.html":[1,0,1],
+"namespacegui.html":[2,0,1],
 "namespaces.html":[1,0],
 "pages.html":[],
 "struct_background_1_1_resources.html":[2,0,6,0],
