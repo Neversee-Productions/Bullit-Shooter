@@ -10,11 +10,15 @@ GameScene::GameScene(KeyHandler& keyHandler)
 	, m_player(keyHandler)
 	, m_keyHandler(keyHandler)
 	, m_resources(nullptr)
-	, m_asteroid()
 	, m_windowC2Rect(App::getViewC2Rect())
+	, m_asteroidManager()
+	, m_asteroidSpawnTimer(0.0f)
+	, m_asteroidSpawnFrequency(0.0f)
+	, UPDATE_DT(App::getUpdateDeltaTime())
+
 {
-	m_asteroid.setActive(true);
-	m_asteroid.setVelocity(sf::Vector2f(-5.0f, 1.0f));
+	m_asteroidManager.initAsteroidVector();
+	m_asteroidSpawnFrequency = generateRandomTimer();
 }
 
 /// <summary>
@@ -60,8 +64,37 @@ void GameScene::stop()
 /// </summary>
 void GameScene::update()
 {
+	if (m_player.getShieldHealth() <= 0)
+	{
+		m_player.setAlive(false);
+	}
+	m_asteroidSpawnTimer += UPDATE_DT;
+	if (m_asteroidSpawnTimer >= m_asteroidSpawnFrequency)
+	{
+		int counter = 0;
+		//spawn next unused asteroid here
+		for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
+		{
+			if (uptrAsteroid && !uptrAsteroid->isActive())
+			{
+				if (counter == 0)
+				{
+					uptrAsteroid->reuseAsteroid();
+					counter++;
+				}
+			}
+			m_asteroidSpawnFrequency = generateRandomTimer();
+		}
+		m_asteroidSpawnTimer = 0.0f;
+	}
 	m_player.update();
-	m_asteroid.update();
+	for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
+	{
+		if (uptrAsteroid->isActive())
+		{
+			uptrAsteroid->update();
+		}
+	}
 	updateCollisions();
 }
 
@@ -74,7 +107,13 @@ void GameScene::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void GameScene::draw(Window & window, const float & deltaTime)
 {
-	m_asteroid.draw(window, deltaTime);
+	for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
+	{
+		if (uptrAsteroid->isActive())
+		{
+			uptrAsteroid->draw(window, deltaTime);
+		}
+	}
 	m_player.draw(window, deltaTime);
 }
 
@@ -86,6 +125,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 void GameScene::updateCollisions()
 {
 	bulletAsteroidsCollision();
+	playerAsteroidCollision();
 }
 
 /// <summary>
@@ -104,42 +144,72 @@ void GameScene::bulletAsteroidsCollision()
 			auto & derivedBullet = **itt;
 			if (derivedBullet.isActive())
 			{
-				if (!m_asteroid.isInvulnerable() && derivedBullet.checkCircleCollision(m_asteroid.getCollisionCircle()))
+				auto & asteroidVector = m_asteroidManager.getAsteroidVector();
+				for (auto itt2 = asteroidVector.begin(), end2 = asteroidVector.end(); itt2 != end2; ++itt2)
 				{
-					switch (pair.first)
+					auto & asteroid = **itt2;
+					if (asteroid.isActive())
 					{
-					case BulletTypes::Standard:
-					case BulletTypes::Empowered:
-					case BulletTypes::FireBlast:
-						collisionResponse(m_asteroid, derivedBullet);
-						break;
-					case BulletTypes::DeathOrb:
-					case BulletTypes::HolySphere:
-						m_asteroid.decrementHealth(derivedBullet.getDamage());
-						break;
-					case BulletTypes::MagmaShot:
-						collisionResponse(m_asteroid, dynamic_cast<bullets::MagmaShot&>(derivedBullet)); //dynamic casting a parameter to magma shot reference from base bullet reference
-						break;
-					case BulletTypes::NapalmSphere:
-						collisionResponse(m_asteroid, dynamic_cast<bullets::NapalmSphere&>(derivedBullet));
-						break;
-					case BulletTypes::CometShot:
-						collisionResponse(m_asteroid, derivedBullet);
-						m_asteroid.knockback();
-						break;
-					case BulletTypes::NullWave:
-						collisionResponse(m_asteroid, derivedBullet);
-						break;
-					case BulletTypes::StaticSphere:
-						m_asteroid.decrementHealth(derivedBullet.getDamage());
-						break;
-					case BulletTypes::PyroBlast:
-						collisionResponse(m_asteroid, dynamic_cast<bullets::PyroBlast&>(derivedBullet));
-						break;
-					default:
-						break;
+						if (!asteroid.isInvulnerable() && derivedBullet.checkCircleCollision(asteroid.getCollisionCircle()))
+						{
+							switch (pair.first)
+							{
+							case BulletTypes::Standard:
+							case BulletTypes::Empowered:
+							case BulletTypes::FireBlast:
+								collisionResponse(asteroid, derivedBullet);
+								break;
+							case BulletTypes::DeathOrb:
+							case BulletTypes::HolySphere:
+								asteroid.decrementHealth(derivedBullet.getDamage());
+								break;
+							case BulletTypes::MagmaShot:
+								collisionResponse(asteroid, dynamic_cast<bullets::MagmaShot&>(derivedBullet)); //dynamic casting a parameter to magma shot reference from base bullet reference
+								break;
+							case BulletTypes::NapalmSphere:
+								collisionResponse(asteroid, dynamic_cast<bullets::NapalmSphere&>(derivedBullet));
+								break;
+							case BulletTypes::CometShot:
+								collisionResponse(asteroid, derivedBullet);
+								asteroid.knockback();
+								break;
+							case BulletTypes::NullWave:
+								collisionResponse(asteroid, derivedBullet);
+								break;
+							case BulletTypes::StaticSphere:
+								asteroid.decrementHealth(derivedBullet.getDamage());
+								break;
+							case BulletTypes::PyroBlast:
+								collisionResponse(asteroid, dynamic_cast<bullets::PyroBlast&>(derivedBullet));
+								break;
+							default:
+								break;
+							}
+						}
 					}
 				}
+			}
+		}
+	}
+}
+
+/// <summary>
+/// @brief this method checks collisions with all active asteroids.
+/// 
+/// 
+/// </summary>
+void GameScene::playerAsteroidCollision()
+{
+	auto & asteroidVector = m_asteroidManager.getAsteroidVector();
+	for (auto itt = asteroidVector.begin(), end2 = asteroidVector.end(); itt != end2; ++itt)
+	{
+		auto & asteroid = **itt;
+		if (asteroid.isActive())
+		{
+			if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
+			{
+				m_player.decrementShield(25.0f);
+				asteroid.decrementHealth(10.0f);
 			}
 		}
 	}
@@ -167,7 +237,7 @@ void GameScene::collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet)
 /// <param name="bullet">reference to the bullet that has collided</param>
 void GameScene::collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet)
 {
-	m_asteroid.decrementHealth(bullet.getDamage());
+	asteroid.decrementHealth(bullet.getDamage());
 	bullet.explode(true);
 }
 
@@ -180,7 +250,7 @@ void GameScene::collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bull
 /// <param name="bullet">reference to the bullet that has collided</param>
 void GameScene::collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet)
 {
-	m_asteroid.decrementHealth(bullet.getDamage());
+	asteroid.decrementHealth(bullet.getDamage());
 	bullet.explode(true);
 }
 
@@ -193,8 +263,18 @@ void GameScene::collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & b
 /// <param name="bullet">reference to the bullet that has collided</param>
 void GameScene::collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet)
 {
-	m_asteroid.decrementHealth(bullet.getDamage());
+	asteroid.decrementHealth(bullet.getDamage());
 	bullet.explode(true);
+}
+
+/// <summary>
+/// @brief generates random float values for a timer from 0 to 5.
+/// 
+/// 
+/// </summary>
+float GameScene::generateRandomTimer()
+{
+	return m_asteroidSpawnFrequency = rand() % 4; //generate number from 0 to 3
 }
 
 /// <summary>

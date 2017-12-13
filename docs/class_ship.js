@@ -13,7 +13,7 @@ var class_ship =
     [ "Ship", "class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462", null ],
     [ "decFrame", "class_ship.html#a7963cc9d019b5c2c7df85daa8815578f", null ],
     [ "draw", "class_ship.html#ae9a0712970979a6d24320ae208bd6899", null ],
-    [ "getShipRect", "class_ship.html#a8b4244807b4f32aeacff83374b21c53b", null ],
+    [ "getShipRect", "class_ship.html#a9449e0e7bd52beba3ee895b8b060c7dc", null ],
     [ "incFrame", "class_ship.html#ac9b1b10790df77a672bcdcf6a9ef868f", null ],
     [ "init", "class_ship.html#a71807fb1fd5357cf7d62f0fdc42fd758", null ],
     [ "move", "class_ship.html#a237e1ba8f03d5e62e2d348e66c95083c", null ],

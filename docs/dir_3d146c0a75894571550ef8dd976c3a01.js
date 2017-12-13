@@ -18,6 +18,9 @@ var dir_3d146c0a75894571550ef8dd976c3a01 =
       [ "Player", "class_player.html", "class_player" ],
       [ "Resources", "struct_player_1_1_resources.html", "struct_player_1_1_resources" ]
     ] ],
+    [ "Shield.h", "_shield_8h.html", [
+      [ "Shield", "class_shield.html", "class_shield" ]
+    ] ],
     [ "Ship.h", "_ship_8h.html", [
       [ "Ship", "class_ship.html", "class_ship" ],
       [ "KeysPressed", "struct_ship_1_1_keys_pressed.html", "struct_ship_1_1_keys_pressed" ],

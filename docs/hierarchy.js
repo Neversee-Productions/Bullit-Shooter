@@ -42,13 +42,13 @@ var hierarchy =
     [ "ResourceHandler::MutexHolderPair< TextureHolder >", "struct_resource_handler_1_1_mutex_holder_pair.html", null ],
     [ "Player", "class_player.html", null ],
     [ "ResourceHandler", "class_resource_handler.html", null ],
-    [ "Player::Resources", "struct_player_1_1_resources.html", null ],
     [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
     [ "Ship::Resources", "struct_ship_1_1_resources.html", null ],
-    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
+    [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
     [ "SplashScene::Resources", "struct_splash_scene_1_1_resources.html", null ],
     [ "TitleScene::Resources", "struct_title_scene_1_1_resources.html", null ],
-    [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
+    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
+    [ "Player::Resources", "struct_player_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
       [ "MainMenuScene", "class_main_menu_scene.html", null ],
@@ -57,6 +57,7 @@ var hierarchy =
       [ "TitleScene", "class_title_scene.html", null ]
     ] ],
     [ "SceneManager", "class_scene_manager.html", null ],
+    [ "Shield", "class_shield.html", null ],
     [ "Ship", "class_ship.html", null ],
     [ "Weapon", "class_weapon.html", null ],
     [ "Window", "class_window.html", null ]

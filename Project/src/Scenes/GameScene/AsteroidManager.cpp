@@ -17,11 +17,19 @@ AsteroidManager::AsteroidManager()
 /// </summary>
 void AsteroidManager::initAsteroidVector()
 {
-	m_asteroidsVector.reserve(10);
-	m_asteroidsVector.resize(10);
-	for (auto itt = m_asteroidsVector.begin(), end = m_asteroidsVector.end(); itt != end; ++itt)
+	for (int count = 0; count <= 9; ++count)
 	{
-		//itt->insert(std::unique_ptr<Asteroid>(std::make_unique<Asteroid>()));
-		//itt->
+		m_asteroidsVector.push_back(std::move(std::make_unique<Asteroid>()));
 	}
+}
+
+/// <summary>
+/// @brief A getter of the vector of asteroid pointers.
+/// 
+/// 
+/// </summary>
+/// <returns>Return the vector of pointers to asteroids.</returns>
+const std::vector<std::unique_ptr<Asteroid>>& AsteroidManager::getAsteroidVector()
+{
+	return m_asteroidsVector;
 }

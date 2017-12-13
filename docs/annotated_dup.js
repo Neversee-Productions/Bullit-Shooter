@@ -17,6 +17,7 @@ var annotated_dup =
     [ "ResourceHandler", "class_resource_handler.html", "class_resource_handler" ],
     [ "Scene", "class_scene.html", "class_scene" ],
     [ "SceneManager", "class_scene_manager.html", "class_scene_manager" ],
+    [ "Shield", "class_shield.html", "class_shield" ],
     [ "Ship", "class_ship.html", "class_ship" ],
     [ "SplashScene", "class_splash_scene.html", "class_splash_scene" ],
     [ "TitleScene", "class_title_scene.html", "class_title_scene" ],
