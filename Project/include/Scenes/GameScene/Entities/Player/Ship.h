@@ -85,7 +85,7 @@ public:
 	void draw(Window & window, const float & deltaTime);
 	void update();
 	void move(const Direction & direction, const bool & state);
-	const sf::Vector2f & getShipRect();
+	const sf::RectangleShape & getShipRect();
 	void setTexture(std::shared_ptr<sf::Texture> sptrTexture);
 	void setFrames(std::unique_ptr<ShipFrames> uptrShipFrames);
 

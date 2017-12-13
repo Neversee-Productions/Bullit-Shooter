@@ -5,6 +5,7 @@
 #include "Ship.h"
 #include "Weapon.h"
 #include "BulletManager.h"
+#include "Shield.h"
 
 ///
 /// @brief Player class.
@@ -48,7 +49,13 @@ public:
 	void init(std::shared_ptr<Resources> resources);
 	void draw(Window & window, const float & deltaTime);
 	void update();
+	void decrementShield(float dmg);
 	const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & getBulletMap();
+	const sf::CircleShape& getShieldCircle();
+	const tinyh::c2Circle& getShieldCollisionCircle();
+	const float& getShieldHealth();
+	void setAlive(bool check);
+
 private:
 	void switchWeaponInput();
 
@@ -108,6 +115,20 @@ private:
 	/// 
 	/// </summary>
 	sf::Vector2f m_weaponRightPos;
+
+	/// <summary>
+	/// @brief players shield.
+	/// 
+	/// 
+	/// </summary>
+	Shield m_shield;
+
+	/// <summary>
+	/// @brief define if player is active.
+	/// 
+	/// 
+	/// </summary>
+	bool m_alive;
 };
 
 #endif PLAYER_H

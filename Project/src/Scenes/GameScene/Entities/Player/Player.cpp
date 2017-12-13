@@ -15,6 +15,7 @@ Player::Player(KeyHandler& keyHandler)
 	, deltaTime(App::getUpdateDeltaTime())
 	, m_weaponLeftPos(sf::Vector2f(0.0f,0.0f))
 	, m_weaponRightPos(sf::Vector2f(0.0f,0.0f))
+	, m_shield(m_ship.getShipRect().getPosition(), m_ship.getShipRect().getSize().y / 2)
 {
 	auto const & flip = true;
 	m_weaponLeft.setRectPos(m_weaponLeftPos);
@@ -46,10 +47,14 @@ void Player::init(std::shared_ptr<Resources> sptrResources)
 /// <param name="deltaTime">define reference to draw time step.</param>
 void Player::draw(Window & window, const float & deltaTime)
 {
-	m_bulletManager.draw(window, deltaTime);
-	m_weaponLeft.draw(window, deltaTime);
-	m_weaponRight.draw(window, deltaTime);
-	m_ship.draw(window, deltaTime);
+	if (m_alive)
+	{
+		m_bulletManager.draw(window, deltaTime);
+		m_weaponLeft.draw(window, deltaTime);
+		m_weaponRight.draw(window, deltaTime);
+		m_ship.draw(window, deltaTime);
+		m_shield.draw(window, deltaTime);
+	}
 }
 
 /// <summary>
@@ -59,36 +64,51 @@ void Player::draw(Window & window, const float & deltaTime)
 /// </summary>
 void Player::update()
 {
-	const bool & KEY_UP = 
-		m_keyHandler.isPressed(sf::Keyboard::Up)
-		|| m_keyHandler.isPressed(sf::Keyboard::W);
-	const bool & KEY_DOWN =
-		m_keyHandler.isPressed(sf::Keyboard::Down)
-		|| m_keyHandler.isPressed(sf::Keyboard::S);
-	const bool & KEY_LEFT =
-		m_keyHandler.isPressed(sf::Keyboard::Left)
-		|| m_keyHandler.isPressed(sf::Keyboard::A);
-	const bool & KEY_RIGHT =
-		m_keyHandler.isPressed(sf::Keyboard::Right)
-		|| m_keyHandler.isPressed(sf::Keyboard::D);
-	const bool & KEY_FIRE = m_keyHandler.isPressed(sf::Keyboard::Space);
-
-	switchWeaponInput();
-
-	m_ship.move(Ship::Direction::Up, KEY_UP);
-	m_ship.move(Ship::Direction::Down, KEY_DOWN);
-	m_ship.move(Ship::Direction::Left, KEY_LEFT);
-	m_ship.move(Ship::Direction::Right, KEY_RIGHT);
-
-	if (KEY_FIRE)
+	if (m_alive)
 	{
-		m_bulletManager.fireBullet(m_weaponLeft, m_weaponRight, m_weaponLeft.getBulletType());
-	}
-	m_ship.update();
-	m_weaponLeft.update(m_ship.getShipRect());
-	m_weaponRight.update(m_ship.getShipRect());
-	m_bulletManager.update();
+		const bool & KEY_UP =
+			m_keyHandler.isPressed(sf::Keyboard::Up)
+			|| m_keyHandler.isPressed(sf::Keyboard::W);
+		const bool & KEY_DOWN =
+			m_keyHandler.isPressed(sf::Keyboard::Down)
+			|| m_keyHandler.isPressed(sf::Keyboard::S);
+		const bool & KEY_LEFT =
+			m_keyHandler.isPressed(sf::Keyboard::Left)
+			|| m_keyHandler.isPressed(sf::Keyboard::A);
+		const bool & KEY_RIGHT =
+			m_keyHandler.isPressed(sf::Keyboard::Right)
+			|| m_keyHandler.isPressed(sf::Keyboard::D);
+		const bool & KEY_FIRE = m_keyHandler.isPressed(sf::Keyboard::Space);
 
+		switchWeaponInput();
+
+		m_ship.move(Ship::Direction::Up, KEY_UP);
+		m_ship.move(Ship::Direction::Down, KEY_DOWN);
+		m_ship.move(Ship::Direction::Left, KEY_LEFT);
+		m_ship.move(Ship::Direction::Right, KEY_RIGHT);
+
+		if (KEY_FIRE)
+		{
+			m_bulletManager.fireBullet(m_weaponLeft, m_weaponRight, m_weaponLeft.getBulletType());
+		}
+		m_ship.update();
+		m_shield.setPosition(m_ship.getShipRect().getPosition());
+		m_shield.update();
+		m_weaponLeft.update(m_ship.getShipRect().getPosition());
+		m_weaponRight.update(m_ship.getShipRect().getPosition());
+		m_bulletManager.update();
+	}
+}
+
+/// <summary>
+/// @brief Decrement shield by a passed amount.
+/// 
+/// 
+/// </summary>
+/// <param name="dmg">amaount to decrement shield by.</param>
+void Player::decrementShield(float dmg)
+{
+	m_shield.decrementShield(dmg);
 }
 
 /// <summary>
@@ -200,3 +220,46 @@ void Player::switchWeaponInput()
 	}
 }
 
+/// <summary>
+/// @brief Return a constant reference to a shield.
+/// 
+/// 
+/// </summary>
+/// <returns>constant reference to the collision circle.</returns>
+const sf::CircleShape& Player::getShieldCircle()
+{
+	return m_shield.getCircleShape();
+}
+
+/// <summary>
+/// @brief Return constant ref to collision circle of the shield.
+/// 
+/// 
+/// </summary>
+/// <returns>constant reference to shield collision circle.</returns>
+const tinyh::c2Circle & Player::getShieldCollisionCircle()
+{
+	return m_shield.getCollisionCircle();
+}
+
+/// <summary>
+/// @brief Get health of the shield.
+/// 
+/// 
+/// </summary>
+/// <returns>Constant reference to health of shield.</returns>
+const float & Player::getShieldHealth()
+{
+	return m_shield.getHealth();
+}
+
+/// <summary>
+/// @brief set the alive of player.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new state of players alive bool</param>
+void Player::setAlive(bool check)
+{
+	m_alive = check;
+}

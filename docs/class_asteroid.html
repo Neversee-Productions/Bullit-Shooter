@@ -125,6 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3e885bbb96ced5ddee6edf78d83ec218"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6574d8c3cc3cff9ab5b01aca1ac7ba46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a6574d8c3cc3cff9ab5b01aca1ac7ba46">knockback</a> ()</td></tr>
 <tr class="separator:a6574d8c3cc3cff9ab5b01aca1ac7ba46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f5bf2b4c9e945148a640bd970aafbee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a1f5bf2b4c9e945148a640bd970aafbee">isActive</a> ()</td></tr>
+<tr class="separator:a1f5bf2b4c9e945148a640bd970aafbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -148,6 +150,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9e16fbf2e5a961ab8099538abb594425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae51f5725ecb89f48e85d15998ab3aee6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ae51f5725ecb89f48e85d15998ab3aee6">m_invulnTimer</a></td></tr>
 <tr class="separator:ae51f5725ecb89f48e85d15998ab3aee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0f15cc417c725f8a4b0eb34715ba15"><td class="memItemLeft" align="right" valign="top">const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#abf0f15cc417c725f8a4b0eb34715ba15">UPDATE_DT</a></td></tr>
+<tr class="separator:abf0f15cc417c725f8a4b0eb34715ba15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -292,6 +296,25 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>returns a constant reference to the collision rectangle.</p>
 <dl class="section return"><dt>Returns</dt><dd>Constant reference to collision box</dd></dl>
+
+</div>
+</div>
+<a id="a1f5bf2b4c9e945148a640bd970aafbee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f5bf2b4c9e945148a640bd970aafbee">&#9670;&nbsp;</a></span>isActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Asteroid::isActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>check if asteroid is active.</p>
+<dl class="section return"><dt>Returns</dt><dd>Return whether aseroid is active.</dd></dl>
 
 </div>
 </div>
@@ -701,6 +724,29 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>window collision box.</p>
+
+</div>
+</div>
+<a id="abf0f15cc417c725f8a4b0eb34715ba15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf0f15cc417c725f8a4b0eb34715ba15">&#9670;&nbsp;</a></span>UPDATE_DT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float&amp; Asteroid::UPDATE_DT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>constant reference to update delta time.</p>
 
 </div>
 </div>

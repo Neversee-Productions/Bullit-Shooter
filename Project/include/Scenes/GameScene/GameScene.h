@@ -53,10 +53,12 @@ public:
 	void draw(Window & window, const float & deltaTime) final override;
 	void updateCollisions();
 	void bulletAsteroidsCollision();
+	void playerAsteroidCollision();
 	void collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
+	float generateRandomTimer();
 
 private:
 	void goToNextScene() final override;
@@ -90,11 +92,11 @@ private:
 	std::unique_ptr<Resources> m_resources;
 
 	/// <summary>
-	/// @brief defines an asteroid.
+	/// @brief constant reference to the window.
 	/// 
 	/// 
 	/// </summary>
-	Asteroid m_asteroid;
+	const tinyh::c2AABB& m_windowC2Rect;
 
 	/// <summary>
 	/// @brief defines the background of GameScene.
@@ -104,11 +106,32 @@ private:
 	Background m_background;
 
 	/// <summary>
-	/// @brief constant reference to the window.
+	/// @brief defines asteroid manager.
 	/// 
 	/// 
 	/// </summary>
-	const tinyh::c2AABB& m_windowC2Rect;
+	AsteroidManager m_asteroidManager;
+
+	/// <summary>
+	/// @brief define how long since last spawned asteroid.
+	/// 
+	/// 
+	/// </summary>
+	float m_asteroidSpawnTimer;
+
+	/// <summary>
+	/// @brief define length of time between asteroid spawns.
+	/// 
+	/// 
+	/// </summary>
+	float m_asteroidSpawnFrequency;
+
+	/// <summary>
+	/// @brief constant reference to update delta time.
+	/// 
+	/// 
+	/// </summary>
+	const float & UPDATE_DT;
 };
 
 #endif // !GAMESCENE_H

@@ -19,12 +19,13 @@ Asteroid::Asteroid()
 	, m_health(10.0f)
 	, m_invulnerable(false)
 	, m_invulnTimer(0.0f)
+	, UPDATE_DT(App::getUpdateDeltaTime())
 {
 	const auto & windowRect = App::getViewC2Rect();
-	const auto & extraWidth = m_rectangle.getGlobalBounds().width * 2.0f;
+	const auto & extraHeight = m_rectangle.getGlobalBounds().height * 2.0f;
 	m_windowC2Rect.min.x = 0.0f;
-	m_windowC2Rect.min.y = 0.0f;
-	m_windowC2Rect.max.x = windowRect.max.x + extraWidth;
+	m_windowC2Rect.min.y = -extraHeight;
+	m_windowC2Rect.max.x = windowRect.max.x;
 	m_windowC2Rect.max.y = windowRect.max.y;
 	m_rectangle.setOrigin(m_rectangle.getGlobalBounds().width / 2, m_rectangle.getGlobalBounds().height / 2);
 	m_rectangle.setPosition(m_position);
@@ -59,19 +60,15 @@ void Asteroid::update()
 	}
 	if (m_active)
 	{
-		m_position += m_velocity;
+		m_position += m_velocity * UPDATE_DT;
 		m_rectangle.setPosition(m_position);
 		m_circle.setPosition(m_position);
 		updateCollisionCircle();
 		updateWindowCollisions();
 		if (m_health <= 0)
 		{
-			reuseAsteroid();
+			m_active = false;
 		}
-	}
-	else
-	{
-		reuseAsteroid();
 	}
 }
 
@@ -86,7 +83,7 @@ void Asteroid::draw(Window & window, const float & deltaTime)
 {
 	if (m_active)
 	{
-		window.draw(m_rectangle);
+		//window.draw(m_rectangle);
 		window.draw(m_circle);
 	}
 }
@@ -131,8 +128,8 @@ void Asteroid::updateCollisionCircle()
 /// </summary>
 void Asteroid::generateRandomVel()
 {
-	m_velocity.x = rand() % 8 - 10; //generate number from 3 to 10
-	m_velocity.y = rand() % 10 - 5; //generate number from 3 to 10
+	m_velocity.x = (rand() % 7 - 3) * 60.0f; //generate number from 3 to -3
+	m_velocity.y = (rand() % 4 + 2) * 60.0f; //generate number from 2 to 5
 }
 
 /// <summary>
@@ -143,10 +140,10 @@ void Asteroid::generateRandomVel()
 /// </summary>
 void Asteroid::generateRandomPos()
 {
-	m_position.x = App::getViewSize().x + m_rectangle.getGlobalBounds().width; //x stays same offscreen value
+	m_position.y = -m_rectangle.getGlobalBounds().height; //x stays same offscreen value
 	
-	int temp = rand() % App::getViewSize().y; //generate number between 0 and bottom of screen
-	m_position.y = temp;
+	int temp = rand() % App::getViewSize().x; //generate number between 0 and right side of screen
+	m_position.x = temp;
 }
 
 /// <summary>
@@ -220,6 +217,17 @@ bool Asteroid::isInvulnerable()
 /// </summary>
 void Asteroid::knockback()
 {
-	m_velocity.y -= 1.5f;
+	m_velocity.y -= 15.0f;
+}
+
+/// <summary>
+/// @brief check if asteroid is active.
+/// 
+/// 
+/// </summary>
+/// <returns>Return whether aseroid is active.</returns>
+bool Asteroid::isActive()
+{
+	return m_active;
 }
 

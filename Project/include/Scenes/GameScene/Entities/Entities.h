@@ -4,5 +4,6 @@
 #include "Player\Player.h"
 #include "Asteroids\Asteroid.h"
 #include "Background.h"
+#include "Asteroids\AsteroidManager.h"
 
 #endif // !ENTITIES_H

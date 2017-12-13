@@ -50,6 +50,7 @@
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\Standard.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\StaticSphere.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\Player.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Shield.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\Ship.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\Weapon.cpp" />
     <ClCompile Include="src\Scenes\MainMenuScene\MainMenuScene.cpp" />
@@ -106,6 +107,7 @@
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\Standard.h" />
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\StaticSphere.h" />
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\Player.h" />
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Shield.h" />
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\Ship.h" />
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\Weapon.h" />
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />

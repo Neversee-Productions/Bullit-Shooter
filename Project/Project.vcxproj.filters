@@ -258,6 +258,9 @@
     <ClCompile Include="src\Scenes\GameScene\Entities\Background.cpp">
       <Filter>Source Files\Scenes\GameScene\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Shield.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -414,6 +417,9 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Entities\Background.h">
       <Filter>Header Files\Scenes\GameScene\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Shield.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -28,6 +28,7 @@ public:
 	void decrementHealth(float dmg);
 	bool isInvulnerable();
 	void knockback();
+	bool isActive();
 
 private:
 	/// <summary>
@@ -106,6 +107,13 @@ private:
 	/// 
 	/// </summary>
 	float m_invulnTimer;
+
+	/// <summary>
+	/// @brief constant reference to update delta time.
+	/// 
+	/// 
+	/// </summary>
+	const float & UPDATE_DT;
 };
 
 #endif // !ASTEROIDS_H
