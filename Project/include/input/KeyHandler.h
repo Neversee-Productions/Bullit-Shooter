@@ -19,6 +19,7 @@ public:
 	void update();
 	bool isPressed(const sf::Keyboard::Key & key) const;
 	bool isPrevPressed(const sf::Keyboard::Key & key) const;
+	bool isAnyPressed() const;
 
 private:
 	/// <summary>

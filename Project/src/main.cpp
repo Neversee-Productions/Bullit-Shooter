@@ -16,6 +16,7 @@
 #include <Windows.h>
 #endif
 
+#include <time.h>
 #include "Application.h"
 
 /// <summary>
@@ -50,17 +51,17 @@
 /// <summary>
 /// @brief Entry point.
 /// 
-/// The Main Entry point for the application
+/// The Main Entry point for the application.
 /// @file
 /// </summary>
-/// <param name="argc">number of arguments passed into the application</param>
-/// <param name="argv">c style string of the arguments passed into the application</param>
+/// <param name="argc">number of arguments passed into the application.</param>
+/// <param name="argv">c style string of the arguments passed into the application.</param>
 int main(int argc, char** argv)
 {
+	std::srand(static_cast<unsigned int>(time(nullptr))); // generate seed using time since epoch.
 #ifdef NDEBUG
 	ShowWindow(GetConsoleWindow(), SW_HIDE);
 #endif // !NDEBUG
-
 	Application& app = Application();
 	app.run();
 }

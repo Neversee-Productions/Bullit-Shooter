@@ -23,74 +23,26 @@ MainMenuScene::MainMenuScene(
 }
 
 /// <summary>
+/// @brief Preloads resources on different thread.
+/// 
+/// </summary>
+/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
+void MainMenuScene::preStart(const std::string & resourceFilePath)
+{
+	this->setup(resourceFilePath);
+}
+
+/// <summary>
 /// @brief Configures our MainMenuScene.
 /// 
 /// Setups appropriate resources for gui
 /// and defines a layout for the gui.
 /// </summary>
-void MainMenuScene::start()
+/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
+void MainMenuScene::start(const std::string & resourceFilePath)
 {
-	const std::string GUI_PATH("resources/gui/");
-	const std::string BTN_FONT_PATH = GUI_PATH + "fonts/QuartzMS.ttf";
-	const std::string BTN_TEXTURE_PATH = GUI_PATH + "textures/button.png";
-	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
-
-	m_nextSceneName = "";
-
-	m_resources = std::make_unique<Resources>();
-	// store dereferenced pointer
-	// used to avoid pointer syntax.
-	auto & resources = *m_resources;
-
-	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, true);
-	// store dereferenced pointer
-	// used to avoid pointer syntax.
-	auto & gui = *m_gui;
-
-	auto sptrButtonFont = resources.m_sptrButtonFont;
-	assert(sptrButtonFont->loadFromFile(BTN_FONT_PATH));
-
-	auto sptrButtonTexture = resources.m_sptrButtonTexture;
-	assert(sptrButtonTexture->loadFromFile(BTN_TEXTURE_PATH));
-
-	m_gui->addButton(
-		std::bind(&MainMenuScene::btnNewGame, this),
-		"New Game",
-		zero,
-		sptrButtonFont,
-		24u,
-		sptrButtonTexture,
-		gui::Button::s_TEXT_RECT_LEFT,
-		gui::Button::s_TEXT_RECT_MID,
-		gui::Button::s_TEXT_RECT_RIGHT
-	);
-
-	m_gui->addButton(
-		std::bind(&MainMenuScene::btnOptions, this),
-		"Options",
-		zero,
-		sptrButtonFont,
-		24u,
-		sptrButtonTexture,
-		gui::Button::s_TEXT_RECT_LEFT,
-		gui::Button::s_TEXT_RECT_MID,
-		gui::Button::s_TEXT_RECT_RIGHT
-	);
-
-	m_gui->addButton(
-		std::bind(&MainMenuScene::btnExitGame, this),
-		"Exit Game",
-		zero,
-		sptrButtonFont,
-		24u,
-		sptrButtonTexture,
-		gui::Button::s_TEXT_RECT_LEFT,
-		gui::Button::s_TEXT_RECT_MID,
-		gui::Button::s_TEXT_RECT_RIGHT
-	);
-
-	const auto& windowSize = App::getWindowSize();
-	gui.configure(gui::GUI::Layouts::StripDiagonal, windowSize);
+	Scene::setNextSceneName("");
+	this->setup(resourceFilePath);
 }
 
 /// <summary>
@@ -100,9 +52,9 @@ void MainMenuScene::start()
 /// </summary>
 void MainMenuScene::stop()
 {
-	m_gui.reset(nullptr);
-	m_resources.reset(nullptr);
-	m_timer.reset(nullptr);
+	std::unique_ptr<gui::GUI>(nullptr).swap(m_gui);
+	std::unique_ptr<sf::Clock>(nullptr).swap(m_timer);
+	std::unique_ptr<Resources>(nullptr).swap(m_resources);
 }
 
 /// <summary>
@@ -117,7 +69,7 @@ void MainMenuScene::update()
 		const auto & timeInSeconds = m_timer->getElapsedTime().asSeconds();
 		if (timeInSeconds >= m_DELAY_TIME)
 		{
-			m_nextSceneName = std::move(m_nextName);
+			this->goToNextScene();
 		}
 	}
 	else
@@ -137,6 +89,107 @@ void MainMenuScene::update()
 void MainMenuScene::draw(Window & window, const float & deltaTime)
 {
 	m_gui->draw(window);
+}
+
+/// <summary>
+/// @brief Tells the SceneManager to change to another Scene.
+/// 
+/// 
+/// </summary>
+void MainMenuScene::goToNextScene()
+{
+	Scene::setNextSceneName(m_nextName);
+}
+
+/// <summary>
+/// @brief Load up what MainMenuScene needs to run.
+/// 
+/// 
+/// </summary>
+/// <param name="resourceFilePath">defines the path to the json file for this scene</param>
+void MainMenuScene::setup(const std::string & resourceFilePath)
+{
+	auto & resourceHandler = ResourceHandler::get();
+
+	std::ifstream rawFile(resourceFilePath);
+	json::json jsonLoader;
+	rawFile >> jsonLoader;
+
+	if (!m_resources)
+	{
+		// instatiate our resource pointers that will "own"
+		// the asset on the heap.
+		m_resources = std::make_unique<Resources>();
+
+		m_resources->m_sptrButtonTexture = resourceHandler.loadUp<sf::Texture>(jsonLoader, "button");
+		assert(nullptr != m_resources->m_sptrButtonTexture);
+
+		m_resources->m_sptrButtonFont = resourceHandler.loadUp<sf::Font>(jsonLoader, "button");
+		assert(nullptr != m_resources->m_sptrButtonFont);
+	}
+	if (!m_gui)
+	{
+		loadGui(*m_resources, jsonLoader.at("fontsize").get<unsigned int>());
+	}
+}
+
+/// <summary>
+/// @brief Loadups GUI.
+/// 
+/// @warning Assumes external assets are already loaded.
+/// </summary>
+/// <param name="resources">defines reference to our external assets.</param>
+/// <param name="fontSize">defines the size of our gui::GUI's font</param>
+void MainMenuScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)
+{
+	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
+	auto sptrButtonFont = resources.m_sptrButtonFont;
+	auto sptrButtonTexture = resources.m_sptrButtonTexture;
+
+	// instantiate our gui object and assign ownership.
+	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, true);
+	// store dereferenced pointer
+	// used to avoid pointer syntax.
+	auto & gui = *m_gui;
+
+	m_gui->addButton(
+		std::bind(&MainMenuScene::btnNewGame, this),
+		"New Game",
+		zero,
+		sptrButtonFont,
+		fontSize,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+
+	m_gui->addButton(
+		std::bind(&MainMenuScene::btnOptions, this),
+		"Options",
+		zero,
+		sptrButtonFont,
+		fontSize,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+
+	m_gui->addButton(
+		std::bind(&MainMenuScene::btnExitGame, this),
+		"Exit Game",
+		zero,
+		sptrButtonFont,
+		fontSize,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+
+	const auto& windowSize = App::getViewSize();
+	gui.configure(gui::GUI::Layouts::StripDiagonal, windowSize);
 }
 
 /// <summary>

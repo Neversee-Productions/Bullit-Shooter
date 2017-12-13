@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keymap',['KeyMap',['../class_key_handler.html#aa01597a53928c7c1a3cdd633c32b708d',1,'KeyHandler']]]
+  ['bigtextureholder',['BigTextureHolder',['../class_resource_handler.html#a1d2a78f5214441f6460260f491b0fbfc',1,'ResourceHandler']]]
 ];

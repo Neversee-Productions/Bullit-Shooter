@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['layouts',['Layouts',['../classgui_1_1_g_u_i.html#a50ccb43299016dc44fe4b21e0213169b',1,'gui::GUI']]]
+  ['direction',['Direction',['../class_ship.html#a743997210406247a228feea2a2fef570',1,'Ship']]]
 ];

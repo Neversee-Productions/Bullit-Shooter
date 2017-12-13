@@ -2,11 +2,11 @@ var class_app =
 [
     [ "App", "class_app.html#acb8cbf3e285b91d0170ffe87df5989c5", null ],
     [ "getUpdateDeltaTime", "class_app.html#a8f144ef7b698c80e5414f00563474149", null ],
-    [ "getWindowC2Rect", "class_app.html#a1cb2c5e4aa61e9ee561cc2893ea98d2a", null ],
-    [ "getWindowSize", "class_app.html#ae47a49a2f9ba8a96947d71cdce8a9707", null ],
-    [ "setWindowC2Rect", "class_app.html#acb64dbd57a2b158956364bec8b8d6c42", null ],
-    [ "setWindowSize", "class_app.html#adc5ece8de07fd448e91efbe2c2ec3db9", null ],
-    [ "s_rectWindow", "class_app.html#ae6b4e765084e7bb26d4f069e39cc0f64", null ],
+    [ "getViewC2Rect", "class_app.html#a0656955b498a6a4a10b26089e624779c", null ],
+    [ "getViewSize", "class_app.html#a5ed1598aaff7e98ea2c9f4f28210491d", null ],
+    [ "setViewC2Rect", "class_app.html#a7e9cab266816de576d5da6482fee1eb9", null ],
+    [ "setViewSize", "class_app.html#a57b3f984530d645babaf2679a39c1136", null ],
+    [ "s_rectView", "class_app.html#a9f4d7db2c246f006c1ab183747e897b7", null ],
     [ "s_updateDeltaTime", "class_app.html#a04f4b5f0e04c4ff1bb1428a101f118da", null ],
-    [ "s_windowSize", "class_app.html#ae002448d57b7484d2e9720b7ee82a78d", null ]
+    [ "s_viewSize", "class_app.html#ae9a5440bd5a998c9d4d16b65ec3df8fa", null ]
 ];

@@ -1,22 +1,22 @@
 #include "App.h"
 
-sf::Vector2u App::s_windowSize = sf::Vector2u(0, 0);
+sf::Vector2u App::s_viewSize = sf::Vector2u(0, 0);
 
 const float App::s_updateDeltaTime = 1.0f / 60.0f;
 
-tinyh::c2AABB App::s_rectWindow = tinyh::c2AABB();
+tinyh::c2AABB App::s_rectView = tinyh::c2AABB();
 
 /// <summary>
 /// @brief Sets the window size.
 /// 
 /// 
 /// </summary>
-/// <param name="width">defines the width of the window</param>
+/// <param name="width">defines the width of the window.</param>
 /// <param name="height">defines the height of the window.</param>
-void App::setWindowSize(const unsigned int & width, const unsigned int & height)
+void App::setViewSize(const unsigned int & width, const unsigned int & height)
 {
-	s_windowSize.x = width;
-	s_windowSize.y = height;
+	s_viewSize.x = width;
+	s_viewSize.y = height;
 }
 
 /// <summary>
@@ -25,9 +25,9 @@ void App::setWindowSize(const unsigned int & width, const unsigned int & height)
 /// 
 /// </summary>
 /// <returns>The window size as 2 unsigned integers.</returns>
-const sf::Vector2u & App::getWindowSize()
+const sf::Vector2u & App::getViewSize()
 {
-	return s_windowSize;
+	return s_viewSize;
 }
 
 /// <summary>
@@ -47,10 +47,10 @@ const float & App::getUpdateDeltaTime()
 /// 
 /// 
 /// </summary>
-/// <returns>the collision rectangle</returns>
-const tinyh::c2AABB & App::getWindowC2Rect()
+/// <returns>the collision rectangle.</returns>
+const tinyh::c2AABB & App::getViewC2Rect()
 {
-	return s_rectWindow;
+	return s_rectView;
 }
 
 /// <summary>
@@ -60,10 +60,10 @@ const tinyh::c2AABB & App::getWindowC2Rect()
 /// </summary>
 /// <param name="min">minimum (top left) corner of screen</param>
 /// <param name="max">maximum (bottom right) corner of screen</param>
-void App::setWindowC2Rect(const sf::Vector2f & min, const sf::Vector2f & max)
+void App::setViewC2Rect(const sf::Vector2f & min, const sf::Vector2f & max)
 {
-	s_rectWindow.min.x = min.x;
-	s_rectWindow.min.y = min.y;
-	s_rectWindow.max.x = max.x;
-	s_rectWindow.max.y = max.y;
+	s_rectView.min.x = min.x;
+	s_rectView.min.y = min.y;
+	s_rectView.max.x = max.x;
+	s_rectView.max.y = max.y;
 }

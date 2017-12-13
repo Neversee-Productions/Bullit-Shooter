@@ -1,0 +1,15 @@
+{
+    "textures":
+    {
+        "background": "resources/scenes/Title/textures/background.jpg",
+        "title": "resources/scenes/Title/textures/title.png"
+    },
+    "sounds":
+    {
+    },
+    "fonts":
+    {
+        "text": "resources/scenes/Title/fonts/text.ttf"
+    },
+    "fontsize": 24
+}

@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['weapon_2ecpp',['Weapon.cpp',['../_weapon_8cpp.html',1,'']]],
-  ['weapon_2eh',['Weapon.h',['../_weapon_8h.html',1,'']]],
-  ['widget_2ecpp',['Widget.cpp',['../_widget_8cpp.html',1,'']]],
-  ['widget_2eh',['Widget.h',['../_widget_8h.html',1,'']]],
-  ['window_2ecpp',['Window.cpp',['../_window_8cpp.html',1,'']]],
-  ['window_2eh',['Window.h',['../_window_8h.html',1,'']]]
+  ['magmashot_2ecpp',['MagmaShot.cpp',['../_magma_shot_8cpp.html',1,'']]],
+  ['magmashot_2eh',['MagmaShot.h',['../_magma_shot_8h.html',1,'']]],
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainmenuscene_2ecpp',['MainMenuScene.cpp',['../_main_menu_scene_8cpp.html',1,'']]],
+  ['mainmenuscene_2eh',['MainMenuScene.h',['../_main_menu_scene_8h.html',1,'']]]
 ];

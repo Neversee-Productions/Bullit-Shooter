@@ -79,6 +79,63 @@
     <Filter Include="Source Files\tinyh">
       <UniqueIdentifier>{ea896656-eecd-42b2-9a7d-6a52cf984c30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\scenes">
+      <UniqueIdentifier>{3cd0912c-4ad7-43e0-a95d-eb3d5f40bcaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\MainMenu">
+      <UniqueIdentifier>{6373db25-51ea-46e7-a295-00fc59fb2abf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Title">
+      <UniqueIdentifier>{fca74113-5f38-47a2-abcd-58258bfbd56e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Splash">
+      <UniqueIdentifier>{fcbb99db-c222-4e12-a5ba-54b194f4c10e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Options">
+      <UniqueIdentifier>{00d51f87-3b17-4281-8734-cdc488315c13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Splash\textures">
+      <UniqueIdentifier>{0da45943-b28c-4112-9cb5-e8900929faa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Title\textures">
+      <UniqueIdentifier>{47ac035e-d7e0-411f-bdb2-2fc41515aa57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Title\fonts">
+      <UniqueIdentifier>{9a611d8e-0840-445e-b563-7e664be94087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\GameScene\Entities">
+      <UniqueIdentifier>{d2b28fe8-3b50-4e82-a4ce-cfca6b62b052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\GameScene\Entities\Player">
+      <UniqueIdentifier>{b5a6b443-7fc4-48da-ae3f-92ac2d4cac1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\GameScene\Entities\Player\Bullets">
+      <UniqueIdentifier>{8a0658ee-1037-4327-b2ec-1108f16c6f74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\GameScene\Entities\Asteroids">
+      <UniqueIdentifier>{1d00606e-08c9-4d50-b7c9-afb76153f92c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game">
+      <UniqueIdentifier>{91cf9da2-488f-4484-9754-31401a7020ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player">
+      <UniqueIdentifier>{e46daa55-05f1-4dc9-9ea8-946c872a4849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\background">
+      <UniqueIdentifier>{22b62e43-1b85-4164-8a7b-50fbfab09bff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\GameScene\Entities">
+      <UniqueIdentifier>{2f338491-325a-4e37-b564-59c996f5ba2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\GameScene\Entities\Asteroids">
+      <UniqueIdentifier>{7b8c3f8b-899e-49ed-99aa-cafcf1a31a90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\GameScene\Entities\Player">
+      <UniqueIdentifier>{3d483bba-f7a6-48a5-b885-f3f9c8cb4c8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\GameScene\Entities\Player\Bullets">
+      <UniqueIdentifier>{403a7f9e-b9c0-4e6c-8898-4f0cd93b3138}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -126,25 +183,7 @@
     <ClCompile Include="src\App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scenes\GameScene\BulletManager.cpp">
-      <Filter>Source Files\Scenes\GameScene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\GameScene\Bullet.cpp">
-      <Filter>Source Files\Scenes\GameScene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\GameScene\BulletStandard.cpp">
-      <Filter>Source Files\Scenes\GameScene</Filter>
-    </ClCompile>
     <ClCompile Include="src\Scenes\GameScene\GameScene.cpp">
-      <Filter>Source Files\Scenes\GameScene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\GameScene\Player.cpp">
-      <Filter>Source Files\Scenes\GameScene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\GameScene\Ship.cpp">
-      <Filter>Source Files\Scenes\GameScene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\GameScene\Weapon.cpp">
       <Filter>Source Files\Scenes\GameScene</Filter>
     </ClCompile>
     <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp">
@@ -153,10 +192,109 @@
     <ClCompile Include="src\tinyheaders\tinyc2.cpp">
       <Filter>Source Files\tinyh</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\TitleScene\TitleScene.cpp">
+      <Filter>Source Files\Scenes\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp">
+      <Filter>Source Files\Scenes\SplashScene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\Bullet.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\CometShot.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\DeathOrb.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\Empowered.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\FireBlast.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\HolySphere.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\MagmaShot.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\NapalmSphere.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\NullWave.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\PyroBlast.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\Standard.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\StaticSphere.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\BulletManager.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Player.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Ship.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Weapon.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Asteroids\Asteroid.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Asteroids\AsteroidManager.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Background.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Shield.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\scenes.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\scenes\MainMenu\MainMenu.json">
+      <Filter>Resource Files\scenes\MainMenu</Filter>
+    </None>
+    <None Include="resources\scenes\Options\Options.json">
+      <Filter>Resource Files\scenes\Options</Filter>
+    </None>
+    <None Include="resources\scenes\Splash\Splash.json">
+      <Filter>Resource Files\scenes\Splash</Filter>
+    </None>
+    <None Include="resources\scenes\Title\Title.json">
+      <Filter>Resource Files\scenes\Title</Filter>
+    </None>
+    <None Include="resources\scenes\Game\Game.json">
+      <Filter>Resource Files\scenes\Game</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\player.json">
+      <Filter>Resource Files\scenes\Game\player</Filter>
+    </None>
+    <None Include="resources\scenes\Game\background\background.json">
+      <Filter>Resource Files\scenes\Game\background</Filter>
+    </None>
+    <None Include="resources\scenes\Game\background\background.frag">
+      <Filter>Resource Files\scenes\Game\background</Filter>
+    </None>
+    <None Include="resources\scenes\Game\background\background.vert">
+      <Filter>Resource Files\scenes\Game\background</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -202,32 +340,86 @@
     <ClInclude Include="include\App.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\Bullet.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\BulletManager.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\BulletStandard.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\GameScene.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\Player.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\Ship.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\Weapon.h">
-      <Filter>Header Files\Scenes\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scenes\GameScene\BulletTypes.h">
       <Filter>Header Files\Scenes\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h">
       <Filter>Header Files\Scenes\OptionsScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\TitleScene\TitleScene.h">
+      <Filter>Header Files\Scenes\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h">
+      <Filter>Header Files\Scenes\SplashScene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ResourceHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Asteroids\Asteroid.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Asteroids\AsteroidManager.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\BulletManager.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Player.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Ship.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Weapon.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\Bullet.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\BulletTypes.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\CometShot.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\DeathOrb.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\Empowered.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\FireBlast.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\HolySphere.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\MagmaShot.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\NapalmSphere.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\NullWave.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\PyroBlast.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\Standard.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\StaticSphere.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Entities.h">
+      <Filter>Header Files\Scenes\GameScene\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Background.h">
+      <Filter>Header Files\Scenes\GameScene\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Shield.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -240,10 +432,25 @@
     <Image Include="resources\gui\textures\slider.png">
       <Filter>Resource Files\gui\textures</Filter>
     </Image>
+    <Image Include="resources\scenes\Splash\textures\splash_screen.png">
+      <Filter>Resource Files\scenes\Splash\textures</Filter>
+    </Image>
+    <Image Include="resources\scenes\Title\textures\background.jpg">
+      <Filter>Resource Files\scenes\Title\textures</Filter>
+    </Image>
+    <Image Include="resources\scenes\Title\textures\title.png">
+      <Filter>Resource Files\scenes\Title\textures</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\player_ship.png">
+      <Filter>Resource Files\scenes\Game\player</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\gui\fonts\QuartzMS.TTF">
       <Filter>Resource Files\gui\fonts</Filter>
+    </Font>
+    <Font Include="resources\scenes\Title\fonts\text.ttf">
+      <Filter>Resource Files\scenes\Title\fonts</Filter>
     </Font>
   </ItemGroup>
 </Project>

@@ -1,12 +1,15 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+// STL includes
 #include <list>
 #include <Windows.h>
+// SFML includes
 #include "SFML\Window\Event.hpp"
 #include "SFML\Graphics\RenderWindow.hpp"
 #include "SFML\Graphics\RenderTexture.hpp"
 #include "SFML\Graphics\Sprite.hpp"
+// Project includes
 #include "App.h"
 #include "input\KeyHandler.h"
 
@@ -24,12 +27,31 @@ public:
 	void processEvents();
 	void changeStyle(const sf::Uint32 & newStyle);
 	void draw(const sf::Drawable & drawable);
+	void draw(const sf::Drawable & drawable, const sf::RenderStates & renderState);
 	void display();
 	bool isOpen() const;
 	void clear();
 	void close();
+	sf::Uint32 const & getStyle() const;
+	void setStyle(sf::Uint32 const & newStyle);
 
 private:
+
+	/// <summary>
+	/// @brief Window Title.
+	/// 
+	/// Will be displayed in title bar of the window.
+	/// </summary>
+	sf::String m_title;
+
+	/// <summary>
+	/// @brief Window's Style.
+	/// 
+	/// Will define what style the window has,
+	/// determining what decorations the window possesses,
+	/// such as a titlebar, a close button or borderless.
+	/// </summary>
+	sf::Uint32 m_style;
 
 	/// <summary>
 	/// @brief SFML RenderWindow.

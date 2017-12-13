@@ -19,16 +19,96 @@ SceneManager::SceneManager(
 	, m_controller(nullptr)
 {
 	m_controller = std::make_shared<Controller>();
+	this->addAllScenes();
+	
+	const std::string firstScene = "Game";
+	for (auto itt = m_sceneMap.begin(), end = m_sceneMap.end(); itt != end; ++itt)
+	{
+		auto & mapPair = *itt;
+		if (mapPair.first == firstScene)
+		{
+			this->loadScene(mapPair.first);
+		}
+		else
+		{
+			// Cannot pre load options scene
+			// this is due to how sf::Font works internally
+			// as it is NOT THREAD SAFE 
+			// each letter in the font is loaded as needed
+			// therefore with both main menu and options gui using
+			// the same font for their buttons a data race occurs
+			// causing a crash when the font is given the letters
+			// it needs to load from each button in both main menu and options.
+			if (mapPair.first != "Options")
+			{
+				// This line will startup all of the scenes
+				// into background loading of assets.
+				this->preLoadScene(mapPair.first);
+			}
+		}
+	}
+}
 
-	std::shared_ptr<Scene> scenePt = std::make_shared<GameScene>(*m_keyHandler);
-	addScene(scenePt);
+/// <summary>
+/// @brief Default destructor.
+/// 
+/// Will cleanup our map of scenes,
+/// also makes sure that all of our threads are joined before removing them.
+/// </summary>
+SceneManager::~SceneManager()
+{
+	for (auto itt = m_sceneMap.begin(); itt != m_sceneMap.end(); )
+	{
+		auto & managedScene = itt->second;
+		if (managedScene.m_thread)
+		{
+			managedScene.m_thread->join();
+			std::unique_ptr<std::thread>().swap(managedScene.m_thread);
+		}
+		itt = m_sceneMap.erase(itt);
+	}
+}
 
-	scenePt = std::make_shared<MainMenuScene>(m_keyHandler, m_controller);
-	addScene(scenePt);
-	loadScene(scenePt->getName());
+/// <summary>
+/// @brief Adds all scenes to our scene map.
+/// 
+/// 
+/// </summary>
+void SceneManager::addAllScenes()
+{
+	std::shared_ptr<Scene> sptrScene(nullptr);
+	std::unique_ptr<std::string> uptrResources(nullptr);
 
-	scenePt = std::make_shared<OptionsScene>(m_keyHandler, m_controller);
-	addScene(scenePt);
+	// load our scenes paths
+
+	std::ifstream rawFile("resources/scenes.json");
+	json::json jsonLoader;
+	rawFile >> jsonLoader;
+	
+	// Splash Scene
+	sptrScene = std::make_shared<SplashScene>();
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
+	this->addScene(sptrScene, std::move(uptrResources));
+
+	// Title Scene
+	sptrScene = std::make_shared<TitleScene>(m_keyHandler, m_controller);
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
+	this->addScene(sptrScene, std::move(uptrResources));
+
+	// MainMenu Scene
+	sptrScene = std::make_shared<MainMenuScene>(m_keyHandler, m_controller);
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
+	this->addScene(sptrScene, std::move(uptrResources));
+
+	// Options Scene
+	sptrScene = std::make_shared<OptionsScene>(m_keyHandler, m_controller);
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
+	this->addScene(sptrScene, std::move(uptrResources));
+
+	// Game Scene
+	sptrScene = std::make_shared<GameScene>(*m_keyHandler);
+	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
+	this->addScene(sptrScene, std::move(uptrResources));
 }
 
 /// <summary>
@@ -45,7 +125,7 @@ Scene & SceneManager::getScene(const std::string & name)
 	auto itt = m_sceneMap.find(name);
 	if (itt != m_sceneMap.end())
 	{
-		return *(itt->second);
+		return *(itt->second.m_scene);
 	}
 	else
 	{
@@ -72,10 +152,36 @@ Scene & SceneManager::getActive() const
 /// The scene is added to our list, however this scene is not activated.
 /// Note: if a scene with the same name exists it is overwritten.
 /// </summary>
-/// <param name="scenePt">Defines our new scene to be added.</param>
-void SceneManager::addScene(std::shared_ptr<Scene> scenePt)
+/// <param name="sptrScene">Defines our new scene to be added.</param>
+void SceneManager::addScene(
+	std::shared_ptr<Scene> sptrScene
+	, std::unique_ptr<std::string> uptrResources
+)
 {
-	m_sceneMap[scenePt->getName()] = scenePt;
+	ManagedScene managedScene;
+	managedScene.m_scene = sptrScene;
+	managedScene.m_resourcePath.swap(uptrResources);
+	m_sceneMap[sptrScene->getName()] = std::move(managedScene);
+}
+
+/// <summary>
+/// @brief Will start loading the resources for the particular Scene.
+/// 
+/// This goes and starts a resource loading thread, keeping our program running.
+/// </summary>
+/// <param name="name">defines the Scene to be pre-loaded.</param>
+void SceneManager::preLoadScene(const std::string & name)
+{
+	auto itt = m_sceneMap.find(name);
+	if (itt != m_sceneMap.end())
+	{
+		auto & mapValue = itt->second;
+		auto sptrScene = mapValue.m_scene;
+		const auto & resourcePath = *mapValue.m_resourcePath;
+		std::unique_ptr<std::thread> uptrThread = std::move(mapValue.m_thread);
+		uptrThread = std::make_unique<std::thread>(&Scene::preStart, sptrScene, resourcePath);
+		mapValue.m_thread.swap(uptrThread);
+	}
 }
 
 /// <summary>
@@ -95,8 +201,33 @@ void SceneManager::loadScene(const std::string & name)
 		{
 			m_currentScene->stop();
 		}
-		m_currentScene = (itt->second);
-		m_currentScene->start();
+		auto & mapValue = itt->second;
+		auto sptrScene = mapValue.m_scene;
+		const auto & resourcePath = *mapValue.m_resourcePath;
+		std::unique_ptr<std::thread> uptrThread = std::move(mapValue.m_thread);
+		if (uptrThread)
+		{
+			uptrThread->join();
+			std::unique_ptr<std::thread>().swap(uptrThread);
+		}
+		m_currentScene = sptrScene;
+		if (m_currentScene->getName() == "Splash")
+		{
+			m_window.changeStyle(sf::Style::None);
+		}
+		else
+		{
+			auto const & style = m_window.getStyle();
+			if (style != sf::Style::Fullscreen)
+			{
+				m_window.setStyle(sf::Style::Close);
+			}
+			else
+			{
+				m_window.setStyle(sf::Style::Fullscreen);
+			}
+		}
+		m_currentScene->start(resourcePath);
 	}
 	else if (name == "Exit")
 	{
@@ -128,6 +259,7 @@ void SceneManager::update()
 	else
 	{
 		loadScene(m_currentScene->getNextSceneName());
+		m_currentScene->update();
 	}
 	m_keyHandler->update();
 }

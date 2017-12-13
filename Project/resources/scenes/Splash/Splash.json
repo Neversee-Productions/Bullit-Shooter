@@ -1,0 +1,12 @@
+{
+    "textures":
+    {
+        "splash_background": "resources/scenes/Splash/textures/splash_screen.png"
+    },
+    "sounds":
+    {
+    },
+    "fonts":
+    {
+    }
+}

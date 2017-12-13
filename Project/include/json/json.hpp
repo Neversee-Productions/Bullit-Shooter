@@ -12994,6 +12994,8 @@ inline nlohmann::json::json_pointer operator "" _json_pointer(const char* s, std
     #pragma GCC diagnostic pop
 #endif
 
+namespace json = nlohmann;
+
 // clean up
 #undef JSON_CATCH
 #undef JSON_DEPRECATED

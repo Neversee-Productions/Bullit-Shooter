@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['player',['Player',['../class_player.html',1,'']]]
+  ['keyhandler',['KeyHandler',['../class_key_handler.html',1,'']]],
+  ['keyspressed',['KeysPressed',['../struct_ship_1_1_keys_pressed.html',1,'Ship']]]
 ];

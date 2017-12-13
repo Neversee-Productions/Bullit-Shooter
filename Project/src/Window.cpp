@@ -9,7 +9,9 @@
 /// </summary>
 /// <param name="keyHandler">stored reference to our key handler.</param>
 Window::Window(KeyHandler & keyHandler)
-	: m_sfWindow()
+	: m_title()
+	, m_style(sf::Style::Default)
+	, m_sfWindow()
 	, m_resolution()
 	, m_supportedResolutions()
 	, m_renderTexture()
@@ -17,18 +19,26 @@ Window::Window(KeyHandler & keyHandler)
 	, m_keyHandler(keyHandler)
 {
 	///////////////////////////////////////////////////////
+	// define our windows title
+	///////////////////////////////////////////////////////
+	m_title = "Bullit \" \" Shooter";
+
+	///////////////////////////////////////////////////////
 	// keep our vector of supported resolutions
 	///////////////////////////////////////////////////////
-	const std::vector<sf::VideoMode> & fullscreenRes = sf::VideoMode::getFullscreenModes();
+	std::vector<sf::VideoMode> const & fullscreenRes = sf::VideoMode::getFullscreenModes();
 	// using the insert( range ) function that our supportedResolutions container must support
 	m_supportedResolutions.insert(m_supportedResolutions.begin(), fullscreenRes.begin(), fullscreenRes.end());
 
 	///////////////////////////////////////////////////////
 	// define our current resolution.
 	///////////////////////////////////////////////////////
-	m_resolution = sf::VideoMode(1366u, 768u);
-	App::setWindowSize(m_resolution.width, m_resolution.height);
-	App::setWindowC2Rect(sf::Vector2f(0.0f, 0.0f), static_cast<sf::Vector2f>(App::getWindowSize()));
+	// windowed mode
+	//m_style = sf::Style::Default;
+	//m_resolution = sf::VideoMode(1366u, 768u);
+	// fullscreen mode
+	m_style = sf::Style::Fullscreen;
+	m_resolution = fullscreenRes.at(0);
 
 	///////////////////////////////////////////////////////
 	// create our window with pre-defined settings
@@ -37,28 +47,40 @@ Window::Window(KeyHandler & keyHandler)
 	settings.majorVersion = 3u;
 	settings.minorVersion = 0u;
 	settings.attributeFlags = sf::ContextSettings::Attribute::Default;
-	settings.depthBits = 32u;
+	settings.depthBits = 24u;
 	settings.stencilBits = 8u;
 	settings.antialiasingLevel = 8u;
 	
-	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Close, settings);
+	m_sfWindow.create(m_resolution, m_title, m_style, settings);
 
 	///////////////////////////////////////////////////////
 	// create and initialize our render texture
 	///////////////////////////////////////////////////////
-	auto& windowSize = m_sfWindow.getSize();
-	m_renderTexture.create(windowSize.x, windowSize.y, false);
+	const sf::Vector2u textureOriginalSize = sf::Vector2u(1366u, 768u);
+	m_renderTexture.create(textureOriginalSize.x, textureOriginalSize.y, false);
 	//m_renderTexture.setSmooth(true);
 
 	///////////////////////////////////////////////////////
 	// initialize our texture renderer
 	///////////////////////////////////////////////////////
+	
+	const auto & textureSize = static_cast<sf::Vector2f>(m_renderTexture.getSize());
+	const auto & windowSize = static_cast<sf::Vector2f>(m_sfWindow.getSize());
+	const sf::Vector2f textureScalar(windowSize.x / textureSize.x, windowSize.y / textureSize.y);
+	
 	m_textureRenderer.setColor(sf::Color::White);
 	m_textureRenderer.setPosition(0.0f, 0.0f);
 	m_textureRenderer.setOrigin(0.0f, 0.0f);
 	m_textureRenderer.setRotation(0.0f);
-	m_textureRenderer.setScale(1.0f, 1.0f);
+	m_textureRenderer.setScale(textureScalar);
 	m_textureRenderer.setTexture(m_renderTexture.getTexture(), true);
+
+	///////////////////////////////////////////////////////
+	// initialize Views Size
+	///////////////////////////////////////////////////////
+	const auto & viewSize = m_renderTexture.getSize();
+	App::setViewSize(viewSize.x, viewSize.y);
+	App::setViewC2Rect(sf::Vector2f(0.0f, 0.0f), static_cast<sf::Vector2f>(App::getViewSize()));
 }
 
 /// <summary>
@@ -85,28 +107,49 @@ void Window::processEvents()
 		switch (ev.type)
 		{
 		case EventType::Closed:
-			// window has been closed.
+			// The window requested to be closed (no data)
 			m_sfWindow.close();
 			break;
-		case EventType::GainedFocus:
-			// window has gained focus.
-			break;
-		case EventType::LostFocus:
-			// window no longer has focus.
-			break;
 		case EventType::Resized:
-			// window::Resized data is in ev.size
+			// The window was resized (data in event.size)
 			// screen should NOT be resizeable since
 			// we don't want to have to recreate m_renderTexture,
 			// in this manner
 			break;
+		case EventType::LostFocus:
+			// The window lost the focus (no data)
+			break;
+		case EventType::GainedFocus:
+			// The window gained the focus (no data)
+			break;
+		case EventType::TextEntered:
+			// A character was entered (data in event.text)
+			break;
 		case EventType::KeyPressed:
-			// window::KeyPressed data is in ev.key
+			// A key was pressed(data in event.key)
 			m_keyHandler.updateKey(ev.key.code, true);
 			break;
 		case EventType::KeyReleased:
-			// window::KeyReleased data is in ev.key
+			// A key was released (data in event.key)
 			m_keyHandler.updateKey(ev.key.code, false);
+			break;
+		case EventType::MouseButtonPressed:
+			// A mouse button was pressed (data in event.mouseButton)
+			break;
+		case EventType::MouseButtonReleased:
+			// A mouse button was released (data in event.mouseButton)
+			break;
+		case EventType::MouseMoved:
+			// The mouse cursor moved (data in event.mouseMove)
+			break;
+		case EventType::MouseEntered:
+			// The mouse cursor entered the area of the window (no data)
+			break;
+		case EventType::MouseLeft:
+			// The mouse cursor left the area of the window(no data)
+			break;
+		case EventType::Count:
+			// Keep the total number of event types.
 			break;
 		default:
 			break;
@@ -125,7 +168,7 @@ void Window::processEvents()
 /// added appropriate windows Uint32 Flag for each window component based
 /// on the passed sfml Style.
 /// 
-/// @warning If peformed on a OS different than Windows the window is not changed.
+/// @warning If peformed on a OS different than Windows the window is closed than re-created instead.
 /// </summary>
 /// <param name="newStyle">Flag for the new style that the window will be changed to.</param>
 void Window::changeStyle(const sf::Uint32 & newStyle)
@@ -154,7 +197,7 @@ void Window::changeStyle(const sf::Uint32 & newStyle)
 		}
 		if (newStyle & sf::Style::Close)
 		{
-			win32Style |= WS_SYSMENU;
+			win32Style |= WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX;
 		}
 	}
 
@@ -164,7 +207,15 @@ void Window::changeStyle(const sf::Uint32 & newStyle)
 	// Force changes to take effect
 	SetWindowPos(handle, NULL, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_DRAWFRAME);
 
-#endif // _WIN32
+#else 
+	// perform standard way for other platforms
+	// will close than re-create the window, much less smoother.
+
+	sf::ContextSettings settings = m_sfWindow.getSettings();
+	m_sfWindow.close();
+	m_sfWindow.create(m_resolution, m_title, m_style, settings);
+
+#endif
 }
 
 /// <summary>
@@ -176,6 +227,18 @@ void Window::changeStyle(const sf::Uint32 & newStyle)
 void Window::draw(const sf::Drawable & drawable)
 {
 	m_renderTexture.draw(drawable, sf::RenderStates::Default);
+}
+
+/// <summary>
+/// @brief Draws the drawable on the render texture.
+/// 
+/// Drawable is drawn on our render texture with the passed render state.
+/// </summary>
+/// <param name="drawable">target that will be rendered on next produced frame.</param>
+/// <param name="renderState">the render state we want to apply to our target.</param>
+void Window::draw(const sf::Drawable & drawable, const sf::RenderStates & renderState)
+{
+	m_renderTexture.draw(drawable, renderState);
 }
 
 /// <summary>
@@ -222,4 +285,27 @@ void Window::close()
 	m_renderTexture.clear();
 	m_sfWindow.clear();
 	m_sfWindow.close();
+}
+
+/// <summary>
+/// @brief Gets the window's current style.
+/// 
+/// 
+/// </summary>
+/// <returns>returns the style as a number that directly corresponds to sf::Style.</returns>
+sf::Uint32 const & Window::getStyle() const
+{
+	return m_style;
+}
+
+/// <summary>
+/// @brief Defines new window style.
+/// 
+/// @see Window::changeStyle
+/// </summary>
+/// <param name="newStyle">defines new style flag for window.</param>
+void Window::setStyle(sf::Uint32 const & newStyle)
+{
+	m_style = newStyle;
+	this->changeStyle(m_style);
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['optionsscene',['OptionsScene',['../class_options_scene.html',1,'']]]
+  ['holysphere',['HolySphere',['../classbullets_1_1_holy_sphere.html',1,'bullets']]]
 ];

@@ -108,14 +108,17 @@ Inheritance diagram for MainMenuScene:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_main_menu_scene_1_1_resources.html">Resources</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of shared pointers to our resources.  <a href="struct_main_menu_scene_1_1_resources.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a555ff0255e49f81f47a4d3ad016a5e5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a555ff0255e49f81f47a4d3ad016a5e5f">MainMenuScene</a> (std::shared_ptr&lt; <a class="el" href="class_key_handler.html">KeyHandler</a> &gt; keyHandler, std::shared_ptr&lt; <a class="el" href="class_controller.html">Controller</a> &gt; controller)</td></tr>
 <tr class="separator:a555ff0255e49f81f47a4d3ad016a5e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a725c076e531354d64031071fa66feb67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a725c076e531354d64031071fa66feb67">start</a> () final override</td></tr>
-<tr class="separator:a725c076e531354d64031071fa66feb67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fceb466a18dabf67454e26eb2c87b8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a0fceb466a18dabf67454e26eb2c87b8b">preStart</a> (const std::string &amp;resourceFilePath) final override</td></tr>
+<tr class="separator:a0fceb466a18dabf67454e26eb2c87b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8cf0e0bc5e4bb26891ee639b4ec837"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a7c8cf0e0bc5e4bb26891ee639b4ec837">start</a> (const std::string &amp;resourceFilePath) final override</td></tr>
+<tr class="separator:a7c8cf0e0bc5e4bb26891ee639b4ec837"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a4c783bee20ab3af01c2b9de70d28db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a4a4c783bee20ab3af01c2b9de70d28db">stop</a> () final override</td></tr>
 <tr class="separator:a4a4c783bee20ab3af01c2b9de70d28db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a583c4f8cdb58cb60f9fbecd0e8cfbcf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a583c4f8cdb58cb60f9fbecd0e8cfbcf2">update</a> () final override</td></tr>
@@ -129,9 +132,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a056dfc15c377165943f5276f477c105d inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4281c0ec2142a6a53a3057557d7ff195 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a4281c0ec2142a6a53a3057557d7ff195">getNextSceneName</a> ()</td></tr>
 <tr class="separator:a4281c0ec2142a6a53a3057557d7ff195 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a997ae314fd37f012c8cbde5d93556819 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a997ae314fd37f012c8cbde5d93556819">setNextSceneName</a> (const std::string &amp;nextSceneName)</td></tr>
+<tr class="separator:a997ae314fd37f012c8cbde5d93556819 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a7dbbcf7ee5fe4b3682e501e309e6e942"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a7dbbcf7ee5fe4b3682e501e309e6e942">goToNextScene</a> () final override</td></tr>
+<tr class="separator:a7dbbcf7ee5fe4b3682e501e309e6e942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05620321a10b77b5ee2e49baef002725"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a05620321a10b77b5ee2e49baef002725">setup</a> (const std::string &amp;resourceFilePath)</td></tr>
+<tr class="separator:a05620321a10b77b5ee2e49baef002725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ce22548209cbbe3dbb5963d95d00b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#af2ce22548209cbbe3dbb5963d95d00b7">loadGui</a> (<a class="el" href="struct_main_menu_scene_1_1_resources.html">Resources</a> &amp;resources, const sf::Uint32 &amp;fontSize)</td></tr>
+<tr class="separator:af2ce22548209cbbe3dbb5963d95d00b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a595eb3d30392e31b4031616c15faf494"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a595eb3d30392e31b4031616c15faf494">btnNewGame</a> ()</td></tr>
 <tr class="separator:a595eb3d30392e31b4031616c15faf494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6610cbd7990a242f688e87c3b8cd962a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_scene.html#a6610cbd7990a242f688e87c3b8cd962a">btnExitGame</a> ()</td></tr>
@@ -159,8 +170,6 @@ Private Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_scene"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_scene')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_scene.html">Scene</a></td></tr>
-<tr class="memitem:ad7eb3717d9ea0ce02d321869b90f9b95 inherit pro_attribs_class_scene"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ad7eb3717d9ea0ce02d321869b90f9b95">m_nextSceneName</a></td></tr>
-<tr class="separator:ad7eb3717d9ea0ce02d321869b90f9b95 inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d9417e5e266363d6967278a073200ca inherit pro_attribs_class_scene"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a4d9417e5e266363d6967278a073200ca">m_UPDATE_DT</a></td></tr>
 <tr class="separator:a4d9417e5e266363d6967278a073200ca inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -333,8 +342,149 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a725c076e531354d64031071fa66feb67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a725c076e531354d64031071fa66feb67">&#9670;&nbsp;</a></span>start()</h2>
+<a id="a7dbbcf7ee5fe4b3682e501e309e6e942"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dbbcf7ee5fe4b3682e501e309e6e942">&#9670;&nbsp;</a></span>goToNextScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenuScene::goToNextScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tells the <a class="el" href="class_scene_manager.html" title="Manager of Scenes. ">SceneManager</a> to change to another <a class="el" href="class_scene.html" title="Defines a interface for SceneManager to use. ">Scene</a>.</p>
+
+<p>Implements <a class="el" href="class_scene.html#a296905face0ec648e564c059a9404b44">Scene</a>.</p>
+
+</div>
+</div>
+<a id="af2ce22548209cbbe3dbb5963d95d00b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2ce22548209cbbe3dbb5963d95d00b7">&#9670;&nbsp;</a></span>loadGui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenuScene::loadGui </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_main_menu_scene_1_1_resources.html">Resources</a> &amp;&#160;</td>
+          <td class="paramname"><em>resources</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Uint32 &amp;&#160;</td>
+          <td class="paramname"><em>fontSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Loadups GUI.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Assumes external assets are already loaded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resources</td><td>defines reference to our external assets.</td></tr>
+    <tr><td class="paramname">fontSize</td><td>defines the size of our <a class="el" href="classgui_1_1_g_u_i.html" title="The GUI class will controll all of the widgets currently on screen. ">gui::GUI</a>'s font</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0fceb466a18dabf67454e26eb2c87b8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fceb466a18dabf67454e26eb2c87b8b">&#9670;&nbsp;</a></span>preStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenuScene::preStart </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>resourceFilePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Preloads resources on different thread.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceFilePath</td><td>defines the path to the json file for this scene</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_scene.html#a8085b58c34fde232253669e9d55fa85d">Scene</a>.</p>
+
+</div>
+</div>
+<a id="a05620321a10b77b5ee2e49baef002725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05620321a10b77b5ee2e49baef002725">&#9670;&nbsp;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenuScene::setup </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>resourceFilePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Load up what <a class="el" href="class_main_menu_scene.html" title="Represents our main menu. ">MainMenuScene</a> needs to run.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceFilePath</td><td>defines the path to the json file for this scene</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7c8cf0e0bc5e4bb26891ee639b4ec837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c8cf0e0bc5e4bb26891ee639b4ec837">&#9670;&nbsp;</a></span>start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,7 +495,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void MainMenuScene::start </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>resourceFilePath</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -357,8 +508,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Configures our <a class="el" href="class_main_menu_scene.html" title="Represents our main menu. ">MainMenuScene</a>.</p>
 <p>Setups appropriate resources for gui and defines a layout for the gui. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceFilePath</td><td>defines the path to the json file for this scene</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implements <a class="el" href="class_scene.html#ab3d9769ccc60e9c3cedb0fe740395718">Scene</a>.</p>
+<p>Implements <a class="el" href="class_scene.html#a8e8d1644799fd1b097535a387f80bc4d">Scene</a>.</p>
 
 </div>
 </div>
@@ -555,7 +712,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Unique pointer to our <a class="el" href="struct_main_menu_scene_1_1_resources.html">Resources</a> struct.</p>
+<p>Unique pointer to our <a class="el" href="struct_main_menu_scene_1_1_resources.html" title="Container of shared pointers to our resources. ">Resources</a> struct.</p>
 <p>Used as to determine the lifetime of its members. </p>
 
 </div>
