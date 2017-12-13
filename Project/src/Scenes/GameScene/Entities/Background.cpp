@@ -28,8 +28,6 @@ void Background::init(std::shared_ptr<Resources> resources)
 	}
 	m_renderState.shader = m_shader.get();
 
-	m_shader->setUniform("resolution", m_image.getSize());
-
 	if (!m_timer)
 	{
 		m_timer = std::make_unique<sf::Clock>();

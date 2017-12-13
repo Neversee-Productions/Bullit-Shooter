@@ -47,7 +47,7 @@ const float & App::getUpdateDeltaTime()
 /// 
 /// 
 /// </summary>
-/// <returns>the collision rectangle</returns>
+/// <returns>the collision rectangle.</returns>
 const tinyh::c2AABB & App::getViewC2Rect()
 {
 	return s_rectView;

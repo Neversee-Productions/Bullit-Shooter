@@ -16,11 +16,14 @@ BulletManager::BulletManager()
 /// 
 /// 
 /// </summary>
-/// <param name="position1">define first gun position</param>
-/// <param name="position2">define second gun position</param>
+/// <param name="weapon1">define first gun</param>
+/// <param name="weapon2">define second gun</param>
 /// <param name="type">define type of bullet</param>
-void BulletManager::fireBullet(const sf::Vector2f& position1,const sf::Vector2f& position2,const BulletTypes& type)
+void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTypes& type)
 {
+	auto const & position1 = weapon1.getPosition();
+	auto const & position2 = weapon2.getPosition();
+
 	if (m_bulletMap.find(type) == m_bulletMap.end()) //if bullet vector has not been instanciated, then do so.
 	{
 		initBulletvector(type);
@@ -32,66 +35,88 @@ void BulletManager::fireBullet(const sf::Vector2f& position1,const sf::Vector2f&
 		if (m_timeSinceFire > bullets::Standard::getFireRate()) //if its time to fire do it.
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	case BulletTypes::Empowered:
 		if (m_timeSinceFire > bullets::Empowered::getFireRate())
 		{
 			fireEmpowered(position1, position2);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	case BulletTypes::DeathOrb:
 		if (m_timeSinceFire > bullets::DeathOrb::getFireRate())
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	case BulletTypes::FireBlast:
 		if (m_timeSinceFire > bullets::FireBlast::getFireRate())
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	case BulletTypes::HolySphere:
 		if (m_timeSinceFire > bullets::HolySphere::getFireRate()) 
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	case BulletTypes::MagmaShot:
 		if (m_timeSinceFire > bullets::MagmaShot::getFireRate())
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 	break;
 	case BulletTypes::NapalmSphere:
 		if (m_timeSinceFire > bullets::NapalmSphere::getFireRate())
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	case BulletTypes::CometShot:
 		if (m_timeSinceFire > bullets::CometShot::getFireRate())
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	case BulletTypes::NullWave:
 		if (m_timeSinceFire > bullets::NullWave::getFireRate())
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	case BulletTypes::StaticSphere:
 		if (m_timeSinceFire > bullets::StaticSphere::getFireRate())
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	case BulletTypes::PyroBlast:
 		if (m_timeSinceFire > bullets::PyroBlast::getFireRate())
 		{
 			fireOne(position1, position2, type);
+			weapon1.shoot();
+			weapon2.shoot();
 		}
 		break;
 	default:

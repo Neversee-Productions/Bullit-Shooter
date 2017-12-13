@@ -2,7 +2,7 @@ var class_bullet_manager =
 [
     [ "BulletManager", "class_bullet_manager.html#a4aae3d492898b93dd5730dc28f2cc910", null ],
     [ "draw", "class_bullet_manager.html#adc7565464b026ddc98b02a70c558c74a", null ],
-    [ "fireBullet", "class_bullet_manager.html#aee0e75edd198df85c62f91e5e1d02b11", null ],
+    [ "fireBullet", "class_bullet_manager.html#a5821be7f60c44744f7b1817afe54864e", null ],
     [ "fireEmpowered", "class_bullet_manager.html#a507393ed5ccbe692e93f7763ed714435", null ],
     [ "fireOne", "class_bullet_manager.html#ac752231cf91a59e7eb5113f18a7b5f1d", null ],
     [ "getBulletMap", "class_bullet_manager.html#a55909cda5bcaa595efe6187880f2d812", null ],

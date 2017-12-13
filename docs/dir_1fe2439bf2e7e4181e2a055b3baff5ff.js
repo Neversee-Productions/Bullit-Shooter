@@ -14,6 +14,8 @@ var dir_1fe2439bf2e7e4181e2a055b3baff5ff =
       [ "Resources", "struct_ship_1_1_resources.html", "struct_ship_1_1_resources" ]
     ] ],
     [ "Weapon.h", "_weapon_8h.html", [
-      [ "Weapon", "class_weapon.html", "class_weapon" ]
+      [ "Weapon", "class_weapon.html", "class_weapon" ],
+      [ "Resources", "struct_weapon_1_1_resources.html", "struct_weapon_1_1_resources" ],
+      [ "Animation", "struct_weapon_1_1_resources_1_1_animation.html", "struct_weapon_1_1_resources_1_1_animation" ]
     ] ]
 ];

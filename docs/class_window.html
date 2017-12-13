@@ -116,9 +116,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a38bc43bdd1a97e5de7f346ba4c3957ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35055c04498121d39741bfcd5082705b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a35055c04498121d39741bfcd5082705b">close</a> ()</td></tr>
 <tr class="separator:a35055c04498121d39741bfcd5082705b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c2db4cd369bc7627efa38ee7df08739"><td class="memItemLeft" align="right" valign="top">sf::Uint32 const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a8c2db4cd369bc7627efa38ee7df08739">getStyle</a> () const</td></tr>
+<tr class="separator:a8c2db4cd369bc7627efa38ee7df08739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2897af1f03ae26e22a80a5ea59e4f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a6f2897af1f03ae26e22a80a5ea59e4f9">setStyle</a> (sf::Uint32 const &amp;newStyle)</td></tr>
+<tr class="separator:a6f2897af1f03ae26e22a80a5ea59e4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:ab99be13cd76a18cf686a07f73b583ecc"><td class="memItemLeft" align="right" valign="top">sf::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#ab99be13cd76a18cf686a07f73b583ecc">m_title</a></td></tr>
+<tr class="separator:ab99be13cd76a18cf686a07f73b583ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f73797f2eaef854c4430ea3add573a2"><td class="memItemLeft" align="right" valign="top">sf::Uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a9f73797f2eaef854c4430ea3add573a2">m_style</a></td></tr>
+<tr class="separator:a9f73797f2eaef854c4430ea3add573a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae88c361b79abd76077d81bd608171d25"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#ae88c361b79abd76077d81bd608171d25">m_sfWindow</a></td></tr>
 <tr class="separator:ae88c361b79abd76077d81bd608171d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec919f6e096ebd795331a00f5bc3d452"><td class="memItemLeft" align="right" valign="top">sf::VideoMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#aec919f6e096ebd795331a00f5bc3d452">m_resolution</a></td></tr>
@@ -328,6 +336,25 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a8c2db4cd369bc7627efa38ee7df08739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c2db4cd369bc7627efa38ee7df08739">&#9670;&nbsp;</a></span>getStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Uint32 const  &amp; Window::getStyle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the window's current style.</p>
+<dl class="section return"><dt>Returns</dt><dd>returns the style as a number that directly corresponds to sf::Style.</dd></dl>
+
+</div>
+</div>
 <a id="a761d614931fb5a5daa70e4f580c3e78e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a761d614931fb5a5daa70e4f580c3e78e">&#9670;&nbsp;</a></span>isOpen()</h2>
 
@@ -364,6 +391,32 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Process SFML events.</p>
 <p>Polls sfml's window events, and responds to them. Key events are used to update our m_keyHandler map. </p>
+
+</div>
+</div>
+<a id="a6f2897af1f03ae26e22a80a5ea59e4f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f2897af1f03ae26e22a80a5ea59e4f9">&#9670;&nbsp;</a></span>setStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::setStyle </td>
+          <td>(</td>
+          <td class="paramtype">sf::Uint32 const &amp;&#160;</td>
+          <td class="paramname"><em>newStyle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defines new window style.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_window.html#ac547a5aacd051d9f5547c72fd06340a4">Window::changeStyle</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newStyle</td><td>defines new style flag for window.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -464,6 +517,30 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9f73797f2eaef854c4430ea3add573a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f73797f2eaef854c4430ea3add573a2">&#9670;&nbsp;</a></span>m_style</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Uint32 Window::m_style</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_window.html" title="Wrapper window class. ">Window</a>'s Style.</p>
+<p>Will define what style the window has, determining what decorations the window possesses, such as a titlebar, a close button or borderless. </p>
+
+</div>
+</div>
 <a id="afb1e1ea74c7b266f71bc21c87a57a265"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb1e1ea74c7b266f71bc21c87a57a265">&#9670;&nbsp;</a></span>m_supportedResolutions</h2>
 
@@ -509,6 +586,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Renders our frame using this sprite.</p>
 <p>Needed for sfml to do proper transforms internally, we will attach our frame as a texture to this sprite and draw it at (0, 0). </p>
+
+</div>
+</div>
+<a id="ab99be13cd76a18cf686a07f73b583ecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab99be13cd76a18cf686a07f73b583ecc">&#9670;&nbsp;</a></span>m_title</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::String Window::m_title</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_window.html" title="Wrapper window class. ">Window</a> Title.</p>
+<p>Will be displayed in title bar of the window. </p>
 
 </div>
 </div>

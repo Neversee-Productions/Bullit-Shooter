@@ -126,8 +126,8 @@ Private Types</h2></td></tr>
 <tr class="separator:a1a873bdd707d76abd4cd9b1efa876782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0eb9a6de43cf0022d808a63fa6cf8654"><td class="memItemLeft" align="right" valign="top">typedef thor::ResourceHolder&lt; sf::SoundBuffer, std::string, thor::Resources::CentralOwner &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a0eb9a6de43cf0022d808a63fa6cf8654">SoundHolder</a></td></tr>
 <tr class="separator:a0eb9a6de43cf0022d808a63fa6cf8654"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1346d9b270681956e66c660fc40d7aee"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; std::string, thor::FrameAnimation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a1346d9b270681956e66c660fc40d7aee">AnimationHolder</a></td></tr>
-<tr class="separator:a1346d9b270681956e66c660fc40d7aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d29603175da4c8b79112b1fb2dc8bc4"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; std::string, thor::FrameAnimation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a4d29603175da4c8b79112b1fb2dc8bc4">ThorFrameHolder</a></td></tr>
+<tr class="separator:a4d29603175da4c8b79112b1fb2dc8bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf6faa01115e9dd0bff19282bd68920c"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; std::string, std::vector&lt; sf::IntRect &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#aaf6faa01115e9dd0bff19282bd68920c">FrameHolder</a></td></tr>
 <tr class="separator:aaf6faa01115e9dd0bff19282bd68920c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7559361372e2f7a69bcafe2e41f97e9"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; std::string, std::shared_ptr&lt; sf::Shader &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#ab7559361372e2f7a69bcafe2e41f97e9">ShaderHolder</a></td></tr>
@@ -175,8 +175,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af639134c474851e59ec901b9603358fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59043d905be80301a5b69a73cbbc143f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt; <a class="el" href="class_resource_handler.html#a0eb9a6de43cf0022d808a63fa6cf8654">SoundHolder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a59043d905be80301a5b69a73cbbc143f">m_pairSoundHolder</a></td></tr>
 <tr class="separator:a59043d905be80301a5b69a73cbbc143f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51401386049ac6d89788370a82201422"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt; <a class="el" href="class_resource_handler.html#a1346d9b270681956e66c660fc40d7aee">AnimationHolder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a51401386049ac6d89788370a82201422">m_pairAnimationHolder</a></td></tr>
-<tr class="separator:a51401386049ac6d89788370a82201422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5392f91fc4bd7d351840bd43a8c69926"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt; <a class="el" href="class_resource_handler.html#a4d29603175da4c8b79112b1fb2dc8bc4">ThorFrameHolder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a5392f91fc4bd7d351840bd43a8c69926">m_pairAnimationHolder</a></td></tr>
+<tr class="separator:a5392f91fc4bd7d351840bd43a8c69926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb1e71a6e4e1a3987f3c23ba156cb86c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt; <a class="el" href="class_resource_handler.html#aaf6faa01115e9dd0bff19282bd68920c">FrameHolder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#afb1e71a6e4e1a3987f3c23ba156cb86c">m_pairFrameHolder</a></td></tr>
 <tr class="separator:afb1e71a6e4e1a3987f3c23ba156cb86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a506efe3ae32c2d88030370db99ef8ce6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt; <a class="el" href="class_resource_handler.html#ab7559361372e2f7a69bcafe2e41f97e9">ShaderHolder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_handler.html#a506efe3ae32c2d88030370db99ef8ce6">m_pairShaderHolder</a></td></tr>
@@ -194,30 +194,6 @@ Static Private Attributes</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
 <p>Only one instance of this class exist, as in it uses the Single-ton pattern. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a1346d9b270681956e66c660fc40d7aee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1346d9b270681956e66c660fc40d7aee">&#9670;&nbsp;</a></span>AnimationHolder</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef std::unordered_map&lt;std::string, thor::FrameAnimation&gt; <a class="el" href="class_resource_handler.html#a1346d9b270681956e66c660fc40d7aee">ResourceHandler::AnimationHolder</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Defines a alias for our thor::FrameAnimation.</p>
-<p>This resource holder contains each frame of a particular frame animation. </p>
-
-</div>
-</div>
 <a id="a1d2a78f5214441f6460260f491b0fbfc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d2a78f5214441f6460260f491b0fbfc">&#9670;&nbsp;</a></span>BigTextureHolder</h2>
 
@@ -359,6 +335,30 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Defines a alias for our thor::ResourceHolder.</p>
 <p>This resource holder manages the access of sf::texture through std::string keys and follows thor's Central Ownership model. </p>
+
+</div>
+</div>
+<a id="a4d29603175da4c8b79112b1fb2dc8bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d29603175da4c8b79112b1fb2dc8bc4">&#9670;&nbsp;</a></span>ThorFrameHolder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::unordered_map&lt;std::string, thor::FrameAnimation&gt; <a class="el" href="class_resource_handler.html#a4d29603175da4c8b79112b1fb2dc8bc4">ResourceHandler::ThorFrameHolder</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines a alias for our thor::FrameAnimation.</p>
+<p>This resource holder contains each frame of a particular frame animation. </p>
 
 </div>
 </div>
@@ -508,7 +508,7 @@ template&lt;&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Loads a particular resource.</p>
-<p>Defined as forward declaration of explicit template instatiation. Loads all the frames for a id's animation into <a class="el" href="class_resource_handler.html#a51401386049ac6d89788370a82201422">ResourceHandler::m_pairAnimationHolder</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_resource_handler.html#a82affa198d8b8fbec725386ff673c0b1">ResourceHandler::load</a> </dd></dl>
+<p>Defined as forward declaration of explicit template instatiation. Loads all the frames for a id's animation into <a class="el" href="class_resource_handler.html#a5392f91fc4bd7d351840bd43a8c69926">ResourceHandler::m_pairAnimationHolder</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_resource_handler.html#a82affa198d8b8fbec725386ff673c0b1">ResourceHandler::load</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">jsonParser</td><td>defines the json file that our resource holder uses.</td></tr>
@@ -934,8 +934,8 @@ template&lt;typename data_type &gt; </div>
 
 </div>
 </div>
-<a id="a51401386049ac6d89788370a82201422"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51401386049ac6d89788370a82201422">&#9670;&nbsp;</a></span>m_pairAnimationHolder</h2>
+<a id="a5392f91fc4bd7d351840bd43a8c69926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5392f91fc4bd7d351840bd43a8c69926">&#9670;&nbsp;</a></span>m_pairAnimationHolder</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -944,7 +944,7 @@ template&lt;typename data_type &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt;<a class="el" href="class_resource_handler.html#a1346d9b270681956e66c660fc40d7aee">AnimationHolder</a>&gt; ResourceHandler::m_pairAnimationHolder</td>
+          <td class="memname"><a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html">MutexHolderPair</a>&lt;<a class="el" href="class_resource_handler.html#a4d29603175da4c8b79112b1fb2dc8bc4">ThorFrameHolder</a>&gt; ResourceHandler::m_pairAnimationHolder</td>
         </tr>
       </table>
   </td>
@@ -953,7 +953,7 @@ template&lt;typename data_type &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Our Pair with its mutex and a unique pointer to our <a class="el" href="class_resource_handler.html#a1346d9b270681956e66c660fc40d7aee">ResourceHandler::AnimationHolder</a>.</p>
+<p>Our Pair with its mutex and a unique pointer to our ResourceHandler::AnimationHolder.</p>
 
 </div>
 </div>

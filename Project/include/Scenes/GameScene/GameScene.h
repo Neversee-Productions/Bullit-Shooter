@@ -9,6 +9,7 @@
 
 ///
 /// @brief Main game scene.
+/// @author Sebastian Kruzel
 /// @author Rafael Plugge
 /// 
 /// Defines our main gameplay scene.
@@ -60,6 +61,12 @@ public:
 private:
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
+	std::unique_ptr<Weapon::Resources::WeaponAnimation>
+		setupWeapon(
+			ResourceHandler & resourceHandler
+			, json::json & playerParser
+			, std::string const & id
+		);
 
 	/// <summary>
 	/// @brief Represents the player object
