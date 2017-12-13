@@ -95,10 +95,26 @@ $(document).ready(function(){initNavTree('struct_game_scene_1_1_resources.html',
 Public Attributes</h2></td></tr>
 <tr class="memitem:a4f1104bf85333cb3fd35e80eba42ac52"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Player::Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources.html#a4f1104bf85333cb3fd35e80eba42ac52">m_sptrPlayer</a></td></tr>
 <tr class="separator:a4f1104bf85333cb3fd35e80eba42ac52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8acd98214716941f4756b3e5e57fc120"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_background_1_1_resources.html">Background::Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources.html#a8acd98214716941f4756b3e5e57fc120">m_sptrBackground</a></td></tr>
+<tr class="separator:a8acd98214716941f4756b3e5e57fc120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd></dl>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8acd98214716941f4756b3e5e57fc120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8acd98214716941f4756b3e5e57fc120">&#9670;&nbsp;</a></span>m_sptrBackground</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_background_1_1_resources.html">Background::Resources</a>&gt; GameScene::Resources::m_sptrBackground</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">            std::make_shared&lt;Background::Resources&gt;()</div></div><!-- fragment -->
+</div>
+</div>
 <a id="a4f1104bf85333cb3fd35e80eba42ac52"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f1104bf85333cb3fd35e80eba42ac52">&#9670;&nbsp;</a></span>m_sptrPlayer</h2>
 
@@ -110,7 +126,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">            std::make_shared&lt;Player::Resources&gt;()</div></div><!-- fragment --><p>unique pointer to player resources.</p>
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">            std::make_shared&lt;Player::Resources&gt;()</div></div><!-- fragment --><p>shared pointer to player resources.</p>
 
 </div>
 </div>

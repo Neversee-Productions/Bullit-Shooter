@@ -8,7 +8,7 @@ var searchData=
   ['addlabel',['addLabel',['../classgui_1_1_g_u_i.html#a13397db61966a00d40d7917a8ee3bc25',1,'gui::GUI']]],
   ['addscene',['addScene',['../class_scene_manager.html#adaaf8f135824e5f98635880d01ac1396',1,'SceneManager']]],
   ['addslider',['addSlider',['../classgui_1_1_g_u_i.html#a48f28ef9a62b0ec6f0f56415d857c8ce',1,'gui::GUI']]],
-  ['animationholder',['AnimationHolder',['../class_resource_handler.html#a1346d9b270681956e66c660fc40d7aee',1,'ResourceHandler']]],
+  ['animation',['Animation',['../struct_weapon_1_1_resources_1_1_animation.html',1,'Weapon::Resources']]],
   ['app',['App',['../class_app.html',1,'App'],['../class_app.html#acb8cbf3e285b91d0170ffe87df5989c5',1,'App::App()']]],
   ['app_2ecpp',['App.cpp',['../_app_8cpp.html',1,'']]],
   ['app_2eh',['App.h',['../_app_8h.html',1,'']]],

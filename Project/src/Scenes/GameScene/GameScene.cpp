@@ -11,6 +11,7 @@ GameScene::GameScene(KeyHandler& keyHandler)
 	, m_keyHandler(keyHandler)
 	, m_resources(nullptr)
 	, m_asteroid()
+	, m_background()
 	, m_windowC2Rect(App::getViewC2Rect())
 {
 	m_asteroid.setActive(true);
@@ -60,6 +61,7 @@ void GameScene::stop()
 /// </summary>
 void GameScene::update()
 {
+	m_background.update();
 	m_player.update();
 	m_asteroid.update();
 	updateCollisions();
@@ -74,6 +76,7 @@ void GameScene::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void GameScene::draw(Window & window, const float & deltaTime)
 {
+	m_background.draw(window, deltaTime);
 	m_asteroid.draw(window, deltaTime);
 	m_player.draw(window, deltaTime);
 }
@@ -230,6 +233,8 @@ void GameScene::setup(const std::string & filePath)
 		m_resources = std::make_unique<Resources>();
 		auto sptrPlayer = m_resources->m_sptrPlayer;
 		auto sptrShip = sptrPlayer->m_ship;
+		auto sptrWeapon = sptrPlayer->m_weapon;
+
 		sptrShip->m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerJson, "ship");
 		assert(nullptr != sptrShip->m_sptrTexture);
 
@@ -239,8 +244,76 @@ void GameScene::setup(const std::string & filePath)
 		frames.insert(frames.begin(), loadedFrames->begin(), loadedFrames->end());
 		assert(nullptr != sptrShip->m_uptrFrames);
 
+		auto & weaponAnimations = sptrWeapon->m_weaponAnimations;
+
+		auto const & NUM_OF_WEPS = Weapon::MAX_WEAPONS;
+		for (int i = 0; i < NUM_OF_WEPS; ++i)
+		{
+			auto const WEAPON_NUM = i + 1;
+			std::string weaponId = "weapon";
+			if (WEAPON_NUM < 10)
+			{
+				weaponId += "0" + std::to_string(WEAPON_NUM);
+			}
+			else
+			{
+				weaponId += std::to_string(WEAPON_NUM);
+			}
+			weaponAnimations.push_back(std::move(setupWeapon(resourceHandler, playerJson, weaponId)));
+		}
+
+		std::ifstream backgroundRawFile(gameSceneJsonLoader.at("background").get<std::string>());
+		json::json backgroundJson;
+		backgroundRawFile >> backgroundJson;
+
+		auto sptrBackground = m_resources->m_sptrBackground;
+		sptrBackground->m_sptrBgShader = resourceHandler.loadUp<sf::Shader>(backgroundJson, "background");
 	}
 
+	m_background.init(m_resources->m_sptrBackground);
 	m_player.init(m_resources->m_sptrPlayer);
+}
+
+/// <summary>
+/// @brief Setups weapon animations.
+/// 
+/// Constructs necessary asset inteface for weapon.
+/// (Assumes weapon has both begin and shoot animation)
+/// </summary>
+/// <param name="resourceHandler">defines reference to ResourceHandler.</param>
+/// <param name="playerParser">defines reference to a initialize json parser.</param>
+/// <param name="id">defines the id of our weapon.</param>
+/// <returns>returns a unique pointer to our Weapon::Resources::WeaponAnimation.</returns>
+std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeapon(ResourceHandler & resourceHandler, json::json & playerParser, std::string const & id)
+{
+	std::string const ANIM_STR = "animation";
+
+	std::string const BEGIN_ID = id + "_begin";
+	auto uptrBeginAnimation = std::make_unique<Weapon::Resources::Animation>();
+	auto & beginAnimation = *uptrBeginAnimation;
+	beginAnimation.m_id = BEGIN_ID;
+	beginAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(playerParser, BEGIN_ID);
+	beginAnimation.m_duration = sf::seconds(playerParser.at(ANIM_STR).at(BEGIN_ID).at("duration").get<float>());
+	auto const & beginAnimationFrameWidth = playerParser.at(ANIM_STR).at(BEGIN_ID).at("width").get<float>();
+	auto const & beginAnimationFrameHeight = playerParser.at(ANIM_STR).at(BEGIN_ID).at("height").get<float>();
+	auto & jsonBeginOrigin = playerParser.at(ANIM_STR).at(BEGIN_ID).at("origin");
+	auto beginAnimationOrigin = sf::Vector2f(jsonBeginOrigin.at("x").get<float>(), jsonBeginOrigin.at("y").get<float>());
+	beginAnimation.m_origin = std::move(beginAnimationOrigin);
+	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerParser, BEGIN_ID);
+
+	std::string const shootID = id + "_shoot";
+	auto uptrShootAnimation = std::make_unique<Weapon::Resources::Animation>();
+	auto & shootAnimation = *uptrShootAnimation;
+	shootAnimation.m_id = shootID;
+	shootAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(playerParser, shootID);
+	shootAnimation.m_duration = sf::seconds(playerParser.at(ANIM_STR).at(shootID).at("duration").get<float>());
+	auto const & shootAnimationFrameWidth = playerParser.at(ANIM_STR).at(shootID).at("width").get<float>();
+	auto const & shootAnimationFrameHeight = playerParser.at(ANIM_STR).at(shootID).at("height").get<float>();
+	auto & jsonShootOrigin = playerParser.at(ANIM_STR).at(shootID).at("origin");
+	auto shootAnimationOrigin = sf::Vector2f(jsonShootOrigin.at("x").get<float>(), jsonShootOrigin.at("y").get<float>());
+	shootAnimation.m_origin = std::move(shootAnimationOrigin);
+	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerParser, shootID);
+	
+	return std::make_unique<Weapon::Resources::WeaponAnimation>(std::make_pair(std::move(uptrBeginAnimation), std::move(uptrShootAnimation)));
 }
 

@@ -1,0 +1,10 @@
+{
+    "shaders":
+    {
+        "background":
+        {
+            "fragment": "resources/scenes/game/background/background.frag",
+            "vertex": "resources/scenes/game/background/background.vert"
+        }
+    }
+}

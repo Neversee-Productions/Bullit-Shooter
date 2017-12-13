@@ -97,6 +97,8 @@ $(document).ready(function(){initNavTree('struct_player_1_1_resources.html','');
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa3229a4f722ff6756b90f266d11322a3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_ship_1_1_resources.html">Ship::Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_1_1_resources.html#aa3229a4f722ff6756b90f266d11322a3">m_ship</a> = std::make_shared&lt;<a class="el" href="struct_ship_1_1_resources.html">Ship::Resources</a>&gt;()</td></tr>
 <tr class="separator:aa3229a4f722ff6756b90f266d11322a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac63192254b2e9cc92cc835b9507cec0f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_weapon_1_1_resources.html">Weapon::Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_1_1_resources.html#ac63192254b2e9cc92cc835b9507cec0f">m_weapon</a></td></tr>
+<tr class="separator:ac63192254b2e9cc92cc835b9507cec0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd></dl>
@@ -112,12 +114,27 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unique pointer to ship resources.</p>
+<p>Shared pointer to ship resources.</p>
+
+</div>
+</div>
+<a id="ac63192254b2e9cc92cc835b9507cec0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac63192254b2e9cc92cc835b9507cec0f">&#9670;&nbsp;</a></span>m_weapon</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_weapon_1_1_resources.html">Weapon::Resources</a>&gt; Player::Resources::m_weapon</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">            std::make_shared&lt;Weapon::Resources&gt;()</div></div><!-- fragment --><p>shared pointer to weapon resources.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Project/include/Scenes/GameScene/<a class="el" href="_player_8h_source.html">Player.h</a></li>
+<li>Project/include/Scenes/GameScene/Entities/Player/<a class="el" href="_player_8h_source.html">Player.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

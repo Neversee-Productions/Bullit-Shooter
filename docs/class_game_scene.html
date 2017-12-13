@@ -159,6 +159,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a1720031b70e644e1b6975b15decdda62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08213e60be0211836cebe55b28887cae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a08213e60be0211836cebe55b28887cae">setup</a> (const std::string &amp;filePath)</td></tr>
 <tr class="separator:a08213e60be0211836cebe55b28887cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7084ec08aaf208f289ee972af8df59a9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="struct_weapon_1_1_resources.html#aeb8563e3c43bb7ac8ee2d4b2883428d0">Weapon::Resources::WeaponAnimation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a7084ec08aaf208f289ee972af8df59a9">setupWeapon</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, json::json &amp;playerParser, std::string const &amp;id)</td></tr>
+<tr class="separator:a7084ec08aaf208f289ee972af8df59a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -170,6 +172,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac9cfd2613e470aa84181a7a465ce76ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24dc2afe03d6831304709da5157b3ce1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_asteroid.html">Asteroid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a24dc2afe03d6831304709da5157b3ce1">m_asteroid</a></td></tr>
 <tr class="separator:a24dc2afe03d6831304709da5157b3ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da5a0720636440cd864f4dd665eeb8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_background.html">Background</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a9da5a0720636440cd864f4dd665eeb8d">m_background</a></td></tr>
+<tr class="separator:a9da5a0720636440cd864f4dd665eeb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eba18e031ee0d957b6fc74d21c443db"><td class="memItemLeft" align="right" valign="top">const tinyh::c2AABB &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a2eba18e031ee0d957b6fc74d21c443db">m_windowC2Rect</a></td></tr>
 <tr class="separator:a2eba18e031ee0d957b6fc74d21c443db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -180,7 +184,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a4d9417e5e266363d6967278a073200ca inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
+<dd>
+Rafael Plugge</dd></dl>
 <p>Defines our main gameplay scene. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae80b80d6c05ec923abba6a082935b8fb"></a>
@@ -537,6 +543,59 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a7084ec08aaf208f289ee972af8df59a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7084ec08aaf208f289ee972af8df59a9">&#9670;&nbsp;</a></span>setupWeapon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="struct_weapon_1_1_resources.html#aeb8563e3c43bb7ac8ee2d4b2883428d0">Weapon::Resources::WeaponAnimation</a> &gt; GameScene::setupWeapon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>playerParser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups weapon animations.</p>
+<p>Constructs necessary asset inteface for weapon. (Assumes weapon has both begin and shoot animation) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>defines reference to <a class="el" href="class_resource_handler.html" title="Will handle loading of all resources. ">ResourceHandler</a>.</td></tr>
+    <tr><td class="paramname">playerParser</td><td>defines reference to a initialize json parser.</td></tr>
+    <tr><td class="paramname">id</td><td>defines the id of our weapon.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>returns a unique pointer to our <a class="el" href="struct_weapon_1_1_resources.html#aeb8563e3c43bb7ac8ee2d4b2883428d0">Weapon::Resources::WeaponAnimation</a>.</dd></dl>
+
+</div>
+</div>
 <a id="a18967f8879389db3e8b9d6a3d1ff58c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18967f8879389db3e8b9d6a3d1ff58c0">&#9670;&nbsp;</a></span>start()</h2>
 
@@ -663,6 +722,29 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>defines an asteroid.</p>
+
+</div>
+</div>
+<a id="a9da5a0720636440cd864f4dd665eeb8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da5a0720636440cd864f4dd665eeb8d">&#9670;&nbsp;</a></span>m_background</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_background.html">Background</a> GameScene::m_background</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>defines the background of <a class="el" href="class_game_scene.html" title="Main game scene. ">GameScene</a>.</p>
 
 </div>
 </div>

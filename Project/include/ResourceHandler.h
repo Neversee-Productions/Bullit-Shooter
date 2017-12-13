@@ -16,6 +16,7 @@
 // For std::ifstream
 #include <fstream>
 // Resources we load
+#include "SFML\Graphics\Shader.hpp"
 #include "SFML\Graphics\Texture.hpp"
 #include "SFML\Graphics\Font.hpp"
 #include "SFML\Audio\SoundBuffer.hpp"
@@ -94,6 +95,17 @@ private:
 	/// <param name="id">defines its id in our resource holder.</param>
 	/// <returns>Reference to our loaded resource.</returns>
 	template<> std::vector<sf::IntRect> & load<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id);
+
+	/// <summary>
+	/// @brief Loads a particular resource.
+	/// 
+	/// Defined as forward declaration of explicit template instatiation.
+	/// Loads both fragment and vertex shader into the a sfml shader and stores it.
+	/// </summary>
+	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
+	/// <param name="id">defines its id in our resource holder.</param>
+	/// <returns>Reference to our loaded resource.</returns>
+	template<> std::shared_ptr<sf::Shader>& load<std::shared_ptr<sf::Shader>>(json::json & jsonParser, const std::string & id);
 
 	/// <summary>
 	/// @brief Template loader.
@@ -194,14 +206,21 @@ private:
 	/// 
 	/// This resource holder contains each frame of a particular frame animation.
 	/// </summary>
-	typedef std::unordered_map<std::string, thor::FrameAnimation> AnimationHolder;
+	typedef std::unordered_map<std::string, thor::FrameAnimation> ThorFrameHolder;
 
 	/// <summary>
-	/// @brief Defines a alias for our vector of rectangles.
+	/// @brief Defines a alias for our map of vector of rectangles.
 	/// 
 	/// This resource holder contains each frame of a particular animation.
 	/// </summary>
 	typedef std::unordered_map<std::string, std::vector<sf::IntRect>> FrameHolder;
+
+	/// <summary>
+	/// @brief Defines a alias for our map of shaders.
+	/// 
+	/// This resource holder contains a shared pointer to a shader followed by its id.
+	/// </summary>
+	typedef std::unordered_map<std::string, std::shared_ptr<sf::Shader>> ShaderHolder;
 
 	/// 
 	/// @author Rafael Plugge
@@ -260,7 +279,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	MutexHolderPair<AnimationHolder> m_pairAnimationHolder;
+	MutexHolderPair<ThorFrameHolder> m_pairAnimationHolder;
 
 	/// <summary>
 	/// @brief Our Pair with its mutex and a unique pointer to our ResourceHandler::FrameHolder.
@@ -268,6 +287,13 @@ private:
 	/// 
 	/// </summary>
 	MutexHolderPair<FrameHolder> m_pairFrameHolder;
+
+	/// <summary>
+	/// @brief Our Pair with its mutex and a unique pointer to our ResourceHandler::ShaderHolder.
+	/// 
+	/// 
+	/// </summary>
+	MutexHolderPair<ShaderHolder> m_pairShaderHolder;
 
 	/// <summary>
 	/// @brief Our predefined Id Strategy.

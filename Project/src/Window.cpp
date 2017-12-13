@@ -9,7 +9,9 @@
 /// </summary>
 /// <param name="keyHandler">stored reference to our key handler.</param>
 Window::Window(KeyHandler & keyHandler)
-	: m_sfWindow()
+	: m_title()
+	, m_style(sf::Style::Default)
+	, m_sfWindow()
 	, m_resolution()
 	, m_supportedResolutions()
 	, m_renderTexture()
@@ -17,9 +19,14 @@ Window::Window(KeyHandler & keyHandler)
 	, m_keyHandler(keyHandler)
 {
 	///////////////////////////////////////////////////////
+	// define our windows title
+	///////////////////////////////////////////////////////
+	m_title = "Bullit \" \" Shooter";
+
+	///////////////////////////////////////////////////////
 	// keep our vector of supported resolutions
 	///////////////////////////////////////////////////////
-	const std::vector<sf::VideoMode> & fullscreenRes = sf::VideoMode::getFullscreenModes();
+	std::vector<sf::VideoMode> const & fullscreenRes = sf::VideoMode::getFullscreenModes();
 	// using the insert( range ) function that our supportedResolutions container must support
 	m_supportedResolutions.insert(m_supportedResolutions.begin(), fullscreenRes.begin(), fullscreenRes.end());
 
@@ -27,8 +34,10 @@ Window::Window(KeyHandler & keyHandler)
 	// define our current resolution.
 	///////////////////////////////////////////////////////
 	// windowed mode
+	//m_style = sf::Style::Default;
 	//m_resolution = sf::VideoMode(1366u, 768u);
 	// fullscreen mode
+	m_style = sf::Style::Fullscreen;
 	m_resolution = fullscreenRes.at(0);
 
 	///////////////////////////////////////////////////////
@@ -42,7 +51,7 @@ Window::Window(KeyHandler & keyHandler)
 	settings.stencilBits = 8u;
 	settings.antialiasingLevel = 8u;
 	
-	m_sfWindow.create(m_resolution, "Stock_name", sf::Style::Fullscreen, settings);
+	m_sfWindow.create(m_resolution, m_title, m_style, settings);
 
 	///////////////////////////////////////////////////////
 	// create and initialize our render texture
@@ -98,28 +107,49 @@ void Window::processEvents()
 		switch (ev.type)
 		{
 		case EventType::Closed:
-			// window has been closed.
+			// The window requested to be closed (no data)
 			m_sfWindow.close();
 			break;
-		case EventType::GainedFocus:
-			// window has gained focus.
-			break;
-		case EventType::LostFocus:
-			// window no longer has focus.
-			break;
 		case EventType::Resized:
-			// window::Resized data is in ev.size
+			// The window was resized (data in event.size)
 			// screen should NOT be resizeable since
 			// we don't want to have to recreate m_renderTexture,
 			// in this manner
 			break;
+		case EventType::LostFocus:
+			// The window lost the focus (no data)
+			break;
+		case EventType::GainedFocus:
+			// The window gained the focus (no data)
+			break;
+		case EventType::TextEntered:
+			// A character was entered (data in event.text)
+			break;
 		case EventType::KeyPressed:
-			// window::KeyPressed data is in ev.key
+			// A key was pressed(data in event.key)
 			m_keyHandler.updateKey(ev.key.code, true);
 			break;
 		case EventType::KeyReleased:
-			// window::KeyReleased data is in ev.key
+			// A key was released (data in event.key)
 			m_keyHandler.updateKey(ev.key.code, false);
+			break;
+		case EventType::MouseButtonPressed:
+			// A mouse button was pressed (data in event.mouseButton)
+			break;
+		case EventType::MouseButtonReleased:
+			// A mouse button was released (data in event.mouseButton)
+			break;
+		case EventType::MouseMoved:
+			// The mouse cursor moved (data in event.mouseMove)
+			break;
+		case EventType::MouseEntered:
+			// The mouse cursor entered the area of the window (no data)
+			break;
+		case EventType::MouseLeft:
+			// The mouse cursor left the area of the window(no data)
+			break;
+		case EventType::Count:
+			// Keep the total number of event types.
 			break;
 		default:
 			break;
@@ -183,7 +213,7 @@ void Window::changeStyle(const sf::Uint32 & newStyle)
 
 	sf::ContextSettings settings = m_sfWindow.getSettings();
 	m_sfWindow.close();
-	m_sfWindow.create(m_resolution, "Stock_name", newStyle, settings);
+	m_sfWindow.create(m_resolution, m_title, m_style, settings);
 
 #endif
 }
@@ -197,6 +227,18 @@ void Window::changeStyle(const sf::Uint32 & newStyle)
 void Window::draw(const sf::Drawable & drawable)
 {
 	m_renderTexture.draw(drawable, sf::RenderStates::Default);
+}
+
+/// <summary>
+/// @brief Draws the drawable on the render texture.
+/// 
+/// Drawable is drawn on our render texture with the passed render state.
+/// </summary>
+/// <param name="drawable">target that will be rendered on next produced frame.</param>
+/// <param name="renderState">the render state we want to apply to our target.</param>
+void Window::draw(const sf::Drawable & drawable, const sf::RenderStates & renderState)
+{
+	m_renderTexture.draw(drawable, renderState);
 }
 
 /// <summary>
@@ -243,4 +285,27 @@ void Window::close()
 	m_renderTexture.clear();
 	m_sfWindow.clear();
 	m_sfWindow.close();
+}
+
+/// <summary>
+/// @brief Gets the window's current style.
+/// 
+/// 
+/// </summary>
+/// <returns>returns the style as a number that directly corresponds to sf::Style.</returns>
+sf::Uint32 const & Window::getStyle() const
+{
+	return m_style;
+}
+
+/// <summary>
+/// @brief Defines new window style.
+/// 
+/// @see Window::changeStyle
+/// </summary>
+/// <param name="newStyle">defines new style flag for window.</param>
+void Window::setStyle(sf::Uint32 const & newStyle)
+{
+	m_style = newStyle;
+	this->changeStyle(m_style);
 }

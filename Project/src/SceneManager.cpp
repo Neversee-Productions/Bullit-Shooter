@@ -213,11 +213,19 @@ void SceneManager::loadScene(const std::string & name)
 		m_currentScene = sptrScene;
 		if (m_currentScene->getName() == "Splash")
 		{
-			m_window.changeStyle(sf::Style::Fullscreen);
+			m_window.changeStyle(sf::Style::None);
 		}
 		else
 		{
-			m_window.changeStyle(sf::Style::Fullscreen);
+			auto const & style = m_window.getStyle();
+			if (style != sf::Style::Fullscreen)
+			{
+				m_window.setStyle(sf::Style::Close);
+			}
+			else
+			{
+				m_window.setStyle(sf::Style::Fullscreen);
+			}
 		}
 		m_currentScene->start(resourcePath);
 	}
