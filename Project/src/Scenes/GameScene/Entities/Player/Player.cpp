@@ -85,10 +85,8 @@ void Player::update()
 		m_bulletManager.fireBullet(m_weaponLeft, m_weaponRight, m_weaponLeft.getBulletType());
 	}
 	m_ship.update();
-	m_weaponLeftPos = sf::Vector2f(m_ship.getShipRect().x - 50, m_ship.getShipRect().y);
-	m_weaponRightPos = sf::Vector2f(m_ship.getShipRect().x + 50, m_ship.getShipRect().y);
-	m_weaponLeft.update(m_weaponLeftPos);
-	m_weaponRight.update(m_weaponRightPos);
+	m_weaponLeft.update(m_ship.getShipRect());
+	m_weaponRight.update(m_ship.getShipRect());
 	m_bulletManager.update();
 
 }

@@ -42,7 +42,7 @@ public:
 	/// 
 	/// Uses thor animator on sfml rectangle shape using the std::string as the key.
 	/// </summary>
-	typedef thor::Animator<sf::RectangleShape, std::string> WeaponAnimator;
+	typedef thor::Animator<sf::Sprite, std::string> WeaponAnimator;
 	
 	/// <summary>
 	/// @brief Alias for the animation frames.
@@ -79,6 +79,13 @@ public:
 			/// 
 			/// </summary>
 			sf::Time m_duration;
+
+			/// <summary>
+			/// @brief Defines the origin of the animation frames.
+			/// 
+			/// 
+			/// </summary>
+			sf::Vector2f m_origin;
 
 			/// <summary>
 			/// @brief Defines shared pointer to our animation's frames.
@@ -129,7 +136,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	sf::RectangleShape m_weaponRect;
+	sf::Sprite m_weaponSprite;
 
 	/// <summary>
 	/// @brief hold the type of the current bullet.

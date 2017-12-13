@@ -1,7 +1,7 @@
 var class_weapon =
 [
     [ "Resources", "struct_weapon_1_1_resources.html", "struct_weapon_1_1_resources" ],
-    [ "WeaponAnimator", "class_weapon.html#ae36ed13660b34ab0b00d3794d425dbce", null ],
+    [ "WeaponAnimator", "class_weapon.html#a67474f0c755c86bf930093b0995667a8", null ],
     [ "WeaponFrames", "class_weapon.html#af33ffe0fe61e4443c591ae1b48114963", null ],
     [ "Weapon", "class_weapon.html#af9388e55bd75ca1869f9952e65ad4c7f", null ],
     [ "draw", "class_weapon.html#a091763bf26419b9df5b0ae1d9dac639a", null ],
@@ -19,6 +19,6 @@ var class_weapon =
     [ "m_currentBullet", "class_weapon.html#a17c50d12732395f94cf4e04665416406", null ],
     [ "m_position", "class_weapon.html#a64e42f89ecdc9ab9715969d670933887", null ],
     [ "m_resources", "class_weapon.html#a4057988b09d7aa897ff2dbb56f29c080", null ],
-    [ "m_weaponRect", "class_weapon.html#a5058de475ddd17fd9fed50e94f43338a", null ],
+    [ "m_weaponSprite", "class_weapon.html#a86e4ba9cee6161da1dd16e99b2de49e9", null ],
     [ "MAX_WEAPONS", "class_weapon.html#ab6bbdafc1da2fb26d7d99b39ed7e8b5b", null ]
 ];

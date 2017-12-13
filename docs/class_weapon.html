@@ -105,8 +105,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae36ed13660b34ab0b00d3794d425dbce"><td class="memItemLeft" align="right" valign="top">typedef thor::Animator&lt; sf::RectangleShape, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#ae36ed13660b34ab0b00d3794d425dbce">WeaponAnimator</a></td></tr>
-<tr class="separator:ae36ed13660b34ab0b00d3794d425dbce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67474f0c755c86bf930093b0995667a8"><td class="memItemLeft" align="right" valign="top">typedef thor::Animator&lt; sf::Sprite, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a67474f0c755c86bf930093b0995667a8">WeaponAnimator</a></td></tr>
+<tr class="separator:a67474f0c755c86bf930093b0995667a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af33ffe0fe61e4443c591ae1b48114963"><td class="memItemLeft" align="right" valign="top">typedef thor::FrameAnimation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#af33ffe0fe61e4443c591ae1b48114963">WeaponFrames</a></td></tr>
 <tr class="separator:af33ffe0fe61e4443c591ae1b48114963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -144,15 +144,15 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a5058de475ddd17fd9fed50e94f43338a"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a5058de475ddd17fd9fed50e94f43338a">m_weaponRect</a></td></tr>
-<tr class="separator:a5058de475ddd17fd9fed50e94f43338a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e4ba9cee6161da1dd16e99b2de49e9"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a86e4ba9cee6161da1dd16e99b2de49e9">m_weaponSprite</a></td></tr>
+<tr class="separator:a86e4ba9cee6161da1dd16e99b2de49e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17c50d12732395f94cf4e04665416406"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a17c50d12732395f94cf4e04665416406">m_currentBullet</a></td></tr>
 <tr class="separator:a17c50d12732395f94cf4e04665416406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64e42f89ecdc9ab9715969d670933887"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a64e42f89ecdc9ab9715969d670933887">m_position</a></td></tr>
 <tr class="separator:a64e42f89ecdc9ab9715969d670933887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4057988b09d7aa897ff2dbb56f29c080"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_weapon_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a4057988b09d7aa897ff2dbb56f29c080">m_resources</a></td></tr>
 <tr class="separator:a4057988b09d7aa897ff2dbb56f29c080"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9a7c027ab7ff27bb9877ad7c7f0032b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_weapon.html#ae36ed13660b34ab0b00d3794d425dbce">WeaponAnimator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#af9a7c027ab7ff27bb9877ad7c7f0032b">m_animator</a></td></tr>
+<tr class="memitem:af9a7c027ab7ff27bb9877ad7c7f0032b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_weapon.html#a67474f0c755c86bf930093b0995667a8">WeaponAnimator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#af9a7c027ab7ff27bb9877ad7c7f0032b">m_animator</a></td></tr>
 <tr class="separator:af9a7c027ab7ff27bb9877ad7c7f0032b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -161,14 +161,14 @@ Private Attributes</h2></td></tr>
 Rafael Plugge</dd></dl>
 <p>Defines the weapon class. This class will create the <a class="el" href="class_weapon.html" title="Weapon class. ">Weapon</a>. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="ae36ed13660b34ab0b00d3794d425dbce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae36ed13660b34ab0b00d3794d425dbce">&#9670;&nbsp;</a></span>WeaponAnimator</h2>
+<a id="a67474f0c755c86bf930093b0995667a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67474f0c755c86bf930093b0995667a8">&#9670;&nbsp;</a></span>WeaponAnimator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef thor::Animator&lt;sf::RectangleShape, std::string&gt; <a class="el" href="class_weapon.html#ae36ed13660b34ab0b00d3794d425dbce">Weapon::WeaponAnimator</a></td>
+          <td class="memname">typedef thor::Animator&lt;sf::Sprite, std::string&gt; <a class="el" href="class_weapon.html#a67474f0c755c86bf930093b0995667a8">Weapon::WeaponAnimator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -498,7 +498,7 @@ Rafael Plugge</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_weapon.html#ae36ed13660b34ab0b00d3794d425dbce">WeaponAnimator</a>&gt; Weapon::m_animator</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_weapon.html#a67474f0c755c86bf930093b0995667a8">WeaponAnimator</a>&gt; Weapon::m_animator</td>
         </tr>
       </table>
   </td>
@@ -581,8 +581,8 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="a5058de475ddd17fd9fed50e94f43338a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5058de475ddd17fd9fed50e94f43338a">&#9670;&nbsp;</a></span>m_weaponRect</h2>
+<a id="a86e4ba9cee6161da1dd16e99b2de49e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e4ba9cee6161da1dd16e99b2de49e9">&#9670;&nbsp;</a></span>m_weaponSprite</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -591,7 +591,7 @@ Rafael Plugge</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::RectangleShape Weapon::m_weaponRect</td>
+          <td class="memname">sf::Sprite Weapon::m_weaponSprite</td>
         </tr>
       </table>
   </td>

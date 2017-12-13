@@ -286,12 +286,17 @@ void GameScene::setup(const std::string & filePath)
 /// <returns>returns a unique pointer to our Weapon::Resources::WeaponAnimation.</returns>
 std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeapon(ResourceHandler & resourceHandler, json::json & playerParser, std::string const & id)
 {
+	std::string const ANIM_STR = "animation";
+
 	std::string const beginID = id + "_begin";
 	auto uptrBeginAnimation = std::make_unique<Weapon::Resources::Animation>();
 	auto & beginAnimation = *uptrBeginAnimation;
 	beginAnimation.m_id = beginID;
 	beginAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(playerParser, beginID);
-	beginAnimation.m_duration = sf::seconds(playerParser.at("animation").at(beginID).at("duration").get<float>());
+	beginAnimation.m_duration = sf::seconds(playerParser.at(ANIM_STR).at(beginID).at("duration").get<float>());
+	auto const & beginAnimationFrameWidth = playerParser.at(ANIM_STR).at(beginID).at("width").get<float>();
+	auto const & beginAnimationFrameHeight = playerParser.at(ANIM_STR).at(beginID).at("height").get<float>();
+	beginAnimation.m_origin = sf::Vector2f(beginAnimationFrameWidth * 0.5f, beginAnimationFrameHeight * 0.5f);
 	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerParser, beginID);
 
 	std::string const shootID = id + "_shoot";
@@ -299,7 +304,10 @@ std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeapon(Resou
 	auto & shootAnimation = *uptrShootAnimation;
 	shootAnimation.m_id = shootID;
 	shootAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(playerParser, shootID);
-	shootAnimation.m_duration = sf::seconds(playerParser.at("animation").at(shootID).at("duration").get<float>());
+	shootAnimation.m_duration = sf::seconds(playerParser.at(ANIM_STR).at(shootID).at("duration").get<float>());
+	auto const & shootAnimationFrameWidth = playerParser.at(ANIM_STR).at(shootID).at("width").get<float>();
+	auto const & shootAnimationFrameHeight = playerParser.at(ANIM_STR).at(shootID).at("height").get<float>();
+	shootAnimation.m_origin = sf::Vector2f(shootAnimationFrameWidth * 0.5f, shootAnimationFrameHeight * 0.5f);
 	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerParser, shootID);
 	
 	return std::make_unique<Weapon::Resources::WeaponAnimation>(std::make_pair(std::move(uptrBeginAnimation), std::move(uptrShootAnimation)));

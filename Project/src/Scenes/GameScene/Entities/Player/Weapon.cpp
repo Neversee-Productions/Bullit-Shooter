@@ -7,16 +7,15 @@
 /// </summary>
 /// <param name="position">defines the position of the weapon rectangle</param>
 Weapon::Weapon(sf::Vector2f position, bool const & flipped)
-	: m_weaponRect()
+	: m_weaponSprite()
 	, m_currentBullet(BulletTypes::Standard)
 	, m_position(position)
 	, m_animator(nullptr)
 	, m_resources(nullptr)
 {
-	m_weaponRect.setPosition(position);
-	m_weaponRect.setSize(sf::Vector2f(25.0f, 50.0f));
+	m_weaponSprite.setPosition(position);
+	m_weaponSprite.setScale(0.5f, 0.5f);
 	this->setFlipped(flipped);
-	m_weaponRect.setOrigin(m_weaponRect.getSize().x / 2, m_weaponRect.getSize().y / 2);
 }
 
 /// <summary>
@@ -91,7 +90,11 @@ void Weapon::init(std::shared_ptr<Resources> sptrResources)
 		
 
 		auto & startingWeaponAnimation = *sptrResources->m_weaponAnimations.at(static_cast<int>(m_currentBullet));
-		m_weaponRect.setTexture(startingWeaponAnimation.first->m_sptrTexture.get(), true);
+		auto & weaponBeginAnimation = *startingWeaponAnimation.first;
+		auto & weaponShootAnimation = *startingWeaponAnimation.second;
+		auto & weaponBeginTexture = *(startingWeaponAnimation.first->m_sptrTexture);
+		m_weaponSprite.setTexture(weaponBeginTexture, true);
+		m_weaponSprite.setOrigin(weaponBeginAnimation.m_origin);
 		animator.playAnimation(startingWeaponAnimation.first->m_id, false);
 	}
 }
@@ -106,8 +109,8 @@ void Weapon::init(std::shared_ptr<Resources> sptrResources)
 void Weapon::draw(Window & window, const float & deltaTime)
 {
 	m_animator->update(sf::seconds(deltaTime));
-	m_animator->animate(m_weaponRect);
-	window.draw(m_weaponRect);
+	m_animator->animate(m_weaponSprite);
+	window.draw(m_weaponSprite);
 }
 
 /// <summary>
@@ -117,7 +120,16 @@ void Weapon::draw(Window & window, const float & deltaTime)
 /// </summary>
 void Weapon::update(const sf::Vector2f& pos)
 {
-	m_weaponRect.setPosition(pos);
+	if (!getIsFlipped())
+	{
+		sf::Vector2f const weaponPos = sf::Vector2f(pos.x - 75.0f, pos.y);
+		m_weaponSprite.setPosition(weaponPos);
+	}
+	else
+	{
+		sf::Vector2f const weaponPos = sf::Vector2f(pos.x + 75.0f, pos.y);
+		m_weaponSprite.setPosition(weaponPos);
+	}
 }
 
 /// <summary>
@@ -128,7 +140,7 @@ void Weapon::update(const sf::Vector2f& pos)
 /// <param name="pos">defines new position</param>
 void Weapon::setRectPos(sf::Vector2f pos)
 {
-	m_weaponRect.setPosition(pos);
+	m_weaponSprite.setPosition(pos);
 }
 
 /// <summary>
@@ -141,11 +153,11 @@ void Weapon::setFlipped(bool const & flip)
 {
 	if (flip)
 	{
-		m_weaponRect.setScale(-1.0f, 1.0f);
+		m_weaponSprite.setScale(-1.0f, 1.0f);
 	}
 	else
 	{
-		m_weaponRect.setScale(1.0f, 1.0f);
+		m_weaponSprite.setScale(1.0f, 1.0f);
 	}
 }
 
@@ -163,7 +175,8 @@ void Weapon::shoot()
 	}
 	auto & weaponShootAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->second);
 	std::string const & shootID = weaponShootAnimation.m_id;
-	m_weaponRect.setTexture(weaponShootAnimation.m_sptrTexture.get(), true);
+	m_weaponSprite.setTexture(*weaponShootAnimation.m_sptrTexture, true);
+	m_weaponSprite.setOrigin(weaponShootAnimation.m_origin);
 	m_animator->playAnimation(shootID, false);
 }
 
@@ -186,7 +199,7 @@ void Weapon::shoot(BulletTypes const & bulletType)
 /// <returns>returns a constant reference to the position</returns>
 const sf::Vector2f & Weapon::getPosition()
 {
-	return m_weaponRect.getPosition();
+	return m_weaponSprite.getPosition();
 }
 
 /// <summary>
@@ -208,7 +221,7 @@ const BulletTypes & Weapon::getBulletType()
 /// <returns>returns true if flipped, else false.</returns>
 bool const Weapon::getIsFlipped() const
 {
-	return m_weaponRect.getScale().x < 0;
+	return m_weaponSprite.getScale().x < 0;
 }
 
 /// <summary>
@@ -230,6 +243,13 @@ void Weapon::setType(BulletTypes const & bulletType)
 	auto & weaponShootAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->second);
 	std::string const & beginID = weaponBeginAnimation.m_id;
 	std::string const & shootID = weaponShootAnimation.m_id;
-	m_weaponRect.setTexture(weaponBeginAnimation.m_sptrTexture.get(), true);
+	m_weaponSprite.setTexture(*weaponBeginAnimation.m_sptrTexture, true);
+	m_weaponSprite.setOrigin(weaponBeginAnimation.m_origin);
+	switch (bulletType)
+	{
+	default:
+
+		break;
+	}
 	m_animator->playAnimation(beginID, false);
 }
