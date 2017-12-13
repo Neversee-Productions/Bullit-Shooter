@@ -288,16 +288,18 @@ std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeapon(Resou
 {
 	std::string const ANIM_STR = "animation";
 
-	std::string const beginID = id + "_begin";
+	std::string const BEGIN_ID = id + "_begin";
 	auto uptrBeginAnimation = std::make_unique<Weapon::Resources::Animation>();
 	auto & beginAnimation = *uptrBeginAnimation;
-	beginAnimation.m_id = beginID;
-	beginAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(playerParser, beginID);
-	beginAnimation.m_duration = sf::seconds(playerParser.at(ANIM_STR).at(beginID).at("duration").get<float>());
-	auto const & beginAnimationFrameWidth = playerParser.at(ANIM_STR).at(beginID).at("width").get<float>();
-	auto const & beginAnimationFrameHeight = playerParser.at(ANIM_STR).at(beginID).at("height").get<float>();
-	beginAnimation.m_origin = sf::Vector2f(beginAnimationFrameWidth * 0.5f, beginAnimationFrameHeight * 0.5f);
-	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerParser, beginID);
+	beginAnimation.m_id = BEGIN_ID;
+	beginAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(playerParser, BEGIN_ID);
+	beginAnimation.m_duration = sf::seconds(playerParser.at(ANIM_STR).at(BEGIN_ID).at("duration").get<float>());
+	auto const & beginAnimationFrameWidth = playerParser.at(ANIM_STR).at(BEGIN_ID).at("width").get<float>();
+	auto const & beginAnimationFrameHeight = playerParser.at(ANIM_STR).at(BEGIN_ID).at("height").get<float>();
+	auto & jsonBeginOrigin = playerParser.at(ANIM_STR).at(BEGIN_ID).at("origin");
+	auto beginAnimationOrigin = sf::Vector2f(jsonBeginOrigin.at("x").get<float>(), jsonBeginOrigin.at("y").get<float>());
+	beginAnimation.m_origin = std::move(beginAnimationOrigin);
+	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerParser, BEGIN_ID);
 
 	std::string const shootID = id + "_shoot";
 	auto uptrShootAnimation = std::make_unique<Weapon::Resources::Animation>();
@@ -307,7 +309,9 @@ std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeapon(Resou
 	shootAnimation.m_duration = sf::seconds(playerParser.at(ANIM_STR).at(shootID).at("duration").get<float>());
 	auto const & shootAnimationFrameWidth = playerParser.at(ANIM_STR).at(shootID).at("width").get<float>();
 	auto const & shootAnimationFrameHeight = playerParser.at(ANIM_STR).at(shootID).at("height").get<float>();
-	shootAnimation.m_origin = sf::Vector2f(shootAnimationFrameWidth * 0.5f, shootAnimationFrameHeight * 0.5f);
+	auto & jsonShootOrigin = playerParser.at(ANIM_STR).at(shootID).at("origin");
+	auto shootAnimationOrigin = sf::Vector2f(jsonShootOrigin.at("x").get<float>(), jsonShootOrigin.at("y").get<float>());
+	shootAnimation.m_origin = std::move(shootAnimationOrigin);
 	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerParser, shootID);
 	
 	return std::make_unique<Weapon::Resources::WeaponAnimation>(std::make_pair(std::move(uptrBeginAnimation), std::move(uptrShootAnimation)));

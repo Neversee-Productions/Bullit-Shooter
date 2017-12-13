@@ -186,9 +186,14 @@
         },
         "weapon01_begin":
         {
-            "duration": 6,
+            "duration": 1.5,
             "width": 52,
             "height": 102,
+            "origin":
+            {
+                "x": 26,
+                "y": 51
+            },
             "frames":
             [
                 {
@@ -446,6 +451,11 @@
             "duration": -1,
             "width": 52,
             "height": 112,
+            "origin":
+            {
+                "x": 26,
+                "y": 56
+            },
             "frames":
             [
                 {
@@ -600,9 +610,14 @@
         },
         "weapon02_begin":
         {
-            "duration": 6,
+            "duration": 1,
             "width": 101,
             "height": 68,
+            "origin":
+            {
+                "x": 50.5,
+                "y": 34
+            },
             "frames":
             [
                 {
@@ -760,6 +775,11 @@
             "duration": -1,
             "width": 84,
             "height": 56,
+            "origin":
+            {
+                "x": 42,
+                "y": 28
+            },
             "frames":
             [
                 {
@@ -838,9 +858,14 @@
         },
         "weapon03_begin":
         {
-            "duration": 4,
+            "duration": 1,
             "width": 58,
             "height": 146,
+            "origin":
+            {
+                "x": 29,
+                "y": 73
+            },
             "frames":
             [
                 {
@@ -1098,6 +1123,11 @@
             "duration": -1,
             "width": 57,
             "height": 146,
+            "origin":
+            {
+                "x": 28.5,
+                "y": 73
+            },
             "frames":
             [
                 {
@@ -1352,9 +1382,14 @@
         },
         "weapon04_begin":
         {
-            "duration": 5,
+            "duration": 1.4,
             "width": 73,
             "height": 121,
+            "origin":
+            {
+                "x": 36.5,
+                "y": 60.5
+            },
             "frames":
             [
                 {
@@ -1612,6 +1647,11 @@
             "duration": -1,
             "width": 82,
             "height": 112,
+            "origin":
+            {
+                "x": 41,
+                "y": 56
+            },
             "frames":
             [
                 {
@@ -1866,9 +1906,14 @@
         },
         "weapon05_begin":
         {
-            "duration": 2,
+            "duration": 1.5,
             "width": 65,
             "height": 119,
+            "origin":
+            {
+                "x": 32.5,
+                "y": 59.5
+            },
             "frames":
             [
                 {
@@ -2126,6 +2171,11 @@
             "duration": -1,
             "width": 57,
             "height": 133,
+            "origin":
+            {
+                "x": 28.5,
+                "y": 66.5
+            },
             "frames":
             [
                 {
@@ -2380,9 +2430,14 @@
         },
         "weapon06_begin":
         {
-            "duration": 2,
+            "duration": 1,
             "width": 58,
             "height": 68,
+            "origin":
+            {
+                "x": 29,
+                "y": 34
+            },
             "frames":
             [
                 {
@@ -2640,6 +2695,11 @@
             "duration": -1,
             "width": 58,
             "height": 68,
+            "origin":
+            {
+                "x": 29,
+                "y": 34
+            },
             "frames":
             [
                 {
@@ -2894,9 +2954,14 @@
         },
         "weapon07_begin":
         {
-            "duration": 2,
+            "duration": 1.5,
             "width": 98,
             "height": 85,
+            "origin":
+            {
+                "x": 48.5,
+                "y": 42.5
+            },
             "frames":
             [
                 {
@@ -3154,6 +3219,11 @@
             "duration": -1,
             "width": 97,
             "height": 114,
+            "origin":
+            {
+                "x": 48.5,
+                "y": 71
+            },
             "frames":
             [
                 {
@@ -3408,9 +3478,14 @@
         },
         "weapon08_begin":
         {
-            "duration": 4,
+            "duration": 1,
             "width": 107,
             "height": 110,
+            "origin":
+            {
+                "x": 53.5,
+                "y": 55
+            },
             "frames":
             [
                 {
@@ -3668,6 +3743,11 @@
             "duration": -1,
             "width": 106,
             "height": 113,
+            "origin":
+            {
+                "x": 53,
+                "y": 56.5
+            },
             "frames":
             [
                 {
@@ -3922,9 +4002,14 @@
         },
         "weapon09_begin":
         {
-            "duration": 5,
+            "duration": 1.5,
             "width": 135,
             "height": 116,
+            "origin":
+            {
+                "x": 67.5,
+                "y": 58
+            },
             "frames":
             [
                 {
@@ -4182,6 +4267,11 @@
             "duration": -1,
             "width": 135,
             "height": 117,
+            "origin":
+            {
+                "x": 67.5,
+                "y": 58.5
+            },
             "frames":
             [
                 {
@@ -4436,9 +4526,14 @@
         },
         "weapon10_begin":
         {
-            "duration": 4,
+            "duration": 1,
             "width": 217,
             "height": 166,
+            "origin":
+            {
+                "x": 108.5,
+                "y": 83
+            },
             "frames":
             [
                 {
@@ -4596,6 +4691,11 @@
             "duration": -1,
             "width": 212,
             "height": 153,
+            "origin":
+            {
+                "x": 106,
+                "y": 76.5
+            },
             "frames":
             [
                 {
@@ -4726,9 +4826,14 @@
         },
         "weapon11_begin":
         {
-            "duration": 6,
+            "duration": 1.5,
             "width": 252,
             "height": 150,
+            "origin":
+            {
+                "x": 126,
+                "y": 112.5
+            },
             "frames":
             [
                 {
@@ -4938,6 +5043,11 @@
             "duration": -1,
             "width": 98,
             "height": 205,
+            "origin":
+            {
+                "x": 58,
+                "y": 59
+            },
             "frames":
             [
                 {
