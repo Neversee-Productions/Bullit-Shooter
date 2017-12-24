@@ -14,7 +14,7 @@ Weapon::Weapon(sf::Vector2f position, bool const & flipped)
 	, m_resources(nullptr)
 {
 	m_weaponSprite.setPosition(position);
-	m_weaponSprite.setScale(0.5f, 0.5f);
+	m_weaponSprite.setScale(0.75f, 0.75f);
 	this->setFlipped(flipped);
 }
 
@@ -43,7 +43,7 @@ void Weapon::init(std::shared_ptr<Resources> sptrResources)
 			auto & shootAnimation = *weaponAnimation->second;
 			if (shootAnimation.m_duration.asSeconds() < 0.0f)
 			{
-				switch (m_currentBullet)
+				switch (static_cast<BulletTypes>(i))
 				{
 				case BulletTypes::Standard:
 					animator.addAnimation(shootAnimation.m_id, *(shootAnimation.m_sptrFrames), sf::seconds(bullets::Standard::getFireRate()));
@@ -153,11 +153,11 @@ void Weapon::setFlipped(bool const & flip)
 {
 	if (flip)
 	{
-		m_weaponSprite.setScale(-1.0f, 1.0f);
+		m_weaponSprite.scale(-1.0f, 1.0f);
 	}
 	else
 	{
-		m_weaponSprite.setScale(1.0f, 1.0f);
+		m_weaponSprite.scale(1.0f, 1.0f);
 	}
 }
 
