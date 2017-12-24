@@ -35,7 +35,7 @@ SceneManager::SceneManager(
 			// this is due to how sf::Font works internally
 			// as it is NOT THREAD SAFE 
 			// each letter in the font is loaded as needed
-			// therefore with both main menu and options gui using
+			// therefore with both main menu and options Gui using
 			// the same font for their buttons a data race occurs
 			// causing a crash when the font is given the letters
 			// it needs to load from each button in both main menu and options.
@@ -187,7 +187,7 @@ void SceneManager::preLoadScene(const std::string & name)
 /// <summary>
 /// @brief Loads and activates named Scene.
 /// 
-/// Finds the Scene whoose Scene::m_name is the same as name,
+/// Finds the Scene whose Scene::m_name is the same as name,
 /// deactivates the current Scene and activates the new Scene.
 /// If no Scene is found than nothing happens.
 /// </summary>
