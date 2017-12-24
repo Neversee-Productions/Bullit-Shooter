@@ -1,7 +1,7 @@
 #include "ResourceHandler.h"
 
 /// <summary>
-/// @brief Instantiate the single instanse of our Resource Handler.
+/// @brief Instantiate the single instance of our Resource Handler.
 /// 
 /// 
 /// </summary>
@@ -46,9 +46,10 @@ ResourceHandler::ResourceHandler()
 template<> std::shared_ptr<sf::Texture> ResourceHandler::loadUp<sf::Texture>(json::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<sf::Texture> return_value;
+	std::string const & path = jsonParser.at("textures").at(id).get<std::string>();
 	try
 	{
-		return_value = std::make_shared<sf::Texture>(load<sf::Texture>(id, jsonParser.at("textures").at(id).get<std::string>()));
+		return_value = std::make_shared<sf::Texture>(load<sf::Texture>(id, path));
 	}
 	catch (...) // catch any and all possible exceptions.
 	{
@@ -68,9 +69,10 @@ template<> std::shared_ptr<sf::Texture> ResourceHandler::loadUp<sf::Texture>(jso
 template<> std::shared_ptr<sf::Font> ResourceHandler::loadUp<sf::Font>(json::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<sf::Font> return_value;
+	std::string const & path = jsonParser.at("fonts").at(id).get<std::string>();
 	try
 	{
-		return_value = std::make_shared<sf::Font>(load<sf::Font>(id, jsonParser.at("fonts").at(id).get<std::string>()));
+		return_value = std::make_shared<sf::Font>(load<sf::Font>(id, path));
 	}
 	catch (...) // catch any and all possible exceptions.
 	{
@@ -90,9 +92,10 @@ template<> std::shared_ptr<sf::Font> ResourceHandler::loadUp<sf::Font>(json::jso
 template<> std::shared_ptr<sf::SoundBuffer> ResourceHandler::loadUp<sf::SoundBuffer>(json::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<sf::SoundBuffer> return_value;
+	std::string const & path = jsonParser.at("sounds").at(id).get<std::string>();
 	try
 	{
-		return_value = std::make_shared<sf::SoundBuffer>(load<sf::SoundBuffer>(id, jsonParser.at("sounds").at(id).get<std::string>()));
+		return_value = std::make_shared<sf::SoundBuffer>(load<sf::SoundBuffer>(id, path));
 	}
 	catch (...) // catch any and all possible exceptions.
 	{
@@ -112,9 +115,10 @@ template<> std::shared_ptr<sf::SoundBuffer> ResourceHandler::loadUp<sf::SoundBuf
 template<> std::shared_ptr<thor::BigTexture> ResourceHandler::loadUp<thor::BigTexture>(json::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<thor::BigTexture> return_value;
+	std::string const & path = jsonParser.at("textures").at(id).get<std::string>();
 	try
 	{
-		return_value = std::make_shared<thor::BigTexture>(load<thor::BigTexture>(id, jsonParser.at("textures").at(id).get<std::string>()));
+		return_value = std::make_shared<thor::BigTexture>(load<thor::BigTexture>(id, path));
 	}
 	catch (...) // catch any and all possible exceptions.
 	{

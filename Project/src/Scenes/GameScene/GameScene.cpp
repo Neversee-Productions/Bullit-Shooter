@@ -271,7 +271,7 @@ void GameScene::collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bull
 }
 
 /// <summary>
-/// @brief generates random float values for a timer from 0 to 5.
+/// @brief generates random float values for a timer from 0 to 3.
 /// 
 /// 
 /// </summary>
@@ -327,19 +327,27 @@ void GameScene::setup(const std::string & filePath)
 		auto & weaponAnimations = sptrWeapon->m_weaponAnimations;
 
 		auto const & NUM_OF_WEPS = Weapon::MAX_WEAPONS;
+		
+		// initialize string stream to be 8 characters wide,
+		//	NOTE: the stream seek position is still at the start of the stream
+		//	meaning any insertion is done from the beginning of the stream
+		std::stringstream weaponId("--------");
+		weaponId << "weapon";
 		for (int i = 0; i < NUM_OF_WEPS; ++i)
 		{
 			auto const WEAPON_NUM = i + 1;
-			std::string weaponId = "weapon";
 			if (WEAPON_NUM < 10)
 			{
-				weaponId += "0" + std::to_string(WEAPON_NUM);
+				weaponId << "0" + std::to_string(WEAPON_NUM);
 			}
 			else
 			{
-				weaponId += std::to_string(WEAPON_NUM);
+				weaponId << std::to_string(WEAPON_NUM);
 			}
-			weaponAnimations.push_back(std::move(setupWeapon(resourceHandler, playerJson, weaponId)));
+			weaponAnimations.push_back(std::move(setupWeapon(resourceHandler, playerJson, weaponId.str())));
+			
+			// move string stream's seek position back 2 places.
+			weaponId.seekp(-2, std::ios_base::end);
 		}
 
 		std::ifstream backgroundRawFile(gameSceneJsonLoader.at("background").get<std::string>());

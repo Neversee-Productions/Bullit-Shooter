@@ -52,7 +52,7 @@ public:
 	/// </summary>
 	/// <typeparam name="data_type">Defines the type of data we will load.</typeparam>
 	/// <param name="jsonParser">Defines the json parser that contains our id's file path.</param>
-	/// <param name="id">Defines the key we use to identify our dat in our resource holder.</param>
+	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
 	/// <returns>Returns std::shared_ptr to our loaded resource.</returns>
 	template<typename data_type>
 	std::shared_ptr<data_type> loadUp(json::json & jsonParser, const std::string & id);
@@ -67,7 +67,7 @@ private:
 	/// (thor::FrameAnimation)
 	/// </summary>
 	/// <typeparam name="data_type">Defines the type of our data.</typeparam>
-	/// <param name="jsonParser">Defines the the json parser that contains our id's information.</param>
+	/// <param name="jsonParser">Defines the json parser that contains our id's information.</param>
 	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
 	/// <returns>Reference to our loaded data.</returns>
 	template<typename data_type>
@@ -76,7 +76,7 @@ private:
 	/// <summary>
 	/// @brief Loads a particular resource.
 	/// 
-	/// Defined as forward declaration of explicit template instatiation.
+	/// Defined as forward declaration of explicit template instantiation.
 	/// Loads all the frames for a id's animation into ResourceHandler::m_pairAnimationHolder.
 	/// @see ResourceHandler::load
 	/// </summary>
@@ -88,7 +88,7 @@ private:
 	/// <summary>
 	/// @brief Loads a particular resource.
 	/// 
-	/// Defined as forward declaration of explicit template instatiation.
+	/// Defined as forward declaration of explicit template instantiation.
 	/// Loads all the frames for a id's animation into
 	/// </summary>
 	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
@@ -99,7 +99,7 @@ private:
 	/// <summary>
 	/// @brief Loads a particular resource.
 	/// 
-	/// Defined as forward declaration of explicit template instatiation.
+	/// Defined as forward declaration of explicit template instantiation.
 	/// Loads both fragment and vertex shader into the a sfml shader and stores it.
 	/// </summary>
 	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
@@ -114,7 +114,7 @@ private:
 	/// (sf::Texture, sf::Font, sf::SoundBuffer and thor::BigTexture)
 	/// </summary>
 	/// <typeparam name="data_type">Defines the type of our data.</typeparam>
-	/// <param name="id">Defines the key we use to to identify our data in our resource holder.</param>
+	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
 	/// <param name="filePath">Defines the path that our resource holder uses to load the data.</param>
 	/// <returns>Reference to our loaded data.</returns>
 	template<typename data_type>
@@ -123,7 +123,7 @@ private:
 	/// <summary>
 	/// @brief Loads a particular resource.
 	/// 
-	/// Defined as forward declaration of explicit template instatiation.
+	/// Defined as forward declaration of explicit template instantiation.
 	/// Loads a texture into ResourceHandler::m_pairTextureHolder.
 	/// @see ResourceHandler::load
 	/// </summary>
@@ -135,7 +135,7 @@ private:
 	/// <summary>
 	/// @brief Loads a particular resource.
 	/// 
-	/// Defined as forward declaration of explicit template instatiation.
+	/// Defined as forward declaration of explicit template instantiation.
 	/// Loads a font into ResourceHandler::m_pairFontHolder.
 	/// @see ResourceHandler::load
 	/// </summary>
@@ -147,7 +147,7 @@ private:
 	/// <summary>
 	/// @brief Loads a particular resource.
 	/// 
-	/// Defined as forward declaration of explicit template instatiation.
+	/// Defined as forward declaration of explicit template instantiation.
 	/// Loads a sound buffer into ResourceHandler::m_pairSoundHolder.
 	/// @see ResourceHandler::load
 	/// </summary>
@@ -160,7 +160,7 @@ private:
 	/// <summary>
 	/// @brief Loads a particular resource.
 	/// 
-	/// Defined as forward declaration of explicit template instatiation.
+	/// Defined as forward declaration of explicit template instantiation.
 	/// Loads a big texture into ResourceHandler::m_pairBigTextureHolder.
 	/// @see ResourceHandler::load
 	/// </summary>
