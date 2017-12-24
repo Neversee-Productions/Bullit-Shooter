@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"class_title_scene.html#afbcce313c31908c58347e84ddd25d39f":[2,0,21,4],
 "class_weapon.html":[2,0,22],
 "class_weapon.html#a063d0eb2cf432d72dc22f6ec565a1a16":[2,0,22,12],
 "class_weapon.html#a091763bf26419b9df5b0ae1d9dac639a":[2,0,22,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "classgui_1_1_label.html#a762c8ea73d28b6312d5f323670e002c4":[2,0,1,3,7],
 "classgui_1_1_label.html#a79833054587410ea7fb517b74cbdc826":[2,0,1,3,11],
 "classgui_1_1_label.html#a81dca8bed029a1b136faa32a215b55b8":[2,0,1,3,5],
-"classgui_1_1_label.html#a9867b1faceb16a9c3403a223634656f1":[2,0,1,3,16]
+"classgui_1_1_label.html#a9867b1faceb16a9c3403a223634656f1":[2,0,1,3,16],
+"classgui_1_1_label.html#aba1df232b745dc8240fc7cbd08404217":[2,0,1,3,13]
 };

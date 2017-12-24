@@ -60,7 +60,7 @@ void main() {
 	//speed = 0.0;	
 		float formuparam = formuparam2;
 	
-		//get coords and direction	
+		//get coordinates and direction	
 	vec2 uv = uvs;		       
 	//mouse rotation
 	float a_xz = 0.0;
@@ -111,7 +111,8 @@ void main() {
 	float t3 = 0.0;	
 	
 	vec3 backCol2 = vec3(0.);
-	for (int r=0; r<volsteps; r++) {
+	for (int r=0; r<volsteps; r++)
+	{
 		vec3 p2=from+(s+zoffset)*dir;// + vec3(0.,0.,zoffset);
 		vec3 p3=from+(s3+zoffset)*dir;// + vec3(0.,0.,zoffset);
 		
@@ -171,4 +172,5 @@ void main() {
 	backCol2.g = 0.1;
 	backCol2.bg = mix(backCol2.gb, backCol2.bg, 0.5*(cos(time*0.01) + 1.0));	
 	gl_FragColor = forCol2 + vec4(backCol2, 1.0);
+	
 }

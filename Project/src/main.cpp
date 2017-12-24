@@ -44,7 +44,7 @@
 /// 
 /// ## Supervisor
 /// 
-/// * Phillip Bourke
+/// * Philip Bourke
 /// 
 /// </summary>
 

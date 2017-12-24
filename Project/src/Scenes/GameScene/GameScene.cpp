@@ -23,7 +23,7 @@ GameScene::GameScene(KeyHandler& keyHandler)
 }
 
 /// <summary>
-/// @brief Preloads resources on different thread.
+/// @brief Pre-loads resources on different thread.
 ///
 /// </summary>
 /// <param name="resourceFilePath">defines the path to the json file for this scene</param>
@@ -355,9 +355,9 @@ void GameScene::setup(const std::string & filePath)
 }
 
 /// <summary>
-/// @brief Setups weapon animations.
+/// @brief Set-ups weapon animations.
 /// 
-/// Constructs necessary asset inteface for weapon.
+/// Constructs necessary asset interface for weapon.
 /// (Assumes weapon has both begin and shoot animation)
 /// </summary>
 /// <param name="resourceHandler">defines reference to ResourceHandler.</param>

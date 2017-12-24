@@ -17,12 +17,6 @@
 class GameScene : public Scene
 {
 private:
-	/// <summary>
-	/// @brief Defines a alias for our thor::Animator.
-	/// 
-	/// This animator will animate
-	/// </summary>
-	typedef thor::Animator<sf::Sprite, std::string> SpriteAnimator;
 
 	/// 
 	/// @author Rafael Plugge

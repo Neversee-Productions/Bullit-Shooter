@@ -22,4 +22,4 @@
 
 ## Supervisor
 
-* Phillip Bourke
+* Philip Bourke
