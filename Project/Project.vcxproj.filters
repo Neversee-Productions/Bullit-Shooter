@@ -261,6 +261,9 @@
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\Shield.cpp">
       <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Connector.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -295,6 +298,12 @@
     </None>
     <None Include="resources\scenes\Game\background\background.vert">
       <Filter>Resource Files\scenes\Game\background</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\connector.frag">
+      <Filter>Resource Files\scenes\Game\player</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\connector.vert">
+      <Filter>Resource Files\scenes\Game\player</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -419,6 +428,9 @@
       <Filter>Header Files\Scenes\GameScene\Entities</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\Shield.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Connector.h">
       <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
     </ClInclude>
   </ItemGroup>

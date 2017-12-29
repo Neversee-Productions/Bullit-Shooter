@@ -4,6 +4,10 @@ var dir_1fe2439bf2e7e4181e2a055b3baff5ff =
     [ "BulletManager.h", "_bullet_manager_8h.html", [
       [ "BulletManager", "class_bullet_manager.html", "class_bullet_manager" ]
     ] ],
+    [ "Connector.h", "_connector_8h.html", [
+      [ "Connector", "class_connector.html", "class_connector" ],
+      [ "Resources", "struct_connector_1_1_resources.html", "struct_connector_1_1_resources" ]
+    ] ],
     [ "Player.h", "_player_8h.html", [
       [ "Player", "class_player.html", "class_player" ],
       [ "Resources", "struct_player_1_1_resources.html", "struct_player_1_1_resources" ]

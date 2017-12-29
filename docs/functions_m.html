@@ -152,9 +152,21 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 : <a class="el" href="class_asteroid.html#a25c0ef10347868332d4e2d637695f67f">Asteroid</a>
 , <a class="el" href="class_shield.html#a91e184b6b14ccb6b4d372e9678b9ba68">Shield</a>
 </li>
+<li>m_CLEAR_COLOR
+: <a class="el" href="class_connector.html#ad0fc6c0ec3254c5617e212200725b58e">Connector</a>
+</li>
 <li>m_collisionCircle
 : <a class="el" href="class_asteroid.html#af2c2388afb2c00cc1779912110bfb527">Asteroid</a>
 , <a class="el" href="class_shield.html#a762594bf2927198da4b27687efb56e9f">Shield</a>
+</li>
+<li>m_connectLeftWeaponToShip
+: <a class="el" href="class_player.html#a92ad0d1c8057a1ccab8e4d06b1e79b3e">Player</a>
+</li>
+<li>m_connector
+: <a class="el" href="struct_player_1_1_resources.html#a62704cc3159746ffa22abab653f6f3e5">Player::Resources</a>
+</li>
+<li>m_connectRightWeaponToShip
+: <a class="el" href="class_player.html#a7b7927fd14be8ac126bd200ed42cd0bd">Player</a>
 </li>
 <li>m_continueText
 : <a class="el" href="class_title_scene.html#a26339e7ac9e0fb76c236d16ca53662f7">TitleScene</a>
@@ -471,6 +483,7 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_renderState
 : <a class="el" href="class_background.html#abb79192b099bce0944da785a9cca2b29">Background</a>
+, <a class="el" href="class_connector.html#a94602f5c03234c5238f9a7d7e3ad65ad">Connector</a>
 </li>
 <li>m_renderTexture
 : <a class="el" href="class_window.html#a81ae3ae4f15969f55a96d513ff5572e3">Window</a>
@@ -530,6 +543,13 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_shader
 : <a class="el" href="class_background.html#ae4d86ba55da683c0ef5ab087ff902e98">Background</a>
+, <a class="el" href="class_connector.html#a01c99ed97a4f9134fe66e11a92e0a947">Connector</a>
+</li>
+<li>m_shaderQuad
+: <a class="el" href="class_connector.html#a4bc43dff00ef73c38d69c7036e95fb46">Connector</a>
+</li>
+<li>m_shaderTexture
+: <a class="el" href="class_connector.html#a3c688dba173caf79d8a9219474e45f3d">Connector</a>
 </li>
 <li>m_shield
 : <a class="el" href="class_player.html#a62a44b5656d8b2e18faaa555028cd557">Player</a>
@@ -557,6 +577,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 : <a class="el" href="classbullets_1_1_bullet.html#a0b67476aa9f0504417a9526b3203acd8">bullets::Bullet</a>
 , <a class="el" href="class_ship.html#a0de29cfa62b6e3d510ad9ab89de21822">Ship</a>
 </li>
+<li>m_sprite
+: <a class="el" href="class_connector.html#a22b6da1b59ae6abb3efe227d86431c6d">Connector</a>
+</li>
 <li>m_sptrBackground
 : <a class="el" href="struct_game_scene_1_1_resources.html#a8acd98214716941f4756b3e5e57fc120">GameScene::Resources</a>
 </li>
@@ -573,6 +596,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_sptrButtonTexture
 : <a class="el" href="struct_main_menu_scene_1_1_resources.html#a1b0c884f37ac6320361b0a2a0dc5cf3c">MainMenuScene::Resources</a>
 , <a class="el" href="struct_options_scene_1_1_resources.html#a0aae1b3168a81f08818e0614fd1b676d">OptionsScene::Resources</a>
+</li>
+<li>m_sptrCnShader
+: <a class="el" href="struct_connector_1_1_resources.html#a34abe71f10515ce5e74a157202c5501a">Connector::Resources</a>
 </li>
 <li>m_sptrFrames
 : <a class="el" href="struct_weapon_1_1_resources_1_1_animation.html#a9e68f7c8f09332dddf4372fe628653c9">Weapon::Resources::Animation</a>
@@ -616,6 +642,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_textureRenderer
 : <a class="el" href="class_window.html#a328bc625cf152d7b15d13495e7f0f99a">Window</a>
 </li>
+<li>m_THICKNESS
+: <a class="el" href="class_connector.html#a4868b27d2ac7134520d092d0ba5a40c4">Connector</a>
+</li>
 <li>m_thread
 : <a class="el" href="struct_scene_manager_1_1_managed_scene.html#a971f20e8ad00ad6dcb44f2663b1f205f">SceneManager::ManagedScene</a>
 </li>
@@ -624,6 +653,7 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_timer
 : <a class="el" href="class_background.html#a7032c4c990b5ad4d1c06265042b2e4ad">Background</a>
+, <a class="el" href="class_connector.html#ab3cec3f081d7e0c000533a37a4052127">Connector</a>
 , <a class="el" href="classgui_1_1_slider.html#a4255c9cb97d499917b0c5f47df00759d">gui::Slider</a>
 , <a class="el" href="class_main_menu_scene.html#af77847e54bc90d1ac9b4bd79f32642e7">MainMenuScene</a>
 , <a class="el" href="class_options_scene.html#ad2b6ed16a940a78c7dd9ca14ad5fd61e">OptionsScene</a>

@@ -34,6 +34,11 @@ private:
 		std::shared_ptr<Player::Resources> m_sptrPlayer =
 			std::make_shared<Player::Resources>();
 
+		/// <summary>
+		/// @brief shared pointer to background resources.
+		/// 
+		/// 
+		/// </summary>
 		std::shared_ptr<Background::Resources> m_sptrBackground =
 			std::make_shared<Background::Resources>();
 	};

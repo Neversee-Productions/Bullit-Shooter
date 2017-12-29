@@ -11,5 +11,6 @@ var searchData=
   ['cometshot',['CometShot',['../classbullets_1_1_comet_shot.html#a50b138bd70681d6baf62063e9d1d9f29',1,'bullets::CometShot']]],
   ['configure',['configure',['../classgui_1_1_g_u_i.html#a335eede7df0961e23c05541bb95aeed5',1,'gui::GUI::configure(const Layouts &amp;, const sf::Vector2u &amp;windowSize)'],['../classgui_1_1_g_u_i.html#a0d392375879cc42cee662355af261097',1,'gui::GUI::configure(const Layouts &amp;, const unsigned int &amp;windowWidth, const unsigned int &amp;windowHeight)']]],
   ['connect',['connect',['../class_controller.html#afe361cc0a3be46988bf35fee89c5dd19',1,'Controller']]],
+  ['connector',['Connector',['../class_connector.html#a19a1a94cd477e5c3dffc5fb26802b64e',1,'Connector']]],
   ['controller',['Controller',['../class_controller.html#a994a83805e3c9b43f6c6ba90d7269c32',1,'Controller']]]
 ];

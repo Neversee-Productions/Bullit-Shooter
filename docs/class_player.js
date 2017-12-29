@@ -15,6 +15,8 @@ var class_player =
     [ "deltaTime", "class_player.html#a9826d13da7dab6275a99aab6fdb66c2a", null ],
     [ "m_alive", "class_player.html#a3fad13aa5cd566b11195de43909b9cb5", null ],
     [ "m_bulletManager", "class_player.html#a6d27e83de4dc129a5976c1ea6d32cbd1", null ],
+    [ "m_connectLeftWeaponToShip", "class_player.html#a92ad0d1c8057a1ccab8e4d06b1e79b3e", null ],
+    [ "m_connectRightWeaponToShip", "class_player.html#a7b7927fd14be8ac126bd200ed42cd0bd", null ],
     [ "m_keyHandler", "class_player.html#a04e42601f7e36668e1205c6c5d662e1f", null ],
     [ "m_shield", "class_player.html#a62a44b5656d8b2e18faaa555028cd557", null ],
     [ "m_ship", "class_player.html#ad2d2524643689b736c5d0eb2ae4e7d9b", null ],

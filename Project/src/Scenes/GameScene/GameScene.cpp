@@ -314,6 +314,7 @@ void GameScene::setup(const std::string & filePath)
 		auto sptrPlayer = m_resources->m_sptrPlayer;
 		auto sptrShip = sptrPlayer->m_ship;
 		auto sptrWeapon = sptrPlayer->m_weapon;
+		auto sptrConnector = sptrPlayer->m_connector;
 
 		sptrShip->m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerJson, "ship");
 		assert(nullptr != sptrShip->m_sptrTexture);
@@ -349,6 +350,8 @@ void GameScene::setup(const std::string & filePath)
 			// move string stream's seek position back 2 places.
 			weaponId.seekp(-2, std::ios_base::end);
 		}
+		
+		sptrConnector->m_sptrCnShader = resourceHandler.loadUp<sf::Shader>(playerJson, "connector");
 
 		std::ifstream backgroundRawFile(gameSceneJsonLoader.at("background").get<std::string>());
 		json::json backgroundJson;
@@ -356,6 +359,7 @@ void GameScene::setup(const std::string & filePath)
 
 		auto sptrBackground = m_resources->m_sptrBackground;
 		sptrBackground->m_sptrBgShader = resourceHandler.loadUp<sf::Shader>(backgroundJson, "background");
+
 	}
 
 	m_background.init(m_resources->m_sptrBackground);

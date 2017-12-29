@@ -6,6 +6,7 @@
 #include "Weapon.h"
 #include "BulletManager.h"
 #include "Shield.h"
+#include "Connector.h"
 
 ///
 /// @brief Player class.
@@ -39,6 +40,14 @@ public:
 		/// </summary>
 		std::shared_ptr<Weapon::Resources> m_weapon =
 			std::make_shared<Weapon::Resources>();
+
+		/// <summary>
+		/// @brief shared pointer to connector resources.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<Connector::Resources> m_connector =
+			std::make_shared<Connector::Resources>();
 
 		//std::shared_ptr<bullets::Bullet::Resources> m_bullet =
 		//	std::make_shared<bullets::Bullet::Resources>();
@@ -75,11 +84,25 @@ private:
 	Weapon m_weaponLeft;
 
 	/// <summary>
+	/// @brief Defines the connector between a weapon and a ship.
+	/// 
+	/// This connector connects between the left weapon to the ship.
+	/// </summary>
+	Connector m_connectLeftWeaponToShip;
+
+	/// <summary>
 	/// @brief Defines the Weapon1 (weapon right of the player).
 	/// 
 	/// 
 	/// </summary>
 	Weapon m_weaponRight;
+
+	/// <summary>
+	/// @brief Defines the connector between a weapon and a ship.
+	/// 
+	/// This connector connects between the right weapon to the ship.
+	/// </summary>
+	Connector m_connectRightWeaponToShip;
 
 	/// <summary>
 	/// @brief reference to the key handler.
