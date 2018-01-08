@@ -29,7 +29,30 @@
 class BulletManager
 {
 public:
+
+	/// 
+	/// @author Rafael Plugge
+	/// @brief Determines the resources the bullets need.
+	/// 
+	/// 
+	/// 
+	struct Resources
+	{
+		Resources()
+			: m_bulletsResources(static_cast<size_t>(BulletTypes::AmountOfTypes))
+		{}
+
+		/// <summary>
+		/// @brief Defines a vector of unique pointers to bullet resources.
+		/// 
+		/// 
+		/// </summary>
+		std::vector<std::unique_ptr<bullets::Bullet::Resources>> m_bulletsResources;
+	};
+
+public:
 	BulletManager();
+	//void init(std::shared_ptr<Resources> sptrResources);
 	void fireBullet(Weapon& weapon1, Weapon & weapon2, const BulletTypes& type);
 	void initBulletvector(BulletTypes type);
 	void reuseBullet(bullets::Bullet& bullet, sf::Vector2f pos);

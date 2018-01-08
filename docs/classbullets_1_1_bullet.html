@@ -81,6 +81,8 @@ $(document).ready(function(){initNavTree('classbullets_1_1_bullet.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
@@ -114,6 +116,18 @@ Inheritance diagram for bullets::Bullet:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbullets_1_1_bullet_1_1_resources.html">Resources</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a058555fa49108369766d64dba287b925"><td class="memItemLeft" align="right" valign="top">typedef thor::Animator&lt; sf::RectangleShape, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a058555fa49108369766d64dba287b925">LoopAnimator</a></td></tr>
+<tr class="separator:a058555fa49108369766d64dba287b925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea63b92c33e5868d8f5013bdc22e8fde"><td class="memItemLeft" align="right" valign="top">typedef thor::FrameAnimation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#aea63b92c33e5868d8f5013bdc22e8fde">BulletFrames</a></td></tr>
+<tr class="separator:aea63b92c33e5868d8f5013bdc22e8fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a462ca59bc035c25f2d3fcfd351c6b243"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a462ca59bc035c25f2d3fcfd351c6b243">Bullet</a> ()</td></tr>
@@ -174,7 +188,38 @@ Static Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
 <p>Defines the abstract bullet. This is a base class of all bullets. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="aea63b92c33e5868d8f5013bdc22e8fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea63b92c33e5868d8f5013bdc22e8fde">&#9670;&nbsp;</a></span>BulletFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef thor::FrameAnimation <a class="el" href="classbullets_1_1_bullet.html#aea63b92c33e5868d8f5013bdc22e8fde">bullets::Bullet::BulletFrames</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defines alias for bullet animation frames.</p>
+
+</div>
+</div>
+<a id="a058555fa49108369766d64dba287b925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a058555fa49108369766d64dba287b925">&#9670;&nbsp;</a></span>LoopAnimator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef thor::Animator&lt;sf::RectangleShape, std::string&gt; <a class="el" href="classbullets_1_1_bullet.html#a058555fa49108369766d64dba287b925">bullets::Bullet::LoopAnimator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Determines the type of thor animator used with bullet.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a462ca59bc035c25f2d3fcfd351c6b243"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a462ca59bc035c25f2d3fcfd351c6b243">&#9670;&nbsp;</a></span>Bullet()</h2>
 

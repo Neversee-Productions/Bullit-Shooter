@@ -1,5 +1,8 @@
 var classbullets_1_1_bullet =
 [
+    [ "Resources", "structbullets_1_1_bullet_1_1_resources.html", "structbullets_1_1_bullet_1_1_resources" ],
+    [ "BulletFrames", "classbullets_1_1_bullet.html#aea63b92c33e5868d8f5013bdc22e8fde", null ],
+    [ "LoopAnimator", "classbullets_1_1_bullet.html#a058555fa49108369766d64dba287b925", null ],
     [ "Bullet", "classbullets_1_1_bullet.html#a462ca59bc035c25f2d3fcfd351c6b243", null ],
     [ "checkCircleCollision", "classbullets_1_1_bullet.html#acfdff6141121c2eb89f1abcec498d606", null ],
     [ "draw", "classbullets_1_1_bullet.html#abb70aa96964976513ce6f067d13743ba", null ],

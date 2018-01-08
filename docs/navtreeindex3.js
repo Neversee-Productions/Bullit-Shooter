@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"classgui_1_1_g_u_i.html#ab0d91b38eabd88688cb5e4df48b1725b":[2,0,1,2,3],
+"classgui_1_1_g_u_i.html#ab7ed858973b6af6709956d4d3f518727":[2,0,1,2,13],
+"classgui_1_1_g_u_i.html#acc3d2a359b7705766fd16eb8942b9741":[2,0,1,2,1],
 "classgui_1_1_g_u_i.html#ad86351bb29495deac5b830a7cd61ace7":[2,0,1,2,20],
 "classgui_1_1_g_u_i.html#ada888d034be3c2af124b01179dcbd367":[2,0,1,2,2],
 "classgui_1_1_g_u_i.html#af3d897979ff697f1b64e673f29ca8ccd":[2,0,1,2,14],
@@ -154,8 +157,8 @@ var NAVTREEINDEX3 =
 "functions_t.html":[2,3,0,17],
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,18],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_i.html":[2,3,2,1],
 "functions_vars_m.html":[2,3,2,2],
 "functions_vars_p.html":[2,3,2,3],
@@ -181,6 +184,7 @@ var NAVTREEINDEX3 =
 "pages.html":[],
 "struct_background_1_1_resources.html":[2,0,6,0],
 "struct_background_1_1_resources.html#aaa3b5fd665bd86917bc64f6fbb9b0138":[2,0,6,0,0],
+"struct_bullet_manager_1_1_resources.html":[2,0,7,0],
 "struct_connector_1_1_resources.html":[2,0,8,0],
 "struct_connector_1_1_resources.html#a34abe71f10515ce5e74a157202c5501a":[2,0,8,0,0],
 "struct_game_pad_state.html":[2,0,10],
@@ -214,9 +218,10 @@ var NAVTREEINDEX3 =
 "struct_options_scene_1_1_resources.html#a0aae1b3168a81f08818e0614fd1b676d":[2,0,14,0,1],
 "struct_options_scene_1_1_resources.html#a1b7b84221eab4399acaa4b7b5ea07748":[2,0,14,0,0],
 "struct_player_1_1_resources.html":[2,0,15,0],
-"struct_player_1_1_resources.html#a62704cc3159746ffa22abab653f6f3e5":[2,0,15,0,0],
-"struct_player_1_1_resources.html#aa3229a4f722ff6756b90f266d11322a3":[2,0,15,0,1],
-"struct_player_1_1_resources.html#ac63192254b2e9cc92cc835b9507cec0f":[2,0,15,0,2],
+"struct_player_1_1_resources.html#a2a6e8211c2963acd6164ef445de6d7c8":[2,0,15,0,0],
+"struct_player_1_1_resources.html#a62704cc3159746ffa22abab653f6f3e5":[2,0,15,0,1],
+"struct_player_1_1_resources.html#aa3229a4f722ff6756b90f266d11322a3":[2,0,15,0,2],
+"struct_player_1_1_resources.html#ac63192254b2e9cc92cc835b9507cec0f":[2,0,15,0,3],
 "struct_resource_handler_1_1_mutex_holder_pair.html":[2,0,16,0],
 "struct_resource_handler_1_1_mutex_holder_pair.html#a73213fec59d670d9b219e8583aa7d476":[2,0,16,0,1],
 "struct_resource_handler_1_1_mutex_holder_pair.html#ab906b91aa813ddaa2a96a6e76cdf66f4":[2,0,16,0,0],
@@ -244,7 +249,5 @@ var NAVTREEINDEX3 =
 "struct_weapon_1_1_resources_1_1_animation.html":[2,0,23,0,0],
 "struct_weapon_1_1_resources_1_1_animation.html#a3d865bc4b53beeb42c57ce9a373c31a0":[2,0,23,0,0,0],
 "struct_weapon_1_1_resources_1_1_animation.html#a9e68f7c8f09332dddf4372fe628653c9":[2,0,23,0,0,3],
-"struct_weapon_1_1_resources_1_1_animation.html#ac19b7da854a160ec16c503a3d679bd89":[2,0,23,0,0,1],
-"struct_weapon_1_1_resources_1_1_animation.html#adbb75cb9481c8e6d532e40012dd3f38a":[2,0,23,0,0,4],
-"struct_weapon_1_1_resources_1_1_animation.html#aedc575217e93b24fcd4787cfed18f6c9":[2,0,23,0,0,2]
+"struct_weapon_1_1_resources_1_1_animation.html#ac19b7da854a160ec16c503a3d679bd89":[2,0,23,0,0,1]
 };

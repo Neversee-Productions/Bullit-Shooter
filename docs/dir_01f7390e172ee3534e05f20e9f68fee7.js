@@ -1,7 +1,9 @@
 var dir_01f7390e172ee3534e05f20e9f68fee7 =
 [
     [ "Bullet.h", "_bullet_8h.html", [
-      [ "Bullet", "classbullets_1_1_bullet.html", "classbullets_1_1_bullet" ]
+      [ "Bullet", "classbullets_1_1_bullet.html", "classbullets_1_1_bullet" ],
+      [ "Resources", "structbullets_1_1_bullet_1_1_resources.html", "structbullets_1_1_bullet_1_1_resources" ],
+      [ "Animation", "structbullets_1_1_bullet_1_1_resources_1_1_animation.html", "structbullets_1_1_bullet_1_1_resources_1_1_animation" ]
     ] ],
     [ "BulletTypes.h", "_bullet_types_8h.html", "_bullet_types_8h" ],
     [ "CometShot.h", "_comet_shot_8h.html", [

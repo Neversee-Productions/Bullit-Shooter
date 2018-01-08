@@ -41,6 +41,7 @@ void Player::init(std::shared_ptr<Resources> sptrResources)
 	m_weaponRight.init(sptrResources->m_weapon);
 	m_connectLeftWeaponToShip.init(sptrResources->m_connector);
 	m_connectRightWeaponToShip.init(sptrResources->m_connector);
+	//m_bulletManager.init(sptrResources->m_bullets);
 }
 
 /// <summary>

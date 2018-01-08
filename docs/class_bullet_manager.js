@@ -1,5 +1,6 @@
 var class_bullet_manager =
 [
+    [ "Resources", "struct_bullet_manager_1_1_resources.html", null ],
     [ "BulletManager", "class_bullet_manager.html#a4aae3d492898b93dd5730dc28f2cc910", null ],
     [ "draw", "class_bullet_manager.html#adc7565464b026ddc98b02a70c558c74a", null ],
     [ "fireBullet", "class_bullet_manager.html#a5821be7f60c44744f7b1817afe54864e", null ],

@@ -14,6 +14,7 @@ var searchData=
   ['bullet_2ecpp',['Bullet.cpp',['../_bullet_8cpp.html',1,'']]],
   ['bullet_2eh',['Bullet.h',['../_bullet_8h.html',1,'']]],
   ['bulletasteroidscollision',['bulletAsteroidsCollision',['../class_game_scene.html#ab7231c6cf599365a4f9d003784348fef',1,'GameScene']]],
+  ['bulletframes',['BulletFrames',['../classbullets_1_1_bullet.html#aea63b92c33e5868d8f5013bdc22e8fde',1,'bullets::Bullet']]],
   ['bulletmanager',['BulletManager',['../class_bullet_manager.html',1,'BulletManager'],['../class_bullet_manager.html#a4aae3d492898b93dd5730dc28f2cc910',1,'BulletManager::BulletManager()']]],
   ['bulletmanager_2ecpp',['BulletManager.cpp',['../_bullet_manager_8cpp.html',1,'']]],
   ['bulletmanager_2eh',['BulletManager.h',['../_bullet_manager_8h.html',1,'']]],

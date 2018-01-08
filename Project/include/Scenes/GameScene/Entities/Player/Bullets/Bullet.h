@@ -4,7 +4,9 @@
 #include "SFML\Graphics.hpp"
 #include "Window.h"
 #include "BulletTypes.h"
+#include "Thor\Animations.hpp"
 #include "Thor\Math.hpp"
+#include <memory>
 
 namespace bullets
 {
@@ -17,6 +19,82 @@ namespace bullets
 	/// 
 	class Bullet
 	{
+	public:
+
+		/// <summary>
+		/// @brief Determines the type of thor animator used with bullet.
+		/// 
+		/// 
+		/// </summary>
+		typedef thor::Animator<sf::RectangleShape, std::string> LoopAnimator;
+
+		/// <summary>
+		/// @brief Defines alias for bullet animation frames.
+		/// 
+		/// 
+		/// </summary>
+		typedef thor::FrameAnimation BulletFrames;
+
+		struct Resources
+		{
+			/// 
+			/// @author Rafael Plugge
+			/// @brief Determines a pair with the animation and its id.
+			/// 
+			/// 
+			struct Animation
+			{
+				/// <summary>
+				/// @brief Defines the ID of the animation.
+				/// 
+				/// 
+				/// </summary>
+				std::string m_id = "";
+
+				/// <summary>
+				/// @brief Defines the duration of the animation.
+				/// 
+				/// 
+				/// </summary>
+				sf::Time m_duration;
+
+				/// <summary>
+				/// @brief Defines the origin of the animation frames.
+				/// 
+				/// 
+				/// </summary>
+				sf::Vector2f m_origin;
+
+				/// <summary>
+				/// @brief Defines shared pointer to our animation's frames.
+				/// 
+				/// 
+				/// </summary>
+				std::shared_ptr<BulletFrames> m_sptrFrames = nullptr;
+
+				/// <summary>
+				/// @brief Defines shared pointer to our animation's texture.
+				/// 
+				/// 
+				/// </summary>
+				std::shared_ptr<sf::Texture> m_sptrTexture = nullptr;
+			};
+
+			/// <summary>
+			/// @brief Defines a shared pointer to the bullet loop animation.
+			/// 
+			/// 
+			/// </summary>
+			std::shared_ptr<Animation> m_sptrLoopAnimation = nullptr;
+
+			/// <summary>
+			/// @brief Defines a shared pointer to the bullet impact animation.
+			/// 
+			/// 
+			/// </summary>
+			std::shared_ptr<Animation> m_sptrImpactAnimation = nullptr;
+		};
+
 	public:
 		Bullet();
 		virtual void update();

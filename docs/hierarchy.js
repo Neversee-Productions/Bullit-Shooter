@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "bullets::Bullet::Resources::Animation", "structbullets_1_1_bullet_1_1_resources_1_1_animation.html", null ],
     [ "Weapon::Resources::Animation", "struct_weapon_1_1_resources_1_1_animation.html", null ],
     [ "App", "class_app.html", null ],
     [ "Application", "class_application.html", null ],
@@ -46,16 +47,18 @@ var hierarchy =
     [ "ResourceHandler::MutexHolderPair< ThorFrameHolder >", "struct_resource_handler_1_1_mutex_holder_pair.html", null ],
     [ "Player", "class_player.html", null ],
     [ "ResourceHandler", "class_resource_handler.html", null ],
-    [ "TitleScene::Resources", "struct_title_scene_1_1_resources.html", null ],
+    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "Background::Resources", "struct_background_1_1_resources.html", null ],
+    [ "BulletManager::Resources", "struct_bullet_manager_1_1_resources.html", null ],
+    [ "bullets::Bullet::Resources", "structbullets_1_1_bullet_1_1_resources.html", null ],
+    [ "SplashScene::Resources", "struct_splash_scene_1_1_resources.html", null ],
     [ "Connector::Resources", "struct_connector_1_1_resources.html", null ],
     [ "Player::Resources", "struct_player_1_1_resources.html", null ],
     [ "Ship::Resources", "struct_ship_1_1_resources.html", null ],
     [ "Weapon::Resources", "struct_weapon_1_1_resources.html", null ],
     [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
-    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
-    [ "SplashScene::Resources", "struct_splash_scene_1_1_resources.html", null ],
+    [ "TitleScene::Resources", "struct_title_scene_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
       [ "MainMenuScene", "class_main_menu_scene.html", null ],
