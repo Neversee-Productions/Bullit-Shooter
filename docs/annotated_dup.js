@@ -15,6 +15,7 @@ var annotated_dup =
     [ "KeyHandler", "class_key_handler.html", "class_key_handler" ],
     [ "MainMenuScene", "class_main_menu_scene.html", "class_main_menu_scene" ],
     [ "OptionsScene", "class_options_scene.html", "class_options_scene" ],
+    [ "Pickup", "class_pickup.html", "class_pickup" ],
     [ "Player", "class_player.html", "class_player" ],
     [ "ResourceHandler", "class_resource_handler.html", "class_resource_handler" ],
     [ "Scene", "class_scene.html", "class_scene" ],

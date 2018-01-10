@@ -32,9 +32,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_app_8cpp.html",
-"class_connector.html#a4868b27d2ac7134520d092d0ba5a40c4",
-"class_splash_scene.html#ac2f189d6bf52b47a7500ad103b3a58dd",
-"classgui_1_1_g_u_i.html#ad86351bb29495deac5b830a7cd61ace7"
+"class_connector.html#a19a1a94cd477e5c3dffc5fb26802b64e",
+"class_splash_scene.html#a9b7c8f34a295dac9f58d1520449dbb8a",
+"classgui_1_1_g_u_i.html#aa2513d585d1f25778ca6f5fa27eda7a3",
+"struct_weapon_1_1_resources.html#a9fce9dfbeda01254474fdc5a38ddc0db"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['label',['Label',['../classgui_1_1_label.html',1,'gui']]]
+  ['keyhandler',['KeyHandler',['../class_key_handler.html',1,'']]],
+  ['keyspressed',['KeysPressed',['../struct_ship_1_1_keys_pressed.html',1,'Ship']]]
 ];

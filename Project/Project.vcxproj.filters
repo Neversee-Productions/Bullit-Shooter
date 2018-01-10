@@ -437,7 +437,7 @@
       <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\Entities\Pickup.h">
-      <Filter>Header Files\Scenes\GameScene\Entities</Filter>
+      <Filter>Header Files\Scenes\GameScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

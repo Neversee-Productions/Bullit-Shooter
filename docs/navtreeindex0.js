@@ -110,6 +110,9 @@ var NAVTREEINDEX0 =
 "_options_scene_8cpp.html":[3,0,0,1,2,2,0],
 "_options_scene_8h.html":[3,0,0,0,2,2,0],
 "_options_scene_8h_source.html":[3,0,0,0,2,2,0],
+"_pickup_8cpp.html":[3,0,0,1,2,0,0,3],
+"_pickup_8h.html":[3,0,0,0,2,0,0,4],
+"_pickup_8h_source.html":[3,0,0,0,2,0,0,4],
 "_player_8cpp.html":[3,0,0,1,2,0,0,1,3],
 "_player_8h.html":[3,0,0,0,2,0,0,1,3],
 "_player_8h_source.html":[3,0,0,0,2,0,0,1,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "class_bullet_manager.html#adc7565464b026ddc98b02a70c558c74a":[2,0,7,1],
 "class_bullet_manager.html#ae8638f3b70fe44a15413e1107ea806fe":[2,0,7,10],
 "class_connector.html":[2,0,8],
-"class_connector.html#a01c99ed97a4f9134fe66e11a92e0a947":[2,0,8,7],
-"class_connector.html#a19a1a94cd477e5c3dffc5fb26802b64e":[2,0,8,1],
-"class_connector.html#a22b6da1b59ae6abb3efe227d86431c6d":[2,0,8,10],
-"class_connector.html#a3c688dba173caf79d8a9219474e45f3d":[2,0,8,9]
+"class_connector.html#a01c99ed97a4f9134fe66e11a92e0a947":[2,0,8,7]
 };
