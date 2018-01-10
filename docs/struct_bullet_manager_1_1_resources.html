@@ -80,6 +80,10 @@ $(document).ready(function(){initNavTree('struct_bullet_manager_1_1_resources.ht
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="struct_bullet_manager_1_1_resources-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">BulletManager::Resources Struct Reference</div>  </div>
 </div><!--header-->
@@ -89,9 +93,53 @@ $(document).ready(function(){initNavTree('struct_bullet_manager_1_1_resources.ht
  <a href="struct_bullet_manager_1_1_resources.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_bullet_manager_8h_source.html">BulletManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a4728e9e305d5c8c470feb7a28069c6ad"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::unique_ptr&lt; <a class="el" href="structbullets_1_1_bullet_1_1_resources.html">bullets::Bullet::Resources</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bullet_manager_1_1_resources.html#a4728e9e305d5c8c470feb7a28069c6ad">BulletResources</a></td></tr>
+<tr class="separator:a4728e9e305d5c8c470feb7a28069c6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:aea73c780637e8df65c8f39e389854bea"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html#a4728e9e305d5c8c470feb7a28069c6ad">BulletResources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bullet_manager_1_1_resources.html#aea73c780637e8df65c8f39e389854bea">m_sptrBulletsResources</a></td></tr>
+<tr class="separator:aea73c780637e8df65c8f39e389854bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd></dl>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a4728e9e305d5c8c470feb7a28069c6ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4728e9e305d5c8c470feb7a28069c6ad">&#9670;&nbsp;</a></span>BulletResources</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::unordered_map&lt;<a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::unique_ptr&lt;<a class="el" href="structbullets_1_1_bullet_1_1_resources.html">bullets::Bullet::Resources</a>&gt; &gt; <a class="el" href="struct_bullet_manager_1_1_resources.html#a4728e9e305d5c8c470feb7a28069c6ad">BulletManager::Resources::BulletResources</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defines a alias for the container used to store the bullet resources.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aea73c780637e8df65c8f39e389854bea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea73c780637e8df65c8f39e389854bea">&#9670;&nbsp;</a></span>m_sptrBulletsResources</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_bullet_manager_1_1_resources.html#a4728e9e305d5c8c470feb7a28069c6ad">BulletResources</a>&gt; BulletManager::Resources::m_sptrBulletsResources</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Defines a unordered map of unique pointers to bullet resources.</p>
+<p>Using the BulletTypes enum as the key. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>Project/include/Scenes/GameScene/Entities/Player/<a class="el" href="_bullet_manager_8h_source.html">BulletManager.h</a></li>
 </ul>
 </div><!-- contents -->

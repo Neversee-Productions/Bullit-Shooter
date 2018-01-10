@@ -300,74 +300,128 @@ void GameScene::setup(const std::string & filePath)
 {
 	auto & resourceHandler = ResourceHandler::get();
 
+	// Loading Game Scene Raw Text file.
 	std::ifstream rawFile(filePath);
-	json::json gameSceneJsonLoader;
-	rawFile >> gameSceneJsonLoader;
+	// Defines the Game Scene's Json Parser
+	json::json gameSceneParser;
+	rawFile >> gameSceneParser; // Parsing raw text file into json parser.
 
 	if (!m_resources)
 	{
-		std::ifstream playerRawFile(gameSceneJsonLoader.at("player").get<std::string>());
-		json::json playerJson;
-		playerRawFile >> playerJson;
-
 		m_resources = std::make_unique<Resources>();
-		auto sptrPlayer = m_resources->m_sptrPlayer;
-		auto sptrShip = sptrPlayer->m_ship;
-		auto sptrWeapon = sptrPlayer->m_weapon;
-		auto sptrConnector = sptrPlayer->m_connector;
 
-		sptrShip->m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerJson, "ship");
-		assert(nullptr != sptrShip->m_sptrTexture);
+		////////////////////////////////////////////
+		// Setup Background
+		////////////////////////////////////////////
+		this->setupPlayer(resourceHandler, m_resources->m_sptrPlayer, gameSceneParser);
 
-		sptrShip->m_uptrFrames = std::make_unique<Ship::ShipFrames>();
-		auto & frames = *sptrShip->m_uptrFrames;
-		auto loadedFrames = resourceHandler.loadUp<Ship::ShipFrames>(playerJson, "ship");
-		frames.insert(frames.begin(), loadedFrames->begin(), loadedFrames->end());
-		assert(nullptr != sptrShip->m_uptrFrames);
-
-		auto & weaponAnimations = sptrWeapon->m_weaponAnimations;
-
-		auto const & NUM_OF_WEPS = Weapon::MAX_WEAPONS;
-		
-		// initialize string stream to be 8 characters wide,
-		//	NOTE: the stream seek position is still at the start of the stream
-		//	meaning any insertion is done from the beginning of the stream
-		std::stringstream weaponId("--------");
-		weaponId << "weapon";
-		for (int i = 0; i < NUM_OF_WEPS; ++i)
-		{
-			auto const WEAPON_NUM = i + 1;
-			if (WEAPON_NUM < 10)
-			{
-				weaponId << "0" + std::to_string(WEAPON_NUM);
-			}
-			else
-			{
-				weaponId << std::to_string(WEAPON_NUM);
-			}
-			weaponAnimations.push_back(std::move(setupWeapon(resourceHandler, playerJson, weaponId.str())));
-			
-			// move string stream's seek position back 2 places.
-			weaponId.seekp(-2, std::ios_base::end);
-		}
-		
-		sptrConnector->m_sptrCnShader = resourceHandler.loadUp<sf::Shader>(playerJson, "connector");
-
-		std::ifstream backgroundRawFile(gameSceneJsonLoader.at("background").get<std::string>());
-		json::json backgroundJson;
-		backgroundRawFile >> backgroundJson;
-
-		auto sptrBackground = m_resources->m_sptrBackground;
-		sptrBackground->m_sptrBgShader = resourceHandler.loadUp<sf::Shader>(backgroundJson, "background");
-
+		////////////////////////////////////////////
+		// Setup Background
+		////////////////////////////////////////////
+		this->setupBackground(resourceHandler, m_resources->m_sptrBackground, gameSceneParser);
 	}
 
-	m_background.init(m_resources->m_sptrBackground);
 	m_player.init(m_resources->m_sptrPlayer);
+	m_background.init(m_resources->m_sptrBackground);
 }
 
 /// <summary>
-/// @brief Set-ups weapon animations.
+/// @brief Setups Player::Resources.
+/// 
+/// 
+/// </summary>
+/// <param name="resourceHandler"></param>
+/// <param name="sptrPlayerResources"></param>
+/// <param name="gameSceneParser"></param>
+void GameScene::setupPlayer(ResourceHandler & resourceHandler, std::shared_ptr<Player::Resources> sptrPlayerResources, json::json & gameSceneParser)
+{
+	std::string const PLAYER_ID("player");
+
+	// Loading player Raw Text File
+	std::ifstream playerRawFile(gameSceneParser.at(PLAYER_ID).get<std::string>());
+	// Defines the Player's Json Parser
+	json::json playerJson;
+	playerRawFile >> playerJson; // Parsing raw text file into json parser.
+
+	////////////////////////////////////////////
+	// Setup Ship resources
+	////////////////////////////////////////////
+	this->setupShip(resourceHandler, sptrPlayerResources->m_ship, playerJson);
+
+	////////////////////////////////////////////
+	// Setup Weapon resources
+	////////////////////////////////////////////
+	this->setupWeapons(resourceHandler, sptrPlayerResources->m_weapon, playerJson);
+
+	////////////////////////////////////////////
+	// Setup Connector
+	////////////////////////////////////////////
+	this->setupConnector(resourceHandler, sptrPlayerResources->m_connector, playerJson);
+}
+
+/// <summary>
+/// @brief Setups ship resource loading.
+/// 
+/// Loads all necessary resources for the ship.
+/// @warning No checks are made as to the validity of the parameters.
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="sptrShipResources">shared pointer to our ship resources, assumed to be a valid pointer (initialized).</param>
+/// <param name="shipParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupShip(ResourceHandler & resourceHandler, std::shared_ptr<Ship::Resources> sptrShipResources, json::json & shipParser)
+{
+	std::string const SHIP_ID("ship");
+
+	sptrShipResources->m_sptrTexture = resourceHandler.loadUp<sf::Texture>(shipParser, SHIP_ID);
+	assert(nullptr != sptrShipResources->m_sptrTexture);
+
+	sptrShipResources->m_uptrFrames = std::make_unique<Ship::ShipFrames>();
+	auto & frames = *sptrShipResources->m_uptrFrames;
+	auto loadedFrames = resourceHandler.loadUp<Ship::ShipFrames>(shipParser, SHIP_ID);
+	frames.insert(frames.begin(), loadedFrames->begin(), loadedFrames->end());
+	assert(nullptr != sptrShipResources->m_uptrFrames);
+}
+
+/// <summary>
+/// @brief Setups Weapon::Resources.
+/// 
+/// Loads all necessary resources for the weapons.
+/// @warning No checks are made as to the validity of the parameters.
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="sptrWeaponResources">shared pointer to our weapon resources, assumed to be a valid pointer (initialized).</param>
+/// <param name="weaponParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupWeapons(ResourceHandler & resourceHandler, std::shared_ptr<Weapon::Resources> sptrWeaponResources, json::json & weaponParser)
+{
+	auto & weaponAnimations = sptrWeaponResources->m_weaponAnimations;
+	auto const & NUM_OF_WEPS = Weapon::MAX_WEAPONS;
+
+	// initialize string stream to be 8 characters wide,
+	//	NOTE: the stream seek position is still at the start of the stream
+	//	meaning any insertion is done from the beginning of the stream
+	std::stringstream weaponId("--------");
+	weaponId << "weapon";
+	for (int i = 0; i < NUM_OF_WEPS; ++i)
+	{
+		int const WEAPON_NUM = i + 1;
+		if (WEAPON_NUM < 10)
+		{
+			weaponId << "0" + std::to_string(WEAPON_NUM);
+		}
+		else
+		{
+			weaponId << std::to_string(WEAPON_NUM);
+		}
+		auto weaponAnimation = this->setupWeaponAnim(resourceHandler, weaponParser, weaponId.str());
+		weaponAnimations.push_back(std::move(weaponAnimation));
+
+		// move string stream's seek position back 2 places.
+		weaponId.seekp(-2, std::ios_base::end);
+	}
+}
+
+/// <summary>
+/// @brief Set-ups Weapon::Resources::WeaponAnimation.
 /// 
 /// Constructs necessary asset interface for weapon.
 /// (Assumes weapon has both begin and shoot animation)
@@ -376,7 +430,7 @@ void GameScene::setup(const std::string & filePath)
 /// <param name="playerParser">defines reference to a initialize json parser.</param>
 /// <param name="id">defines the id of our weapon.</param>
 /// <returns>returns a unique pointer to our Weapon::Resources::WeaponAnimation.</returns>
-std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeapon(ResourceHandler & resourceHandler, json::json & playerParser, std::string const & id)
+std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeaponAnim(ResourceHandler & resourceHandler, json::json & weaponParser, std::string const & id)
 {
 	std::string const ANIM_STR = "animation";
 
@@ -384,28 +438,137 @@ std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeapon(Resou
 	auto uptrBeginAnimation = std::make_unique<Weapon::Resources::Animation>();
 	auto & beginAnimation = *uptrBeginAnimation;
 	beginAnimation.m_id = BEGIN_ID;
-	beginAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(playerParser, BEGIN_ID);
-	beginAnimation.m_duration = sf::seconds(playerParser.at(ANIM_STR).at(BEGIN_ID).at("duration").get<float>());
-	auto const & beginAnimationFrameWidth = playerParser.at(ANIM_STR).at(BEGIN_ID).at("width").get<float>();
-	auto const & beginAnimationFrameHeight = playerParser.at(ANIM_STR).at(BEGIN_ID).at("height").get<float>();
-	auto & jsonBeginOrigin = playerParser.at(ANIM_STR).at(BEGIN_ID).at("origin");
+	beginAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(weaponParser, BEGIN_ID);
+	beginAnimation.m_duration = sf::seconds(weaponParser.at(ANIM_STR).at(BEGIN_ID).at("duration").get<float>());
+	auto const & beginAnimationFrameWidth = weaponParser.at(ANIM_STR).at(BEGIN_ID).at("width").get<float>();
+	auto const & beginAnimationFrameHeight = weaponParser.at(ANIM_STR).at(BEGIN_ID).at("height").get<float>();
+	auto & jsonBeginOrigin = weaponParser.at(ANIM_STR).at(BEGIN_ID).at("origin");
 	auto beginAnimationOrigin = sf::Vector2f(jsonBeginOrigin.at("x").get<float>(), jsonBeginOrigin.at("y").get<float>());
 	beginAnimation.m_origin = std::move(beginAnimationOrigin);
-	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerParser, BEGIN_ID);
+	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, BEGIN_ID);
 
 	std::string const shootID = id + "_shoot";
 	auto uptrShootAnimation = std::make_unique<Weapon::Resources::Animation>();
 	auto & shootAnimation = *uptrShootAnimation;
 	shootAnimation.m_id = shootID;
-	shootAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(playerParser, shootID);
-	shootAnimation.m_duration = sf::seconds(playerParser.at(ANIM_STR).at(shootID).at("duration").get<float>());
-	auto const & shootAnimationFrameWidth = playerParser.at(ANIM_STR).at(shootID).at("width").get<float>();
-	auto const & shootAnimationFrameHeight = playerParser.at(ANIM_STR).at(shootID).at("height").get<float>();
-	auto & jsonShootOrigin = playerParser.at(ANIM_STR).at(shootID).at("origin");
+	shootAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(weaponParser, shootID);
+	shootAnimation.m_duration = sf::seconds(weaponParser.at(ANIM_STR).at(shootID).at("duration").get<float>());
+	auto const & shootAnimationFrameWidth = weaponParser.at(ANIM_STR).at(shootID).at("width").get<float>();
+	auto const & shootAnimationFrameHeight = weaponParser.at(ANIM_STR).at(shootID).at("height").get<float>();
+	auto & jsonShootOrigin = weaponParser.at(ANIM_STR).at(shootID).at("origin");
 	auto shootAnimationOrigin = sf::Vector2f(jsonShootOrigin.at("x").get<float>(), jsonShootOrigin.at("y").get<float>());
 	shootAnimation.m_origin = std::move(shootAnimationOrigin);
-	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(playerParser, shootID);
+	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, shootID);
 	
 	return std::make_unique<Weapon::Resources::WeaponAnimation>(std::make_pair(std::move(uptrBeginAnimation), std::move(uptrShootAnimation)));
+}
+
+/// <summary>
+/// @brief Setups Connector::Resources.
+/// 
+/// Loads all necessary resources for the connector.
+/// @warning No checks are made as to the validity of the parameters.
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="sptrConnectorResources">shared pointer to our connector resources, assumed to be a valid pointer (initialized).</param>
+/// <param name="connectorParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupConnector(ResourceHandler & resourceHandler, std::shared_ptr<Connector::Resources> sptrConnectorResources, json::json & connectorParser)
+{
+	std::string const CONNECTOR_ID("connector");
+
+	sptrConnectorResources->m_sptrCnShader = resourceHandler.loadUp<sf::Shader>(connectorParser, CONNECTOR_ID);
+}
+
+/// <summary>
+/// @brief Setups BulletManager::Resources.
+/// 
+/// Loads all necessary resource for the bullet manager.
+/// @warning No checks are made as to the validity of the parameters.
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="sptrBulletManagerResources">shared pointer to our bullet manager resources, assumed to be a valid pointer (initialized).</param>
+/// <param name="bulletManagerParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupBulletManager(ResourceHandler & resourceHandler, std::shared_ptr<BulletManager::Resources> sptrBulletManagerResources, json::json & bulletManagerParser)
+{
+	std::stringstream bulletId("--------");
+	bulletId << "bullet";
+
+	//auto const NUM_OF_BULLETS = static_cast<int>(BulletTypes::AmountOfTypes);
+	// For now we will only do for 1 bullet
+	auto const NUM_OF_BULLETS = 1;
+	for (int i = 0; i < NUM_OF_BULLETS; ++i)
+	{
+		int const BULLET_NUM = i + 1;
+		if (BULLET_NUM < 10)
+		{
+			bulletId << "0" + std::to_string(BULLET_NUM);
+		}
+		else
+		{
+			bulletId << std::to_string(BULLET_NUM);
+		}
+
+		auto const BULLET_TYPE = static_cast<BulletTypes>(i);
+		this->setupBullet(resourceHandler, sptrBulletManagerResources->m_sptrBulletsResources, BULLET_TYPE, bulletManagerParser.at(bulletId.str()));
+
+		bulletId.seekp(-2, std::ios_base::end); // Moves the string stream's seek cursor back 2 places.
+	}
+}
+
+/// <summary>
+/// @brief Setups BulletManager::Resources::BulletResources.
+/// 
+/// Loads all necessary resources for each bullet in bullet manager resources.
+/// @warning No checks are made as to the validity of the parameters.
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="sptrBulletResources">shared pointer to our bullet resources map, assumed to be a valid pointer (initialized).</param>
+/// <param name="bulletType">read-only reference to the type of bullet we want to load.</param>
+/// <param name="bulletParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupBullet(ResourceHandler & resourceHandler, std::shared_ptr<BulletManager::Resources::BulletResources> sptrBulletResources, BulletTypes const & bulletType, json::json & bulletParser)
+{
+	auto uptrBulletResource = std::unique_ptr<bullets::Bullet::Resources>(nullptr);
+	std::string const LOOP_ID("loop");
+	std::string const IMPACT_ID("impact");
+
+	switch (bulletType)
+	{
+		case BulletTypes::Standard:
+		{
+			uptrBulletResource = std::make_unique<bullets::Standard::Resources>();
+			auto & loopAnimation = *uptrBulletResource->m_sptrLoopAnimation;
+			auto & loopJsonParser = bulletParser.at(LOOP_ID);
+			// TODO: Use json to load bullet standard resources.
+			break;
+		}
+		default:
+		{
+			break;
+		}
+	}
+	std::pair<BulletTypes, std::unique_ptr<bullets::Bullet::Resources>> pair = std::make_pair(bulletType, std::move(uptrBulletResource));
+	sptrBulletResources->insert(std::move(pair));
+}
+
+/// <summary>
+/// @brief Setups Background::Resources.
+/// 
+/// Loads all necessary resources for the background.
+/// @warning No checks are made as to the validity of the parameters.
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="sptrBackgroundResources">shared pointer to our background resources, assumed to be a valid pointer (initialized).</param>
+/// <param name="gameSceneParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupBackground(ResourceHandler & resourceHandler, std::shared_ptr<Background::Resources> sptrBackgroundResources, json::json & gameSceneParser)
+{
+	std::string const BACKGROUND_ID("background");
+
+	// Loading background Raw Text File
+	std::ifstream backgroundRawFile(gameSceneParser.at(BACKGROUND_ID).get<std::string>());
+	// Defines the Background's Json Parser
+	json::json backgroundJson;
+	backgroundRawFile >> backgroundJson; // Parsing raw text file into json parser.
+
+	sptrBackgroundResources->m_sptrBgShader = resourceHandler.loadUp<sf::Shader>(backgroundJson, BACKGROUND_ID);
 }
 

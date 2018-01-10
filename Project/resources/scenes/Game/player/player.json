@@ -23,7 +23,12 @@
         "weapon10_begin": "resources/scenes/Game/player/weapons/weapon10/weapon_begin.png",
         "weapon10_shoot": "resources/scenes/Game/player/weapons/weapon10/weapon_shoot.png",
         "weapon11_begin": "resources/scenes/Game/player/weapons/weapon11/weapon_begin.png",
-        "weapon11_shoot": "resources/scenes/Game/player/weapons/weapon11/weapon_shoot.png"
+        "weapon11_shoot": "resources/scenes/Game/player/weapons/weapon11/weapon_shoot.png",
+        "bullet01":
+        {
+            "loop": "resources/scenes/Game/player/bullets/bullet01/bullet_loop.png",
+            "impact": ""
+        }
     },
     "animation":
     {
@@ -5175,6 +5180,138 @@
                     "y": 208
                 }
             ]
+        },
+        "bullet01":
+        {
+            "loop":
+            {
+                "duration": 1,
+                "width": 77,
+                "height": 77,
+                "frames":
+                [
+                    {
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "x": 77,
+                        "y": 0
+                    },
+                    {
+                        "x": 154,
+                        "y": 0
+                    },
+                    {
+                        "x": 0,
+                        "y": 77
+                    },
+                    {
+                        "x": 77,
+                        "y": 77
+                    },
+                    {
+                        "x": 154,
+                        "y": 77
+                    },
+                    {
+                        "x": 0,
+                        "y": 154
+                    },
+                    {
+                        "x": 77,
+                        "y": 154
+                    },
+                    {
+                        "x": 154,
+                        "y": 154
+                    },
+                    {
+                        "x": 0,
+                        "y": 231
+                    },
+                    {
+                        "x": 77,
+                        "y": 231
+                    },
+                    {
+                        "x": 154,
+                        "y": 231
+                    },
+                    {
+                        "x": 0,
+                        "y": 308
+                    },
+                    {
+                        "x": 77,
+                        "y": 308
+                    },
+                    {
+                        "x": 154,
+                        "y": 308
+                    },
+                    {
+                        "x": 0,
+                        "y": 385
+                    },
+                    {
+                        "x": 77,
+                        "y": 385
+                    },
+                    {
+                        "x": 154,
+                        "y": 385
+                    },
+                    {
+                        "x": 0,
+                        "y": 462
+                    },
+                    {
+                        "x": 77,
+                        "y": 462
+                    },
+                    {
+                        "x": 154,
+                        "y": 462
+                    },
+                    {
+                        "x": 0,
+                        "y": 539
+                    },
+                    {
+                        "x": 77,
+                        "y": 539
+                    },
+                    {
+                        "x": 154,
+                        "y": 539
+                    },
+                    {
+                        "x": 0,
+                        "y": 616
+                    },
+                    {
+                        "x": 77,
+                        "y": 616
+                    },
+                    {
+                        "x": 154,
+                        "y": 616
+                    },
+                    {
+                        "x": 0,
+                        "y": 693
+                    },
+                    {
+                        "x": 77,
+                        "y": 693
+                    },
+                    {
+                        "x": 154,
+                        "y": 693
+                    }
+                ]
+            }
         }
     },
     "shaders":

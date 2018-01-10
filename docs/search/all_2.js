@@ -18,6 +18,7 @@ var searchData=
   ['bulletmanager',['BulletManager',['../class_bullet_manager.html',1,'BulletManager'],['../class_bullet_manager.html#a4aae3d492898b93dd5730dc28f2cc910',1,'BulletManager::BulletManager()']]],
   ['bulletmanager_2ecpp',['BulletManager.cpp',['../_bullet_manager_8cpp.html',1,'']]],
   ['bulletmanager_2eh',['BulletManager.h',['../_bullet_manager_8h.html',1,'']]],
+  ['bulletresources',['BulletResources',['../struct_bullet_manager_1_1_resources.html#a4728e9e305d5c8c470feb7a28069c6ad',1,'BulletManager::Resources']]],
   ['bullets',['bullets',['../namespacebullets.html',1,'']]],
   ['bullettypes',['BulletTypes',['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc',1,'BulletTypes.h']]],
   ['bullettypes_2eh',['BulletTypes.h',['../_bullet_types_8h.html',1,'']]],

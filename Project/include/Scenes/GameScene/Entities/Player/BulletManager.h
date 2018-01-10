@@ -1,8 +1,11 @@
 #ifndef BULLETMANAGER_H
 #define BULLETMANAGER_H
 
+// STL Includes
 #include <vector>
+#include <unordered_map>
 #include <memory>
+// Project Includes
 #include "Window.h"
 #include "Weapon.h"
 #include "Bullets/Bullet.h"
@@ -38,21 +41,24 @@ public:
 	/// 
 	struct Resources
 	{
-		Resources()
-			: m_bulletsResources(static_cast<size_t>(BulletTypes::AmountOfTypes))
-		{}
-
 		/// <summary>
-		/// @brief Defines a vector of unique pointers to bullet resources.
+		/// @brief Defines a alias for the container used to store the bullet resources.
 		/// 
 		/// 
 		/// </summary>
-		std::vector<std::unique_ptr<bullets::Bullet::Resources>> m_bulletsResources;
+		typedef std::unordered_map<BulletTypes, std::unique_ptr<bullets::Bullet::Resources>> BulletResources;
+
+		/// <summary>
+		/// @brief Defines a unordered map of unique pointers to bullet resources.
+		/// 
+		/// Using the BulletTypes enum as the key.
+		/// </summary>
+		std::shared_ptr<BulletResources> m_sptrBulletsResources;
 	};
 
 public:
 	BulletManager();
-	//void init(std::shared_ptr<Resources> sptrResources);
+	void init(std::shared_ptr<Resources> sptrResources);
 	void fireBullet(Weapon& weapon1, Weapon & weapon2, const BulletTypes& type);
 	void initBulletvector(BulletTypes type);
 	void reuseBullet(bullets::Bullet& bullet, sf::Vector2f pos);
@@ -87,6 +93,11 @@ private:
 	/// 
 	/// </summary>
 	std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> m_bulletMap;
+
+	/// <summary>
+	/// @brief 
+	/// </summary>
+	std::shared_ptr<Resources> m_resources;
 };
 #endif // !BULLETMANAGER_H
 

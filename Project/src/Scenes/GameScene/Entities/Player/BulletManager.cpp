@@ -12,6 +12,17 @@ BulletManager::BulletManager()
 }
 
 /// <summary>
+/// @brief Initialize external assets.
+/// 
+/// 
+/// </summary>
+/// <param name="sptrResources">shared pointer to loaded resources.</param>
+void BulletManager::init(std::shared_ptr<Resources> sptrResources)
+{
+	m_resources = sptrResources;
+}
+
+/// <summary>
 /// @brief method that will add bullet to vector
 /// 
 /// 

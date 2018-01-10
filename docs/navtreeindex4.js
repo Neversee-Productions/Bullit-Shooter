@@ -1,5 +1,16 @@
 var NAVTREEINDEX4 =
 {
+"struct_title_scene_1_1_resources.html":[2,0,22,0],
+"struct_title_scene_1_1_resources.html#a2b5929ca5fb3f3f918039f6f7da42833":[2,0,22,0,1],
+"struct_title_scene_1_1_resources.html#a7db1b53808284c2934bffec51724d473":[2,0,22,0,2],
+"struct_title_scene_1_1_resources.html#ae92363cd3f22b67bdd597f907595a140":[2,0,22,0,0],
+"struct_weapon_1_1_resources.html":[2,0,23,0],
+"struct_weapon_1_1_resources.html#a9fce9dfbeda01254474fdc5a38ddc0db":[2,0,23,0,2],
+"struct_weapon_1_1_resources.html#aeb8563e3c43bb7ac8ee2d4b2883428d0":[2,0,23,0,1],
+"struct_weapon_1_1_resources_1_1_animation.html":[2,0,23,0,0],
+"struct_weapon_1_1_resources_1_1_animation.html#a3d865bc4b53beeb42c57ce9a373c31a0":[2,0,23,0,0,0],
+"struct_weapon_1_1_resources_1_1_animation.html#a9e68f7c8f09332dddf4372fe628653c9":[2,0,23,0,0,3],
+"struct_weapon_1_1_resources_1_1_animation.html#ac19b7da854a160ec16c503a3d679bd89":[2,0,23,0,0,1],
 "struct_weapon_1_1_resources_1_1_animation.html#adbb75cb9481c8e6d532e40012dd3f38a":[2,0,23,0,0,4],
 "struct_weapon_1_1_resources_1_1_animation.html#aedc575217e93b24fcd4787cfed18f6c9":[2,0,23,0,0,2],
 "structbullets_1_1_bullet_1_1_resources.html":[2,0,0,0,0],

@@ -105,6 +105,8 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4aae3d492898b93dd5730dc28f2cc910"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a4aae3d492898b93dd5730dc28f2cc910">BulletManager</a> ()</td></tr>
 <tr class="separator:a4aae3d492898b93dd5730dc28f2cc910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0d1d44d7cc99a2a57f7fe8234a2cf28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ad0d1d44d7cc99a2a57f7fe8234a2cf28">init</a> (std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html">Resources</a> &gt; sptrResources)</td></tr>
+<tr class="separator:ad0d1d44d7cc99a2a57f7fe8234a2cf28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5821be7f60c44744f7b1817afe54864e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a5821be7f60c44744f7b1817afe54864e">fireBullet</a> (<a class="el" href="class_weapon.html">Weapon</a> &amp;weapon1, <a class="el" href="class_weapon.html">Weapon</a> &amp;weapon2, const <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> &amp;type)</td></tr>
 <tr class="separator:a5821be7f60c44744f7b1817afe54864e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab78a89d8d0b0a700f4bc62bf1c50fb2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ab78a89d8d0b0a700f4bc62bf1c50fb2a">initBulletvector</a> (<a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> type)</td></tr>
@@ -138,6 +140,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a094aedb5357033af0d21ffd714890105"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a094aedb5357033af0d21ffd714890105">m_bulletMap</a></td></tr>
 <tr class="memdesc:a094aedb5357033af0d21ffd714890105"><td class="mdescLeft">&#160;</td><td class="mdescRight">of bullet types to bullets.  <a href="#a094aedb5357033af0d21ffd714890105">More...</a><br /></td></tr>
 <tr class="separator:a094aedb5357033af0d21ffd714890105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a330391f4a26e794cb9980611bf15add9"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a330391f4a26e794cb9980611bf15add9">m_resources</a></td></tr>
+<tr class="separator:a330391f4a26e794cb9980611bf15add9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
@@ -342,6 +346,31 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="ad0d1d44d7cc99a2a57f7fe8234a2cf28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0d1d44d7cc99a2a57f7fe8234a2cf28">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BulletManager::init </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html">Resources</a> &gt;&#160;</td>
+          <td class="paramname"><em>sptrResources</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize external assets.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sptrResources</td><td>shared pointer to loaded resources.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac42e3dfcdf93fd8d4e20ba19cc72031b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac42e3dfcdf93fd8d4e20ba19cc72031b">&#9670;&nbsp;</a></span>initBulletMapVector()</h2>
 
@@ -541,6 +570,28 @@ template&lt;typename data_type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::map&lt;<a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::vector&lt;std::unique_ptr&lt;<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a>&gt; &gt; &gt; BulletManager::m_bulletMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a330391f4a26e794cb9980611bf15add9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a330391f4a26e794cb9980611bf15add9">&#9670;&nbsp;</a></span>m_resources</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_bullet_manager_1_1_resources.html">Resources</a>&gt; BulletManager::m_resources</td>
         </tr>
       </table>
   </td>
