@@ -600,30 +600,6 @@ void GameScene::setupBullet(
 		animation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(JSON_TEXTURE_NODE.get<std::string>(), id);
 	};
 
-	auto loadAnimation = [&](
-		std::shared_ptr<bullets::Bullet::Resources::Animation> sptrAnimation
-		, std::string const & jsonAnimationKey
-		, json::json const & bulletAnimationNode
-		, json::json const & bulletTextureNode
-		) -> void
-	{
-		if (nullptr == sptrAnimation)
-		{
-			return;
-		}
-		auto & animation = *sptrAnimation;
-		auto const & JSON_ANIMATION_NODE = bulletAnimationNode.at(jsonAnimationKey);
-		auto const & JSON_TEXTURE_NODE = bulletTextureNode.at(jsonAnimationKey);
-
-		animation.m_id = jsonAnimationKey;
-		animation.m_duration = sf::seconds(JSON_ANIMATION_NODE.at("duration").get<float>());
-		auto const & JSON_ANIMATION_ORIGIN = JSON_ANIMATION_NODE.at("origin");
-		animation.m_origin = sf::Vector2f(JSON_ANIMATION_ORIGIN.at("x").get<float>(), JSON_ANIMATION_ORIGIN.at("y").get<float>());
-		animation.m_sptrFrames = std::make_shared<thor::FrameAnimation>();
-		frameAnimationLambda(*animation.m_sptrFrames, JSON_ANIMATION_NODE);
-		animation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(JSON_TEXTURE_NODE.get<std::string>(), id);
-	};
-
 	switch (bulletType)
 	{
 		// Using bullets namespace within the scope of the switch statement
