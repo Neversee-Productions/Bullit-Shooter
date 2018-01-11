@@ -9,6 +9,7 @@ var classbullets_1_1_bullet =
     [ "draw", "classbullets_1_1_bullet.html#abb70aa96964976513ce6f067d13743ba", null ],
     [ "getCollisionRect", "classbullets_1_1_bullet.html#ab9913ac51dc0bd3824dff9f51393ce4e", null ],
     [ "getDamage", "classbullets_1_1_bullet.html#a0328f0a71bcea3ade26173f975c98ced", null ],
+    [ "hit", "classbullets_1_1_bullet.html#ad04b377d7e1a4bea10dbd8abdaedddbb", null ],
     [ "init", "classbullets_1_1_bullet.html#a56167a0ffb54a95980e830c03dbdfe1d", null ],
     [ "isActive", "classbullets_1_1_bullet.html#aaa99b721acc4f2ceba75fd95cb55b015", null ],
     [ "setActive", "classbullets_1_1_bullet.html#a38376bfa6bf1c9de4fdd0124940e29cc", null ],

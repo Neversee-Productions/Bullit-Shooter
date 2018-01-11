@@ -10,7 +10,8 @@ var dir_01f7390e172ee3534e05f20e9f68fee7 =
       [ "CometShot", "classbullets_1_1_comet_shot.html", "classbullets_1_1_comet_shot" ]
     ] ],
     [ "DeathOrb.h", "_death_orb_8h.html", [
-      [ "DeathOrb", "classbullets_1_1_death_orb.html", "classbullets_1_1_death_orb" ]
+      [ "DeathOrb", "classbullets_1_1_death_orb.html", "classbullets_1_1_death_orb" ],
+      [ "Resources", "structbullets_1_1_death_orb_1_1_resources.html", "structbullets_1_1_death_orb_1_1_resources" ]
     ] ],
     [ "Empowered.h", "_empowered_8h.html", [
       [ "Empowered", "classbullets_1_1_empowered.html", "classbullets_1_1_empowered" ]

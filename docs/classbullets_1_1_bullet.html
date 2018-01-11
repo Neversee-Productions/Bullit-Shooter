@@ -142,6 +142,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abb70aa96964976513ce6f067d13743ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9913ac51dc0bd3824dff9f51393ce4e"><td class="memItemLeft" align="right" valign="top">tinyh::c2AABB&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#ab9913ac51dc0bd3824dff9f51393ce4e">getCollisionRect</a> ()</td></tr>
 <tr class="separator:ab9913ac51dc0bd3824dff9f51393ce4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04b377d7e1a4bea10dbd8abdaedddbb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#ad04b377d7e1a4bea10dbd8abdaedddbb">hit</a> ()</td></tr>
+<tr class="separator:ad04b377d7e1a4bea10dbd8abdaedddbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38376bfa6bf1c9de4fdd0124940e29cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a38376bfa6bf1c9de4fdd0124940e29cc">setActive</a> (bool active)</td></tr>
 <tr class="separator:a38376bfa6bf1c9de4fdd0124940e29cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa446d8e06cf333ea39897966487a2af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#afa446d8e06cf333ea39897966487a2af">updateBox</a> ()</td></tr>
@@ -401,6 +403,34 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ad04b377d7e1a4bea10dbd8abdaedddbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad04b377d7e1a4bea10dbd8abdaedddbb">&#9670;&nbsp;</a></span>hit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bullets::Bullet::hit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>response to bullet colliding with a entity.</p>
+
+<p>Reimplemented in <a class="el" href="classbullets_1_1_standard.html#a08c9f5e97c762ccbc4fcf1ca5f22b2cd">bullets::Standard</a>.</p>
+
+</div>
+</div>
 <a id="a56167a0ffb54a95980e830c03dbdfe1d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56167a0ffb54a95980e830c03dbdfe1d">&#9670;&nbsp;</a></span>init()</h2>
 
@@ -597,7 +627,7 @@ Static Protected Attributes</h2></td></tr>
 <p>default update.</p>
 <p>updates bullet position based on velocity </p>
 
-<p>Reimplemented in <a class="el" href="classbullets_1_1_holy_sphere.html#a4dd17767e131da308604ee4c7d881a36">bullets::HolySphere</a>, <a class="el" href="classbullets_1_1_death_orb.html#a71e4d572261576cb27bf1c978a638786">bullets::DeathOrb</a>, <a class="el" href="classbullets_1_1_napalm_sphere.html#a21c9459156af91906ba8096e078561af">bullets::NapalmSphere</a>, <a class="el" href="classbullets_1_1_comet_shot.html#a0546931c863b0b8eef818d601d32550f">bullets::CometShot</a>, <a class="el" href="classbullets_1_1_magma_shot.html#acf5acafd0a253b4b51e28cdc2c77ae63">bullets::MagmaShot</a>, <a class="el" href="classbullets_1_1_pyro_blast.html#aabab03154f290dd877b075434f8dbbc3">bullets::PyroBlast</a>, <a class="el" href="classbullets_1_1_static_sphere.html#a018155faef0e4847342296e5b8573f9f">bullets::StaticSphere</a>, and <a class="el" href="classbullets_1_1_null_wave.html#af1c8ab480f814e4e0cd18863a114797c">bullets::NullWave</a>.</p>
+<p>Reimplemented in <a class="el" href="classbullets_1_1_death_orb.html#a71e4d572261576cb27bf1c978a638786">bullets::DeathOrb</a>, <a class="el" href="classbullets_1_1_holy_sphere.html#a4dd17767e131da308604ee4c7d881a36">bullets::HolySphere</a>, <a class="el" href="classbullets_1_1_napalm_sphere.html#a21c9459156af91906ba8096e078561af">bullets::NapalmSphere</a>, <a class="el" href="classbullets_1_1_comet_shot.html#a0546931c863b0b8eef818d601d32550f">bullets::CometShot</a>, <a class="el" href="classbullets_1_1_magma_shot.html#acf5acafd0a253b4b51e28cdc2c77ae63">bullets::MagmaShot</a>, <a class="el" href="classbullets_1_1_pyro_blast.html#aabab03154f290dd877b075434f8dbbc3">bullets::PyroBlast</a>, <a class="el" href="classbullets_1_1_static_sphere.html#a018155faef0e4847342296e5b8573f9f">bullets::StaticSphere</a>, and <a class="el" href="classbullets_1_1_null_wave.html#af1c8ab480f814e4e0cd18863a114797c">bullets::NullWave</a>.</p>
 
 </div>
 </div>
