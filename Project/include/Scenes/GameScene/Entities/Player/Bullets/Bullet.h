@@ -81,14 +81,14 @@ namespace bullets
 			};
 
 			/// <summary>
-			/// @brief Defines a shared pointer to the bullet loop animation.
+			/// @brief Defines a bullet loop animation.
 			/// 
 			/// 
 			/// </summary>
 			std::shared_ptr<Animation> m_sptrLoopAnimation = nullptr;
 
 			/// <summary>
-			/// @brief Defines a shared pointer to the bullet impact animation.
+			/// @brief Defines a bullet impact animation.
 			/// 
 			/// 
 			/// </summary>
@@ -97,9 +97,11 @@ namespace bullets
 
 	public:
 		Bullet();
+		virtual void init(std::shared_ptr<Resources> sptrResources);
 		virtual void update();
 		virtual void draw(Window & window, const float & deltaTime);
 		tinyh::c2AABB getCollisionRect();
+		virtual void hit();
 		virtual void setActive(bool active);
 		void updateBox();
 		void setPosition(const sf::Vector2f& pos);
@@ -110,6 +112,8 @@ namespace bullets
 		const float & getDamage();
 
 	protected:
+		virtual void setAnimation(std::string const & animationId);
+
 		/// <summary>
 		/// @brief represents the position.
 		/// 
@@ -186,6 +190,38 @@ namespace bullets
 		/// 
 		/// </summary>
 		const float & UPDATE_DT;
+
+		/// <summary>
+		/// @brief shared pointer to bullet resources.
+		/// 
+		/// pointer to loaded resources,
+		/// used so that bullet can access any needed resources.
+		/// </summary>
+		std::shared_ptr<Resources> m_sptrResources;
+
+		typedef thor::Animator<sf::RectangleShape, std::string> BulletAnimator;
+
+		/// <summary>
+		/// @brief unique pointer to our loop thor animator.
+		/// 
+		/// Thor animator using our sfml rectangle shape as the
+		/// template type for the animated type and std::string as the
+		/// key for accessing the several animations the animator can play.
+		/// 
+		/// This animator will play our loop animation that each bullet plays while alive.
+		/// </summary>
+		std::unique_ptr<BulletAnimator> m_uptrLoopAnimator;
+
+		/// <summary>
+		/// @brief unique pointer to our impact thor animator.
+		/// 
+		/// Thor animator using our sfml rectangle shape as the
+		/// template type for the animated type and std::string as the
+		/// key for accessing the several animations the animator can play.
+		/// 
+		/// This animator will play our impact animation that can play when a bullet hits a entity.
+		/// </summary>
+		std::unique_ptr<BulletAnimator> m_uptrImpactAnimator;
 
 		sf::RectangleShape tempRect;
 	};

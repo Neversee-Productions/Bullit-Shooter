@@ -18,6 +18,7 @@ namespace bullets
 	{
 	public:
 		Standard();
+		void hit() override;
 		static float getFireRate();
 	private:
 		/// <summary>

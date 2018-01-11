@@ -84,6 +84,8 @@ $(document).ready(function(){initNavTree('classbullets_1_1_bullet.html','');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="classbullets_1_1_bullet-members.html">List of all members</a>  </div>
@@ -132,6 +134,8 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a462ca59bc035c25f2d3fcfd351c6b243"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a462ca59bc035c25f2d3fcfd351c6b243">Bullet</a> ()</td></tr>
 <tr class="separator:a462ca59bc035c25f2d3fcfd351c6b243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56167a0ffb54a95980e830c03dbdfe1d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a56167a0ffb54a95980e830c03dbdfe1d">init</a> (std::shared_ptr&lt; <a class="el" href="structbullets_1_1_bullet_1_1_resources.html">Resources</a> &gt; sptrResources)</td></tr>
+<tr class="separator:a56167a0ffb54a95980e830c03dbdfe1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5176e4323b31a7a86f7333f85bdc3491"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a5176e4323b31a7a86f7333f85bdc3491">update</a> ()</td></tr>
 <tr class="separator:a5176e4323b31a7a86f7333f85bdc3491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb70aa96964976513ce6f067d13743ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#abb70aa96964976513ce6f067d13743ba">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
@@ -155,6 +159,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0328f0a71bcea3ade26173f975c98ced"><td class="memItemLeft" align="right" valign="top">const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a0328f0a71bcea3ade26173f975c98ced">getDamage</a> ()</td></tr>
 <tr class="separator:a0328f0a71bcea3ade26173f975c98ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:aad65b4df0ba9e30c3740e9d7f54ff4bf"><td class="memItemLeft" align="right" valign="top">typedef thor::Animator&lt; sf::RectangleShape, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#aad65b4df0ba9e30c3740e9d7f54ff4bf">BulletAnimator</a></td></tr>
+<tr class="separator:aad65b4df0ba9e30c3740e9d7f54ff4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8914b190cc25c1d69d4356901b7ca5a1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a8914b190cc25c1d69d4356901b7ca5a1">setAnimation</a> (std::string const &amp;animationId)</td></tr>
+<tr class="separator:a8914b190cc25c1d69d4356901b7ca5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a37850bb27e3903d69b55c2d76e238bd4"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a37850bb27e3903d69b55c2d76e238bd4">m_position</a></td></tr>
@@ -177,6 +191,12 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a407cabba03002e045941e9fbe2e68368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cada1964c6acdfca147f5c4d3b9c960"><td class="memItemLeft" align="right" valign="top">const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a4cada1964c6acdfca147f5c4d3b9c960">UPDATE_DT</a></td></tr>
 <tr class="separator:a4cada1964c6acdfca147f5c4d3b9c960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336300580e2d55f22432a1d78cfaaaee"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structbullets_1_1_bullet_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a336300580e2d55f22432a1d78cfaaaee">m_sptrResources</a></td></tr>
+<tr class="separator:a336300580e2d55f22432a1d78cfaaaee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae12dba35fc5bde62c9cd73e109285473"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classbullets_1_1_bullet.html#aad65b4df0ba9e30c3740e9d7f54ff4bf">BulletAnimator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#ae12dba35fc5bde62c9cd73e109285473">m_uptrLoopAnimator</a></td></tr>
+<tr class="separator:ae12dba35fc5bde62c9cd73e109285473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c638bad1930101580d5b50a28b2078"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classbullets_1_1_bullet.html#aad65b4df0ba9e30c3740e9d7f54ff4bf">BulletAnimator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a82c638bad1930101580d5b50a28b2078">m_uptrImpactAnimator</a></td></tr>
+<tr class="separator:a82c638bad1930101580d5b50a28b2078"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31e316bcf4267f76131795414cdb6def"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a31e316bcf4267f76131795414cdb6def">tempRect</a></td></tr>
 <tr class="separator:a31e316bcf4267f76131795414cdb6def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -189,6 +209,28 @@ Static Protected Attributes</h2></td></tr>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
 <p>Defines the abstract bullet. This is a base class of all bullets. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="aad65b4df0ba9e30c3740e9d7f54ff4bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad65b4df0ba9e30c3740e9d7f54ff4bf">&#9670;&nbsp;</a></span>BulletAnimator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef thor::Animator&lt;sf::RectangleShape, std::string&gt; <a class="el" href="classbullets_1_1_bullet.html#aad65b4df0ba9e30c3740e9d7f54ff4bf">bullets::Bullet::BulletAnimator</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aea63b92c33e5868d8f5013bdc22e8fde"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea63b92c33e5868d8f5013bdc22e8fde">&#9670;&nbsp;</a></span>BulletFrames</h2>
 
@@ -359,6 +401,40 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a56167a0ffb54a95980e830c03dbdfe1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56167a0ffb54a95980e830c03dbdfe1d">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bullets::Bullet::init </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structbullets_1_1_bullet_1_1_resources.html">Resources</a> &gt;&#160;</td>
+          <td class="paramname"><em>sptrResources</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="classbullets_1_1_bullet.html" title="Bullet class. ">Bullet</a> resource initialization.</p>
+<p>Use our pointer to loaded resources to link our resources. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sptrResources</td><td>shared pointer to loaded resources.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aaa99b721acc4f2ceba75fd95cb55b015"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa99b721acc4f2ceba75fd95cb55b015">&#9670;&nbsp;</a></span>isActive()</h2>
 
@@ -432,6 +508,39 @@ Static Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">angle</td><td>reference to angle of fire</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8914b190cc25c1d69d4356901b7ca5a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8914b190cc25c1d69d4356901b7ca5a1">&#9670;&nbsp;</a></span>setAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bullets::Bullet::setAnimation </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>animationId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the animation based on its id.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">animationId</td><td>ID of the animation to be set.</td></tr>
   </table>
   </dd>
 </dl>
@@ -713,6 +822,30 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a336300580e2d55f22432a1d78cfaaaee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336300580e2d55f22432a1d78cfaaaee">&#9670;&nbsp;</a></span>m_sptrResources</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="structbullets_1_1_bullet_1_1_resources.html">Resources</a>&gt; bullets::Bullet::m_sptrResources</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>shared pointer to bullet resources.</p>
+<p>pointer to loaded resources, used so that bullet can access any needed resources. </p>
+
+</div>
+</div>
 <a id="ac70c4d94b81f7fca3d1e5845b9aefda9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac70c4d94b81f7fca3d1e5845b9aefda9">&#9670;&nbsp;</a></span>m_type</h2>
 
@@ -733,6 +866,56 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>define the bullet type.</p>
+
+</div>
+</div>
+<a id="a82c638bad1930101580d5b50a28b2078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c638bad1930101580d5b50a28b2078">&#9670;&nbsp;</a></span>m_uptrImpactAnimator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classbullets_1_1_bullet.html#aad65b4df0ba9e30c3740e9d7f54ff4bf">BulletAnimator</a>&gt; bullets::Bullet::m_uptrImpactAnimator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>unique pointer to our impact thor animator.</p>
+<p>Thor animator using our sfml rectangle shape as the template type for the animated type and std::string as the key for accessing the several animations the animator can play.</p>
+<p>This animator will play our impact animation that can play when a bullet hits a entity. </p>
+
+</div>
+</div>
+<a id="ae12dba35fc5bde62c9cd73e109285473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae12dba35fc5bde62c9cd73e109285473">&#9670;&nbsp;</a></span>m_uptrLoopAnimator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classbullets_1_1_bullet.html#aad65b4df0ba9e30c3740e9d7f54ff4bf">BulletAnimator</a>&gt; bullets::Bullet::m_uptrLoopAnimator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>unique pointer to our loop thor animator.</p>
+<p>Thor animator using our sfml rectangle shape as the template type for the animated type and std::string as the key for accessing the several animations the animator can play.</p>
+<p>This animator will play our loop animation that each bullet plays while alive. </p>
 
 </div>
 </div>

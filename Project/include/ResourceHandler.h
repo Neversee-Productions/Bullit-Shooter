@@ -51,6 +51,21 @@ public:
 	/// @warning The only acceptable types are: sf::Texture, sf::Font, sf::SoundBuffer, thor::BigTexture and thor::FrameAnimation.
 	/// </summary>
 	/// <typeparam name="data_type">Defines the type of data we will load.</typeparam>
+	/// <param name="filePath">Defines the the file path that our id is located.</param>
+	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
+	/// <returns>Returns std::shared_ptr to our loaded resource.</returns>
+	template<typename data_type>
+	std::shared_ptr<data_type> loadUp(std::string const & filePath, std::string const & id);
+
+	/// <summary>
+	/// @brief Template loader.
+	/// 
+	/// Loads up our data using the appropriate resource holder based on one of the acceptable types.
+	/// This function is exception safe, as in it returns a nullptr if a exception is given.
+	/// 
+	/// @warning The only acceptable types are: sf::Texture, sf::Font, sf::SoundBuffer, thor::BigTexture and thor::FrameAnimation.
+	/// </summary>
+	/// <typeparam name="data_type">Defines the type of data we will load.</typeparam>
 	/// <param name="jsonParser">Defines the json parser that contains our id's file path.</param>
 	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
 	/// <returns>Returns std::shared_ptr to our loaded resource.</returns>

@@ -19,10 +19,13 @@ bullets::Bullet::Bullet()
 	, tempRect()
 	, m_damage(1.0f)
 	, UPDATE_DT(App::getUpdateDeltaTime())
+	, m_sptrResources(nullptr)
+	, m_uptrLoopAnimator(nullptr)
+	, m_uptrImpactAnimator(nullptr)
 {
 	m_bulletRect.setPosition(0.0f,0.0f);
 	m_bulletRect.setFillColor(sf::Color::White);
-	m_bulletRect.setSize(sf::Vector2f(5.0f, 5.0f));
+	m_bulletRect.setSize(sf::Vector2f(50.0f, 50.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 	//define the bullet collision rectangle
@@ -31,6 +34,30 @@ bullets::Bullet::Bullet()
 	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
 	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.x - m_bulletC2Rect.min.y));
 	tempRect.setFillColor(sf::Color::Yellow);
+}
+
+/// <summary>
+/// @brief Bullet resource initialization.
+/// 
+/// Use our pointer to loaded resources to link our resources.
+/// </summary>
+/// <param name="sptrResources">shared pointer to loaded resources.</param>
+void bullets::Bullet::init(std::shared_ptr<Resources> sptrResources)
+{
+	m_sptrResources = sptrResources;
+	if (m_sptrResources->m_sptrLoopAnimation)
+	{
+		auto & loopAnimation = *sptrResources->m_sptrLoopAnimation;
+		m_uptrLoopAnimator = std::make_unique<BulletAnimator>();
+		m_uptrLoopAnimator->addAnimation(loopAnimation.m_id, *loopAnimation.m_sptrFrames, loopAnimation.m_duration);
+		this->setAnimation(loopAnimation.m_id);
+	}
+	if (m_sptrResources->m_sptrImpactAnimation)
+	{
+		auto & impactAnimation = *sptrResources->m_sptrImpactAnimation;
+		m_uptrImpactAnimator = std::make_unique<BulletAnimator>();
+		m_uptrImpactAnimator->addAnimation(impactAnimation.m_id, *impactAnimation.m_sptrFrames, impactAnimation.m_duration);
+	}
 }
 
 /// <summary>
@@ -43,6 +70,14 @@ void bullets::Bullet::update()
 	m_position += m_velocity * UPDATE_DT;
 	m_bulletRect.setPosition(m_position.x, m_position.y);
 	updateBox();
+	if (m_uptrLoopAnimator)
+	{
+		m_uptrLoopAnimator->update(sf::seconds(UPDATE_DT));
+	}
+	if (m_uptrImpactAnimator)
+	{
+		m_uptrImpactAnimator->update(sf::seconds(UPDATE_DT));
+	}
 	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
 	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 }
@@ -56,8 +91,26 @@ void bullets::Bullet::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void bullets::Bullet::draw(Window & window, const float & deltaTime)
 {
+	if (m_uptrLoopAnimator)
+	{
+		auto & loopAnimator = *m_uptrLoopAnimator;
+		loopAnimator.update(sf::seconds(deltaTime));
+		if (loopAnimator.isPlayingAnimation())
+		{
+			loopAnimator.animate(m_bulletRect);
+		}
+	}
+	if (m_uptrImpactAnimator)
+	{
+		auto & impactAnimator = *m_uptrImpactAnimator;
+		impactAnimator.update(sf::seconds(deltaTime));
+		if (impactAnimator.isPlayingAnimation())
+		{
+			impactAnimator.animate(m_bulletRect);
+		}
+	}
 	window.draw(m_bulletRect);
-	window.draw(tempRect);
+	//window.draw(tempRect);
 }
 
 /// <summary>
@@ -69,6 +122,16 @@ void bullets::Bullet::draw(Window & window, const float & deltaTime)
 tinyh::c2AABB bullets::Bullet::getCollisionRect()
 {
 	return m_bulletC2Rect;
+}
+
+/// <summary>
+/// @brief response to bullet colliding with a entity.
+/// 
+/// 
+/// </summary>
+void bullets::Bullet::hit()
+{
+	this->setActive(false);
 }
 
 /// <summary>
@@ -168,6 +231,33 @@ bool bullets::Bullet::checkCircleCollision(const tinyh::c2Circle & other)
 const float & bullets::Bullet::getDamage()
 {
 	return m_damage;
+}
+
+/// <summary>
+/// @brief Sets the animation based on its id.
+/// 
+/// 
+/// </summary>
+/// <param name="animationId">ID of the animation to be set.</param>
+void bullets::Bullet::setAnimation(std::string const & animationId)
+{
+	if (m_sptrResources)
+	{
+		if (nullptr != m_sptrResources->m_sptrLoopAnimation)
+		{
+			auto & loopAnimation = *m_sptrResources->m_sptrLoopAnimation;
+			if (animationId == loopAnimation.m_id)
+			{
+				m_bulletRect.setTexture(loopAnimation.m_sptrTexture.get(), true);
+				m_uptrLoopAnimator->playAnimation(animationId, true);
+			}
+		}
+		if (nullptr != m_sptrResources->m_sptrImpactAnimation)
+		{
+			auto & impactAnimation = *m_sptrResources->m_sptrImpactAnimation;
+
+		}
+	}
 }
 
 

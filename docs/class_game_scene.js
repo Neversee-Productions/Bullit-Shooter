@@ -14,7 +14,7 @@ var class_game_scene =
     [ "preStart", "class_game_scene.html#aa047fdbc6f7cdae8eb76eda686eb49d5", null ],
     [ "setup", "class_game_scene.html#a08213e60be0211836cebe55b28887cae", null ],
     [ "setupBackground", "class_game_scene.html#a994196d3a7ec9ca679e98f8c5db66ff7", null ],
-    [ "setupBullet", "class_game_scene.html#ae41665d13c647d31cb0929c3988e8a26", null ],
+    [ "setupBullet", "class_game_scene.html#ad57de6e6fc3b6a8b8458d49f547823ee", null ],
     [ "setupBulletManager", "class_game_scene.html#a8d361d6617d3a76e16130d5da0521ea5", null ],
     [ "setupConnector", "class_game_scene.html#ab51d906e9997af13f6f0de576896163f", null ],
     [ "setupPlayer", "class_game_scene.html#a1b81a871ebc93dc4ce15bbe877d15e04", null ],

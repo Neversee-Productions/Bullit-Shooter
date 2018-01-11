@@ -10,7 +10,7 @@ var searchData=
   ['loadup_3c_20sf_3a_3afont_20_3e',['loadUp&lt; sf::Font &gt;',['../_resource_handler_8cpp.html#ab7543c858e58ef73864bef5f53f1eaba',1,'ResourceHandler.cpp']]],
   ['loadup_3c_20sf_3a_3ashader_20_3e',['loadUp&lt; sf::Shader &gt;',['../_resource_handler_8cpp.html#a3c78e76d99061e5e209ecc376976fb78',1,'ResourceHandler.cpp']]],
   ['loadup_3c_20sf_3a_3asoundbuffer_20_3e',['loadUp&lt; sf::SoundBuffer &gt;',['../_resource_handler_8cpp.html#af115b53f997411de9fe6a4a934b079a5',1,'ResourceHandler.cpp']]],
-  ['loadup_3c_20sf_3a_3atexture_20_3e',['loadUp&lt; sf::Texture &gt;',['../_resource_handler_8cpp.html#a7cb3fdd1b7cefb1d90e1f6bae9351a74',1,'ResourceHandler.cpp']]],
+  ['loadup_3c_20sf_3a_3atexture_20_3e',['loadUp&lt; sf::Texture &gt;',['../_resource_handler_8cpp.html#a0e59462d29385d4262f6aa06879798f2',1,'loadUp&lt; sf::Texture &gt;(std::string const &amp;filePath, std::string const &amp;id):&#160;ResourceHandler.cpp'],['../_resource_handler_8cpp.html#a7cb3fdd1b7cefb1d90e1f6bae9351a74',1,'loadUp&lt; sf::Texture &gt;(json::json &amp;jsonParser, const std::string &amp;id):&#160;ResourceHandler.cpp']]],
   ['loadup_3c_20std_3a_3avector_3c_20sf_3a_3aintrect_20_3e_20_3e',['loadUp&lt; std::vector&lt; sf::IntRect &gt; &gt;',['../_resource_handler_8cpp.html#ad8bec1b58c7f4c68f0a65d56de43e7b8',1,'ResourceHandler.cpp']]],
   ['loadup_3c_20thor_3a_3abigtexture_20_3e',['loadUp&lt; thor::BigTexture &gt;',['../_resource_handler_8cpp.html#a4ee55f778a2dca4dbc3565c436b0e2a4',1,'ResourceHandler.cpp']]],
   ['loadup_3c_20thor_3a_3aframeanimation_20_3e',['loadUp&lt; thor::FrameAnimation &gt;',['../_resource_handler_8cpp.html#a5f1331504c9b213a8f9c28a2c8b1835d',1,'ResourceHandler.cpp']]],

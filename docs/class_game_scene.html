@@ -169,8 +169,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ab51d906e9997af13f6f0de576896163f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d361d6617d3a76e16130d5da0521ea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8d361d6617d3a76e16130d5da0521ea5">setupBulletManager</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html">BulletManager::Resources</a> &gt; sptrBulletManagerResources, json::json &amp;bulletManagerParser)</td></tr>
 <tr class="separator:a8d361d6617d3a76e16130d5da0521ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae41665d13c647d31cb0929c3988e8a26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ae41665d13c647d31cb0929c3988e8a26">setupBullet</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html#a4728e9e305d5c8c470feb7a28069c6ad">BulletManager::Resources::BulletResources</a> &gt; sptrBulletResources, <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;bulletType, json::json &amp;bulletParser)</td></tr>
-<tr class="separator:ae41665d13c647d31cb0929c3988e8a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57de6e6fc3b6a8b8458d49f547823ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ad57de6e6fc3b6a8b8458d49f547823ee">setupBullet</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html#a2d69f1c7996dee02baa7322861e00818">BulletManager::Resources::BulletResources</a> &gt; sptrBulletResources, <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;bulletType, json::json &amp;bulletParser, std::string const &amp;id)</td></tr>
+<tr class="separator:ad57de6e6fc3b6a8b8458d49f547823ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a994196d3a7ec9ca679e98f8c5db66ff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a994196d3a7ec9ca679e98f8c5db66ff7">setupBackground</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_background_1_1_resources.html">Background::Resources</a> &gt; sptrBackgroundResources, json::json &amp;gameSceneParser)</td></tr>
 <tr class="separator:a994196d3a7ec9ca679e98f8c5db66ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -624,8 +624,8 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="ae41665d13c647d31cb0929c3988e8a26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae41665d13c647d31cb0929c3988e8a26">&#9670;&nbsp;</a></span>setupBullet()</h2>
+<a id="ad57de6e6fc3b6a8b8458d49f547823ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57de6e6fc3b6a8b8458d49f547823ee">&#9670;&nbsp;</a></span>setupBullet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -642,7 +642,7 @@ Rafael Plugge</dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html#a4728e9e305d5c8c470feb7a28069c6ad">BulletManager::Resources::BulletResources</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html#a2d69f1c7996dee02baa7322861e00818">BulletManager::Resources::BulletResources</a> &gt;&#160;</td>
           <td class="paramname"><em>sptrBulletResources</em>, </td>
         </tr>
         <tr>
@@ -655,7 +655,13 @@ Rafael Plugge</dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">json::json &amp;&#160;</td>
-          <td class="paramname"><em>bulletParser</em>&#160;</td>
+          <td class="paramname"><em>bulletParser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -669,7 +675,7 @@ Rafael Plugge</dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Setups <a class="el" href="struct_bullet_manager_1_1_resources.html#a4728e9e305d5c8c470feb7a28069c6ad">BulletManager::Resources::BulletResources</a>.</p>
+<p>Setups <a class="el" href="struct_bullet_manager_1_1_resources.html#a2d69f1c7996dee02baa7322861e00818">BulletManager::Resources::BulletResources</a>.</p>
 <p>Loads all necessary resources for each bullet in bullet manager resources. </p><dl class="section warning"><dt>Warning</dt><dd>No checks are made as to the validity of the parameters. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -677,6 +683,7 @@ Rafael Plugge</dd></dl>
     <tr><td class="paramname">sptrBulletResources</td><td>shared pointer to our bullet resources map, assumed to be a valid pointer (initialized).</td></tr>
     <tr><td class="paramname">bulletType</td><td>read-only reference to the type of bullet we want to load.</td></tr>
     <tr><td class="paramname">bulletParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+    <tr><td class="paramname">id</td><td>read-only reference to the id of bullet to setup.</td></tr>
   </table>
   </dd>
 </dl>

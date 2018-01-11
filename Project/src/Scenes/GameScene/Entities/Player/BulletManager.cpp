@@ -349,12 +349,16 @@ const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>>& Bull
 template<typename data_type>
 void BulletManager::initBulletMapVector(const BulletTypes& type, const int& size)
 {
+	auto bulletResource = m_resources->m_sptrBulletsResources->at(type);
+
 	std::vector<std::unique_ptr<bullets::Bullet>> bulletVec;
 	bulletVec.reserve(size);
 	bulletVec.resize(size);
 	for (auto itt = bulletVec.begin(), end = bulletVec.end(); itt != end; ++itt)
 	{
-		itt->swap(std::unique_ptr<bullets::Bullet>(std::make_unique<data_type>()));
+		auto uptrBullet = std::unique_ptr<bullets::Bullet>(std::make_unique<data_type>());
+		uptrBullet->init(bulletResource);
+		itt->swap(uptrBullet);
 	}
 	m_bulletMap.insert(std::make_pair(type, std::move(bulletVec)));
 }

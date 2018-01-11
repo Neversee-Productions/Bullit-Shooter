@@ -228,7 +228,7 @@ void GameScene::playerAsteroidCollision()
 void GameScene::collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet)
 {
 	asteroid.decrementHealth(bullet.getDamage());
-	bullet.setActive(false);
+	bullet.hit();
 }
 
 /// <summary>
@@ -357,6 +357,11 @@ void GameScene::setupPlayer(ResourceHandler & resourceHandler, std::shared_ptr<P
 	// Setup Connector
 	////////////////////////////////////////////
 	this->setupConnector(resourceHandler, sptrPlayerResources->m_connector, playerJson);
+
+	////////////////////////////////////////////
+	// Setup Connector
+	////////////////////////////////////////////
+	this->setupBulletManager(resourceHandler, sptrPlayerResources->m_bullets, playerJson);
 }
 
 /// <summary>
@@ -509,7 +514,7 @@ void GameScene::setupBulletManager(ResourceHandler & resourceHandler, std::share
 		}
 
 		auto const BULLET_TYPE = static_cast<BulletTypes>(i);
-		this->setupBullet(resourceHandler, sptrBulletManagerResources->m_sptrBulletsResources, BULLET_TYPE, bulletManagerParser.at(bulletId.str()));
+		this->setupBullet(resourceHandler, sptrBulletManagerResources->m_sptrBulletsResources, BULLET_TYPE, bulletManagerParser, bulletId.str());
 
 		bulletId.seekp(-2, std::ios_base::end); // Moves the string stream's seek cursor back 2 places.
 	}
@@ -525,20 +530,68 @@ void GameScene::setupBulletManager(ResourceHandler & resourceHandler, std::share
 /// <param name="sptrBulletResources">shared pointer to our bullet resources map, assumed to be a valid pointer (initialized).</param>
 /// <param name="bulletType">read-only reference to the type of bullet we want to load.</param>
 /// <param name="bulletParser">reference to loaded json file ready to be parsed.</param>
-void GameScene::setupBullet(ResourceHandler & resourceHandler, std::shared_ptr<BulletManager::Resources::BulletResources> sptrBulletResources, BulletTypes const & bulletType, json::json & bulletParser)
+/// <param name="id">read-only reference to the id of bullet to setup.</param>
+void GameScene::setupBullet(
+	ResourceHandler & resourceHandler
+	, std::shared_ptr<BulletManager::Resources::BulletResources> sptrBulletResources
+	, BulletTypes const & bulletType
+	, json::json & bulletParser
+	, std::string const & id)
 {
-	auto uptrBulletResource = std::unique_ptr<bullets::Bullet::Resources>(nullptr);
+	auto sptrBulletResource = std::shared_ptr<bullets::Bullet::Resources>(nullptr);
+
+	std::string const TEXTURES_JSON_KEY("textures");
+	// Reference to json textures section
+	json::json const & JSON_BULLET_TEXTURE = bulletParser.at(TEXTURES_JSON_KEY).at(id);
+
+	std::string const ANIMATIONS_JSON_KEY("animation");
+	std::string const BULLETS_JSON_KEY("bullets");
+	// Reference to json animations section
+	json::json const & JSON_BULLET_ANIMATION = bulletParser.at(ANIMATIONS_JSON_KEY).at(BULLETS_JSON_KEY).at(id);
+
 	std::string const LOOP_ID("loop");
 	std::string const IMPACT_ID("impact");
+
+	// Lambda used for initializing animation frames
+	auto frameAnimationLambda = [this](thor::FrameAnimation & frameAnimation, json::json const & JSON_ANIMATION) -> void
+	{
+		std::string const JSON_X_KEY("x");
+		std::string const JSON_Y_KEY("y");
+
+		auto const & FRAME_WIDTH = JSON_ANIMATION.at("width").get<int>();
+		auto const & FRAME_HEIGHT = JSON_ANIMATION.at("height").get<int>();
+		auto const & JSON_FRAMES = JSON_ANIMATION.at("frames");
+		float count = 0.0f;
+		for (
+			auto iterator = JSON_FRAMES.begin(), endIterator = JSON_FRAMES.end();
+			iterator != endIterator;
+			++iterator, ++count
+			)
+		{
+			auto x = iterator->at(JSON_X_KEY).get<int>();
+			auto y = iterator->at(JSON_Y_KEY).get<int>();
+			frameAnimation.addFrame(count, sf::IntRect(x, y, FRAME_WIDTH, FRAME_HEIGHT));
+		}
+	};
 
 	switch (bulletType)
 	{
 		case BulletTypes::Standard:
 		{
-			uptrBulletResource = std::make_unique<bullets::Standard::Resources>();
-			auto & loopAnimation = *uptrBulletResource->m_sptrLoopAnimation;
-			auto & loopJsonParser = bulletParser.at(LOOP_ID);
-			// TODO: Use json to load bullet standard resources.
+			sptrBulletResource = std::make_shared<bullets::Standard::Resources>();
+			sptrBulletResource->m_sptrLoopAnimation = std::make_shared<bullets::Standard::Resources::Animation>();
+			auto & loopAnimation = *sptrBulletResource->m_sptrLoopAnimation;
+			auto const & JSON_ANIMATION_LOOP = JSON_BULLET_ANIMATION.at(LOOP_ID);
+			auto const & JSON_TEXTURE_LOOP = JSON_BULLET_TEXTURE.at(LOOP_ID);
+
+			loopAnimation.m_id = LOOP_ID;
+			loopAnimation.m_duration = sf::seconds(JSON_ANIMATION_LOOP.at("duration").get<float>());
+			auto const & JSON_ANIMATION_ORIGIN = JSON_ANIMATION_LOOP.at("origin");
+			loopAnimation.m_origin = sf::Vector2f(JSON_ANIMATION_ORIGIN.at("x").get<float>(), JSON_ANIMATION_ORIGIN.at("y").get<float>());
+			loopAnimation.m_sptrFrames = std::make_shared<thor::FrameAnimation>();
+			frameAnimationLambda(*loopAnimation.m_sptrFrames, JSON_ANIMATION_LOOP);
+			loopAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(JSON_TEXTURE_LOOP.get<std::string>(), id);
+			
 			break;
 		}
 		default:
@@ -546,7 +599,7 @@ void GameScene::setupBullet(ResourceHandler & resourceHandler, std::shared_ptr<B
 			break;
 		}
 	}
-	std::pair<BulletTypes, std::unique_ptr<bullets::Bullet::Resources>> pair = std::make_pair(bulletType, std::move(uptrBulletResource));
+	std::pair<BulletTypes, std::shared_ptr<bullets::Bullet::Resources>> pair = std::make_pair(bulletType, std::move(sptrBulletResource));
 	sptrBulletResources->insert(std::move(pair));
 }
 

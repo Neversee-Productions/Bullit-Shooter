@@ -138,7 +138,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ada6972d3c7730d60d0085c27e3348861"><td class="memItemLeft" align="right" valign="top">const tinyh::c2AABB &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ada6972d3c7730d60d0085c27e3348861">m_windowC2Rect</a></td></tr>
 <tr class="separator:ada6972d3c7730d60d0085c27e3348861"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a094aedb5357033af0d21ffd714890105"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a094aedb5357033af0d21ffd714890105">m_bulletMap</a></td></tr>
-<tr class="memdesc:a094aedb5357033af0d21ffd714890105"><td class="mdescLeft">&#160;</td><td class="mdescRight">of bullet types to bullets.  <a href="#a094aedb5357033af0d21ffd714890105">More...</a><br /></td></tr>
 <tr class="separator:a094aedb5357033af0d21ffd714890105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a330391f4a26e794cb9980611bf15add9"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a330391f4a26e794cb9980611bf15add9">m_resources</a></td></tr>
 <tr class="separator:a330391f4a26e794cb9980611bf15add9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -578,6 +577,7 @@ template&lt;typename data_type &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Map of bullet types to vector of bullets.</p>
 
 </div>
 </div>
@@ -600,6 +600,8 @@ template&lt;typename data_type &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>shared pointer to loaded resources.</p>
+<p>This shared pointer is nullptr until resources are loaded and <a class="el" href="class_bullet_manager.html#ad0d1d44d7cc99a2a57f7fe8234a2cf28">BulletManager::init</a> is called. </p>
 
 </div>
 </div>

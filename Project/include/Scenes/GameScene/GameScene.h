@@ -98,6 +98,7 @@ private:
 		, std::shared_ptr<BulletManager::Resources::BulletResources> sptrBulletResources
 		, BulletTypes const & bulletType
 		, json::json & bulletParser
+		, std::string const & id
 	);
 	void setupBackground(
 		ResourceHandler & resourceHandler

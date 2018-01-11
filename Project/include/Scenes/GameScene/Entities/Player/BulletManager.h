@@ -5,6 +5,8 @@
 #include <vector>
 #include <unordered_map>
 #include <memory>
+// Thor Includes
+#include "Thor/Animations.hpp"
 // Project Includes
 #include "Window.h"
 #include "Weapon.h"
@@ -46,14 +48,15 @@ public:
 		/// 
 		/// 
 		/// </summary>
-		typedef std::unordered_map<BulletTypes, std::unique_ptr<bullets::Bullet::Resources>> BulletResources;
+		typedef std::unordered_map<BulletTypes, std::shared_ptr<bullets::Bullet::Resources>> BulletResources;
 
 		/// <summary>
 		/// @brief Defines a unordered map of unique pointers to bullet resources.
 		/// 
 		/// Using the BulletTypes enum as the key.
 		/// </summary>
-		std::shared_ptr<BulletResources> m_sptrBulletsResources;
+		std::shared_ptr<BulletResources> m_sptrBulletsResources = 
+			std::make_shared<BulletResources>();
 	};
 
 public:
@@ -88,14 +91,17 @@ private:
 	const tinyh::c2AABB& m_windowC2Rect;
 
 	/// <summary>
-	/// @map of bullet types to bullets.
+	/// @brief Map of bullet types to vector of bullets.
 	/// 
 	/// 
 	/// </summary>
 	std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> m_bulletMap;
 
 	/// <summary>
-	/// @brief 
+	/// @brief shared pointer to loaded resources.
+	/// 
+	/// This shared pointer is nullptr until resources are loaded
+	/// and BulletManager::init is called.
 	/// </summary>
 	std::shared_ptr<Resources> m_resources;
 };
