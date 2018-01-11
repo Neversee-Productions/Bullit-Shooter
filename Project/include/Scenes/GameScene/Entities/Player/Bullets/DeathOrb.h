@@ -16,6 +16,16 @@ namespace bullets
 		public Bullet
 	{
 	public:
+		struct Resources : Bullet::Resources
+		{
+			Resources()
+				: Bullet::Resources()
+			{
+				m_sptrImpactAnimation = nullptr;
+			}
+		};
+
+	public:
 		DeathOrb();
 		static float getFireRate();
 		void update() override;

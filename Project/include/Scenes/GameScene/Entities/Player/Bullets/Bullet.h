@@ -85,14 +85,16 @@ namespace bullets
 			/// 
 			/// 
 			/// </summary>
-			std::shared_ptr<Animation> m_sptrLoopAnimation = nullptr;
+			std::shared_ptr<Animation> m_sptrLoopAnimation = 
+				std::make_shared<Animation>();
 
 			/// <summary>
 			/// @brief Defines a bullet impact animation.
 			/// 
 			/// 
 			/// </summary>
-			std::shared_ptr<Animation> m_sptrImpactAnimation = nullptr;
+			std::shared_ptr<Animation> m_sptrImpactAnimation = 
+				std::make_shared<Animation>();
 		};
 
 	public:
