@@ -311,7 +311,7 @@ void GameScene::setup(const std::string & filePath)
 		m_resources = std::make_unique<Resources>();
 
 		////////////////////////////////////////////
-		// Setup Background
+		// Setup Player
 		////////////////////////////////////////////
 		this->setupPlayer(resourceHandler, m_resources->m_sptrPlayer, gameSceneParser);
 
@@ -359,7 +359,7 @@ void GameScene::setupPlayer(ResourceHandler & resourceHandler, std::shared_ptr<P
 	this->setupConnector(resourceHandler, sptrPlayerResources->m_connector, playerJson);
 
 	////////////////////////////////////////////
-	// Setup Connector
+	// Setup Bullet Manager
 	////////////////////////////////////////////
 	this->setupBulletManager(resourceHandler, sptrPlayerResources->m_bullets, playerJson);
 }
@@ -500,8 +500,8 @@ void GameScene::setupBulletManager(ResourceHandler & resourceHandler, std::share
 
 	//auto const NUM_OF_BULLETS = static_cast<int>(BulletTypes::AmountOfTypes);
 	// UNDONE: Animations and textures need to be added to json file "player.json".
-	// For now we will only do for 1 bullet
-	auto const NUM_OF_BULLETS = 1;
+	// For now we will only do for 2 bullets
+	auto const NUM_OF_BULLETS = 2;
 	for (int i = 0; i < NUM_OF_BULLETS; ++i)
 	{
 		int const BULLET_NUM = i + 1;
@@ -563,7 +563,7 @@ void GameScene::setupBullet(
 		auto const & FRAME_WIDTH = JSON_ANIMATION.at("width").get<int>();
 		auto const & FRAME_HEIGHT = JSON_ANIMATION.at("height").get<int>();
 		auto const & JSON_FRAMES = JSON_ANIMATION.at("frames");
-		float count = 0.0f;
+		float count = 1.0f;
 		for (
 			auto iterator = JSON_FRAMES.begin(), endIterator = JSON_FRAMES.end();
 			iterator != endIterator;
@@ -653,6 +653,8 @@ void GameScene::setupBullet(
 		case BulletTypes::Empowered:
 		{
 			sptrBulletResource = std::make_shared<Empowered::Resources>();
+			// HACK: deleting impact animation since external assets aren't ready.
+			sptrBulletResource->m_sptrImpactAnimation = nullptr;
 			break;
 		}
 		case BulletTypes::Standard:

@@ -95,10 +95,7 @@ void bullets::Bullet::draw(Window & window, const float & deltaTime)
 	{
 		auto & loopAnimator = *m_uptrLoopAnimator;
 		loopAnimator.update(sf::seconds(deltaTime));
-		if (loopAnimator.isPlayingAnimation())
-		{
-			loopAnimator.animate(m_bulletRect);
-		}
+		loopAnimator.animate(m_bulletRect);
 	}
 	if (m_uptrImpactAnimator)
 	{
@@ -109,6 +106,7 @@ void bullets::Bullet::draw(Window & window, const float & deltaTime)
 			impactAnimator.animate(m_bulletRect);
 		}
 	}
+	m_bulletRect.setRotation(m_angle);
 	window.draw(m_bulletRect);
 	//window.draw(tempRect);
 }
