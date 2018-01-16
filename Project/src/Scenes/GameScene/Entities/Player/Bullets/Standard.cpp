@@ -12,6 +12,7 @@ bullets::Standard::Standard()
 {
 	m_speed = 8.0f * 60.0f;
 	m_velocity.y = -m_speed;
+	m_angle = -90.0f;
 }
 
 /// <summary>

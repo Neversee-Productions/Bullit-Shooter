@@ -20,7 +20,8 @@ var dir_01f7390e172ee3534e05f20e9f68fee7 =
       [ "FireBlast", "classbullets_1_1_fire_blast.html", "classbullets_1_1_fire_blast" ]
     ] ],
     [ "HolySphere.h", "_holy_sphere_8h.html", [
-      [ "HolySphere", "classbullets_1_1_holy_sphere.html", "classbullets_1_1_holy_sphere" ]
+      [ "HolySphere", "classbullets_1_1_holy_sphere.html", "classbullets_1_1_holy_sphere" ],
+      [ "Resources", "structbullets_1_1_holy_sphere_1_1_resources.html", "structbullets_1_1_holy_sphere_1_1_resources" ]
     ] ],
     [ "MagmaShot.h", "_magma_shot_8h.html", [
       [ "MagmaShot", "classbullets_1_1_magma_shot.html", "classbullets_1_1_magma_shot" ]

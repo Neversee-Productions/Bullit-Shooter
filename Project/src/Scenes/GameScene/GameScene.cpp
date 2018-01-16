@@ -498,10 +498,7 @@ void GameScene::setupBulletManager(ResourceHandler & resourceHandler, std::share
 	std::stringstream bulletId("--------");
 	bulletId << "bullet";
 
-	//auto const NUM_OF_BULLETS = static_cast<int>(BulletTypes::AmountOfTypes);
-	// UNDONE: Animations and textures need to be added to json file "player.json".
-	// For now we will only do for 2 bullets
-	auto const NUM_OF_BULLETS = 2;
+	auto const NUM_OF_BULLETS = static_cast<int>(BulletTypes::AmountOfTypes);
 	for (int i = 0; i < NUM_OF_BULLETS; ++i)
 	{
 		int const BULLET_NUM = i + 1;
@@ -653,15 +650,11 @@ void GameScene::setupBullet(
 		case BulletTypes::Empowered:
 		{
 			sptrBulletResource = std::make_shared<Empowered::Resources>();
-			// HACK: deleting impact animation since external assets aren't ready.
-			sptrBulletResource->m_sptrImpactAnimation = nullptr;
 			break;
 		}
 		case BulletTypes::Standard:
 		{
 			sptrBulletResource = std::make_shared<Standard::Resources>();
-			// HACK: deleting impact animation since external assets aren't ready.
-			sptrBulletResource->m_sptrImpactAnimation = nullptr;
 			break;
 		}
 		default:

@@ -125,6 +125,8 @@
     <Image Include="resources\gui\textures\button.png" />
     <Image Include="resources\gui\textures\checkbox.png" />
     <Image Include="resources\gui\textures\slider.png" />
+    <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_impact.png" />
+    <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_loop.png" />
     <Image Include="resources\scenes\Game\player\player_ship.png" />
     <Image Include="resources\scenes\Game\player\weapons\weapon01\weapon_begin.png" />
     <Image Include="resources\scenes\Game\player\weapons\weapon01\weapon_shoot.png" />

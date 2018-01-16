@@ -17,6 +17,7 @@ bullets::MagmaShot::MagmaShot()
 	m_speed = 4.0f * 60.0f;
 	//updateVelocityVector();
 	m_velocity.y = -m_speed;
+	m_angle = -90.0f;
 
 	//different size to parent
 	m_bulletRect.setSize(s_DEFAULT_SIZE);

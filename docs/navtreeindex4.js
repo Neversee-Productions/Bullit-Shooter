@@ -33,5 +33,7 @@ var NAVTREEINDEX4 =
 "structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a98774edf7fd394e5714d7235894228c3":[2,0,0,0,0,0,2],
 "structbullets_1_1_bullet_1_1_resources_1_1_animation.html#aac30428d83cf1f2034fed04fdabcef79":[2,0,0,0,0,0,1],
 "structbullets_1_1_death_orb_1_1_resources.html":[2,0,0,2,0],
-"structbullets_1_1_death_orb_1_1_resources.html#a9bd8f4c66b80a50f65231df2d2ef6c3d":[2,0,0,2,0,0]
+"structbullets_1_1_death_orb_1_1_resources.html#a9bd8f4c66b80a50f65231df2d2ef6c3d":[2,0,0,2,0,0],
+"structbullets_1_1_holy_sphere_1_1_resources.html":[2,0,0,5,0],
+"structbullets_1_1_holy_sphere_1_1_resources.html#ad0b503ae7cea298cf8edc3becdd42ab1":[2,0,0,5,0,0]
 };

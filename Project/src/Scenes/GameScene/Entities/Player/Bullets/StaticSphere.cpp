@@ -16,6 +16,7 @@ bullets::StaticSphere::StaticSphere()
 {
 	m_speed = 6.0f * 60.0f;
 	m_velocity.y = -m_speed;
+	m_angle = -90.0f;
 
 	//different size to parent
 	m_bulletRect.setSize(sf::Vector2f(30.0f, 30.0f));

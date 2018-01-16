@@ -50,7 +50,8 @@ var hierarchy =
     [ "Background::Resources", "struct_background_1_1_resources.html", null ],
     [ "BulletManager::Resources", "struct_bullet_manager_1_1_resources.html", null ],
     [ "bullets::Bullet::Resources", "structbullets_1_1_bullet_1_1_resources.html", [
-      [ "bullets::DeathOrb::Resources", "structbullets_1_1_death_orb_1_1_resources.html", null ]
+      [ "bullets::DeathOrb::Resources", "structbullets_1_1_death_orb_1_1_resources.html", null ],
+      [ "bullets::HolySphere::Resources", "structbullets_1_1_holy_sphere_1_1_resources.html", null ]
     ] ],
     [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
     [ "Connector::Resources", "struct_connector_1_1_resources.html", null ],

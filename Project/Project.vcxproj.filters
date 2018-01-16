@@ -175,6 +175,9 @@
     <Filter Include="Resource Files\scenes\Game\player\bullets">
       <UniqueIdentifier>{a4c3485a-64d4-4c2b-ba88-627d58365167}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\bullets\bullet01">
+      <UniqueIdentifier>{204f7e2a-f49e-4940-8823-3f65bffebf3d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -560,6 +563,12 @@
     </Image>
     <Image Include="resources\scenes\Game\player\weapons\weapon01\weapon_shoot.png">
       <Filter>Resource Files\scenes\Game\player\weapons\weapon01</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_impact.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet01</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_loop.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet01</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
