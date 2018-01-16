@@ -273,3 +273,68 @@ void Player::setAlive(bool check)
 {
 	m_alive = check;
 }
+
+/// <summary>
+/// @brief fetch the position of players ship.
+/// 
+/// 
+/// </summary>
+/// <returns>players ship position.</returns>
+sf::Vector2f const & Player::getPosition() const
+{
+	return m_ship.getShipRect().getPosition();
+}
+
+void Player::nextWeapon()
+{
+	BulletTypes currentType = m_weaponLeft.getBulletType();
+	switch (currentType)
+	{
+	case BulletTypes::Standard:
+		m_weaponLeft.setType(BulletTypes::Empowered);
+		m_weaponRight.setType(BulletTypes::Empowered);
+		break;
+	case BulletTypes::Empowered:
+		m_weaponLeft.setType(BulletTypes::DeathOrb);
+		m_weaponRight.setType(BulletTypes::DeathOrb);
+		break;
+	case BulletTypes::DeathOrb:
+		m_weaponLeft.setType(BulletTypes::FireBlast);
+		m_weaponRight.setType(BulletTypes::FireBlast);
+		break;
+	case BulletTypes::FireBlast:
+		m_weaponLeft.setType(BulletTypes::HolySphere);
+		m_weaponRight.setType(BulletTypes::HolySphere);
+		break;
+	case BulletTypes::HolySphere:
+		m_weaponLeft.setType(BulletTypes::MagmaShot);
+		m_weaponRight.setType(BulletTypes::MagmaShot);
+		break;
+	case BulletTypes::MagmaShot:
+		m_weaponLeft.setType(BulletTypes::NapalmSphere);
+		m_weaponRight.setType(BulletTypes::NapalmSphere);
+		break;
+	case BulletTypes::NapalmSphere:
+		m_weaponLeft.setType(BulletTypes::CometShot);
+		m_weaponRight.setType(BulletTypes::CometShot);
+		break;
+	case BulletTypes::CometShot:
+		m_weaponLeft.setType(BulletTypes::NullWave);
+		m_weaponRight.setType(BulletTypes::NullWave);
+		break;
+	case BulletTypes::NullWave:
+		m_weaponLeft.setType(BulletTypes::StaticSphere);
+		m_weaponRight.setType(BulletTypes::StaticSphere);
+		break;
+	case BulletTypes::StaticSphere:
+		m_weaponLeft.setType(BulletTypes::PyroBlast);
+		m_weaponRight.setType(BulletTypes::PyroBlast);
+		break;
+	case BulletTypes::PyroBlast:
+		m_weaponLeft.setType(BulletTypes::Standard);
+		m_weaponRight.setType(BulletTypes::Standard);
+		break;
+	default:
+		break;
+	}
+}

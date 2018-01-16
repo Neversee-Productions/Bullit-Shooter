@@ -71,11 +71,15 @@ public:
 		/// </summary>
 		std::map<BulletTypes,IndividualPickup> m_pickups;
 	};
-	Pickup(std::shared_ptr<sf::Texture> texture, sf::Vector2f position, sf::Vector2f size, sf::Vector2f origin);
+	Pickup();
+	Pickup(/*std::shared_ptr<sf::Texture> texture,*/sf::Vector2f position, sf::Vector2f size);
 	void update();
 	void draw(Window & window, const float & deltaTime);
 	void setPosition(sf::Vector2f pos);
 	sf::Vector2f const getPosition() const;
+	void setSize(sf::Vector2f size);
+	sf::Vector2f const getSize() const;
+	void setVelocity(sf::Vector2f vel);
 
 
 private:
@@ -120,6 +124,20 @@ private:
 	/// 
 	/// </summary>
 	bool m_isPickedUp;
+
+	/// <summary>
+	/// @brief rectangle to draw that represents the pickup.
+	/// 
+	/// 
+	/// </summary>
+	sf::RectangleShape m_rectangle;
+
+	/// <summary>
+	/// @brief define velocity.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_velocity;
 };
 
 #endif // !PICKUP_H

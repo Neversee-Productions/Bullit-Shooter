@@ -1,5 +1,10 @@
 ﻿#include "Scenes\GameScene\Entities\Pickup.h"
 
+Pickup::Pickup()
+{
+
+}
+
 /// <summary>
 /// @brief Default constructor.
 /// 
@@ -9,11 +14,9 @@
 /// <param name="position">defines position</param>
 /// <param name="size">defines size</param>
 /// <param name="origin">defines origin</param>
-Pickup::Pickup(std::shared_ptr<sf::Texture> texture, sf::Vector2f position, sf::Vector2f size, sf::Vector2f origin)
-	: m_texture(texture)
-	, m_position(position)
+Pickup::Pickup(/*std::shared_ptr<sf::Texture> texture,*/sf::Vector2f position, sf::Vector2f size)
+	: m_position(position)
 	, m_size(size)
-	, m_origin(origin)
 {
 	if (m_size.x > m_size.y) //make collision circle same as the bigger side
 	{
@@ -25,13 +28,85 @@ Pickup::Pickup(std::shared_ptr<sf::Texture> texture, sf::Vector2f position, sf::
 	}
 	m_collisionCircle.p.x = m_position.x;
 	m_collisionCircle.p.y = m_position.y;
+	m_rectangle.setSize(m_size);
+	m_rectangle.setPosition(m_position);
+	m_rectangle.setOrigin(m_rectangle.getGlobalBounds().width / 2, m_rectangle.getGlobalBounds().height);
 }
 
+/// <summary>
+/// @brief update object.
+/// 
+/// 
+/// </summary>
 void Pickup::update()
 {
-
+	m_position += m_velocity;
+	m_rectangle.setPosition(m_position);
 }
 
+/// <summary>
+/// @brief Render object.
+/// 
+/// 
+/// </summary>
+/// <param name="window">define reference to our target Window.</param>
+/// <param name="deltaTime">define reference to draw time step.</param>
 void Pickup::draw(Window & window, const float & deltaTime)
 {
+	window.draw(m_rectangle);
+}
+
+/// <summary>
+/// @brief Sets the position of object.
+/// 
+/// 
+/// </summary>
+/// <param name="pos">Define new position of object</param>
+void Pickup::setPosition(sf::Vector2f pos)
+{
+	m_position = pos;
+}
+
+/// <summary>
+/// @brief Return the position.
+/// 
+/// 
+/// </summary>
+/// <returns>returns the position of object</returns>
+sf::Vector2f const Pickup::getPosition() const
+{
+	return m_position;
+}
+
+/// <summary>
+/// @brief Set new size.
+/// 
+/// 
+/// </summary>
+/// <param name="size">new size of the object</param>
+void Pickup::setSize(sf::Vector2f size)
+{
+	m_size = size;
+}
+
+/// <summary>
+/// @brief get the current size.
+/// 
+/// 
+/// </summary>
+/// <returns>current size of object.</returns>
+sf::Vector2f const Pickup::getSize() const
+{
+	return m_size;
+}
+
+/// <summary>
+/// @brief Set velocity of object.
+/// 
+/// 
+/// </summary>
+/// <param name="vel">new velocity.</param>
+void Pickup::setVelocity(sf::Vector2f vel)
+{
+	m_velocity = vel;
 }

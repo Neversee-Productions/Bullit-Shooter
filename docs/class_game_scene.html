@@ -139,6 +139,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a04bbb69fd2e324c8480995d6c1ea7d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c06cce94ec2a1c24f9c575d977d7a35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a0c06cce94ec2a1c24f9c575d977d7a35">collisionResponse</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_pyro_blast.html">bullets::PyroBlast</a> &amp;bullet)</td></tr>
 <tr class="separator:a0c06cce94ec2a1c24f9c575d977d7a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ad265a99cea48b606c907382e66cabc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a3ad265a99cea48b606c907382e66cabc">playerPickupCollision</a> ()</td></tr>
+<tr class="separator:a3ad265a99cea48b606c907382e66cabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77ab292bd9b967b90663ac915ff1b25e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a77ab292bd9b967b90663ac915ff1b25e">generateRandomTimer</a> ()</td></tr>
 <tr class="separator:a77ab292bd9b967b90663ac915ff1b25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scene"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scene')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scene.html">Scene</a></td></tr>
@@ -180,6 +182,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a1c96ec36fdc4c779139ec17bc5a712ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8403905ac9441b88d26ecca580a1dc0d"><td class="memItemLeft" align="right" valign="top">const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8403905ac9441b88d26ecca580a1dc0d">UPDATE_DT</a></td></tr>
 <tr class="separator:a8403905ac9441b88d26ecca580a1dc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d2ddcc62810389125ac5ddf2bb442af"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_pickup.html">Pickup</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a9d2ddcc62810389125ac5ddf2bb442af">m_pickup</a></td></tr>
+<tr class="separator:a9d2ddcc62810389125ac5ddf2bb442af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -487,6 +491,23 @@ Rafael Plugge</dd></dl>
       </table>
 </div><div class="memdoc">
 <p>this method checks collisions with all active asteroids.</p>
+
+</div>
+</div>
+<a id="a3ad265a99cea48b606c907382e66cabc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad265a99cea48b606c907382e66cabc">&#9670;&nbsp;</a></span>playerPickupCollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::playerPickupCollision </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -829,6 +850,29 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>reference to the key handler.</p>
+
+</div>
+</div>
+<a id="a9d2ddcc62810389125ac5ddf2bb442af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d2ddcc62810389125ac5ddf2bb442af">&#9670;&nbsp;</a></span>m_pickup</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_pickup.html">Pickup</a>&gt; GameScene::m_pickup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>testing a pickup.</p>
 
 </div>
 </div>

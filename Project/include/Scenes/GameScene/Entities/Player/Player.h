@@ -64,6 +64,8 @@ public:
 	const tinyh::c2Circle& getShieldCollisionCircle();
 	const float& getShieldHealth();
 	void setAlive(bool check);
+	sf::Vector2f const & getPosition() const;
+	void nextWeapon();
 
 private:
 	void switchWeaponInput();
