@@ -18,6 +18,24 @@ namespace bullets
 		public Bullet
 	{
 	public:
+
+		/// 
+		/// @author Rafael Plugge
+		/// @brief HolySphere's resources.
+		/// 
+		/// Will resources specific to this bullet.
+		/// @see Bullet::Resources
+		/// 
+		struct Resources : Bullet::Resources
+		{
+			Resources()
+				: Bullet::Resources()
+			{
+				m_sptrImpactAnimation = nullptr;
+			}
+		};
+
+	public:
 		HolySphere();
 		void update() override;
 		static float getFireRate();

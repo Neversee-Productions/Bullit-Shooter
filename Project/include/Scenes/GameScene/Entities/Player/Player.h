@@ -49,8 +49,13 @@ public:
 		std::shared_ptr<Connector::Resources> m_connector =
 			std::make_shared<Connector::Resources>();
 
-		//std::shared_ptr<bullets::Bullet::Resources> m_bullet =
-		//	std::make_shared<bullets::Bullet::Resources>();
+		/// <summary>
+		/// @brief shared pointer to bullet resources.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<BulletManager::Resources> m_bullets =
+			std::make_shared<BulletManager::Resources>();
 	};
 
 public:

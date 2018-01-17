@@ -39,6 +39,13 @@ namespace bullets
 		static const sf::Vector2f s_DEFAULT_SIZE;
 
 		/// <summary>
+		/// @brief determine the cloud size.
+		/// 
+		/// 
+		/// </summary>
+		static const sf::Vector2f s_CLOUD_SIZE;
+
+		/// <summary>
 		/// @brief defines if bullet is to explode.
 		/// 
 		/// 

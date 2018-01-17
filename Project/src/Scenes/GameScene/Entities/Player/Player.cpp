@@ -25,7 +25,7 @@ Player::Player(KeyHandler& keyHandler)
 	m_weaponLeft.setFlipped(flip);
 	m_weaponRight.setRectPos(m_weaponLeftPos);
 	m_weaponRight.setFlipped(!flip);
-	m_bulletManager.initBulletvector(m_weaponLeft.getBulletType());
+	//m_bulletManager.initBulletvector(m_weaponLeft.getBulletType());
 }
 
 /// <summary>
@@ -41,6 +41,7 @@ void Player::init(std::shared_ptr<Resources> sptrResources)
 	m_weaponRight.init(sptrResources->m_weapon);
 	m_connectLeftWeaponToShip.init(sptrResources->m_connector);
 	m_connectRightWeaponToShip.init(sptrResources->m_connector);
+	m_bulletManager.init(sptrResources->m_bullets);
 }
 
 /// <summary>

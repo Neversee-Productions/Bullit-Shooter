@@ -34,6 +34,28 @@ ResourceHandler::ResourceHandler()
 {
 }
 
+/// <summary>
+/// @brief Our loader of assets.
+/// 
+/// 
+/// </summary>
+/// <param name="filePath">Defines the file path of our resource.</param>
+/// <param name="id">Defines the id of the data we are loading</param>
+/// <returns>Returns a shared pointer to our loaded resource.</returns>
+template<>
+std::shared_ptr<sf::Texture> ResourceHandler::loadUp<sf::Texture>(std::string const & filePath, std::string const & id)
+{
+	std::shared_ptr<sf::Texture> return_value;
+	try
+	{
+		return_value = std::make_shared<sf::Texture>(this->load<sf::Texture>(id, filePath));
+	}
+	catch (...) // catch any and all possible exceptions.
+	{
+		return nullptr;
+	}
+	return return_value;
+}
 
 /// <summary>
 /// @brief Our loader of assets.
