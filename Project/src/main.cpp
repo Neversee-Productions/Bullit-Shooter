@@ -58,7 +58,9 @@
 /// <param name="argv">c style string of the arguments passed into the application.</param>
 int main(int argc, char** argv)
 {
-	std::srand(static_cast<unsigned int>(time(nullptr))); // generate seed using time since epoch.
+	// generate seed using time since epoch.
+	std::srand(static_cast<unsigned int>(time(nullptr)));
+	
 	Application& app = Application();
 	app.run();
 }
