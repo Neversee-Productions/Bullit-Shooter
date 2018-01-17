@@ -43,7 +43,7 @@ const float & App::getUpdateDeltaTime()
 }
 
 /// <summary>
-/// @brief a gettter for the window rectangle.
+/// @brief a getter for the window rectangle.
 /// 
 /// 
 /// </summary>

@@ -18,6 +18,8 @@ namespace bullets
 	public:
 		FireBlast();
 		static float getFireRate();
+		const float & getDamage() override;
+
 	private:
 		/// <summary>
 		/// @brief define a static constant fire rate.
@@ -25,6 +27,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		static const float s_FIRE_RATE;
+
+		/// <summary>
+		/// @brief defines damage.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
 	};
 }
 #endif // !FIREBLAST_H

@@ -1,6 +1,6 @@
 #include "Scenes\GameScene\Entities\Asteroids\Asteroid.h"
 
-float const Asteroid::INVULNERABILITY_FRAMES = 0.09f;
+float const Asteroid::INVULNERABILITY_FRAMES = 0.01f;
 
 
 /// <summary>
@@ -65,10 +65,6 @@ void Asteroid::update()
 		m_circle.setPosition(m_position);
 		updateCollisionCircle();
 		updateWindowCollisions();
-		if (m_health <= 0)
-		{
-			m_active = false;
-		}
 	}
 }
 
@@ -196,6 +192,10 @@ void Asteroid::decrementHealth(float dmg)
 	{
 		m_health -= dmg;
 		m_invulnerable = true;
+		if (m_health <= 0)
+		{
+			m_active = false;
+		}
 	}
 }
 
@@ -217,7 +217,7 @@ bool Asteroid::isInvulnerable()
 /// </summary>
 void Asteroid::knockback()
 {
-	m_velocity.y -= 15.0f;
+	m_velocity.y -= bullets::CometShot::s_KNOCK_BACK;
 }
 
 /// <summary>

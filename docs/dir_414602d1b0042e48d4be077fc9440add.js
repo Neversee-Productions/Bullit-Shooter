@@ -6,5 +6,10 @@ var dir_414602d1b0042e48d4be077fc9440add =
       [ "Background", "class_background.html", "class_background" ],
       [ "Resources", "struct_background_1_1_resources.html", "struct_background_1_1_resources" ]
     ] ],
-    [ "Entities.h", "_entities_8h.html", null ]
+    [ "Entities.h", "_entities_8h.html", null ],
+    [ "Pickup.h", "_pickup_8h.html", [
+      [ "Pickup", "class_pickup.html", "class_pickup" ],
+      [ "Resources", "struct_pickup_1_1_resources.html", "struct_pickup_1_1_resources" ],
+      [ "IndividualPickup", "struct_pickup_1_1_resources_1_1_individual_pickup.html", "struct_pickup_1_1_resources_1_1_individual_pickup" ]
+    ] ]
 ];

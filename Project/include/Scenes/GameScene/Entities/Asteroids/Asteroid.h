@@ -4,6 +4,7 @@
 #include "SFML\Graphics.hpp"
 #include "Window.h"
 #include <stdlib.h>
+#include "Scenes\GameScene\Entities\Player\Bullets\CometShot.h"
 
 ///
 /// @brief An asteroid entity class.

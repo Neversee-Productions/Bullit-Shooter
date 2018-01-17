@@ -51,16 +51,16 @@ float field(in vec3 p) {
 
 
 void main() {   
-     	vec2 uv2 = 2. * gl_FragCoord.xy / vec2(512) - 1.;
+		vec2 uv2 = 2. * gl_FragCoord.xy / vec2(512) - 1.;
 	vec2 uvs = uv2 * vec2(512)  / 512.;
 	
 	float time2 = time;               
-        float speed = speed2;
-        speed = .01 * cos(time2*0.002 + 3.1415926/4.0);          
+		float speed = speed2;
+		speed = .01 * cos(time2*0.002 + 3.1415926/4.0);          
 	//speed = 0.0;	
-    	float formuparam = formuparam2;
+		float formuparam = formuparam2;
 	
-    	//get coords and direction	
+		//get coordinates and direction	
 	vec2 uv = uvs;		       
 	//mouse rotation
 	float a_xz = 0.0;
@@ -75,10 +75,10 @@ void main() {
 	float v2 =1.0;	
 	vec3 dir=vec3(uv*zoom,1.); 
 	vec3 from=vec3(0.0, 0.0,0.0);                               
-        from.x -= 1.;
-        from.y -= 1.;
-               
-               
+		from.x -= 1.;
+		from.y -= 1.;
+			   
+			   
 	vec3 forward = vec3(0.,6.,1.);   
 	from.x += transverseSpeed*(1.0)*cos(0.001*time);
 	from.y += transverseSpeed*(1.0)*sin(0.001*time);
@@ -111,7 +111,8 @@ void main() {
 	float t3 = 0.0;	
 	
 	vec3 backCol2 = vec3(0.);
-	for (int r=0; r<volsteps; r++) {
+	for (int r=0; r<volsteps; r++)
+	{
 		vec3 p2=from+(s+zoffset)*dir;// + vec3(0.,0.,zoffset);
 		vec3 p3=from+(s3+zoffset)*dir;// + vec3(0.,0.,zoffset);
 		
@@ -140,7 +141,7 @@ void main() {
 		float fade = pow(distfading,max(0.,float(r)-sampleShift));		
 		//t3 += fade;		
 		v+=fade;
-	       	//backCol2 -= fade;
+			//backCol2 -= fade;
 
 		// fade out samples as they approach the camera
 		if( r == 0 )
@@ -157,7 +158,7 @@ void main() {
 		s+=stepsize;
 		s3 =s3 + stepsize;		
 	}//???
-		       
+			   
 	v=mix(vec3(length(v)),v,saturation); //color adjust	
 
 	vec4 forCol2 = vec4(v*.001,1.);	
@@ -171,4 +172,5 @@ void main() {
 	backCol2.g = 0.1;
 	backCol2.bg = mix(backCol2.gb, backCol2.bg, 0.5*(cos(time*0.01) + 1.0));	
 	gl_FragColor = forCol2 + vec4(backCol2, 1.0);
+	
 }

@@ -10,6 +10,7 @@ const float bullets::NullWave::s_FIRE_RATE = 1.0f;
 /// </summary>
 bullets::NullWave::NullWave()
 	: Bullet()
+	, m_damage(6.0f)
 {
 	m_speed = 8.0f * 60.0f;
 	m_velocity.y = -m_speed;
@@ -41,4 +42,15 @@ void bullets::NullWave::update()
 float bullets::NullWave::getFireRate()
 {
 	return s_FIRE_RATE;
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::NullWave::getDamage()
+{
+	return m_damage;
 }

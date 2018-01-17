@@ -10,6 +10,7 @@ const float bullets::PyroBlast::s_FIRE_RATE = 4.0f;
 bullets::PyroBlast::PyroBlast()
 	: Bullet()
 	, m_explode(false)
+	, m_damage(6.0f)
 {
 	m_speed = 4.0f * 60.0f;
 	m_velocity.y = -m_speed;
@@ -75,6 +76,7 @@ void bullets::PyroBlast::setActive(bool active)
 		m_bulletRect.setSize(sf::Vector2f(20.0f, 15.0f));
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_explode = false;
+		this->setAnimation(s_LOOP_ID);
 	}
 	m_active = active;
 }
@@ -88,4 +90,19 @@ void bullets::PyroBlast::setActive(bool active)
 void bullets::PyroBlast::explode(bool check)
 {
 	m_explode = check;
+	if (check)
+	{
+		this->setAnimation(s_IMPACT_ID);
+	}
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::PyroBlast::getDamage()
+{
+	return m_damage;
 }

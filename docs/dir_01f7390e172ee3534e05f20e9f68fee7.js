@@ -1,14 +1,17 @@
 var dir_01f7390e172ee3534e05f20e9f68fee7 =
 [
     [ "Bullet.h", "_bullet_8h.html", [
-      [ "Bullet", "classbullets_1_1_bullet.html", "classbullets_1_1_bullet" ]
+      [ "Bullet", "classbullets_1_1_bullet.html", "classbullets_1_1_bullet" ],
+      [ "Resources", "structbullets_1_1_bullet_1_1_resources.html", "structbullets_1_1_bullet_1_1_resources" ],
+      [ "Animation", "structbullets_1_1_bullet_1_1_resources_1_1_animation.html", "structbullets_1_1_bullet_1_1_resources_1_1_animation" ]
     ] ],
     [ "BulletTypes.h", "_bullet_types_8h.html", "_bullet_types_8h" ],
     [ "CometShot.h", "_comet_shot_8h.html", [
       [ "CometShot", "classbullets_1_1_comet_shot.html", "classbullets_1_1_comet_shot" ]
     ] ],
     [ "DeathOrb.h", "_death_orb_8h.html", [
-      [ "DeathOrb", "classbullets_1_1_death_orb.html", "classbullets_1_1_death_orb" ]
+      [ "DeathOrb", "classbullets_1_1_death_orb.html", "classbullets_1_1_death_orb" ],
+      [ "Resources", "structbullets_1_1_death_orb_1_1_resources.html", "structbullets_1_1_death_orb_1_1_resources" ]
     ] ],
     [ "Empowered.h", "_empowered_8h.html", [
       [ "Empowered", "classbullets_1_1_empowered.html", "classbullets_1_1_empowered" ]
@@ -17,7 +20,8 @@ var dir_01f7390e172ee3534e05f20e9f68fee7 =
       [ "FireBlast", "classbullets_1_1_fire_blast.html", "classbullets_1_1_fire_blast" ]
     ] ],
     [ "HolySphere.h", "_holy_sphere_8h.html", [
-      [ "HolySphere", "classbullets_1_1_holy_sphere.html", "classbullets_1_1_holy_sphere" ]
+      [ "HolySphere", "classbullets_1_1_holy_sphere.html", "classbullets_1_1_holy_sphere" ],
+      [ "Resources", "structbullets_1_1_holy_sphere_1_1_resources.html", "structbullets_1_1_holy_sphere_1_1_resources" ]
     ] ],
     [ "MagmaShot.h", "_magma_shot_8h.html", [
       [ "MagmaShot", "classbullets_1_1_magma_shot.html", "classbullets_1_1_magma_shot" ]

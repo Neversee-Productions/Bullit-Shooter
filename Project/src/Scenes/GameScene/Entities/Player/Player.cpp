@@ -9,7 +9,9 @@
 Player::Player(KeyHandler& keyHandler)
 	: m_ship()
 	, m_weaponLeft()
+	, m_connectLeftWeaponToShip()
 	, m_weaponRight()
+	, m_connectRightWeaponToShip()
 	, m_keyHandler(keyHandler)
 	, m_bulletManager()
 	, deltaTime(App::getUpdateDeltaTime())
@@ -23,7 +25,7 @@ Player::Player(KeyHandler& keyHandler)
 	m_weaponLeft.setFlipped(flip);
 	m_weaponRight.setRectPos(m_weaponLeftPos);
 	m_weaponRight.setFlipped(!flip);
-	m_bulletManager.initBulletvector(m_weaponLeft.getBulletType());
+	//m_bulletManager.initBulletvector(m_weaponLeft.getBulletType());
 }
 
 /// <summary>
@@ -37,6 +39,9 @@ void Player::init(std::shared_ptr<Resources> sptrResources)
 	m_ship.init(sptrResources->m_ship);
 	m_weaponLeft.init(sptrResources->m_weapon);
 	m_weaponRight.init(sptrResources->m_weapon);
+	m_connectLeftWeaponToShip.init(sptrResources->m_connector);
+	m_connectRightWeaponToShip.init(sptrResources->m_connector);
+	m_bulletManager.init(sptrResources->m_bullets);
 }
 
 /// <summary>
@@ -51,7 +56,9 @@ void Player::draw(Window & window, const float & deltaTime)
 	if (m_alive)
 	{
 		m_bulletManager.draw(window, deltaTime);
+		m_connectLeftWeaponToShip.draw(window, deltaTime);
 		m_weaponLeft.draw(window, deltaTime);
+		m_connectRightWeaponToShip.draw(window, -deltaTime);
 		m_weaponRight.draw(window, deltaTime);
 		m_ship.draw(window, deltaTime);
 		m_shield.draw(window, deltaTime);
@@ -93,10 +100,13 @@ void Player::update()
 			m_bulletManager.fireBullet(m_weaponLeft, m_weaponRight, m_weaponLeft.getBulletType());
 		}
 		m_ship.update();
-		m_shield.setPosition(m_ship.getShipRect().getPosition());
+		auto const & shipPosition = m_ship.getShipRect().getPosition();
+		m_shield.setPosition(shipPosition);
 		m_shield.update();
-		m_weaponLeft.update(m_ship.getShipRect().getPosition());
-		m_weaponRight.update(m_ship.getShipRect().getPosition());
+		m_weaponLeft.update(shipPosition);
+		m_connectLeftWeaponToShip.update(shipPosition, m_weaponLeft.getPosition());
+		m_weaponRight.update(shipPosition);
+		m_connectRightWeaponToShip.update(m_weaponRight.getPosition(), shipPosition);
 		m_bulletManager.update();
 	}
 }
@@ -106,7 +116,7 @@ void Player::update()
 /// 
 /// 
 /// </summary>
-/// <param name="dmg">amaount to decrement shield by.</param>
+/// <param name="dmg">amount to decrement shield by.</param>
 void Player::decrementShield(float dmg)
 {
 	m_shield.decrementShield(dmg);
@@ -259,8 +269,78 @@ const float & Player::getShieldHealth()
 /// 
 /// 
 /// </summary>
-/// <param name="check">new state of players alive bool</param>
+/// <param name="check">new state of players alive boolean</param>
 void Player::setAlive(bool check)
 {
 	m_alive = check;
+}
+
+/// <summary>
+/// @brief fetch the position of players ship.
+/// 
+/// 
+/// </summary>
+/// <returns>players ship position.</returns>
+sf::Vector2f const & Player::getPosition() const
+{
+	return m_ship.getShipRect().getPosition();
+}
+
+/// <summary>
+/// @brief this method will upgrade the current weapon to the next one.
+/// 
+/// 
+/// </summary>
+void Player::nextWeapon()
+{
+	BulletTypes currentType = m_weaponLeft.getBulletType();
+	switch (currentType)
+	{
+	case BulletTypes::Standard:
+		m_weaponLeft.setType(BulletTypes::Empowered);
+		m_weaponRight.setType(BulletTypes::Empowered);
+		break;
+	case BulletTypes::Empowered:
+		m_weaponLeft.setType(BulletTypes::DeathOrb);
+		m_weaponRight.setType(BulletTypes::DeathOrb);
+		break;
+	case BulletTypes::DeathOrb:
+		m_weaponLeft.setType(BulletTypes::FireBlast);
+		m_weaponRight.setType(BulletTypes::FireBlast);
+		break;
+	case BulletTypes::FireBlast:
+		m_weaponLeft.setType(BulletTypes::HolySphere);
+		m_weaponRight.setType(BulletTypes::HolySphere);
+		break;
+	case BulletTypes::HolySphere:
+		m_weaponLeft.setType(BulletTypes::MagmaShot);
+		m_weaponRight.setType(BulletTypes::MagmaShot);
+		break;
+	case BulletTypes::MagmaShot:
+		m_weaponLeft.setType(BulletTypes::NapalmSphere);
+		m_weaponRight.setType(BulletTypes::NapalmSphere);
+		break;
+	case BulletTypes::NapalmSphere:
+		m_weaponLeft.setType(BulletTypes::CometShot);
+		m_weaponRight.setType(BulletTypes::CometShot);
+		break;
+	case BulletTypes::CometShot:
+		m_weaponLeft.setType(BulletTypes::NullWave);
+		m_weaponRight.setType(BulletTypes::NullWave);
+		break;
+	case BulletTypes::NullWave:
+		m_weaponLeft.setType(BulletTypes::StaticSphere);
+		m_weaponRight.setType(BulletTypes::StaticSphere);
+		break;
+	case BulletTypes::StaticSphere:
+		m_weaponLeft.setType(BulletTypes::PyroBlast);
+		m_weaponRight.setType(BulletTypes::PyroBlast);
+		break;
+	case BulletTypes::PyroBlast:
+		m_weaponLeft.setType(BulletTypes::Standard);
+		m_weaponRight.setType(BulletTypes::Standard);
+		break;
+	default:
+		break;
+	}
 }

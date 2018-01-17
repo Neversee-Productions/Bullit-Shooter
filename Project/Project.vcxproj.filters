@@ -136,6 +136,48 @@
     <Filter Include="Source Files\Scenes\GameScene\Entities\Player\Bullets">
       <UniqueIdentifier>{403a7f9e-b9c0-4e6c-8898-4f0cd93b3138}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons">
+      <UniqueIdentifier>{f1b7d426-9779-4a0e-a515-038bc0af8919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon10">
+      <UniqueIdentifier>{04b06a5f-133f-4909-b967-352dd6d6b5c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon11">
+      <UniqueIdentifier>{3b05ecd9-d9a5-4276-8ae5-ca78ff0ce542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon09">
+      <UniqueIdentifier>{c73f5ebf-27d2-423c-9320-03232d0dc96b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon08">
+      <UniqueIdentifier>{fd34e2da-958d-4796-b67a-824589ca0eaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon07">
+      <UniqueIdentifier>{1f1316da-f8ef-4498-8c09-cb65e7d648c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon06">
+      <UniqueIdentifier>{b56b3479-af72-4d94-8ff1-a6a67f6f9616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon05">
+      <UniqueIdentifier>{4f7a9b72-ee13-40ee-83de-cb24e023ba16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon04">
+      <UniqueIdentifier>{e0c6e690-6196-4237-bdb4-b9138a9c1af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon03">
+      <UniqueIdentifier>{9f2478a5-ad6b-446f-8bb6-522265b58380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon02">
+      <UniqueIdentifier>{43c1e3d4-fe2d-4f6f-9d93-69c6bcbc81f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\weapons\weapon01">
+      <UniqueIdentifier>{dbeaa2a0-f06a-4939-98a6-91c63b8bafac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\bullets">
+      <UniqueIdentifier>{a4c3485a-64d4-4c2b-ba88-627d58365167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\bullets\bullet01">
+      <UniqueIdentifier>{204f7e2a-f49e-4940-8823-3f65bffebf3d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -261,6 +303,12 @@
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\Shield.cpp">
       <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Player\Connector.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\GameScene\Entities\Pickup.cpp">
+      <Filter>Source Files\Scenes\GameScene\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -295,6 +343,12 @@
     </None>
     <None Include="resources\scenes\Game\background\background.vert">
       <Filter>Resource Files\scenes\Game\background</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\connector.frag">
+      <Filter>Resource Files\scenes\Game\player</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\connector.vert">
+      <Filter>Resource Files\scenes\Game\player</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -421,6 +475,12 @@
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\Shield.h">
       <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
     </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Player\Connector.h">
+      <Filter>Header Files\Scenes\GameScene\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\GameScene\Entities\Pickup.h">
+      <Filter>Header Files\Scenes\GameScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\gui\textures\button.png">
@@ -443,6 +503,78 @@
     </Image>
     <Image Include="resources\scenes\Game\player\player_ship.png">
       <Filter>Resource Files\scenes\Game\player</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon11\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon11</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon11\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon11</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon10\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon10</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon10\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon10</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon09\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon09</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon09\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon09</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon08\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon08</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon08\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon08</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon07\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon07</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon07\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon07</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon06\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon06</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon06\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon06</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon05\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon05</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon05\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon05</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon04\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon04</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon04\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon04</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon03\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon03</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon03\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon03</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon02\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon02</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon02\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon02</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon01\weapon_begin.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon01</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\weapons\weapon01\weapon_shoot.png">
+      <Filter>Resource Files\scenes\Game\player\weapons\weapon01</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_impact.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet01</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_loop.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet01</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

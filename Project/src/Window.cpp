@@ -34,11 +34,11 @@ Window::Window(KeyHandler & keyHandler)
 	// define our current resolution.
 	///////////////////////////////////////////////////////
 	// windowed mode
-	//m_style = sf::Style::Default;
-	//m_resolution = sf::VideoMode(1366u, 768u);
+	m_style = sf::Style::Default;
+	m_resolution = sf::VideoMode(1366u, 768u);
 	// fullscreen mode
-	m_style = sf::Style::Fullscreen;
-	m_resolution = fullscreenRes.at(0);
+	//m_style = sf::Style::Fullscreen;
+	//m_resolution = fullscreenRes.at(0);
 
 	///////////////////////////////////////////////////////
 	// create our window with pre-defined settings
@@ -58,7 +58,6 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	const sf::Vector2u textureOriginalSize = sf::Vector2u(1366u, 768u);
 	m_renderTexture.create(textureOriginalSize.x, textureOriginalSize.y, false);
-	//m_renderTexture.setSmooth(true);
 
 	///////////////////////////////////////////////////////
 	// initialize our texture renderer
@@ -163,12 +162,12 @@ void Window::processEvents()
 ///		having to destroy/create the sfml window.
 /// 
 /// Complex Operating System dependant function,
-/// where we adjst the SFML Window, using Windows OS handler,
+/// where we adjust the SFML Window, using Windows OS handler,
 /// acquire the window's system handle and
 /// added appropriate windows Uint32 Flag for each window component based
 /// on the passed sfml Style.
 /// 
-/// @warning If peformed on a OS different than Windows the window is closed than re-created instead.
+/// @warning If performed on a OS different than Windows the window is closed than re-created instead.
 /// </summary>
 /// <param name="newStyle">Flag for the new style that the window will be changed to.</param>
 void Window::changeStyle(const sf::Uint32 & newStyle)

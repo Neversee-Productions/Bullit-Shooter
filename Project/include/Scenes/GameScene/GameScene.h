@@ -6,6 +6,7 @@
 #include "Thor\Animations.hpp"
 #include "tinyheaders\tinyc2.h"
 #include "Entities\Entities.h"
+#include "Thor\Math.hpp"
 
 ///
 /// @brief Main game scene.
@@ -17,12 +18,6 @@
 class GameScene : public Scene
 {
 private:
-	/// <summary>
-	/// @brief Defines a alias for our thor::Animator.
-	/// 
-	/// This animator will animate
-	/// </summary>
-	typedef thor::Animator<sf::Sprite, std::string> SpriteAnimator;
 
 	/// 
 	/// @author Rafael Plugge
@@ -40,8 +35,16 @@ private:
 		std::shared_ptr<Player::Resources> m_sptrPlayer =
 			std::make_shared<Player::Resources>();
 
+		/// <summary>
+		/// @brief shared pointer to background resources.
+		/// 
+		/// 
+		/// </summary>
 		std::shared_ptr<Background::Resources> m_sptrBackground =
 			std::make_shared<Background::Resources>();
+
+		std::shared_ptr<Pickup::Resources> m_sptrPickup =
+			std::make_shared<Pickup::Resources>();
 	};
 
 public:
@@ -58,17 +61,55 @@ public:
 	void collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
+	void playerPickupCollision();
 	float generateRandomTimer();
 
 private:
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
+	void setupPlayer(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<Player::Resources> sptrPlayerResources
+		, json::json & gameSceneParser
+	);
+	void setupShip(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<Ship::Resources> sptrShipResources
+		, json::json & shipParser
+	);
+	void setupWeapons(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<Weapon::Resources> sptrWeaponResources
+		, json::json & weaponParser
+	);
 	std::unique_ptr<Weapon::Resources::WeaponAnimation>
-		setupWeapon(
+		setupWeaponAnim(
 			ResourceHandler & resourceHandler
-			, json::json & playerParser
+			, json::json & weaponParser
 			, std::string const & id
 		);
+	void setupConnector(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<Connector::Resources> sptrConnectorResources
+		, json::json & connectorParser
+	);
+	void setupBulletManager(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<BulletManager::Resources> sptrBulletManagerResources
+		, json::json & bulletManagerParser
+	);
+	void setupBullet(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<BulletManager::Resources::BulletResources> sptrBulletResources
+		, BulletTypes const & bulletType
+		, json::json & bulletParser
+		, std::string const & id
+	);
+	void setupBackground(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<Background::Resources> sptrBackgroundResources
+		, json::json & gameSceneParser
+	);
 
 	/// <summary>
 	/// @brief Represents the player object
@@ -132,6 +173,13 @@ private:
 	/// 
 	/// </summary>
 	const float & UPDATE_DT;
+
+	/// <summary>
+	/// @brief testing a pickup.
+	/// 
+	/// 
+	/// </summary>
+	std::unique_ptr<Pickup> m_pickup;
 };
 
 #endif // !GAMESCENE_H

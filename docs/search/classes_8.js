@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['keyhandler',['KeyHandler',['../class_key_handler.html',1,'']]],
-  ['keyspressed',['KeysPressed',['../struct_ship_1_1_keys_pressed.html',1,'Ship']]]
+  ['individualpickup',['IndividualPickup',['../struct_pickup_1_1_resources_1_1_individual_pickup.html',1,'Pickup::Resources']]]
 ];

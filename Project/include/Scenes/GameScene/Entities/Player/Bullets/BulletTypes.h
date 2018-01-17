@@ -19,6 +19,7 @@ enum class BulletTypes
 	, NullWave //Define a NullWave type
 	, StaticSphere //Define a StaticSphere type
 	, PyroBlast //Defines the PyroBlast type
+	, AmountOfTypes //Defines the total number of types
 };
 
 #endif // !BULLETTYPES_H

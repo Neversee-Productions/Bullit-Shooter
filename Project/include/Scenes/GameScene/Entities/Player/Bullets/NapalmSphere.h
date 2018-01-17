@@ -21,6 +21,8 @@ namespace bullets
 		void update() override;
 		void setActive(bool active) override;
 		void explode(bool check);
+		const float & getDamage() override;
+
 	private:
 		/// <summary>
 		/// @brief define a static constant fire rate.
@@ -37,6 +39,13 @@ namespace bullets
 		static const sf::Vector2f s_DEFAULT_SIZE;
 
 		/// <summary>
+		/// @brief determine the cloud size.
+		/// 
+		/// 
+		/// </summary>
+		static const sf::Vector2f s_CLOUD_SIZE;
+
+		/// <summary>
 		/// @brief defines if bullet is to explode.
 		/// 
 		/// 
@@ -49,6 +58,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_timeAlive;
+
+		/// <summary>
+		/// @brief defines damage.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
 	};
 }
 

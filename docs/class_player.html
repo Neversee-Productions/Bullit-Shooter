@@ -124,6 +124,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a283da52296df54a751f35e91cb8b6541"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a472e9dcb0939f81fe709240ce61a9782"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a472e9dcb0939f81fe709240ce61a9782">setAlive</a> (bool check)</td></tr>
 <tr class="separator:a472e9dcb0939f81fe709240ce61a9782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4574e0663b8ee77e014c58f08ca8e30b"><td class="memItemLeft" align="right" valign="top">sf::Vector2f const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a4574e0663b8ee77e014c58f08ca8e30b">getPosition</a> () const</td></tr>
+<tr class="separator:a4574e0663b8ee77e014c58f08ca8e30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8953fa145bd442d1b71a5c7418b2e184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8953fa145bd442d1b71a5c7418b2e184">nextWeapon</a> ()</td></tr>
+<tr class="separator:a8953fa145bd442d1b71a5c7418b2e184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -136,8 +140,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad2d2524643689b736c5d0eb2ae4e7d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a02a8129cf8e6f8444ad6d99bf71537"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_weapon.html">Weapon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3a02a8129cf8e6f8444ad6d99bf71537">m_weaponLeft</a></td></tr>
 <tr class="separator:a3a02a8129cf8e6f8444ad6d99bf71537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ad0d1c8057a1ccab8e4d06b1e79b3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_connector.html">Connector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a92ad0d1c8057a1ccab8e4d06b1e79b3e">m_connectLeftWeaponToShip</a></td></tr>
+<tr class="separator:a92ad0d1c8057a1ccab8e4d06b1e79b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a219c92be7a69318bb24e95aacd802f2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_weapon.html">Weapon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a219c92be7a69318bb24e95aacd802f2c">m_weaponRight</a></td></tr>
 <tr class="separator:a219c92be7a69318bb24e95aacd802f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7927fd14be8ac126bd200ed42cd0bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_connector.html">Connector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7b7927fd14be8ac126bd200ed42cd0bd">m_connectRightWeaponToShip</a></td></tr>
+<tr class="separator:a7b7927fd14be8ac126bd200ed42cd0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04e42601f7e36668e1205c6c5d662e1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a04e42601f7e36668e1205c6c5d662e1f">m_keyHandler</a></td></tr>
 <tr class="separator:a04e42601f7e36668e1205c6c5d662e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d27e83de4dc129a5976c1ea6d32cbd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bullet_manager.html">BulletManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6d27e83de4dc129a5976c1ea6d32cbd1">m_bulletManager</a></td></tr>
@@ -204,7 +212,7 @@ Rafael Plugge</dd></dl>
 <p>Decrement shield by a passed amount.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dmg</td><td>amaount to decrement shield by.</td></tr>
+    <tr><td class="paramname">dmg</td><td>amount to decrement shield by.</td></tr>
   </table>
   </dd>
 </dl>
@@ -263,6 +271,25 @@ Rafael Plugge</dd></dl>
 </div><div class="memdoc">
 <p>get a constant reference to the bullets.</p>
 <dl class="section return"><dt>Returns</dt><dd>map of bullets</dd></dl>
+
+</div>
+</div>
+<a id="a4574e0663b8ee77e014c58f08ca8e30b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4574e0663b8ee77e014c58f08ca8e30b">&#9670;&nbsp;</a></span>getPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f const  &amp; Player::getPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>fetch the position of players ship.</p>
+<dl class="section return"><dt>Returns</dt><dd>players ship position.</dd></dl>
 
 </div>
 </div>
@@ -349,6 +376,24 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="a8953fa145bd442d1b71a5c7418b2e184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8953fa145bd442d1b71a5c7418b2e184">&#9670;&nbsp;</a></span>nextWeapon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::nextWeapon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this method will upgrade the current weapon to the next one.</p>
+
+</div>
+</div>
 <a id="a472e9dcb0939f81fe709240ce61a9782"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a472e9dcb0939f81fe709240ce61a9782">&#9670;&nbsp;</a></span>setAlive()</h2>
 
@@ -367,7 +412,7 @@ Rafael Plugge</dd></dl>
 <p>set the alive of player.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">check</td><td>new state of players alive bool</td></tr>
+    <tr><td class="paramname">check</td><td>new state of players alive boolean</td></tr>
   </table>
   </dd>
 </dl>
@@ -484,6 +529,54 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>the bullet manager object.</p>
+
+</div>
+</div>
+<a id="a92ad0d1c8057a1ccab8e4d06b1e79b3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ad0d1c8057a1ccab8e4d06b1e79b3e">&#9670;&nbsp;</a></span>m_connectLeftWeaponToShip</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_connector.html">Connector</a> Player::m_connectLeftWeaponToShip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines the connector between a weapon and a ship.</p>
+<p>This connector connects between the left weapon to the ship. </p>
+
+</div>
+</div>
+<a id="a7b7927fd14be8ac126bd200ed42cd0bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7927fd14be8ac126bd200ed42cd0bd">&#9670;&nbsp;</a></span>m_connectRightWeaponToShip</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_connector.html">Connector</a> Player::m_connectRightWeaponToShip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines the connector between a weapon and a ship.</p>
+<p>This connector connects between the right weapon to the ship. </p>
 
 </div>
 </div>

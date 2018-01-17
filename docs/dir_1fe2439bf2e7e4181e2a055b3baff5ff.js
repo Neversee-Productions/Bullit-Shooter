@@ -2,7 +2,12 @@ var dir_1fe2439bf2e7e4181e2a055b3baff5ff =
 [
     [ "Bullets", "dir_01f7390e172ee3534e05f20e9f68fee7.html", "dir_01f7390e172ee3534e05f20e9f68fee7" ],
     [ "BulletManager.h", "_bullet_manager_8h.html", [
-      [ "BulletManager", "class_bullet_manager.html", "class_bullet_manager" ]
+      [ "BulletManager", "class_bullet_manager.html", "class_bullet_manager" ],
+      [ "Resources", "struct_bullet_manager_1_1_resources.html", "struct_bullet_manager_1_1_resources" ]
+    ] ],
+    [ "Connector.h", "_connector_8h.html", [
+      [ "Connector", "class_connector.html", "class_connector" ],
+      [ "Resources", "struct_connector_1_1_resources.html", "struct_connector_1_1_resources" ]
     ] ],
     [ "Player.h", "_player_8h.html", [
       [ "Player", "class_player.html", "class_player" ],

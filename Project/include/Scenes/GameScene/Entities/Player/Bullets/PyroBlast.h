@@ -21,6 +21,8 @@ namespace bullets
 		static float getFireRate();
 		void setActive(bool active) override;
 		void explode(bool check);
+		const float & getDamage() override;
+
 	private:
 		/// <summary>
 		/// @brief define a static constant fire rate.
@@ -35,6 +37,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		bool m_explode;
+
+		/// <summary>
+		/// @brief defines damage.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
 	};
 }
 

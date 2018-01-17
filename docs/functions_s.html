@@ -83,6 +83,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>s_CLOUD_SIZE
+: <a class="el" href="classbullets_1_1_napalm_sphere.html#acc14804de3ecf04b52523eb798deee67">bullets::NapalmSphere</a>
+</li>
 <li>s_DEFAULT_SIZE
 : <a class="el" href="classbullets_1_1_napalm_sphere.html#a9131a75d3337bdc397749c236429f3a7">bullets::NapalmSphere</a>
 </li>
@@ -97,8 +100,20 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="classbullets_1_1_standard.html#a4c5f5075ef08a3246b3db4219ee135e3">bullets::Standard</a>
 , <a class="el" href="classbullets_1_1_static_sphere.html#a3b47b05ec4edd6aeb5747db35220d0ea">bullets::StaticSphere</a>
 </li>
+<li>s_IMPACT_ID
+: <a class="el" href="classbullets_1_1_bullet.html#a4221a9ac9e1c53014b98d3dcf6fe283f">bullets::Bullet</a>
+</li>
 <li>s_instance
 : <a class="el" href="class_resource_handler.html#a58a35b535a836c1e7044abd677a367e9">ResourceHandler</a>
+</li>
+<li>s_KNOCK_BACK
+: <a class="el" href="classbullets_1_1_comet_shot.html#a950ec1a54248148202598b08f52dc4e6">bullets::CometShot</a>
+</li>
+<li>s_LOOP_ID
+: <a class="el" href="classbullets_1_1_bullet.html#a2bcee48fdbee7c6acb491c6ea1c1c473">bullets::Bullet</a>
+</li>
+<li>s_MAX_SIZE
+: <a class="el" href="classbullets_1_1_magma_shot.html#a3c7cc10efd51b055090283c55ecd1926">bullets::MagmaShot</a>
 </li>
 <li>s_rectView
 : <a class="el" href="class_app.html#a9f4d7db2c246f006c1ab183747e897b7">App</a>
@@ -153,12 +168,17 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="classbullets_1_1_napalm_sphere.html#af14c981390d155f3b09c22537737c13e">bullets::NapalmSphere</a>
 , <a class="el" href="classbullets_1_1_pyro_blast.html#afee6e9df2affe928ea58992045f78be4">bullets::PyroBlast</a>
 , <a class="el" href="classbullets_1_1_static_sphere.html#a615119059150c28afbc43066608a03a2">bullets::StaticSphere</a>
+, <a class="el" href="class_pickup.html#ad2f194f8feec1c2b5eca7139b6aa753d">Pickup</a>
 </li>
 <li>setAlive()
 : <a class="el" href="class_player.html#a472e9dcb0939f81fe709240ce61a9782">Player</a>
 </li>
 <li>setAngle()
 : <a class="el" href="classbullets_1_1_bullet.html#a72d0c4cb269cad6e25fdaaff4f94cbd2">bullets::Bullet</a>
+</li>
+<li>setAnimation()
+: <a class="el" href="classbullets_1_1_bullet.html#a8914b190cc25c1d69d4356901b7ca5a1">bullets::Bullet</a>
+, <a class="el" href="classbullets_1_1_static_sphere.html#ab83d6b2269e057a37e1c7ed17e588833">bullets::StaticSphere</a>
 </li>
 <li>setEmpowered()
 : <a class="el" href="class_bullet_manager.html#a7a1c306efeb419cf4df73cb940669dc3">BulletManager</a>
@@ -180,10 +200,12 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 </li>
 <li>setPosition()
 : <a class="el" href="classbullets_1_1_bullet.html#ad3ef7337502d9979702dbb1d095bfc5b">bullets::Bullet</a>
+, <a class="el" href="classbullets_1_1_static_sphere.html#a7c86fa6ee6a1e83c6dacdd5c73c471e6">bullets::StaticSphere</a>
 , <a class="el" href="classgui_1_1_button.html#a50a0bd3c7d6ea8987af4eaed88286d25">gui::Button</a>
 , <a class="el" href="classgui_1_1_check_box.html#a0a91f521e1d5a10258fbf378422b4a15">gui::CheckBox</a>
 , <a class="el" href="classgui_1_1_label.html#a36e3de60902dab37bbf7e162d090beab">gui::Label</a>
 , <a class="el" href="classgui_1_1_slider.html#ac75a958a34009da813aa7c1f965448c4">gui::Slider</a>
+, <a class="el" href="class_pickup.html#a9860e90ad08fd765bbd51c51e57c6bba">Pickup</a>
 , <a class="el" href="class_shield.html#a6173dc488c2147d75dc49eb91d07a636">Shield</a>
 </li>
 <li>setRectangleColors()
@@ -194,6 +216,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 </li>
 <li>setScale()
 : <a class="el" href="classgui_1_1_label.html#aba1df232b745dc8240fc7cbd08404217">gui::Label</a>
+</li>
+<li>setSize()
+: <a class="el" href="class_pickup.html#a73ff803419ead68bd728330641dc2014">Pickup</a>
 </li>
 <li>setStyle()
 : <a class="el" href="class_window.html#a6f2897af1f03ae26e22a80a5ea59e4f9">Window</a>
@@ -214,11 +239,33 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="class_splash_scene.html#a9cd5fa8700c5493ca9b7aca19ef1dca2">SplashScene</a>
 , <a class="el" href="class_title_scene.html#a02d3a68720d3023e153f06aaeef832c5">TitleScene</a>
 </li>
-<li>setupWeapon()
-: <a class="el" href="class_game_scene.html#a7084ec08aaf208f289ee972af8df59a9">GameScene</a>
+<li>setupBackground()
+: <a class="el" href="class_game_scene.html#a994196d3a7ec9ca679e98f8c5db66ff7">GameScene</a>
+</li>
+<li>setupBullet()
+: <a class="el" href="class_game_scene.html#ad57de6e6fc3b6a8b8458d49f547823ee">GameScene</a>
+</li>
+<li>setupBulletManager()
+: <a class="el" href="class_game_scene.html#a8d361d6617d3a76e16130d5da0521ea5">GameScene</a>
+</li>
+<li>setupConnector()
+: <a class="el" href="class_game_scene.html#ab51d906e9997af13f6f0de576896163f">GameScene</a>
+</li>
+<li>setupPlayer()
+: <a class="el" href="class_game_scene.html#a1b81a871ebc93dc4ce15bbe877d15e04">GameScene</a>
+</li>
+<li>setupShip()
+: <a class="el" href="class_game_scene.html#a8c7b620a4134a637afe2a9c941fb1232">GameScene</a>
+</li>
+<li>setupWeaponAnim()
+: <a class="el" href="class_game_scene.html#a6dccca60c1bd8554b8236b41a0ea787e">GameScene</a>
+</li>
+<li>setupWeapons()
+: <a class="el" href="class_game_scene.html#a6a74473b026f107f69d3f2a59a32e668">GameScene</a>
 </li>
 <li>setVelocity()
 : <a class="el" href="class_asteroid.html#aa1aec16c7ae1d887f4a56f927fd6c9c5">Asteroid</a>
+, <a class="el" href="class_pickup.html#acf0e7ffca2a4b607aa11237220f3dbe0">Pickup</a>
 </li>
 <li>setViewC2Rect()
 : <a class="el" href="class_app.html#a7e9cab266816de576d5da6482fee1eb9">App</a>
@@ -242,7 +289,7 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 : <a class="el" href="class_ship.html#a27b923ed87a736077daa5efe2fe7680a">Ship</a>
 </li>
 <li>shoot()
-: <a class="el" href="class_weapon.html#a658eaa7d1b4d80a57150318fed1345b3">Weapon</a>
+: <a class="el" href="class_weapon.html#a063d0eb2cf432d72dc22f6ec565a1a16">Weapon</a>
 </li>
 <li>Slider()
 : <a class="el" href="classgui_1_1_slider.html#a2d888e1c47963a4da758f75561eaff74">gui::Slider</a>
@@ -256,9 +303,6 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>SplashScene()
 : <a class="el" href="class_splash_scene.html#ae221a2966ce3d59f06c66ad253f5b83f">SplashScene</a>
 </li>
-<li>SpriteAnimator
-: <a class="el" href="class_game_scene.html#ae80b80d6c05ec923abba6a082935b8fb">GameScene</a>
-</li>
 <li>Standard()
 : <a class="el" href="classbullets_1_1_standard.html#ae3a8e1444f02056475b6bf529bedbaf2">bullets::Standard</a>
 </li>
@@ -269,6 +313,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="class_scene.html#a8e8d1644799fd1b097535a387f80bc4d">Scene</a>
 , <a class="el" href="class_splash_scene.html#a26944e235e25bdd88746bf902ba9a012">SplashScene</a>
 , <a class="el" href="class_title_scene.html#a668aa87847c45d2ff3416946e23f63eb">TitleScene</a>
+</li>
+<li>StasisAnimator
+: <a class="el" href="classbullets_1_1_static_sphere.html#a0aadf92618cce0bc858850f971bb6817">bullets::StaticSphere</a>
 </li>
 <li>StaticSphere()
 : <a class="el" href="classbullets_1_1_static_sphere.html#ad21101996c4f80e7451524108244eff6">bullets::StaticSphere</a>

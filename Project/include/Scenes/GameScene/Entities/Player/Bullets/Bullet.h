@@ -4,7 +4,9 @@
 #include "SFML\Graphics.hpp"
 #include "Window.h"
 #include "BulletTypes.h"
+#include "Thor\Animations.hpp"
 #include "Thor\Math.hpp"
+#include <memory>
 
 namespace bullets
 {
@@ -18,20 +20,119 @@ namespace bullets
 	class Bullet
 	{
 	public:
+
+		/// <summary>
+		/// @brief Determines the type of thor animator used with bullet.
+		/// 
+		/// 
+		/// </summary>
+		typedef thor::Animator<sf::RectangleShape, std::string> LoopAnimator;
+
+		/// <summary>
+		/// @brief Defines alias for bullet animation frames.
+		/// 
+		/// 
+		/// </summary>
+		typedef thor::FrameAnimation BulletFrames;
+
+		struct Resources
+		{
+			/// 
+			/// @author Rafael Plugge
+			/// @brief Determines a pair with the animation and its id.
+			/// 
+			/// 
+			struct Animation
+			{
+				/// <summary>
+				/// @brief Defines the ID of the animation.
+				/// 
+				/// 
+				/// </summary>
+				std::string m_id = "";
+
+				/// <summary>
+				/// @brief Defines the duration of the animation.
+				/// 
+				/// 
+				/// </summary>
+				sf::Time m_duration;
+
+				/// <summary>
+				/// @brief Defines the origin of the animation frames.
+				/// 
+				/// 
+				/// </summary>
+				sf::Vector2f m_origin;
+
+				/// <summary>
+				/// @brief Defines shared pointer to our animation's frames.
+				/// 
+				/// 
+				/// </summary>
+				std::shared_ptr<BulletFrames> m_sptrFrames = nullptr;
+
+				/// <summary>
+				/// @brief Defines shared pointer to our animation's texture.
+				/// 
+				/// 
+				/// </summary>
+				std::shared_ptr<sf::Texture> m_sptrTexture = nullptr;
+			};
+
+			/// <summary>
+			/// @brief Defines a bullet loop animation.
+			/// 
+			/// 
+			/// </summary>
+			std::shared_ptr<Animation> m_sptrLoopAnimation = 
+				std::make_shared<Animation>();
+
+			/// <summary>
+			/// @brief Defines a bullet impact animation.
+			/// 
+			/// 
+			/// </summary>
+			std::shared_ptr<Animation> m_sptrImpactAnimation = 
+				std::make_shared<Animation>();
+		};
+
+	public:
 		Bullet();
+		virtual void init(std::shared_ptr<Resources> sptrResources);
 		virtual void update();
 		virtual void draw(Window & window, const float & deltaTime);
 		tinyh::c2AABB getCollisionRect();
+		virtual void hit();
 		virtual void setActive(bool active);
 		void updateBox();
-		void setPosition(const sf::Vector2f& pos);
+		virtual void setPosition(const sf::Vector2f& pos);
 		void setAngle(const float& angle);
 		void updateVelocityVector();
 		bool isActive() const;
 		virtual bool checkCircleCollision(const tinyh::c2Circle & other);
-		const float & getDamage();
+		virtual const float & getDamage() = 0;
+		bool const & isImpact() const;
 
 	protected:
+		virtual void setAnimation(std::string const & animationId);
+
+		/// <summary>
+		/// @brief Defines the animation loop id.
+		/// 
+		/// Used by the animators as a key for their
+		/// internal animation map.
+		/// </summary>
+		static std::string const s_LOOP_ID;
+
+		/// <summary>
+		/// @brief Defines the animation impact id.
+		/// 
+		/// Used by the animators as a key for their
+		/// internal animation map.
+		/// </summary>
+		static std::string const s_IMPACT_ID;
+
 		/// <summary>
 		/// @brief represents the position.
 		/// 
@@ -96,18 +197,55 @@ namespace bullets
 		float m_angle;
 
 		/// <summary>
-		/// @brief define damage of bullet.
-		/// 
-		/// 
-		/// </summary>
-		float m_damage;
-
-		/// <summary>
 		/// @brief constant reference to update delta time.
 		/// 
 		/// 
 		/// </summary>
 		const float & UPDATE_DT;
+
+		/// <summary>
+		/// @brief shared pointer to bullet resources.
+		/// 
+		/// pointer to loaded resources,
+		/// used so that bullet can access any needed resources.
+		/// </summary>
+		std::shared_ptr<Resources> m_sptrResources;
+
+		/// <summary>
+		/// @brief thor animator alias.
+		/// 
+		/// 
+		/// </summary>
+		typedef thor::Animator<sf::RectangleShape, std::string> BulletAnimator;
+
+		/// <summary>
+		/// @brief unique pointer to our loop thor animator.
+		/// 
+		/// Thor animator using our sfml rectangle shape as the
+		/// template type for the animated type and std::string as the
+		/// key for accessing the several animations the animator can play.
+		/// 
+		/// This animator will play our loop animation that each bullet plays while alive.
+		/// </summary>
+		std::unique_ptr<BulletAnimator> m_uptrLoopAnimator;
+
+		/// <summary>
+		/// @brief unique pointer to our impact thor animator.
+		/// 
+		/// Thor animator using our sfml rectangle shape as the
+		/// template type for the animated type and std::string as the
+		/// key for accessing the several animations the animator can play.
+		/// 
+		/// This animator will play our impact animation that can play when a bullet hits a entity.
+		/// </summary>
+		std::unique_ptr<BulletAnimator> m_uptrImpactAnimator;
+
+		/// <summary>
+		/// @brief determines whether the bullet has impacted or not.
+		/// 
+		/// 
+		/// </summary>
+		bool m_hit;
 
 		sf::RectangleShape tempRect;
 	};

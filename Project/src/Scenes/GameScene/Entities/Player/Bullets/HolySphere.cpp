@@ -19,9 +19,11 @@ bullets::HolySphere::HolySphere()
 	: Bullet()
 	, m_timeToLive(s_DEF_TTL)
 	, m_alpha(255.0f)
+	, m_damage(0.2f)
 {
 	m_speed = 4.5f * 60.0f;
 	m_velocity.y = -m_speed;
+	m_angle = -90.0f;
 
 	//different size to parent
 	m_bulletRect.setSize(s_DEFAULT_SIZE);
@@ -89,4 +91,15 @@ void bullets::HolySphere::setActive(bool active)
 		m_alpha = 255.0f;
 	}
 	m_active = active;
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::HolySphere::getDamage()
+{
+	return m_damage;
 }

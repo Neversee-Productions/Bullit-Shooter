@@ -11,6 +11,7 @@ var _bullet_types_8h =
       [ "CometShot", "_bullet_types_8h.html#a18b518c583246d01a699417ba80a69ccaec41f0b8e0c777470b5e28d4e83aec04", null ],
       [ "NullWave", "_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca03be1064c7d808db5f644fafd7fdabf1", null ],
       [ "StaticSphere", "_bullet_types_8h.html#a18b518c583246d01a699417ba80a69ccaf1bede81341991d7d06d3aeea6f2a5af", null ],
-      [ "PyroBlast", "_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca4be4b9ea68a94f9d0ae7adb5264b0f4e", null ]
+      [ "PyroBlast", "_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca4be4b9ea68a94f9d0ae7adb5264b0f4e", null ],
+      [ "AmountOfTypes", "_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca2504b2044f4a18f4e2b957e47a1e9468", null ]
     ] ]
 ];

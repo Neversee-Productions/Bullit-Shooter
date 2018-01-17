@@ -1,8 +1,13 @@
 #ifndef BULLETMANAGER_H
 #define BULLETMANAGER_H
 
+// STL Includes
 #include <vector>
+#include <unordered_map>
 #include <memory>
+// Thor Includes
+#include "Thor/Animations.hpp"
+// Project Includes
 #include "Window.h"
 #include "Weapon.h"
 #include "Bullets/Bullet.h"
@@ -29,7 +34,34 @@
 class BulletManager
 {
 public:
+
+	/// 
+	/// @author Rafael Plugge
+	/// @brief Determines the resources the bullets need.
+	/// 
+	/// 
+	/// 
+	struct Resources
+	{
+		/// <summary>
+		/// @brief Defines a alias for the container used to store the bullet resources.
+		/// 
+		/// 
+		/// </summary>
+		typedef std::unordered_map<BulletTypes, std::shared_ptr<bullets::Bullet::Resources>> BulletResources;
+
+		/// <summary>
+		/// @brief Defines a unordered map of unique pointers to bullet resources.
+		/// 
+		/// Using the BulletTypes enum as the key.
+		/// </summary>
+		std::shared_ptr<BulletResources> m_sptrBulletsResources = 
+			std::make_shared<BulletResources>();
+	};
+
+public:
 	BulletManager();
+	void init(std::shared_ptr<Resources> sptrResources);
 	void fireBullet(Weapon& weapon1, Weapon & weapon2, const BulletTypes& type);
 	void initBulletvector(BulletTypes type);
 	void reuseBullet(bullets::Bullet& bullet, sf::Vector2f pos);
@@ -59,11 +91,19 @@ private:
 	const tinyh::c2AABB& m_windowC2Rect;
 
 	/// <summary>
-	/// @map of bullet types to bullets.
+	/// @brief Map of bullet types to vector of bullets.
 	/// 
 	/// 
 	/// </summary>
 	std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> m_bulletMap;
+
+	/// <summary>
+	/// @brief shared pointer to loaded resources.
+	/// 
+	/// This shared pointer is nullptr until resources are loaded
+	/// and BulletManager::init is called.
+	/// </summary>
+	std::shared_ptr<Resources> m_resources;
 };
 #endif // !BULLETMANAGER_H
 

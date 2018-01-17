@@ -19,6 +19,7 @@ var class_resource_handler =
     [ "load", "class_resource_handler.html#a8c27f786a72c1fca048d9f37a395ac83", null ],
     [ "load", "class_resource_handler.html#ae9505b2ec94f8e5362a4de38e23d17a6", null ],
     [ "load", "class_resource_handler.html#a012dec569e2cc2a022e71490f08a6be5", null ],
+    [ "loadUp", "class_resource_handler.html#a82a7c8b1618cfe9150cbb5c4a78879d5", null ],
     [ "loadUp", "class_resource_handler.html#ab0de6aa12b6bc3c823b6562b8b7d73b7", null ],
     [ "m_ID_STRATEGY", "class_resource_handler.html#a531dae66f8789c7ca2a74d11a37e47c3", null ],
     [ "m_pairAnimationHolder", "class_resource_handler.html#a5392f91fc4bd7d351840bd43a8c69926", null ],

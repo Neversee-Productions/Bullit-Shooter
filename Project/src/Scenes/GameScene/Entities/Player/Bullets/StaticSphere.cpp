@@ -13,18 +13,21 @@ bullets::StaticSphere::StaticSphere()
 	, m_pulse(false)
 	, m_pulseTimer(0.0f)
 	, m_pulseCircleCollider()
+	, m_uptrStasisAnimator(nullptr)
+	, m_damage(0.4f)
 {
-	m_speed = 6.0f * 60.0f;
+	m_speed = 4.0f * 60.0f;
 	m_velocity.y = -m_speed;
+	m_angle = -90.0f;
 
 	//different size to parent
-	m_bulletRect.setSize(sf::Vector2f(30.0f, 30.0f));
+	m_bulletRect.setSize(sf::Vector2f(40.0f, 40.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
-	m_pulseCircle.setFillColor(sf::Color::Red);
+	//m_pulseCircle.setFillColor(sf::Color::Red);
 	m_pulseCircle.setRadius(0.0f);
-	m_pulseCircle.setOutlineThickness(6.0f);
-	m_pulseCircle.setOutlineColor(sf::Color::Red);
-	m_pulseCircle.setFillColor(sf::Color(0u, 0u, 0u, 0u));
+	//m_pulseCircle.setOutlineThickness(6.0f);
+	//m_pulseCircle.setOutlineColor(sf::Color::Red);
+	//m_pulseCircle.setFillColor(sf::Color(0u, 0u, 0u, 0u));
 	m_pulseCircle.setPosition(m_position);
 	m_pulseCircle.setOrigin(m_pulseCircle.getRadius(), m_pulseCircle.getRadius());
 
@@ -32,6 +35,24 @@ bullets::StaticSphere::StaticSphere()
 
 	//change collision rectangle
 	updateBox();
+}
+
+/// <summary>
+/// @brief Bullet resource initialization.
+/// 
+/// Use our pointer to loaded resources to link our resources.
+/// </summary>
+/// <param name="sptrResources">shared pointer to loaded resources.</param>
+void bullets::StaticSphere::init(std::shared_ptr<Resources> sptrResources)
+{
+	if (sptrResources->m_sptrLoopAnimation)
+	{
+		auto & loopAnimation = *sptrResources->m_sptrLoopAnimation;
+		m_uptrStasisAnimator = std::make_unique<StasisAnimator>();
+		m_uptrStasisAnimator->addAnimation(loopAnimation.m_id, *loopAnimation.m_sptrFrames, loopAnimation.m_duration);
+		this->setAnimation(loopAnimation.m_id);
+	}
+	Bullet::init(sptrResources);
 }
 
 /// <summary>
@@ -45,7 +66,7 @@ void bullets::StaticSphere::update()
 	Bullet::update();
 	if (m_pulseTimer > 0.3f)
 	{
-		m_pulseCircle.setRadius(m_pulseCircle.getRadius() + 1.0f);
+		m_pulseCircle.setRadius(m_pulseCircle.getRadius() + 2.0f);
 		m_pulseCircle.setOrigin(m_pulseCircle.getRadius(), m_pulseCircle.getRadius());
 		m_pulseCircle.setPosition(m_position);
 		m_pulse = true;
@@ -73,6 +94,12 @@ void bullets::StaticSphere::draw(Window & window, const float & deltaTime)
 {
 	if (m_pulse)
 	{
+		if (m_uptrStasisAnimator)
+		{
+			auto & stasisAnimator = *m_uptrStasisAnimator;
+			stasisAnimator.update(sf::seconds(deltaTime));
+			stasisAnimator.animate(m_pulseCircle);
+		}
 		window.draw(m_pulseCircle);
 	}
 	Bullet::draw(window, deltaTime);
@@ -106,6 +133,11 @@ void bullets::StaticSphere::setActive(bool active)
 	m_active = active;
 }
 
+const float & bullets::StaticSphere::getDamage()
+{
+	return m_damage;
+}
+
 /// <summary>
 /// @brief this function will update the collision circle.
 /// 
@@ -133,4 +165,43 @@ bool bullets::StaticSphere::checkCircleCollision(const tinyh::c2Circle & other)
 		return true;
 	}
 	return false;
+}
+
+/// <summary>
+/// @brief Set the position vector
+/// 
+/// 
+/// </summary>
+/// <param name="pos">defines the new position vector</param>
+void bullets::StaticSphere::setPosition(const sf::Vector2f & pos)
+{
+	Bullet::setPosition(pos);
+	m_pulseCircle.setPosition(pos);
+}
+
+/// <summary>
+/// @brief Sets the animation based on its id.
+/// 
+/// 
+/// </summary>
+/// <param name="animationId">ID of the animation to be set.</param>
+void bullets::StaticSphere::setAnimation(std::string const & animationId)
+{
+	if (m_uptrLoopAnimator && m_uptrLoopAnimator->isPlayingAnimation())
+	{
+		m_uptrLoopAnimator->stopAnimation();
+	}
+	Bullet::setAnimation(animationId);
+	if (m_sptrResources)
+	{
+		if (nullptr != m_sptrResources->m_sptrLoopAnimation)
+		{
+			auto & loopAnimation = *m_sptrResources->m_sptrLoopAnimation;
+			if (animationId == loopAnimation.m_id)
+			{
+				m_pulseCircle.setTexture(loopAnimation.m_sptrTexture.get(), true);
+				m_uptrStasisAnimator->playAnimation(animationId, true);
+			}
+		}
+	}
 }

@@ -18,10 +18,29 @@ namespace bullets
 		public Bullet
 	{
 	public:
+
+		/// 
+		/// @author Rafael Plugge
+		/// @brief HolySphere's resources.
+		/// 
+		/// Will resources specific to this bullet.
+		/// @see Bullet::Resources
+		/// 
+		struct Resources : Bullet::Resources
+		{
+			Resources()
+				: Bullet::Resources()
+			{
+				m_sptrImpactAnimation = nullptr;
+			}
+		};
+
+	public:
 		HolySphere();
 		void update() override;
 		static float getFireRate();
 		void setActive(bool active) override;
+		const float & getDamage() override;
 
 		/// <summary>
 		/// @brief how long to be active.
@@ -85,6 +104,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		static const float bullets::HolySphere::s_MIN_ALPHA;
+
+		/// <summary>
+		/// @brief defines damage.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
 
 	};
 }
