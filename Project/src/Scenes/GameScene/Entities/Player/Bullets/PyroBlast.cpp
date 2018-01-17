@@ -10,6 +10,7 @@ const float bullets::PyroBlast::s_FIRE_RATE = 4.0f;
 bullets::PyroBlast::PyroBlast()
 	: Bullet()
 	, m_explode(false)
+	, m_damage(6.0f)
 {
 	m_speed = 4.0f * 60.0f;
 	m_velocity.y = -m_speed;
@@ -88,4 +89,15 @@ void bullets::PyroBlast::setActive(bool active)
 void bullets::PyroBlast::explode(bool check)
 {
 	m_explode = check;
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::PyroBlast::getDamage()
+{
+	return m_damage;
 }

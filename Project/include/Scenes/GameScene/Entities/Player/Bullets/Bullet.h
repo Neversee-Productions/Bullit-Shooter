@@ -23,13 +23,13 @@ namespace bullets
 		virtual void draw(Window & window, const float & deltaTime);
 		tinyh::c2AABB getCollisionRect();
 		virtual void setActive(bool active);
-		void updateBox();
-		void setPosition(const sf::Vector2f& pos);
+		virtual void updateBox();
+		virtual void setPosition(const sf::Vector2f& pos);
 		void setAngle(const float& angle);
 		void updateVelocityVector();
 		bool isActive() const;
 		virtual bool checkCircleCollision(const tinyh::c2Circle & other);
-		const float & getDamage();
+		virtual const float & getDamage() = 0;
 
 	protected:
 		/// <summary>
@@ -94,13 +94,6 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_angle;
-
-		/// <summary>
-		/// @brief define damage of bullet.
-		/// 
-		/// 
-		/// </summary>
-		float m_damage;
 
 		/// <summary>
 		/// @brief constant reference to update delta time.

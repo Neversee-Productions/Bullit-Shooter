@@ -9,8 +9,9 @@ const float bullets::Standard::s_FIRE_RATE = 0.5f;
 /// </summary>
 bullets::Standard::Standard()
 	: Bullet()
+	, m_damage(1.5f)
 {
-	m_speed = 8.0f * 60.0f;
+	m_speed = 10.0f * 60.0f;
 	m_velocity.y = -m_speed;
 }
 
@@ -23,4 +24,15 @@ bullets::Standard::Standard()
 float bullets::Standard::getFireRate()
 {
 	return s_FIRE_RATE;
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::Standard::getDamage()
+{
+	return m_damage;
 }

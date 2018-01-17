@@ -12,8 +12,9 @@ bullets::NapalmSphere::NapalmSphere()
 	: Bullet()
 	, m_explode(false)
 	, m_timeAlive(0.0f)
+	, m_damage(0.1f)
 {
-	m_speed = 8.0f * 60.0f;
+	m_speed = 9.0f * 60.0f;
 	//updateVelocityVector();
 	m_velocity.y = -m_speed;
 
@@ -90,5 +91,16 @@ void bullets::NapalmSphere::setActive(bool active)
 void bullets::NapalmSphere::explode(bool check)
 {
 	m_explode = check;
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::NapalmSphere::getDamage()
+{
+	return m_damage;
 }
 

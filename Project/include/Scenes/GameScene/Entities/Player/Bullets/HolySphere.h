@@ -22,6 +22,7 @@ namespace bullets
 		void update() override;
 		static float getFireRate();
 		void setActive(bool active) override;
+		const float & getDamage() override;
 
 		/// <summary>
 		/// @brief how long to be active.
@@ -85,6 +86,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		static const float bullets::HolySphere::s_MIN_ALPHA;
+
+		/// <summary>
+		/// @brief defines damage.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
 
 	};
 }

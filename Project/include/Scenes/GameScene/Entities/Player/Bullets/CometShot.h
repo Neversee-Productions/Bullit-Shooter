@@ -18,6 +18,7 @@ namespace bullets
 		CometShot();
 		static float getFireRate();
 		void update() override;
+		const float & getDamage() override;
 	private:
 		/// <summary>
 		/// @brief define a static constant fire rate.
@@ -25,6 +26,23 @@ namespace bullets
 		/// 
 		/// </summary>
 		static const float s_FIRE_RATE;
+
+	public:
+		/// <summary>
+		/// @brief define how much to knock back.
+		/// 
+		/// 
+		/// </summary>
+		static const float s_KNOCK_BACK;
+
+	private:
+
+		/// <summary>
+		/// @brief defines damage.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
 	};
 }
 

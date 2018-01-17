@@ -13,8 +13,9 @@ bullets::StaticSphere::StaticSphere()
 	, m_pulse(false)
 	, m_pulseTimer(0.0f)
 	, m_pulseCircleCollider()
+	, m_damage(0.4f)
 {
-	m_speed = 6.0f * 60.0f;
+	m_speed = 4.0f * 60.0f;
 	m_velocity.y = -m_speed;
 
 	//different size to parent
@@ -45,7 +46,7 @@ void bullets::StaticSphere::update()
 	Bullet::update();
 	if (m_pulseTimer > 0.3f)
 	{
-		m_pulseCircle.setRadius(m_pulseCircle.getRadius() + 1.0f);
+		m_pulseCircle.setRadius(m_pulseCircle.getRadius() + 2.0f);
 		m_pulseCircle.setOrigin(m_pulseCircle.getRadius(), m_pulseCircle.getRadius());
 		m_pulseCircle.setPosition(m_position);
 		m_pulse = true;
@@ -133,4 +134,38 @@ bool bullets::StaticSphere::checkCircleCollision(const tinyh::c2Circle & other)
 		return true;
 	}
 	return false;
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::StaticSphere::getDamage()
+{
+	return m_damage;
+}
+
+/// <summary>
+/// @brief overriden update colllision box method.
+/// 
+/// 
+/// </summary>
+void bullets::StaticSphere::updateBox()
+{
+	Bullet::updateBox();
+	updateCollisionCircle();
+}
+
+/// <summary>
+/// @brief Set the position vector and sphere
+/// 
+/// 
+/// </summary>
+/// <param name="pos">defines the new position vector</param>
+void bullets::StaticSphere::setPosition(const sf::Vector2f & pos)
+{
+	Bullet::setPosition(pos);
+	m_pulseCircle.setPosition(pos);
 }

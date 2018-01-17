@@ -19,6 +19,7 @@ namespace bullets
 		DeathOrb();
 		static float getFireRate();
 		void update() override;
+		const float & getDamage() override;
 
 	private:
 		/// <summary>
@@ -27,6 +28,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		static const float s_FIRE_RATE;
+
+		/// <summary>
+		/// @brief defines damage.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
 	};
 }
 

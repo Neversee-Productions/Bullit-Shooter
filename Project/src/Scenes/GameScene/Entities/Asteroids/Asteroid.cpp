@@ -1,6 +1,6 @@
 #include "Scenes\GameScene\Entities\Asteroids\Asteroid.h"
 
-float const Asteroid::INVULNERABILITY_FRAMES = 0.09f;
+float const Asteroid::INVULNERABILITY_FRAMES = 0.01f;
 
 
 /// <summary>
@@ -217,7 +217,7 @@ bool Asteroid::isInvulnerable()
 /// </summary>
 void Asteroid::knockback()
 {
-	m_velocity.y -= 15.0f;
+	m_velocity.y -= bullets::CometShot::s_KNOCK_BACK;
 }
 
 /// <summary>

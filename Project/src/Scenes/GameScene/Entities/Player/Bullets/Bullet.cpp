@@ -17,7 +17,6 @@ bullets::Bullet::Bullet()
 	, m_speed(0)
 	, m_angle(0)
 	, tempRect()
-	, m_damage(1.0f)
 	, UPDATE_DT(App::getUpdateDeltaTime())
 {
 	m_bulletRect.setPosition(0.0f,0.0f);
@@ -157,17 +156,6 @@ bool bullets::Bullet::checkCircleCollision(const tinyh::c2Circle & other)
 		return true;
 	}
 	return false;
-}
-
-/// <summary>
-/// @brief access damage of the bullet.
-/// 
-/// 
-/// </summary>
-/// <returns></returns>
-const float & bullets::Bullet::getDamage()
-{
-	return m_damage;
 }
 
 

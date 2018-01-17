@@ -1,6 +1,6 @@
 #include "Scenes\GameScene\Entities\Player\Bullets\MagmaShot.h"
 
-const float bullets::MagmaShot::s_FIRE_RATE = 2.0f;
+const float bullets::MagmaShot::s_FIRE_RATE = 1.4f;
 const sf::Vector2f bullets::MagmaShot::s_SIZE_CHANGE = sf::Vector2f(1.0f, 1.0f);
 const sf::Vector2f bullets::MagmaShot::s_DEFAULT_SIZE = sf::Vector2f(15.0f,15.0f);
 
@@ -13,6 +13,7 @@ const sf::Vector2f bullets::MagmaShot::s_DEFAULT_SIZE = sf::Vector2f(15.0f,15.0f
 bullets::MagmaShot::MagmaShot()
 	: Bullet()
 	, m_explode(false)
+	, m_damage(0.3f)
 {
 	m_speed = 4.0f * 60.0f;
 	//updateVelocityVector();
@@ -88,5 +89,16 @@ void bullets::MagmaShot::setActive(bool active)
 void bullets::MagmaShot::explode(bool check)
 {
 	m_explode = check;
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::MagmaShot::getDamage()
+{
+	return m_damage;
 }
 

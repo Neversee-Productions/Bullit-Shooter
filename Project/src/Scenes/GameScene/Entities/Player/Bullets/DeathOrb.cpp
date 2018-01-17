@@ -9,6 +9,7 @@ const float bullets::DeathOrb::s_FIRE_RATE = 1.0f;
 /// </summary>
 bullets::DeathOrb::DeathOrb()
 	: Bullet()
+	, m_damage(0.25f)
 {
 	m_speed = 6.0f * 60.0f;
 	m_velocity.y = -m_speed;
@@ -44,4 +45,15 @@ void bullets::DeathOrb::update()
 	updateBox();
 	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
 	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::DeathOrb::getDamage()
+{
+	return m_damage;
 }

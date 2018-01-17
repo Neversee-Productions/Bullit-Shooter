@@ -9,8 +9,9 @@ const float bullets::FireBlast::s_FIRE_RATE = 0.1f;
 /// </summary>
 bullets::FireBlast::FireBlast()
 	: Bullet()
+	, m_damage(0.8f)
 {
-	m_speed = 16.0f * 60.0f;
+	m_speed = 20.0f * 60.0f;
 	m_velocity.y = -m_speed;
 
 	//different size to parent
@@ -29,5 +30,16 @@ bullets::FireBlast::FireBlast()
 float bullets::FireBlast::getFireRate()
 {
 	return s_FIRE_RATE;
+}
+
+/// <summary>
+/// @brief get the damage of this bullet.
+/// 
+/// 
+/// </summary>
+/// <returns>defines value of damage as float.</returns>
+const float & bullets::FireBlast::getDamage()
+{
+	return m_damage;
 }
 
