@@ -21,6 +21,7 @@ namespace bullets
 		static float getFireRate();
 		void setActive(bool active) override;
 		void explode(bool check);
+		const float & getDamage() override;
 
 		/// <summary>
 		/// @brief Defines if the bullet is in an exploding state.
@@ -56,6 +57,14 @@ namespace bullets
 		/// 
 		/// </summary>
 		static float const s_MAX_SIZE;
+
+	private:
+		/// <summary>
+		/// @brief defines damage.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
 
 	};
 

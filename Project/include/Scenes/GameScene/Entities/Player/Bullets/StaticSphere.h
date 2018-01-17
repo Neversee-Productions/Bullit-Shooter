@@ -22,8 +22,10 @@ namespace bullets
 		void draw(Window & window, const float & deltaTime) override;
 		static float getFireRate();
 		void setActive(bool active) override;
+		const float & getDamage() override;
 		void updateCollisionCircle();
 		bool checkCircleCollision(const tinyh::c2Circle & other)final override;
+		void setPosition(const sf::Vector2f & pos) final override;
 
 	private:
 		void setAnimation(std::string const & animationId) final override;
@@ -48,6 +50,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_pulseTimer;
+
+		/// <summary>
+		/// @brief defines damage.
+		/// 
+		/// 
+		/// </summary>
+		float m_damage;
 
 		/// <summary>
 		/// @brief defines the pulse circle.

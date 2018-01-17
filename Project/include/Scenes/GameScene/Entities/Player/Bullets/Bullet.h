@@ -106,12 +106,12 @@ namespace bullets
 		virtual void hit();
 		virtual void setActive(bool active);
 		void updateBox();
-		void setPosition(const sf::Vector2f& pos);
+		virtual void setPosition(const sf::Vector2f& pos);
 		void setAngle(const float& angle);
 		void updateVelocityVector();
 		bool isActive() const;
 		virtual bool checkCircleCollision(const tinyh::c2Circle & other);
-		const float & getDamage();
+		virtual const float & getDamage() = 0;
 		bool const & isImpact() const;
 
 	protected:
@@ -195,13 +195,6 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_angle;
-
-		/// <summary>
-		/// @brief define damage of bullet.
-		/// 
-		/// 
-		/// </summary>
-		float m_damage;
 
 		/// <summary>
 		/// @brief constant reference to update delta time.
