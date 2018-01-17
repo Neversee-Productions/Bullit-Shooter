@@ -36,6 +36,7 @@
     <ClCompile Include="src\Scenes\GameScene\Entities\Asteroids\Asteroid.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Entities\Asteroids\AsteroidManager.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Entities\Background.cpp" />
+    <ClCompile Include="src\Scenes\GameScene\Entities\Pickup.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\BulletManager.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\Bullet.cpp" />
     <ClCompile Include="src\Scenes\GameScene\Entities\Player\Bullets\CometShot.cpp" />
@@ -95,6 +96,7 @@
     <ClInclude Include="include\Scenes\GameScene\Entities\Asteroids\AsteroidManager.h" />
     <ClInclude Include="include\Scenes\GameScene\Entities\Background.h" />
     <ClInclude Include="include\Scenes\GameScene\Entities\Entities.h" />
+    <ClInclude Include="include\Scenes\GameScene\Entities\Pickup.h" />
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\BulletManager.h" />
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\Bullet.h" />
     <ClInclude Include="include\Scenes\GameScene\Entities\Player\Bullets\BulletTypes.h" />

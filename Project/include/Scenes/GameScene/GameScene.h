@@ -6,6 +6,7 @@
 #include "Thor\Animations.hpp"
 #include "tinyheaders\tinyc2.h"
 #include "Entities\Entities.h"
+#include "Thor\Math.hpp"
 
 ///
 /// @brief Main game scene.
@@ -41,6 +42,9 @@ private:
 		/// </summary>
 		std::shared_ptr<Background::Resources> m_sptrBackground =
 			std::make_shared<Background::Resources>();
+
+		std::shared_ptr<Pickup::Resources> m_sptrPickup =
+			std::make_shared<Pickup::Resources>();
 	};
 
 public:
@@ -57,6 +61,7 @@ public:
 	void collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
+	void playerPickupCollision();
 	float generateRandomTimer();
 
 private:
@@ -131,6 +136,13 @@ private:
 	/// 
 	/// </summary>
 	const float & UPDATE_DT;
+
+	/// <summary>
+	/// @brief testing a pickup.
+	/// 
+	/// 
+	/// </summary>
+	std::unique_ptr<Pickup> m_pickup;
 };
 
 #endif // !GAMESCENE_H

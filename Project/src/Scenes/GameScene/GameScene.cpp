@@ -16,10 +16,11 @@ GameScene::GameScene(KeyHandler& keyHandler)
 	, m_asteroidSpawnTimer(0.0f)
 	, m_asteroidSpawnFrequency(0.0f)
 	, UPDATE_DT(App::getUpdateDeltaTime())
-
 {
 	m_asteroidManager.initAsteroidVector();
 	m_asteroidSpawnFrequency = generateRandomTimer();
+	m_pickup = std::make_unique<Pickup>(Pickup(sf::Vector2f(500, 500), sf::Vector2f(100, 100)));
+	m_pickup->setActive(false);
 }
 
 /// <summary>
@@ -97,6 +98,8 @@ void GameScene::update()
 			uptrAsteroid->update();
 		}
 	}
+	playerPickupCollision();
+	m_pickup->update();
 	updateCollisions();
 }
 
@@ -118,6 +121,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 		}
 	}
 	m_player.draw(window, deltaTime);
+	m_pickup->draw(window, deltaTime);
 }
 
 /// <summary>
@@ -187,6 +191,15 @@ void GameScene::bulletAsteroidsCollision()
 								break;
 							default:
 								break;
+							}
+						}
+						if (!asteroid.isActive() && ! m_pickup->isActive()) //check if pickup is not active and if the asteroid was destroyed.
+						{
+							int chance = (rand() % 11); //generate number from 0 - 10
+							if (chance > 2 )
+							{
+								sf::Vector2f pos = sf::Vector2f(asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y);
+								m_pickup = std::make_unique<Pickup>(Pickup(pos, sf::Vector2f(100, 100)));
 							}
 						}
 					}
@@ -268,6 +281,25 @@ void GameScene::collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bull
 {
 	asteroid.decrementHealth(bullet.getDamage());
 	bullet.explode(true);
+}
+
+void GameScene::playerPickupCollision()
+{
+	if (m_pickup->isActive())
+	{
+		sf::Vector2f vector = m_player.getPosition() - m_pickup->getPosition();
+		float length = thor::length(vector);
+		if (length < 100)
+		{
+			sf::Vector2f unitVec = thor::unitVector(vector);
+			m_pickup->setVelocity(unitVec * (length * 0.1f));
+			if (length < 10)
+			{
+				m_player.nextWeapon();
+				m_pickup->setActive(false);
+			}
+		}
+	}
 }
 
 /// <summary>

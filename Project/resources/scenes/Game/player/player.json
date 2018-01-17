@@ -5040,7 +5040,7 @@
         },
         "weapon11_shoot":
         {
-            "duration": -1,
+            "duration": 1,
             "width": 98,
             "height": 205,
             "origin":
