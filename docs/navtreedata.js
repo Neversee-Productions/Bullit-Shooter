@@ -31,11 +31,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_app_8cpp.html",
-"class_bullet_manager.html#adc7565464b026ddc98b02a70c558c74a",
-"class_ship.html#a6f89b4845f1fb7c739892c7a83ae6731",
-"classgui_1_1_button.html#a5bf6f0f5051bcf555161e454d0efe351",
-"index.html"
+"_ai_8cpp.html",
+"class_bullet_manager.html#ad0d1d44d7cc99a2a57f7fe8234a2cf28",
+"class_ship.html#a3ee2f77fa9920030dc3ff8268b2f73a4",
+"classgui_1_1_button.html#a3bc29cbe173934452c4668b24f2284e4",
+"globals.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
