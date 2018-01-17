@@ -59,9 +59,6 @@
 int main(int argc, char** argv)
 {
 	std::srand(static_cast<unsigned int>(time(nullptr))); // generate seed using time since epoch.
-#ifdef NDEBUG
-	ShowWindow(GetConsoleWindow(), SW_HIDE);
-#endif // !NDEBUG
 	Application& app = Application();
 	app.run();
 }
