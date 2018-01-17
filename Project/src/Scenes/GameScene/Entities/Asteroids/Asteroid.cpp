@@ -65,10 +65,6 @@ void Asteroid::update()
 		m_circle.setPosition(m_position);
 		updateCollisionCircle();
 		updateWindowCollisions();
-		if (m_health <= 0)
-		{
-			m_active = false;
-		}
 	}
 }
 
@@ -196,6 +192,10 @@ void Asteroid::decrementHealth(float dmg)
 	{
 		m_health -= dmg;
 		m_invulnerable = true;
+		if (m_health <= 0)
+		{
+			m_active = false;
+		}
 	}
 }
 

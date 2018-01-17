@@ -17,6 +17,7 @@ Pickup::Pickup()
 Pickup::Pickup(/*std::shared_ptr<sf::Texture> texture,*/sf::Vector2f position, sf::Vector2f size)
 	: m_position(position)
 	, m_size(size)
+	, m_active(true)
 {
 	if (m_size.x > m_size.y) //make collision circle same as the bigger side
 	{
@@ -40,8 +41,11 @@ Pickup::Pickup(/*std::shared_ptr<sf::Texture> texture,*/sf::Vector2f position, s
 /// </summary>
 void Pickup::update()
 {
-	m_position += m_velocity;
-	m_rectangle.setPosition(m_position);
+	if (m_active)
+	{
+		m_position += m_velocity;
+		m_rectangle.setPosition(m_position);
+	}
 }
 
 /// <summary>
@@ -53,7 +57,10 @@ void Pickup::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void Pickup::draw(Window & window, const float & deltaTime)
 {
-	window.draw(m_rectangle);
+	if (m_active)
+	{
+		window.draw(m_rectangle);
+	}
 }
 
 /// <summary>
@@ -110,3 +117,26 @@ void Pickup::setVelocity(sf::Vector2f vel)
 {
 	m_velocity = vel;
 }
+
+/// <summary>
+/// @brief check if the pickup is active.
+/// 
+/// 
+/// </summary>
+/// <returns>return active boolean.</returns>
+bool const Pickup::isActive() const
+{
+	return m_active;
+}
+
+/// <summary>
+/// @brief set the active state.
+/// 
+/// 
+/// </summary>
+/// <param name="active">new active state.</param>
+void Pickup::setActive(bool active)
+{
+	m_active = active;
+}
+

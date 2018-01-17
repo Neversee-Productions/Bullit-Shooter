@@ -285,6 +285,11 @@ sf::Vector2f const & Player::getPosition() const
 	return m_ship.getShipRect().getPosition();
 }
 
+/// <summary>
+/// @brief this method will upgrade the current weapon to the next one.
+/// 
+/// 
+/// </summary>
 void Player::nextWeapon()
 {
 	BulletTypes currentType = m_weaponLeft.getBulletType();

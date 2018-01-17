@@ -42,6 +42,9 @@ private:
 		/// </summary>
 		std::shared_ptr<Background::Resources> m_sptrBackground =
 			std::make_shared<Background::Resources>();
+
+		std::shared_ptr<Pickup::Resources> m_sptrPickup =
+			std::make_shared<Pickup::Resources>();
 	};
 
 public:

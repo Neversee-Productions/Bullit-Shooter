@@ -80,6 +80,8 @@ public:
 	void setSize(sf::Vector2f size);
 	sf::Vector2f const getSize() const;
 	void setVelocity(sf::Vector2f vel);
+	bool const isActive() const;
+	void setActive(bool active);
 
 
 private:
@@ -123,7 +125,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	bool m_isPickedUp;
+	bool m_active;
 
 	/// <summary>
 	/// @brief rectangle to draw that represents the pickup.
