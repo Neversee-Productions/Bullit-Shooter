@@ -250,6 +250,8 @@ doxygen Doxyfile</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>.\lib;.\libs\rls;.\libs\rls\doxygen;.\libs\rls\sfml;.\libs\rls\sfeMovie;.\libs\rls\thor;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
     <PostBuildEvent>
       <Command>C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
