@@ -5371,7 +5371,7 @@
                 },
                 "impact":
                 {
-                    "duration": 1,
+                    "duration": 0.5,
                     "width": 259,
                     "height": 261,
                     "origin":
@@ -5662,7 +5662,7 @@
                 },
                 "impact":
                 {
-                    "duration": 1,
+                    "duration": 0.5,
                     "width": 259,
                     "height": 261,
                     "origin":
@@ -5739,7 +5739,7 @@
             {
                 "loop":
                 {
-                    "duration": 1,
+                    "duration": 2,
                     "width": 60,
                     "height": 60,
                     "origin":
@@ -6042,7 +6042,7 @@
                 },
                 "impact":
                 {
-                    "duration": 1,
+                    "duration": 0.3,
                     "width": 165,
                     "height": 168,
                     "origin":
@@ -6558,7 +6558,7 @@
                 },
                 "impact":
                 {
-                    "duration": 1,
+                    "duration": 0.7,
                     "width": 305,
                     "height": 306,
                     "origin":
@@ -6861,7 +6861,7 @@
                 },
                 "impact":
                 {
-                    "duration": 1,
+                    "duration": 3.0,
                     "width": 192,
                     "height": 193,
                     "origin":
@@ -7340,7 +7340,7 @@
                 },
                 "impact":
                 {
-                    "duration": 1,
+                    "duration": 0.75,
                     "width": 411,
                     "height": 263,
                     "origin":
@@ -7519,7 +7519,7 @@
                 },
                 "impact":
                 {
-                    "duration": 1,
+                    "duration": 0.5,
                     "width": 330,
                     "height": 170,
                     "origin":
@@ -8097,7 +8097,7 @@
                 },
                 "impact":
                 {
-                    "duration": 1,
+                    "duration": 1.5,
                     "width": 176,
                     "height": 167,
                     "origin":

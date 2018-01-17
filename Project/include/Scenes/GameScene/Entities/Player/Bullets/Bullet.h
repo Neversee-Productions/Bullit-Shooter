@@ -112,9 +112,26 @@ namespace bullets
 		bool isActive() const;
 		virtual bool checkCircleCollision(const tinyh::c2Circle & other);
 		const float & getDamage();
+		bool const & isImpact() const;
 
 	protected:
 		virtual void setAnimation(std::string const & animationId);
+
+		/// <summary>
+		/// @brief Defines the animation loop id.
+		/// 
+		/// Used by the animators as a key for their
+		/// internal animation map.
+		/// </summary>
+		static std::string const s_LOOP_ID;
+
+		/// <summary>
+		/// @brief Defines the animation impact id.
+		/// 
+		/// Used by the animators as a key for their
+		/// internal animation map.
+		/// </summary>
+		static std::string const s_IMPACT_ID;
 
 		/// <summary>
 		/// @brief represents the position.
@@ -201,6 +218,11 @@ namespace bullets
 		/// </summary>
 		std::shared_ptr<Resources> m_sptrResources;
 
+		/// <summary>
+		/// @brief thor animator alias.
+		/// 
+		/// 
+		/// </summary>
 		typedef thor::Animator<sf::RectangleShape, std::string> BulletAnimator;
 
 		/// <summary>
@@ -224,6 +246,13 @@ namespace bullets
 		/// This animator will play our impact animation that can play when a bullet hits a entity.
 		/// </summary>
 		std::unique_ptr<BulletAnimator> m_uptrImpactAnimator;
+
+		/// <summary>
+		/// @brief determines whether the bullet has impacted or not.
+		/// 
+		/// 
+		/// </summary>
+		bool m_hit;
 
 		sf::RectangleShape tempRect;
 	};

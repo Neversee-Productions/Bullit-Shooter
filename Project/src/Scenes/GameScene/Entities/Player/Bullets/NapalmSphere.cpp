@@ -1,7 +1,8 @@
 #include "Scenes\GameScene\Entities\Player\Bullets\NapalmSphere.h"
 
 const float bullets::NapalmSphere::s_FIRE_RATE = 0.5f;
-const sf::Vector2f bullets::NapalmSphere::s_DEFAULT_SIZE = sf::Vector2f(10.0f, 10.0f);
+const sf::Vector2f bullets::NapalmSphere::s_DEFAULT_SIZE = sf::Vector2f(70.0f, 50.0f);
+const sf::Vector2f bullets::NapalmSphere::s_CLOUD_SIZE = sf::Vector2f(100.0f, 100.0f);
 
 /// <summary>
 /// @brief Default constructor.
@@ -26,7 +27,7 @@ bullets::NapalmSphere::NapalmSphere()
 }
 
 /// <summary>
-/// @Static method to return a fire rate.
+/// @brief Static method to return a fire rate.
 /// 
 /// 
 /// </summary>
@@ -50,7 +51,7 @@ void bullets::NapalmSphere::update()
 	}
 	else
 	{
-		m_bulletRect.setSize(sf::Vector2f(20.0f, 20.0f));
+		m_bulletRect.setSize(s_CLOUD_SIZE);
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		updateBox();
 		m_timeAlive += App::getUpdateDeltaTime();
@@ -78,6 +79,7 @@ void bullets::NapalmSphere::setActive(bool active)
 		m_bulletRect.setSize(s_DEFAULT_SIZE);
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_explode = false;
+		this->setAnimation(s_LOOP_ID);
 	}
 	m_active = active;
 }
@@ -90,6 +92,10 @@ void bullets::NapalmSphere::setActive(bool active)
 /// <param name="check">Defines the new explode bool value</param>
 void bullets::NapalmSphere::explode(bool check)
 {
+	if (!m_explode && check)
+	{
+		this->setAnimation(s_IMPACT_ID);
+	}
 	m_explode = check;
 }
 

@@ -2,7 +2,8 @@
 
 const float bullets::MagmaShot::s_FIRE_RATE = 2.0f;
 const sf::Vector2f bullets::MagmaShot::s_SIZE_CHANGE = sf::Vector2f(1.0f, 1.0f);
-const sf::Vector2f bullets::MagmaShot::s_DEFAULT_SIZE = sf::Vector2f(15.0f,15.0f);
+const sf::Vector2f bullets::MagmaShot::s_DEFAULT_SIZE = sf::Vector2f(45.0f, 45.0f);
+const float bullets::MagmaShot::s_MAX_SIZE = bullets::MagmaShot::s_DEFAULT_SIZE.x + 35.0f;
 
 
 /// <summary>
@@ -44,7 +45,7 @@ void bullets::MagmaShot::update()
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		updateBox();
 	}
-	if (m_bulletRect.getSize().x > 40.0f)
+	if (m_bulletRect.getSize().x > s_MAX_SIZE)
 	{
 		setActive(false);
 	}
@@ -73,6 +74,8 @@ void bullets::MagmaShot::setActive(bool active)
 {
 	if (active == false)
 	{
+		std::string const LOOP_ID("loop");
+		this->setAnimation(LOOP_ID);
 		m_bulletRect.setSize(s_DEFAULT_SIZE);
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_explode = false;
@@ -89,5 +92,7 @@ void bullets::MagmaShot::setActive(bool active)
 void bullets::MagmaShot::explode(bool check)
 {
 	m_explode = check;
+	std::string const IMPACT_ID("impact");
+	this->setAnimation(IMPACT_ID);
 }
 

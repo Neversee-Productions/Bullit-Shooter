@@ -145,7 +145,7 @@ void GameScene::bulletAsteroidsCollision()
 		for (auto itt = bulletVector.begin(), end = bulletVector.end(); itt != end; ++itt)
 		{
 			auto & derivedBullet = **itt;
-			if (derivedBullet.isActive())
+			if (derivedBullet.isActive() && !derivedBullet.isImpact())
 			{
 				auto & asteroidVector = m_asteroidManager.getAsteroidVector();
 				for (auto itt2 = asteroidVector.begin(), end2 = asteroidVector.end(); itt2 != end2; ++itt2)
@@ -588,13 +588,15 @@ void GameScene::setupBullet(
 		auto const & JSON_ANIMATION_NODE = bulletAnimationNode.at(jsonAnimationKey);
 		auto const & JSON_TEXTURE_NODE = bulletTextureNode.at(jsonAnimationKey);
 
+		std::string const TEXTURE_ID = id + "_" + jsonAnimationKey;
+
 		animation.m_id = jsonAnimationKey;
 		animation.m_duration = sf::seconds(JSON_ANIMATION_NODE.at("duration").get<float>());
 		auto const & JSON_ANIMATION_ORIGIN = JSON_ANIMATION_NODE.at("origin");
 		animation.m_origin = sf::Vector2f(JSON_ANIMATION_ORIGIN.at("x").get<float>(), JSON_ANIMATION_ORIGIN.at("y").get<float>());
 		animation.m_sptrFrames = std::make_shared<thor::FrameAnimation>();
 		frameAnimationLambda(*animation.m_sptrFrames, JSON_ANIMATION_NODE);
-		animation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(JSON_TEXTURE_NODE.get<std::string>(), id);
+		animation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(JSON_TEXTURE_NODE.get<std::string>(), TEXTURE_ID);
 	};
 
 	switch (bulletType)

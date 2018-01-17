@@ -15,7 +15,7 @@ bullets::FireBlast::FireBlast()
 	m_angle = -90.0f;
 
 	//different size to parent
-	m_bulletRect.setSize(sf::Vector2f(30.0f, 20.0f));
+	m_bulletRect.setSize(sf::Vector2f(40.0f, 30.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 	//change collision rectangle

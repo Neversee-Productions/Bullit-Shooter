@@ -15,7 +15,7 @@ bullets::CometShot::CometShot()
 	m_angle = -90.0f;
 
 	//different size to parent
-	m_bulletRect.setSize(sf::Vector2f(10.0f, 5.0f));
+	m_bulletRect.setSize(sf::Vector2f(60.0f, 25.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 

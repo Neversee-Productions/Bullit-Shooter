@@ -50,6 +50,13 @@ namespace bullets
 		/// </summary>
 		static const sf::Vector2f bullets::MagmaShot::s_DEFAULT_SIZE;
 
+		/// <summary>
+		/// @brief
+		/// 
+		/// 
+		/// </summary>
+		static float const s_MAX_SIZE;
+
 	};
 
 }

@@ -1,6 +1,9 @@
 #include "Scenes\GameScene\Entities\Player\Bullets\Bullet.h"
 
 double const bullets::Bullet::DEG_TO_RAD = thor::Pi / 180.0f;
+//static std::string const s_LOOP_ID;
+std::string const bullets::Bullet::s_LOOP_ID = "loop";
+std::string const bullets::Bullet::s_IMPACT_ID = "impact";
 
 /// <summary>
 /// @brief Default constructor.
@@ -22,6 +25,7 @@ bullets::Bullet::Bullet()
 	, m_sptrResources(nullptr)
 	, m_uptrLoopAnimator(nullptr)
 	, m_uptrImpactAnimator(nullptr)
+	, m_hit(false)
 {
 	m_bulletRect.setPosition(0.0f,0.0f);
 	m_bulletRect.setFillColor(sf::Color::White);
@@ -67,17 +71,27 @@ void bullets::Bullet::init(std::shared_ptr<Resources> sptrResources)
 /// </summary>
 void bullets::Bullet::update()
 {
-	m_position += m_velocity * UPDATE_DT;
+	if (m_hit)
+	{
+		if (m_uptrImpactAnimator)
+		{
+			auto & impactAnimator = *m_uptrImpactAnimator;
+			if (!impactAnimator.isPlayingAnimation())
+			{
+				this->setActive(false);
+			}
+		}
+		else
+		{
+			this->setActive(false);
+		}
+	}
+	else
+	{
+		m_position += m_velocity * UPDATE_DT;
+	}
 	m_bulletRect.setPosition(m_position.x, m_position.y);
 	updateBox();
-	if (m_uptrLoopAnimator)
-	{
-		m_uptrLoopAnimator->update(sf::seconds(UPDATE_DT));
-	}
-	if (m_uptrImpactAnimator)
-	{
-		m_uptrImpactAnimator->update(sf::seconds(UPDATE_DT));
-	}
 	tempRect.setPosition(m_bulletC2Rect.min.x, m_bulletC2Rect.min.y);
 	tempRect.setSize(sf::Vector2f(m_bulletC2Rect.max.x - m_bulletC2Rect.min.x, m_bulletC2Rect.max.y - m_bulletC2Rect.min.y));
 }
@@ -108,7 +122,6 @@ void bullets::Bullet::draw(Window & window, const float & deltaTime)
 	}
 	m_bulletRect.setRotation(m_angle);
 	window.draw(m_bulletRect);
-	//window.draw(tempRect);
 }
 
 /// <summary>
@@ -129,7 +142,8 @@ tinyh::c2AABB bullets::Bullet::getCollisionRect()
 /// </summary>
 void bullets::Bullet::hit()
 {
-	this->setActive(false);
+	this->setAnimation(s_IMPACT_ID);
+	m_hit = true;
 }
 
 /// <summary>
@@ -141,6 +155,11 @@ void bullets::Bullet::hit()
 void bullets::Bullet::setActive(bool active)
 {
 	m_active = active;
+	if (m_active)
+	{
+		this->setAnimation(s_LOOP_ID);
+		m_hit = false;
+	}
 }
 
 /// <summary>
@@ -232,6 +251,17 @@ const float & bullets::Bullet::getDamage()
 }
 
 /// <summary>
+/// @brief acquires whether or not the bullet is in the impact state.
+/// 
+/// 
+/// </summary>
+/// <returns>true if in impact state, else false</returns>
+bool const & bullets::Bullet::isImpact() const
+{
+	return m_hit;
+}
+
+/// <summary>
 /// @brief Sets the animation based on its id.
 /// 
 /// 
@@ -239,6 +269,19 @@ const float & bullets::Bullet::getDamage()
 /// <param name="animationId">ID of the animation to be set.</param>
 void bullets::Bullet::setAnimation(std::string const & animationId)
 {
+	if (animationId != s_IMPACT_ID)
+	{
+		if (m_uptrImpactAnimator && m_uptrImpactAnimator->isPlayingAnimation())
+		{
+			m_uptrImpactAnimator->stopAnimation();
+		}
+	}
+	if (m_uptrLoopAnimator && m_uptrLoopAnimator->isPlayingAnimation())
+	{
+		m_uptrLoopAnimator->stopAnimation();
+	}
+	
+	
 	if (m_sptrResources)
 	{
 		if (nullptr != m_sptrResources->m_sptrLoopAnimation)
@@ -253,7 +296,14 @@ void bullets::Bullet::setAnimation(std::string const & animationId)
 		if (nullptr != m_sptrResources->m_sptrImpactAnimation)
 		{
 			auto & impactAnimation = *m_sptrResources->m_sptrImpactAnimation;
-
+			if (animationId == impactAnimation.m_id)
+			{
+				m_bulletRect.setTexture(impactAnimation.m_sptrTexture.get(), true);
+				if (!m_uptrImpactAnimator->isPlayingAnimation())
+				{
+					m_uptrImpactAnimator->playAnimation(animationId);
+				}
+			}
 		}
 	}
 }
