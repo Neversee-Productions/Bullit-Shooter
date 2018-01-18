@@ -76,6 +76,7 @@ var searchData=
   ['splashscene',['SplashScene',['../class_splash_scene.html',1,'SplashScene'],['../class_splash_scene.html#ae221a2966ce3d59f06c66ad253f5b83f',1,'SplashScene::SplashScene()']]],
   ['splashscene_2ecpp',['SplashScene.cpp',['../_splash_scene_8cpp.html',1,'']]],
   ['splashscene_2eh',['SplashScene.h',['../_splash_scene_8h.html',1,'']]],
+  ['spottedplayer',['spottedPlayer',['../class_ai_basic.html#ab9404436ad48fa9e83bbf7ca2b9bddcf',1,'AiBasic']]],
   ['stackvertically',['StackVertically',['../classgui_1_1_g_u_i.html#a50ccb43299016dc44fe4b21e0213169bae055d0cc4fa88ac0c0ae1294b304ae80',1,'gui::GUI']]],
   ['standard',['Standard',['../classbullets_1_1_standard.html',1,'bullets::Standard'],['../classbullets_1_1_standard.html#ae3a8e1444f02056475b6bf529bedbaf2',1,'bullets::Standard::Standard()'],['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69ccaeb6d8ae6f20283755b339c0dc273988b',1,'Standard():&#160;BulletTypes.h']]],
   ['standard_2ecpp',['Standard.cpp',['../_standard_8cpp.html',1,'']]],

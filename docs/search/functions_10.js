@@ -39,6 +39,7 @@ var searchData=
   ['shoot',['shoot',['../class_weapon.html#a063d0eb2cf432d72dc22f6ec565a1a16',1,'Weapon::shoot()'],['../class_weapon.html#a658eaa7d1b4d80a57150318fed1345b3',1,'Weapon::shoot(BulletTypes const &amp;bulletType)']]],
   ['slider',['Slider',['../classgui_1_1_slider.html#a2d888e1c47963a4da758f75561eaff74',1,'gui::Slider']]],
   ['splashscene',['SplashScene',['../class_splash_scene.html#ae221a2966ce3d59f06c66ad253f5b83f',1,'SplashScene']]],
+  ['spottedplayer',['spottedPlayer',['../class_ai_basic.html#ab9404436ad48fa9e83bbf7ca2b9bddcf',1,'AiBasic']]],
   ['standard',['Standard',['../classbullets_1_1_standard.html#ae3a8e1444f02056475b6bf529bedbaf2',1,'bullets::Standard']]],
   ['start',['start',['../class_scene.html#a8e8d1644799fd1b097535a387f80bc4d',1,'Scene::start()'],['../class_game_scene.html#a18967f8879389db3e8b9d6a3d1ff58c0',1,'GameScene::start()'],['../class_main_menu_scene.html#a7c8cf0e0bc5e4bb26891ee639b4ec837',1,'MainMenuScene::start()'],['../class_options_scene.html#a5d4604473ff5a10c686de5120472deb6',1,'OptionsScene::start()'],['../class_splash_scene.html#a26944e235e25bdd88746bf902ba9a012',1,'SplashScene::start()'],['../class_title_scene.html#a668aa87847c45d2ff3416946e23f63eb',1,'TitleScene::start()']]],
   ['staticsphere',['StaticSphere',['../classbullets_1_1_static_sphere.html#ad21101996c4f80e7451524108244eff6',1,'bullets::StaticSphere']]],

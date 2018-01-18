@@ -5,6 +5,7 @@ var searchData=
   ['background',['Background',['../class_background.html',1,'Background'],['../class_background.html#a05b686e4ce0cbdb3b1fa14a93fdf98a1',1,'Background::Background()']]],
   ['background_2ecpp',['Background.cpp',['../_background_8cpp.html',1,'']]],
   ['background_2eh',['Background.h',['../_background_8h.html',1,'']]],
+  ['basicactions',['BasicActions',['../namespace_ai_actions.html#a337beb83ff12830f76273ac69d25a024',1,'AiActions']]],
   ['bigtextureholder',['BigTextureHolder',['../class_resource_handler.html#a1d2a78f5214441f6460260f491b0fbfc',1,'ResourceHandler']]],
   ['btnback',['btnBack',['../class_options_scene.html#a046ba1d0e48e92208465a495e788ab68',1,'OptionsScene']]],
   ['btnexitgame',['btnExitGame',['../class_main_menu_scene.html#a6610cbd7990a242f688e87c3b8cd962a',1,'MainMenuScene']]],

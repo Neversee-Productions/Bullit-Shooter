@@ -1,6 +1,7 @@
 var searchData=
 [
   ['m_5fa',['m_A',['../struct_game_pad_state.html#af6f7ccf8f4d763656ce269292c2ee30b',1,'GamePadState']]],
+  ['m_5factions',['m_actions',['../class_ai_base.html#a08fb63a6172808c03a231fdb3f054547',1,'AiBase']]],
   ['m_5factive',['m_active',['../class_asteroid.html#af4ab0f4e46a5d6a3b0410ddbca949c4a',1,'Asteroid::m_active()'],['../class_pickup.html#a112fcf9e9e7ee5cbc1d85688ff56d96f',1,'Pickup::m_active()'],['../classbullets_1_1_bullet.html#a892f5a383bf15183acf426288b8b2c27',1,'bullets::Bullet::m_active()']]],
   ['m_5falive',['m_alive',['../class_player.html#a3fad13aa5cd566b11195de43909b9cb5',1,'Player']]],
   ['m_5falpha',['m_alpha',['../classbullets_1_1_holy_sphere.html#a6ac826a104a7ec68398ecddd4a1b3e29',1,'bullets::HolySphere']]],
@@ -38,6 +39,7 @@ var searchData=
   ['m_5fcurrentstate',['m_currentState',['../classgui_1_1_check_box.html#a589b8cce7cf314910c2d74d6a54e56d5',1,'gui::CheckBox::m_currentState()'],['../classgui_1_1_slider.html#adea92301504508a2417743c7b1d6d856',1,'gui::Slider::m_currentState()'],['../class_controller.html#aa1b5db9aaba925656125d146b63babc6',1,'Controller::m_currentState()']]],
   ['m_5fdamage',['m_damage',['../classbullets_1_1_comet_shot.html#ae55ef5d4227cc1c49c965e677162ca49',1,'bullets::CometShot::m_damage()'],['../classbullets_1_1_death_orb.html#ae7017fc5f743e6fc8d312df50087dbd2',1,'bullets::DeathOrb::m_damage()'],['../classbullets_1_1_empowered.html#a80529e904eb3d7a7e4f185958e8135c5',1,'bullets::Empowered::m_damage()'],['../classbullets_1_1_fire_blast.html#ad83e3c9fa7203495cbb510c9b6da1165',1,'bullets::FireBlast::m_damage()'],['../classbullets_1_1_holy_sphere.html#a25c1b69d891e08c291c6e576bb709f03',1,'bullets::HolySphere::m_damage()'],['../classbullets_1_1_magma_shot.html#aad5c4b31373d2095d22801272dcce0f4',1,'bullets::MagmaShot::m_damage()'],['../classbullets_1_1_napalm_sphere.html#a601eb87d8fcd269ca572afc9f27e26a7',1,'bullets::NapalmSphere::m_damage()'],['../classbullets_1_1_null_wave.html#aab958789207d6c9b51e6e97b98b31973',1,'bullets::NullWave::m_damage()'],['../classbullets_1_1_pyro_blast.html#a4cf5b1c7ebb5e528c55f3e759fbf309e',1,'bullets::PyroBlast::m_damage()'],['../classbullets_1_1_standard.html#a2da689db1e077cac1f93dc477cd685ba',1,'bullets::Standard::m_damage()'],['../classbullets_1_1_static_sphere.html#a729dca6dcca0953b9fa9c63804513c1d',1,'bullets::StaticSphere::m_damage()']]],
   ['m_5fdelay_5ftime',['m_DELAY_TIME',['../class_main_menu_scene.html#af236e14ed9f988999b92421a55099921',1,'MainMenuScene::m_DELAY_TIME()'],['../class_options_scene.html#aa76250f0eca3dc6bf2948800a256564b',1,'OptionsScene::m_DELAY_TIME()']]],
+  ['m_5fdelta_5ftime',['m_DELTA_TIME',['../class_ai_base.html#addc27b8bc260a1794b0d18ee943387c7',1,'AiBase']]],
   ['m_5fdown',['m_down',['../struct_ship_1_1_keys_pressed.html#af827c12698b076e9dd09b193ef20da08',1,'Ship::KeysPressed']]],
   ['m_5fdpaddown',['m_dpadDown',['../struct_game_pad_state.html#abc539426197b7af7c08da5fafb004f9e',1,'GamePadState']]],
   ['m_5fdpadleft',['m_dpadLeft',['../struct_game_pad_state.html#ab42f5c1e41b76e70ac26b8b480c5c8cd',1,'GamePadState']]],
@@ -63,7 +65,7 @@ var searchData=
   ['m_5fhighlightrectangle',['m_highlightRectangle',['../classgui_1_1_button.html#a05bd039912e3383b079bba4239b5cd66',1,'gui::Button::m_highlightRectangle()'],['../classgui_1_1_check_box.html#aef9d8a057e4190e95ddf8ed6992e65ee',1,'gui::CheckBox::m_highlightRectangle()'],['../classgui_1_1_slider.html#ae8fe8bdee1270a3c62b6663a021e0b6e',1,'gui::Slider::m_highlightRectangle()']]],
   ['m_5fhit',['m_hit',['../classbullets_1_1_bullet.html#aad436ed71aec5051030d67233ed5bd33',1,'bullets::Bullet']]],
   ['m_5fholder',['m_holder',['../struct_resource_handler_1_1_mutex_holder_pair.html#ab906b91aa813ddaa2a96a6e76cdf66f4',1,'ResourceHandler::MutexHolderPair']]],
-  ['m_5fid',['m_id',['../struct_pickup_1_1_resources_1_1_individual_pickup.html#aa32b169bc6227884c49e9207118c5c64',1,'Pickup::Resources::IndividualPickup::m_id()'],['../structbullets_1_1_bullet_1_1_resources_1_1_animation.html#aac30428d83cf1f2034fed04fdabcef79',1,'bullets::Bullet::Resources::Animation::m_id()'],['../struct_weapon_1_1_resources_1_1_animation.html#ac19b7da854a160ec16c503a3d679bd89',1,'Weapon::Resources::Animation::m_id()'],['../class_ship.html#ae4122710284b1603ff3dd4b66bda1043',1,'Ship::m_ID()']]],
+  ['m_5fid',['m_ID',['../class_ship.html#ae4122710284b1603ff3dd4b66bda1043',1,'Ship::m_ID()'],['../struct_pickup_1_1_resources_1_1_individual_pickup.html#aa32b169bc6227884c49e9207118c5c64',1,'Pickup::Resources::IndividualPickup::m_id()'],['../structbullets_1_1_bullet_1_1_resources_1_1_animation.html#aac30428d83cf1f2034fed04fdabcef79',1,'bullets::Bullet::Resources::Animation::m_id()'],['../struct_weapon_1_1_resources_1_1_animation.html#ac19b7da854a160ec16c503a3d679bd89',1,'Weapon::Resources::Animation::m_id()']]],
   ['m_5fid_5fstrategy',['m_ID_STRATEGY',['../class_resource_handler.html#a531dae66f8789c7ca2a74d11a37e47c3',1,'ResourceHandler']]],
   ['m_5fimage',['m_image',['../class_background.html#a7cd1bd39894aa393a3797e60bcbf66e9',1,'Background']]],
   ['m_5fincrementcolor',['m_incrementColor',['../class_splash_scene.html#ae6a4d115fbf158669915d1eab9b738ea',1,'SplashScene']]],
@@ -122,6 +124,7 @@ var searchData=
   ['m_5frectanglepos',['m_rectanglePos',['../classgui_1_1_button.html#a787bdc4065d0fd8b4505648a6ef4c29b',1,'gui::Button']]],
   ['m_5frectangleright',['m_rectangleRight',['../classgui_1_1_button.html#a3bc29cbe173934452c4668b24f2284e4',1,'gui::Button']]],
   ['m_5frectanglestrip',['m_rectangleStrip',['../classgui_1_1_g_u_i.html#ad86351bb29495deac5b830a7cd61ace7',1,'gui::GUI']]],
+  ['m_5frenderquad',['m_renderQuad',['../class_ai_basic.html#a78d7784da3f2402b7fc9b2dc18685b61',1,'AiBasic']]],
   ['m_5frenderstate',['m_renderState',['../class_background.html#abb79192b099bce0944da785a9cca2b29',1,'Background::m_renderState()'],['../class_connector.html#a94602f5c03234c5238f9a7d7e3ad65ad',1,'Connector::m_renderState()']]],
   ['m_5frendertexture',['m_renderTexture',['../class_window.html#a81ae3ae4f15969f55a96d513ff5572e3',1,'Window']]],
   ['m_5fresolution',['m_resolution',['../class_window.html#aec919f6e096ebd795331a00f5bc3d452',1,'Window']]],

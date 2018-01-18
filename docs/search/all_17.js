@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['_7eaibase',['~AiBase',['../class_ai_base.html#a88369d47b5d8d8c5568ef8260bd6f1ef',1,'AiBase']]],
+  ['_7eaibasic',['~AiBasic',['../class_ai_basic.html#a33330abf2307cfba39f55c2a4be4898d',1,'AiBasic']]],
   ['_7eapplication',['~Application',['../class_application.html#a748bca84fefb9c12661cfaa2f623748d',1,'Application']]],
   ['_7echeckbox',['~CheckBox',['../classgui_1_1_check_box.html#afb6d37b79599650a2c432dcf2493a7df',1,'gui::CheckBox']]],
   ['_7econtroller',['~Controller',['../class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5',1,'Controller']]],

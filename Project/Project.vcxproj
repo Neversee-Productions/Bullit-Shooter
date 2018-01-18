@@ -24,6 +24,8 @@
     <ClCompile Include="src\Entities\Asteroids\Asteroid.cpp" />
     <ClCompile Include="src\Entities\Asteroids\AsteroidManager.cpp" />
     <ClCompile Include="src\Entities\Background.cpp" />
+    <ClCompile Include="src\entities\Enemies\AiBase.cpp" />
+    <ClCompile Include="src\entities\enemies\AiBasic.cpp" />
     <ClCompile Include="src\Entities\Pickup.cpp" />
     <ClCompile Include="src\Entities\Player\BulletManager.cpp" />
     <ClCompile Include="src\Entities\Player\Bullets\Bullet.cpp" />
@@ -84,6 +86,9 @@
     <ClInclude Include="include\Entities\Asteroids\Asteroid.h" />
     <ClInclude Include="include\Entities\Asteroids\AsteroidManager.h" />
     <ClInclude Include="include\Entities\Background.h" />
+    <ClInclude Include="include\entities\enemies\AiActions.h" />
+    <ClInclude Include="include\entities\Enemies\AiBase.h" />
+    <ClInclude Include="include\entities\enemies\AiBasic.h" />
     <ClInclude Include="include\Entities\Entities.h" />
     <ClInclude Include="include\Entities\Pickup.h" />
     <ClInclude Include="include\Entities\Player\BulletManager.h" />
