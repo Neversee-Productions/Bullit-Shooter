@@ -27,6 +27,7 @@ var class_game_scene =
     [ "start", "class_game_scene.html#a18967f8879389db3e8b9d6a3d1ff58c0", null ],
     [ "stop", "class_game_scene.html#af2d4691481477cfa1d797e28593bb2e8", null ],
     [ "update", "class_game_scene.html#a31a272239cac07b320d01c5e632df22e", null ],
+    [ "updateAsteroidSpawner", "class_game_scene.html#a74d1cb5e45442fda5d7812c5fee46481", null ],
     [ "updateCollisions", "class_game_scene.html#a8aff89b2744bed5991838d0ab142fc53", null ],
     [ "m_asteroidManager", "class_game_scene.html#afc06f7cf1d9009faf879677c2c615593", null ],
     [ "m_asteroidSpawnFrequency", "class_game_scene.html#a1c96ec36fdc4c779139ec17bc5a712ad", null ],

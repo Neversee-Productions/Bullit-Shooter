@@ -72,6 +72,9 @@ public:
 	sf::Vector2f const & getPosition() const;
 	void nextWeapon();
 	BulletTypes const & getWeaponType();
+	sf::Vector2f const & getLeftWeaponPos();
+	sf::Vector2f const & getRightWeaponPos();
+	bool const & isAlive();
 
 private:
 	void switchWeaponInput();

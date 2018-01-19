@@ -130,6 +130,16 @@ void Weapon::update(const sf::Vector2f& pos)
 		sf::Vector2f const weaponPos = sf::Vector2f(pos.x + 75.0f, pos.y);
 		m_weaponSprite.setPosition(weaponPos);
 	}
+	if (false == m_canFire)
+	{
+		if (m_animator)
+		{
+			if (false == m_animator->isPlayingAnimation())
+			{
+				m_canFire = true;
+			}
+		}
+	}
 }
 
 /// <summary>
@@ -252,4 +262,34 @@ void Weapon::setType(BulletTypes const & bulletType)
 		break;
 	}
 	m_animator->playAnimation(beginID, false);
+	m_canFire = false;
+}
+
+/// <summary>
+/// @brief Set whether the weapon can fire.
+/// 
+/// 
+/// </summary>
+/// <param name="canFire">defines whether weapon can fire.</param>
+void Weapon::setCanFire(bool const & canFire)
+{
+	m_canFire = canFire;
+}
+
+/// <summary>
+/// @brief get whether the weapon can fire.
+/// 
+/// 
+/// </summary>
+/// <returns>whether you can fire or not (true = fire, false = cannot fire).</returns>
+bool const & Weapon::getCanFire() const
+{
+	return m_canFire;
+}
+
+std::string const & Weapon::getBeginAnimationID() const
+{
+	auto weaponID = static_cast<int>(m_currentBullet);
+	auto & weaponBeginAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->first);
+	return weaponBeginAnimation.m_id;
 }

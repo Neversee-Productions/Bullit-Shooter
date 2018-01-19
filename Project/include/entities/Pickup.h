@@ -89,11 +89,14 @@ public:
 	Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::Vector2f size, BulletTypes const & pickupType);
 	void update();
 	void draw(Window & window, const float & deltaTime);
-	void setPosition(sf::Vector2f pos);
-	sf::Vector2f const getPosition() const;
+	void setRightPosition(sf::Vector2f pos);
+	void setLeftPosition(sf::Vector2f pos);
+	sf::Vector2f const getRightPosition() const;
+	sf::Vector2f const & getLeftPosition() const;
 	void setSize(sf::Vector2f size);
 	sf::Vector2f const getSize() const;
-	void setVelocity(sf::Vector2f vel);
+	void setRightVelocity(sf::Vector2f vel);
+	void setLeftVelocity(sf::Vector2f vel);
 	bool const isActive() const;
 	void setActive(bool active);
 
@@ -107,11 +110,18 @@ private:
 	std::shared_ptr<sf::Texture> m_texture;
 
 	/// <summary>
-	/// @brief define position on screen.
+	/// @brief define position on screen of right sprite.
 	/// 
 	/// 
 	/// </summary>
-	sf::Vector2f m_position;
+	sf::Vector2f m_rightPosition;
+
+	/// <summary>
+	/// @brief define position on screen of left sprite.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_leftPosition;
 
 	/// <summary>
 	/// @brief size of the pickup.
@@ -142,18 +152,32 @@ private:
 	bool m_active;
 
 	/// <summary>
-	/// @brief rectangle to draw that represents the pickup.
+	/// @brief sprite to draw that represents the pickup.
 	/// 
 	/// 
 	/// </summary>
-	sf::Sprite m_rectangle;
+	sf::Sprite m_rightSprite;
+
+	/// <summary>
+	/// @brief sprite to draw that represents the pickup.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_leftSprite;
 
 	/// <summary>
 	/// @brief define velocity.
 	/// 
 	/// 
 	/// </summary>
-	sf::Vector2f m_velocity;
+	sf::Vector2f m_rightVelocity;
+
+	/// <summary>
+	/// @brief define velocity of the left pickup.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_leftVelocity;
 };
 
 #endif // !PICKUP_H

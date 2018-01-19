@@ -63,6 +63,7 @@ public:
 	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
 	void playerPickupCollision();
 	float generateRandomTimer();
+	void updateAsteroidSpawner();
 
 private:
 	void goToNextScene() final override;

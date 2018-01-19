@@ -69,26 +69,8 @@ void GameScene::update()
 	{
 		m_player.setAlive(false);
 	}
-	m_asteroidSpawnTimer += UPDATE_DT;
-	if (m_asteroidSpawnTimer >= m_asteroidSpawnFrequency)
-	{
-		int counter = 0;
-		//spawn next unused asteroid here
-		for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
-		{
-			if (uptrAsteroid && !uptrAsteroid->isActive())
-			{
-				if (counter == 0)
-				{
-					uptrAsteroid->reuseAsteroid();
-					counter++;
-				}
-			}
-			m_asteroidSpawnFrequency = generateRandomTimer();
-		}
-		m_asteroidSpawnTimer = 0.0f;
-	}
 	m_player.update();
+	updateAsteroidSpawner();
 	for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
 	{
 		if (uptrAsteroid->isActive())
@@ -221,16 +203,19 @@ void GameScene::bulletAsteroidsCollision()
 /// </summary>
 void GameScene::playerAsteroidCollision()
 {
-	auto & asteroidVector = m_asteroidManager.getAsteroidVector();
-	for (auto itt = asteroidVector.begin(), end2 = asteroidVector.end(); itt != end2; ++itt)
+	if (m_player.isAlive())
 	{
-		auto & asteroid = **itt;
-		if (asteroid.isActive())
+		auto & asteroidVector = m_asteroidManager.getAsteroidVector();
+		for (auto itt = asteroidVector.begin(), end2 = asteroidVector.end(); itt != end2; ++itt)
 		{
-			if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
+			auto & asteroid = **itt;
+			if (asteroid.isActive())
 			{
-				m_player.decrementShield(25.0f);
-				asteroid.decrementHealth(10.0f);
+				if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
+				{
+					m_player.decrementShield(25.0f);
+					asteroid.decrementHealth(10.0f);
+				}
 			}
 		}
 	}
@@ -292,13 +277,24 @@ void GameScene::playerPickupCollision()
 {
 	if (m_pickup->isActive())
 	{
-		sf::Vector2f vector = m_player.getPosition() - m_pickup->getPosition();
+		sf::Vector2f vector = m_player.getPosition() - m_pickup->getRightPosition();
 		float length = thor::length(vector);
 		if (length < 100)
 		{
-			sf::Vector2f unitVec = thor::unitVector(vector);
-			m_pickup->setVelocity(unitVec * (length * 0.1f));
-			if (length < 10)
+			//LEFT WEAPON CALCULATIONS
+			sf::Vector2f leftPosVec = m_player.getLeftWeaponPos() - m_pickup->getRightPosition();
+			sf::Vector2f unitVecLeft = thor::unitVector(leftPosVec);
+			float leftLength = thor::length(leftPosVec);
+
+			//RIGHT WEAPON CALCULATIONS
+			sf::Vector2f rightPosVec = m_player.getRightWeaponPos() - m_pickup->getLeftPosition();
+			sf::Vector2f unitVecRight = thor::unitVector(rightPosVec);
+			float rightLength = thor::length(rightPosVec);
+
+			m_pickup->setRightVelocity(unitVecLeft * (length * 0.1f));
+			m_pickup->setLeftVelocity(unitVecRight * (length * 0.1f));
+
+			if (leftLength < 10 && rightLength < 10)
 			{
 				m_player.nextWeapon();
 				m_pickup->setActive(false);
@@ -315,6 +311,34 @@ void GameScene::playerPickupCollision()
 float GameScene::generateRandomTimer()
 {
 	return m_asteroidSpawnFrequency = rand() % 4; //generate number from 0 to 3
+}
+
+/// <summary>
+/// @brief this method spawns an asteroid once a timer reaches its max.
+/// 
+/// 
+/// </summary>
+void GameScene::updateAsteroidSpawner()
+{
+	m_asteroidSpawnTimer += UPDATE_DT;
+	if (m_asteroidSpawnTimer >= m_asteroidSpawnFrequency)
+	{
+		int counter = 0;
+		//spawn next unused asteroid here
+		for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
+		{
+			if (uptrAsteroid && !uptrAsteroid->isActive())
+			{
+				if (counter == 0)
+				{
+					uptrAsteroid->reuseAsteroid();
+					counter++;
+				}
+			}
+			m_asteroidSpawnFrequency = generateRandomTimer();
+		}
+		m_asteroidSpawnTimer = 0.0f;
+	}
 }
 
 /// <summary>

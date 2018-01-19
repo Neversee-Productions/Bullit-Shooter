@@ -53,9 +53,9 @@ void Player::init(std::shared_ptr<Resources> sptrResources)
 /// <param name="deltaTime">define reference to draw time step.</param>
 void Player::draw(Window & window, const float & deltaTime)
 {
+	m_bulletManager.draw(window, deltaTime);
 	if (m_alive)
 	{
-		m_bulletManager.draw(window, deltaTime);
 		m_connectLeftWeaponToShip.draw(window, deltaTime);
 		m_weaponLeft.draw(window, deltaTime);
 		m_connectRightWeaponToShip.draw(window, -deltaTime);
@@ -95,7 +95,7 @@ void Player::update()
 		m_ship.move(Ship::Direction::Left, KEY_LEFT);
 		m_ship.move(Ship::Direction::Right, KEY_RIGHT);
 
-		if (KEY_FIRE)
+		if (KEY_FIRE && m_weaponLeft.getCanFire() && m_weaponRight.getCanFire())
 		{
 			m_bulletManager.fireBullet(m_weaponLeft, m_weaponRight, m_weaponLeft.getBulletType());
 		}
@@ -107,8 +107,8 @@ void Player::update()
 		m_connectLeftWeaponToShip.update(shipPosition, m_weaponLeft.getPosition());
 		m_weaponRight.update(shipPosition);
 		m_connectRightWeaponToShip.update(m_weaponRight.getPosition(), shipPosition);
-		m_bulletManager.update();
 	}
+	m_bulletManager.update();
 }
 
 /// <summary>
@@ -345,7 +345,46 @@ void Player::nextWeapon()
 	}
 }
 
+/// <summary>
+/// @brief get the current weapon type.
+/// 
+/// 
+/// </summary>
+/// <returns>A bullet type</returns>
 BulletTypes const & Player::getWeaponType()
 {
 	return m_weaponLeft.getBulletType();
+}
+
+/// <summary>
+/// @brief get the left weapon position.
+/// 
+/// 
+/// </summary>
+/// <returns>a vector2f that defines position.</returns>
+sf::Vector2f const & Player::getLeftWeaponPos()
+{
+	return m_weaponLeft.getPosition();
+}
+
+/// <summary>
+/// @brief get the right weapon position.
+/// 
+/// 
+/// </summary>
+/// <returns>a vector2f that defines position.</returns>
+sf::Vector2f const & Player::getRightWeaponPos()
+{
+	return m_weaponRight.getPosition();
+}
+
+/// <summary>
+/// @brief get the alive state of the player.
+/// 
+/// 
+/// </summary>
+/// <returns>readonly reference true if player is alive, false if player dead</returns>
+bool const & Player::isAlive()
+{
+	return m_alive;
 }
