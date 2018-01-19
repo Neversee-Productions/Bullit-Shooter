@@ -110,6 +110,17 @@ private:
 		, std::shared_ptr<Background::Resources> sptrBackgroundResources
 		, json::json & gameSceneParser
 	);
+	void setupPickups(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<Pickup::Resources> sptrPickupResources
+		, json::json & gameSceneParser
+	);
+	void setupPickup(
+		ResourceHandler & resourceHandler
+		, Pickup::Resources::PickupMap & pickupMap
+		, json::json & pickupParser
+		, BulletTypes const & pickupType
+	);
 
 	/// <summary>
 	/// @brief Represents the player object

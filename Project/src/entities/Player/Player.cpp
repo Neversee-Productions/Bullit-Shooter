@@ -344,3 +344,8 @@ void Player::nextWeapon()
 		break;
 	}
 }
+
+BulletTypes const & Player::getWeaponType()
+{
+	return m_weaponLeft.getBulletType();
+}

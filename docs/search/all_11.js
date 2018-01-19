@@ -51,6 +51,8 @@ var searchData=
   ['setupbullet',['setupBullet',['../class_game_scene.html#ad57de6e6fc3b6a8b8458d49f547823ee',1,'GameScene']]],
   ['setupbulletmanager',['setupBulletManager',['../class_game_scene.html#a8d361d6617d3a76e16130d5da0521ea5',1,'GameScene']]],
   ['setupconnector',['setupConnector',['../class_game_scene.html#ab51d906e9997af13f6f0de576896163f',1,'GameScene']]],
+  ['setuppickup',['setupPickup',['../class_game_scene.html#a79232a67db7417fa555780ffd02cc51c',1,'GameScene']]],
+  ['setuppickups',['setupPickups',['../class_game_scene.html#a6c3516c892a734e46dd75c529d93f194',1,'GameScene']]],
   ['setupplayer',['setupPlayer',['../class_game_scene.html#a1b81a871ebc93dc4ce15bbe877d15e04',1,'GameScene']]],
   ['setupship',['setupShip',['../class_game_scene.html#a8c7b620a4134a637afe2a9c941fb1232',1,'GameScene']]],
   ['setupweaponanim',['setupWeaponAnim',['../class_game_scene.html#a6dccca60c1bd8554b8236b41a0ea787e',1,'GameScene']]],

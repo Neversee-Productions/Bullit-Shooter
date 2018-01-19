@@ -50,11 +50,11 @@ public:
 			std::shared_ptr<sf::Texture> m_texture;
 
 			/// <summary>
-			/// @brief size of this pickup.
+			/// @brief scale of this pickup.
 			/// 
 			/// 
 			/// </summary>
-			sf::Vector2f m_size;
+			sf::Vector2f m_scale;
 
 			/// <summary>
 			/// @brief origin point of this pickup.
@@ -62,17 +62,31 @@ public:
 			/// 
 			/// </summary>
 			sf::Vector2f m_origin;
+
+			/// <summary>
+			/// @brief Texture source rectangle.
+			/// 
+			/// 
+			/// </summary>
+			sf::IntRect m_frame;
 		};
+
+		/// <summary>
+		/// @brief Alias for map of individual pickups.
+		/// 
+		/// 
+		/// </summary>
+		typedef std::map<BulletTypes, IndividualPickup> PickupMap;
 
 		/// <summary>
 		/// @brief represents all types of pickups.
 		/// 
 		/// 
 		/// </summary>
-		std::map<BulletTypes,IndividualPickup> m_pickups;
+		PickupMap m_pickups;
 	};
 	Pickup();
-	Pickup(/*std::shared_ptr<sf::Texture> texture,*/sf::Vector2f position, sf::Vector2f size);
+	Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::Vector2f size, BulletTypes const & pickupType);
 	void update();
 	void draw(Window & window, const float & deltaTime);
 	void setPosition(sf::Vector2f pos);
@@ -132,7 +146,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	sf::RectangleShape m_rectangle;
+	sf::Sprite m_rectangle;
 
 	/// <summary>
 	/// @brief define velocity.

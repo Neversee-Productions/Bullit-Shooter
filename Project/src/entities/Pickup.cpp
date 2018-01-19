@@ -10,11 +10,11 @@ Pickup::Pickup()
 /// 
 /// 
 /// </summary>
-/// <param name="texture">defines texture</param>
+/// <param name="resources">defines resources</param>
 /// <param name="position">defines position</param>
 /// <param name="size">defines size</param>
 /// <param name="origin">defines origin</param>
-Pickup::Pickup(/*std::shared_ptr<sf::Texture> texture,*/sf::Vector2f position, sf::Vector2f size)
+Pickup::Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::Vector2f size, BulletTypes const & pickupType)
 	: m_position(position)
 	, m_size(size)
 	, m_active(true)
@@ -29,9 +29,15 @@ Pickup::Pickup(/*std::shared_ptr<sf::Texture> texture,*/sf::Vector2f position, s
 	}
 	m_collisionCircle.p.x = m_position.x;
 	m_collisionCircle.p.y = m_position.y;
-	m_rectangle.setSize(m_size);
+
+	auto const & pickupData = resources->m_pickups.at(pickupType);
+
 	m_rectangle.setPosition(m_position);
-	m_rectangle.setOrigin(m_rectangle.getGlobalBounds().width / 2, m_rectangle.getGlobalBounds().height);
+	m_rectangle.setOrigin(pickupData.m_origin);
+	m_rectangle.setScale(pickupData.m_scale);
+	m_rectangle.setTexture(*pickupData.m_texture, true);
+	m_rectangle.setTextureRect(pickupData.m_frame);
+
 }
 
 /// <summary>

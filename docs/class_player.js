@@ -9,6 +9,7 @@ var class_player =
     [ "getShieldCircle", "class_player.html#a55b1a12c5f5c134156f26fa98e988366", null ],
     [ "getShieldCollisionCircle", "class_player.html#a747e3e769a17f35bd50208e240933b58", null ],
     [ "getShieldHealth", "class_player.html#a283da52296df54a751f35e91cb8b6541", null ],
+    [ "getWeaponType", "class_player.html#ab9d836dc9e4084b219d50100d1879468", null ],
     [ "init", "class_player.html#add091bd8b92b2ee8e6d809b8c162eed5", null ],
     [ "nextWeapon", "class_player.html#a8953fa145bd442d1b71a5c7418b2e184", null ],
     [ "setAlive", "class_player.html#a472e9dcb0939f81fe709240ce61a9782", null ],

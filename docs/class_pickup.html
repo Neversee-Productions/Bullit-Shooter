@@ -105,8 +105,8 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a96d607c3c6fbe14446c5cafc33163844"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a96d607c3c6fbe14446c5cafc33163844">Pickup</a> ()</td></tr>
 <tr class="separator:a96d607c3c6fbe14446c5cafc33163844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af72d757b3e01df5b396c4ae2abfb9ffa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#af72d757b3e01df5b396c4ae2abfb9ffa">Pickup</a> (sf::Vector2f position, sf::Vector2f size)</td></tr>
-<tr class="separator:af72d757b3e01df5b396c4ae2abfb9ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e11ec5a4da05139187d891a20be3b2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a0e11ec5a4da05139187d891a20be3b2d">Pickup</a> (std::shared_ptr&lt; <a class="el" href="struct_pickup_1_1_resources.html">Resources</a> &gt; resources, sf::Vector2f position, sf::Vector2f size, <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;pickupType)</td></tr>
+<tr class="separator:a0e11ec5a4da05139187d891a20be3b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d221289c869b982e8d4d7b3a49801f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#ab3d221289c869b982e8d4d7b3a49801f">update</a> ()</td></tr>
 <tr class="separator:ab3d221289c869b982e8d4d7b3a49801f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ae33775a9a71f47c85130edc9cb6326"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a3ae33775a9a71f47c85130edc9cb6326">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
@@ -140,8 +140,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ade65c962242fd08f194d460a7f98b752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a112fcf9e9e7ee5cbc1d85688ff56d96f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a112fcf9e9e7ee5cbc1d85688ff56d96f">m_active</a></td></tr>
 <tr class="separator:a112fcf9e9e7ee5cbc1d85688ff56d96f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c2d020d73e4cad7fbefed38b0c5ae1c"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a5c2d020d73e4cad7fbefed38b0c5ae1c">m_rectangle</a></td></tr>
-<tr class="separator:a5c2d020d73e4cad7fbefed38b0c5ae1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaf7407c1beff047d49eabeea1f261ef"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#acaf7407c1beff047d49eabeea1f261ef">m_rectangle</a></td></tr>
+<tr class="separator:acaf7407c1beff047d49eabeea1f261ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b2205e69f995d64d04da5ec4360a7c5"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a6b2205e69f995d64d04da5ec4360a7c5">m_velocity</a></td></tr>
 <tr class="separator:a6b2205e69f995d64d04da5ec4360a7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -166,8 +166,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af72d757b3e01df5b396c4ae2abfb9ffa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af72d757b3e01df5b396c4ae2abfb9ffa">&#9670;&nbsp;</a></span>Pickup() <span class="overload">[2/2]</span></h2>
+<a id="a0e11ec5a4da05139187d891a20be3b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e11ec5a4da05139187d891a20be3b2d">&#9670;&nbsp;</a></span>Pickup() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,6 +175,12 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Pickup::Pickup </td>
           <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_pickup_1_1_resources.html">Resources</a> &gt;&#160;</td>
+          <td class="paramname"><em>resources</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">sf::Vector2f&#160;</td>
           <td class="paramname"><em>position</em>, </td>
         </tr>
@@ -182,7 +188,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">sf::Vector2f&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;&#160;</td>
+          <td class="paramname"><em>pickupType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -194,7 +206,7 @@ Private Attributes</h2></td></tr>
 <p>Default constructor.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texture</td><td>defines texture</td></tr>
+    <tr><td class="paramname">resources</td><td>defines resources</td></tr>
     <tr><td class="paramname">position</td><td>defines position</td></tr>
     <tr><td class="paramname">size</td><td>defines size</td></tr>
     <tr><td class="paramname">origin</td><td>defines origin</td></tr>
@@ -509,8 +521,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5c2d020d73e4cad7fbefed38b0c5ae1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c2d020d73e4cad7fbefed38b0c5ae1c">&#9670;&nbsp;</a></span>m_rectangle</h2>
+<a id="acaf7407c1beff047d49eabeea1f261ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaf7407c1beff047d49eabeea1f261ef">&#9670;&nbsp;</a></span>m_rectangle</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -519,7 +531,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::RectangleShape Pickup::m_rectangle</td>
+          <td class="memname">sf::Sprite Pickup::m_rectangle</td>
         </tr>
       </table>
   </td>
@@ -602,8 +614,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Project/include/Entities/<a class="el" href="_pickup_8h_source.html">Pickup.h</a></li>
-<li>Project/src/Entities/<a class="el" href="_pickup_8cpp.html">Pickup.cpp</a></li>
+<li>Project/include/entities/<a class="el" href="_pickup_8h_source.html">Pickup.h</a></li>
+<li>Project/src/entities/<a class="el" href="_pickup_8cpp.html">Pickup.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
