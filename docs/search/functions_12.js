@@ -5,6 +5,7 @@ var searchData=
   ['updatebox',['updateBox',['../classbullets_1_1_bullet.html#afa446d8e06cf333ea39897966487a2af',1,'bullets::Bullet']]],
   ['updatecollisioncircle',['updateCollisionCircle',['../class_asteroid.html#a62156d3f0c9cf7f475a6bc172f372e28',1,'Asteroid::updateCollisionCircle()'],['../classbullets_1_1_static_sphere.html#a533998958bac92e39da0974df9e454e3',1,'bullets::StaticSphere::updateCollisionCircle()']]],
   ['updatecollisions',['updateCollisions',['../class_game_scene.html#a8aff89b2744bed5991838d0ab142fc53',1,'GameScene']]],
+  ['updateexplosioncircle',['updateExplosionCircle',['../classbullets_1_1_pyro_blast.html#a541c8e363ce9e4e13a1f3c981c4c39d9',1,'bullets::PyroBlast']]],
   ['updatekey',['updateKey',['../class_key_handler.html#a9286e652204a3e49b7674f47f0ac99fa',1,'KeyHandler']]],
   ['updateshape',['updateShape',['../classgui_1_1_widget.html#ad76ef53c8e689a3b002e155ed436e168',1,'gui::Widget']]],
   ['updatevelocityvector',['updateVelocityVector',['../classbullets_1_1_bullet.html#a9da1ed1d52f5047216d162171bbf1af4',1,'bullets::Bullet']]],

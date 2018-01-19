@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('classbullets_1_1_pyro_blast.html','');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classbullets_1_1_pyro_blast-members.html">List of all members</a>  </div>
@@ -117,6 +118,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a79a0f0dfb4d5761a61044c9751999785"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee53106785e2039149dffba012aa7f7a"><td class="memItemLeft" align="right" valign="top">const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_pyro_blast.html#aee53106785e2039149dffba012aa7f7a">getDamage</a> () override</td></tr>
 <tr class="separator:aee53106785e2039149dffba012aa7f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7597a5484dae595da86a3f94bec4184"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_pyro_blast.html#af7597a5484dae595da86a3f94bec4184">checkCircleCollision</a> (const tinyh::c2Circle &amp;other) final override</td></tr>
+<tr class="separator:af7597a5484dae595da86a3f94bec4184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classbullets_1_1_bullet"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbullets_1_1_bullet')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a></td></tr>
 <tr class="memitem:a462ca59bc035c25f2d3fcfd351c6b243 inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a462ca59bc035c25f2d3fcfd351c6b243">Bullet</a> ()</td></tr>
 <tr class="separator:a462ca59bc035c25f2d3fcfd351c6b243 inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,8 +141,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9da1ed1d52f5047216d162171bbf1af4 inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa99b721acc4f2ceba75fd95cb55b015 inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#aaa99b721acc4f2ceba75fd95cb55b015">isActive</a> () const</td></tr>
 <tr class="separator:aaa99b721acc4f2ceba75fd95cb55b015 inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfdff6141121c2eb89f1abcec498d606 inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#acfdff6141121c2eb89f1abcec498d606">checkCircleCollision</a> (const tinyh::c2Circle &amp;other)</td></tr>
-<tr class="separator:acfdff6141121c2eb89f1abcec498d606 inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af88d2013aaf83d398e3a0182a60fe4e5 inherit pub_methods_classbullets_1_1_bullet"><td class="memItemLeft" align="right" valign="top">bool const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#af88d2013aaf83d398e3a0182a60fe4e5">isImpact</a> () const</td></tr>
 <tr class="separator:af88d2013aaf83d398e3a0182a60fe4e5 inherit pub_methods_classbullets_1_1_bullet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -149,12 +150,19 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a76aa8e5981b82b4908f76b6c33859dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">method to return a fire rate.  <a href="#a76aa8e5981b82b4908f76b6c33859dd9">More...</a><br /></td></tr>
 <tr class="separator:a76aa8e5981b82b4908f76b6c33859dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a541c8e363ce9e4e13a1f3c981c4c39d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_pyro_blast.html#a541c8e363ce9e4e13a1f3c981c4c39d9">updateExplosionCircle</a> ()</td></tr>
+<tr class="separator:a541c8e363ce9e4e13a1f3c981c4c39d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a148199fcf78d9a6730f5d13313a401b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_pyro_blast.html#a148199fcf78d9a6730f5d13313a401b9">m_explode</a></td></tr>
 <tr class="separator:a148199fcf78d9a6730f5d13313a401b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cf5b1c7ebb5e528c55f3e759fbf309e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_pyro_blast.html#a4cf5b1c7ebb5e528c55f3e759fbf309e">m_damage</a></td></tr>
 <tr class="separator:a4cf5b1c7ebb5e528c55f3e759fbf309e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b6b28d2cc08cc7577d21f263bb71fc"><td class="memItemLeft" align="right" valign="top">tinyh::c2Circle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_pyro_blast.html#a39b6b28d2cc08cc7577d21f263bb71fc">m_explosionCircleCollider</a></td></tr>
+<tr class="separator:a39b6b28d2cc08cc7577d21f263bb71fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -234,6 +242,42 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af7597a5484dae595da86a3f94bec4184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7597a5484dae595da86a3f94bec4184">&#9670;&nbsp;</a></span>checkCircleCollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bullets::PyroBlast::checkCircleCollision </td>
+          <td>(</td>
+          <td class="paramtype">const tinyh::c2Circle &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check collision between bullet and another object OR agains bullets explosion and other object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if collision happened otherwise false</dd></dl>
+
+<p>Reimplemented from <a class="el" href="classbullets_1_1_bullet.html#acfdff6141121c2eb89f1abcec498d606">bullets::Bullet</a>.</p>
+
+</div>
+</div>
 <a id="a79a0f0dfb4d5761a61044c9751999785"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79a0f0dfb4d5761a61044c9751999785">&#9670;&nbsp;</a></span>explode()</h2>
 
@@ -378,6 +422,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a541c8e363ce9e4e13a1f3c981c4c39d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541c8e363ce9e4e13a1f3c981c4c39d9">&#9670;&nbsp;</a></span>updateExplosionCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bullets::PyroBlast::updateExplosionCircle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>this method will update the explosiion circle.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a4cf5b1c7ebb5e528c55f3e759fbf309e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4cf5b1c7ebb5e528c55f3e759fbf309e">&#9670;&nbsp;</a></span>m_damage</h2>
@@ -422,6 +492,29 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>determine if should explode.</p>
+
+</div>
+</div>
+<a id="a39b6b28d2cc08cc7577d21f263bb71fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39b6b28d2cc08cc7577d21f263bb71fc">&#9670;&nbsp;</a></span>m_explosionCircleCollider</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tinyh::c2Circle bullets::PyroBlast::m_explosionCircleCollider</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>defines the collsiion circle of the explosion.</p>
 
 </div>
 </div>

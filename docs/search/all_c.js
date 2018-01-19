@@ -48,6 +48,7 @@ var searchData=
   ['m_5fduration',['m_duration',['../structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a127f531d3bf12ef6ffb923422d07d956',1,'bullets::Bullet::Resources::Animation::m_duration()'],['../struct_weapon_1_1_resources_1_1_animation.html#a3d865bc4b53beeb42c57ce9a373c31a0',1,'Weapon::Resources::Animation::m_duration()']]],
   ['m_5femptytextrect',['m_emptyTextRect',['../classgui_1_1_slider.html#a88740adc74863e5c6c30084e2f72de99',1,'gui::Slider']]],
   ['m_5fexplode',['m_explode',['../classbullets_1_1_magma_shot.html#ad5299693b1586ab5569f85eb48059005',1,'bullets::MagmaShot::m_explode()'],['../classbullets_1_1_napalm_sphere.html#aecaaf1b7ae0bcc2d6bcf8a870d6bca21',1,'bullets::NapalmSphere::m_explode()'],['../classbullets_1_1_pyro_blast.html#a148199fcf78d9a6730f5d13313a401b9',1,'bullets::PyroBlast::m_explode()']]],
+  ['m_5fexplosioncirclecollider',['m_explosionCircleCollider',['../classbullets_1_1_pyro_blast.html#a39b6b28d2cc08cc7577d21f263bb71fc',1,'bullets::PyroBlast']]],
   ['m_5ffadeout',['m_fadeOut',['../classgui_1_1_button.html#aafb8c807cdc03854df3e10ffc887aeb7',1,'gui::Button::m_fadeOut()'],['../classgui_1_1_check_box.html#a9f9aa970a2cffe32ff73bbdbd0e6dc66',1,'gui::CheckBox::m_fadeOut()'],['../classgui_1_1_slider.html#ac402769db9c79ae2620fa71496f264ff',1,'gui::Slider::m_fadeOut()']]],
   ['m_5ffadestate',['m_fadeState',['../class_splash_scene.html#a5cb3025c5b78b4d9f79b327addfc562a',1,'SplashScene']]],
   ['m_5ffilledtextrect',['m_filledTextRect',['../classgui_1_1_slider.html#a4d18f1a91aa610d7b41b2f592f6c6996',1,'gui::Slider']]],
