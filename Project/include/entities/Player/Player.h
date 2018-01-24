@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include "Window.h"
+#include "..\Background.h"
 #include "Ship.h"
 #include "Weapon.h"
 #include "BulletManager.h"
@@ -59,7 +60,7 @@ public:
 	};
 
 public:
-	Player(KeyHandler& keyHandler);
+	Player(KeyHandler& keyHandler, Background & background);
 	void init(std::shared_ptr<Resources> resources);
 	void draw(Window & window, const float & deltaTime);
 	void update();
@@ -76,6 +77,14 @@ private:
 	void switchWeaponInput();
 
 private:
+	/// <summary>
+	/// @brief reference to the background.
+	/// 
+	/// Weapon type alters the color of the background
+	/// therefore background is coupled to player.
+	/// </summary>
+	Background & m_background;
+
 	/// <summary>
 	/// @brief Defines the ship object.
 	/// 

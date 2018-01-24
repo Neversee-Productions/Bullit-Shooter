@@ -82,7 +82,7 @@ private:
 		, std::shared_ptr<Weapon::Resources> sptrWeaponResources
 		, json::json & weaponParser
 	);
-	std::unique_ptr<Weapon::Resources::WeaponAnimation>
+	std::unique_ptr<Weapon::Resources::IndividualWeapon>
 		setupWeaponAnim(
 			ResourceHandler & resourceHandler
 			, json::json & weaponParser

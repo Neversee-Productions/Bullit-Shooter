@@ -124,12 +124,6 @@
     <Filter Include="Header Files\entities">
       <UniqueIdentifier>{d2b28fe8-3b50-4e82-a4ce-cfca6b62b052}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\entities\enemies">
-      <UniqueIdentifier>{169992b5-3067-4710-aeee-b0b50fec96fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\entities\enemies">
-      <UniqueIdentifier>{1c62e536-1906-47c2-9941-4a13fd0f7b12}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\entities\asteroids">
       <UniqueIdentifier>{1d00606e-08c9-4d50-b7c9-afb76153f92c}</UniqueIdentifier>
     </Filter>
@@ -183,6 +177,18 @@
     </Filter>
     <Filter Include="Header Files\scenes\GameScene">
       <UniqueIdentifier>{9b774f0b-53e5-4927-bf81-dcf9319de2a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities\ai">
+      <UniqueIdentifier>{169992b5-3067-4710-aeee-b0b50fec96fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities\ai\basic">
+      <UniqueIdentifier>{94bdabef-83ea-439b-99a1-8a9db39a9c95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\entities\ai">
+      <UniqueIdentifier>{1c62e536-1906-47c2-9941-4a13fd0f7b12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\entities\ai\basic">
+      <UniqueIdentifier>{07b798ff-e075-45a2-9296-9ee512840d97}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -315,11 +321,17 @@
     <ClCompile Include="src\Entities\Player\Bullets\StaticSphere.cpp">
       <Filter>Source Files\entities\player\Bullets</Filter>
     </ClCompile>
-    <ClCompile Include="src\entities\Enemies\AiBase.cpp">
-      <Filter>Source Files\entities\enemies</Filter>
+    <ClCompile Include="src\entities\ai\basic\AiBasic.cpp">
+      <Filter>Source Files\entities\ai\basic</Filter>
     </ClCompile>
-    <ClCompile Include="src\entities\enemies\AiBasic.cpp">
-      <Filter>Source Files\entities\enemies</Filter>
+    <ClCompile Include="src\entities\ai\basic\AiBasicState.cpp">
+      <Filter>Source Files\entities\ai\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\basic\ABSearchState.cpp">
+      <Filter>Source Files\entities\ai\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\AiBase.cpp">
+      <Filter>Source Files\entities\ai</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -493,14 +505,20 @@
     <ClInclude Include="include\Entities\Asteroids\AsteroidManager.h">
       <Filter>Header Files\entities\asteroids</Filter>
     </ClInclude>
-    <ClInclude Include="include\entities\Enemies\AiBase.h">
-      <Filter>Header Files\entities\enemies</Filter>
+    <ClInclude Include="include\entities\enemies\AiBaseAction.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\entities\enemies\AiBasic.h">
-      <Filter>Header Files\entities\enemies</Filter>
+    <ClInclude Include="include\entities\ai\basic\AiBasic.h">
+      <Filter>Header Files\entities\ai\basic</Filter>
     </ClInclude>
-    <ClInclude Include="include\entities\enemies\AiActions.h">
-      <Filter>Header Files\entities\enemies</Filter>
+    <ClInclude Include="include\entities\ai\basic\AiBasicState.h">
+      <Filter>Header Files\entities\ai\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\basic\ABSearchState.h">
+      <Filter>Header Files\entities\ai\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\AiBase.h">
+      <Filter>Header Files\entities\ai</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

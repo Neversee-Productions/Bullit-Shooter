@@ -37,10 +37,10 @@ void Weapon::init(std::shared_ptr<Resources> sptrResources)
 		{
 			auto & weaponAnimation = sptrResources->m_weaponAnimations.at(i);
 
-			auto & beginAnimation = *weaponAnimation->first;
+			auto & beginAnimation = *weaponAnimation->m_uptrBeginAnimation;
 			animator.addAnimation(beginAnimation.m_id, *(beginAnimation.m_sptrFrames), beginAnimation.m_duration);
 
-			auto & shootAnimation = *weaponAnimation->second;
+			auto & shootAnimation = *weaponAnimation->m_uptrShootAnimation;
 			if (shootAnimation.m_duration.asSeconds() < 0.0f)
 			{
 				switch (static_cast<BulletTypes>(i))
@@ -90,12 +90,12 @@ void Weapon::init(std::shared_ptr<Resources> sptrResources)
 		
 
 		auto & startingWeaponAnimation = *sptrResources->m_weaponAnimations.at(static_cast<int>(m_currentBullet));
-		auto & weaponBeginAnimation = *startingWeaponAnimation.first;
-		auto & weaponShootAnimation = *startingWeaponAnimation.second;
-		auto & weaponBeginTexture = *(startingWeaponAnimation.first->m_sptrTexture);
+		auto & weaponBeginAnimation = *startingWeaponAnimation.m_uptrBeginAnimation;
+		auto & weaponShootAnimation = *startingWeaponAnimation.m_uptrShootAnimation;
+		auto & weaponBeginTexture = *(startingWeaponAnimation.m_uptrBeginAnimation->m_sptrTexture);
 		m_weaponSprite.setTexture(weaponBeginTexture, true);
 		m_weaponSprite.setOrigin(weaponBeginAnimation.m_origin);
-		animator.playAnimation(startingWeaponAnimation.first->m_id, false);
+		animator.playAnimation(startingWeaponAnimation.m_uptrBeginAnimation->m_id, false);
 	}
 }
 
@@ -173,7 +173,7 @@ void Weapon::shoot()
 	{
 		weaponID = 0;
 	}
-	auto & weaponShootAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->second);
+	auto & weaponShootAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->m_uptrShootAnimation);
 	std::string const & shootID = weaponShootAnimation.m_id;
 	m_weaponSprite.setTexture(*weaponShootAnimation.m_sptrTexture, true);
 	m_weaponSprite.setOrigin(weaponShootAnimation.m_origin);
@@ -239,8 +239,8 @@ void Weapon::setType(BulletTypes const & bulletType)
 	{
 		weaponID = 0;
 	}
-	auto & weaponBeginAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->first);
-	auto & weaponShootAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->second);
+	auto & weaponBeginAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->m_uptrBeginAnimation);
+	auto & weaponShootAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->m_uptrShootAnimation);
 	std::string const & beginID = weaponBeginAnimation.m_id;
 	std::string const & shootID = weaponShootAnimation.m_id;
 	m_weaponSprite.setTexture(*weaponBeginAnimation.m_sptrTexture, true);
@@ -252,4 +252,16 @@ void Weapon::setType(BulletTypes const & bulletType)
 		break;
 	}
 	m_animator->playAnimation(beginID, false);
+}
+
+/// <summary>
+/// @brief Gets the background color.
+/// 
+/// 
+/// </summary>
+/// <returns>read-only reference to background color.</returns>
+sf::Color const & Weapon::getBgColor() const
+{
+	auto weaponIndex = static_cast<int>(m_currentBullet);
+	return *m_resources->m_weaponAnimations.at(weaponIndex)->m_uptrBgColor;
 }

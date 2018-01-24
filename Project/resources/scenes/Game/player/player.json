@@ -8263,5 +8263,77 @@
             "fragment": "resources/scenes/game/player/connector.frag",
             "vertex": "resources/scenes/game/player/connector.vert"
         }
+    },
+    "colors":
+    {
+        "weapons":
+        {
+            "weapon01":
+            {
+                "r": 255,
+                "g": 0,
+                "b": 0
+            },
+            "weapon02":
+            {
+                "r": 0,
+                "g": 0,
+                "b": 255
+            },
+            "weapon03":
+            {
+                "r": 0,
+                "g": 255,
+                "b": 0
+            },
+            "weapon04":
+            {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0
+            },
+            "weapon05":
+            {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0
+            },
+            "weapon06":
+            {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0
+            },
+            "weapon07":
+            {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0
+            },
+            "weapon08":
+            {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0
+            },
+            "weapon09":
+            {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0
+            },
+            "weapon10":
+            {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0
+            },
+            "weapon11":
+            {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0
+            }
+        }
     }
 }

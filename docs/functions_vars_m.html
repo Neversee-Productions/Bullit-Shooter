@@ -87,12 +87,15 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="struct_game_pad_state.html#af6f7ccf8f4d763656ce269292c2ee30b">GamePadState</a>
 </li>
 <li>m_actions
-: <a class="el" href="class_ai_base.html#a08fb63a6172808c03a231fdb3f054547">AiBase&lt; ActionTypes &gt;</a>
+: <a class="el" href="classai_1_1_ai_basic.html#afc984badf5da08fe8cc2ffe585c9f81f">ai::AiBasic</a>
 </li>
 <li>m_active
 : <a class="el" href="class_asteroid.html#af4ab0f4e46a5d6a3b0410ddbca949c4a">Asteroid</a>
 , <a class="el" href="classbullets_1_1_bullet.html#a892f5a383bf15183acf426288b8b2c27">bullets::Bullet</a>
 , <a class="el" href="class_pickup.html#a112fcf9e9e7ee5cbc1d85688ff56d96f">Pickup</a>
+</li>
+<li>m_ai
+: <a class="el" href="classai_1_1states_1_1_ai_basic_state.html#af4ab052f5e07edfa22d8075ea6ce9338">ai::states::AiBasicState</a>
 </li>
 <li>m_alive
 : <a class="el" href="class_player.html#a3fad13aa5cd566b11195de43909b9cb5">Player</a>
@@ -126,6 +129,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_background
 : <a class="el" href="class_game_scene.html#a9da5a0720636440cd864f4dd665eeb8d">GameScene</a>
+, <a class="el" href="class_player.html#a229ea5312ff9092888ee71c0c88fc80e">Player</a>
 </li>
 <li>m_backgroundColor
 : <a class="el" href="class_splash_scene.html#ab6445c0aaa84c95d15b67a868c19d84e">SplashScene</a>
@@ -136,6 +140,12 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_backgroundTexture
 : <a class="el" href="struct_splash_scene_1_1_resources.html#a62ffdbcfdbd0711facbe4d01c3b2b959">SplashScene::Resources</a>
+</li>
+<li>m_bgColor
+: <a class="el" href="class_background.html#a227df2ea5c059e73058f9ea0767078d0">Background</a>
+</li>
+<li>m_bgTargetColor
+: <a class="el" href="class_background.html#aa6b3cd8577849dc30b1b2e81188cabe4">Background</a>
 </li>
 <li>m_bottomLabel
 : <a class="el" href="classgui_1_1_slider.html#a70f14d748f4b483f4079ff92c74013fc">gui::Slider</a>
@@ -166,6 +176,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="class_asteroid.html#af2c2388afb2c00cc1779912110bfb527">Asteroid</a>
 , <a class="el" href="class_pickup.html#ade65c962242fd08f194d460a7f98b752">Pickup</a>
 , <a class="el" href="class_shield.html#a762594bf2927198da4b27687efb56e9f">Shield</a>
+</li>
+<li>m_COLOR_CHANGE
+: <a class="el" href="class_background.html#a9eedbd8b13ea2a00123068dd45e06b4d">Background</a>
 </li>
 <li>m_connectLeftWeaponToShip
 : <a class="el" href="class_player.html#a92ad0d1c8057a1ccab8e4d06b1e79b3e">Player</a>
@@ -224,7 +237,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 , <a class="el" href="class_options_scene.html#aa76250f0eca3dc6bf2948800a256564b">OptionsScene</a>
 </li>
 <li>m_DELTA_TIME
-: <a class="el" href="class_ai_base.html#addc27b8bc260a1794b0d18ee943387c7">AiBase&lt; ActionTypes &gt;</a>
+: <a class="el" href="class_background.html#aed7743d670b7202121da0a64bd399797">Background</a>
 </li>
 <li>m_down
 : <a class="el" href="struct_ship_1_1_keys_pressed.html#af827c12698b076e9dd09b193ef20da08">Ship::KeysPressed</a>
@@ -458,7 +471,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="struct_pickup_1_1_resources.html#adfe8ca0d019d928d67749e9a0d5da27c">Pickup::Resources</a>
 </li>
 <li>m_player
-: <a class="el" href="class_game_scene.html#a814ec4e13fc13a8e8c2f29ef179abc8b">GameScene</a>
+: <a class="el" href="classai_1_1_ai_basic.html#a4bc0fcd4998c35147a2c535fad92f164">ai::AiBasic</a>
+, <a class="el" href="class_game_scene.html#a814ec4e13fc13a8e8c2f29ef179abc8b">GameScene</a>
 </li>
 <li>m_position
 : <a class="el" href="class_asteroid.html#ac3e457510348bac65ce659bb679c81dd">Asteroid</a>
@@ -522,7 +536,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="classgui_1_1_g_u_i.html#ad86351bb29495deac5b830a7cd61ace7">gui::GUI</a>
 </li>
 <li>m_renderQuad
-: <a class="el" href="class_ai_basic.html#a78d7784da3f2402b7fc9b2dc18685b61">AiBasic</a>
+: <a class="el" href="classai_1_1_ai_basic.html#af5b1b4d11356aac701a56d2ccf3952ad">ai::AiBasic</a>
 </li>
 <li>m_renderState
 : <a class="el" href="class_background.html#abb79192b099bce0944da785a9cca2b29">Background</a>
@@ -750,6 +764,15 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="class_scene.html#a4d9417e5e266363d6967278a073200ca">Scene</a>
 , <a class="el" href="class_ship.html#a7d6c53355337e2fba47164275374dcb3">Ship</a>
 </li>
+<li>m_uptrAction
+: <a class="el" href="classai_1_1_ai_basic.html#a541f8a6c52cc0f7776e29d1b5dbe0f21">ai::AiBasic</a>
+</li>
+<li>m_uptrBeginAnimation
+: <a class="el" href="struct_weapon_1_1_resources_1_1_individual_weapon.html#a54e319117278f14c8ca040b72551f457">Weapon::Resources::IndividualWeapon</a>
+</li>
+<li>m_uptrBgColor
+: <a class="el" href="struct_weapon_1_1_resources_1_1_individual_weapon.html#a575bb00137a9293eee828742ff1f68ae">Weapon::Resources::IndividualWeapon</a>
+</li>
 <li>m_uptrFrames
 : <a class="el" href="struct_ship_1_1_resources.html#a8d290e0311a004985e57b2588924d23f">Ship::Resources</a>
 </li>
@@ -758,6 +781,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_uptrLoopAnimator
 : <a class="el" href="classbullets_1_1_bullet.html#ae12dba35fc5bde62c9cd73e109285473">bullets::Bullet</a>
+</li>
+<li>m_uptrShootAnimation
+: <a class="el" href="struct_weapon_1_1_resources_1_1_individual_weapon.html#ad322e2d68907cc7a490aaa424733d1a7">Weapon::Resources::IndividualWeapon</a>
 </li>
 <li>m_uptrStasisAnimator
 : <a class="el" href="classbullets_1_1_static_sphere.html#a46c0342d7ce8e8665a3962c851b0d1d4">bullets::StaticSphere</a>
@@ -774,7 +800,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="struct_player_1_1_resources.html#ac63192254b2e9cc92cc835b9507cec0f">Player::Resources</a>
 </li>
 <li>m_weaponAnimations
-: <a class="el" href="struct_weapon_1_1_resources.html#a9fce9dfbeda01254474fdc5a38ddc0db">Weapon::Resources</a>
+: <a class="el" href="struct_weapon_1_1_resources.html#ab4c3972dbeb9e2b989485f3b17ee4d88">Weapon::Resources</a>
 </li>
 <li>m_weaponLeft
 : <a class="el" href="class_player.html#a3a02a8129cf8e6f8444ad6d99bf71537">Player</a>

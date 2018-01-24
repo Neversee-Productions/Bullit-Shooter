@@ -1,6 +1,6 @@
 var namespaces =
 [
-    [ "AiActions", "namespace_ai_actions.html", null ],
+    [ "ai", "namespaceai.html", "namespaceai" ],
     [ "bullets", "namespacebullets.html", null ],
     [ "gui", "namespacegui.html", null ]
 ];

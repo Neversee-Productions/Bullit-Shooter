@@ -165,8 +165,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a8c7b620a4134a637afe2a9c941fb1232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a74473b026f107f69d3f2a59a32e668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a6a74473b026f107f69d3f2a59a32e668">setupWeapons</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_weapon_1_1_resources.html">Weapon::Resources</a> &gt; sptrWeaponResources, json::json &amp;weaponParser)</td></tr>
 <tr class="separator:a6a74473b026f107f69d3f2a59a32e668"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dccca60c1bd8554b8236b41a0ea787e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="struct_weapon_1_1_resources.html#aeb8563e3c43bb7ac8ee2d4b2883428d0">Weapon::Resources::WeaponAnimation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a6dccca60c1bd8554b8236b41a0ea787e">setupWeaponAnim</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, json::json &amp;weaponParser, std::string const &amp;id)</td></tr>
-<tr class="separator:a6dccca60c1bd8554b8236b41a0ea787e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83e77354b0feef8ceee0576535aa71d2"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="struct_weapon_1_1_resources_1_1_individual_weapon.html">Weapon::Resources::IndividualWeapon</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a83e77354b0feef8ceee0576535aa71d2">setupWeaponAnim</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, json::json &amp;weaponParser, std::string const &amp;id)</td></tr>
+<tr class="separator:a83e77354b0feef8ceee0576535aa71d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab51d906e9997af13f6f0de576896163f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ab51d906e9997af13f6f0de576896163f">setupConnector</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_connector_1_1_resources.html">Connector::Resources</a> &gt; sptrConnectorResources, json::json &amp;connectorParser)</td></tr>
 <tr class="separator:ab51d906e9997af13f6f0de576896163f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d361d6617d3a76e16130d5da0521ea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8d361d6617d3a76e16130d5da0521ea5">setupBulletManager</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html">BulletManager::Resources</a> &gt; sptrBulletManagerResources, json::json &amp;bulletManagerParser)</td></tr>
@@ -704,7 +704,7 @@ Rafael Plugge</dd></dl>
     <tr><td class="paramname">sptrBulletResources</td><td>shared pointer to our bullet resources map, assumed to be a valid pointer (initialized).</td></tr>
     <tr><td class="paramname">bulletType</td><td>read-only reference to the type of bullet we want to load.</td></tr>
     <tr><td class="paramname">bulletParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
-    <tr><td class="paramname">id</td><td>read-only reference to the id of bullet to setup.</td></tr>
+    <tr><td class="paramname">id</td><td>read-only reference to the id of bullet to set up.</td></tr>
   </table>
   </dd>
 </dl>
@@ -918,8 +918,8 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="a6dccca60c1bd8554b8236b41a0ea787e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dccca60c1bd8554b8236b41a0ea787e">&#9670;&nbsp;</a></span>setupWeaponAnim()</h2>
+<a id="a83e77354b0feef8ceee0576535aa71d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83e77354b0feef8ceee0576535aa71d2">&#9670;&nbsp;</a></span>setupWeaponAnim()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -928,7 +928,7 @@ Rafael Plugge</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="struct_weapon_1_1_resources.html#aeb8563e3c43bb7ac8ee2d4b2883428d0">Weapon::Resources::WeaponAnimation</a> &gt; GameScene::setupWeaponAnim </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="struct_weapon_1_1_resources_1_1_individual_weapon.html">Weapon::Resources::IndividualWeapon</a> &gt; GameScene::setupWeaponAnim </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
           <td class="paramname"><em>resourceHandler</em>, </td>
@@ -957,7 +957,7 @@ Rafael Plugge</dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set-ups <a class="el" href="struct_weapon_1_1_resources.html#aeb8563e3c43bb7ac8ee2d4b2883428d0">Weapon::Resources::WeaponAnimation</a>.</p>
+<p>Set-ups Weapon::Resources::WeaponAnimation.</p>
 <p>Constructs necessary asset interface for weapon. (Assumes weapon has both begin and shoot animation) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -967,7 +967,7 @@ Rafael Plugge</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>returns a unique pointer to our <a class="el" href="struct_weapon_1_1_resources.html#aeb8563e3c43bb7ac8ee2d4b2883428d0">Weapon::Resources::WeaponAnimation</a>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>returns a unique pointer to our Weapon::Resources::WeaponAnimation.</dd></dl>
 
 </div>
 </div>

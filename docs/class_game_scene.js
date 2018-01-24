@@ -20,7 +20,7 @@ var class_game_scene =
     [ "setupConnector", "class_game_scene.html#ab51d906e9997af13f6f0de576896163f", null ],
     [ "setupPlayer", "class_game_scene.html#a1b81a871ebc93dc4ce15bbe877d15e04", null ],
     [ "setupShip", "class_game_scene.html#a8c7b620a4134a637afe2a9c941fb1232", null ],
-    [ "setupWeaponAnim", "class_game_scene.html#a6dccca60c1bd8554b8236b41a0ea787e", null ],
+    [ "setupWeaponAnim", "class_game_scene.html#a83e77354b0feef8ceee0576535aa71d2", null ],
     [ "setupWeapons", "class_game_scene.html#a6a74473b026f107f69d3f2a59a32e668", null ],
     [ "start", "class_game_scene.html#a18967f8879389db3e8b9d6a3d1ff58c0", null ],
     [ "stop", "class_game_scene.html#af2d4691481477cfa1d797e28593bb2e8", null ],

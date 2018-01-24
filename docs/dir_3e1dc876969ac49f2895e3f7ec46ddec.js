@@ -1,7 +1,7 @@
 var dir_3e1dc876969ac49f2895e3f7ec46ddec =
 [
+    [ "ai", "dir_99f5a6cd96a1891e30ac7c51b0c28e71.html", "dir_99f5a6cd96a1891e30ac7c51b0c28e71" ],
     [ "asteroids", "dir_b39f127bafd5a98b6946ae1c28f70789.html", "dir_b39f127bafd5a98b6946ae1c28f70789" ],
-    [ "enemies", "dir_2f31cb86ecd61b257498f19de7f157ca.html", "dir_2f31cb86ecd61b257498f19de7f157ca" ],
     [ "player", "dir_e4cadeff87d932cb5650113f3e64d820.html", "dir_e4cadeff87d932cb5650113f3e64d820" ],
     [ "Background.h", "_background_8h.html", [
       [ "Background", "class_background.html", "class_background" ],

@@ -7,10 +7,10 @@
 /// </summary>
 GameScene::GameScene(KeyHandler& keyHandler)
 	: Scene("Game")
-	, m_player(keyHandler)
+	, m_background()
+	, m_player(keyHandler, m_background)
 	, m_keyHandler(keyHandler)
 	, m_resources(nullptr)
-	, m_background()
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_asteroidManager()
 	, m_asteroidSpawnTimer(0.0f)
@@ -467,9 +467,13 @@ void GameScene::setupWeapons(ResourceHandler & resourceHandler, std::shared_ptr<
 /// <param name="playerParser">defines reference to a initialize json parser.</param>
 /// <param name="id">defines the id of our weapon.</param>
 /// <returns>returns a unique pointer to our Weapon::Resources::WeaponAnimation.</returns>
-std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeaponAnim(ResourceHandler & resourceHandler, json::json & weaponParser, std::string const & id)
+std::unique_ptr<Weapon::Resources::IndividualWeapon> GameScene::setupWeaponAnim(ResourceHandler & resourceHandler, json::json & weaponParser, std::string const & id)
 {
+	Weapon::Resources::IndividualWeapon weaponResource;
+
 	std::string const ANIM_STR = "animation";
+	std::string const COLOR_STR = "colors";
+	std::string const WEAPONS_STR = "weapons";
 
 	std::string const BEGIN_ID = id + "_begin";
 	auto uptrBeginAnimation = std::make_unique<Weapon::Resources::Animation>();
@@ -483,6 +487,8 @@ std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeaponAnim(R
 	auto beginAnimationOrigin = sf::Vector2f(jsonBeginOrigin.at("x").get<float>(), jsonBeginOrigin.at("y").get<float>());
 	beginAnimation.m_origin = std::move(beginAnimationOrigin);
 	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, BEGIN_ID);
+	
+	weaponResource.m_uptrBeginAnimation.swap(uptrBeginAnimation);
 
 	std::string const shootID = id + "_shoot";
 	auto uptrShootAnimation = std::make_unique<Weapon::Resources::Animation>();
@@ -496,8 +502,18 @@ std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeaponAnim(R
 	auto shootAnimationOrigin = sf::Vector2f(jsonShootOrigin.at("x").get<float>(), jsonShootOrigin.at("y").get<float>());
 	shootAnimation.m_origin = std::move(shootAnimationOrigin);
 	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, shootID);
+
+	weaponResource.m_uptrShootAnimation.swap(uptrShootAnimation);
+
+	auto & jsonWepColor = weaponParser.at(COLOR_STR).at(WEAPONS_STR).at(id);
+	auto uptrBgColor = std::make_unique<sf::Color>();
+	auto & bgColor = *uptrBgColor;
+	bgColor.r = jsonWepColor.at("r").get<sf::Uint8>();
+	bgColor.g = jsonWepColor.at("g").get<sf::Uint8>();
+	bgColor.b = jsonWepColor.at("b").get<sf::Uint8>();
+	weaponResource.m_uptrBgColor.swap(uptrBgColor);
 	
-	return std::make_unique<Weapon::Resources::WeaponAnimation>(std::make_pair(std::move(uptrBeginAnimation), std::move(uptrShootAnimation)));
+	return std::make_unique<Weapon::Resources::IndividualWeapon>(std::move(weaponResource));
 }
 
 /// <summary>
@@ -560,7 +576,7 @@ void GameScene::setupBulletManager(ResourceHandler & resourceHandler, std::share
 /// <param name="sptrBulletResources">shared pointer to our bullet resources map, assumed to be a valid pointer (initialized).</param>
 /// <param name="bulletType">read-only reference to the type of bullet we want to load.</param>
 /// <param name="bulletParser">reference to loaded json file ready to be parsed.</param>
-/// <param name="id">read-only reference to the id of bullet to setup.</param>
+/// <param name="id">read-only reference to the id of bullet to set up.</param>
 void GameScene::setupBullet(
 	ResourceHandler & resourceHandler
 	, std::shared_ptr<BulletManager::Resources::BulletResources> sptrBulletResourceMap

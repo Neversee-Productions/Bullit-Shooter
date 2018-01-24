@@ -5,6 +5,7 @@ var class_weapon =
     [ "WeaponFrames", "class_weapon.html#af33ffe0fe61e4443c591ae1b48114963", null ],
     [ "Weapon", "class_weapon.html#af9388e55bd75ca1869f9952e65ad4c7f", null ],
     [ "draw", "class_weapon.html#a091763bf26419b9df5b0ae1d9dac639a", null ],
+    [ "getBgColor", "class_weapon.html#a7eff8546728a5ad3c77e0d924998ca80", null ],
     [ "getBulletType", "class_weapon.html#a48a9cf1c2632688dbec93ae8a05307df", null ],
     [ "getIsFlipped", "class_weapon.html#ad80ec295390667a49be2f794737b244e", null ],
     [ "getPosition", "class_weapon.html#a0be4976d95aa7f12ea6c69c0a28361ce", null ],

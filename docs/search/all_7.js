@@ -10,6 +10,7 @@ var searchData=
   ['get',['get',['../class_resource_handler.html#abd1c8ec7342772fc6d281f53f1c576fb',1,'ResourceHandler']]],
   ['getactive',['getActive',['../class_scene_manager.html#a10a725b0d82a65ea7beb2969204d119f',1,'SceneManager']]],
   ['getasteroidvector',['getAsteroidVector',['../class_asteroid_manager.html#ac987354c630398756107476d1cfc474b',1,'AsteroidManager']]],
+  ['getbgcolor',['getBgColor',['../class_weapon.html#a7eff8546728a5ad3c77e0d924998ca80',1,'Weapon']]],
   ['getbulletmap',['getBulletMap',['../class_bullet_manager.html#a55909cda5bcaa595efe6187880f2d812',1,'BulletManager::getBulletMap()'],['../class_player.html#afa684cfe07e806cff11e8973e4761aaa',1,'Player::getBulletMap()']]],
   ['getbullettype',['getBulletType',['../class_weapon.html#a48a9cf1c2632688dbec93ae8a05307df',1,'Weapon']]],
   ['getcircleshape',['getCircleShape',['../class_shield.html#a52339f9ed6a098316d5ab98d8390ae97',1,'Shield']]],

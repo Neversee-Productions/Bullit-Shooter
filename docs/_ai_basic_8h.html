@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project: Project/include/entities/enemies/AiBasic.h File Reference</title>
+<title>Project: Project/include/entities/ai/basic/AiBasic.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,29 +81,49 @@ $(document).ready(function(){initNavTree('_ai_basic_8h.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">AiBasic.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;SFML\Graphics\RectangleShape.hpp&quot;</code><br />
+<div class="textblock"><code>#include &lt;list&gt;</code><br />
+<code>#include &quot;SFML\Graphics\RectangleShape.hpp&quot;</code><br />
 <code>#include &quot;Thor\Animations\Animator.hpp&quot;</code><br />
-<code>#include &quot;<a class="el" href="_ai_actions_8h_source.html">AiActions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_ai_base_8h_source.html">AiBase.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_entities_8h_source.html">entities\Entities.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ai_base_8h_source.html">entities\ai\AiBase.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_ai_basic_state_8h_source.html">AiBasicState.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_a_b_search_state_8h_source.html">ABSearchState.h</a>&quot;</code><br />
 </div>
 <p><a href="_ai_basic_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ai_basic.html">AiBasic</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents basic ai.  <a href="classai_1_1_ai_basic.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceai"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceai.html">ai</a></td></tr>
+<tr class="memdesc:namespaceai"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scope for all Ai classes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceai_1_1states"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceai_1_1states.html">ai::states</a></td></tr>
+<tr class="memdesc:namespaceai_1_1states"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulate all the states into their own namespace. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a267cd36975f60eed153ad4422a54a437"><td class="memItemLeft" align="right" valign="top">typedef AiBasic&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceai.html#a267cd36975f60eed153ad4422a54a437">ai::Basic</a></td></tr>
+<tr class="separator:a267cd36975f60eed153ad4422a54a437"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_3137d5a23389289517bd5e0d06338240.html">include</a></li><li class="navelem"><a class="el" href="dir_3e1dc876969ac49f2895e3f7ec46ddec.html">entities</a></li><li class="navelem"><a class="el" href="dir_2f31cb86ecd61b257498f19de7f157ca.html">enemies</a></li><li class="navelem"><a class="el" href="_ai_basic_8h.html">AiBasic.h</a></li>
+    <li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_3137d5a23389289517bd5e0d06338240.html">include</a></li><li class="navelem"><a class="el" href="dir_3e1dc876969ac49f2895e3f7ec46ddec.html">entities</a></li><li class="navelem"><a class="el" href="dir_99f5a6cd96a1891e30ac7c51b0c28e71.html">ai</a></li><li class="navelem"><a class="el" href="dir_2a3658d0776534635e4a990267e40c09.html">basic</a></li><li class="navelem"><a class="el" href="_ai_basic_8h.html">AiBasic.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

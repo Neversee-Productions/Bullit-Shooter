@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['passivesearch',['passiveSearch',['../class_ai_basic.html#a26061853b506c68346594de2ddd26be1',1,'AiBasic']]],
-  ['patrol',['Patrol',['../namespace_ai_actions.html#a337beb83ff12830f76273ac69d25a024adf7a8712303eeadde5d19f0e2955085c',1,'AiActions']]],
   ['pete_5fis_5fcool',['PETE_IS_COOL',['../class_controller.html#ab71bd82e0906683338dee2bb6ffc93f1',1,'Controller']]],
   ['pickup',['Pickup',['../class_pickup.html',1,'Pickup'],['../class_pickup.html#a96d607c3c6fbe14446c5cafc33163844',1,'Pickup::Pickup()'],['../class_pickup.html#af72d757b3e01df5b396c4ae2abfb9ffa',1,'Pickup::Pickup(sf::Vector2f position, sf::Vector2f size)']]],
   ['pickup_2ecpp',['Pickup.cpp',['../_pickup_8cpp.html',1,'']]],
   ['pickup_2eh',['Pickup.h',['../_pickup_8h.html',1,'']]],
-  ['player',['Player',['../class_player.html',1,'Player'],['../class_player.html#a7440c280452f6ee2737dad2e2abe2962',1,'Player::Player()']]],
+  ['player',['Player',['../class_player.html',1,'Player'],['../class_player.html#a2330aca7977454b7410c8d3ef6e34327',1,'Player::Player()']]],
   ['player_2ecpp',['Player.cpp',['../_player_8cpp.html',1,'']]],
   ['player_2eh',['Player.h',['../_player_8h.html',1,'']]],
   ['playerasteroidcollision',['playerAsteroidCollision',['../class_game_scene.html#ad3c7f1444e67a8462e4611dbe9319bc4',1,'GameScene']]],

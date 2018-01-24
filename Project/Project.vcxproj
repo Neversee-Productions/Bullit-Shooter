@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\entities\ai\AiBase.cpp" />
+    <ClCompile Include="src\entities\ai\basic\ABSearchState.cpp" />
+    <ClCompile Include="src\entities\ai\basic\AiBasic.cpp" />
+    <ClCompile Include="src\entities\ai\basic\AiBasicState.cpp" />
     <ClCompile Include="src\Entities\Asteroids\Asteroid.cpp" />
     <ClCompile Include="src\Entities\Asteroids\AsteroidManager.cpp" />
     <ClCompile Include="src\Entities\Background.cpp" />
-    <ClCompile Include="src\entities\Enemies\AiBase.cpp" />
-    <ClCompile Include="src\entities\enemies\AiBasic.cpp" />
     <ClCompile Include="src\Entities\Pickup.cpp" />
     <ClCompile Include="src\Entities\Player\BulletManager.cpp" />
     <ClCompile Include="src\Entities\Player\Bullets\Bullet.cpp" />
@@ -83,12 +85,14 @@
   <ItemGroup>
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\Application.h" />
+    <ClInclude Include="include\entities\ai\AiBase.h" />
+    <ClInclude Include="include\entities\ai\basic\ABSearchState.h" />
+    <ClInclude Include="include\entities\ai\basic\AiBasic.h" />
+    <ClInclude Include="include\entities\ai\basic\AiBasicState.h" />
     <ClInclude Include="include\Entities\Asteroids\Asteroid.h" />
     <ClInclude Include="include\Entities\Asteroids\AsteroidManager.h" />
     <ClInclude Include="include\Entities\Background.h" />
-    <ClInclude Include="include\entities\enemies\AiActions.h" />
-    <ClInclude Include="include\entities\Enemies\AiBase.h" />
-    <ClInclude Include="include\entities\enemies\AiBasic.h" />
+    <ClInclude Include="include\entities\enemies\AiBaseAction.hpp" />
     <ClInclude Include="include\Entities\Entities.h" />
     <ClInclude Include="include\Entities\Pickup.h" />
     <ClInclude Include="include\Entities\Player\BulletManager.h" />

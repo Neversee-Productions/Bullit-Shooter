@@ -1,8 +1,10 @@
 var hierarchy =
 [
-    [ "AiBase< ActionTypes >", "class_ai_base.html", null ],
-    [ "AiBase< AiActions::BasicActions >", "class_ai_base.html", [
-      [ "AiBasic", "class_ai_basic.html", null ]
+    [ "ai::AiBase", "classai_1_1_ai_base.html", [
+      [ "ai::AiBasic", "classai_1_1_ai_basic.html", null ]
+    ] ],
+    [ "ai::states::AiBasicState", "classai_1_1states_1_1_ai_basic_state.html", [
+      [ "ai::states::AiBasicSearchState", "classai_1_1states_1_1_ai_basic_search_state.html", null ]
     ] ],
     [ "bullets::Bullet::Resources::Animation", "structbullets_1_1_bullet_1_1_resources_1_1_animation.html", null ],
     [ "Weapon::Resources::Animation", "struct_weapon_1_1_resources_1_1_animation.html", null ],
@@ -39,6 +41,7 @@ var hierarchy =
     [ "GamePadState", "struct_game_pad_state.html", null ],
     [ "gui::GUI", "classgui_1_1_g_u_i.html", null ],
     [ "Pickup::Resources::IndividualPickup", "struct_pickup_1_1_resources_1_1_individual_pickup.html", null ],
+    [ "Weapon::Resources::IndividualWeapon", "struct_weapon_1_1_resources_1_1_individual_weapon.html", null ],
     [ "KeyHandler", "class_key_handler.html", null ],
     [ "Ship::KeysPressed", "struct_ship_1_1_keys_pressed.html", null ],
     [ "SceneManager::ManagedScene", "struct_scene_manager_1_1_managed_scene.html", null ],
@@ -53,6 +56,7 @@ var hierarchy =
     [ "Pickup", "class_pickup.html", null ],
     [ "Player", "class_player.html", null ],
     [ "ResourceHandler", "class_resource_handler.html", null ],
+    [ "ai::AiBase::Resources", "structai_1_1_ai_base_1_1_resources.html", null ],
     [ "Background::Resources", "struct_background_1_1_resources.html", null ],
     [ "Pickup::Resources", "struct_pickup_1_1_resources.html", null ],
     [ "BulletManager::Resources", "struct_bullet_manager_1_1_resources.html", null ],

@@ -1,9 +1,8 @@
 var annotated_dup =
 [
+    [ "ai", "namespaceai.html", "namespaceai" ],
     [ "bullets", "namespacebullets.html", "namespacebullets" ],
     [ "gui", "namespacegui.html", "namespacegui" ],
-    [ "AiBase", "class_ai_base.html", "class_ai_base" ],
-    [ "AiBasic", "class_ai_basic.html", "class_ai_basic" ],
     [ "App", "class_app.html", "class_app" ],
     [ "Application", "class_application.html", "class_application" ],
     [ "Asteroid", "class_asteroid.html", "class_asteroid" ],
