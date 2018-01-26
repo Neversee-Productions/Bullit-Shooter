@@ -181,6 +181,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a6c3516c892a734e46dd75c529d93f194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79232a67db7417fa555780ffd02cc51c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a79232a67db7417fa555780ffd02cc51c">setupPickup</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="struct_pickup_1_1_resources.html#ad09c6127368e4834dca2a7bad747c129">Pickup::Resources::PickupMap</a> &amp;pickupMap, json::json &amp;pickupParser, <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;pickupType)</td></tr>
 <tr class="separator:a79232a67db7417fa555780ffd02cc51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb16fb1e5fb199773eb884657df79dc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#adb16fb1e5fb199773eb884657df79dc3">setupPickupEffect</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="struct_pickup_1_1_resources_1_1_effect.html">Pickup::Resources::Effect</a> &amp;effect, json::json &amp;effectParser)</td></tr>
+<tr class="separator:adb16fb1e5fb199773eb884657df79dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -870,6 +872,56 @@ Rafael Plugge</dd></dl>
   <table class="params">
     <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
     <tr><td class="paramname">pickupMap</td><td>reference to pickup resource map.</td></tr>
+    <tr><td class="paramname">pickupParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adb16fb1e5fb199773eb884657df79dc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb16fb1e5fb199773eb884657df79dc3">&#9670;&nbsp;</a></span>setupPickupEffect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::setupPickupEffect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_pickup_1_1_resources_1_1_effect.html">Pickup::Resources::Effect</a> &amp;&#160;</td>
+          <td class="paramname"><em>effect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>effectParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using file path and an ID.</td></tr>
+    <tr><td class="paramname">pickupMap</td><td>reference to pickup effect.</td></tr>
     <tr><td class="paramname">pickupParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
   </table>
   </dd>

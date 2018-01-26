@@ -4,6 +4,7 @@
 #include <string>
 #include <memory>
 #include "SFML\Graphics.hpp"
+#include "Thor\Animations.hpp"
 #include "Player\Bullets\BulletTypes.h"
 #include "tinyheaders\tinyc2.h"
 #include "Window.h"
@@ -84,6 +85,103 @@ public:
 		/// 
 		/// </summary>
 		PickupMap m_pickups;
+
+		/// 
+		/// @author Sebastian Kruzel
+		/// @brief define the pickup effect.
+		/// 
+		/// 
+		/// 
+		struct Effect
+		{
+			struct Texture
+			{
+				/// <summary>
+				/// @brief id of the pickup.
+				/// 
+				/// 
+				/// </summary>
+				std::string m_id = "";
+
+				/// <summary>
+				/// @brief define texture of the pickup.
+				/// 
+				/// 
+				/// </summary>
+				std::shared_ptr<sf::Texture> m_texture;
+
+				/// <summary>
+				/// @brief scale of this pickup.
+				/// 
+				/// 
+				/// </summary>
+				sf::Vector2f m_scale;
+
+				/// <summary>
+				/// @brief origin point of this pickup.
+				/// 
+				/// 
+				/// </summary>
+				sf::Vector2f m_origin;
+
+				/// <summary>
+				/// @brief Texture source rectangle.
+				/// 
+				/// 
+				/// </summary>
+				sf::IntRect m_frame;
+			};
+
+			struct Animation
+			{
+				/// <summary>
+				/// @brief Defines the ID of the animation.
+				/// 
+				/// 
+				/// </summary>
+				std::string m_id = "";
+
+				/// <summary>
+				/// @brief Defines the duration of the animation.
+				/// 
+				/// 
+				/// </summary>
+				sf::Time m_duration;
+
+				/// <summary>
+				/// @brief Defines the origin of the animation frames.
+				/// 
+				/// 
+				/// </summary>
+				sf::Vector2f m_origin;
+
+				/// <summary>
+				/// @brief Defines shared pointer to our animation's frames.
+				/// 
+				/// 
+				/// </summary>
+				std::shared_ptr<thor::FrameAnimation> m_sptrFrames = nullptr;
+
+				/// <summary>
+				/// @brief Defines shared pointer to our animation's texture.
+				/// 
+				/// 
+				/// </summary>
+				std::shared_ptr<sf::Texture> m_sptrTexture = nullptr;
+			};
+
+			/// <summary>
+			/// 
+			/// </summary>
+			Texture m_texture;
+
+			/// <summary>
+			/// 
+			/// </summary>
+			Animation m_animation;
+		};
+
+		Effect m_effect;
 	};
 	Pickup();
 	Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::Vector2f size, BulletTypes const & pickupType);
@@ -166,6 +264,13 @@ private:
 	sf::Sprite m_leftSprite;
 
 	/// <summary>
+	/// @brief defines the sprite that effect is applied onto.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_effectSprite;
+
+	/// <summary>
 	/// @brief define velocity.
 	/// 
 	/// 
@@ -178,6 +283,13 @@ private:
 	/// 
 	/// </summary>
 	sf::Vector2f m_leftVelocity;
+
+	/// <summary>
+	/// @brief defines the thor animator.
+	/// 
+	/// 
+	/// </summary>
+	thor::Animator<sf::Sprite, std::string> m_animator;
 };
 
 #endif // !PICKUP_H

@@ -122,6 +122,11 @@ private:
 		, json::json & pickupParser
 		, BulletTypes const & pickupType
 	);
+	void setupPickupEffect(
+		ResourceHandler & resourceHandler
+		, Pickup::Resources::Effect & effect
+		, json::json & effectParser
+	);
 
 	/// <summary>
 	/// @brief Represents the player object

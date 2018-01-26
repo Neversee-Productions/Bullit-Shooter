@@ -775,17 +775,20 @@ void GameScene::setupPickups(ResourceHandler & resourceHandler, std::shared_ptr<
 {
 	std::string const PICKUP_JSON_ID("pickup");
 	std::string const JSON_WEAPONS("weapons");
+	std::string const JSON_EFFECT("effect");
 
 	std::ifstream pickupRawFile(gameSceneParser.at(PICKUP_JSON_ID).get<std::string>());
 	// Define the pickup json parser
 	json::json pickupJson;
 	pickupRawFile >> pickupJson;
 
-	pickupJson = pickupJson.at(JSON_WEAPONS);
+	this->setupPickupEffect(resourceHandler, sptrPickupResources->m_effect, pickupJson.at(JSON_EFFECT));
+
+	json::json & pickupWepJson = pickupJson.at(JSON_WEAPONS);
 
 	auto const MAX_BULLET_TYPES = static_cast<int>(BulletTypes::AmountOfTypes);
 	int i = 0;
-	for (auto itt = pickupJson.begin(), end = pickupJson.end(); itt != end; ++itt)
+	for (auto itt = pickupWepJson.begin(), end = pickupWepJson.end(); itt != end; ++itt)
 	{
 		BulletTypes const BULLET_TYPE = static_cast<BulletTypes>(i);
 		this->setupPickup(resourceHandler, sptrPickupResources->m_pickups, *itt, BULLET_TYPE);
@@ -836,5 +839,83 @@ void GameScene::setupPickup(ResourceHandler & resourceHandler, Pickup::Resources
 
 	auto mapPair = std::make_pair(pickupTypes, pickupData);
 	pickupMap.insert(std::move(mapPair));
+}
+
+/// <summary>
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using file path and an ID.</param>
+/// <param name="pickupMap">reference to pickup effect.</param>
+/// <param name="pickupParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupPickupEffect(ResourceHandler & resourceHandler, Pickup::Resources::Effect & effect, json::json & effectParser)
+{
+	// ID used to by resource handler to id the texture and the animation.
+	std::string const EFFECT_ID("pickup-effect");
+
+	// Parse Texture Json node
+
+	std::string const JSON_TEXTURE("texture");
+	json::json & effectTextureParser = effectParser.at(JSON_TEXTURE);
+
+	std::string const JSON_TEXTURE_PATH("path");
+	std::string const JSON_TEXTURE_ORIGIN("origin");
+	std::string const JSON_TEXTURE_SCALE("scale");
+	std::string const JSON_TEXTURE_FRAME("frame");
+	
+	effect.m_texture.m_id = EFFECT_ID;
+	effect.m_texture.m_origin.x = effectTextureParser.at(JSON_TEXTURE_ORIGIN).at("x").get<float>();
+	effect.m_texture.m_origin.y = effectTextureParser.at(JSON_TEXTURE_ORIGIN).at("y").get<float>();
+	sf::Vector2f scale = { 0.0f,0.0f };
+	scale.x = effectTextureParser.at(JSON_TEXTURE_SCALE).at("x").get<float>();
+	scale.y = effectTextureParser.at(JSON_TEXTURE_SCALE).at("y").get<float>();
+	effect.m_texture.m_scale = std::move(scale);
+	sf::IntRect frame = { 0,0,0,0 };
+	frame.left = effectTextureParser.at(JSON_TEXTURE_FRAME).at("x").get<int>();
+	frame.top = effectTextureParser.at(JSON_TEXTURE_FRAME).at("y").get<int>();
+	frame.width = effectTextureParser.at(JSON_TEXTURE_FRAME).at("w").get<int>();
+	frame.height = effectTextureParser.at(JSON_TEXTURE_FRAME).at("h").get<int>();
+	effect.m_texture.m_frame = std::move(frame);
+	effect.m_texture.m_texture =
+		resourceHandler.loadUp<sf::Texture>(effectTextureParser.at(JSON_TEXTURE_PATH).get<std::string>(), EFFECT_ID);
+	assert(nullptr != effect.m_texture.m_texture);
+
+	// Parse Animation Json node
+
+	std::string const JSON_ANIMATION("animation");
+	json::json & effectAnimationParser = effectParser.at(JSON_ANIMATION);
+
+	std::string const JSON_ANIMATION_DURATION("duration");
+	std::string const JSON_ANIMATION_WIDTH("width");
+	std::string const JSON_ANIMATION_HEIGHT("height");
+	std::string const JSON_ANIMATION_ORIGIN("origin");
+	std::string const JSON_ANIMATION_FRAMES("frames");
+
+	effect.m_animation.m_id = EFFECT_ID;
+	effect.m_animation.m_duration = sf::seconds(effectAnimationParser.at(JSON_ANIMATION_DURATION).get<float>());
+	effect.m_animation.m_origin.x = effectAnimationParser.at(JSON_ANIMATION_ORIGIN).get<float>();
+	effect.m_animation.m_origin.y = effectAnimationParser.at(JSON_ANIMATION_ORIGIN).get<float>();
+	effect.m_animation.m_sptrTexture = effect.m_texture.m_texture; // Use the texture already loaded.
+	
+	effect.m_animation.m_sptrFrames = std::make_shared<thor::FrameAnimation>();
+	json::json & effectAnimationFrames = effectAnimationParser.at(JSON_ANIMATION_FRAMES);
+	auto const FRAME_WIDTH = effectAnimationParser.at(JSON_ANIMATION_WIDTH).get<int>();
+	auto const FRAME_HEIGHT = effectAnimationParser.at(JSON_ANIMATION_HEIGHT).get<int>();
+	float i = 0.0f;
+	for (
+		auto itt = effectAnimationFrames.begin(), end = effectAnimationFrames.end();
+		itt != end;
+		++itt, ++i
+		)
+	{
+		auto & jsonNode = *itt;
+		sf::IntRect rect;
+		rect.left = jsonNode.at("x").get<int>();
+		rect.top = jsonNode.at("y").get<int>();
+		rect.width = FRAME_WIDTH;
+		rect.height = FRAME_HEIGHT;
+
+		effect.m_animation.m_sptrFrames->addFrame(i, rect);
+	}
+
 }
 

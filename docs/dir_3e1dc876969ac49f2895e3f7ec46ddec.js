@@ -11,6 +11,9 @@ var dir_3e1dc876969ac49f2895e3f7ec46ddec =
     [ "Pickup.h", "_pickup_8h.html", [
       [ "Pickup", "class_pickup.html", "class_pickup" ],
       [ "Resources", "struct_pickup_1_1_resources.html", "struct_pickup_1_1_resources" ],
-      [ "IndividualPickup", "struct_pickup_1_1_resources_1_1_individual_pickup.html", "struct_pickup_1_1_resources_1_1_individual_pickup" ]
+      [ "IndividualPickup", "struct_pickup_1_1_resources_1_1_individual_pickup.html", "struct_pickup_1_1_resources_1_1_individual_pickup" ],
+      [ "Effect", "struct_pickup_1_1_resources_1_1_effect.html", "struct_pickup_1_1_resources_1_1_effect" ],
+      [ "Texture", "struct_pickup_1_1_resources_1_1_effect_1_1_texture.html", "struct_pickup_1_1_resources_1_1_effect_1_1_texture" ],
+      [ "Animation", "struct_pickup_1_1_resources_1_1_effect_1_1_animation.html", "struct_pickup_1_1_resources_1_1_effect_1_1_animation" ]
     ] ]
 ];

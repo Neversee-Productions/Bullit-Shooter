@@ -19,6 +19,9 @@ Pickup::Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::V
 	, m_leftPosition(position)
 	, m_size(size)
 	, m_active(true)
+	, m_effectSprite()
+	, m_animator()
+	
 {
 	if (m_size.x > m_size.y) //make collision circle same as the bigger side
 	{
@@ -45,6 +48,15 @@ Pickup::Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::V
 	m_leftSprite.setTexture(*pickupData.m_texture, true);
 	m_leftSprite.setTextureRect(pickupData.m_frame);
 
+	auto const & effectTextureData = resources->m_effect.m_texture;
+
+	m_effectSprite.setPosition(position);
+	m_effectSprite.setOrigin(effectTextureData.m_origin);
+	m_effectSprite.setScale(effectTextureData.m_scale);
+	m_effectSprite.setTexture(*effectTextureData.m_texture, true);
+	m_effectSprite.setTextureRect(effectTextureData.m_frame);
+
+	m_animator.addAnimation(resources->m_effect.m_animation.m_id, *resources->m_effect.m_animation.m_sptrFrames, resources->m_effect.m_animation.m_duration);
 }
 
 /// <summary>
@@ -74,6 +86,9 @@ void Pickup::draw(Window & window, const float & deltaTime)
 {
 	if (m_active)
 	{
+		m_animator.update(sf::seconds(deltaTime));
+		m_animator.animate(m_effectSprite);
+		window.draw(m_effectSprite);
 		window.draw(m_rightSprite);
 		window.draw(m_leftSprite);
 	}

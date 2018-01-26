@@ -70,6 +70,7 @@
     <None Include="resources\scenes\Game\background\background.json" />
     <None Include="resources\scenes\Game\background\background.vert" />
     <None Include="resources\scenes\Game\Game.json" />
+    <None Include="resources\scenes\Game\pickup\pickup.json" />
     <None Include="resources\scenes\Game\player\connector.frag" />
     <None Include="resources\scenes\Game\player\connector.vert" />
     <None Include="resources\scenes\Game\player\player.json" />
