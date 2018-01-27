@@ -116,10 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a81f354733c007b89c969e1da7d2028f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9240dc2292bfae1e43375a97f5d707d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#af9240dc2292bfae1e43375a97f5d707d">~AiBase</a> ()=default</td></tr>
 <tr class="separator:af9240dc2292bfae1e43375a97f5d707d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7909215238c996a1c54bb62403e50785"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a7909215238c996a1c54bb62403e50785">init</a> (std::shared_ptr&lt; <a class="el" href="structai_1_1_ai_base_1_1_resources.html">Resources</a> &gt; sptrResources)=0</td></tr>
-<tr class="separator:a7909215238c996a1c54bb62403e50785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a15c1c5d9a326aade3df492c1b42b3c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a8a15c1c5d9a326aade3df492c1b42b3c">update</a> (float const &amp;deltaTime)=0</td></tr>
-<tr class="separator:a8a15c1c5d9a326aade3df492c1b42b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e8141637bdf9a84bad564ab0d226250"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a2e8141637bdf9a84bad564ab0d226250">update</a> ()=0</td></tr>
+<tr class="separator:a2e8141637bdf9a84bad564ab0d226250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a741d17cb50489b88bfd65375c97a7382"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a741d17cb50489b88bfd65375c97a7382">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, float const &amp;deltaTime)=0</td></tr>
 <tr class="separator:a741d17cb50489b88bfd65375c97a7382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -220,36 +218,8 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7909215238c996a1c54bb62403e50785"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7909215238c996a1c54bb62403e50785">&#9670;&nbsp;</a></span>init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ai::AiBase::init </td>
-          <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structai_1_1_ai_base_1_1_resources.html">Resources</a> &gt;&#160;</td>
-          <td class="paramname"><em>sptrResources</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#ae109ae4c97ca8f7eb5b1e8803dbe4bf7">ai::AiBasic</a>.</p>
-
-</div>
-</div>
-<a id="a8a15c1c5d9a326aade3df492c1b42b3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a15c1c5d9a326aade3df492c1b42b3c">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a2e8141637bdf9a84bad564ab0d226250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e8141637bdf9a84bad564ab0d226250">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -260,8 +230,7 @@ Static Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual void ai::AiBase::update </td>
           <td>(</td>
-          <td class="paramtype">float const &amp;&#160;</td>
-          <td class="paramname"><em>deltaTime</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -272,7 +241,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#af452132443069791804b74eb8bfeda8e">ai::AiBasic</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#a8dc885717d8a6651e120135df928f55d">ai::AiBasic</a>.</p>
 
 </div>
 </div>

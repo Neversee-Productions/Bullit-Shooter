@@ -22,6 +22,7 @@
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\entities\ai\AiBase.cpp" />
+    <ClCompile Include="src\entities\ai\basic\ABChargeState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABSearchState.cpp" />
     <ClCompile Include="src\entities\ai\basic\AiBasic.cpp" />
     <ClCompile Include="src\entities\ai\basic\AiBasicState.cpp" />
@@ -57,14 +58,15 @@
     <ClCompile Include="src\input\Controller.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ResourceHandler.cpp" />
-    <ClCompile Include="src\Scene.cpp" />
-    <ClCompile Include="src\SceneManager.cpp" />
     <ClCompile Include="src\Scenes\MainMenuScene\MainMenuScene.cpp" />
     <ClCompile Include="src\Scenes\GameScene\GameScene.cpp" />
     <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp" />
+    <ClCompile Include="src\Scenes\Scene.cpp" />
+    <ClCompile Include="src\Scenes\SceneManager.cpp" />
     <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp" />
     <ClCompile Include="src\Scenes\TitleScene\TitleScene.cpp" />
     <ClCompile Include="src\tinyheaders\tinyc2.cpp" />
+    <ClCompile Include="src\util\JsonLoader.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +75,8 @@
     <None Include="resources\scenes\Game\background\background.frag" />
     <None Include="resources\scenes\Game\background\background.json" />
     <None Include="resources\scenes\Game\background\background.vert" />
+    <None Include="resources\scenes\Game\enemies\basic\basic.json" />
+    <None Include="resources\scenes\Game\enemies\enemies.json" />
     <None Include="resources\scenes\Game\Game.json" />
     <None Include="resources\scenes\Game\player\connector.frag" />
     <None Include="resources\scenes\Game\player\connector.vert" />
@@ -86,13 +90,13 @@
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\Application.h" />
     <ClInclude Include="include\entities\ai\AiBase.h" />
+    <ClInclude Include="include\entities\ai\basic\ABChargeState.h" />
     <ClInclude Include="include\entities\ai\basic\ABSearchState.h" />
     <ClInclude Include="include\entities\ai\basic\AiBasic.h" />
     <ClInclude Include="include\entities\ai\basic\AiBasicState.h" />
     <ClInclude Include="include\Entities\Asteroids\Asteroid.h" />
     <ClInclude Include="include\Entities\Asteroids\AsteroidManager.h" />
     <ClInclude Include="include\Entities\Background.h" />
-    <ClInclude Include="include\entities\enemies\AiBaseAction.hpp" />
     <ClInclude Include="include\Entities\Entities.h" />
     <ClInclude Include="include\Entities\Pickup.h" />
     <ClInclude Include="include\Entities\Player\BulletManager.h" />
@@ -123,19 +127,21 @@
     <ClInclude Include="include\input\KeyHandler.h" />
     <ClInclude Include="include\input\Controller.h" />
     <ClInclude Include="include\ResourceHandler.h" />
-    <ClInclude Include="include\Scene.h" />
-    <ClInclude Include="include\SceneManager.h" />
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />
     <ClInclude Include="include\Scenes\GameScene\GameScene.h" />
     <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h" />
+    <ClInclude Include="include\Scenes\Scene.h" />
+    <ClInclude Include="include\Scenes\SceneManager.h" />
     <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h" />
     <ClInclude Include="include\Scenes\TitleScene\TitleScene.h" />
+    <ClInclude Include="include\util\JsonLoader.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\gui\textures\button.png" />
     <Image Include="resources\gui\textures\checkbox.png" />
     <Image Include="resources\gui\textures\slider.png" />
+    <Image Include="resources\scenes\Game\enemies\basic\idle.png" />
     <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_impact.png" />
     <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_loop.png" />
     <Image Include="resources\scenes\Game\player\player_ship.png" />

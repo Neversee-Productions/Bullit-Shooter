@@ -1,4 +1,5 @@
 {
     "player": "resources/scenes/game/player/player.json",
-    "background": "resources/scenes/game/background/background.json"
+    "background": "resources/scenes/game/background/background.json",
+    "enemies": "resources/scenes/game/enemies/enemies.json"
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['searchstate',['SearchState',['../classai_1_1_ai_basic.html#aa706dd7070ff32972028c00e687ac64d',1,'ai::AiBasic']]]
+  ['chargestate',['ChargeState',['../classai_1_1_ai_basic.html#a7a9c5b967f19cb58dd1dfa089aeb55ad',1,'ai::AiBasic']]]
 ];

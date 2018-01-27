@@ -1,9 +1,10 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+// Platform Includes
+#include <Windows.h>
 // STL includes
 #include <list>
-#include <Windows.h>
 // SFML includes
 #include "SFML\Window\Event.hpp"
 #include "SFML\Graphics\RenderWindow.hpp"

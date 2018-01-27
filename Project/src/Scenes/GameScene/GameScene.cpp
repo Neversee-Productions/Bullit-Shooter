@@ -16,6 +16,7 @@ GameScene::GameScene(KeyHandler& keyHandler)
 	, m_asteroidSpawnTimer(0.0f)
 	, m_asteroidSpawnFrequency(0.0f)
 	, UPDATE_DT(App::getUpdateDeltaTime())
+	, m_enemy(m_player)
 {
 	m_asteroidManager.initAsteroidVector();
 	m_asteroidSpawnFrequency = generateRandomTimer();
@@ -98,6 +99,7 @@ void GameScene::update()
 			uptrAsteroid->update();
 		}
 	}
+	m_enemy.update();
 	playerPickupCollision();
 	m_pickup->update();
 	updateCollisions();
@@ -121,6 +123,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 		}
 	}
 	m_player.draw(window, deltaTime);
+	m_enemy.draw(window, deltaTime);
 	m_pickup->draw(window, deltaTime);
 }
 
@@ -309,7 +312,7 @@ void GameScene::playerPickupCollision()
 /// </summary>
 float GameScene::generateRandomTimer()
 {
-	return m_asteroidSpawnFrequency = rand() % 4; //generate number from 0 to 3
+	return m_asteroidSpawnFrequency = static_cast<float>(rand() % 4); //generate number from 0 to 3
 }
 
 /// <summary>
@@ -332,15 +335,16 @@ void GameScene::setup(const std::string & filePath)
 {
 	auto & resourceHandler = ResourceHandler::get();
 
-	// Loading Game Scene Raw Text file.
-	std::ifstream rawFile(filePath);
-	// Defines the Game Scene's Json Parser
-	json::json gameSceneParser;
-	rawFile >> gameSceneParser; // Parsing raw text file into json parser.
+	json::json gameSceneParser = util::loadJsonFromFile(filePath);
 
 	if (!m_resources)
 	{
 		m_resources = std::make_unique<Resources>();
+
+		////////////////////////////////////////////
+		// Setup Enemies
+		////////////////////////////////////////////
+		this->setupEnemies(resourceHandler, m_resources->m_sptrEnemies, gameSceneParser);
 
 		////////////////////////////////////////////
 		// Setup Player
@@ -353,6 +357,7 @@ void GameScene::setup(const std::string & filePath)
 		this->setupBackground(resourceHandler, m_resources->m_sptrBackground, gameSceneParser);
 	}
 
+	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemy);
 	m_player.init(m_resources->m_sptrPlayer);
 	m_background.init(m_resources->m_sptrBackground);
 }
@@ -369,11 +374,7 @@ void GameScene::setupPlayer(ResourceHandler & resourceHandler, std::shared_ptr<P
 {
 	std::string const PLAYER_ID("player");
 
-	// Loading player Raw Text File
-	std::ifstream playerRawFile(gameSceneParser.at(PLAYER_ID).get<std::string>());
-	// Defines the Player's Json Parser
-	json::json playerJson;
-	playerRawFile >> playerJson; // Parsing raw text file into json parser.
+	json::json playerJson = util::loadJsonFromFile(gameSceneParser.at(PLAYER_ID).get<std::string>());
 
 	////////////////////////////////////////////
 	// Setup Ship resources
@@ -734,12 +735,26 @@ void GameScene::setupBackground(ResourceHandler & resourceHandler, std::shared_p
 {
 	std::string const BACKGROUND_ID("background");
 
-	// Loading background Raw Text File
-	std::ifstream backgroundRawFile(gameSceneParser.at(BACKGROUND_ID).get<std::string>());
-	// Defines the Background's Json Parser
-	json::json backgroundJson;
-	backgroundRawFile >> backgroundJson; // Parsing raw text file into json parser.
+	json::json backgroundJson = util::loadJsonFromFile(gameSceneParser.at(BACKGROUND_ID).get<std::string>());
 
 	sptrBackgroundResources->m_sptrBgShader = resourceHandler.loadUp<sf::Shader>(backgroundJson, BACKGROUND_ID);
+}
+
+/// <summary>
+/// @brief 
+/// 
+/// 
+/// </summary>
+/// <param name="resourceHandler"></param>
+/// <param name="sptrEnemies"></param>
+/// <param name="gameSceneParser"></param>
+void GameScene::setupEnemies(ResourceHandler & resourceHandler, std::shared_ptr<Resources::Enemies> sptrEnemies, json::json & gameSceneParser)
+{
+	std::string const JSON_ENEMIES("enemies");
+	json::json enemiesJson = util::loadJsonFromFile(gameSceneParser.at(JSON_ENEMIES).get<std::string>());
+
+	std::string const JSON_ENEMY_BASIC("basic");
+
+	ai::AiBasic::setup(sptrEnemies->m_sptrBasicEnemy, resourceHandler, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_BASIC).get<std::string>()));
 }
 

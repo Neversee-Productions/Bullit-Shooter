@@ -190,6 +190,18 @@
     <Filter Include="Header Files\entities\ai\basic">
       <UniqueIdentifier>{07b798ff-e075-45a2-9296-9ee512840d97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\scenes\Game\enemies">
+      <UniqueIdentifier>{a4a3dc05-13a2-4591-a4e3-b436bd01fa29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\enemies\basic">
+      <UniqueIdentifier>{91c1d3c8-7082-40a4-9574-71c4ff4ba986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\util">
+      <UniqueIdentifier>{7dc24e88-a850-4858-bec6-446a35179fde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{5f0783fc-8668-4645-b139-e22485163ba6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -199,12 +211,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SceneManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\gui\GUI.cpp">
@@ -333,6 +339,18 @@
     <ClCompile Include="src\entities\ai\AiBase.cpp">
       <Filter>Source Files\entities\ai</Filter>
     </ClCompile>
+    <ClCompile Include="src\entities\ai\basic\ABChargeState.cpp">
+      <Filter>Source Files\entities\ai\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\JsonLoader.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\Scene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\SceneManager.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -374,18 +392,18 @@
     <None Include="resources\scenes\Game\player\connector.vert">
       <Filter>Resource Files\scenes\Game\player</Filter>
     </None>
+    <None Include="resources\scenes\Game\enemies\enemies.json">
+      <Filter>Resource Files\scenes\Game\enemies</Filter>
+    </None>
+    <None Include="resources\scenes\Game\enemies\basic\basic.json">
+      <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SceneManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h">
@@ -505,9 +523,6 @@
     <ClInclude Include="include\Entities\Asteroids\AsteroidManager.h">
       <Filter>Header Files\entities\asteroids</Filter>
     </ClInclude>
-    <ClInclude Include="include\entities\enemies\AiBaseAction.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\entities\ai\basic\AiBasic.h">
       <Filter>Header Files\entities\ai\basic</Filter>
     </ClInclude>
@@ -519,6 +534,18 @@
     </ClInclude>
     <ClInclude Include="include\entities\ai\AiBase.h">
       <Filter>Header Files\entities\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\basic\ABChargeState.h">
+      <Filter>Header Files\entities\ai\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util\JsonLoader.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\Scene.h">
+      <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scenes\SceneManager.h">
+      <Filter>Header Files\scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -614,6 +641,9 @@
     </Image>
     <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_loop.png">
       <Filter>Resource Files\scenes\Game\player\bullets\bullet01</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\enemies\basic\idle.png">
+      <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

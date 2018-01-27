@@ -81,6 +81,7 @@ $(document).ready(function(){initNavTree('struct_game_scene_1_1_resources.html',
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_game_scene_1_1_resources-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -91,6 +92,12 @@ $(document).ready(function(){initNavTree('struct_game_scene_1_1_resources.html',
 <p>Container of shared pointers to our resources.  
  <a href="struct_game_scene_1_1_resources.html#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html">Enemies</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of shared pointers to different enemy resources.  <a href="struct_game_scene_1_1_resources_1_1_enemies.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a4f1104bf85333cb3fd35e80eba42ac52"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Player::Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources.html#a4f1104bf85333cb3fd35e80eba42ac52">m_sptrPlayer</a></td></tr>
@@ -99,6 +106,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a8acd98214716941f4756b3e5e57fc120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9d779b05249c4ff47178011766c36dd"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_pickup_1_1_resources.html">Pickup::Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources.html#aa9d779b05249c4ff47178011766c36dd">m_sptrPickup</a></td></tr>
 <tr class="separator:aa9d779b05249c4ff47178011766c36dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e8a266f9b99190a0b6b7cb8cd1db4b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html">Enemies</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_scene_1_1_resources.html#ab4e8a266f9b99190a0b6b7cb8cd1db4b">m_sptrEnemies</a></td></tr>
+<tr class="separator:ab4e8a266f9b99190a0b6b7cb8cd1db4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd></dl>
@@ -116,6 +125,20 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">            std::make_shared&lt;Background::Resources&gt;()</div></div><!-- fragment --><p>shared pointer to background resources.</p>
 
+</div>
+</div>
+<a id="ab4e8a266f9b99190a0b6b7cb8cd1db4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e8a266f9b99190a0b6b7cb8cd1db4b">&#9670;&nbsp;</a></span>m_sptrEnemies</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html">Enemies</a>&gt; GameScene::Resources::m_sptrEnemies</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">            std::make_shared&lt;Enemies&gt;()</div></div><!-- fragment -->
 </div>
 </div>
 <a id="aa9d779b05249c4ff47178011766c36dd"></a>

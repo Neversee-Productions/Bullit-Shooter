@@ -99,7 +99,9 @@ Inheritance diagram for ai::states::AiBasicState:</div>
  <div class="center">
   <img src="classai_1_1states_1_1_ai_basic_state.png" usemap="#ai::states::AiBasicState_map" alt=""/>
   <map id="ai::states::AiBasicState_map" name="ai::states::AiBasicState_map">
-<area href="classai_1_1states_1_1_ai_basic_search_state.html" alt="ai::states::AiBasicSearchState" shape="rect" coords="0,56,178,80"/>
+<area href="classai_1_1states_1_1_ai_basic_charge_state.html" title="Defines the attack state for the Basic Ai. " alt="ai::states::AiBasicChargeState" shape="rect" coords="0,56,179,80"/>
+<area href="classai_1_1states_1_1_ai_basic_charge_state.html" title="Defines the attack state for the Basic Ai. " alt="ai::states::AiBasicChargeState" shape="rect" coords="189,56,368,80"/>
+<area href="classai_1_1states_1_1_ai_basic_search_state.html" alt="ai::states::AiBasicSearchState" shape="rect" coords="378,56,557,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -109,10 +111,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a203d3d78433871e195374844c4ff7328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a246ebc7cebe7480a4c9ee8de297b6a64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1states_1_1_ai_basic_state.html#a246ebc7cebe7480a4c9ee8de297b6a64">~AiBasicState</a> ()=default</td></tr>
 <tr class="separator:a246ebc7cebe7480a4c9ee8de297b6a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9d50fc190541459313a8801f56e22d7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1states_1_1_ai_basic_state.html#af9d50fc190541459313a8801f56e22d7">enter</a> ()=0</td></tr>
+<tr class="separator:af9d50fc190541459313a8801f56e22d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a308e5ac89cb419f58092fe06d52230"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1states_1_1_ai_basic_state.html#a0a308e5ac89cb419f58092fe06d52230">update</a> ()=0</td></tr>
 <tr class="separator:a0a308e5ac89cb419f58092fe06d52230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab31e4c3045ee0411c8b11a249e2029cf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1states_1_1_ai_basic_state.html#ab31e4c3045ee0411c8b11a249e2029cf">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, float const &amp;deltaTime)=0</td></tr>
 <tr class="separator:ab31e4c3045ee0411c8b11a249e2029cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40282afa81de620c183e5b69693ce752"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1states_1_1_ai_basic_state.html#a40282afa81de620c183e5b69693ce752">exit</a> ()=0</td></tr>
+<tr class="separator:a40282afa81de620c183e5b69693ce752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -201,7 +207,61 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classai_1_1states_1_1_ai_basic_search_state.html#afebfdf7f2c1ebe6e94f06c9c5af066af">ai::states::AiBasicSearchState</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#a1715839863dd314b01c417c559bddbdd">ai::states::AiBasicChargeState</a>, and <a class="el" href="classai_1_1states_1_1_ai_basic_search_state.html#afebfdf7f2c1ebe6e94f06c9c5af066af">ai::states::AiBasicSearchState</a>.</p>
+
+</div>
+</div>
+<a id="af9d50fc190541459313a8801f56e22d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9d50fc190541459313a8801f56e22d7">&#9670;&nbsp;</a></span>enter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ai::states::AiBasicState::enter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#acb3f67ef0fc892a3949125c056d25808">ai::states::AiBasicChargeState</a>, and <a class="el" href="classai_1_1states_1_1_ai_basic_search_state.html#a62d95a857b17c335a9412b914ec4300b">ai::states::AiBasicSearchState</a>.</p>
+
+</div>
+</div>
+<a id="a40282afa81de620c183e5b69693ce752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40282afa81de620c183e5b69693ce752">&#9670;&nbsp;</a></span>exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ai::states::AiBasicState::exit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#abecc5d109aefed99685c94a57d44051a">ai::states::AiBasicChargeState</a>, and <a class="el" href="classai_1_1states_1_1_ai_basic_search_state.html#a971a649ab092384688a6aa265aea1216">ai::states::AiBasicSearchState</a>.</p>
 
 </div>
 </div>
@@ -228,7 +288,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classai_1_1states_1_1_ai_basic_search_state.html#a0f1c9a18bfa60b85a12efc5316d36d4f">ai::states::AiBasicSearchState</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#a559f05f5f0bf801c0a7ab8c3d858d299">ai::states::AiBasicChargeState</a>, and <a class="el" href="classai_1_1states_1_1_ai_basic_search_state.html#a0f1c9a18bfa60b85a12efc5316d36d4f">ai::states::AiBasicSearchState</a>.</p>
 
 </div>
 </div>
@@ -252,6 +312,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Reference to the ai in this state.</p>
 
 </div>
 </div>

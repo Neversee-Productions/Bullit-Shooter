@@ -7,5 +7,6 @@
 #include "Asteroids\AsteroidManager.h"
 #include "Player\Connector.h"
 #include "Pickup.h"
+#include "ai\basic\AiBasic.h"
 
 #endif // !ENTITIES_H

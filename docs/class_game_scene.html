@@ -175,6 +175,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ad57de6e6fc3b6a8b8458d49f547823ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a994196d3a7ec9ca679e98f8c5db66ff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a994196d3a7ec9ca679e98f8c5db66ff7">setupBackground</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_background_1_1_resources.html">Background::Resources</a> &gt; sptrBackgroundResources, json::json &amp;gameSceneParser)</td></tr>
 <tr class="separator:a994196d3a7ec9ca679e98f8c5db66ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8544686d7101812f9d40c2f07f7b0205"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8544686d7101812f9d40c2f07f7b0205">setupEnemies</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html">Resources::Enemies</a> &gt; sptrEnemies, json::json &amp;gameSceneParser)</td></tr>
+<tr class="separator:a8544686d7101812f9d40c2f07f7b0205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -198,6 +200,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8403905ac9441b88d26ecca580a1dc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d2ddcc62810389125ac5ddf2bb442af"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_pickup.html">Pickup</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a9d2ddcc62810389125ac5ddf2bb442af">m_pickup</a></td></tr>
 <tr class="separator:a9d2ddcc62810389125ac5ddf2bb442af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364a427b3dec937c1ee94a3f5f00ca70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a364a427b3dec937c1ee94a3f5f00ca70">m_enemy</a></td></tr>
+<tr class="separator:a364a427b3dec937c1ee94a3f5f00ca70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -815,6 +819,56 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="a8544686d7101812f9d40c2f07f7b0205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8544686d7101812f9d40c2f07f7b0205">&#9670;&nbsp;</a></span>setupEnemies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::setupEnemies </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html">Resources::Enemies</a> &gt;&#160;</td>
+          <td class="paramname"><em>sptrEnemies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>gameSceneParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td></td></tr>
+    <tr><td class="paramname">sptrEnemies</td><td></td></tr>
+    <tr><td class="paramname">gameSceneParser</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1b81a871ebc93dc4ce15bbe877d15e04"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b81a871ebc93dc4ce15bbe877d15e04">&#9670;&nbsp;</a></span>setupPlayer()</h2>
 
@@ -1218,6 +1272,28 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>defines the background of <a class="el" href="class_game_scene.html" title="Main game scene. ">GameScene</a>.</p>
+
+</div>
+</div>
+<a id="a364a427b3dec937c1ee94a3f5f00ca70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364a427b3dec937c1ee94a3f5f00ca70">&#9670;&nbsp;</a></span>m_enemy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> GameScene::m_enemy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

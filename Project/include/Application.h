@@ -4,7 +4,7 @@
 #include "SFML\System.hpp"
 #include "input\KeyHandler.h"
 #include "Window.h"
-#include "SceneManager.h"
+#include "scenes\SceneManager.h"
 #include "App.h"
 
 /// 
