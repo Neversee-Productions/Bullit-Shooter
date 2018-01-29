@@ -1,7 +1,7 @@
 #ifndef OPTIONSSCENE_H
 #define OPTIONSSCENE_H
 
-#include "scenes\Scene.h"
+#include "Scene.h"
 #include "gui\GUI.h"
 
 /// 

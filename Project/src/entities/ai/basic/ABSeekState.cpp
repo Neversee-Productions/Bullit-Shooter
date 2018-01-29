@@ -1,4 +1,4 @@
-#include "entities\ai\basic\ABSearchState.h"
+#include "entities\ai\basic\ABSeekState.h"
 
 /// <summary>
 /// @brief Basic Search State constructor.
@@ -6,12 +6,12 @@
 /// Sets all constants for the current state.
 /// </summary>
 /// <param name="aiUnit">reference of ai unit that will call this state.</param>
-ai::states::AiBasicSearchState::AiBasicSearchState(AiBasic & aiUnit)
+ai::states::AiBasicSeekState::AiBasicSeekState(AiBasic & aiUnit)
 	: AiBasicState(aiUnit)
-	, m_DELTA_TIME(AiBase::s_DELTA_TIME)
 	, m_MAX_SPEED(60.0f)
 	, m_MAX_TURN_RATE(60.0f)
-	, m_MIN_DISTANCE(100.0f)
+	, m_MIN_DISTANCE(200.0f)
+	, m_MIN_ANGLE(15.0f)
 {
 }
 
@@ -20,9 +20,10 @@ ai::states::AiBasicSearchState::AiBasicSearchState(AiBasic & aiUnit)
 /// 
 /// Start loop animation.
 /// </summary>
-void ai::states::AiBasicSearchState::enter()
+void ai::states::AiBasicSeekState::enter()
 {
-	m_ai.m_animator.playAnimation(ai::Basic::s_IDLE_ID, true);
+	//m_ai.m_renderQuad.setFillColor(sf::Color::Yellow);
+	m_ai.m_animator.playAnimation(ai::Basic::s_SEEK_ID, true);
 }
 
 /// <summary>
@@ -30,13 +31,13 @@ void ai::states::AiBasicSearchState::enter()
 /// 
 /// Called each frame in accordance to AiBase::s_DELTA_TIME.
 /// </summary>
-void ai::states::AiBasicSearchState::update()
+void ai::states::AiBasicSeekState::update()
 {
 	sf::Vector2f const AI_TO_PLAYER = m_ai.m_player.getPosition() - m_ai.m_position;
-	this->updateState(AI_TO_PLAYER);
 	this->updateSpeed(AI_TO_PLAYER);
 	this->updateTurn(AI_TO_PLAYER);
 	this->updatePosition();
+	this->updateState(AI_TO_PLAYER);
 }
 
 /// <summary>
@@ -48,7 +49,7 @@ void ai::states::AiBasicSearchState::update()
 /// </summary>
 /// <param name="window">reference to the window, used as the target for render calls.</param>
 /// <param name="deltaTime">read-only reference to the delta time for the last draw call, in seconds.</param>
-void ai::states::AiBasicSearchState::draw(Window & window, float const & deltaTime)
+void ai::states::AiBasicSeekState::draw(Window & window, float const & deltaTime)
 {
 	m_ai.m_renderQuad.setPosition(m_ai.m_position);
 	m_ai.m_renderQuad.setRotation(m_ai.m_angle + 90.0f);
@@ -58,11 +59,11 @@ void ai::states::AiBasicSearchState::draw(Window & window, float const & deltaTi
 }
 
 /// <summary>
-/// @brief What ai does when exiting this animation.
+/// @brief What ai does when exiting this state.
 /// 
 /// Stop current animation loop.
 /// </summary>
-void ai::states::AiBasicSearchState::exit()
+void ai::states::AiBasicSeekState::exit()
 {
 	if (m_ai.m_animator.isPlayingAnimation())
 	{
@@ -80,7 +81,7 @@ void ai::states::AiBasicSearchState::exit()
 /// <param name="min">minimum value, inclusive.</param>
 /// <param name="max">maximum value, inclusive.</param>
 /// <returns>the clamped value.</returns>
-float ai::states::AiBasicSearchState::clamp(float const & value, float const & min, float const & max) const
+float ai::states::AiBasicSeekState::clamp(float const & value, float const & min, float const & max) const
 {
 	if (value > max)
 	{
@@ -99,13 +100,13 @@ float ai::states::AiBasicSearchState::clamp(float const & value, float const & m
 /// 
 /// </summary>
 /// <param name="aiToPlayer">read-only reference to the vector from the ai to the player.</param>
-void ai::states::AiBasicSearchState::updateState(sf::Vector2f const & aiToPlayer)
+void ai::states::AiBasicSeekState::updateState(sf::Vector2f const & aiToPlayer)
 {
 	if (this->checkState(aiToPlayer))
 	{
 		std::shared_ptr<ai::states::Basic> sptrNextState =
-			std::make_shared<ai::states::Charge>(ai::states::Charge(m_ai));
-		m_ai.setState(sptrNextState);
+			std::make_shared<ai::states::Windup>(m_ai);
+		m_ai.setState(sptrNextState, false);
 	}
 }
 
@@ -116,10 +117,17 @@ void ai::states::AiBasicSearchState::updateState(sf::Vector2f const & aiToPlayer
 /// </summary>
 /// <param name="aiToPlayer">read-only reference to the vector from the ai to the player.</param>
 /// <returns>True if ai is close enough to player to commence attack sequence.</returns>
-bool ai::states::AiBasicSearchState::checkState(sf::Vector2f const & aiToPlayer)
+bool ai::states::AiBasicSeekState::checkState(sf::Vector2f const & aiToPlayer)
 {
-
-
+	float const ANGLE_BETWEEN = std::abs(thor::polarAngle(m_ai.m_heading) - thor::polarAngle(aiToPlayer));
+	float const DISTANCE_TO_PLAYER = thor::length(aiToPlayer);
+	if (
+		DISTANCE_TO_PLAYER < m_MIN_DISTANCE &&
+		ANGLE_BETWEEN < m_MIN_ANGLE
+		)
+	{
+		return true;
+	}
 	return false;
 }
 
@@ -129,7 +137,7 @@ bool ai::states::AiBasicSearchState::checkState(sf::Vector2f const & aiToPlayer)
 /// the speed is determined by the distance from aiToPlayer.
 /// </summary>
 /// <param name="aiToPlayer">read-only reference to the vector from the ai to the player.</param>
-void ai::states::AiBasicSearchState::updateSpeed(sf::Vector2f const & aiToPlayer)
+void ai::states::AiBasicSeekState::updateSpeed(sf::Vector2f const & aiToPlayer)
 {
 	m_ai.m_speed = m_MAX_SPEED;
 }
@@ -142,7 +150,7 @@ void ai::states::AiBasicSearchState::updateSpeed(sf::Vector2f const & aiToPlayer
 /// 
 /// </summary>
 /// <param name="aiToPlayer">read-only reference to the vector from the ai to the player,</param>
-void ai::states::AiBasicSearchState::updateTurn(sf::Vector2f const & aiToPlayer)
+void ai::states::AiBasicSeekState::updateTurn(sf::Vector2f const & aiToPlayer)
 {
 	float const MAX_TURN_RATE = m_MAX_TURN_RATE * (1.0f / m_ai.m_speed) * m_MAX_SPEED;
 	float const TURN_ANGLE = this->clamp(thor::signedAngle(m_ai.m_heading, aiToPlayer), -(MAX_TURN_RATE), MAX_TURN_RATE);
@@ -165,7 +173,7 @@ void ai::states::AiBasicSearchState::updateTurn(sf::Vector2f const & aiToPlayer)
 /// by speed, by delta time, in seconds so that the
 /// position gets updated at a rate of per second.
 /// </summary>
-void ai::states::AiBasicSearchState::updatePosition()
+void ai::states::AiBasicSeekState::updatePosition()
 {
 	m_ai.m_position += m_ai.m_heading * m_ai.m_speed * m_DELTA_TIME;
 }

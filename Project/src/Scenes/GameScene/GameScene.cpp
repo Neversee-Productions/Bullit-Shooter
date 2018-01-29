@@ -18,7 +18,7 @@ GameScene::GameScene(KeyHandler& keyHandler)
 	, UPDATE_DT(App::getUpdateDeltaTime())
 	, m_enemy(m_player)
 {
-	m_asteroidManager.initAsteroidVector();
+	//m_asteroidManager.initAsteroidVector();
 	m_asteroidSpawnFrequency = generateRandomTimer();
 	m_pickup = std::make_unique<Pickup>(Pickup(sf::Vector2f(500, 500), sf::Vector2f(100, 100)));
 	m_pickup->setActive(false);
@@ -231,6 +231,20 @@ void GameScene::playerAsteroidCollision()
 				asteroid.decrementHealth(10.0f);
 			}
 		}
+	}
+}
+
+/// <summary>
+/// @brief Checks for collision between player and basic enemy.
+/// 
+/// 
+/// </summary>
+void GameScene::playerEnemyCollision()
+{
+	if (m_enemy.checkCollision(m_player.getShieldCollisionCircle()))
+	{
+		// Hit
+		std::cout << "Player Hit !\n";
 	}
 }
 

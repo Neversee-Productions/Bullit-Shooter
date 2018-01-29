@@ -1,7 +1,7 @@
 #ifndef MAINMENUSCENE_H
 #define MAINMENUSCENE_H
 
-#include "scenes\Scene.h"
+#include "Scene.h"
 #include "gui\GUI.h"
 #include "App.h"
 

@@ -53,7 +53,7 @@ void bullets::HolySphere::update()
 	if (m_timeToLive <= 0.0f)
 	{
 		m_alpha -= s_ALPHA_DECREASE;
-		m_bulletRect.setFillColor(sf::Color(255u, 255u, 255u, static_cast<sf::Uint8>(m_alpha)));
+		m_bulletRect.setFillColor(sf::Color(255, 255, 255, m_alpha));
 		if (m_alpha < s_MIN_ALPHA)
 		{
 			setActive(false);

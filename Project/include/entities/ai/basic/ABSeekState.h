@@ -10,12 +10,21 @@ namespace ai
 
 	namespace states
 	{
-		class AiBasicSearchState :
+		/// 
+		/// @author Rafael Plugge
+		/// @brief Basic Ai's Seek State.
+		/// 
+		/// Will seek the player out with a 
+		/// maximum speed and turning rate.
+		/// Terminates when within a certain
+		/// proximity of the player.
+		/// 
+		class AiBasicSeekState :
 			public AiBasicState
 		{
 		public: // Constructors
-			AiBasicSearchState(AiBasic & aiUnit);
-			~AiBasicSearchState() = default;
+			AiBasicSeekState(AiBasic & aiUnit);
+			~AiBasicSeekState() = default;
 
 		public: // Base Class Overrides
 			virtual void enter() final override;
@@ -32,19 +41,19 @@ namespace ai
 			void updatePosition();
 
 		private: // Private member variables
-			float const & m_DELTA_TIME;
 			float const m_MAX_SPEED;
 			float const m_MAX_TURN_RATE;
 			float const m_MIN_DISTANCE;
+			float const m_MIN_ANGLE;
 
 		};
 
 		/// <summary>
-		/// @brief Alias for Basic Ai Search State.
+		/// @brief Alias for Basic Ai Seek State.
 		/// 
 		/// 
 		/// </summary>
-		typedef AiBasicSearchState Search;
+		typedef AiBasicSeekState Seek;
 
 	}
 }

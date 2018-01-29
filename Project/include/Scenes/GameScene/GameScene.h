@@ -3,6 +3,7 @@
 
 // SFML Includes
 #include "SFML\Graphics\RectangleShape.hpp"
+#include "SFML\Audio\Sound.hpp"
 // Thor Includes
 #include "Thor\Animations.hpp"
 #include "Thor\Math.hpp"
@@ -74,17 +75,18 @@ public:
 	void stop() final override;
 	void update() final override;
 	void draw(Window & window, const float & deltaTime) final override;
+
+private:
 	void updateCollisions();
 	void bulletAsteroidsCollision();
 	void playerAsteroidCollision();
+	void playerEnemyCollision();
 	void collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
 	void playerPickupCollision();
 	float generateRandomTimer();
-
-private:
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
 	void setupPlayer(

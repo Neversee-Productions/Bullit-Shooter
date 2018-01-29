@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classai_1_1_ai_basic.html','');});
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -129,6 +130,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8dc885717d8a6651e120135df928f55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a115cfc4c462967661ee211e6d50c06b3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a115cfc4c462967661ee211e6d50c06b3">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, float const &amp;deltaTime) final override</td></tr>
 <tr class="separator:a115cfc4c462967661ee211e6d50c06b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1e53f435d09af02525687c8e73e1c1e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#ae1e53f435d09af02525687c8e73e1c1e">checkCollision</a> (tinyh::c2Circle const &amp;collision) const</td></tr>
+<tr class="memdesc:ae1e53f435d09af02525687c8e73e1c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the call to the current state.  <a href="#ae1e53f435d09af02525687c8e73e1c1e">More...</a><br /></td></tr>
+<tr class="separator:ae1e53f435d09af02525687c8e73e1c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a387a32a31dc7d191f47d618d34f5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a43a387a32a31dc7d191f47d618d34f5f">checkCollision</a> (tinyh::c2AABB const &amp;collision) const</td></tr>
+<tr class="memdesc:a43a387a32a31dc7d191f47d618d34f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the call to the current state.  <a href="#a43a387a32a31dc7d191f47d618d34f5f">More...</a><br /></td></tr>
+<tr class="separator:a43a387a32a31dc7d191f47d618d34f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d15f5a3a58290b6be8615404a903d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#ac8d15f5a3a58290b6be8615404a903d9">checkCollision</a> (tinyh::c2Capsule const &amp;collision) const</td></tr>
+<tr class="memdesc:ac8d15f5a3a58290b6be8615404a903d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the call to the current state.  <a href="#ac8d15f5a3a58290b6be8615404a903d9">More...</a><br /></td></tr>
+<tr class="separator:ac8d15f5a3a58290b6be8615404a903d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classai_1_1_ai_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classai_1_1_ai_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classai_1_1_ai_base.html">ai::AiBase</a></td></tr>
 <tr class="memitem:a81f354733c007b89c969e1da7d2028f7 inherit pub_methods_classai_1_1_ai_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a81f354733c007b89c969e1da7d2028f7">AiBase</a> ()=default</td></tr>
 <tr class="separator:a81f354733c007b89c969e1da7d2028f7 inherit pub_methods_classai_1_1_ai_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,12 +152,14 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a22ccf827c6082639a07028378b465f69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a22ccf827c6082639a07028378b465f69">setState</a> (std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#a3dfbc4eb6c95e8d1a6c76abb3e3e5a72">SearchState</a> &gt; sptrState)</td></tr>
-<tr class="separator:a22ccf827c6082639a07028378b465f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa11be4a9661592131d655c751803b86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#afa11be4a9661592131d655c751803b86">setState</a> (std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#ac9a605f11cea2792055c6fbd7f9a48fe">ChargeState</a> &gt; sptrState)</td></tr>
-<tr class="separator:afa11be4a9661592131d655c751803b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acacd8764dcb6a5f32cd762a04684adb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#acacd8764dcb6a5f32cd762a04684adb4">setState</a> (std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#af13da3dbf6388e55c5d8cf1e07c50596">BasicState</a> &gt; sptrState)</td></tr>
-<tr class="separator:acacd8764dcb6a5f32cd762a04684adb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3aaab75d9dcadf335cef968c7405f6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#ac3aaab75d9dcadf335cef968c7405f6e">setState</a> (std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#a17a015e737fe82454cec491dd23be914">SeekState</a> &gt; sptrState, bool rememberPrevious)</td></tr>
+<tr class="separator:ac3aaab75d9dcadf335cef968c7405f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00a6563d8e0b886fed0edb97d67bca2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#af00a6563d8e0b886fed0edb97d67bca2">setState</a> (std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#ac9a605f11cea2792055c6fbd7f9a48fe">ChargeState</a> &gt; sptrState, bool rememberPrevious)</td></tr>
+<tr class="separator:af00a6563d8e0b886fed0edb97d67bca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0264e8572eb66976cbcf580e59cdf08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#ac0264e8572eb66976cbcf580e59cdf08">setState</a> (std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#af13da3dbf6388e55c5d8cf1e07c50596">BasicState</a> &gt; sptrState, bool rememberPrevious)</td></tr>
+<tr class="separator:ac0264e8572eb66976cbcf580e59cdf08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9528d3032e18c57a6d33cf27a53ff3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#ac9528d3032e18c57a6d33cf27a53ff3a">updateHitbox</a> (sf::RectangleShape const &amp;box)</td></tr>
+<tr class="separator:ac9528d3032e18c57a6d33cf27a53ff3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -172,10 +184,12 @@ Protected Attributes</h2></td></tr>
 Private Types</h2></td></tr>
 <tr class="memitem:af13da3dbf6388e55c5d8cf1e07c50596"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classai_1_1states_1_1_ai_basic_state.html">ai::states::AiBasicState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#af13da3dbf6388e55c5d8cf1e07c50596">BasicState</a></td></tr>
 <tr class="separator:af13da3dbf6388e55c5d8cf1e07c50596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dfbc4eb6c95e8d1a6c76abb3e3e5a72"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classai_1_1states_1_1_ai_basic_search_state.html">ai::states::AiBasicSearchState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a3dfbc4eb6c95e8d1a6c76abb3e3e5a72">SearchState</a></td></tr>
-<tr class="separator:a3dfbc4eb6c95e8d1a6c76abb3e3e5a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a015e737fe82454cec491dd23be914"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html">ai::states::AiBasicSeekState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a17a015e737fe82454cec491dd23be914">SeekState</a></td></tr>
+<tr class="separator:a17a015e737fe82454cec491dd23be914"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9a605f11cea2792055c6fbd7f9a48fe"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html">ai::states::AiBasicChargeState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#ac9a605f11cea2792055c6fbd7f9a48fe">ChargeState</a></td></tr>
 <tr class="separator:ac9a605f11cea2792055c6fbd7f9a48fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f18cec6b1357a5a0f8c5ca3554846cd"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classai_1_1states_1_1_ai_basic_windup_state.html">ai::states::AiBasicWindupState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a9f18cec6b1357a5a0f8c5ca3554846cd">WindupState</a></td></tr>
+<tr class="separator:a9f18cec6b1357a5a0f8c5ca3554846cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -183,6 +197,13 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:af003f757c93d96b638bb0bff957acd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a53bd146f55566187f54c588335bb84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a6a53bd146f55566187f54c588335bb84">initRenderingQuad</a> ()</td></tr>
 <tr class="separator:a6a53bd146f55566187f54c588335bb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a8b69d6ce79bc51bd7e286ec9c14128c0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a8b69d6ce79bc51bd7e286ec9c14128c0">setup</a> (<a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_texture.html">AiBase::Resources::Texture</a> &amp;textureResources, <a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, json::json &amp;textureParser, std::string const &amp;id)</td></tr>
+<tr class="separator:a8b69d6ce79bc51bd7e286ec9c14128c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae96660854292f0f5704553d82cc6c6e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#ae96660854292f0f5704553d82cc6c6e6">setup</a> (<a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_animation.html">AiBase::Resources::Animation</a> &amp;animResources, <a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, json::json &amp;animationParser, std::string const &amp;id)</td></tr>
+<tr class="separator:ae96660854292f0f5704553d82cc6c6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -193,15 +214,25 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a9308adb7616847cca9bb90356cfb9a2d"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a9308adb7616847cca9bb90356cfb9a2d">s_IDLE_ID</a> = &quot;&quot;</td></tr>
-<tr class="separator:a9308adb7616847cca9bb90356cfb9a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c9059110de82f2ad7648c6b4da3fc6"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#ac1c9059110de82f2ad7648c6b4da3fc6">s_SEEK_ID</a> = &quot;&quot;</td></tr>
+<tr class="separator:ac1c9059110de82f2ad7648c6b4da3fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f7a8c17a7f7a0b7233748de877f7dc7"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a5f7a8c17a7f7a0b7233748de877f7dc7">s_WINDUP_ID</a> = &quot;&quot;</td></tr>
+<tr class="separator:a5f7a8c17a7f7a0b7233748de877f7dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a05ce4d106a3cb9ffaa86e1a553fdbc"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a4a05ce4d106a3cb9ffaa86e1a553fdbc">s_CHARGE_ID</a> = &quot;&quot;</td></tr>
+<tr class="separator:a4a05ce4d106a3cb9ffaa86e1a553fdbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3661e26299c9dba8d15596ba0b7d97e1"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a3661e26299c9dba8d15596ba0b7d97e1">s_RECOVER_ID</a> = &quot;&quot;</td></tr>
+<tr class="separator:a3661e26299c9dba8d15596ba0b7d97e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:aa706dd7070ff32972028c00e687ac64d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#aa706dd7070ff32972028c00e687ac64d">SearchState</a></td></tr>
-<tr class="separator:aa706dd7070ff32972028c00e687ac64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a9c5b967f19cb58dd1dfa089aeb55ad"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a7a9c5b967f19cb58dd1dfa089aeb55ad">ChargeState</a></td></tr>
-<tr class="separator:a7a9c5b967f19cb58dd1dfa089aeb55ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca3675c23dae5dee00da17e8a5ffc661"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#aca3675c23dae5dee00da17e8a5ffc661">ai::states::AiBasicState</a></td></tr>
+<tr class="separator:aca3675c23dae5dee00da17e8a5ffc661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e2b501d463f9df37bb13f0cfaadc30b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a6e2b501d463f9df37bb13f0cfaadc30b">ai::states::AiBasicSeekState</a></td></tr>
+<tr class="separator:a6e2b501d463f9df37bb13f0cfaadc30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae45f32509e26c4294237d296017780a4"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#ae45f32509e26c4294237d296017780a4">ai::states::AiBasicChargeState</a></td></tr>
+<tr class="separator:ae45f32509e26c4294237d296017780a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fcd2a4a9fa6be8ba3607954ad6845ca"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_basic.html#a8fcd2a4a9fa6be8ba3607954ad6845ca">ai::states::AiBasicWindupState</a></td></tr>
+<tr class="separator:a8fcd2a4a9fa6be8ba3607954ad6845ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -258,8 +289,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a3dfbc4eb6c95e8d1a6c76abb3e3e5a72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dfbc4eb6c95e8d1a6c76abb3e3e5a72">&#9670;&nbsp;</a></span>SearchState</h2>
+<a id="a17a015e737fe82454cec491dd23be914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a015e737fe82454cec491dd23be914">&#9670;&nbsp;</a></span>SeekState</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,7 +299,29 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classai_1_1states_1_1_ai_basic_search_state.html">ai::states::AiBasicSearchState</a> <a class="el" href="classai_1_1_ai_basic.html#a3dfbc4eb6c95e8d1a6c76abb3e3e5a72">ai::AiBasic::SearchState</a></td>
+          <td class="memname">typedef <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html">ai::states::AiBasicSeekState</a> <a class="el" href="classai_1_1_ai_basic.html#a17a015e737fe82454cec491dd23be914">ai::AiBasic::SeekState</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f18cec6b1357a5a0f8c5ca3554846cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f18cec6b1357a5a0f8c5ca3554846cd">&#9670;&nbsp;</a></span>WindupState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classai_1_1states_1_1_ai_basic_windup_state.html">ai::states::AiBasicWindupState</a> <a class="el" href="classai_1_1_ai_basic.html#a9f18cec6b1357a5a0f8c5ca3554846cd">ai::AiBasic::WindupState</a></td>
         </tr>
       </table>
   </td>
@@ -327,6 +380,81 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae1e53f435d09af02525687c8e73e1c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e53f435d09af02525687c8e73e1c1e">&#9670;&nbsp;</a></span>checkCollision() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ai::AiBasic::checkCollision </td>
+          <td>(</td>
+          <td class="paramtype">tinyh::c2Circle const &amp;&#160;</td>
+          <td class="paramname"><em>collision</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>read-only reference to a 2d collision AABB rectangle.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if a collision has occured, else false.</dd></dl>
+
+</div>
+</div>
+<a id="a43a387a32a31dc7d191f47d618d34f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a387a32a31dc7d191f47d618d34f5f">&#9670;&nbsp;</a></span>checkCollision() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ai::AiBasic::checkCollision </td>
+          <td>(</td>
+          <td class="paramtype">tinyh::c2AABB const &amp;&#160;</td>
+          <td class="paramname"><em>collision</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>read-only reference to a 2d collision AABB rectangle.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if a collision has occured, else false.</dd></dl>
+
+</div>
+</div>
+<a id="ac8d15f5a3a58290b6be8615404a903d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d15f5a3a58290b6be8615404a903d9">&#9670;&nbsp;</a></span>checkCollision() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ai::AiBasic::checkCollision </td>
+          <td>(</td>
+          <td class="paramtype">tinyh::c2Capsule const &amp;&#160;</td>
+          <td class="paramname"><em>collision</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>read-only reference to a 2d collision AABB rectangle.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if a collision has occured, else false.</dd></dl>
+
+</div>
+</div>
 <a id="a115cfc4c462967661ee211e6d50c06b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a115cfc4c462967661ee211e6d50c06b3">&#9670;&nbsp;</a></span>draw()</h2>
 
@@ -449,8 +577,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a22ccf827c6082639a07028378b465f69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22ccf827c6082639a07028378b465f69">&#9670;&nbsp;</a></span>setState() <span class="overload">[1/3]</span></h2>
+<a id="ac3aaab75d9dcadf335cef968c7405f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3aaab75d9dcadf335cef968c7405f6e">&#9670;&nbsp;</a></span>setState() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,9 +589,19 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void ai::AiBasic::setState </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#a3dfbc4eb6c95e8d1a6c76abb3e3e5a72">SearchState</a> &gt;&#160;</td>
-          <td class="paramname"><em>sptrState</em></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#a17a015e737fe82454cec491dd23be914">SeekState</a> &gt;&#160;</td>
+          <td class="paramname"><em>sptrState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>rememberPrevious</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -475,8 +613,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="afa11be4a9661592131d655c751803b86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa11be4a9661592131d655c751803b86">&#9670;&nbsp;</a></span>setState() <span class="overload">[2/3]</span></h2>
+<a id="af00a6563d8e0b886fed0edb97d67bca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00a6563d8e0b886fed0edb97d67bca2">&#9670;&nbsp;</a></span>setState() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -488,8 +626,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void ai::AiBasic::setState </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#ac9a605f11cea2792055c6fbd7f9a48fe">ChargeState</a> &gt;&#160;</td>
-          <td class="paramname"><em>sptrState</em></td><td>)</td>
+          <td class="paramname"><em>sptrState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>rememberPrevious</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -501,8 +649,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="acacd8764dcb6a5f32cd762a04684adb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acacd8764dcb6a5f32cd762a04684adb4">&#9670;&nbsp;</a></span>setState() <span class="overload">[3/3]</span></h2>
+<a id="ac0264e8572eb66976cbcf580e59cdf08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0264e8572eb66976cbcf580e59cdf08">&#9670;&nbsp;</a></span>setState() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,8 +662,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void ai::AiBasic::setState </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classai_1_1_ai_basic.html#af13da3dbf6388e55c5d8cf1e07c50596">BasicState</a> &gt;&#160;</td>
-          <td class="paramname"><em>sptrState</em></td><td>)</td>
+          <td class="paramname"><em>sptrState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>rememberPrevious</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -528,7 +686,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="aa330f9810dc390c3ced103d393cb6ed7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa330f9810dc390c3ced103d393cb6ed7">&#9670;&nbsp;</a></span>setup()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa330f9810dc390c3ced103d393cb6ed7">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -585,6 +743,124 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a8b69d6ce79bc51bd7e286ec9c14128c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b69d6ce79bc51bd7e286ec9c14128c0">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ai::AiBasic::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_texture.html">AiBase::Resources::Texture</a> &amp;&#160;</td>
+          <td class="paramname"><em>textureResources</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>textureParser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets up a texture resource.</p>
+<p>Parses the json with a expected format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">animResources</td><td>reference to the data struct that stores the loaded resource.</td></tr>
+    <tr><td class="paramname">resourceHandler</td><td>reference to the resource loader.</td></tr>
+    <tr><td class="paramname">animationParser</td><td>reference to the json parser.</td></tr>
+    <tr><td class="paramname">id</td><td>id of the animation to be loaded.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae96660854292f0f5704553d82cc6c6e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae96660854292f0f5704553d82cc6c6e6">&#9670;&nbsp;</a></span>setup() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ai::AiBasic::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_animation.html">AiBase::Resources::Animation</a> &amp;&#160;</td>
+          <td class="paramname"><em>animResources</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>animationParser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets up a animation resource.</p>
+<p>Parses the json with a expected format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">animResources</td><td>reference to the data struct that stores the loaded resource.</td></tr>
+    <tr><td class="paramname">resourceHandler</td><td>reference to the resource loader.</td></tr>
+    <tr><td class="paramname">animationParser</td><td>reference to the json parser.</td></tr>
+    <tr><td class="paramname">id</td><td>id of the animation to be loaded.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8dc885717d8a6651e120135df928f55d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8dc885717d8a6651e120135df928f55d">&#9670;&nbsp;</a></span>update()</h2>
 
@@ -613,9 +889,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a7a9c5b967f19cb58dd1dfa089aeb55ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a9c5b967f19cb58dd1dfa089aeb55ad">&#9670;&nbsp;</a></span>ChargeState</h2>
+<a id="ac9528d3032e18c57a6d33cf27a53ff3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9528d3032e18c57a6d33cf27a53ff3a">&#9670;&nbsp;</a></span>updateHitbox()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -624,7 +899,42 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="classai_1_1_ai_basic.html#ac9a605f11cea2792055c6fbd7f9a48fe">ChargeState</a></td>
+          <td class="memname">void ai::AiBasic::updateHitbox </td>
+          <td>(</td>
+          <td class="paramtype">sf::RectangleShape const &amp;&#160;</td>
+          <td class="paramname"><em>box</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Updates collision box using the rectangle shape.</p>
+<p>Uses the shape's transform to form a AABB Rectangle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">box</td><td>read-only reference to a rectangle shape</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ae45f32509e26c4294237d296017780a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae45f32509e26c4294237d296017780a4">&#9670;&nbsp;</a></span>ai::states::AiBasicChargeState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html">ai::states::AiBasicChargeState</a></td>
         </tr>
       </table>
   </td>
@@ -636,8 +946,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa706dd7070ff32972028c00e687ac64d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa706dd7070ff32972028c00e687ac64d">&#9670;&nbsp;</a></span>SearchState</h2>
+<a id="a6e2b501d463f9df37bb13f0cfaadc30b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e2b501d463f9df37bb13f0cfaadc30b">&#9670;&nbsp;</a></span>ai::states::AiBasicSeekState</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -646,7 +956,51 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="classai_1_1_ai_basic.html#a3dfbc4eb6c95e8d1a6c76abb3e3e5a72">SearchState</a></td>
+          <td class="memname">friend class <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html">ai::states::AiBasicSeekState</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca3675c23dae5dee00da17e8a5ffc661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca3675c23dae5dee00da17e8a5ffc661">&#9670;&nbsp;</a></span>ai::states::AiBasicState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classai_1_1states_1_1_ai_basic_state.html">ai::states::AiBasicState</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8fcd2a4a9fa6be8ba3607954ad6845ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fcd2a4a9fa6be8ba3607954ad6845ca">&#9670;&nbsp;</a></span>ai::states::AiBasicWindupState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classai_1_1states_1_1_ai_basic_windup_state.html">ai::states::AiBasicWindupState</a></td>
         </tr>
       </table>
   </td>
@@ -899,8 +1253,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9308adb7616847cca9bb90356cfb9a2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9308adb7616847cca9bb90356cfb9a2d">&#9670;&nbsp;</a></span>s_IDLE_ID</h2>
+<a id="a4a05ce4d106a3cb9ffaa86e1a553fdbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a05ce4d106a3cb9ffaa86e1a553fdbc">&#9670;&nbsp;</a></span>s_CHARGE_ID</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -909,7 +1263,55 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string ai::AiBasic::s_IDLE_ID = &quot;&quot;</td>
+          <td class="memname">std::string ai::AiBasic::s_CHARGE_ID = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Static id of charge state.</p>
+<p>Used to access the charge animation. </p>
+
+</div>
+</div>
+<a id="a3661e26299c9dba8d15596ba0b7d97e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3661e26299c9dba8d15596ba0b7d97e1">&#9670;&nbsp;</a></span>s_RECOVER_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ai::AiBasic::s_RECOVER_ID = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Static id of recover state.</p>
+<p>Used to access the recover animation. </p>
+
+</div>
+</div>
+<a id="ac1c9059110de82f2ad7648c6b4da3fc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1c9059110de82f2ad7648c6b4da3fc6">&#9670;&nbsp;</a></span>s_SEEK_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ai::AiBasic::s_SEEK_ID = &quot;&quot;</td>
         </tr>
       </table>
   </td>
@@ -920,6 +1322,30 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Static id of idle state.</p>
 <p>Used to access the idle animation. </p>
+
+</div>
+</div>
+<a id="a5f7a8c17a7f7a0b7233748de877f7dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f7a8c17a7f7a0b7233748de877f7dc7">&#9670;&nbsp;</a></span>s_WINDUP_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ai::AiBasic::s_WINDUP_ID = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Static id of windup state.</p>
+<p>Used to access the windup animation. </p>
 
 </div>
 </div>

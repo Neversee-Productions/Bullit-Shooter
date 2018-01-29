@@ -38,10 +38,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_b_charge_state_8cpp.html",
-"class_background.html#a227df2ea5c059e73058f9ea0767078d0",
-"class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637",
-"classbullets_1_1_death_orb.html#a83bf9b07d2a56918d93ddffa602b77e5",
-"classgui_1_1_slider.html#aeb6783166b3e856dc1c36247f90e10fda6b273343c454f9c53dcfc9c4ccf171d2"
+"class_asteroid_manager.html",
+"class_scene_manager.html#a2bb376a85d29e85f47753e26c7539229",
+"classbullets_1_1_bullet.html#a462ca59bc035c25f2d3fcfd351c6b243",
+"classgui_1_1_slider.html#a19b167667c32994b656f88d23c13f237",
+"struct_weapon_1_1_resources_1_1_animation.html#ac19b7da854a160ec16c503a3d679bd89"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

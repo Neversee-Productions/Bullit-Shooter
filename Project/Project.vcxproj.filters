@@ -333,9 +333,6 @@
     <ClCompile Include="src\entities\ai\basic\AiBasicState.cpp">
       <Filter>Source Files\entities\ai\basic</Filter>
     </ClCompile>
-    <ClCompile Include="src\entities\ai\basic\ABSearchState.cpp">
-      <Filter>Source Files\entities\ai\basic</Filter>
-    </ClCompile>
     <ClCompile Include="src\entities\ai\AiBase.cpp">
       <Filter>Source Files\entities\ai</Filter>
     </ClCompile>
@@ -350,6 +347,15 @@
     </ClCompile>
     <ClCompile Include="src\Scenes\SceneManager.cpp">
       <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\basic\ABSeekState.cpp">
+      <Filter>Source Files\entities\ai\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\basic\ABWindupState.cpp">
+      <Filter>Source Files\entities\ai\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\basic\ABRecoverState.cpp">
+      <Filter>Source Files\entities\ai\basic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -529,9 +535,6 @@
     <ClInclude Include="include\entities\ai\basic\AiBasicState.h">
       <Filter>Header Files\entities\ai\basic</Filter>
     </ClInclude>
-    <ClInclude Include="include\entities\ai\basic\ABSearchState.h">
-      <Filter>Header Files\entities\ai\basic</Filter>
-    </ClInclude>
     <ClInclude Include="include\entities\ai\AiBase.h">
       <Filter>Header Files\entities\ai</Filter>
     </ClInclude>
@@ -546,6 +549,18 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\SceneManager.h">
       <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\main.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\basic\ABSeekState.h">
+      <Filter>Header Files\entities\ai\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\basic\ABWindupState.h">
+      <Filter>Header Files\entities\ai\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\basic\ABRecoverState.h">
+      <Filter>Header Files\entities\ai\basic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -642,7 +657,16 @@
     <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_loop.png">
       <Filter>Resource Files\scenes\Game\player\bullets\bullet01</Filter>
     </Image>
-    <Image Include="resources\scenes\Game\enemies\basic\idle.png">
+    <Image Include="resources\scenes\Game\enemies\basic\charge.png">
+      <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\enemies\basic\recovery.png">
+      <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\enemies\basic\seek.png">
+      <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\enemies\basic\wind_up.png">
       <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
     </Image>
   </ItemGroup>

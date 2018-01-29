@@ -1,4 +1,4 @@
-#include "scenes\Scene.h"
+#include "Scene.h"
 
 /// <summary>
 /// @brief Default constructor.

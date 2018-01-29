@@ -8,6 +8,7 @@ var searchData=
   ['player_2ecpp',['Player.cpp',['../_player_8cpp.html',1,'']]],
   ['player_2eh',['Player.h',['../_player_8h.html',1,'']]],
   ['playerasteroidcollision',['playerAsteroidCollision',['../class_game_scene.html#ad3c7f1444e67a8462e4611dbe9319bc4',1,'GameScene']]],
+  ['playerenemycollision',['playerEnemyCollision',['../class_game_scene.html#a7eedd378e6f6b32ec94248a2e7d9b285',1,'GameScene']]],
   ['playerpickupcollision',['playerPickupCollision',['../class_game_scene.html#a3ad265a99cea48b606c907382e66cabc',1,'GameScene']]],
   ['preloadscene',['preLoadScene',['../class_scene_manager.html#a088b1248bcd8fa69d9bd7a87e03996f9',1,'SceneManager']]],
   ['pressed',['PRESSED',['../classgui_1_1_button.html#a60171d5543ff80ff7317724e58a1a346a5381dc876ab002103a027265bc14ae52',1,'gui::Button']]],

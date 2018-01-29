@@ -44,7 +44,7 @@ gui::Button::Button(	std::function<void()> function
 	m_rectanglePos.x = position.x;
 	m_rectanglePos.y = position.y;
 	//set color of highlight rectangle
-	m_highlightRectangle.setFillColor(sf::Color(255u, 255u, 0u, static_cast<sf::Uint8>(m_highlightAlpha)));
+	m_highlightRectangle.setFillColor(sf::Color(255u, 255u, 0u, m_highlightAlpha));
 	//set position of rectangle
 	m_rectangleMiddle.setPosition(m_rectanglePos);
 	//set position of highlight rect
@@ -61,14 +61,14 @@ gui::Button::Button(	std::function<void()> function
 	//set up the left texture rectangle
 	m_rectangleLeft.setTexture(texture.get(), true);
 	m_rectangleLeft.setTextureRect(leftTextRect);
-	m_rectangleLeft.setSize(sf::Vector2f(static_cast<float > (leftTextRect.width), m_rectangleMiddle.getGlobalBounds().height));
+	m_rectangleLeft.setSize(sf::Vector2f(leftTextRect.width,m_rectangleMiddle.getGlobalBounds().height));
 	m_rectangleLeft.setOrigin(m_rectangleLeft.getGlobalBounds().width / 2, m_rectangleLeft.getGlobalBounds().height / 2);
 	m_rectangleLeft.setPosition(m_rectangleMiddle.getPosition().x - (m_rectangleMiddle.getGlobalBounds().width / 2) - (m_rectangleLeft.getGlobalBounds().width / 2),m_rectangleMiddle.getPosition().y);
 
 	//set up the right texture rectangle
 	m_rectangleRight.setTexture(texture.get(), true);
 	m_rectangleRight.setTextureRect(rightTextRect);
-	m_rectangleRight.setSize(sf::Vector2f(static_cast<float>(rightTextRect.width), m_rectangleMiddle.getGlobalBounds().height));
+	m_rectangleRight.setSize(sf::Vector2f(rightTextRect.width, m_rectangleMiddle.getGlobalBounds().height));
 	m_rectangleRight.setOrigin(m_rectangleRight.getGlobalBounds().width / 2, m_rectangleRight.getGlobalBounds().height / 2);
 	m_rectangleRight.setPosition(m_rectangleMiddle.getPosition().x + (m_rectangleMiddle.getGlobalBounds().width / 2) + (m_rectangleRight.getGlobalBounds().width / 2), m_rectangleMiddle.getPosition().y);
 
@@ -129,7 +129,7 @@ void gui::Button::update(const float & dt)
 		m_rectangleMiddle.setFillColor(sf::Color::Cyan);
 		break;
 	case Button::ButtonState::ACTIVE:
-		setRectangleColors(sf::Color(255u, 255u, 255u, 255u));
+		setRectangleColors(sf::Color(255.0f, 255.0f, 255.0f, 255.0f));
 		scaleRectangles(1.0f, 1.0f);
 		m_highlightAlpha = 255.0f;
 		break;
@@ -138,7 +138,7 @@ void gui::Button::update(const float & dt)
 		scaleRectangles(1.2f, 1.2f);
 		fading();
 		m_highlightRectangle.setScale(1.22f, 1.3f);
-		m_highlightRectangle.setFillColor(sf::Color(255u, 255u, 0u, static_cast<sf::Uint8>(m_highlightAlpha)));
+		m_highlightRectangle.setFillColor(sf::Color(255, 255, 0, m_highlightAlpha));
 		break;
 	case Button::ButtonState::PRESSED:
 		setRectangleColors(sf::Color::Red);

@@ -23,7 +23,9 @@
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\entities\ai\AiBase.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABChargeState.cpp" />
-    <ClCompile Include="src\entities\ai\basic\ABSearchState.cpp" />
+    <ClCompile Include="src\entities\ai\basic\ABRecoverState.cpp" />
+    <ClCompile Include="src\entities\ai\basic\ABSeekState.cpp" />
+    <ClCompile Include="src\entities\ai\basic\ABWindupState.cpp" />
     <ClCompile Include="src\entities\ai\basic\AiBasic.cpp" />
     <ClCompile Include="src\entities\ai\basic\AiBasicState.cpp" />
     <ClCompile Include="src\Entities\Asteroids\Asteroid.cpp" />
@@ -91,7 +93,9 @@
     <ClInclude Include="include\Application.h" />
     <ClInclude Include="include\entities\ai\AiBase.h" />
     <ClInclude Include="include\entities\ai\basic\ABChargeState.h" />
-    <ClInclude Include="include\entities\ai\basic\ABSearchState.h" />
+    <ClInclude Include="include\entities\ai\basic\ABRecoverState.h" />
+    <ClInclude Include="include\entities\ai\basic\ABSeekState.h" />
+    <ClInclude Include="include\entities\ai\basic\ABWindupState.h" />
     <ClInclude Include="include\entities\ai\basic\AiBasic.h" />
     <ClInclude Include="include\entities\ai\basic\AiBasicState.h" />
     <ClInclude Include="include\Entities\Asteroids\Asteroid.h" />
@@ -126,6 +130,7 @@
     <ClInclude Include="include\gui\widgets\Widget.h" />
     <ClInclude Include="include\input\KeyHandler.h" />
     <ClInclude Include="include\input\Controller.h" />
+    <ClInclude Include="include\main.hpp" />
     <ClInclude Include="include\ResourceHandler.h" />
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />
     <ClInclude Include="include\Scenes\GameScene\GameScene.h" />
@@ -141,7 +146,10 @@
     <Image Include="resources\gui\textures\button.png" />
     <Image Include="resources\gui\textures\checkbox.png" />
     <Image Include="resources\gui\textures\slider.png" />
-    <Image Include="resources\scenes\Game\enemies\basic\idle.png" />
+    <Image Include="resources\scenes\Game\enemies\basic\charge.png" />
+    <Image Include="resources\scenes\Game\enemies\basic\recovery.png" />
+    <Image Include="resources\scenes\Game\enemies\basic\seek.png" />
+    <Image Include="resources\scenes\Game\enemies\basic\wind_up.png" />
     <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_impact.png" />
     <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_loop.png" />
     <Image Include="resources\scenes\Game\player\player_ship.png" />

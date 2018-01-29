@@ -32,7 +32,10 @@ namespace ai
 			virtual void exit() final override;
 
 		private: // Private member functions
-			void updateCollision();
+			void updateState();
+			bool checkState();
+			void updateSpeed();
+			void updatePosition();
 
 		private: // Private member variables
 			/// <summary>
@@ -43,6 +46,13 @@ namespace ai
 			float const m_ATTACK_RADIUS;
 
 			/// <summary>
+			/// @brief Speed of initial charge.
+			/// 
+			/// 
+			/// </summary>
+			float const m_CHARGE_SPEED;
+
+			/// <summary>
 			/// @brief Amount by which speed is decreased per second.
 			/// 
 			/// 
@@ -50,18 +60,12 @@ namespace ai
 			float const m_DECCELERATION;
 
 			/// <summary>
-			/// @brief Defines the attack collision.
+			/// @brief Amount of speed that is consider low enough.
 			/// 
-			/// 
+			/// This determines how slow the ai needs to be before
+			/// changing back to seek state.
 			/// </summary>
-			tinyh::c2Circle m_attackCollision;
-
-			/// <summary>
-			/// @brief Allows for rendering of our attack collision.
-			/// 
-			/// 
-			/// </summary>
-			sf::CircleShape m_attackHitShape;
+			float const m_LOW_SPEED;
 
 		};
 

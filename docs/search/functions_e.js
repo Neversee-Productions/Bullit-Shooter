@@ -3,6 +3,7 @@ var searchData=
   ['pickup',['Pickup',['../class_pickup.html#a96d607c3c6fbe14446c5cafc33163844',1,'Pickup::Pickup()'],['../class_pickup.html#af72d757b3e01df5b396c4ae2abfb9ffa',1,'Pickup::Pickup(sf::Vector2f position, sf::Vector2f size)']]],
   ['player',['Player',['../class_player.html#a2330aca7977454b7410c8d3ef6e34327',1,'Player']]],
   ['playerasteroidcollision',['playerAsteroidCollision',['../class_game_scene.html#ad3c7f1444e67a8462e4611dbe9319bc4',1,'GameScene']]],
+  ['playerenemycollision',['playerEnemyCollision',['../class_game_scene.html#a7eedd378e6f6b32ec94248a2e7d9b285',1,'GameScene']]],
   ['playerpickupcollision',['playerPickupCollision',['../class_game_scene.html#a3ad265a99cea48b606c907382e66cabc',1,'GameScene']]],
   ['preloadscene',['preLoadScene',['../class_scene_manager.html#a088b1248bcd8fa69d9bd7a87e03996f9',1,'SceneManager']]],
   ['prestart',['preStart',['../class_game_scene.html#aa047fdbc6f7cdae8eb76eda686eb49d5',1,'GameScene::preStart()'],['../class_main_menu_scene.html#a0fceb466a18dabf67454e26eb2c87b8b',1,'MainMenuScene::preStart()'],['../class_options_scene.html#a809dbaf3fda2ad88ef5d706d2bd351ae',1,'OptionsScene::preStart()'],['../class_scene.html#a8085b58c34fde232253669e9d55fa85d',1,'Scene::preStart()'],['../class_splash_scene.html#ac2f189d6bf52b47a7500ad103b3a58dd',1,'SplashScene::preStart()'],['../class_title_scene.html#afbcce313c31908c58347e84ddd25d39f',1,'TitleScene::preStart()']]],

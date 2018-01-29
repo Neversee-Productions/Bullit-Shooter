@@ -245,7 +245,12 @@ void Weapon::setType(BulletTypes const & bulletType)
 	std::string const & shootID = weaponShootAnimation.m_id;
 	m_weaponSprite.setTexture(*weaponBeginAnimation.m_sptrTexture, true);
 	m_weaponSprite.setOrigin(weaponBeginAnimation.m_origin);
+	switch (bulletType)
+	{
+	default:
 
+		break;
+	}
 	m_animator->playAnimation(beginID, false);
 }
 

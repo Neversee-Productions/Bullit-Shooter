@@ -1,6 +1,9 @@
 #include "entities\ai\basic\AiBasicState.h"
 
-std::string ai::AiBasic::s_IDLE_ID = "";
+std::string ai::AiBasic::s_SEEK_ID = "";
+std::string ai::AiBasic::s_CHARGE_ID = "";
+std::string ai::AiBasic::s_WINDUP_ID = "";
+std::string ai::AiBasic::s_RECOVER_ID = "";
 
 /// <summary>
 /// @brief Setups ai::AiBasic::Resources.
@@ -15,72 +18,33 @@ std::string ai::AiBasic::s_IDLE_ID = "";
 /// <param name="basicEnemyParser">reference to loaded json file ready to be parsed.</param>
 void ai::AiBasic::setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, json::json & basicEnemyParser)
 {
-	std::string const JSON_IDLE("idle");
+	std::string const JSON_SEEK("seek");
+	std::string const JSON_WINDUP("windup");
+	std::string const JSON_CHARGE("charge");
+	std::string const JSON_RECOVER("recover");
+
 	std::string const JSON_KEY("key");
 
-	std::string const BASIC_ENEMY_ID = basicEnemyParser.at(JSON_IDLE).at(JSON_KEY).get<std::string>();
-	ai::AiBasic::s_IDLE_ID = BASIC_ENEMY_ID;
+	ai::AiBasic::s_SEEK_ID = basicEnemyParser.at(JSON_SEEK).at(JSON_KEY).get<std::string>();
+	ai::AiBasic::s_WINDUP_ID = basicEnemyParser.at(JSON_WINDUP).at(JSON_KEY).get<std::string>();
+	ai::AiBasic::s_CHARGE_ID = basicEnemyParser.at(JSON_CHARGE).at(JSON_KEY).get<std::string>();
+	ai::AiBasic::s_RECOVER_ID = basicEnemyParser.at(JSON_RECOVER).at(JSON_KEY).get<std::string>();
+	
 	// Loading/Parsing Texture
-	{
-		std::string const JSON_TEXTURE("texture");
-		json::json & idleTextureParser = basicEnemyParser.at(JSON_IDLE).at(JSON_TEXTURE);
 
-		std::string const JSON_TEXTURE_PATH("path");
-		std::string const JSON_TEXTURE_ORIGIN("origin");
-		std::string const JSON_TEXTURE_SCALE("scale");
-		std::string const JSON_TEXTURE_FRAME("frame");
+	std::string const JSON_TEXTURE("texture");
+	ai::AiBasic::setup(sptrResources->m_textureSeek, resourceHandler, basicEnemyParser.at(JSON_SEEK).at(JSON_TEXTURE), ai::AiBasic::s_SEEK_ID);
+	ai::AiBasic::setup(sptrResources->m_textureWindup, resourceHandler, basicEnemyParser.at(JSON_WINDUP).at(JSON_TEXTURE), ai::AiBasic::s_WINDUP_ID);
+	ai::AiBasic::setup(sptrResources->m_textureCharge, resourceHandler, basicEnemyParser.at(JSON_CHARGE).at(JSON_TEXTURE), ai::AiBasic::s_CHARGE_ID);
+	ai::AiBasic::setup(sptrResources->m_textureRecover, resourceHandler, basicEnemyParser.at(JSON_RECOVER).at(JSON_TEXTURE), ai::AiBasic::s_RECOVER_ID);
 
-		sptrResources->m_texture.m_id = BASIC_ENEMY_ID;
-		sptrResources->m_texture.m_origin.x = idleTextureParser.at(JSON_TEXTURE_ORIGIN).at("x").get<float>();
-		sptrResources->m_texture.m_origin.y = idleTextureParser.at(JSON_TEXTURE_ORIGIN).at("y").get<float>();
-		sptrResources->m_texture.m_scale.x = idleTextureParser.at(JSON_TEXTURE_SCALE).at("x").get<float>();
-		sptrResources->m_texture.m_scale.y = idleTextureParser.at(JSON_TEXTURE_SCALE).at("y").get<float>();
-		sptrResources->m_texture.m_textureRect.left = idleTextureParser.at(JSON_TEXTURE_FRAME).at("x").get<int>();
-		sptrResources->m_texture.m_textureRect.top = idleTextureParser.at(JSON_TEXTURE_FRAME).at("y").get<int>();
-		sptrResources->m_texture.m_textureRect.width = idleTextureParser.at(JSON_TEXTURE_FRAME).at("w").get<int>();
-		sptrResources->m_texture.m_textureRect.height = idleTextureParser.at(JSON_TEXTURE_FRAME).at("h").get<int>();
-		sptrResources->m_texture.m_sptrTexture =
-			resourceHandler.loadUp<sf::Texture>(idleTextureParser.at(JSON_TEXTURE_PATH).get<std::string>(), sptrResources->m_texture.m_id);
-		sptrResources->m_texture.m_sptrTexture->setSmooth(true);
-	}
-	// Loading/Parsing Animation
-	{
-		std::string const JSON_ANIMATION("animation");
-		json::json & idleAnimationParser = basicEnemyParser.at(JSON_IDLE).at(JSON_ANIMATION);
+	// Loading/Parsing Animations
 
-		std::string const JSON_ANIMATION_DURATION("duration");
-		std::string const JSON_ANIMATION_WIDTH("width");
-		std::string const JSON_ANIMATION_HEIGHT("height");
-		std::string const JSON_ANIMATION_ORIGIN("origin");
-		std::string const JSON_ANIMATION_FRAMES("frames");
-
-		sptrResources->m_animationLoop.m_id = BASIC_ENEMY_ID;
-		sptrResources->m_animationLoop.m_duration = sf::seconds(idleAnimationParser.at(JSON_ANIMATION_DURATION).get<float>());
-		sptrResources->m_animationLoop.m_origin.x = idleAnimationParser.at(JSON_ANIMATION_ORIGIN).at("x").get<float>();
-		sptrResources->m_animationLoop.m_origin.y = idleAnimationParser.at(JSON_ANIMATION_ORIGIN).at("y").get<float>();
-		sptrResources->m_animationLoop.m_sptrTexture = sptrResources->m_texture.m_sptrTexture; // Use texture already loaded.
-
-		sptrResources->m_animationLoop.m_frames = thor::FrameAnimation();
-		json::json & idleFramesParser = idleAnimationParser.at(JSON_ANIMATION_FRAMES);
-		auto const FRAME_WIDTH = idleAnimationParser.at(JSON_ANIMATION_WIDTH).get<int>();
-		auto const FRAME_HEIGHT = idleAnimationParser.at(JSON_ANIMATION_HEIGHT).get<int>();
-		float i = 0.0f;
-		for (
-			json::json::iterator itt = idleFramesParser.begin(), end = idleFramesParser.end();
-			itt != end;
-			++itt, ++i
-			)
-		{
-			auto & jsonNode = *itt;
-			sf::IntRect rect;
-			rect.left = jsonNode.at("x").get<int>();
-			rect.top = jsonNode.at("y").get<int>();
-			rect.width = FRAME_WIDTH;
-			rect.height = FRAME_HEIGHT;
-
-			sptrResources->m_animationLoop.m_frames.addFrame(i, rect);
-		}
-	}
+	std::string const JSON_ANIMATION("animation");
+	ai::AiBasic::setup(sptrResources->m_animationSeek, resourceHandler, basicEnemyParser.at(JSON_SEEK).at(JSON_ANIMATION), ai::AiBasic::s_SEEK_ID);
+	ai::AiBasic::setup(sptrResources->m_animationWindup, resourceHandler, basicEnemyParser.at(JSON_WINDUP).at(JSON_ANIMATION), ai::AiBasic::s_WINDUP_ID);
+	ai::AiBasic::setup(sptrResources->m_animationCharge, resourceHandler, basicEnemyParser.at(JSON_CHARGE).at(JSON_ANIMATION), ai::AiBasic::s_CHARGE_ID);
+	ai::AiBasic::setup(sptrResources->m_animationRecover, resourceHandler, basicEnemyParser.at(JSON_RECOVER).at(JSON_ANIMATION), ai::AiBasic::s_RECOVER_ID);
 }
 
 /// <summary>
@@ -95,6 +59,7 @@ ai::AiBasic::AiBasic(Player const & player)
 	, m_heading{ 0.0f, 1.0f }
 	, m_angle(0.0f)
 	, m_player(player)
+	, m_collisionRect()
 	, m_renderQuad({80.0f , 80.0f}) // Implicitly call sf::Vector2f() constructor
 	, m_stateStack()
 	, m_sptrState(nullptr)
@@ -111,12 +76,12 @@ ai::AiBasic::AiBasic(Player const & player)
 /// <param name="sptrResources">shared pointer to already loaded resources.</param>
 void ai::AiBasic::init(std::shared_ptr<Resources> sptrResources)
 {
-	m_renderQuad.setOrigin(sptrResources->m_texture.m_origin);
-	m_renderQuad.setScale(sptrResources->m_texture.m_scale);
-	m_renderQuad.setTexture(sptrResources->m_texture.m_sptrTexture.get(), true);
-	m_renderQuad.setTextureRect(sptrResources->m_texture.m_textureRect);
+	m_renderQuad.setOrigin(sptrResources->m_textureSeek.m_origin);
+	m_renderQuad.setScale(sptrResources->m_textureSeek.m_scale);
+	m_renderQuad.setTexture(sptrResources->m_textureSeek.m_sptrTexture.get(), true);
+	m_renderQuad.setTextureRect(sptrResources->m_textureSeek.m_textureRect);
 
-	m_animator.addAnimation(sptrResources->m_animationLoop.m_id, sptrResources->m_animationLoop.m_frames, sptrResources->m_animationLoop.m_duration);
+	m_animator.addAnimation(sptrResources->m_animationSeek.m_id, sptrResources->m_animationSeek.m_frames, sptrResources->m_animationSeek.m_duration);
 
 	this->initStates();
 }
@@ -142,15 +107,33 @@ void ai::AiBasic::draw(Window & window, float const & deltaTime)
 }
 
 /// <summary>
-/// @brief Constructs a base pointer and passes the call down.
-/// 
-/// 
+/// Passes the call to the current state.
 /// </summary>
-/// <param name="sptrState">shared pointer to our new state.</param>
-void ai::AiBasic::setState(std::shared_ptr<ai::states::Search> sptrState)
+/// <param name="collision">read-only reference to a 2d collision AABB rectangle.</param>
+/// <returns>True if a collision has occured, else false.</returns>
+bool ai::AiBasic::checkCollision(tinyh::c2Circle const & collision) const
 {
-	std::shared_ptr<ai::states::Basic> sptrBaseState = sptrState;
-	this->setState(sptrBaseState);
+	return m_sptrState->checkCollision(collision);
+}
+
+/// <summary>
+/// Passes the call to the current state.
+/// </summary>
+/// <param name="collision">read-only reference to a 2d collision AABB rectangle.</param>
+/// <returns>True if a collision has occured, else false.</returns>
+bool ai::AiBasic::checkCollision(tinyh::c2AABB const & collision) const
+{
+	return m_sptrState->checkCollision(collision);
+}
+
+/// <summary>
+/// Passes the call to the current state.
+/// </summary>
+/// <param name="collision">read-only reference to a 2d collision AABB rectangle.</param>
+/// <returns>True if a collision has occured, else false.</returns>
+bool ai::AiBasic::checkCollision(tinyh::c2Capsule const & collision) const
+{
+	return m_sptrState->checkCollision(collision);
 }
 
 /// <summary>
@@ -159,10 +142,45 @@ void ai::AiBasic::setState(std::shared_ptr<ai::states::Search> sptrState)
 /// 
 /// </summary>
 /// <param name="sptrState">shared pointer to our new state.</param>
-void ai::AiBasic::setState(std::shared_ptr<ai::states::Charge> sptrState)
+/// <param name="rememberPrevious">tells whether or not to add the new state to the stack.</param>
+void ai::AiBasic::setState(std::shared_ptr<ai::states::Seek> sptrState, bool rememberPrevious)
 {
 	std::shared_ptr<ai::states::Basic> sptrBaseState = sptrState;
-	this->setState(sptrBaseState);
+	this->setState(sptrBaseState, rememberPrevious);
+}
+
+/// <summary>
+/// @brief Updates collision box using the rectangle shape.
+/// 
+/// Uses the shape's transform to form a AABB Rectangle.
+/// </summary>
+/// <param name="box">read-only reference to a rectangle shape</param>
+void ai::AiBasic::updateHitbox(sf::RectangleShape const & box)
+{
+	sf::Transform const & transform = box.getTransform();
+	sf::FloatRect const & localBounds = box.getLocalBounds();
+	sf::Vector2f const min =
+		transform.transformPoint(localBounds.left, localBounds.top);
+	m_collisionRect.min.x = min.x;
+	m_collisionRect.min.y = min.y;
+
+	sf::Vector2f const max =
+		transform.transformPoint(localBounds.left + localBounds.width, localBounds.top + localBounds.height);
+	m_collisionRect.max.x = max.x;
+	m_collisionRect.max.y = max.y;
+}
+
+/// <summary>
+/// @brief Constructs a base pointer and passes the call down.
+/// 
+/// 
+/// </summary>
+/// <param name="sptrState">shared pointer to our new state.</param>
+/// <param name="rememberPrevious">tells whether or not to add the new state to the stack.</param>
+void ai::AiBasic::setState(std::shared_ptr<ai::states::Charge> sptrState, bool rememberPrevious)
+{
+	std::shared_ptr<ai::states::Basic> sptrBaseState = sptrState;
+	this->setState(sptrBaseState, rememberPrevious);
 }
 
 /// <summary>
@@ -181,7 +199,8 @@ void ai::AiBasic::setState(std::shared_ptr<ai::states::Charge> sptrState)
 /// Pushdown Automata
 /// http://gameprogrammingpatterns.com/state.html#pushdown-automata
 /// </param>
-void ai::AiBasic::setState(std::shared_ptr<ai::states::Basic> sptrState)
+/// <param name="rememberPrevious">tells whether or not to add the new state to the stack.</param>
+void ai::AiBasic::setState(std::shared_ptr<ai::states::Basic> sptrState, bool rememberPrevious)
 {
 	if (nullptr != m_sptrState)
 	{
@@ -189,6 +208,13 @@ void ai::AiBasic::setState(std::shared_ptr<ai::states::Basic> sptrState)
 	}
 	if (nullptr != sptrState)
 	{
+		if (false == rememberPrevious)
+		{
+			if (!m_stateStack.empty())
+			{
+				m_stateStack.pop();
+			}
+		}
 		m_stateStack.push(sptrState);
 		m_sptrState = sptrState;
 	}
@@ -201,14 +227,90 @@ void ai::AiBasic::setState(std::shared_ptr<ai::states::Basic> sptrState)
 }
 
 /// <summary>
+/// @brief Sets up a texture resource.
+/// 
+/// Parses the json with a expected format.
+/// </summary>
+/// <param name="animResources">reference to the data struct that stores the loaded resource.</param>
+/// <param name="resourceHandler">reference to the resource loader.</param>
+/// <param name="animationParser">reference to the json parser.</param>
+/// <param name="id">id of the animation to be loaded.</param>
+void ai::AiBasic::setup(AiBase::Resources::Texture & textureResources, ResourceHandler & resourceHandler, json::json & textureParser, std::string const & id)
+{
+	std::string const JSON_TEXTURE_PATH("path");
+	std::string const JSON_TEXTURE_ORIGIN("origin");
+	std::string const JSON_TEXTURE_SCALE("scale");
+	std::string const JSON_TEXTURE_FRAME("frame");
+
+	textureResources.m_id = id;
+	textureResources.m_origin.x = textureParser.at(JSON_TEXTURE_ORIGIN).at("x").get<float>();
+	textureResources.m_origin.y = textureParser.at(JSON_TEXTURE_ORIGIN).at("y").get<float>();
+	textureResources.m_scale.x = textureParser.at(JSON_TEXTURE_SCALE).at("x").get<float>();
+	textureResources.m_scale.y = textureParser.at(JSON_TEXTURE_SCALE).at("y").get<float>();
+	textureResources.m_textureRect.left = textureParser.at(JSON_TEXTURE_FRAME).at("x").get<int>();
+	textureResources.m_textureRect.top = textureParser.at(JSON_TEXTURE_FRAME).at("y").get<int>();
+	textureResources.m_textureRect.width = textureParser.at(JSON_TEXTURE_FRAME).at("w").get<int>();
+	textureResources.m_textureRect.height = textureParser.at(JSON_TEXTURE_FRAME).at("h").get<int>();
+	textureResources.m_sptrTexture =
+		resourceHandler.loadUp<sf::Texture>(textureParser.at(JSON_TEXTURE_PATH).get<std::string>(), textureResources.m_id);
+	textureResources.m_sptrTexture->setSmooth(true);
+}
+
+/// <summary>
+/// @brief Sets up a animation resource.
+/// 
+/// Parses the json with a expected format.
+/// </summary>
+/// <param name="animResources">reference to the data struct that stores the loaded resource.</param>
+/// <param name="resourceHandler">reference to the resource loader.</param>
+/// <param name="animationParser">reference to the json parser.</param>
+/// <param name="id">id of the animation to be loaded.</param>
+void ai::AiBasic::setup(AiBase::Resources::Animation & animResources, ResourceHandler & resourceHandler, json::json & animationParser, std::string const & id)
+{
+	std::string const JSON_ANIMATION_TEXTURE("texture");
+	std::string const JSON_ANIMATION_DURATION("duration");
+	std::string const JSON_ANIMATION_WIDTH("width");
+	std::string const JSON_ANIMATION_HEIGHT("height");
+	std::string const JSON_ANIMATION_ORIGIN("origin");
+	std::string const JSON_ANIMATION_FRAMES("frames");
+
+	animResources.m_id = id;
+	animResources.m_duration = sf::seconds(animationParser.at(JSON_ANIMATION_DURATION).get<float>());
+	animResources.m_origin.x = animationParser.at(JSON_ANIMATION_ORIGIN).at("x").get<float>();
+	animResources.m_origin.y = animationParser.at(JSON_ANIMATION_ORIGIN).at("y").get<float>();
+	animResources.m_sptrTexture = resourceHandler.loadUp<sf::Texture>("", animationParser.at(JSON_ANIMATION_TEXTURE).get<std::string>());
+
+	animResources.m_frames = thor::FrameAnimation();
+	json::json & idleFramesParser = animationParser.at(JSON_ANIMATION_FRAMES);
+	auto const FRAME_WIDTH = animationParser.at(JSON_ANIMATION_WIDTH).get<int>();
+	auto const FRAME_HEIGHT = animationParser.at(JSON_ANIMATION_HEIGHT).get<int>();
+	float i = 0.0f;
+	for (
+		json::json::iterator itt = idleFramesParser.begin(), end = idleFramesParser.end();
+		itt != end;
+		++itt, ++i
+		)
+	{
+		auto & jsonNode = *itt;
+		sf::IntRect rect;
+		rect.left = jsonNode.at("x").get<int>();
+		rect.top = jsonNode.at("y").get<int>();
+		rect.width = FRAME_WIDTH;
+		rect.height = FRAME_HEIGHT;
+
+		animResources.m_frames.addFrame(i, rect);
+	}
+}
+
+/// <summary>
 /// @brief Initialize the different basic ai states.
 /// 
 /// 
 /// </summary>
 void ai::AiBasic::initStates()
 {
-	std::shared_ptr<ai::states::Search> firstState = std::make_shared<ai::states::Search>(ai::states::Search(*this));
-	this->setState(firstState);
+	std::shared_ptr<ai::states::Seek> sptrFirstState = std::make_shared<ai::states::Seek>(ai::states::Seek(*this));
+	this->setState(sptrFirstState, true);
 }
 
 /// <summary>

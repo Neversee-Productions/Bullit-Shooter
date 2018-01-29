@@ -23,8 +23,10 @@ namespace ai
 	namespace states
 	{
 		class AiBasicState;
-		class AiBasicSearchState;
+		class AiBasicSeekState;
 		class AiBasicChargeState;
+		class AiBasicWindupState;
+		class AiBasicRecoverState;
 	}
 
 	/// 
@@ -50,12 +52,16 @@ namespace ai
 		/// 
 		struct Resources : public AiBase::Resources
 		{
-			AiBase::Resources::Texture m_texture;
-			AiBase::Resources::Animation m_animationLoop;
-		};
+			AiBase::Resources::Texture m_textureSeek;
+			AiBase::Resources::Texture m_textureWindup;
+			AiBase::Resources::Texture m_textureCharge;
+			AiBase::Resources::Texture m_textureRecover;
 
-		// setups sptrResources
-		static void setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, json::json & basicEnemyParser);
+			AiBase::Resources::Animation m_animationSeek;
+			AiBase::Resources::Animation m_animationWindup;
+			AiBase::Resources::Animation m_animationCharge;
+			AiBase::Resources::Animation m_animationRecover;
+		};
 
 	private:
 		/// <summary>
@@ -64,27 +70,37 @@ namespace ai
 		/// Makes life easier
 		/// </summary>
 		typedef ai::states::AiBasicState BasicState;
-		typedef ai::states::AiBasicSearchState SearchState;
+		typedef ai::states::AiBasicSeekState SeekState;
 		typedef ai::states::AiBasicChargeState ChargeState;
+		typedef ai::states::AiBasicWindupState WindupState;
+		typedef ai::states::AiBasicRecoverState RecoverState;
 
 		// Friends
 
-		friend class SearchState;
-		friend class ChargeState;
+		friend class ai::states::AiBasicState;
+		friend class ai::states::AiBasicSeekState;
+		friend class ai::states::AiBasicChargeState;
+		friend class ai::states::AiBasicWindupState;
+		friend class ai::states::AiBasicRecoverState;
 
 	public: // Constructors/Destructor
 		AiBasic(Player const & player);
 		~AiBasic() = default;
 
 	public: // Public Member Functions
+		static void setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, json::json & basicEnemyParser);
 		void init(std::shared_ptr<Resources> sptrResources);
 		virtual void update() final override;
 		virtual void draw(Window & window, float const & deltaTime) final override;
+		bool checkCollision(tinyh::c2Circle const & collision) const;
+		bool checkCollision(tinyh::c2AABB const & collision) const;
+		bool checkCollision(tinyh::c2Capsule const & collision) const;
 
 	protected: // Protected Member Functions
-		void setState(std::shared_ptr<SearchState> sptrState);
-		void setState(std::shared_ptr<ChargeState> sptrState);
-		void setState(std::shared_ptr<BasicState> sptrState);
+		void setState(std::shared_ptr<SeekState> sptrState, bool rememberPrevious);
+		void setState(std::shared_ptr<ChargeState> sptrState, bool rememberPrevious);
+		void setState(std::shared_ptr<BasicState> sptrState, bool rememberPrevious);
+		void updateHitbox(sf::RectangleShape const & box);
 
 	protected: // Protected Member Variables
 		/// <summary>
@@ -147,6 +163,8 @@ namespace ai
 		thor::Animator<sf::RectangleShape, std::string> m_animator;
 
 	private: // Private Member Functions
+		static void setup(AiBase::Resources::Texture & textureResources, ResourceHandler & resourceHandler, json::json & textureParser, std::string const & id);
+		static void setup(AiBase::Resources::Animation & animResources, ResourceHandler & resourceHandler, json::json & animationParser, std::string const & id);
 		void initStates();
 		void initRenderingQuad();
 
@@ -180,7 +198,28 @@ namespace ai
 		/// 
 		/// Used to access the idle animation.
 		/// </summary>
-		static std::string s_IDLE_ID;
+		static std::string s_SEEK_ID;
+
+		/// <summary>
+		/// @brief Static id of windup state.
+		/// 
+		/// Used to access the windup animation.
+		/// </summary>
+		static std::string s_WINDUP_ID;
+
+		/// <summary>
+		/// @brief Static id of charge state.
+		/// 
+		/// Used to access the charge animation.
+		/// </summary>
+		static std::string s_CHARGE_ID;
+
+		/// <summary>
+		/// @brief Static id of recover state.
+		/// 
+		/// Used to access the recover animation.
+		/// </summary>
+		static std::string s_RECOVER_ID;
 
 	};
 
@@ -194,7 +233,9 @@ namespace ai
 }
 
 #include "AiBasicState.h"
-#include "ABSearchState.h"
+#include "ABSeekState.h"
 #include "ABChargeState.h"
+#include "ABWindupState.h"
+#include "ABRecoverState.h"
 
 #endif // !AI_BASIC_H
