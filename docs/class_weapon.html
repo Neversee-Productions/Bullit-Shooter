@@ -136,6 +136,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad80ec295390667a49be2f794737b244e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52ef1339fb604f85d078d4997d929241"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a52ef1339fb604f85d078d4997d929241">setType</a> (<a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;bulletType)</td></tr>
 <tr class="separator:a52ef1339fb604f85d078d4997d929241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac8844470f0167b2004e7659a33665a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a2ac8844470f0167b2004e7659a33665a">setCanFire</a> (bool const &amp;canFire)</td></tr>
+<tr class="separator:a2ac8844470f0167b2004e7659a33665a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2b61417ebdf34a8e0942a3d3413339"><td class="memItemLeft" align="right" valign="top">bool const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a3d2b61417ebdf34a8e0942a3d3413339">getCanFire</a> () const</td></tr>
+<tr class="separator:a3d2b61417ebdf34a8e0942a3d3413339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62982d0115e34b116d45d6c42f7a8a6f"><td class="memItemLeft" align="right" valign="top">std::string const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a62982d0115e34b116d45d6c42f7a8a6f">getBeginAnimationID</a> () const</td></tr>
+<tr class="separator:a62982d0115e34b116d45d6c42f7a8a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4646fbbf31e7edd344993bd85853f22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#ad4646fbbf31e7edd344993bd85853f22">fadeOut</a> ()</td></tr>
+<tr class="separator:ad4646fbbf31e7edd344993bd85853f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0c6edb6202919f074a51e97ff6353e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#aee0c6edb6202919f074a51e97ff6353e">setAlpha</a> (float alpha)</td></tr>
+<tr class="separator:aee0c6edb6202919f074a51e97ff6353e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eff8546728a5ad3c77e0d924998ca80"><td class="memItemLeft" align="right" valign="top">sf::Color const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a7eff8546728a5ad3c77e0d924998ca80">getBgColor</a> () const</td></tr>
+<tr class="memdesc:a7eff8546728a5ad3c77e0d924998ca80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the background color.  <a href="#a7eff8546728a5ad3c77e0d924998ca80">More...</a><br /></td></tr>
+<tr class="separator:a7eff8546728a5ad3c77e0d924998ca80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -154,6 +167,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a4057988b09d7aa897ff2dbb56f29c080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9a7c027ab7ff27bb9877ad7c7f0032b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_weapon.html#a67474f0c755c86bf930093b0995667a8">WeaponAnimator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#af9a7c027ab7ff27bb9877ad7c7f0032b">m_animator</a></td></tr>
 <tr class="separator:af9a7c027ab7ff27bb9877ad7c7f0032b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b34aa2bddf794f9a5f7a7503e26856"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a07b34aa2bddf794f9a5f7a7503e26856">m_canFire</a></td></tr>
+<tr class="separator:a07b34aa2bddf794f9a5f7a7503e26856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
@@ -266,6 +281,59 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="ad4646fbbf31e7edd344993bd85853f22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4646fbbf31e7edd344993bd85853f22">&#9670;&nbsp;</a></span>fadeOut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Weapon::fadeOut </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this function will fade out the sprite.</p>
+
+</div>
+</div>
+<a id="a62982d0115e34b116d45d6c42f7a8a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62982d0115e34b116d45d6c42f7a8a6f">&#9670;&nbsp;</a></span>getBeginAnimationID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string const  &amp; Weapon::getBeginAnimationID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7eff8546728a5ad3c77e0d924998ca80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eff8546728a5ad3c77e0d924998ca80">&#9670;&nbsp;</a></span>getBgColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Color const  &amp; Weapon::getBgColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>read-only reference to background color.</dd></dl>
+
+</div>
+</div>
 <a id="a48a9cf1c2632688dbec93ae8a05307df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a48a9cf1c2632688dbec93ae8a05307df">&#9670;&nbsp;</a></span>getBulletType()</h2>
 
@@ -282,6 +350,25 @@ Rafael Plugge</dd></dl>
 </div><div class="memdoc">
 <p>return the weapons current type.</p>
 <dl class="section return"><dt>Returns</dt><dd>Constant reference to the bullet type</dd></dl>
+
+</div>
+</div>
+<a id="a3d2b61417ebdf34a8e0942a3d3413339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d2b61417ebdf34a8e0942a3d3413339">&#9670;&nbsp;</a></span>getCanFire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool const  &amp; Weapon::getCanFire </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get whether the weapon can fire.</p>
+<dl class="section return"><dt>Returns</dt><dd>whether you can fire or not (true = fire, false = cannot fire).</dd></dl>
 
 </div>
 </div>
@@ -343,6 +430,56 @@ Rafael Plugge</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sptrResources</td><td>shared pointer to our weapon resources.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aee0c6edb6202919f074a51e97ff6353e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee0c6edb6202919f074a51e97ff6353e">&#9670;&nbsp;</a></span>setAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Weapon::setAlpha </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>alpha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this function will set alpha of the weapon sprite to the passed value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alpha</td><td>new alpha represented as a float value.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2ac8844470f0167b2004e7659a33665a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ac8844470f0167b2004e7659a33665a">&#9670;&nbsp;</a></span>setCanFire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Weapon::setCanFire </td>
+          <td>(</td>
+          <td class="paramtype">bool const &amp;&#160;</td>
+          <td class="paramname"><em>canFire</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set whether the weapon can fire.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canFire</td><td>defines whether weapon can fire.</td></tr>
   </table>
   </dd>
 </dl>
@@ -512,6 +649,29 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="a07b34aa2bddf794f9a5f7a7503e26856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07b34aa2bddf794f9a5f7a7503e26856">&#9670;&nbsp;</a></span>m_canFire</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Weapon::m_canFire</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define if weapon can fire.</p>
+
+</div>
+</div>
 <a id="a17c50d12732395f94cf4e04665416406"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17c50d12732395f94cf4e04665416406">&#9670;&nbsp;</a></span>m_currentBullet</h2>
 
@@ -628,8 +788,8 @@ Rafael Plugge</dd></dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Project/include/Scenes/GameScene/Entities/Player/<a class="el" href="_weapon_8h_source.html">Weapon.h</a></li>
-<li>Project/src/Scenes/GameScene/Entities/Player/<a class="el" href="_weapon_8cpp.html">Weapon.cpp</a></li>
+<li>Project/include/entities/Player/<a class="el" href="_weapon_8h_source.html">Weapon.h</a></li>
+<li>Project/src/entities/Player/<a class="el" href="_weapon_8cpp.html">Weapon.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

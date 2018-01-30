@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('class_background.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_background-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -111,9 +112,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acab58b65d4299d4bd51b8376e8c3e3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab64ba5922f8a497205725c021953d730"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#ab64ba5922f8a497205725c021953d730">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
 <tr class="separator:ab64ba5922f8a497205725c021953d730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a646e0cce504f8fd62fb2c836672d3da6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a646e0cce504f8fd62fb2c836672d3da6">setTargetColor</a> (sf::Color const &amp;newColor)</td></tr>
+<tr class="separator:a646e0cce504f8fd62fb2c836672d3da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae958beb9f0026965327a465d90176575"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#ae958beb9f0026965327a465d90176575">interpolate</a> (float &amp;value, float const &amp;targetValue)</td></tr>
+<tr class="separator:ae958beb9f0026965327a465d90176575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:aed7743d670b7202121da0a64bd399797"><td class="memItemLeft" align="right" valign="top">float const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#aed7743d670b7202121da0a64bd399797">m_DELTA_TIME</a></td></tr>
+<tr class="separator:aed7743d670b7202121da0a64bd399797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227df2ea5c059e73058f9ea0767078d0"><td class="memItemLeft" align="right" valign="top">sf::Glsl::Vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a227df2ea5c059e73058f9ea0767078d0">m_bgColor</a></td></tr>
+<tr class="separator:a227df2ea5c059e73058f9ea0767078d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b3cd8577849dc30b1b2e81188cabe4"><td class="memItemLeft" align="right" valign="top">sf::Glsl::Vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#aa6b3cd8577849dc30b1b2e81188cabe4">m_bgTargetColor</a></td></tr>
+<tr class="separator:aa6b3cd8577849dc30b1b2e81188cabe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eedbd8b13ea2a00123068dd45e06b4d"><td class="memItemLeft" align="right" valign="top">float const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a9eedbd8b13ea2a00123068dd45e06b4d">m_COLOR_CHANGE</a></td></tr>
+<tr class="separator:a9eedbd8b13ea2a00123068dd45e06b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cd1bd39894aa393a3797e60bcbf66e9"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a7cd1bd39894aa393a3797e60bcbf66e9">m_image</a></td></tr>
 <tr class="separator:a7cd1bd39894aa393a3797e60bcbf66e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4d86ba55da683c0ef5ab087ff902e98"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Shader &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#ae4d86ba55da683c0ef5ab087ff902e98">m_shader</a></td></tr>
@@ -207,6 +223,75 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae958beb9f0026965327a465d90176575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae958beb9f0026965327a465d90176575">&#9670;&nbsp;</a></span>interpolate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Background::interpolate </td>
+          <td>(</td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float const &amp;&#160;</td>
+          <td class="paramname"><em>targetValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Interpolates value towards target value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>reference to the value that will be changed.</td></tr>
+    <tr><td class="paramname">targetValue</td><td>read-only reference to the target value.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a646e0cce504f8fd62fb2c836672d3da6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a646e0cce504f8fd62fb2c836672d3da6">&#9670;&nbsp;</a></span>setTargetColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Background::setTargetColor </td>
+          <td>(</td>
+          <td class="paramtype">sf::Color const &amp;&#160;</td>
+          <td class="paramname"><em>newColor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set new target color for background to fade into.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newColor</td><td>new target color.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="acab58b65d4299d4bd51b8376e8c3e3d3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acab58b65d4299d4bd51b8376e8c3e3d3">&#9670;&nbsp;</a></span>update()</h2>
 
@@ -226,6 +311,99 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a227df2ea5c059e73058f9ea0767078d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227df2ea5c059e73058f9ea0767078d0">&#9670;&nbsp;</a></span>m_bgColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Glsl::Vec4 Background::m_bgColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define the background color.</p>
+
+</div>
+</div>
+<a id="aa6b3cd8577849dc30b1b2e81188cabe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6b3cd8577849dc30b1b2e81188cabe4">&#9670;&nbsp;</a></span>m_bgTargetColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Glsl::Vec4 Background::m_bgTargetColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define the target background color.</p>
+<p>background color will always try to interpolate towards this color. </p>
+
+</div>
+</div>
+<a id="a9eedbd8b13ea2a00123068dd45e06b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eedbd8b13ea2a00123068dd45e06b4d">&#9670;&nbsp;</a></span>m_COLOR_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float const Background::m_COLOR_CHANGE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>constant of how much (percent) does a color change per second.</p>
+
+</div>
+</div>
+<a id="aed7743d670b7202121da0a64bd399797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed7743d670b7202121da0a64bd399797">&#9670;&nbsp;</a></span>m_DELTA_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float const&amp; Background::m_DELTA_TIME</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Read only reference to update delta time.</p>
+
+</div>
+</div>
 <a id="a7cd1bd39894aa393a3797e60bcbf66e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7cd1bd39894aa393a3797e60bcbf66e9">&#9670;&nbsp;</a></span>m_image</h2>
 
@@ -320,8 +498,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Project/include/Scenes/GameScene/Entities/<a class="el" href="_background_8h_source.html">Background.h</a></li>
-<li>Project/src/Scenes/GameScene/Entities/<a class="el" href="_background_8cpp.html">Background.cpp</a></li>
+<li>Project/include/entities/<a class="el" href="_background_8h_source.html">Background.h</a></li>
+<li>Project/src/entities/<a class="el" href="_background_8cpp.html">Background.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

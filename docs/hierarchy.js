@@ -1,5 +1,19 @@
 var hierarchy =
 [
+    [ "ai::AiBase", "classai_1_1_ai_base.html", [
+      [ "ai::AiBasic", "classai_1_1_ai_basic.html", null ]
+    ] ],
+    [ "ai::states::AiBasicState", "classai_1_1states_1_1_ai_basic_state.html", [
+      [ "ai::states::AiBasicChargeState", "classai_1_1states_1_1_ai_basic_charge_state.html", null ],
+      [ "ai::states::AiBasicChargeState", "classai_1_1states_1_1_ai_basic_charge_state.html", null ],
+      [ "ai::states::AiBasicRecoverState", "classai_1_1states_1_1_ai_basic_recover_state.html", null ],
+      [ "ai::states::AiBasicRecoverState", "classai_1_1states_1_1_ai_basic_recover_state.html", null ],
+      [ "ai::states::AiBasicSeekState", "classai_1_1states_1_1_ai_basic_seek_state.html", null ],
+      [ "ai::states::AiBasicWindupState", "classai_1_1states_1_1_ai_basic_windup_state.html", null ],
+      [ "ai::states::AiBasicWindupState", "classai_1_1states_1_1_ai_basic_windup_state.html", null ]
+    ] ],
+    [ "ai::AiBase::Resources::Animation", "structai_1_1_ai_base_1_1_resources_1_1_animation.html", null ],
+    [ "Pickup::Resources::Effect::Animation", "struct_pickup_1_1_resources_1_1_effect_1_1_animation.html", null ],
     [ "bullets::Bullet::Resources::Animation", "structbullets_1_1_bullet_1_1_resources_1_1_animation.html", null ],
     [ "Weapon::Resources::Animation", "struct_weapon_1_1_resources_1_1_animation.html", null ],
     [ "App", "class_app.html", null ],
@@ -32,9 +46,12 @@ var hierarchy =
         [ "gui::Slider", "classgui_1_1_slider.html", null ]
       ] ]
     ] ],
+    [ "Pickup::Resources::Effect", "struct_pickup_1_1_resources_1_1_effect.html", null ],
+    [ "GameScene::Resources::Enemies", "struct_game_scene_1_1_resources_1_1_enemies.html", null ],
     [ "GamePadState", "struct_game_pad_state.html", null ],
     [ "gui::GUI", "classgui_1_1_g_u_i.html", null ],
     [ "Pickup::Resources::IndividualPickup", "struct_pickup_1_1_resources_1_1_individual_pickup.html", null ],
+    [ "Weapon::Resources::IndividualWeapon", "struct_weapon_1_1_resources_1_1_individual_weapon.html", null ],
     [ "KeyHandler", "class_key_handler.html", null ],
     [ "Ship::KeysPressed", "struct_ship_1_1_keys_pressed.html", null ],
     [ "SceneManager::ManagedScene", "struct_scene_manager_1_1_managed_scene.html", null ],
@@ -56,15 +73,18 @@ var hierarchy =
       [ "bullets::DeathOrb::Resources", "structbullets_1_1_death_orb_1_1_resources.html", null ],
       [ "bullets::HolySphere::Resources", "structbullets_1_1_holy_sphere_1_1_resources.html", null ]
     ] ],
+    [ "ai::AiBase::Resources", "structai_1_1_ai_base_1_1_resources.html", [
+      [ "ai::AiBasic::Resources", "structai_1_1_ai_basic_1_1_resources.html", null ]
+    ] ],
     [ "Connector::Resources", "struct_connector_1_1_resources.html", null ],
     [ "Player::Resources", "struct_player_1_1_resources.html", null ],
     [ "Ship::Resources", "struct_ship_1_1_resources.html", null ],
     [ "Weapon::Resources", "struct_weapon_1_1_resources.html", null ],
-    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
+    [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
+    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "SplashScene::Resources", "struct_splash_scene_1_1_resources.html", null ],
     [ "TitleScene::Resources", "struct_title_scene_1_1_resources.html", null ],
-    [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
       [ "MainMenuScene", "class_main_menu_scene.html", null ],
@@ -75,6 +95,8 @@ var hierarchy =
     [ "SceneManager", "class_scene_manager.html", null ],
     [ "Shield", "class_shield.html", null ],
     [ "Ship", "class_ship.html", null ],
+    [ "ai::AiBase::Resources::Texture", "structai_1_1_ai_base_1_1_resources_1_1_texture.html", null ],
+    [ "Pickup::Resources::Effect::Texture", "struct_pickup_1_1_resources_1_1_effect_1_1_texture.html", null ],
     [ "Weapon", "class_weapon.html", null ],
     [ "Window", "class_window.html", null ]
 ];

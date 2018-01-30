@@ -1,11 +1,16 @@
 var searchData=
 [
   ['incframe',['incFrame',['../class_ship.html#ac9b1b10790df77a672bcdcf6a9ef868f',1,'Ship']]],
-  ['init',['init',['../class_background.html#a9e48d290fdba0d7cb52032c6fa454c62',1,'Background::init()'],['../class_bullet_manager.html#ad0d1d44d7cc99a2a57f7fe8234a2cf28',1,'BulletManager::init()'],['../classbullets_1_1_bullet.html#a56167a0ffb54a95980e830c03dbdfe1d',1,'bullets::Bullet::init()'],['../classbullets_1_1_static_sphere.html#a58b0ca9c7aaed07e201825bf1006823e',1,'bullets::StaticSphere::init()'],['../class_connector.html#a96d3194e48edb6ab7d88cb64ae10ed60',1,'Connector::init()'],['../class_player.html#add091bd8b92b2ee8e6d809b8c162eed5',1,'Player::init()'],['../class_ship.html#a71807fb1fd5357cf7d62f0fdc42fd758',1,'Ship::init()'],['../class_weapon.html#a3e3f8a230e1ab8da20f8c68e23b19972',1,'Weapon::init()']]],
+  ['init',['init',['../classai_1_1_ai_basic.html#a8cfb15ad641c8cef8c5e599664f0bbe1',1,'ai::AiBasic::init()'],['../class_background.html#a9e48d290fdba0d7cb52032c6fa454c62',1,'Background::init()'],['../class_bullet_manager.html#ad0d1d44d7cc99a2a57f7fe8234a2cf28',1,'BulletManager::init()'],['../classbullets_1_1_bullet.html#a56167a0ffb54a95980e830c03dbdfe1d',1,'bullets::Bullet::init()'],['../classbullets_1_1_static_sphere.html#a58b0ca9c7aaed07e201825bf1006823e',1,'bullets::StaticSphere::init()'],['../class_connector.html#a96d3194e48edb6ab7d88cb64ae10ed60',1,'Connector::init()'],['../class_player.html#add091bd8b92b2ee8e6d809b8c162eed5',1,'Player::init()'],['../class_ship.html#a71807fb1fd5357cf7d62f0fdc42fd758',1,'Ship::init()'],['../class_weapon.html#a3e3f8a230e1ab8da20f8c68e23b19972',1,'Weapon::init()']]],
+  ['initanimations',['initAnimations',['../classai_1_1_ai_basic.html#a606d3f3e0c71dcfe7952429b94218b5a',1,'ai::AiBasic']]],
   ['initasteroidvector',['initAsteroidVector',['../class_asteroid_manager.html#ac1022463f462f024de3d91e83708b110',1,'AsteroidManager']]],
   ['initbulletmapvector',['initBulletMapVector',['../class_bullet_manager.html#ac42e3dfcdf93fd8d4e20ba19cc72031b',1,'BulletManager']]],
   ['initbulletvector',['initBulletvector',['../class_bullet_manager.html#ab78a89d8d0b0a700f4bc62bf1c50fb2a',1,'BulletManager']]],
+  ['initrenderingquad',['initRenderingQuad',['../classai_1_1_ai_basic.html#a6a53bd146f55566187f54c588335bb84',1,'ai::AiBasic']]],
+  ['initstates',['initStates',['../classai_1_1_ai_basic.html#af003f757c93d96b638bb0bff957acd51',1,'ai::AiBasic']]],
+  ['interpolate',['interpolate',['../class_background.html#ae958beb9f0026965327a465d90176575',1,'Background']]],
   ['isactive',['isActive',['../class_asteroid.html#a1f5bf2b4c9e945148a640bd970aafbee',1,'Asteroid::isActive()'],['../class_pickup.html#ac66bb719ee96e7091d2e8a3d4e36e8b2',1,'Pickup::isActive()'],['../classbullets_1_1_bullet.html#aaa99b721acc4f2ceba75fd95cb55b015',1,'bullets::Bullet::isActive()']]],
+  ['isalive',['isAlive',['../class_player.html#a14606836d4b1a8cda246d0de04055e5f',1,'Player']]],
   ['isanybuttonpressed',['isAnyButtonPressed',['../class_controller.html#a27cd70503f62e007fc082ef403ab8a8d',1,'Controller']]],
   ['isanypressed',['isAnyPressed',['../class_key_handler.html#ae9b72c706dd0ceae61d743d7569935a1',1,'KeyHandler']]],
   ['isconnected',['isConnected',['../class_controller.html#a7d038f37d2b4d68dd1588b57c062a0ee',1,'Controller']]],

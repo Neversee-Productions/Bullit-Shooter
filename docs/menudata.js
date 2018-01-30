@@ -1,7 +1,11 @@
 var menudata={children:[
 {text:"Main Page",url:"index.html"},
 {text:"Namespaces",url:"namespaces.html",children:[
-{text:"Namespace List",url:"namespaces.html"}]},
+{text:"Namespace List",url:"namespaces.html"},
+{text:"Namespace Members",url:"namespacemembers.html",children:[
+{text:"All",url:"namespacemembers.html"},
+{text:"Functions",url:"namespacemembers_func.html"},
+{text:"Typedefs",url:"namespacemembers_type.html"}]}]},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},
 {text:"Class Index",url:"classes.html"},
@@ -60,7 +64,8 @@ var menudata={children:[
 {text:"t",url:"functions_vars_t.html#index_t"},
 {text:"u",url:"functions_vars_u.html#index_u"}]},
 {text:"Typedefs",url:"functions_type.html"},
-{text:"Enumerations",url:"functions_enum.html"}]}]},
+{text:"Enumerations",url:"functions_enum.html"},
+{text:"Related Functions",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[

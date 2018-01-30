@@ -8097,7 +8097,7 @@
                 },
                 "impact":
                 {
-                    "duration": 1.5,
+                    "duration": 2.5,
                     "width": 326,
                     "height": 278,
                     "origin":
@@ -8262,6 +8262,78 @@
         {
             "fragment": "resources/scenes/game/player/connector.frag",
             "vertex": "resources/scenes/game/player/connector.vert"
+        }
+    },
+    "colors":
+    {
+        "weapons":
+        {
+            "weapon01":
+            {
+                "r": 142,
+                "g": 58,
+                "b": 170
+            },
+            "weapon02":
+            {
+                "r": 56,
+                "g": 35,
+                "b": 132
+            },
+            "weapon03":
+            {
+                "r": 153,
+                "g": 10,
+                "b": 10
+            },
+            "weapon04":
+            {
+                "r": 242,
+                "g": 209,
+                "b": 43
+            },
+            "weapon05":
+            {
+                "r": 88,
+                "g": 164,
+                "b": 252
+            },
+            "weapon06":
+            {
+                "r": 193,
+                "g": 68,
+                "b": 31
+            },
+            "weapon07":
+            {
+                "r": 33,
+                "g": 153,
+                "b": 6
+            },
+            "weapon08":
+            {
+                "r": 158,
+                "g": 0,
+                "b": 0
+            },
+            "weapon09":
+            {
+                "r": 26,
+                "g": 165,
+                "b": 72
+            },
+            "weapon10":
+            {
+                "r": 168,
+                "g": 1,
+                "b": 98
+            },
+            "weapon11":
+            {
+                "r": 255,
+                "g": 190,
+                "b": 28
+            }
         }
     }
 }

@@ -7,20 +7,19 @@
 /// </summary>
 GameScene::GameScene(KeyHandler& keyHandler)
 	: Scene("Game")
-	, m_player(keyHandler)
+	, m_background()
+	, m_player(keyHandler, m_background)
 	, m_keyHandler(keyHandler)
 	, m_resources(nullptr)
-	, m_background()
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_asteroidManager()
 	, m_asteroidSpawnTimer(0.0f)
 	, m_asteroidSpawnFrequency(0.0f)
 	, UPDATE_DT(App::getUpdateDeltaTime())
+	, m_enemy(m_player)
 {
 	m_asteroidManager.initAsteroidVector();
 	m_asteroidSpawnFrequency = generateRandomTimer();
-	m_pickup = std::make_unique<Pickup>(Pickup(sf::Vector2f(500, 500), sf::Vector2f(100, 100)));
-	m_pickup->setActive(false);
 }
 
 /// <summary>
@@ -71,26 +70,8 @@ void GameScene::update()
 	{
 		m_player.setAlive(false);
 	}
-	m_asteroidSpawnTimer += UPDATE_DT;
-	if (m_asteroidSpawnTimer >= m_asteroidSpawnFrequency)
-	{
-		int counter = 0;
-		//spawn next unused asteroid here
-		for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
-		{
-			if (uptrAsteroid && !uptrAsteroid->isActive())
-			{
-				if (counter == 0)
-				{
-					uptrAsteroid->reuseAsteroid();
-					counter++;
-				}
-			}
-			m_asteroidSpawnFrequency = generateRandomTimer();
-		}
-		m_asteroidSpawnTimer = 0.0f;
-	}
 	m_player.update();
+	updateAsteroidSpawner();
 	for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
 	{
 		if (uptrAsteroid->isActive())
@@ -98,6 +79,7 @@ void GameScene::update()
 			uptrAsteroid->update();
 		}
 	}
+	m_enemy.update();
 	playerPickupCollision();
 	m_pickup->update();
 	updateCollisions();
@@ -121,6 +103,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 		}
 	}
 	m_player.draw(window, deltaTime);
+	m_enemy.draw(window, deltaTime);
 	m_pickup->draw(window, deltaTime);
 }
 
@@ -198,8 +181,15 @@ void GameScene::bulletAsteroidsCollision()
 							int chance = (rand() % 11); //generate number from 0 - 10
 							if (chance > 2 )
 							{
-								sf::Vector2f pos = sf::Vector2f(asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y);
-								m_pickup = std::make_unique<Pickup>(Pickup(pos, sf::Vector2f(100, 100)));
+								BulletTypes pickupType = m_player.getWeaponType();
+								auto weaponNum = static_cast<int>(pickupType);
+								weaponNum++;
+								if (weaponNum < static_cast<int>(BulletTypes::AmountOfTypes))
+								{
+									pickupType = static_cast<BulletTypes>(weaponNum);
+									sf::Vector2f pos = sf::Vector2f(asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y);
+									m_pickup = std::make_unique<Pickup>(Pickup(m_resources->m_sptrPickup, pos, sf::Vector2f(100, 100), pickupType));
+								}
 							}
 						}
 					}
@@ -216,18 +206,35 @@ void GameScene::bulletAsteroidsCollision()
 /// </summary>
 void GameScene::playerAsteroidCollision()
 {
-	auto & asteroidVector = m_asteroidManager.getAsteroidVector();
-	for (auto itt = asteroidVector.begin(), end2 = asteroidVector.end(); itt != end2; ++itt)
+	if (m_player.isAlive())
 	{
-		auto & asteroid = **itt;
-		if (asteroid.isActive())
+		auto & asteroidVector = m_asteroidManager.getAsteroidVector();
+		for (auto itt = asteroidVector.begin(), end2 = asteroidVector.end(); itt != end2; ++itt)
 		{
-			if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
+			auto & asteroid = **itt;
+			if (asteroid.isActive())
 			{
-				m_player.decrementShield(25.0f);
-				asteroid.decrementHealth(10.0f);
+				if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
+				{
+					m_player.decrementShield(25.0f);
+					asteroid.decrementHealth(10.0f);
+				}
 			}
 		}
+	}
+}
+
+/// <summary>
+/// @brief Checks for collision between player and basic enemy.
+/// 
+/// 
+/// </summary>
+void GameScene::playerEnemyCollision()
+{
+	if (m_enemy.checkCollision(m_player.getShieldCollisionCircle()))
+	{
+		// Hit
+		std::cout << "Player Hit !\n";
 	}
 }
 
@@ -287,17 +294,42 @@ void GameScene::playerPickupCollision()
 {
 	if (m_pickup->isActive())
 	{
-		sf::Vector2f vector = m_player.getPosition() - m_pickup->getPosition();
+		sf::Vector2f vector = m_player.getPosition() - m_pickup->getRightPosition();
 		float length = thor::length(vector);
 		if (length < 100)
 		{
-			sf::Vector2f unitVec = thor::unitVector(vector);
-			m_pickup->setVelocity(unitVec * (length * 0.1f));
-			if (length < 10)
+			m_player.setCanFire(false);
+			m_player.setAttachedWeapons(false);
+			//decrease alpha of the pickup effect
+			m_pickup->fadeOutEffect();
+
+			//LEFT WEAPON CALCULATIONS
+			sf::Vector2f leftPosVec = m_player.getLeftWeaponPos() - m_pickup->getRightPosition();
+			sf::Vector2f unitVecLeft = thor::unitVector(leftPosVec);
+			float leftLength = thor::length(leftPosVec);
+
+			//RIGHT WEAPON CALCULATIONS
+			sf::Vector2f rightPosVec = m_player.getRightWeaponPos() - m_pickup->getLeftPosition();
+			sf::Vector2f unitVecRight = thor::unitVector(rightPosVec);
+			float rightLength = thor::length(rightPosVec);
+
+			m_pickup->setRightVelocity((unitVecLeft * (length * 5.2f))* App::getUpdateDeltaTime());
+			m_pickup->setLeftVelocity((unitVecRight * (length * 5.2f)) * App::getUpdateDeltaTime());
+			m_player.fadeOutWeapons();
+			
+			m_player.setConnectorPos(m_pickup->getLeftPosition(), m_pickup->getRightPosition());
+
+			if (leftLength < 10 && rightLength < 10)
 			{
+				m_player.setWeaponsAlpha(255);
+				m_player.setAttachedWeapons(true);
 				m_player.nextWeapon();
 				m_pickup->setActive(false);
 			}
+		}
+		else
+		{
+			m_pickup->setEffectAlpha(255);
 		}
 	}
 }
@@ -309,7 +341,35 @@ void GameScene::playerPickupCollision()
 /// </summary>
 float GameScene::generateRandomTimer()
 {
-	return m_asteroidSpawnFrequency = rand() % 4; //generate number from 0 to 3
+	return m_asteroidSpawnFrequency = static_cast<float>(rand() % 4); //generate number from 0 to 3
+}
+
+/// <summary>
+/// @brief this method spawns an asteroid once a timer reaches its max.
+/// 
+/// 
+/// </summary>
+void GameScene::updateAsteroidSpawner()
+{
+	m_asteroidSpawnTimer += UPDATE_DT;
+	if (m_asteroidSpawnTimer >= m_asteroidSpawnFrequency)
+	{
+		int counter = 0;
+		//spawn next unused asteroid here
+		for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
+		{
+			if (uptrAsteroid && !uptrAsteroid->isActive())
+			{
+				if (counter == 0)
+				{
+					uptrAsteroid->reuseAsteroid();
+					counter++;
+				}
+			}
+			m_asteroidSpawnFrequency = generateRandomTimer();
+		}
+		m_asteroidSpawnTimer = 0.0f;
+	}
 }
 
 /// <summary>
@@ -332,15 +392,16 @@ void GameScene::setup(const std::string & filePath)
 {
 	auto & resourceHandler = ResourceHandler::get();
 
-	// Loading Game Scene Raw Text file.
-	std::ifstream rawFile(filePath);
-	// Defines the Game Scene's Json Parser
-	json::json gameSceneParser;
-	rawFile >> gameSceneParser; // Parsing raw text file into json parser.
+	json::json gameSceneParser = util::loadJsonFromFile(filePath);
 
 	if (!m_resources)
 	{
 		m_resources = std::make_unique<Resources>();
+
+		////////////////////////////////////////////
+		// Setup Enemies
+		////////////////////////////////////////////
+		this->setupEnemies(resourceHandler, m_resources->m_sptrEnemies, gameSceneParser);
 
 		////////////////////////////////////////////
 		// Setup Player
@@ -351,10 +412,18 @@ void GameScene::setup(const std::string & filePath)
 		// Setup Background
 		////////////////////////////////////////////
 		this->setupBackground(resourceHandler, m_resources->m_sptrBackground, gameSceneParser);
+
+		////////////////////////////////////////////
+		// Setup Pickups
+		////////////////////////////////////////////
+		this->setupPickups(resourceHandler, m_resources->m_sptrPickup, gameSceneParser);
 	}
 
+	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemy);
 	m_player.init(m_resources->m_sptrPlayer);
 	m_background.init(m_resources->m_sptrBackground);
+	m_pickup = std::make_unique<Pickup>(Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered));
+	m_pickup->setActive(false);
 }
 
 /// <summary>
@@ -369,11 +438,7 @@ void GameScene::setupPlayer(ResourceHandler & resourceHandler, std::shared_ptr<P
 {
 	std::string const PLAYER_ID("player");
 
-	// Loading player Raw Text File
-	std::ifstream playerRawFile(gameSceneParser.at(PLAYER_ID).get<std::string>());
-	// Defines the Player's Json Parser
-	json::json playerJson;
-	playerRawFile >> playerJson; // Parsing raw text file into json parser.
+	json::json playerJson = util::loadJsonFromFile(gameSceneParser.at(PLAYER_ID).get<std::string>());
 
 	////////////////////////////////////////////
 	// Setup Ship resources
@@ -467,9 +532,13 @@ void GameScene::setupWeapons(ResourceHandler & resourceHandler, std::shared_ptr<
 /// <param name="playerParser">defines reference to a initialize json parser.</param>
 /// <param name="id">defines the id of our weapon.</param>
 /// <returns>returns a unique pointer to our Weapon::Resources::WeaponAnimation.</returns>
-std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeaponAnim(ResourceHandler & resourceHandler, json::json & weaponParser, std::string const & id)
+std::unique_ptr<Weapon::Resources::IndividualWeapon> GameScene::setupWeaponAnim(ResourceHandler & resourceHandler, json::json & weaponParser, std::string const & id)
 {
+	Weapon::Resources::IndividualWeapon weaponResource;
+
 	std::string const ANIM_STR = "animation";
+	std::string const COLOR_STR = "colors";
+	std::string const WEAPONS_STR = "weapons";
 
 	std::string const BEGIN_ID = id + "_begin";
 	auto uptrBeginAnimation = std::make_unique<Weapon::Resources::Animation>();
@@ -483,6 +552,8 @@ std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeaponAnim(R
 	auto beginAnimationOrigin = sf::Vector2f(jsonBeginOrigin.at("x").get<float>(), jsonBeginOrigin.at("y").get<float>());
 	beginAnimation.m_origin = std::move(beginAnimationOrigin);
 	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, BEGIN_ID);
+	
+	weaponResource.m_uptrBeginAnimation.swap(uptrBeginAnimation);
 
 	std::string const shootID = id + "_shoot";
 	auto uptrShootAnimation = std::make_unique<Weapon::Resources::Animation>();
@@ -496,8 +567,18 @@ std::unique_ptr<Weapon::Resources::WeaponAnimation> GameScene::setupWeaponAnim(R
 	auto shootAnimationOrigin = sf::Vector2f(jsonShootOrigin.at("x").get<float>(), jsonShootOrigin.at("y").get<float>());
 	shootAnimation.m_origin = std::move(shootAnimationOrigin);
 	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, shootID);
+
+	weaponResource.m_uptrShootAnimation.swap(uptrShootAnimation);
+
+	auto & jsonWepColor = weaponParser.at(COLOR_STR).at(WEAPONS_STR).at(id);
+	auto uptrBgColor = std::make_unique<sf::Color>();
+	auto & bgColor = *uptrBgColor;
+	bgColor.r = jsonWepColor.at("r").get<sf::Uint8>();
+	bgColor.g = jsonWepColor.at("g").get<sf::Uint8>();
+	bgColor.b = jsonWepColor.at("b").get<sf::Uint8>();
+	weaponResource.m_uptrBgColor.swap(uptrBgColor);
 	
-	return std::make_unique<Weapon::Resources::WeaponAnimation>(std::make_pair(std::move(uptrBeginAnimation), std::move(uptrShootAnimation)));
+	return std::make_unique<Weapon::Resources::IndividualWeapon>(std::move(weaponResource));
 }
 
 /// <summary>
@@ -560,7 +641,7 @@ void GameScene::setupBulletManager(ResourceHandler & resourceHandler, std::share
 /// <param name="sptrBulletResources">shared pointer to our bullet resources map, assumed to be a valid pointer (initialized).</param>
 /// <param name="bulletType">read-only reference to the type of bullet we want to load.</param>
 /// <param name="bulletParser">reference to loaded json file ready to be parsed.</param>
-/// <param name="id">read-only reference to the id of bullet to setup.</param>
+/// <param name="id">read-only reference to the id of bullet to set up.</param>
 void GameScene::setupBullet(
 	ResourceHandler & resourceHandler
 	, std::shared_ptr<BulletManager::Resources::BulletResources> sptrBulletResourceMap
@@ -718,12 +799,180 @@ void GameScene::setupBackground(ResourceHandler & resourceHandler, std::shared_p
 {
 	std::string const BACKGROUND_ID("background");
 
-	// Loading background Raw Text File
-	std::ifstream backgroundRawFile(gameSceneParser.at(BACKGROUND_ID).get<std::string>());
-	// Defines the Background's Json Parser
-	json::json backgroundJson;
-	backgroundRawFile >> backgroundJson; // Parsing raw text file into json parser.
+	json::json backgroundJson = util::loadJsonFromFile(gameSceneParser.at(BACKGROUND_ID).get<std::string>());
 
 	sptrBackgroundResources->m_sptrBgShader = resourceHandler.loadUp<sf::Shader>(backgroundJson, BACKGROUND_ID);
+}
+
+/// <summary>
+/// @brief Setups Pickup::Resources.
+/// 
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="sptrBackgroundResources">shared pointer to our pickup resources, assumed to be a valid pointer (initialized).</param>
+/// <param name="gameSceneParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupPickups(ResourceHandler & resourceHandler, std::shared_ptr<Pickup::Resources> sptrPickupResources, json::json & gameSceneParser)
+{
+	std::string const PICKUP_JSON_ID("pickup");
+	std::string const JSON_WEAPONS("weapons");
+	std::string const JSON_EFFECT("effect");
+
+	std::ifstream pickupRawFile(gameSceneParser.at(PICKUP_JSON_ID).get<std::string>());
+	// Define the pickup json parser
+	json::json pickupJson;
+	pickupRawFile >> pickupJson;
+
+	this->setupPickupEffect(resourceHandler, sptrPickupResources->m_effect, pickupJson.at(JSON_EFFECT));
+
+	json::json & pickupWepJson = pickupJson.at(JSON_WEAPONS);
+
+	auto const MAX_BULLET_TYPES = static_cast<int>(BulletTypes::AmountOfTypes);
+	int i = 0;
+	for (auto itt = pickupWepJson.begin(), end = pickupWepJson.end(); itt != end; ++itt)
+	{
+		BulletTypes const BULLET_TYPE = static_cast<BulletTypes>(i);
+		this->setupPickup(resourceHandler, sptrPickupResources->m_pickups, *itt, BULLET_TYPE);
+		if (i < MAX_BULLET_TYPES)
+		{
+			i++;
+		}
+	}
+}
+
+/// <summary>
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="pickupMap">reference to pickup resource map.</param>
+/// <param name="pickupParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupPickup(ResourceHandler & resourceHandler, Pickup::Resources::PickupMap & pickupMap, json::json & pickupParser, BulletTypes const & pickupTypes)
+{
+	std::string const JSON_WEAPON_KEY("key");
+
+	std::string const JSON_WEAPON_TEXTURE("texture");
+	json::json & weaponTextureParser = pickupParser.at(JSON_WEAPON_TEXTURE);
+
+	std::string const JSON_TEXTURE_PATH("path");
+	std::string const JSON_TEXTURE_SCALE("scale");
+	std::string const JSON_TEXTURE_ORIGIN("origin");
+
+	std::string const JSON_TEXTURE_FRAME("frame");
+	json::json & textureFrameParser = weaponTextureParser.at(JSON_TEXTURE_FRAME);
+
+	Pickup::Resources::IndividualPickup pickupData;
+	pickupData.m_id = pickupParser.at(JSON_WEAPON_KEY).get<std::string>();
+
+	pickupData.m_scale.x = weaponTextureParser.at(JSON_TEXTURE_SCALE).at("x").get<float>();
+	pickupData.m_scale.y = weaponTextureParser.at(JSON_TEXTURE_SCALE).at("y").get<float>();
+
+	pickupData.m_origin.x = weaponTextureParser.at(JSON_TEXTURE_ORIGIN).at("x").get<float>();
+	pickupData.m_origin.y = weaponTextureParser.at(JSON_TEXTURE_ORIGIN).at("y").get<float>();
+
+	pickupData.m_frame.left = textureFrameParser.at("x").get<int>();
+	pickupData.m_frame.top = textureFrameParser.at("y").get<int>();
+	pickupData.m_frame.width = textureFrameParser.at("w").get<int>();
+	pickupData.m_frame.height = textureFrameParser.at("h").get<int>();
+
+	pickupData.m_texture = resourceHandler.loadUp<sf::Texture>(weaponTextureParser.at(JSON_TEXTURE_PATH).get<std::string>(), pickupData.m_id);
+
+	// Now everything is ready to be inserted to the map
+
+	auto mapPair = std::make_pair(pickupTypes, pickupData);
+	pickupMap.insert(std::move(mapPair));
+}
+
+/// <summary>
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using file path and an ID.</param>
+/// <param name="pickupMap">reference to pickup effect.</param>
+/// <param name="pickupParser">reference to loaded json file ready to be parsed.</param>
+void GameScene::setupPickupEffect(ResourceHandler & resourceHandler, Pickup::Resources::Effect & effect, json::json & effectParser)
+{
+	// ID used to by resource handler to id the texture and the animation.
+	std::string const EFFECT_ID("pickup-effect");
+
+	// Parse Texture Json node
+
+	std::string const JSON_TEXTURE("texture");
+	json::json & effectTextureParser = effectParser.at(JSON_TEXTURE);
+
+	std::string const JSON_TEXTURE_PATH("path");
+	std::string const JSON_TEXTURE_ORIGIN("origin");
+	std::string const JSON_TEXTURE_SCALE("scale");
+	std::string const JSON_TEXTURE_FRAME("frame");
+
+	effect.m_texture.m_id = EFFECT_ID;
+	effect.m_texture.m_origin.x = effectTextureParser.at(JSON_TEXTURE_ORIGIN).at("x").get<float>();
+	effect.m_texture.m_origin.y = effectTextureParser.at(JSON_TEXTURE_ORIGIN).at("y").get<float>();
+	sf::Vector2f scale = { 0.0f,0.0f };
+	scale.x = effectTextureParser.at(JSON_TEXTURE_SCALE).at("x").get<float>();
+	scale.y = effectTextureParser.at(JSON_TEXTURE_SCALE).at("y").get<float>();
+	effect.m_texture.m_scale = std::move(scale);
+	sf::IntRect frame = { 0,0,0,0 };
+	frame.left = effectTextureParser.at(JSON_TEXTURE_FRAME).at("x").get<int>();
+	frame.top = effectTextureParser.at(JSON_TEXTURE_FRAME).at("y").get<int>();
+	frame.width = effectTextureParser.at(JSON_TEXTURE_FRAME).at("w").get<int>();
+	frame.height = effectTextureParser.at(JSON_TEXTURE_FRAME).at("h").get<int>();
+	effect.m_texture.m_frame = std::move(frame);
+	effect.m_texture.m_texture =
+		resourceHandler.loadUp<sf::Texture>(effectTextureParser.at(JSON_TEXTURE_PATH).get<std::string>(), EFFECT_ID);
+	assert(nullptr != effect.m_texture.m_texture);
+
+	// Parse Animation Json node
+
+	std::string const JSON_ANIMATION("animation");
+	json::json & effectAnimationParser = effectParser.at(JSON_ANIMATION);
+
+	std::string const JSON_ANIMATION_DURATION("duration");
+	std::string const JSON_ANIMATION_WIDTH("width");
+	std::string const JSON_ANIMATION_HEIGHT("height");
+	std::string const JSON_ANIMATION_ORIGIN("origin");
+	std::string const JSON_ANIMATION_FRAMES("frames");
+
+	effect.m_animation.m_id = EFFECT_ID;
+	effect.m_animation.m_duration = sf::seconds(effectAnimationParser.at(JSON_ANIMATION_DURATION).get<float>());
+	effect.m_animation.m_origin.x = effectAnimationParser.at(JSON_ANIMATION_ORIGIN).at("x").get<float>();
+	effect.m_animation.m_origin.y = effectAnimationParser.at(JSON_ANIMATION_ORIGIN).at("y").get<float>();
+	effect.m_animation.m_sptrTexture = effect.m_texture.m_texture; // Use the texture already loaded.
+
+	effect.m_animation.m_sptrFrames = std::make_shared<thor::FrameAnimation>();
+	json::json & effectAnimationFrames = effectAnimationParser.at(JSON_ANIMATION_FRAMES);
+	auto const FRAME_WIDTH = effectAnimationParser.at(JSON_ANIMATION_WIDTH).get<int>();
+	auto const FRAME_HEIGHT = effectAnimationParser.at(JSON_ANIMATION_HEIGHT).get<int>();
+	float i = 0.0f;
+	for (
+		auto itt = effectAnimationFrames.begin(), end = effectAnimationFrames.end();
+		itt != end;
+		++itt, ++i
+		)
+	{
+		auto & jsonNode = *itt;
+		sf::IntRect rect;
+		rect.left = jsonNode.at("x").get<int>();
+		rect.top = jsonNode.at("y").get<int>();
+		rect.width = FRAME_WIDTH;
+		rect.height = FRAME_HEIGHT;
+
+		effect.m_animation.m_sptrFrames->addFrame(i, rect);
+	}
+}
+
+/// @brief 
+/// 
+/// 
+/// </summary>
+/// <param name="resourceHandler"></param>
+/// <param name="sptrEnemies"></param>
+/// <param name="gameSceneParser"></param>
+void GameScene::setupEnemies(ResourceHandler & resourceHandler, std::shared_ptr<Resources::Enemies> sptrEnemies, json::json & gameSceneParser)
+{
+	std::string const JSON_ENEMIES("enemies");
+	json::json enemiesJson = util::loadJsonFromFile(gameSceneParser.at(JSON_ENEMIES).get<std::string>());
+
+	std::string const JSON_ENEMY_BASIC("basic");
+
+	ai::AiBasic::setup(sptrEnemies->m_sptrBasicEnemy, resourceHandler, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_BASIC).get<std::string>()));
 }
 

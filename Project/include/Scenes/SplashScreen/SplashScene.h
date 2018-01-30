@@ -1,7 +1,7 @@
 #ifndef SPLASHSCENE_H
 #define SPLASHSCENE_H
 
-#include "Scene.h"
+#include "scenes\Scene.h"
 
 /// 
 /// @brief Represents our splash scene.

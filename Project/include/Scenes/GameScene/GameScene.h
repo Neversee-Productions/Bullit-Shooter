@@ -1,12 +1,18 @@
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
 
-#include "Scene.h"
+// SFML Includes
 #include "SFML\Graphics\RectangleShape.hpp"
+#include "SFML\Audio\Sound.hpp"
+// Thor Includes
 #include "Thor\Animations.hpp"
-#include "tinyheaders\tinyc2.h"
-#include "Entities\Entities.h"
 #include "Thor\Math.hpp"
+// tinyc2 Includes
+#include "tinyheaders\tinyc2.h"
+// Project Includes
+#include "scenes\Scene.h"
+#include "Entities\Entities.h"
+#include "util\JsonLoader.h"
 
 ///
 /// @brief Main game scene.
@@ -27,6 +33,18 @@ private:
 	/// 
 	struct Resources
 	{
+		/// 
+		/// @author Rafael Plugge
+		/// @brief Container of shared pointers to different enemy resources.
+		/// 
+		/// Needed since there are different enemy types.
+		/// 
+		struct Enemies
+		{
+			std::shared_ptr<ai::AiBasic::Resources> m_sptrBasicEnemy =
+				std::make_shared<ai::AiBasic::Resources>();
+		};
+
 		/// <summary>
 		/// @brief shared pointer to player resources.
 		/// 
@@ -45,6 +63,9 @@ private:
 
 		std::shared_ptr<Pickup::Resources> m_sptrPickup =
 			std::make_shared<Pickup::Resources>();
+
+		std::shared_ptr<Enemies> m_sptrEnemies =
+			std::make_shared<Enemies>();
 	};
 
 public:
@@ -54,15 +75,19 @@ public:
 	void stop() final override;
 	void update() final override;
 	void draw(Window & window, const float & deltaTime) final override;
+
+private:
 	void updateCollisions();
 	void bulletAsteroidsCollision();
 	void playerAsteroidCollision();
+	void playerEnemyCollision();
 	void collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
 	void playerPickupCollision();
 	float generateRandomTimer();
+	void updateAsteroidSpawner();
 
 private:
 	void goToNextScene() final override;
@@ -82,7 +107,7 @@ private:
 		, std::shared_ptr<Weapon::Resources> sptrWeaponResources
 		, json::json & weaponParser
 	);
-	std::unique_ptr<Weapon::Resources::WeaponAnimation>
+	std::unique_ptr<Weapon::Resources::IndividualWeapon>
 		setupWeaponAnim(
 			ResourceHandler & resourceHandler
 			, json::json & weaponParser
@@ -108,6 +133,28 @@ private:
 	void setupBackground(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Background::Resources> sptrBackgroundResources
+		, json::json & gameSceneParser
+	);
+	void setupPickups(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<Pickup::Resources> sptrPickupResources
+		, json::json & gameSceneParser
+	);
+	void setupPickup(
+		ResourceHandler & resourceHandler
+		, Pickup::Resources::PickupMap & pickupMap
+		, json::json & pickupParser
+		, BulletTypes const & pickupType
+	);
+	void setupPickupEffect(
+		ResourceHandler & resourceHandler
+		, Pickup::Resources::Effect & effect
+		, json::json & effectParser
+	);
+
+	void setupEnemies(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<Resources::Enemies> sptrEnemies
 		, json::json & gameSceneParser
 	);
 
@@ -180,6 +227,10 @@ private:
 	/// 
 	/// </summary>
 	std::unique_ptr<Pickup> m_pickup;
+
+	// HACK : Temporary enemy
+
+	ai::AiBasic m_enemy;
 };
 
 #endif // !GAMESCENE_H
