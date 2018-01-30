@@ -36,8 +36,39 @@ public:
 	void init(std::shared_ptr<Resources> resources);
 	void update();
 	void draw(Window & window, const float & deltaTime);
+	void setTargetColor(sf::Color const & newColor);
 
 private:
+	void interpolate(float & value, float const & targetValue);
+
+	/// <summary>
+	/// @brief Read only reference to update delta time.
+	/// 
+	/// 
+	/// </summary>
+	float const & m_DELTA_TIME;
+
+	/// <summary>
+	/// @brief Define the background color.
+	/// 
+	/// 
+	/// </summary>
+	sf::Glsl::Vec4 m_bgColor;
+
+	/// <summary>
+	/// @brief Define the target background color.
+	/// 
+	/// background color will always try to interpolate towards
+	/// this color.
+	/// </summary>
+	sf::Glsl::Vec4 m_bgTargetColor;
+
+	/// <summary>
+	/// @brief constant of how much (percent) does a color change per second.
+	/// 
+	/// 
+	/// </summary>
+	float const m_COLOR_CHANGE;
 
 	/// <summary>
 	/// @brief Defines the shape to be drawn.

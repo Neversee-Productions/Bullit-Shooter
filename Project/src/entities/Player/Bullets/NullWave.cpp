@@ -16,7 +16,7 @@ bullets::NullWave::NullWave()
 	m_velocity.y = -m_speed;
 
 	//different size to parent
-	m_bulletRect.setSize(sf::Vector2f(30.0f, 10.0f));
+	m_bulletRect.setSize(sf::Vector2f(70.0f, 25.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 	//change collision rectangle

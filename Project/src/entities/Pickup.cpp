@@ -214,7 +214,7 @@ void Pickup::setActive(bool active)
 /// <param name="alpha">Defines the alpha value.</param>
 void Pickup::setEffectAlpha(float alpha)
 {
-	m_effectSprite.setColor(sf::Color(255, 255, 255, alpha));
+	m_effectSprite.setColor(sf::Color(255u, 255u, 255u, static_cast<sf::Uint8>(alpha)));
 }
 
 /// <summary>
@@ -227,7 +227,7 @@ void Pickup::fadeOutEffect()
 	float fadeVal = 10.0f;
 	if (m_effectSprite.getColor().a > fadeVal)
 	{
-		m_effectSprite.setColor(sf::Color(255, 255, 255, m_effectSprite.getColor().a - fadeVal));
+		m_effectSprite.setColor(sf::Color(255u, 255u, 255u, static_cast<sf::Uint8>(m_effectSprite.getColor().a - fadeVal)));
 	}
 }
 

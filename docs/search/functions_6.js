@@ -9,6 +9,7 @@ var searchData=
   ['getactive',['getActive',['../class_scene_manager.html#a10a725b0d82a65ea7beb2969204d119f',1,'SceneManager']]],
   ['getasteroidvector',['getAsteroidVector',['../class_asteroid_manager.html#ac987354c630398756107476d1cfc474b',1,'AsteroidManager']]],
   ['getbeginanimationid',['getBeginAnimationID',['../class_weapon.html#a62982d0115e34b116d45d6c42f7a8a6f',1,'Weapon']]],
+  ['getbgcolor',['getBgColor',['../class_weapon.html#a7eff8546728a5ad3c77e0d924998ca80',1,'Weapon']]],
   ['getbulletmap',['getBulletMap',['../class_bullet_manager.html#a55909cda5bcaa595efe6187880f2d812',1,'BulletManager::getBulletMap()'],['../class_player.html#afa684cfe07e806cff11e8973e4761aaa',1,'Player::getBulletMap()']]],
   ['getbullettype',['getBulletType',['../class_weapon.html#a48a9cf1c2632688dbec93ae8a05307df',1,'Weapon']]],
   ['getcanfire',['getCanFire',['../class_weapon.html#a3d2b61417ebdf34a8e0942a3d3413339',1,'Weapon']]],
@@ -40,6 +41,6 @@ var searchData=
   ['getviewc2rect',['getViewC2Rect',['../class_app.html#a0656955b498a6a4a10b26089e624779c',1,'App']]],
   ['getviewsize',['getViewSize',['../class_app.html#a5ed1598aaff7e98ea2c9f4f28210491d',1,'App']]],
   ['getweapontype',['getWeaponType',['../class_player.html#ab9d836dc9e4084b219d50100d1879468',1,'Player']]],
-  ['gotonextscene',['goToNextScene',['../class_scene.html#a296905face0ec648e564c059a9404b44',1,'Scene::goToNextScene()'],['../class_scene_manager.html#ab5a98ee1a0334f0b9d53d5ed4d5bd096',1,'SceneManager::goToNextScene()'],['../class_game_scene.html#a1720031b70e644e1b6975b15decdda62',1,'GameScene::goToNextScene()'],['../class_main_menu_scene.html#a7dbbcf7ee5fe4b3682e501e309e6e942',1,'MainMenuScene::goToNextScene()'],['../class_options_scene.html#a5846a8c0e6f02f6bb69838d2b310126e',1,'OptionsScene::goToNextScene()'],['../class_splash_scene.html#a57cf79cf736737a5b585583761585c63',1,'SplashScene::goToNextScene()'],['../class_title_scene.html#aa0f671118e3c6189e5fbe939667e8c86',1,'TitleScene::goToNextScene()']]],
+  ['gotonextscene',['goToNextScene',['../class_game_scene.html#a1720031b70e644e1b6975b15decdda62',1,'GameScene::goToNextScene()'],['../class_main_menu_scene.html#a7dbbcf7ee5fe4b3682e501e309e6e942',1,'MainMenuScene::goToNextScene()'],['../class_options_scene.html#a5846a8c0e6f02f6bb69838d2b310126e',1,'OptionsScene::goToNextScene()'],['../class_scene.html#a296905face0ec648e564c059a9404b44',1,'Scene::goToNextScene()'],['../class_scene_manager.html#ab5a98ee1a0334f0b9d53d5ed4d5bd096',1,'SceneManager::goToNextScene()'],['../class_splash_scene.html#a57cf79cf736737a5b585583761585c63',1,'SplashScene::goToNextScene()'],['../class_title_scene.html#aa0f671118e3c6189e5fbe939667e8c86',1,'TitleScene::goToNextScene()']]],
   ['gui',['GUI',['../classgui_1_1_g_u_i.html#acc3d2a359b7705766fd16eb8942b9741',1,'gui::GUI']]]
 ];

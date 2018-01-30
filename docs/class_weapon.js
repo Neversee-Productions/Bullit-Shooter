@@ -7,6 +7,7 @@ var class_weapon =
     [ "draw", "class_weapon.html#a091763bf26419b9df5b0ae1d9dac639a", null ],
     [ "fadeOut", "class_weapon.html#ad4646fbbf31e7edd344993bd85853f22", null ],
     [ "getBeginAnimationID", "class_weapon.html#a62982d0115e34b116d45d6c42f7a8a6f", null ],
+    [ "getBgColor", "class_weapon.html#a7eff8546728a5ad3c77e0d924998ca80", null ],
     [ "getBulletType", "class_weapon.html#a48a9cf1c2632688dbec93ae8a05307df", null ],
     [ "getCanFire", "class_weapon.html#a3d2b61417ebdf34a8e0942a3d3413339", null ],
     [ "getIsFlipped", "class_weapon.html#ad80ec295390667a49be2f794737b244e", null ],

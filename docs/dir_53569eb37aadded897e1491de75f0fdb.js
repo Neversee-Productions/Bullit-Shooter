@@ -24,6 +24,7 @@ var dir_53569eb37aadded897e1491de75f0fdb =
     [ "Weapon.h", "_weapon_8h.html", [
       [ "Weapon", "class_weapon.html", "class_weapon" ],
       [ "Resources", "struct_weapon_1_1_resources.html", "struct_weapon_1_1_resources" ],
-      [ "Animation", "struct_weapon_1_1_resources_1_1_animation.html", "struct_weapon_1_1_resources_1_1_animation" ]
+      [ "Animation", "struct_weapon_1_1_resources_1_1_animation.html", "struct_weapon_1_1_resources_1_1_animation" ],
+      [ "IndividualWeapon", "struct_weapon_1_1_resources_1_1_individual_weapon.html", "struct_weapon_1_1_resources_1_1_individual_weapon" ]
     ] ]
 ];

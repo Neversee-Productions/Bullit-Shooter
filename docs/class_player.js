@@ -1,7 +1,7 @@
 var class_player =
 [
     [ "Resources", "struct_player_1_1_resources.html", "struct_player_1_1_resources" ],
-    [ "Player", "class_player.html#a7440c280452f6ee2737dad2e2abe2962", null ],
+    [ "Player", "class_player.html#a2330aca7977454b7410c8d3ef6e34327", null ],
     [ "decrementShield", "class_player.html#afcebea07c5f1cb30c37bbf776f46fd34", null ],
     [ "draw", "class_player.html#a5a4253c07c2dd1428de5d1dac00098c2", null ],
     [ "fadeOutWeapons", "class_player.html#af285d0324643f25a620709d5cf080860", null ],
@@ -28,6 +28,7 @@ var class_player =
     [ "deltaTime", "class_player.html#a9826d13da7dab6275a99aab6fdb66c2a", null ],
     [ "m_alive", "class_player.html#a3fad13aa5cd566b11195de43909b9cb5", null ],
     [ "m_attachedWeapons", "class_player.html#a25030663302c7d904ed24a0ad5443060", null ],
+    [ "m_background", "class_player.html#a229ea5312ff9092888ee71c0c88fc80e", null ],
     [ "m_bulletManager", "class_player.html#a6d27e83de4dc129a5976c1ea6d32cbd1", null ],
     [ "m_connectLeftWeaponToShip", "class_player.html#a92ad0d1c8057a1ccab8e4d06b1e79b3e", null ],
     [ "m_connectRightWeaponToShip", "class_player.html#a7b7927fd14be8ac126bd200ed42cd0bd", null ],

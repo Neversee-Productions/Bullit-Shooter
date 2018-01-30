@@ -104,8 +104,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7440c280452f6ee2737dad2e2abe2962"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7440c280452f6ee2737dad2e2abe2962">Player</a> (<a class="el" href="class_key_handler.html">KeyHandler</a> &amp;keyHandler)</td></tr>
-<tr class="separator:a7440c280452f6ee2737dad2e2abe2962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2330aca7977454b7410c8d3ef6e34327"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a2330aca7977454b7410c8d3ef6e34327">Player</a> (<a class="el" href="class_key_handler.html">KeyHandler</a> &amp;keyHandler, <a class="el" href="class_background.html">Background</a> &amp;background)</td></tr>
+<tr class="separator:a2330aca7977454b7410c8d3ef6e34327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add091bd8b92b2ee8e6d809b8c162eed5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#add091bd8b92b2ee8e6d809b8c162eed5">init</a> (std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Resources</a> &gt; resources)</td></tr>
 <tr class="separator:add091bd8b92b2ee8e6d809b8c162eed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a4253c07c2dd1428de5d1dac00098c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a5a4253c07c2dd1428de5d1dac00098c2">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;<a class="el" href="class_player.html#a9826d13da7dab6275a99aab6fdb66c2a">deltaTime</a>)</td></tr>
@@ -158,6 +158,8 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a229ea5312ff9092888ee71c0c88fc80e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_background.html">Background</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a229ea5312ff9092888ee71c0c88fc80e">m_background</a></td></tr>
+<tr class="separator:a229ea5312ff9092888ee71c0c88fc80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2d2524643689b736c5d0eb2ae4e7d9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ship.html">Ship</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad2d2524643689b736c5d0eb2ae4e7d9b">m_ship</a></td></tr>
 <tr class="separator:ad2d2524643689b736c5d0eb2ae4e7d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a02a8129cf8e6f8444ad6d99bf71537"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_weapon.html">Weapon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3a02a8129cf8e6f8444ad6d99bf71537">m_weaponLeft</a></td></tr>
@@ -195,8 +197,8 @@ Private Attributes</h2></td></tr>
 Rafael Plugge</dd></dl>
 <p>Defines the player class. This class will create the <a class="el" href="class_weapon.html" title="Weapon class. ">Weapon</a>, <a class="el" href="class_shield.html" title="Shield class. ">Shield</a>, <a class="el" href="class_ship.html" title="Ship class. ">Ship</a> and <a class="el" href="class_bullet_manager.html" title="The bullet manager class. ">BulletManager</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7440c280452f6ee2737dad2e2abe2962"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7440c280452f6ee2737dad2e2abe2962">&#9670;&nbsp;</a></span>Player()</h2>
+<a id="a2330aca7977454b7410c8d3ef6e34327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2330aca7977454b7410c8d3ef6e34327">&#9670;&nbsp;</a></span>Player()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,8 +207,18 @@ Rafael Plugge</dd></dl>
           <td class="memname">Player::Player </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td>
-          <td class="paramname"><em>keyHandler</em></td><td>)</td>
+          <td class="paramname"><em>keyHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_background.html">Background</a> &amp;&#160;</td>
+          <td class="paramname"><em>background</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -800,6 +812,30 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>this boolean will determine if the connectors are attached to weapon.</p>
+
+</div>
+</div>
+<a id="a229ea5312ff9092888ee71c0c88fc80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a229ea5312ff9092888ee71c0c88fc80e">&#9670;&nbsp;</a></span>m_background</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_background.html">Background</a>&amp; Player::m_background</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>reference to the background.</p>
+<p><a class="el" href="class_weapon.html" title="Weapon class. ">Weapon</a> type alters the color of the background therefore background is coupled to player. </p>
 
 </div>
 </div>

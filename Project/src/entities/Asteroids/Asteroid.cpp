@@ -139,7 +139,7 @@ void Asteroid::generateRandomPos()
 	m_position.y = -m_rectangle.getGlobalBounds().height; //x stays same offscreen value
 	
 	int temp = rand() % App::getViewSize().x; //generate number between 0 and right side of screen
-	m_position.x = temp;
+	m_position.x = static_cast<float>(temp);
 }
 
 /// <summary>

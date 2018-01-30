@@ -102,19 +102,25 @@ public:
 			std::shared_ptr<sf::Texture> m_sptrTexture = nullptr;
 		};
 
-		/// <summary>
-		/// @brief Define alias for animation container.
+		/// 
+		/// @author Rafael Plugge
+		/// @brief Contains what each individual weapon needs.
 		/// 
 		/// 
-		/// </summary>
-		typedef std::pair<std::unique_ptr<Animation>, std::unique_ptr<Animation>> WeaponAnimation;
+		/// 
+		struct IndividualWeapon
+		{
+			std::unique_ptr<Animation> m_uptrBeginAnimation;
+			std::unique_ptr<Animation> m_uptrShootAnimation;
+			std::unique_ptr<sf::Color> m_uptrBgColor;
+		};
 		
 		/// <summary>
 		/// @brief Defines vector of unique pointers to our weapon animations.
 		/// 
 		/// 
 		/// </summary>
-		std::vector<std::unique_ptr<WeaponAnimation>> m_weaponAnimations;
+		std::vector<std::unique_ptr<IndividualWeapon>> m_weaponAnimations;
 	};
 
 public:
@@ -135,7 +141,7 @@ public:
 	std::string const & getBeginAnimationID() const;
 	void fadeOut();
 	void setAlpha(float alpha);
-
+	sf::Color const & getBgColor() const;
 private:
 	/// <summary>
 	/// @brief define the weapon rectangle.

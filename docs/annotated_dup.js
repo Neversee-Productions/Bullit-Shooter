@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "ai", "namespaceai.html", "namespaceai" ],
     [ "bullets", "namespacebullets.html", "namespacebullets" ],
     [ "gui", "namespacegui.html", "namespacegui" ],
     [ "App", "class_app.html", "class_app" ],

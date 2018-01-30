@@ -6,8 +6,9 @@
 /// Will construct the player and initializes members
 /// </summary>
 /// <param name="keyHandler">Reference to the key handler</param>
-Player::Player(KeyHandler& keyHandler)
-	: m_ship()
+Player::Player(KeyHandler& keyHandler, Background & background)
+	: m_background(background)
+	, m_ship()
 	, m_weaponLeft()
 	, m_connectLeftWeaponToShip()
 	, m_weaponRight()
@@ -43,6 +44,7 @@ void Player::init(std::shared_ptr<Resources> sptrResources)
 	m_connectLeftWeaponToShip.init(sptrResources->m_connector);
 	m_connectRightWeaponToShip.init(sptrResources->m_connector);
 	m_bulletManager.init(sptrResources->m_bullets);
+	m_background.setTargetColor(m_weaponLeft.getBgColor());
 }
 
 /// <summary>
@@ -184,56 +186,67 @@ void Player::switchWeaponInput()
 	{
 		m_weaponLeft.setType(BulletTypes::Standard);
 		m_weaponRight.setType(BulletTypes::Standard);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_TWO)
 	{
 		m_weaponLeft.setType(BulletTypes::Empowered);
 		m_weaponRight.setType(BulletTypes::Empowered);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_THREE)
 	{
 		m_weaponLeft.setType(BulletTypes::DeathOrb);
 		m_weaponRight.setType(BulletTypes::DeathOrb);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_FOUR)
 	{
 		m_weaponLeft.setType(BulletTypes::FireBlast);
 		m_weaponRight.setType(BulletTypes::FireBlast);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_FIVE)
 	{
 		m_weaponLeft.setType(BulletTypes::HolySphere);
 		m_weaponRight.setType(BulletTypes::HolySphere);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_SIX)
 	{
 		m_weaponLeft.setType(BulletTypes::MagmaShot);
 		m_weaponRight.setType(BulletTypes::MagmaShot);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_SEVEN)
 	{
 		m_weaponLeft.setType(BulletTypes::NapalmSphere);
 		m_weaponRight.setType(BulletTypes::NapalmSphere);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_EIGHT)
 	{
 		m_weaponLeft.setType(BulletTypes::CometShot);
 		m_weaponRight.setType(BulletTypes::CometShot);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_NINE)
 	{
 		m_weaponLeft.setType(BulletTypes::NullWave);
 		m_weaponRight.setType(BulletTypes::NullWave);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_ZERO)
 	{
 		m_weaponLeft.setType(BulletTypes::StaticSphere);
 		m_weaponRight.setType(BulletTypes::StaticSphere);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 	else if (KEY_DASH)
 	{
 		m_weaponLeft.setType(BulletTypes::PyroBlast);
 		m_weaponRight.setType(BulletTypes::PyroBlast);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
 }
 
@@ -305,46 +318,57 @@ void Player::nextWeapon()
 	case BulletTypes::Standard:
 		m_weaponLeft.setType(BulletTypes::Empowered);
 		m_weaponRight.setType(BulletTypes::Empowered);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::Empowered:
 		m_weaponLeft.setType(BulletTypes::DeathOrb);
 		m_weaponRight.setType(BulletTypes::DeathOrb);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::DeathOrb:
 		m_weaponLeft.setType(BulletTypes::FireBlast);
 		m_weaponRight.setType(BulletTypes::FireBlast);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::FireBlast:
 		m_weaponLeft.setType(BulletTypes::HolySphere);
 		m_weaponRight.setType(BulletTypes::HolySphere);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::HolySphere:
 		m_weaponLeft.setType(BulletTypes::MagmaShot);
 		m_weaponRight.setType(BulletTypes::MagmaShot);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::MagmaShot:
 		m_weaponLeft.setType(BulletTypes::NapalmSphere);
 		m_weaponRight.setType(BulletTypes::NapalmSphere);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::NapalmSphere:
 		m_weaponLeft.setType(BulletTypes::CometShot);
 		m_weaponRight.setType(BulletTypes::CometShot);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::CometShot:
 		m_weaponLeft.setType(BulletTypes::NullWave);
 		m_weaponRight.setType(BulletTypes::NullWave);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::NullWave:
 		m_weaponLeft.setType(BulletTypes::StaticSphere);
 		m_weaponRight.setType(BulletTypes::StaticSphere);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::StaticSphere:
 		m_weaponLeft.setType(BulletTypes::PyroBlast);
 		m_weaponRight.setType(BulletTypes::PyroBlast);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	case BulletTypes::PyroBlast:
 		m_weaponLeft.setType(BulletTypes::Standard);
 		m_weaponRight.setType(BulletTypes::Standard);
+		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		break;
 	default:
 		break;
