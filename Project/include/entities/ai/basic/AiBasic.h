@@ -167,6 +167,10 @@ namespace ai
 		static void setup(AiBase::Resources::Animation & animResources, ResourceHandler & resourceHandler, json::json & animationParser, std::string const & id);
 		void initStates();
 		void initRenderingQuad();
+		void initAnimations();
+		void setTexture(std::string const & id);
+		void playAnimation(std::string const & id, bool const & loop = false);
+		void stopAnimation();
 
 	private: // Private Member Variables
 		/// <summary>
@@ -192,6 +196,13 @@ namespace ai
 		/// the current state.
 		/// </summary>
 		std::shared_ptr<BasicState> m_sptrState;
+
+		/// <summary>
+		/// @brief shared pointer to our resources.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<Resources> m_sptrResources;
 
 		/// <summary>
 		/// @brief Static id of idle state.
@@ -221,6 +232,13 @@ namespace ai
 		/// </summary>
 		static std::string s_RECOVER_ID;
 
+		/// <summary>
+		/// @brief Static defines whether to color in states.
+		/// 
+		/// If true than all the states will be colored onto
+		/// the render quad of each ai.
+		/// </summary>
+		static bool const s_COLOR_STATES;
 	};
 
 	/// <summary>

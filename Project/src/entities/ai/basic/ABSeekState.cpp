@@ -22,8 +22,11 @@ ai::states::AiBasicSeekState::AiBasicSeekState(AiBasic & aiUnit)
 /// </summary>
 void ai::states::AiBasicSeekState::enter()
 {
-	//m_ai.m_renderQuad.setFillColor(sf::Color::Yellow);
-	m_ai.m_animator.playAnimation(ai::Basic::s_SEEK_ID, true);
+	if (m_ai.s_COLOR_STATES)
+	{
+		m_ai.m_renderQuad.setFillColor(sf::Color::Yellow);
+	}
+	m_ai.playAnimation(ai::Basic::s_SEEK_ID, true);
 }
 
 /// <summary>
@@ -65,10 +68,7 @@ void ai::states::AiBasicSeekState::draw(Window & window, float const & deltaTime
 /// </summary>
 void ai::states::AiBasicSeekState::exit()
 {
-	if (m_ai.m_animator.isPlayingAnimation())
-	{
-		m_ai.m_animator.stopAnimation();
-	}
+	m_ai.stopAnimation();
 }
 
 /// <summary>

@@ -20,8 +20,12 @@ ai::states::AiBasicWindupState::AiBasicWindupState(AiBasic & aiUnit)
 /// </summary>
 void ai::states::AiBasicWindupState::enter()
 {
-	//m_ai.m_renderQuad.setFillColor(sf::Color(255u, 165u, 0u, 255u));
+	if (m_ai.s_COLOR_STATES)
+	{
+		m_ai.m_renderQuad.setFillColor(sf::Color(255u, 165u, 0u, 255u));
+	}
 	m_uptrTimer = std::make_unique<sf::Clock>(sf::Clock());
+	m_ai.playAnimation(ai::AiBasic::s_WINDUP_ID, false);
 }
 
 /// <summary>

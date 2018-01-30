@@ -11,7 +11,7 @@ ai::states::AiBasicChargeState::AiBasicChargeState(AiBasic & aiUnit)
 	, m_ATTACK_RADIUS(100.0f)
 	, m_CHARGE_SPEED(400.0f)
 	, m_DECCELERATION(250.0f)
-	, m_LOW_SPEED(0.5f)
+	, m_LOW_SPEED(180.0f * m_DELTA_TIME)
 {
 }
 
@@ -22,8 +22,12 @@ ai::states::AiBasicChargeState::AiBasicChargeState(AiBasic & aiUnit)
 /// </summary>
 void ai::states::AiBasicChargeState::enter()
 {
-	//m_ai.m_renderQuad.setFillColor(sf::Color::Red);
+	if (m_ai.s_COLOR_STATES)
+	{
+		m_ai.m_renderQuad.setFillColor(sf::Color::Red);
+	}
 	m_ai.m_speed = m_CHARGE_SPEED;
+	m_ai.playAnimation(ai::AiBasic::s_CHARGE_ID, false);
 }
 
 /// <summary>
@@ -74,7 +78,7 @@ void ai::states::AiBasicChargeState::updateState()
 	if (this->checkState())
 	{
 		std::shared_ptr<ai::states::Basic> sptrNewState =
-			std::make_shared<ai::states::Seek>(ai::states::Seek(m_ai));
+			std::make_shared<ai::states::Seek>(m_ai);
 		m_ai.setState(sptrNewState, false);
 	}
 }

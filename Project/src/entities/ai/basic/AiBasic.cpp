@@ -4,6 +4,7 @@ std::string ai::AiBasic::s_SEEK_ID = "";
 std::string ai::AiBasic::s_CHARGE_ID = "";
 std::string ai::AiBasic::s_WINDUP_ID = "";
 std::string ai::AiBasic::s_RECOVER_ID = "";
+bool const ai::AiBasic::s_COLOR_STATES = false;
 
 /// <summary>
 /// @brief Setups ai::AiBasic::Resources.
@@ -63,6 +64,7 @@ ai::AiBasic::AiBasic(Player const & player)
 	, m_renderQuad({80.0f , 80.0f}) // Implicitly call sf::Vector2f() constructor
 	, m_stateStack()
 	, m_sptrState(nullptr)
+	, m_sptrResources(nullptr)
 	, m_animator()
 {
 	this->initRenderingQuad();
@@ -76,13 +78,9 @@ ai::AiBasic::AiBasic(Player const & player)
 /// <param name="sptrResources">shared pointer to already loaded resources.</param>
 void ai::AiBasic::init(std::shared_ptr<Resources> sptrResources)
 {
-	m_renderQuad.setOrigin(sptrResources->m_textureSeek.m_origin);
-	m_renderQuad.setScale(sptrResources->m_textureSeek.m_scale);
-	m_renderQuad.setTexture(sptrResources->m_textureSeek.m_sptrTexture.get(), true);
-	m_renderQuad.setTextureRect(sptrResources->m_textureSeek.m_textureRect);
-
-	m_animator.addAnimation(sptrResources->m_animationSeek.m_id, sptrResources->m_animationSeek.m_frames, sptrResources->m_animationSeek.m_duration);
-
+	m_sptrResources = sptrResources;
+	this->setTexture(this->s_SEEK_ID);
+	this->initAnimations();
 	this->initStates();
 }
 
@@ -326,4 +324,94 @@ void ai::AiBasic::initRenderingQuad()
 
 	m_renderQuad.setFillColor(QUAD_FILL);
 	m_renderQuad.setOrigin(QUAD_ORIGIN);
+}
+
+/// <summary>
+/// @brief Initialize all of the animator's animations.
+/// 
+/// 
+/// </summary>
+void ai::AiBasic::initAnimations()
+{
+	m_animator.addAnimation(
+		m_sptrResources->m_animationSeek.m_id,
+		m_sptrResources->m_animationSeek.m_frames,
+		m_sptrResources->m_animationSeek.m_duration);
+	m_animator.addAnimation(
+		m_sptrResources->m_animationWindup.m_id,
+		m_sptrResources->m_animationWindup.m_frames,
+		m_sptrResources->m_animationWindup.m_duration);
+	m_animator.addAnimation(
+		m_sptrResources->m_animationCharge.m_id,
+		m_sptrResources->m_animationCharge.m_frames,
+		m_sptrResources->m_animationCharge.m_duration);
+	m_animator.addAnimation(
+		m_sptrResources->m_animationRecover.m_id,
+		m_sptrResources->m_animationRecover.m_frames,
+		m_sptrResources->m_animationRecover.m_duration);
+}
+
+/// <summary>
+/// @brief set the ai to the new texture state.
+/// 
+/// 
+/// </summary>
+/// <param name="id">specifies the id of the state.</param>
+void ai::AiBasic::setTexture(std::string const & id)
+{
+	if (id == this->s_SEEK_ID)
+	{
+		//m_renderQuad.setOrigin(m_sptrResources->m_textureSeek.m_origin);
+		m_renderQuad.setScale(m_sptrResources->m_textureSeek.m_scale);
+		m_renderQuad.setTexture(m_sptrResources->m_textureSeek.m_sptrTexture.get(), true);
+		m_renderQuad.setTextureRect(m_sptrResources->m_textureSeek.m_textureRect);
+	}
+	else if (id == this->s_WINDUP_ID)
+	{
+		//m_renderQuad.setOrigin(m_sptrResources->m_textureWindup.m_origin);
+		m_renderQuad.setScale(m_sptrResources->m_textureWindup.m_scale);
+		m_renderQuad.setTexture(m_sptrResources->m_textureWindup.m_sptrTexture.get(), true);
+		m_renderQuad.setTextureRect(m_sptrResources->m_textureWindup.m_textureRect);
+	}
+	else if (id == this->s_CHARGE_ID)
+	{
+		//m_renderQuad.setOrigin(m_sptrResources->m_textureCharge.m_origin);
+		m_renderQuad.setScale(m_sptrResources->m_textureCharge.m_scale);
+		m_renderQuad.setTexture(m_sptrResources->m_textureCharge.m_sptrTexture.get(), true);
+		m_renderQuad.setTextureRect(m_sptrResources->m_textureCharge.m_textureRect);
+	}
+	else if (id == this->s_RECOVER_ID)
+	{
+		//m_renderQuad.setOrigin(m_sptrResources->m_textureRecover.m_origin);
+		m_renderQuad.setScale(m_sptrResources->m_textureRecover.m_scale);
+		m_renderQuad.setTexture(m_sptrResources->m_textureRecover.m_sptrTexture.get(), true);
+		m_renderQuad.setTextureRect(m_sptrResources->m_textureRecover.m_textureRect);
+	}
+}
+
+/// <summary>
+/// @brief Play's the specified animation.
+/// 
+/// 
+/// </summary>
+/// <param name="id">used to id the animation and the texture.</param>
+/// <param name="loop">indicates whether to loop the animation.</param>
+void ai::AiBasic::playAnimation(std::string const & id, bool const & loop)
+{
+	this->setTexture(id);
+	m_animator.playAnimation(id, loop);
+}
+
+/// <summary>
+/// @brief Checks if a animation is playing, stops it and resets the render quad's texture frame.
+/// 
+/// 
+/// </summary>
+void ai::AiBasic::stopAnimation()
+{
+	if (m_animator.isPlayingAnimation())
+	{
+		this->setTexture(m_animator.getPlayingAnimation());
+		m_animator.stopAnimation();
+	}
 }

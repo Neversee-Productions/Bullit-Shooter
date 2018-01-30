@@ -43,6 +43,7 @@ void Player::init(std::shared_ptr<Resources> sptrResources)
 	m_connectLeftWeaponToShip.init(sptrResources->m_connector);
 	m_connectRightWeaponToShip.init(sptrResources->m_connector);
 	m_bulletManager.init(sptrResources->m_bullets);
+	m_background.setTargetColor(m_weaponLeft.getBgColor());
 }
 
 /// <summary>

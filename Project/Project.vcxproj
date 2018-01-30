@@ -147,7 +147,7 @@
     <Image Include="resources\gui\textures\checkbox.png" />
     <Image Include="resources\gui\textures\slider.png" />
     <Image Include="resources\scenes\Game\enemies\basic\charge.png" />
-    <Image Include="resources\scenes\Game\enemies\basic\recovery.png" />
+    <Image Include="resources\scenes\Game\enemies\basic\recover.png" />
     <Image Include="resources\scenes\Game\enemies\basic\seek.png" />
     <Image Include="resources\scenes\Game\enemies\basic\wind_up.png" />
     <Image Include="resources\scenes\Game\player\bullets\bullet01\bullet_impact.png" />
@@ -248,9 +248,7 @@
     </Link>
     <PostBuildEvent>
       <Command>C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"
-cd "$(SolutionDir)"
-doxygen Doxyfile</Command>
+C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -278,7 +276,9 @@ doxygen Doxyfile</Command>
     </Link>
     <PostBuildEvent>
       <Command>C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\rls\*.dll" "$(TargetDir)"</Command>
+C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\rls\*.dll" "$(TargetDir)"
+cd "$(SolutionDir)"
+doxygen Doxyfile</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

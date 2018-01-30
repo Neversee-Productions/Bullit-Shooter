@@ -660,13 +660,13 @@
     <Image Include="resources\scenes\Game\enemies\basic\charge.png">
       <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
     </Image>
-    <Image Include="resources\scenes\Game\enemies\basic\recovery.png">
-      <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
-    </Image>
     <Image Include="resources\scenes\Game\enemies\basic\seek.png">
       <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
     </Image>
     <Image Include="resources\scenes\Game\enemies\basic\wind_up.png">
+      <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\enemies\basic\recover.png">
       <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
     </Image>
   </ItemGroup>
