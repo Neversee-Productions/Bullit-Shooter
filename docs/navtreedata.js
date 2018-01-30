@@ -42,7 +42,7 @@ var NAVTREEINDEX =
 "class_resource_handler.html#a98a9d30df19bc82fa8b3632ab89af1ef",
 "classai_1_1states_1_1_ai_basic_recover_state.html#ad226460b72243d2c0450d5539e508410",
 "classgui_1_1_check_box.html#accbd66a73e578083004120350a74dbd7a6b273343c454f9c53dcfc9c4ccf171d2",
-"struct_game_pad_state.html#abc539426197b7af7c08da5fafb004f9e"
+"struct_game_pad_state.html#ac72976b3e811f0782ff46025d1a1989f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

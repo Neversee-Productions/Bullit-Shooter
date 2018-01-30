@@ -1,6 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"struct_game_pad_state.html#abc539426197b7af7c08da5fafb004f9e":[2,0,11,4],
 "struct_game_pad_state.html#ac72976b3e811f0782ff46025d1a1989f":[2,0,11,14],
 "struct_game_pad_state.html#acfeeec0457da03a308999b9a6dd867e7":[2,0,11,3],
 "struct_game_pad_state.html#ad195fc90155dbc9592486904e2f2366d":[2,0,11,2],
