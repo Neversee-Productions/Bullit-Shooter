@@ -115,8 +115,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae0ad703af8b153c6e99c6047ec38256c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae75817cf6c64f7521398f91f92075392"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#ae75817cf6c64f7521398f91f92075392">setLeftPosition</a> (sf::Vector2f pos)</td></tr>
 <tr class="separator:ae75817cf6c64f7521398f91f92075392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f9d9a6495ffd63a1bd3af8f6db905ae"><td class="memItemLeft" align="right" valign="top">sf::Vector2f const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a5f9d9a6495ffd63a1bd3af8f6db905ae">getRightPosition</a> () const</td></tr>
-<tr class="separator:a5f9d9a6495ffd63a1bd3af8f6db905ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a653449e83ff8b51336ca9090a127233e"><td class="memItemLeft" align="right" valign="top">sf::Vector2f const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a653449e83ff8b51336ca9090a127233e">getRightPosition</a> () const</td></tr>
+<tr class="separator:a653449e83ff8b51336ca9090a127233e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ad1a8b17d186c92a119b0a7711e767b"><td class="memItemLeft" align="right" valign="top">sf::Vector2f const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a5ad1a8b17d186c92a119b0a7711e767b">getLeftPosition</a> () const</td></tr>
 <tr class="separator:a5ad1a8b17d186c92a119b0a7711e767b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73ff803419ead68bd728330641dc2014"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a73ff803419ead68bd728330641dc2014">setSize</a> (sf::Vector2f size)</td></tr>
@@ -131,6 +131,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac66bb719ee96e7091d2e8a3d4e36e8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f194f8feec1c2b5eca7139b6aa753d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#ad2f194f8feec1c2b5eca7139b6aa753d">setActive</a> (bool active)</td></tr>
 <tr class="separator:ad2f194f8feec1c2b5eca7139b6aa753d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4841359bdc4b8d57f1e72a3c2a5c86de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a4841359bdc4b8d57f1e72a3c2a5c86de">setEffectAlpha</a> (float alpha)</td></tr>
+<tr class="separator:a4841359bdc4b8d57f1e72a3c2a5c86de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1244615935450ae26d1e77c88882c5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#aa1244615935450ae26d1e77c88882c5d">fadeOutEffect</a> ()</td></tr>
+<tr class="separator:aa1244615935450ae26d1e77c88882c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -269,6 +273,24 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa1244615935450ae26d1e77c88882c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1244615935450ae26d1e77c88882c5d">&#9670;&nbsp;</a></span>fadeOutEffect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pickup::fadeOutEffect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fades out the effect by 10 units each frame.</p>
+
+</div>
+</div>
 <a id="a5ad1a8b17d186c92a119b0a7711e767b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ad1a8b17d186c92a119b0a7711e767b">&#9670;&nbsp;</a></span>getLeftPosition()</h2>
 
@@ -288,14 +310,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5f9d9a6495ffd63a1bd3af8f6db905ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f9d9a6495ffd63a1bd3af8f6db905ae">&#9670;&nbsp;</a></span>getRightPosition()</h2>
+<a id="a653449e83ff8b51336ca9090a127233e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a653449e83ff8b51336ca9090a127233e">&#9670;&nbsp;</a></span>getRightPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">sf::Vector2f const Pickup::getRightPosition </td>
+          <td class="memname">sf::Vector2f const  &amp; Pickup::getRightPosition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -364,6 +386,31 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">active</td><td>new active state.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4841359bdc4b8d57f1e72a3c2a5c86de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4841359bdc4b8d57f1e72a3c2a5c86de">&#9670;&nbsp;</a></span>setEffectAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pickup::setEffectAlpha </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>alpha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set alpha of the effect sprite.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alpha</td><td>Defines the alpha value.</td></tr>
   </table>
   </dd>
 </dl>

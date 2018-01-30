@@ -2,6 +2,7 @@ var searchData=
 [
   ['fadein',['FadeIn',['../class_splash_scene.html#a9b7c8f34a295dac9f58d1520449dbb8aa294f48edd972b58ced15c2284db56f82',1,'SplashScene']]],
   ['fadeout',['FadeOut',['../class_splash_scene.html#a9b7c8f34a295dac9f58d1520449dbb8aaf8be2875b8fa26739660f6f090938475',1,'SplashScene']]],
+  ['fadeouteffect',['fadeOutEffect',['../class_pickup.html#aa1244615935450ae26d1e77c88882c5d',1,'Pickup']]],
   ['fadestate',['FadeState',['../class_splash_scene.html#a9b7c8f34a295dac9f58d1520449dbb8a',1,'SplashScene']]],
   ['fading',['fading',['../classgui_1_1_button.html#a25d24e05be6384e7708e349ddb9b5e45',1,'gui::Button::fading()'],['../classgui_1_1_check_box.html#ae4404d1007963895a9ecd56d4c28c757',1,'gui::CheckBox::fading()'],['../classgui_1_1_slider.html#abd60416e493409aa8952d7a53ade74c3',1,'gui::Slider::fading()']]],
   ['fireblast',['FireBlast',['../classbullets_1_1_fire_blast.html',1,'bullets::FireBlast'],['../classbullets_1_1_fire_blast.html#aee5c419c26fd0556a3cda6d480b3ae8b',1,'bullets::FireBlast::FireBlast()'],['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca35a3c23e996af8b46311b1fdbdedabee',1,'FireBlast():&#160;BulletTypes.h']]],

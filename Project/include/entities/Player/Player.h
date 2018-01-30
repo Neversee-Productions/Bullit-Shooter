@@ -75,6 +75,8 @@ public:
 	sf::Vector2f const & getLeftWeaponPos();
 	sf::Vector2f const & getRightWeaponPos();
 	bool const & isAlive();
+	void setConnectorPos(sf::Vector2f leftConnectorPos, sf::Vector2f rightConnectorPos);
+	void setAttachedWeapons(bool check);
 
 private:
 	void switchWeaponInput();
@@ -163,6 +165,27 @@ private:
 	/// 
 	/// </summary>
 	bool m_alive;
+
+	/// <summary>
+	/// @brief define end position of the left connector.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_leftConnectorEnd;
+
+	/// <summary>
+	/// @brief define the end position of the right connector.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_rightConnectorEnd;
+
+	/// <summary>
+	/// @brief this boolean will determine if the connectors are attached to weapon.
+	/// 
+	/// 
+	/// </summary>
+	bool m_attachedWeapons;
 };
 
 #endif PLAYER_H

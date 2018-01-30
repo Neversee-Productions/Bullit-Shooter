@@ -281,6 +281,10 @@ void GameScene::playerPickupCollision()
 		float length = thor::length(vector);
 		if (length < 100)
 		{
+			m_player.setAttachedWeapons(false);
+			//decrease alpha of the pickup effect
+			m_pickup->fadeOutEffect();
+
 			//LEFT WEAPON CALCULATIONS
 			sf::Vector2f leftPosVec = m_player.getLeftWeaponPos() - m_pickup->getRightPosition();
 			sf::Vector2f unitVecLeft = thor::unitVector(leftPosVec);
@@ -293,12 +297,18 @@ void GameScene::playerPickupCollision()
 
 			m_pickup->setRightVelocity(unitVecLeft * (length * 0.1f));
 			m_pickup->setLeftVelocity(unitVecRight * (length * 0.1f));
+			m_player.setConnectorPos(m_pickup->getLeftPosition(), m_pickup->getRightPosition());
 
 			if (leftLength < 10 && rightLength < 10)
 			{
+				m_player.setAttachedWeapons(true);
 				m_player.nextWeapon();
 				m_pickup->setActive(false);
 			}
+		}
+		else
+		{
+			m_pickup->setEffectAlpha(255);
 		}
 	}
 }
@@ -892,8 +902,8 @@ void GameScene::setupPickupEffect(ResourceHandler & resourceHandler, Pickup::Res
 
 	effect.m_animation.m_id = EFFECT_ID;
 	effect.m_animation.m_duration = sf::seconds(effectAnimationParser.at(JSON_ANIMATION_DURATION).get<float>());
-	effect.m_animation.m_origin.x = effectAnimationParser.at(JSON_ANIMATION_ORIGIN).get<float>();
-	effect.m_animation.m_origin.y = effectAnimationParser.at(JSON_ANIMATION_ORIGIN).get<float>();
+	effect.m_animation.m_origin.x = effectAnimationParser.at(JSON_ANIMATION_ORIGIN).at("x").get<float>();
+	effect.m_animation.m_origin.y = effectAnimationParser.at(JSON_ANIMATION_ORIGIN).at("y").get<float>();
 	effect.m_animation.m_sptrTexture = effect.m_texture.m_texture; // Use the texture already loaded.
 	
 	effect.m_animation.m_sptrFrames = std::make_shared<thor::FrameAnimation>();

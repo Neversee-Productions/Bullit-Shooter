@@ -189,7 +189,7 @@ public:
 	void draw(Window & window, const float & deltaTime);
 	void setRightPosition(sf::Vector2f pos);
 	void setLeftPosition(sf::Vector2f pos);
-	sf::Vector2f const getRightPosition() const;
+	sf::Vector2f const & getRightPosition() const;
 	sf::Vector2f const & getLeftPosition() const;
 	void setSize(sf::Vector2f size);
 	sf::Vector2f const getSize() const;
@@ -197,7 +197,8 @@ public:
 	void setLeftVelocity(sf::Vector2f vel);
 	bool const isActive() const;
 	void setActive(bool active);
-
+	void setEffectAlpha(float alpha);
+	void fadeOutEffect();
 
 private:
 	/// <summary>

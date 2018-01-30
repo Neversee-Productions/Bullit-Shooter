@@ -25,7 +25,7 @@ var searchData=
   ['getname',['getName',['../class_scene.html#a056dfc15c377165943f5276f477c105d',1,'Scene']]],
   ['getnextscenename',['getNextSceneName',['../class_scene.html#a4281c0ec2142a6a53a3057557d7ff195',1,'Scene']]],
   ['getposition',['getPosition',['../class_player.html#a4574e0663b8ee77e014c58f08ca8e30b',1,'Player::getPosition()'],['../class_weapon.html#a0be4976d95aa7f12ea6c69c0a28361ce',1,'Weapon::getPosition()'],['../classgui_1_1_button.html#acdf591df87e377ac6c2e3f9acbe93ac8',1,'gui::Button::getPosition()'],['../classgui_1_1_check_box.html#abdb4a6c8701e174924714c8db000c8e8',1,'gui::CheckBox::getPosition()'],['../classgui_1_1_label.html#a440c95e6a6ace99be3cdc0e5a629f189',1,'gui::Label::getPosition()'],['../classgui_1_1_slider.html#a53b1b49c5fa084c92101808203cc33a9',1,'gui::Slider::getPosition()']]],
-  ['getrightposition',['getRightPosition',['../class_pickup.html#a5f9d9a6495ffd63a1bd3af8f6db905ae',1,'Pickup']]],
+  ['getrightposition',['getRightPosition',['../class_pickup.html#a653449e83ff8b51336ca9090a127233e',1,'Pickup']]],
   ['getrightweaponpos',['getRightWeaponPos',['../class_player.html#a8f33aaf81f382e1e3fd3c3543dbc50aa',1,'Player']]],
   ['getscene',['getScene',['../class_scene_manager.html#a59f6fa7e18e85c7eec4be442f17d969e',1,'SceneManager']]],
   ['getshieldcircle',['getShieldCircle',['../class_player.html#a55b1a12c5f5c134156f26fa98e988366',1,'Player']]],

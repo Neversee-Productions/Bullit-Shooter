@@ -19,6 +19,7 @@ Player::Player(KeyHandler& keyHandler)
 	, m_weaponRightPos(sf::Vector2f(0.0f,0.0f))
 	, m_shield(m_ship.getShipRect().getPosition(), m_ship.getShipRect().getSize().y / 2)
 	, m_alive(true)
+	, m_attachedWeapons(true)
 {
 	auto const & flip = true;
 	m_weaponLeft.setRectPos(m_weaponLeftPos);
@@ -104,9 +105,14 @@ void Player::update()
 		m_shield.setPosition(shipPosition);
 		m_shield.update();
 		m_weaponLeft.update(shipPosition);
-		m_connectLeftWeaponToShip.update(shipPosition, m_weaponLeft.getPosition());
 		m_weaponRight.update(shipPosition);
-		m_connectRightWeaponToShip.update(m_weaponRight.getPosition(), shipPosition);
+		if (m_attachedWeapons)
+		{
+			m_leftConnectorEnd = m_weaponLeft.getPosition();
+			m_rightConnectorEnd = m_weaponRight.getPosition();
+		}
+		m_connectLeftWeaponToShip.update(shipPosition, m_leftConnectorEnd);
+		m_connectRightWeaponToShip.update(m_rightConnectorEnd, shipPosition);
 	}
 	m_bulletManager.update();
 }
@@ -387,4 +393,28 @@ sf::Vector2f const & Player::getRightWeaponPos()
 bool const & Player::isAlive()
 {
 	return m_alive;
+}
+
+/// <summary>
+/// @brief This method sets end points of the connectors.
+/// 
+/// 
+/// </summary>
+/// <param name="leftConnectorPos">new position of the left connector.</param>
+/// <param name="rightConnectorPos">new position of the right connector.</param>
+void Player::setConnectorPos(sf::Vector2f leftConnectorPos, sf::Vector2f rightConnectorPos)
+{
+	m_leftConnectorEnd = leftConnectorPos;
+	m_rightConnectorEnd = rightConnectorPos;
+}
+
+/// <summary>
+/// @brief sets the attached weapons bool to check.
+/// 
+/// 
+/// </summary>
+/// <param name="check">the new state of attached weapons</param>
+void Player::setAttachedWeapons(bool check)
+{
+	m_attachedWeapons = check;
 }

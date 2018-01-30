@@ -57,6 +57,7 @@ Pickup::Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::V
 	m_effectSprite.setTextureRect(effectTextureData.m_frame);
 
 	m_animator.addAnimation(resources->m_effect.m_animation.m_id, *resources->m_effect.m_animation.m_sptrFrames, resources->m_effect.m_animation.m_duration);
+	m_animator.playAnimation(resources->m_effect.m_animation.m_id, true);
 }
 
 /// <summary>
@@ -72,6 +73,7 @@ void Pickup::update()
 		m_leftPosition += m_leftVelocity;
 		m_rightSprite.setPosition(m_rightPosition);
 		m_leftSprite.setPosition(m_leftPosition);
+		m_effectSprite.rotate(45 * App::getUpdateDeltaTime());
 	}
 }
 
@@ -122,7 +124,7 @@ void Pickup::setLeftPosition(sf::Vector2f pos)
 /// 
 /// </summary>
 /// <returns>returns the position of sprite</returns>
-sf::Vector2f const Pickup::getRightPosition() const
+sf::Vector2f const & Pickup::getRightPosition() const
 {
 	return m_rightPosition;
 }
@@ -203,4 +205,27 @@ void Pickup::setActive(bool active)
 {
 	m_active = active;
 }
+
+/// <summary>
+/// @brief Set alpha of the effect sprite.
+/// 
+/// 
+/// </summary>
+/// <param name="alpha">Defines the alpha value.</param>
+void Pickup::setEffectAlpha(float alpha)
+{
+	m_effectSprite.setColor(sf::Color(255, 255, 255, alpha));
+}
+
+/// <summary>
+/// @brief Fades out the effect by 10 units each frame.
+/// 
+/// 
+/// </summary>
+void Pickup::fadeOutEffect()
+{
+	m_effectSprite.setColor(sf::Color(255, 255, 255, m_effectSprite.getColor().a - 10));
+}
+
+
 
