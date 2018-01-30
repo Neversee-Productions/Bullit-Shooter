@@ -133,6 +133,9 @@ public:
 	void setCanFire(bool const & canFire);
 	bool const & getCanFire() const;
 	std::string const & getBeginAnimationID() const;
+	void fadeOut();
+	void setAlpha(float alpha);
+
 private:
 	/// <summary>
 	/// @brief define the weapon rectangle.

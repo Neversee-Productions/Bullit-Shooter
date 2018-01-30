@@ -418,3 +418,61 @@ void Player::setAttachedWeapons(bool check)
 {
 	m_attachedWeapons = check;
 }
+
+/// <summary>
+/// @brief a getter that returns a constant reference to the end of the left connector.
+/// 
+/// 
+/// </summary>
+/// <returns>constant reference to a vector2f.</returns>
+const sf::Vector2f & Player::getLeftConnectorPos()
+{
+	return m_leftConnectorEnd;
+}
+
+/// <summary>
+/// @brief a getter that returns a constant reference to the end of the right connector.
+/// 
+/// 
+/// </summary>
+/// <returns>constant reference to a vector2f.</returns>
+const sf::Vector2f & Player::getRightConnectorPos()
+{
+	return m_rightConnectorEnd;
+}
+
+/// <summary>
+/// @brief this method scales down both weapons.
+/// 
+/// 
+/// </summary>
+void Player::fadeOutWeapons()
+{
+	m_weaponLeft.fadeOut();
+	m_weaponRight.fadeOut();
+}
+
+/// <summary>
+/// @brief this is a function that sets both weapons alpha to passed value.
+/// 
+/// 
+/// </summary>
+/// <param name="alpha">determines new alpha of weapon sprites as a float.</param>
+void Player::setWeaponsAlpha(float alpha)
+{
+	m_weaponLeft.setAlpha(alpha);
+	m_weaponRight.setAlpha(alpha);
+}
+
+/// <summary>
+/// @brief this calls both weapons setter for the can fire bool 
+/// and sets them to the passed parameter.
+/// 
+/// 
+/// </summary>
+/// <param name="fire">the new state of the can fire of both weapons</param>
+void Player::setCanFire(bool fire)
+{
+	m_weaponLeft.setCanFire(fire);
+	m_weaponRight.setCanFire(fire);
+}

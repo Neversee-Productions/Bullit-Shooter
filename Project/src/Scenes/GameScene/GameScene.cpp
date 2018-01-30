@@ -281,6 +281,7 @@ void GameScene::playerPickupCollision()
 		float length = thor::length(vector);
 		if (length < 100)
 		{
+			m_player.setCanFire(false);
 			m_player.setAttachedWeapons(false);
 			//decrease alpha of the pickup effect
 			m_pickup->fadeOutEffect();
@@ -295,12 +296,15 @@ void GameScene::playerPickupCollision()
 			sf::Vector2f unitVecRight = thor::unitVector(rightPosVec);
 			float rightLength = thor::length(rightPosVec);
 
-			m_pickup->setRightVelocity(unitVecLeft * (length * 0.1f));
-			m_pickup->setLeftVelocity(unitVecRight * (length * 0.1f));
+			m_pickup->setRightVelocity((unitVecLeft * (length * 5.2f))* App::getUpdateDeltaTime());
+			m_pickup->setLeftVelocity((unitVecRight * (length * 5.2f)) * App::getUpdateDeltaTime());
+			m_player.fadeOutWeapons();
+			
 			m_player.setConnectorPos(m_pickup->getLeftPosition(), m_pickup->getRightPosition());
 
 			if (leftLength < 10 && rightLength < 10)
 			{
+				m_player.setWeaponsAlpha(255);
 				m_player.setAttachedWeapons(true);
 				m_player.nextWeapon();
 				m_pickup->setActive(false);

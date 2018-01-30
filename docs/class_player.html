@@ -140,6 +140,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af65497fe7b0be87cfeb962e95fe00c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65f8d072fd7127f9b83ace706fd381ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a65f8d072fd7127f9b83ace706fd381ea">setAttachedWeapons</a> (bool check)</td></tr>
 <tr class="separator:a65f8d072fd7127f9b83ace706fd381ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad917e615a87b8eb7460c676fc407cd66"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad917e615a87b8eb7460c676fc407cd66">getLeftConnectorPos</a> ()</td></tr>
+<tr class="separator:ad917e615a87b8eb7460c676fc407cd66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23265def47c1800d025625bcd4d14899"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a23265def47c1800d025625bcd4d14899">getRightConnectorPos</a> ()</td></tr>
+<tr class="separator:a23265def47c1800d025625bcd4d14899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af285d0324643f25a620709d5cf080860"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#af285d0324643f25a620709d5cf080860">fadeOutWeapons</a> ()</td></tr>
+<tr class="separator:af285d0324643f25a620709d5cf080860"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a436598cf519a2d9977945f21135295d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a436598cf519a2d9977945f21135295d2">setWeaponsAlpha</a> (float alpha)</td></tr>
+<tr class="separator:a436598cf519a2d9977945f21135295d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacd4595ca86d4199faf8a06736e19a6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aacd4595ca86d4199faf8a06736e19a6a">setCanFire</a> (bool fire)</td></tr>
+<tr class="separator:aacd4595ca86d4199faf8a06736e19a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -273,6 +283,24 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="af285d0324643f25a620709d5cf080860"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af285d0324643f25a620709d5cf080860">&#9670;&nbsp;</a></span>fadeOutWeapons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::fadeOutWeapons </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this method scales down both weapons.</p>
+
+</div>
+</div>
 <a id="afa684cfe07e806cff11e8973e4761aaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa684cfe07e806cff11e8973e4761aaa">&#9670;&nbsp;</a></span>getBulletMap()</h2>
 
@@ -289,6 +317,25 @@ Rafael Plugge</dd></dl>
 </div><div class="memdoc">
 <p>get a constant reference to the bullets.</p>
 <dl class="section return"><dt>Returns</dt><dd>map of bullets</dd></dl>
+
+</div>
+</div>
+<a id="ad917e615a87b8eb7460c676fc407cd66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad917e615a87b8eb7460c676fc407cd66">&#9670;&nbsp;</a></span>getLeftConnectorPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::Vector2f &amp; Player::getLeftConnectorPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>a getter that returns a constant reference to the end of the left connector.</p>
+<dl class="section return"><dt>Returns</dt><dd>constant reference to a vector2f.</dd></dl>
 
 </div>
 </div>
@@ -327,6 +374,25 @@ Rafael Plugge</dd></dl>
 </div><div class="memdoc">
 <p>fetch the position of players ship.</p>
 <dl class="section return"><dt>Returns</dt><dd>players ship position.</dd></dl>
+
+</div>
+</div>
+<a id="a23265def47c1800d025625bcd4d14899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23265def47c1800d025625bcd4d14899">&#9670;&nbsp;</a></span>getRightConnectorPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::Vector2f &amp; Player::getRightConnectorPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>a getter that returns a constant reference to the end of the right connector.</p>
+<dl class="section return"><dt>Returns</dt><dd>constant reference to a vector2f.</dd></dl>
 
 </div>
 </div>
@@ -538,6 +604,31 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="aacd4595ca86d4199faf8a06736e19a6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd4595ca86d4199faf8a06736e19a6a">&#9670;&nbsp;</a></span>setCanFire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setCanFire </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fire</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this calls both weapons setter for the can fire bool and sets them to the passed parameter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fire</td><td>the new state of the can fire of both weapons</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af65497fe7b0be87cfeb962e95fe00c51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af65497fe7b0be87cfeb962e95fe00c51">&#9670;&nbsp;</a></span>setConnectorPos()</h2>
 
@@ -568,6 +659,31 @@ Rafael Plugge</dd></dl>
   <table class="params">
     <tr><td class="paramname">leftConnectorPos</td><td>new position of the left connector.</td></tr>
     <tr><td class="paramname">rightConnectorPos</td><td>new position of the right connector.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a436598cf519a2d9977945f21135295d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a436598cf519a2d9977945f21135295d2">&#9670;&nbsp;</a></span>setWeaponsAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setWeaponsAlpha </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>alpha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this is a function that sets both weapons alpha to passed value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alpha</td><td>determines new alpha of weapon sprites as a float.</td></tr>
   </table>
   </dd>
 </dl>

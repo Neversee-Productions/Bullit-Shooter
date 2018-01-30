@@ -224,7 +224,11 @@ void Pickup::setEffectAlpha(float alpha)
 /// </summary>
 void Pickup::fadeOutEffect()
 {
-	m_effectSprite.setColor(sf::Color(255, 255, 255, m_effectSprite.getColor().a - 10));
+	float fadeVal = 10.0f;
+	if (m_effectSprite.getColor().a > fadeVal)
+	{
+		m_effectSprite.setColor(sf::Color(255, 255, 255, m_effectSprite.getColor().a - fadeVal));
+	}
 }
 
 

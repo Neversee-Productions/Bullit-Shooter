@@ -293,3 +293,34 @@ std::string const & Weapon::getBeginAnimationID() const
 	auto & weaponBeginAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->first);
 	return weaponBeginAnimation.m_id;
 }
+
+/// <summary>
+/// @brief this function will fade out the sprite.
+/// 
+/// 
+/// </summary>
+void Weapon::fadeOut()
+{
+	float fadeValue = 8.0f;
+
+	if (m_weaponSprite.getColor().a > fadeValue)
+	{
+		m_weaponSprite.setColor(sf::Color(255, 255, 255, m_weaponSprite.getColor().a - fadeValue));
+	}
+	else
+	{
+		m_weaponSprite.setColor(sf::Color(255, 255, 255, 0.0f));
+	}
+}
+
+/// <summary>
+/// @brief this function will set alpha of the weapon sprite to the passed value.
+/// 
+/// 
+/// </summary>
+/// <param name="alpha">new alpha represented as a float value.</param>
+void Weapon::setAlpha(float alpha)
+{
+	m_weaponSprite.setColor(sf::Color(255.0f, 255.0f, 255.0f, alpha));
+}
+

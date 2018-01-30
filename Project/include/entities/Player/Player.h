@@ -77,6 +77,11 @@ public:
 	bool const & isAlive();
 	void setConnectorPos(sf::Vector2f leftConnectorPos, sf::Vector2f rightConnectorPos);
 	void setAttachedWeapons(bool check);
+	const sf::Vector2f & getLeftConnectorPos();
+	const sf::Vector2f & getRightConnectorPos();
+	void fadeOutWeapons();
+	void setWeaponsAlpha(float alpha);
+	void setCanFire(bool fire);
 
 private:
 	void switchWeaponInput();
