@@ -100,8 +100,12 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_angle
 : <a class="el" href="classbullets_1_1_bullet.html#a7eaa1f6ae67ec7c13f37f3bf61704ea9">bullets::Bullet</a>
 </li>
+<li>m_animation
+: <a class="el" href="struct_pickup_1_1_resources_1_1_effect.html#a17cc9a94f2c82456efc5b4e157777c42">Pickup::Resources::Effect</a>
+</li>
 <li>m_animator
-: <a class="el" href="class_weapon.html#af9a7c027ab7ff27bb9877ad7c7f0032b">Weapon</a>
+: <a class="el" href="class_pickup.html#a4d4bfbfeb2ab4ae7294032342f2f9f06">Pickup</a>
+, <a class="el" href="class_weapon.html#af9a7c027ab7ff27bb9877ad7c7f0032b">Weapon</a>
 </li>
 <li>m_asteroidManager
 : <a class="el" href="class_game_scene.html#afc06f7cf1d9009faf879677c2c615593">GameScene</a>
@@ -114,6 +118,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_asteroidsVector
 : <a class="el" href="class_asteroid_manager.html#a27af80be979b9f62d9c4515235b4efad">AsteroidManager</a>
+</li>
+<li>m_attachedWeapons
+: <a class="el" href="class_player.html#a25030663302c7d904ed24a0ad5443060">Player</a>
 </li>
 <li>m_B
 : <a class="el" href="struct_game_pad_state.html#ad195fc90155dbc9592486904e2f2366d">GamePadState</a>
@@ -151,6 +158,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_bullets
 : <a class="el" href="struct_player_1_1_resources.html#a2a6e8211c2963acd6164ef445de6d7c8">Player::Resources</a>
+</li>
+<li>m_canFire
+: <a class="el" href="class_weapon.html#a07b34aa2bddf794f9a5f7a7503e26856">Weapon</a>
 </li>
 <li>m_circle
 : <a class="el" href="class_asteroid.html#a25c0ef10347868332d4e2d637695f67f">Asteroid</a>
@@ -240,7 +250,14 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_duration
 : <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a127f531d3bf12ef6ffb923422d07d956">bullets::Bullet::Resources::Animation</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#a45b2a37d6cf10ce26bcfee759f868293">Pickup::Resources::Effect::Animation</a>
 , <a class="el" href="struct_weapon_1_1_resources_1_1_animation.html#a3d865bc4b53beeb42c57ce9a373c31a0">Weapon::Resources::Animation</a>
+</li>
+<li>m_effect
+: <a class="el" href="struct_pickup_1_1_resources.html#aae8e2b6d3255031d8aa2a7e36696b005">Pickup::Resources</a>
+</li>
+<li>m_effectSprite
+: <a class="el" href="class_pickup.html#a59f03ab1c7f763d51c37ec6d8f430d58">Pickup</a>
 </li>
 <li>m_emptyTextRect
 : <a class="el" href="classgui_1_1_slider.html#a88740adc74863e5c6c30084e2f72de99">gui::Slider</a>
@@ -249,6 +266,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="classbullets_1_1_magma_shot.html#ad5299693b1586ab5569f85eb48059005">bullets::MagmaShot</a>
 , <a class="el" href="classbullets_1_1_napalm_sphere.html#aecaaf1b7ae0bcc2d6bcf8a870d6bca21">bullets::NapalmSphere</a>
 , <a class="el" href="classbullets_1_1_pyro_blast.html#a148199fcf78d9a6730f5d13313a401b9">bullets::PyroBlast</a>
+</li>
+<li>m_explosionCircleCollider
+: <a class="el" href="classbullets_1_1_pyro_blast.html#a39b6b28d2cc08cc7577d21f263bb71fc">bullets::PyroBlast</a>
 </li>
 <li>m_fadeOut
 : <a class="el" href="classgui_1_1_button.html#aafb8c807cdc03854df3e10ffc887aeb7">gui::Button</a>
@@ -266,6 +286,10 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_fontSize
 : <a class="el" href="classgui_1_1_label.html#a9867b1faceb16a9c3403a223634656f1">gui::Label</a>
+</li>
+<li>m_frame
+: <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_texture.html#a60d2b0bff7e0692714fddbf855436d0c">Pickup::Resources::Effect::Texture</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_individual_pickup.html#a1482b09108298829fc1117ba3e2a70dc">Pickup::Resources::IndividualPickup</a>
 </li>
 <li>m_FRAME_CHANGE
 : <a class="el" href="class_ship.html#a6f93c201c1b473ff131105b6bc2ccf25">Ship</a>
@@ -308,6 +332,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_id
 : <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#aac30428d83cf1f2034fed04fdabcef79">bullets::Bullet::Resources::Animation</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#add44c0904398609cee7eb91739ca2685">Pickup::Resources::Effect::Animation</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_texture.html#a75e61d683a9985e215a1670c163cc7d9">Pickup::Resources::Effect::Texture</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_individual_pickup.html#aa32b169bc6227884c49e9207118c5c64">Pickup::Resources::IndividualPickup</a>
 </li>
 <li>m_ID
@@ -366,11 +392,23 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_left
 : <a class="el" href="struct_ship_1_1_keys_pressed.html#a8eae65d3d3a62f17bde2f7a1488fc3f8">Ship::KeysPressed</a>
 </li>
+<li>m_leftConnectorEnd
+: <a class="el" href="class_player.html#a697e3a3f5c696190b835e9b5351ad358">Player</a>
+</li>
 <li>m_leftLabel
 : <a class="el" href="classgui_1_1_slider.html#a56a4641ab66db924e24ab5421fc3067d">gui::Slider</a>
 </li>
+<li>m_leftPosition
+: <a class="el" href="class_pickup.html#a54cdc3bbd8c124b5b2bbd38495ef7351">Pickup</a>
+</li>
+<li>m_leftSprite
+: <a class="el" href="class_pickup.html#a1b5f47c2416fcb73870878d9f0ec99a5">Pickup</a>
+</li>
 <li>m_leftTextRect
 : <a class="el" href="classgui_1_1_button.html#a1ba1e7c70c5d44116b0fa6ce8b2213f1">gui::Button</a>
+</li>
+<li>m_leftVelocity
+: <a class="el" href="class_pickup.html#ac040ac24b8bc47d80cff437ff369edc9">Pickup</a>
 </li>
 <li>m_lTrigger
 : <a class="el" href="struct_game_pad_state.html#a0a4eddeaeb340f08cdefd7ec561ddfca">GamePadState</a>
@@ -421,6 +459,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_origin
 : <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a98774edf7fd394e5714d7235894228c3">bullets::Bullet::Resources::Animation</a>
 , <a class="el" href="class_pickup.html#a2d8b2083e1dc3919dd8ad81ecfa36af7">Pickup</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#aa9307195c0ee5dbd7be753866a104775">Pickup::Resources::Effect::Animation</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_texture.html#a94c4edca7cd1796ea883f7e6b20dfe81">Pickup::Resources::Effect::Texture</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_individual_pickup.html#a62b7508f7b5ff86fa8b568e069f65f3e">Pickup::Resources::IndividualPickup</a>
 , <a class="el" href="struct_weapon_1_1_resources_1_1_animation.html#aedc575217e93b24fcd4787cfed18f6c9">Weapon::Resources::Animation</a>
 </li>
@@ -449,7 +489,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="class_game_scene.html#a9d2ddcc62810389125ac5ddf2bb442af">GameScene</a>
 </li>
 <li>m_pickups
-: <a class="el" href="struct_pickup_1_1_resources.html#adfe8ca0d019d928d67749e9a0d5da27c">Pickup::Resources</a>
+: <a class="el" href="struct_pickup_1_1_resources.html#ae6dd20b85336d90ac3427523fbdd27fa">Pickup::Resources</a>
 </li>
 <li>m_player
 : <a class="el" href="class_game_scene.html#a814ec4e13fc13a8e8c2f29ef179abc8b">GameScene</a>
@@ -459,7 +499,6 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 , <a class="el" href="classbullets_1_1_bullet.html#a37850bb27e3903d69b55c2d76e238bd4">bullets::Bullet</a>
 , <a class="el" href="classgui_1_1_check_box.html#a7b9fc2dffad0a71a882a5a1772ab1817">gui::CheckBox</a>
 , <a class="el" href="classgui_1_1_label.html#a4bc64d38faf4e9a83d968c056f53243b">gui::Label</a>
-, <a class="el" href="class_pickup.html#a3befce33298a024712968227497489bd">Pickup</a>
 , <a class="el" href="class_shield.html#aead0b2685ff22eacbd1c3b845fc663d6">Shield</a>
 , <a class="el" href="class_ship.html#a42a1eb695d4909bee43e7f5cd28dd66b">Ship</a>
 , <a class="el" href="class_weapon.html#a64e42f89ecdc9ab9715969d670933887">Weapon</a>
@@ -498,7 +537,6 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_rectangle
 : <a class="el" href="class_asteroid.html#af1168c2dc99f7b121da4dd90676b6e65">Asteroid</a>
 , <a class="el" href="classgui_1_1_check_box.html#a5fb3d60a4dc6303003bc7f39bea88b0a">gui::CheckBox</a>
-, <a class="el" href="class_pickup.html#a5c2d020d73e4cad7fbefed38b0c5ae1c">Pickup</a>
 </li>
 <li>m_rectangleLeft
 : <a class="el" href="classgui_1_1_button.html#aee1c938c1fe2ebc4484fc8b770e2791b">gui::Button</a>
@@ -540,11 +578,23 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_right
 : <a class="el" href="struct_ship_1_1_keys_pressed.html#a950253aa3c3983ace8568804aaa06198">Ship::KeysPressed</a>
 </li>
+<li>m_rightConnectorEnd
+: <a class="el" href="class_player.html#acd81b7c4c56fb9bbea7acf3333fd80af">Player</a>
+</li>
 <li>m_rightLabel
 : <a class="el" href="classgui_1_1_slider.html#ad82cbd8418403c0c5b6c1a80f86d562e">gui::Slider</a>
 </li>
+<li>m_rightPosition
+: <a class="el" href="class_pickup.html#a0b2de1579e105f5b799c8a4d8bbcff19">Pickup</a>
+</li>
+<li>m_rightSprite
+: <a class="el" href="class_pickup.html#a1bf0918baf8725ee858debfde337734e">Pickup</a>
+</li>
 <li>m_rightTextRect
 : <a class="el" href="classgui_1_1_button.html#ad1cbd7ab2eeda9e261472b4e84732f48">gui::Button</a>
+</li>
+<li>m_rightVelocity
+: <a class="el" href="class_pickup.html#abd6895107349e9915cbd0068754b139f">Pickup</a>
 </li>
 <li>m_rTrigger
 : <a class="el" href="struct_game_pad_state.html#a60d3d1b3e18bb7c53603d75d0819268f">GamePadState</a>
@@ -557,6 +607,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_scale
 : <a class="el" href="classgui_1_1_check_box.html#a7da2b3a675c1be4fa60ae806041bcd3d">gui::CheckBox</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_texture.html#a43add3fc442e5f9f064c102fe3e038a0">Pickup::Resources::Effect::Texture</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_individual_pickup.html#a1f52265167716b31fa6d5a0f4ad415e8">Pickup::Resources::IndividualPickup</a>
 </li>
 <li>m_scene
 : <a class="el" href="struct_scene_manager_1_1_managed_scene.html#a7eb297dc13a261e220b4536f9daeef02">SceneManager::ManagedScene</a>
@@ -601,7 +653,6 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_size
 : <a class="el" href="class_pickup.html#a8e20c9d03a32b9f0435878426ffc3254">Pickup</a>
-, <a class="el" href="struct_pickup_1_1_resources_1_1_individual_pickup.html#aa077b35d070a4563cb01459b557c0d7d">Pickup::Resources::IndividualPickup</a>
 </li>
 <li>m_slider
 : <a class="el" href="classgui_1_1_slider.html#a9874913cd00602060e705ebe140b18dd">gui::Slider</a>
@@ -644,6 +695,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_sptrFrames
 : <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a248c6e22634b611cb2ddf31231a76a24">bullets::Bullet::Resources::Animation</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#aa0129d3584cd2602c8ca08c5ba2a5d88">Pickup::Resources::Effect::Animation</a>
 , <a class="el" href="struct_weapon_1_1_resources_1_1_animation.html#a9e68f7c8f09332dddf4372fe628653c9">Weapon::Resources::Animation</a>
 </li>
 <li>m_sptrImpactAnimation
@@ -666,6 +718,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_sptrTexture
 : <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a83a4e2a23abd47da9653db5c167ce4ac">bullets::Bullet::Resources::Animation</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#a416d0dabbde9e784715ea7ce76b94edb">Pickup::Resources::Effect::Animation</a>
 , <a class="el" href="struct_ship_1_1_resources.html#a15c9f3485ca425cb1494b2038da7629f">Ship::Resources</a>
 , <a class="el" href="struct_weapon_1_1_resources_1_1_animation.html#adbb75cb9481c8e6d532e40012dd3f38a">Weapon::Resources::Animation</a>
 </li>
@@ -694,6 +747,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="classgui_1_1_button.html#a5bf6f0f5051bcf555161e454d0efe351">gui::Button</a>
 , <a class="el" href="classgui_1_1_check_box.html#a1e41f5bbc2c9bff9b2d5586a92a1010d">gui::CheckBox</a>
 , <a class="el" href="class_pickup.html#ae9e267c39e4a4b8da1bd7de9ee50391c">Pickup</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect.html#aaeb39d847706ecd647a0cf4c2d8c6157">Pickup::Resources::Effect</a>
+, <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_texture.html#a0da64d2f7f405bcbd2455edc9cdca0ca">Pickup::Resources::Effect::Texture</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_individual_pickup.html#a5a0b799a3c3ea6b394ff27b7f968f843">Pickup::Resources::IndividualPickup</a>
 , <a class="el" href="class_ship.html#aceef0ccec889b552f917f0213136cb8e">Ship</a>
 </li>
@@ -759,7 +814,6 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_velocity
 : <a class="el" href="class_asteroid.html#a8dd7cd60da2412c5859e078a5902f03d">Asteroid</a>
 , <a class="el" href="classbullets_1_1_bullet.html#a4a39935b0bbd51d686e9e66577fa5045">bullets::Bullet</a>
-, <a class="el" href="class_pickup.html#a6b2205e69f995d64d04da5ec4360a7c5">Pickup</a>
 </li>
 <li>m_weapon
 : <a class="el" href="struct_player_1_1_resources.html#ac63192254b2e9cc92cc835b9507cec0f">Player::Resources</a>

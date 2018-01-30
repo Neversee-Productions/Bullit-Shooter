@@ -63,6 +63,7 @@ public:
 	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
 	void playerPickupCollision();
 	float generateRandomTimer();
+	void updateAsteroidSpawner();
 
 private:
 	void goToNextScene() final override;
@@ -109,6 +110,22 @@ private:
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Background::Resources> sptrBackgroundResources
 		, json::json & gameSceneParser
+	);
+	void setupPickups(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<Pickup::Resources> sptrPickupResources
+		, json::json & gameSceneParser
+	);
+	void setupPickup(
+		ResourceHandler & resourceHandler
+		, Pickup::Resources::PickupMap & pickupMap
+		, json::json & pickupParser
+		, BulletTypes const & pickupType
+	);
+	void setupPickupEffect(
+		ResourceHandler & resourceHandler
+		, Pickup::Resources::Effect & effect
+		, json::json & effectParser
 	);
 
 	/// <summary>

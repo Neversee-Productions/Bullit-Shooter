@@ -11,7 +11,7 @@ var searchData=
   ['ai_2ecpp',['Ai.cpp',['../_ai_8cpp.html',1,'']]],
   ['ai_2eh',['Ai.h',['../_ai_8h.html',1,'']]],
   ['amountoftypes',['AmountOfTypes',['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca2504b2044f4a18f4e2b957e47a1e9468',1,'BulletTypes.h']]],
-  ['animation',['Animation',['../structbullets_1_1_bullet_1_1_resources_1_1_animation.html',1,'bullets::Bullet::Resources::Animation'],['../struct_weapon_1_1_resources_1_1_animation.html',1,'Weapon::Resources::Animation']]],
+  ['animation',['Animation',['../struct_pickup_1_1_resources_1_1_effect_1_1_animation.html',1,'Pickup::Resources::Effect::Animation'],['../structbullets_1_1_bullet_1_1_resources_1_1_animation.html',1,'bullets::Bullet::Resources::Animation'],['../struct_weapon_1_1_resources_1_1_animation.html',1,'Weapon::Resources::Animation']]],
   ['app',['App',['../class_app.html',1,'App'],['../class_app.html#acb8cbf3e285b91d0170ffe87df5989c5',1,'App::App()']]],
   ['app_2ecpp',['App.cpp',['../_app_8cpp.html',1,'']]],
   ['app_2eh',['App.h',['../_app_8h.html',1,'']]],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pickup',['Pickup',['../class_pickup.html#a96d607c3c6fbe14446c5cafc33163844',1,'Pickup::Pickup()'],['../class_pickup.html#af72d757b3e01df5b396c4ae2abfb9ffa',1,'Pickup::Pickup(sf::Vector2f position, sf::Vector2f size)']]],
+  ['pickup',['Pickup',['../class_pickup.html#a96d607c3c6fbe14446c5cafc33163844',1,'Pickup::Pickup()'],['../class_pickup.html#a0e11ec5a4da05139187d891a20be3b2d',1,'Pickup::Pickup(std::shared_ptr&lt; Resources &gt; resources, sf::Vector2f position, sf::Vector2f size, BulletTypes const &amp;pickupType)']]],
   ['player',['Player',['../class_player.html#a7440c280452f6ee2737dad2e2abe2962',1,'Player']]],
   ['playerasteroidcollision',['playerAsteroidCollision',['../class_game_scene.html#ad3c7f1444e67a8462e4611dbe9319bc4',1,'GameScene']]],
   ['playerpickupcollision',['playerPickupCollision',['../class_game_scene.html#a3ad265a99cea48b606c907382e66cabc',1,'GameScene']]],

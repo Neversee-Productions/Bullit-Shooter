@@ -1,0 +1,427 @@
+{
+    "weapons":
+    [
+        {
+            "key": "weapon01_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon01/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 26,
+                    "y": 51
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 52,
+                    "h": 102
+                }
+            }
+        },
+        {
+            "key": "weapon02_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon02/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 50.5,
+                    "y": 34
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 101,
+                    "h": 68
+                }
+            }
+        },
+        {
+            "key": "weapon03_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon03/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 29,
+                    "y": 73
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 58,
+                    "h": 146
+                }
+            }
+        },
+        {
+            "key": "weapon04_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon04/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 36.5,
+                    "y": 60.5
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 73,
+                    "h": 121
+                }
+            }
+        },
+        {
+            "key": "weapon05_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon05/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 32.5,
+                    "y": 59.5
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 65,
+                    "h": 119
+                }
+            }
+        },
+        {
+            "key": "weapon06_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon06/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 29,
+                    "y": 34
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 58,
+                    "h": 68
+                }
+            }
+        },
+        {
+            "key": "weapon07_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon07/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 48.5,
+                    "y": 42.5
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 98,
+                    "h": 85
+                }
+            }
+        },
+        {
+            "key": "weapon08_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon08/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 53.5,
+                    "y": 55
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 107,
+                    "h": 110
+                }
+            }
+        },
+        {
+            "key": "weapon09_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon09/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 67.5,
+                    "y": 58
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 135,
+                    "h": 116
+                }
+            }
+        },
+        {
+            "key": "weapon10_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon10/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 108.5,
+                    "y": 83
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 217,
+                    "h": 166
+                }
+            }
+        },
+        {
+            "key": "weapon11_begin",
+            "texture":
+            {
+                "path": "resources/scenes/Game/player/weapons/weapon11/weapon_begin.png",
+                "scale":
+                {
+                    "x": 0.75,
+                    "y": 0.75
+                },
+                "origin":
+                {
+                    "x": 126,
+                    "y": 112.5
+                },
+                "frame":
+                {
+                    "x": 1,
+                    "y": 1,
+                    "w": 252,
+                    "h": 150
+                }
+            }
+        }
+    ],
+    "effect":
+    {
+        "texture":
+        {
+            "path": "resources\\scenes\\Game\\pickup\\pickup_effect.png",
+            "origin":
+            {
+                "x": 36,
+                "y": 36
+            },
+            "scale":
+            {
+                "x": 2,
+                "y": 2
+            },
+            "frame":
+            {
+                "x": 0,
+                "y": 0,
+                "w": 72,
+                "h": 72
+            }
+        },
+        "animation":
+        {
+            "duration": 0.3,
+            "origin":
+            {
+                "x": 36.0,
+                "y": 36.0
+            },
+            "width": 72,
+            "height": 72,
+            "frames":
+            [
+                {
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "x": 72,
+                    "y": 0
+                },
+                {
+                    "x": 144,
+                    "y": 0
+                },
+                {
+                    "x": 0,
+                    "y": 72
+                },
+                {
+                    "x": 72,
+                    "y": 72
+                },
+                {
+                    "x": 144,
+                    "y": 72
+                },
+                {
+                    "x": 0,
+                    "y": 144
+                },
+                {
+                    "x": 72,
+                    "y": 144
+                },
+                {
+                    "x": 144,
+                    "y": 144
+                },
+                {
+                    "x": 0,
+                    "y": 216
+                },
+                {
+                    "x": 72,
+                    "y": 216
+                },
+                {
+                    "x": 144,
+                    "y": 216
+                },
+                {
+                    "x": 0,
+                    "y": 288
+                },
+                {
+                    "x": 72,
+                    "y": 288
+                },
+                {
+                    "x": 144,
+                    "y": 288
+                },
+                {
+                    "x": 0,
+                    "y": 360
+                },
+                {
+                    "x": 72,
+                    "y": 360
+                },
+                {
+                    "x": 144,
+                    "y": 360
+                },
+                {
+                    "x": 0,
+                    "y": 432
+                },
+                {
+                    "x": 72,
+                    "y": 432
+                },
+                {
+                    "x": 144,
+                    "y": 432
+                },
+                {
+                    "x": 0,
+                    "y": 504
+                },
+                {
+                    "x": 72,
+                    "y": 504
+                },
+                {
+                    "x": 144,
+                    "y": 504
+                },
+                {
+                    "x": 0,
+                    "y": 576
+                },
+                {
+                    "x": 72,
+                    "y": 576
+                },
+                {
+                    "x": 144,
+                    "y": 576
+                },
+                {
+                    "x": 0,
+                    "y": 648
+                },
+                {
+                    "x": 72,
+                    "y": 648
+                },
+                {
+                    "x": 144,
+                    "y": 648
+                }
+            ]
+        }
+    }
+}

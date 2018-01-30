@@ -16,7 +16,7 @@ bullets::PyroBlast::PyroBlast()
 	m_velocity.y = -m_speed;
 
 	//different size to parent
-	m_bulletRect.setSize(sf::Vector2f(15.0f, 20.0f));
+	m_bulletRect.setSize(sf::Vector2f(100.0f, 120.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 	//change collision rectangle
@@ -36,10 +36,11 @@ void bullets::PyroBlast::update()
 	}
 	else
 	{
-		if (m_bulletRect.getSize().x < 200.0f)
+		if (m_bulletRect.getSize().x < 700.0f)
 		{
-			m_bulletRect.setSize(m_bulletRect.getSize() + sf::Vector2f(2.0f, 2.0f));
+			m_bulletRect.setSize(m_bulletRect.getSize() + sf::Vector2f(7.0f, 7.0f));
 			m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
+			updateExplosionCircle();
 		}
 		else
 		{
@@ -73,7 +74,7 @@ void bullets::PyroBlast::setActive(bool active)
 {
 	if (!active)
 	{
-		m_bulletRect.setSize(sf::Vector2f(20.0f, 15.0f));
+		m_bulletRect.setSize(sf::Vector2f(100.0f, 120.0f));
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_explode = false;
 		this->setAnimation(s_LOOP_ID);
@@ -105,4 +106,39 @@ void bullets::PyroBlast::explode(bool check)
 const float & bullets::PyroBlast::getDamage()
 {
 	return m_damage;
+}
+
+/// <summary>
+/// @brief Check collision between bullet and another object OR agains bullets explosion and other object.
+/// 
+/// 
+/// </summary>
+/// <param name="other">other object</param>
+/// <returns>true if collision happened otherwise false</returns>
+bool bullets::PyroBlast::checkCircleCollision(const tinyh::c2Circle & other)
+{
+	if (m_explode)
+	{
+		if (tinyh::c2CircletoCircle(other, m_explosionCircleCollider))
+		{
+			return true;
+		}
+	}
+	else if(tinyh::c2CircletoAABB(other, m_bulletC2Rect))
+	{
+		return true;
+	}
+	return false;
+}
+
+/// <summary>
+/// @brief this method will update the explosiion circle.
+/// 
+/// 
+/// </summary>
+void bullets::PyroBlast::updateExplosionCircle()
+{
+	m_explosionCircleCollider.p.x = m_bulletRect.getPosition().x;
+	m_explosionCircleCollider.p.y = m_bulletRect.getPosition().y;
+	m_explosionCircleCollider.r = (m_bulletRect.getGlobalBounds().width / 2.0f) * 0.8f;
 }

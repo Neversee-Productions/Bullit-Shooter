@@ -130,6 +130,12 @@ public:
 	const BulletTypes & getBulletType();
 	bool const getIsFlipped() const;
 	void setType(BulletTypes const & bulletType);
+	void setCanFire(bool const & canFire);
+	bool const & getCanFire() const;
+	std::string const & getBeginAnimationID() const;
+	void fadeOut();
+	void setAlpha(float alpha);
+
 private:
 	/// <summary>
 	/// @brief define the weapon rectangle.
@@ -165,5 +171,12 @@ private:
 	/// Will contain all our weapon animations.
 	/// </summary>
 	std::unique_ptr<WeaponAnimator> m_animator;
+
+	/// <summary>
+	/// @brief define if weapon can fire.
+	/// 
+	/// 
+	/// </summary>
+	bool m_canFire;
 };
 #endif // !WEAPON_H

@@ -33,9 +33,9 @@ var NAVTREEINDEX =
 [
 "_ai_8cpp.html",
 "class_bullet_manager.html#ad0d1d44d7cc99a2a57f7fe8234a2cf28",
-"class_ship.html#a3ee2f77fa9920030dc3ff8268b2f73a4",
-"classgui_1_1_button.html#a3bc29cbe173934452c4668b24f2284e4",
-"globals.html"
+"class_scene_manager.html#aa6287afb28c74e208cf21f05ae443506",
+"classbullets_1_1_pyro_blast.html#af7597a5484dae595da86a3f94bec4184",
+"functions_func_g.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

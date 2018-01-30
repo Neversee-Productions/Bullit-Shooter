@@ -105,12 +105,28 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>setAlive()
 : <a class="el" href="class_player.html#a472e9dcb0939f81fe709240ce61a9782">Player</a>
 </li>
+<li>setAlpha()
+: <a class="el" href="class_weapon.html#aee0c6edb6202919f074a51e97ff6353e">Weapon</a>
+</li>
 <li>setAngle()
 : <a class="el" href="classbullets_1_1_bullet.html#a72d0c4cb269cad6e25fdaaff4f94cbd2">bullets::Bullet</a>
 </li>
 <li>setAnimation()
 : <a class="el" href="classbullets_1_1_bullet.html#a8914b190cc25c1d69d4356901b7ca5a1">bullets::Bullet</a>
 , <a class="el" href="classbullets_1_1_static_sphere.html#ab83d6b2269e057a37e1c7ed17e588833">bullets::StaticSphere</a>
+</li>
+<li>setAttachedWeapons()
+: <a class="el" href="class_player.html#a65f8d072fd7127f9b83ace706fd381ea">Player</a>
+</li>
+<li>setCanFire()
+: <a class="el" href="class_player.html#aacd4595ca86d4199faf8a06736e19a6a">Player</a>
+, <a class="el" href="class_weapon.html#a2ac8844470f0167b2004e7659a33665a">Weapon</a>
+</li>
+<li>setConnectorPos()
+: <a class="el" href="class_player.html#af65497fe7b0be87cfeb962e95fe00c51">Player</a>
+</li>
+<li>setEffectAlpha()
+: <a class="el" href="class_pickup.html#a4841359bdc4b8d57f1e72a3c2a5c86de">Pickup</a>
 </li>
 <li>setEmpowered()
 : <a class="el" href="class_bullet_manager.html#a7a1c306efeb419cf4df73cb940669dc3">BulletManager</a>
@@ -123,6 +139,12 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 </li>
 <li>setFrames()
 : <a class="el" href="class_ship.html#a68638250e3a2b4b6e3d382d7cf53abe5">Ship</a>
+</li>
+<li>setLeftPosition()
+: <a class="el" href="class_pickup.html#ae75817cf6c64f7521398f91f92075392">Pickup</a>
+</li>
+<li>setLeftVelocity()
+: <a class="el" href="class_pickup.html#a00b0fea3b6207734b85c599fe6d0232f">Pickup</a>
 </li>
 <li>setNextSceneName()
 : <a class="el" href="class_scene.html#a997ae314fd37f012c8cbde5d93556819">Scene</a>
@@ -137,7 +159,6 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 , <a class="el" href="classgui_1_1_check_box.html#a0a91f521e1d5a10258fbf378422b4a15">gui::CheckBox</a>
 , <a class="el" href="classgui_1_1_label.html#a36e3de60902dab37bbf7e162d090beab">gui::Label</a>
 , <a class="el" href="classgui_1_1_slider.html#ac75a958a34009da813aa7c1f965448c4">gui::Slider</a>
-, <a class="el" href="class_pickup.html#a9860e90ad08fd765bbd51c51e57c6bba">Pickup</a>
 , <a class="el" href="class_shield.html#a6173dc488c2147d75dc49eb91d07a636">Shield</a>
 </li>
 <li>setRectangleColors()
@@ -145,6 +166,12 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 </li>
 <li>setRectPos()
 : <a class="el" href="class_weapon.html#a88ff982da20cd81f90569ffb14b0ffb5">Weapon</a>
+</li>
+<li>setRightPosition()
+: <a class="el" href="class_pickup.html#ae0ad703af8b153c6e99c6047ec38256c">Pickup</a>
+</li>
+<li>setRightVelocity()
+: <a class="el" href="class_pickup.html#ae23ed78541321d8768ece187b792aefc">Pickup</a>
 </li>
 <li>setScale()
 : <a class="el" href="classgui_1_1_label.html#aba1df232b745dc8240fc7cbd08404217">gui::Label</a>
@@ -183,6 +210,15 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>setupConnector()
 : <a class="el" href="class_game_scene.html#ab51d906e9997af13f6f0de576896163f">GameScene</a>
 </li>
+<li>setupPickup()
+: <a class="el" href="class_game_scene.html#a79232a67db7417fa555780ffd02cc51c">GameScene</a>
+</li>
+<li>setupPickupEffect()
+: <a class="el" href="class_game_scene.html#adb16fb1e5fb199773eb884657df79dc3">GameScene</a>
+</li>
+<li>setupPickups()
+: <a class="el" href="class_game_scene.html#a6c3516c892a734e46dd75c529d93f194">GameScene</a>
+</li>
 <li>setupPlayer()
 : <a class="el" href="class_game_scene.html#a1b81a871ebc93dc4ce15bbe877d15e04">GameScene</a>
 </li>
@@ -197,13 +233,15 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 </li>
 <li>setVelocity()
 : <a class="el" href="class_asteroid.html#aa1aec16c7ae1d887f4a56f927fd6c9c5">Asteroid</a>
-, <a class="el" href="class_pickup.html#acf0e7ffca2a4b607aa11237220f3dbe0">Pickup</a>
 </li>
 <li>setViewC2Rect()
 : <a class="el" href="class_app.html#a7e9cab266816de576d5da6482fee1eb9">App</a>
 </li>
 <li>setViewSize()
 : <a class="el" href="class_app.html#a57b3f984530d645babaf2679a39c1136">App</a>
+</li>
+<li>setWeaponsAlpha()
+: <a class="el" href="class_player.html#a436598cf519a2d9977945f21135295d2">Player</a>
 </li>
 <li>Shield()
 : <a class="el" href="class_shield.html#a3b066ad5ac4a4ad0905e6a9ea9dd3783">Shield</a>

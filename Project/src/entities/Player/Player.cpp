@@ -19,6 +19,7 @@ Player::Player(KeyHandler& keyHandler)
 	, m_weaponRightPos(sf::Vector2f(0.0f,0.0f))
 	, m_shield(m_ship.getShipRect().getPosition(), m_ship.getShipRect().getSize().y / 2)
 	, m_alive(true)
+	, m_attachedWeapons(true)
 {
 	auto const & flip = true;
 	m_weaponLeft.setRectPos(m_weaponLeftPos);
@@ -53,9 +54,9 @@ void Player::init(std::shared_ptr<Resources> sptrResources)
 /// <param name="deltaTime">define reference to draw time step.</param>
 void Player::draw(Window & window, const float & deltaTime)
 {
+	m_bulletManager.draw(window, deltaTime);
 	if (m_alive)
 	{
-		m_bulletManager.draw(window, deltaTime);
 		m_connectLeftWeaponToShip.draw(window, deltaTime);
 		m_weaponLeft.draw(window, deltaTime);
 		m_connectRightWeaponToShip.draw(window, -deltaTime);
@@ -95,7 +96,7 @@ void Player::update()
 		m_ship.move(Ship::Direction::Left, KEY_LEFT);
 		m_ship.move(Ship::Direction::Right, KEY_RIGHT);
 
-		if (KEY_FIRE)
+		if (KEY_FIRE && m_weaponLeft.getCanFire() && m_weaponRight.getCanFire())
 		{
 			m_bulletManager.fireBullet(m_weaponLeft, m_weaponRight, m_weaponLeft.getBulletType());
 		}
@@ -104,11 +105,16 @@ void Player::update()
 		m_shield.setPosition(shipPosition);
 		m_shield.update();
 		m_weaponLeft.update(shipPosition);
-		m_connectLeftWeaponToShip.update(shipPosition, m_weaponLeft.getPosition());
 		m_weaponRight.update(shipPosition);
-		m_connectRightWeaponToShip.update(m_weaponRight.getPosition(), shipPosition);
-		m_bulletManager.update();
+		if (m_attachedWeapons)
+		{
+			m_leftConnectorEnd = m_weaponLeft.getPosition();
+			m_rightConnectorEnd = m_weaponRight.getPosition();
+		}
+		m_connectLeftWeaponToShip.update(shipPosition, m_leftConnectorEnd);
+		m_connectRightWeaponToShip.update(m_rightConnectorEnd, shipPosition);
 	}
+	m_bulletManager.update();
 }
 
 /// <summary>
@@ -343,4 +349,130 @@ void Player::nextWeapon()
 	default:
 		break;
 	}
+}
+
+/// <summary>
+/// @brief get the current weapon type.
+/// 
+/// 
+/// </summary>
+/// <returns>A bullet type</returns>
+BulletTypes const & Player::getWeaponType()
+{
+	return m_weaponLeft.getBulletType();
+}
+
+/// <summary>
+/// @brief get the left weapon position.
+/// 
+/// 
+/// </summary>
+/// <returns>a vector2f that defines position.</returns>
+sf::Vector2f const & Player::getLeftWeaponPos()
+{
+	return m_weaponLeft.getPosition();
+}
+
+/// <summary>
+/// @brief get the right weapon position.
+/// 
+/// 
+/// </summary>
+/// <returns>a vector2f that defines position.</returns>
+sf::Vector2f const & Player::getRightWeaponPos()
+{
+	return m_weaponRight.getPosition();
+}
+
+/// <summary>
+/// @brief get the alive state of the player.
+/// 
+/// 
+/// </summary>
+/// <returns>readonly reference true if player is alive, false if player dead</returns>
+bool const & Player::isAlive()
+{
+	return m_alive;
+}
+
+/// <summary>
+/// @brief This method sets end points of the connectors.
+/// 
+/// 
+/// </summary>
+/// <param name="leftConnectorPos">new position of the left connector.</param>
+/// <param name="rightConnectorPos">new position of the right connector.</param>
+void Player::setConnectorPos(sf::Vector2f leftConnectorPos, sf::Vector2f rightConnectorPos)
+{
+	m_leftConnectorEnd = leftConnectorPos;
+	m_rightConnectorEnd = rightConnectorPos;
+}
+
+/// <summary>
+/// @brief sets the attached weapons bool to check.
+/// 
+/// 
+/// </summary>
+/// <param name="check">the new state of attached weapons</param>
+void Player::setAttachedWeapons(bool check)
+{
+	m_attachedWeapons = check;
+}
+
+/// <summary>
+/// @brief a getter that returns a constant reference to the end of the left connector.
+/// 
+/// 
+/// </summary>
+/// <returns>constant reference to a vector2f.</returns>
+const sf::Vector2f & Player::getLeftConnectorPos()
+{
+	return m_leftConnectorEnd;
+}
+
+/// <summary>
+/// @brief a getter that returns a constant reference to the end of the right connector.
+/// 
+/// 
+/// </summary>
+/// <returns>constant reference to a vector2f.</returns>
+const sf::Vector2f & Player::getRightConnectorPos()
+{
+	return m_rightConnectorEnd;
+}
+
+/// <summary>
+/// @brief this method scales down both weapons.
+/// 
+/// 
+/// </summary>
+void Player::fadeOutWeapons()
+{
+	m_weaponLeft.fadeOut();
+	m_weaponRight.fadeOut();
+}
+
+/// <summary>
+/// @brief this is a function that sets both weapons alpha to passed value.
+/// 
+/// 
+/// </summary>
+/// <param name="alpha">determines new alpha of weapon sprites as a float.</param>
+void Player::setWeaponsAlpha(float alpha)
+{
+	m_weaponLeft.setAlpha(alpha);
+	m_weaponRight.setAlpha(alpha);
+}
+
+/// <summary>
+/// @brief this calls both weapons setter for the can fire bool 
+/// and sets them to the passed parameter.
+/// 
+/// 
+/// </summary>
+/// <param name="fire">the new state of the can fire of both weapons</param>
+void Player::setCanFire(bool fire)
+{
+	m_weaponLeft.setCanFire(fire);
+	m_weaponRight.setCanFire(fire);
 }

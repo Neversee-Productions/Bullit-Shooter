@@ -1,9 +1,10 @@
 var searchData=
 [
   ['pete_5fis_5fcool',['PETE_IS_COOL',['../class_controller.html#ab71bd82e0906683338dee2bb6ffc93f1',1,'Controller']]],
-  ['pickup',['Pickup',['../class_pickup.html',1,'Pickup'],['../class_pickup.html#a96d607c3c6fbe14446c5cafc33163844',1,'Pickup::Pickup()'],['../class_pickup.html#af72d757b3e01df5b396c4ae2abfb9ffa',1,'Pickup::Pickup(sf::Vector2f position, sf::Vector2f size)']]],
+  ['pickup',['Pickup',['../class_pickup.html',1,'Pickup'],['../class_pickup.html#a96d607c3c6fbe14446c5cafc33163844',1,'Pickup::Pickup()'],['../class_pickup.html#a0e11ec5a4da05139187d891a20be3b2d',1,'Pickup::Pickup(std::shared_ptr&lt; Resources &gt; resources, sf::Vector2f position, sf::Vector2f size, BulletTypes const &amp;pickupType)']]],
   ['pickup_2ecpp',['Pickup.cpp',['../_pickup_8cpp.html',1,'']]],
   ['pickup_2eh',['Pickup.h',['../_pickup_8h.html',1,'']]],
+  ['pickupmap',['PickupMap',['../struct_pickup_1_1_resources.html#ad09c6127368e4834dca2a7bad747c129',1,'Pickup::Resources']]],
   ['player',['Player',['../class_player.html',1,'Player'],['../class_player.html#a7440c280452f6ee2737dad2e2abe2962',1,'Player::Player()']]],
   ['player_2ecpp',['Player.cpp',['../_player_8cpp.html',1,'']]],
   ['player_2eh',['Player.h',['../_player_8h.html',1,'']]],

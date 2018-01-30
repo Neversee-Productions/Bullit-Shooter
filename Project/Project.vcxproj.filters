@@ -178,6 +178,9 @@
     <Filter Include="Header Files\entities\Asteroids">
       <UniqueIdentifier>{1d00606e-08c9-4d50-b7c9-afb76153f92c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\scenes\Game\pickup">
+      <UniqueIdentifier>{a3dd8f8c-0dbb-4f84-9054-824263ae3133}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -349,6 +352,9 @@
     </None>
     <None Include="resources\scenes\Game\player\connector.vert">
       <Filter>Resource Files\scenes\Game\player</Filter>
+    </None>
+    <None Include="resources\scenes\Game\pickup\pickup.json">
+      <Filter>Resource Files\scenes\Game\pickup</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

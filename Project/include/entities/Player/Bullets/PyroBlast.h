@@ -22,8 +22,12 @@ namespace bullets
 		void setActive(bool active) override;
 		void explode(bool check);
 		const float & getDamage() override;
+		virtual bool checkCircleCollision(const tinyh::c2Circle & other) final override;
+
 
 	private:
+		void updateExplosionCircle();
+
 		/// <summary>
 		/// @brief define a static constant fire rate.
 		/// 
@@ -44,6 +48,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_damage;
+
+		/// <summary>
+		/// @brief defines the collsiion circle of the explosion.
+		/// 
+		/// 
+		/// </summary>
+		tinyh::c2Circle m_explosionCircleCollider;
 	};
 }
 

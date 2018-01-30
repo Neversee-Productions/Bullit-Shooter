@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "Pickup::Resources::Effect::Animation", "struct_pickup_1_1_resources_1_1_effect_1_1_animation.html", null ],
     [ "bullets::Bullet::Resources::Animation", "structbullets_1_1_bullet_1_1_resources_1_1_animation.html", null ],
     [ "Weapon::Resources::Animation", "struct_weapon_1_1_resources_1_1_animation.html", null ],
     [ "App", "class_app.html", null ],
@@ -32,6 +33,7 @@ var hierarchy =
         [ "gui::Slider", "classgui_1_1_slider.html", null ]
       ] ]
     ] ],
+    [ "Pickup::Resources::Effect", "struct_pickup_1_1_resources_1_1_effect.html", null ],
     [ "GamePadState", "struct_game_pad_state.html", null ],
     [ "gui::GUI", "classgui_1_1_g_u_i.html", null ],
     [ "Pickup::Resources::IndividualPickup", "struct_pickup_1_1_resources_1_1_individual_pickup.html", null ],
@@ -52,19 +54,19 @@ var hierarchy =
     [ "Background::Resources", "struct_background_1_1_resources.html", null ],
     [ "Pickup::Resources", "struct_pickup_1_1_resources.html", null ],
     [ "BulletManager::Resources", "struct_bullet_manager_1_1_resources.html", null ],
-    [ "Connector::Resources", "struct_connector_1_1_resources.html", null ],
-    [ "Player::Resources", "struct_player_1_1_resources.html", null ],
-    [ "Ship::Resources", "struct_ship_1_1_resources.html", null ],
-    [ "Weapon::Resources", "struct_weapon_1_1_resources.html", null ],
-    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
-    [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
-    [ "SplashScene::Resources", "struct_splash_scene_1_1_resources.html", null ],
-    [ "TitleScene::Resources", "struct_title_scene_1_1_resources.html", null ],
-    [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
     [ "bullets::Bullet::Resources", "structbullets_1_1_bullet_1_1_resources.html", [
       [ "bullets::DeathOrb::Resources", "structbullets_1_1_death_orb_1_1_resources.html", null ],
       [ "bullets::HolySphere::Resources", "structbullets_1_1_holy_sphere_1_1_resources.html", null ]
     ] ],
+    [ "Connector::Resources", "struct_connector_1_1_resources.html", null ],
+    [ "Player::Resources", "struct_player_1_1_resources.html", null ],
+    [ "Ship::Resources", "struct_ship_1_1_resources.html", null ],
+    [ "Weapon::Resources", "struct_weapon_1_1_resources.html", null ],
+    [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
+    [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
+    [ "SplashScene::Resources", "struct_splash_scene_1_1_resources.html", null ],
+    [ "TitleScene::Resources", "struct_title_scene_1_1_resources.html", null ],
+    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
       [ "MainMenuScene", "class_main_menu_scene.html", null ],
@@ -75,6 +77,7 @@ var hierarchy =
     [ "SceneManager", "class_scene_manager.html", null ],
     [ "Shield", "class_shield.html", null ],
     [ "Ship", "class_ship.html", null ],
+    [ "Pickup::Resources::Effect::Texture", "struct_pickup_1_1_resources_1_1_effect_1_1_texture.html", null ],
     [ "Weapon", "class_weapon.html", null ],
     [ "Window", "class_window.html", null ]
 ];
