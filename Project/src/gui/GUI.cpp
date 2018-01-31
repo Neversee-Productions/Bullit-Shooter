@@ -373,6 +373,7 @@ void gui::GUI::processInput()
 {
 	if (m_controller->isConnected())
 	{
+#ifdef XBOX360_
 		const float& JOYSTICK_THRESHOLD = 50.0f;
 		const auto & DPAD_UP = m_controller->m_currentState.m_dpadUp;
 		const auto & PREV_DPAD_UP = m_controller->m_previousState.m_dpadUp;
@@ -397,6 +398,7 @@ void gui::GUI::processInput()
 		{
 			moveToNextWidgets();
 		}
+#endif
 	}
 	else
 	{

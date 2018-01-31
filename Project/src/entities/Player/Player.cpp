@@ -6,7 +6,8 @@
 /// Will construct the player and initializes members
 /// </summary>
 /// <param name="keyHandler">Reference to the key handler</param>
-Player::Player(KeyHandler& keyHandler, Background & background)
+/// <param name="controller">Reference to the controller.</param>
+Player::Player(KeyHandler& keyHandler, Controller & controller, Background & background)
 	: m_background(background)
 	, m_ship()
 	, m_weaponLeft()
@@ -14,6 +15,7 @@ Player::Player(KeyHandler& keyHandler, Background & background)
 	, m_weaponRight()
 	, m_connectRightWeaponToShip()
 	, m_keyHandler(keyHandler)
+	, m_controller(controller)
 	, m_bulletManager()
 	, deltaTime(App::getUpdateDeltaTime())
 	, m_weaponLeftPos(sf::Vector2f(0.0f,0.0f))
@@ -79,17 +81,23 @@ void Player::update()
 	{
 		const bool & KEY_UP =
 			m_keyHandler.isPressed(sf::Keyboard::Up)
-			|| m_keyHandler.isPressed(sf::Keyboard::W);
+			|| m_keyHandler.isPressed(sf::Keyboard::W)
+			|| checkAxis(m_controller.m_currentState.m_flightStick.y, true);
 		const bool & KEY_DOWN =
 			m_keyHandler.isPressed(sf::Keyboard::Down)
-			|| m_keyHandler.isPressed(sf::Keyboard::S);
+			|| m_keyHandler.isPressed(sf::Keyboard::S)
+			|| checkAxis(m_controller.m_currentState.m_flightStick.y, false);
 		const bool & KEY_LEFT =
 			m_keyHandler.isPressed(sf::Keyboard::Left)
-			|| m_keyHandler.isPressed(sf::Keyboard::A);
+			|| m_keyHandler.isPressed(sf::Keyboard::A)
+			|| checkAxis(m_controller.m_currentState.m_flightStick.x, true);
 		const bool & KEY_RIGHT =
 			m_keyHandler.isPressed(sf::Keyboard::Right)
-			|| m_keyHandler.isPressed(sf::Keyboard::D);
-		const bool & KEY_FIRE = m_keyHandler.isPressed(sf::Keyboard::Space);
+			|| m_keyHandler.isPressed(sf::Keyboard::D)
+			|| checkAxis(m_controller.m_currentState.m_flightStick.x, false);
+		const bool & KEY_FIRE =
+			m_keyHandler.isPressed(sf::Keyboard::Space)
+			|| m_controller.m_currentState.m_btnTrigger;
 
 		switchWeaponInput();
 
@@ -248,6 +256,34 @@ void Player::switchWeaponInput()
 		m_weaponRight.setType(BulletTypes::PyroBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
+}
+
+/// <summary>
+/// @brief Check if axis is over threshold.
+/// 
+/// 
+/// </summary>
+/// <param name="axis">axis to be checked</param>
+/// <param name="flipped">determines whether to check below a negative threshold or above a positive threshold.</param>
+/// <returns>true if axis is over threshold.</returns>
+bool Player::checkAxis(float const & axis, bool flipped)
+{
+	float const THRESHOLD = 10.0f;
+	if (flipped)
+	{
+		if (axis < -THRESHOLD)
+		{
+			return true;
+		}
+	}
+	else
+	{
+		if (axis > THRESHOLD)
+		{
+			return true;
+		}
+	}
+	return false;
 }
 
 /// <summary>
