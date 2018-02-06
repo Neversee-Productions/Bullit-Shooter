@@ -18,6 +18,8 @@ Ship::Ship()
 	, m_FRAME_STILL(nullptr)
 	, m_ID("ship")
 	, m_pressed()
+	, m_velocity(sf::Vector2f(0.0f,0.0f))
+	, m_acceleration(sf::Vector2f(0.0f,0.0f))
 {
 	m_shipRect.setPosition(m_position);
 	m_shipRect.setSize(sf::Vector2f(75.0f, 100.0f));
@@ -52,6 +54,19 @@ void Ship::init(std::shared_ptr<Resources> resources)
 /// </summary>
 void Ship::update()
 {
+	auto dt = App::getUpdateDeltaTime();
+	m_velocity += m_acceleration * dt;
+	/*
+	pos.x += vel.x * dt;
+	pos.y += vel.y * dt;
+	vel.x += accel.x * dt;
+	vel.y += accel.y * dt;
+	*/
+	m_position.x += m_velocity.x * dt;
+	m_position.y += m_velocity.y * dt;
+
+	m_velocity.x += m_acceleration.x * dt;
+	m_velocity.y += m_acceleration.y * dt;
 	processInput(m_pressed);
 	m_shipRect.setPosition(m_position);
 }

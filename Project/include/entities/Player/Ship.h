@@ -12,6 +12,8 @@
 // For thor::Animator<>
 #include "Thor\Animations\Animator.hpp"
 #include "Window.h"
+//for vector calculations
+#include "Thor\Vectors.hpp" 
 
 ///
 /// @brief Ship class.
@@ -97,6 +99,9 @@ private:
 	void moveRight();
 	void decFrame();
 	void incFrame();
+	float easeIn(float t, float b, float c, float d);
+	float easeOut(float t, float b, float c, float d);
+
 
 	/// <summary>
 	/// @brief Delta time update.
@@ -171,6 +176,20 @@ private:
 	/// @brief Defines a struct of pressed keys.
 	/// </summary>
 	KeysPressed m_pressed;
+
+	/// <summary>
+	/// @brief this is the velocity vector.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_velocity;
+
+	/// <summary>
+	/// @brief This is the acceleration value.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_acceleration;
 };
 
 #endif SHIP_H
