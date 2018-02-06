@@ -186,39 +186,11 @@ private:
 	sf::Vector2f m_velocity;
 
 	/// <summary>
-	/// @brief This is the acceleration value.
-	/// 
-	/// 
-	/// </summary>
-	sf::Vector2f m_acceleration;
-
-	/// <summary>
 	/// @brief define the aount to accelerate by.
 	/// 
 	/// 
 	/// </summary>
 	float m_accelerationRate;
-
-	/// <summary>
-	/// @brief define maximum velocity.
-	/// 
-	/// 
-	/// </summary>
-	const float MAX_VEL;
-
-	/// <summary>
-	/// @brief define how much the player ship slows down.
-	/// 
-	/// 
-	/// </summary>
-	const float FRICTION;
-
-	/// <summary>
-	/// @brief define maximum acceleration.
-	/// 
-	/// 
-	/// </summary>
-	const float MAX_ACCEL;
 };
 
 #endif SHIP_H
