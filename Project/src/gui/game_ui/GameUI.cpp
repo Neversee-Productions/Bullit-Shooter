@@ -87,7 +87,7 @@ void GameUI::init(std::shared_ptr<Resources> resources)
 	m_healthLostSprite.setTexture(*resources->m_sptrHealthTexture, false);
 	m_healthLostSprite.setOrigin(0.0f, m_healthLostSprite.getGlobalBounds().height / 2);
 	m_healthLostSprite.setPosition(sf::Vector2f(m_healthTemplatePosition.x - 75.0f, m_healthTemplatePosition.y));
-	m_healthLostSprite.setColor(sf::Color(255u, 255u, 25u, 255u));
+	m_healthLostSprite.setColor(sf::Color(255u, 255u, 100u, 255u));
 
 	//initialize the collision rectangle
 	m_healthCollisionRect.min.x = m_healthTemplatePosition.x - (m_healthTemplateSprite.getLocalBounds().width / 2);

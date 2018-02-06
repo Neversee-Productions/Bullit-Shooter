@@ -76,6 +76,7 @@ void MainMenuScene::update()
 	{
 		m_controller->update();
 		m_gui->update(m_UPDATE_DT);
+		m_background.update();
 	}
 }
 
@@ -88,6 +89,7 @@ void MainMenuScene::update()
 /// <param name="deltaTime">reference to draw time step</param>
 void MainMenuScene::draw(Window & window, const float & deltaTime)
 {
+	m_background.draw(window, deltaTime);
 	m_gui->draw(window);
 }
 
@@ -111,9 +113,7 @@ void MainMenuScene::setup(const std::string & resourceFilePath)
 {
 	auto & resourceHandler = ResourceHandler::get();
 
-	std::ifstream rawFile(resourceFilePath);
-	json::json jsonLoader;
-	rawFile >> jsonLoader;
+	json::json jsonLoader = util::loadJsonFromFile(resourceFilePath);
 
 	if (!m_resources)
 	{
@@ -126,11 +126,15 @@ void MainMenuScene::setup(const std::string & resourceFilePath)
 
 		m_resources->m_sptrButtonFont = resourceHandler.loadUp<sf::Font>(jsonLoader, "button");
 		assert(nullptr != m_resources->m_sptrButtonFont);
+
+		m_resources->m_sptrBackground->m_sptrBgShader = resourceHandler.loadUp<sf::Shader>(jsonLoader, "background");
 	}
 	if (!m_gui)
 	{
 		loadGui(*m_resources, jsonLoader.at("fontsize").get<unsigned int>());
 	}
+	m_background.init(m_resources->m_sptrBackground);
+	m_background.setTargetColor(sf::Color::White);
 }
 
 /// <summary>
