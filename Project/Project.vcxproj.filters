@@ -360,6 +360,9 @@
     <ClCompile Include="src\entities\ai\basic\ABRecoverState.cpp">
       <Filter>Source Files\entities\ai\basic</Filter>
     </ClCompile>
+    <ClCompile Include="src\util\CollisionSystem.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -567,6 +570,9 @@
     </ClInclude>
     <ClInclude Include="include\entities\ai\basic\ABRecoverState.h">
       <Filter>Header Files\entities\ai\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util\CollisionSystem.h">
+      <Filter>Header Files\util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

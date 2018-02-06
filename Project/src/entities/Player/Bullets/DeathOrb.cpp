@@ -58,3 +58,14 @@ const float & bullets::DeathOrb::getDamage()
 {
 	return m_damage;
 }
+
+/// <summary>
+/// @brief Death Orb never enters impact state.
+/// 
+/// 
+/// </summary>
+/// <returns>always false.</returns>
+bool const & bullets::DeathOrb::isImpact() const
+{
+	return false;
+}

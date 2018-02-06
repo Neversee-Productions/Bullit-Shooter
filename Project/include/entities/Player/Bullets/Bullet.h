@@ -112,7 +112,8 @@ namespace bullets
 		bool isActive() const;
 		virtual bool checkCircleCollision(const tinyh::c2Circle & other);
 		virtual const float & getDamage() = 0;
-		bool const & isImpact() const;
+		virtual bool const & isImpact() const;
+		BulletTypes const & getType() const;
 
 	protected:
 		virtual void setAnimation(std::string const & animationId);

@@ -30,6 +30,7 @@ namespace bullets
 		static float getFireRate();
 		void update() override;
 		const float & getDamage() override;
+		virtual bool const & isImpact() const final override;
 
 	private:
 		/// <summary>
