@@ -90,6 +90,7 @@ private:
 	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
 	void playerPickupCollision();
+	void playerUICollision();
 	float generateRandomTimer();
 	void updateAsteroidSpawner();
 

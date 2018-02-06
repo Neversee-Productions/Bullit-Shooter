@@ -117,7 +117,11 @@ void GameScene::draw(Window & window, const float & deltaTime)
 void GameScene::updateCollisions()
 {
 	bulletAsteroidsCollision();
-	playerAsteroidCollision();
+	if (m_player.isAlive())
+	{
+		playerAsteroidCollision();
+		playerUICollision();
+	}
 }
 
 /// <summary>
@@ -219,6 +223,7 @@ void GameScene::playerAsteroidCollision()
 				if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
 				{
 					m_player.decrementShield(25.0f);
+					m_ui.decrementHealth(25.0f);
 					asteroid.decrementHealth(10.0f);
 				}
 			}
@@ -333,6 +338,23 @@ void GameScene::playerPickupCollision()
 		{
 			m_pickup->setEffectAlpha(255);
 		}
+	}
+}
+
+/// <summary>
+/// @brief if a player collides with the UI make it transparent.
+/// 
+/// 
+/// </summary>
+void GameScene::playerUICollision()
+{
+	if (tinyh::c2CircletoAABB(m_player.getShieldCollisionCircle(), m_ui.getHealthCollisionBox()))
+	{
+		m_ui.setHealthTransparency(100u);
+	}
+	else
+	{
+		m_ui.setHealthTransparency(255u);
 	}
 }
 

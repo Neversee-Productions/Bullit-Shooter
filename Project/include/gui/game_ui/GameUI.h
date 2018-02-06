@@ -5,6 +5,7 @@
 #include <SFML\Graphics.hpp>
 #include "Window.h"
 #include "ResourceHandler.h"
+#include "tinyheaders\tinyc2.h"
 
 ///
 /// @brief UI class.
@@ -27,6 +28,9 @@ public: //public functions
 	void draw(Window & window, const float & deltaTime);
 	static void setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, json::json & UIParser);
 	void init(std::shared_ptr<Resources> resources);
+	void decrementHealth(float health);
+	const tinyh::c2AABB & getHealthCollisionBox();
+	void setHealthTransparency(sf::Uint8 alphaVal);
 private: //private functions.
 public: //public member variables.
 private: //private member variables.
@@ -46,18 +50,34 @@ private: //private member variables.
 	sf::Sprite m_healthSprite;
 
 	/// <summary>
+	/// @brief this represents the amount of health that player has lost.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_healthLostSprite;
+
+	/// <summary>
 	/// @brief position of the template health texture position.
 	/// 
 	/// 
 	/// </summary>
 	sf::Vector2f m_healthTemplatePosition;
 
+
 	/// <summary>
-	/// @brief position of the health bar sprite.
+	/// @brief this is the variable that will specify
+	/// how low the health bar is to go.
 	/// 
 	/// 
 	/// </summary>
-	//sf::Vector2f m_healthPosition;
+	float m_targetHealth;
+
+	/// <summary>
+	/// @brief this is a tiny headers rectangle object to deal with collisions.
+	/// 
+	/// 
+	/// </summary>
+	tinyh::c2AABB m_healthCollisionRect;
 };
 
 
