@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "system\Window.h"
 
 /// <summary>
 /// @brief Creates and window wrapper.
@@ -33,12 +33,12 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	// define our current resolution.
 	///////////////////////////////////////////////////////
-	// //windowed mode
-	//m_style = sf::Style::Default;
-	//m_resolution = sf::VideoMode(1366u, 768u);
-	 //fullscreen mode
-	m_style = sf::Style::Fullscreen;
-	m_resolution = fullscreenRes.at(0);
+	 //windowed mode
+	m_style = sf::Style::Default;
+	m_resolution = sf::VideoMode(1366u, 768u);
+	// //fullscreen mode
+	//m_style = sf::Style::Fullscreen;
+	//m_resolution = fullscreenRes.at(0);
 
 	///////////////////////////////////////////////////////
 	// create our window with pre-defined settings

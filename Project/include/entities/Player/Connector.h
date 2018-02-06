@@ -10,7 +10,7 @@
 #include "Thor\Math.hpp"
 #include "Thor\Vectors.hpp"
 // Project Includes
-#include "Window.h"
+#include "system\Window.h"
 
 /// 
 /// @brief Represents the connector between the ship and its weapons.

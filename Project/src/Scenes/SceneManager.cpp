@@ -204,7 +204,8 @@ void SceneManager::loadScene(const std::string & name)
 		auto & mapValue = itt->second;
 		auto sptrScene = mapValue.m_scene;
 		const auto & resourcePath = *mapValue.m_resourcePath;
-		std::unique_ptr<std::thread> uptrThread = std::move(mapValue.m_thread);
+		std::unique_ptr<std::thread> uptrThread(nullptr);
+		uptrThread.swap(mapValue.m_thread);
 		if (uptrThread)
 		{
 			uptrThread->join();

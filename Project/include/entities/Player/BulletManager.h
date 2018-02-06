@@ -8,7 +8,8 @@
 // Thor Includes
 #include "Thor/Animations.hpp"
 // Project Includes
-#include "Window.h"
+#include "system\Window.h"
+#include "sound\SoundManager.h"
 #include "Weapon.h"
 #include "Bullets/Bullet.h"
 #include "Bullets/Standard.h"
@@ -77,6 +78,14 @@ public:
 
 private:
 	/// <summary>
+	/// @brief Alias for a (bullet_type: constant string) map.
+	/// 
+	/// 
+	/// </summary>
+	typedef std::unordered_map<BulletTypes, const std::string> BulletTypeStringMap;
+
+private:
+	/// <summary>
 	/// @brief how long since last fire.
 	/// 
 	/// 
@@ -104,6 +113,21 @@ private:
 	/// and BulletManager::init is called.
 	/// </summary>
 	std::shared_ptr<Resources> m_resources;
+
+	/// <summary>
+	/// @brief reference to sound manager instance.
+	/// 
+	/// used for playing sounds when firing.
+	/// </summary>
+	SoundManager & m_soundManager;
+
+	/// <summary>
+	/// @brief Map of bullet types to fire string.
+	/// 
+	/// 
+	/// </summary>
+	BulletTypeStringMap m_soundFireMap;
+
 };
 #endif // !BULLETMANAGER_H
 

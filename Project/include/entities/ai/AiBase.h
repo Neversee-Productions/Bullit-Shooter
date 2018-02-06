@@ -8,8 +8,8 @@
 // Thor Includes
 #include "Thor\Animations\FrameAnimation.hpp"
 // Project Includes
-#include "App.h"
-#include "Window.h"
+#include "system\App.h"
+#include "system\Window.h"
 
 /// 
 /// @author Rafael Plugge

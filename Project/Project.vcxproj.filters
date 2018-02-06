@@ -205,15 +205,21 @@
     <Filter Include="Resource Files\scenes\Game\pickup">
       <UniqueIdentifier>{a3dd8f8c-0dbb-4f84-9054-824263ae3133}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\system">
+      <UniqueIdentifier>{6d1169ca-a3dc-4b6d-8e80-444fb2f5f0d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\system">
+      <UniqueIdentifier>{f8e8b47a-a0ba-4da7-89fa-a6022e786eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sound">
+      <UniqueIdentifier>{557e68df-a5aa-4a48-823e-558d337aff56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sound">
+      <UniqueIdentifier>{c5ab99b8-11b1-4d47-b177-7df2afb0a3d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\gui\GUI.cpp">
@@ -243,9 +249,6 @@
     <ClCompile Include="src\input\Controller.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
-    <ClCompile Include="src\App.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Scenes\GameScene\GameScene.cpp">
       <Filter>Source Files\scenes\GameScene</Filter>
     </ClCompile>
@@ -260,9 +263,6 @@
     </ClCompile>
     <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp">
       <Filter>Source Files\scenes\SplashScene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ResourceHandler.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Background.cpp">
       <Filter>Source Files\entities</Filter>
@@ -360,6 +360,24 @@
     <ClCompile Include="src\entities\ai\basic\ABRecoverState.cpp">
       <Filter>Source Files\entities\ai\basic</Filter>
     </ClCompile>
+    <ClCompile Include="src\system\App.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\Application.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\ResourceHandler.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\Window.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\SoundManager.cpp">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\SoundSetting.cpp">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -410,14 +428,11 @@
     <None Include="resources\scenes\Game\enemies\basic\basic.json">
       <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
     </None>
+    <None Include="resources\scenes\Game\sounds.json">
+      <Filter>Resource Files\scenes\Game</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h">
       <Filter>Header Files\scenes\MainMenuScene</Filter>
     </ClInclude>
@@ -445,9 +460,6 @@
     <ClInclude Include="include\input\Controller.h">
       <Filter>Header Files\input</Filter>
     </ClInclude>
-    <ClInclude Include="include\App.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\GameScene.h">
       <Filter>Header Files\scenes\GameScene</Filter>
     </ClInclude>
@@ -459,9 +471,6 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h">
       <Filter>Header Files\scenes\SplashScene</Filter>
-    </ClInclude>
-    <ClInclude Include="include\ResourceHandler.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Entities\Background.h">
       <Filter>Header Files\entities</Filter>
@@ -567,6 +576,24 @@
     </ClInclude>
     <ClInclude Include="include\entities\ai\basic\ABRecoverState.h">
       <Filter>Header Files\entities\ai\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\system\App.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\system\Application.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\system\ResourceHandler.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\system\Window.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sound\SoundManager.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sound\SoundSetting.h">
+      <Filter>Header Files\sound</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

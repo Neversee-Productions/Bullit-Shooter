@@ -11,7 +11,7 @@
 #include "SFML\Graphics\Texture.hpp"
 // For thor::Animator<>
 #include "Thor\Animations\Animator.hpp"
-#include "Window.h"
+#include "system\Window.h"
 
 ///
 /// @brief Ship class.

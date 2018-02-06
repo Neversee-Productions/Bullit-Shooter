@@ -19,8 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\App.cpp" />
-    <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\entities\ai\AiBase.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABChargeState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABRecoverState.cpp" />
@@ -59,7 +57,6 @@
     <ClCompile Include="src\input\KeyHandler.cpp" />
     <ClCompile Include="src\input\Controller.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\ResourceHandler.cpp" />
     <ClCompile Include="src\Scenes\MainMenuScene\MainMenuScene.cpp" />
     <ClCompile Include="src\Scenes\GameScene\GameScene.cpp" />
     <ClCompile Include="src\Scenes\OptionsScene\OptionsScene.cpp" />
@@ -67,9 +64,14 @@
     <ClCompile Include="src\Scenes\SceneManager.cpp" />
     <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp" />
     <ClCompile Include="src\Scenes\TitleScene\TitleScene.cpp" />
+    <ClCompile Include="src\sound\SoundManager.cpp" />
+    <ClCompile Include="src\sound\SoundSetting.cpp" />
+    <ClCompile Include="src\system\App.cpp" />
+    <ClCompile Include="src\system\Application.cpp" />
+    <ClCompile Include="src\system\ResourceHandler.cpp" />
+    <ClCompile Include="src\system\Window.cpp" />
     <ClCompile Include="src\tinyheaders\tinyc2.cpp" />
     <ClCompile Include="src\util\JsonLoader.cpp" />
-    <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
@@ -84,14 +86,13 @@
     <None Include="resources\scenes\Game\player\connector.frag" />
     <None Include="resources\scenes\Game\player\connector.vert" />
     <None Include="resources\scenes\Game\player\player.json" />
+    <None Include="resources\scenes\Game\sounds.json" />
     <None Include="resources\scenes\MainMenu\MainMenu.json" />
     <None Include="resources\scenes\Options\Options.json" />
     <None Include="resources\scenes\Splash\Splash.json" />
     <None Include="resources\scenes\Title\Title.json" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\App.h" />
-    <ClInclude Include="include\Application.h" />
     <ClInclude Include="include\entities\ai\AiBase.h" />
     <ClInclude Include="include\entities\ai\basic\ABChargeState.h" />
     <ClInclude Include="include\entities\ai\basic\ABRecoverState.h" />
@@ -132,7 +133,6 @@
     <ClInclude Include="include\input\KeyHandler.h" />
     <ClInclude Include="include\input\Controller.h" />
     <ClInclude Include="include\main.hpp" />
-    <ClInclude Include="include\ResourceHandler.h" />
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h" />
     <ClInclude Include="include\Scenes\GameScene\GameScene.h" />
     <ClInclude Include="include\Scenes\OptionsScene\OptionsScene.h" />
@@ -140,8 +140,13 @@
     <ClInclude Include="include\Scenes\SceneManager.h" />
     <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h" />
     <ClInclude Include="include\Scenes\TitleScene\TitleScene.h" />
+    <ClInclude Include="include\sound\SoundManager.h" />
+    <ClInclude Include="include\sound\SoundSetting.h" />
+    <ClInclude Include="include\system\App.h" />
+    <ClInclude Include="include\system\Application.h" />
+    <ClInclude Include="include\system\ResourceHandler.h" />
+    <ClInclude Include="include\system\Window.h" />
     <ClInclude Include="include\util\JsonLoader.h" />
-    <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\gui\textures\button.png" />

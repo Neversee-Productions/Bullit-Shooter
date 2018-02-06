@@ -2,7 +2,7 @@
 #define WEAPON_H
 
 #include <memory>
-#include "Window.h"
+#include "system\Window.h"
 #include "SFML\Graphics\RectangleShape.hpp"
 #include "Thor\Animations.hpp"
 #include "Bullets\BulletTypes.h"

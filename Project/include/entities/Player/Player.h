@@ -1,13 +1,14 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "Window.h"
+#include "system\Window.h"
 #include "..\Background.h"
 #include "Ship.h"
 #include "Weapon.h"
 #include "BulletManager.h"
 #include "Shield.h"
 #include "Connector.h"
+#include "sound\SoundManager.h"
 
 ///
 /// @brief Player class.
@@ -137,6 +138,14 @@ private:
 	/// 
 	/// </summary>
 	KeyHandler& m_keyHandler;
+
+	/// <summary>
+	/// @brief reference to our sound manager instance.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
+
 
 	/// <summary>
 	/// @brief the bullet manager object.

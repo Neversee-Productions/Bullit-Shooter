@@ -3,7 +3,7 @@
 
 #include "scenes\Scene.h"
 #include "gui\GUI.h"
-#include "App.h"
+#include "system\App.h"
 
 /// 
 /// @brief Represents our main menu.

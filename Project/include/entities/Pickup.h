@@ -7,7 +7,7 @@
 #include "Thor\Animations.hpp"
 #include "Player\Bullets\BulletTypes.h"
 #include "tinyheaders\tinyc2.h"
-#include "Window.h"
+#include "system\Window.h"
 
 ///
 /// @brief Pickup class.
