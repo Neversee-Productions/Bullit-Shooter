@@ -83,6 +83,7 @@ void GameScene::update()
 	playerPickupCollision();
 	m_pickup->update();
 	updateCollisions();
+	m_ui.update();
 }
 
 /// <summary>
@@ -105,6 +106,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 	m_player.draw(window, deltaTime);
 	m_enemy.draw(window, deltaTime);
 	m_pickup->draw(window, deltaTime);
+	m_ui.draw(window, deltaTime);
 }
 
 /// <summary>
@@ -417,6 +419,11 @@ void GameScene::setup(const std::string & filePath)
 		// Setup Pickups
 		////////////////////////////////////////////
 		this->setupPickups(resourceHandler, m_resources->m_sptrPickup, gameSceneParser);
+
+		////////////////////////////////////////////
+		// Setup UI
+		////////////////////////////////////////////
+		this->setupUI(resourceHandler, m_resources->m_sptrUI, gameSceneParser);
 	}
 
 	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemy);
@@ -424,6 +431,7 @@ void GameScene::setup(const std::string & filePath)
 	m_background.init(m_resources->m_sptrBackground);
 	m_pickup = std::make_unique<Pickup>(Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered));
 	m_pickup->setActive(false);
+	m_ui.init(m_resources->m_sptrUI);
 }
 
 /// <summary>
@@ -974,5 +982,21 @@ void GameScene::setupEnemies(ResourceHandler & resourceHandler, std::shared_ptr<
 	std::string const JSON_ENEMY_BASIC("basic");
 
 	ai::AiBasic::setup(sptrEnemies->m_sptrBasicEnemy, resourceHandler, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_BASIC).get<std::string>()));
+}
+
+/// <summary>
+/// @brief this function gets the json for the UI.
+/// 
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to the resource handler</param>
+/// <param name="sptrUI">shared pointer to UI</param>
+/// <param name="gameSceneParser">reference to loaded json file ready to be parsed</param>
+void GameScene::setupUI(ResourceHandler & resourceHandler, std::shared_ptr<GameUI::Resources> sptrUI, json::json & gameSceneParser)
+{
+	std::string const JSON_UI("UI");
+	json::json UIJsonParser = util::loadJsonFromFile(gameSceneParser.at(JSON_UI).get<std::string>());
+
+	GameUI::setup(sptrUI, resourceHandler, UIJsonParser);
 }
 
