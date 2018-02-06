@@ -20,6 +20,10 @@ Ship::Ship()
 	, m_pressed()
 	, m_velocity(sf::Vector2f(0.0f,0.0f))
 	, m_acceleration(sf::Vector2f(0.0f,0.0f))
+	, m_accelerationRate(1000.0f)
+	, MAX_VEL(4.0f)
+	, FRICTION(0.96f)
+	, MAX_ACCEL(1200.0f)
 {
 	m_shipRect.setPosition(m_position);
 	m_shipRect.setSize(sf::Vector2f(75.0f, 100.0f));
@@ -61,14 +65,33 @@ void Ship::update()
 	pos.y += vel.y * dt;
 	vel.x += accel.x * dt;
 	vel.y += accel.y * dt;
+
+	xSpeed = sin(direction)*speed;
+	ySpeed = cos(direction)*speed;
+	[...]
+	xPos += xSpeed;
+	yPos += ySpeed;
+	Accleration is simply increasing the speed.
+
+	xAccel = sin(accelDirection)*accleration;
+	yAccel = cos(accelDirection)*accleration;
+	// [...]
+	xSpeed += xAccel;
+	ySpeed += yAccel;
 	*/
 	m_position.x += m_velocity.x * dt;
 	m_position.y += m_velocity.y * dt;
-
-	m_velocity.x += m_acceleration.x * dt;
-	m_velocity.y += m_acceleration.y * dt;
+	if (thor::length(m_velocity) < MAX_VEL) //check if max vel reached
+	{
+		m_velocity.x += m_acceleration.x * dt;
+		m_velocity.y += m_acceleration.y * dt;
+	}
+	m_velocity *= FRICTION;
 	processInput(m_pressed);
 	m_shipRect.setPosition(m_position);
+	std::cout << "ACCEL = " << m_acceleration.x << ", " << m_acceleration.y << std::endl;
+	std::cout << "VEL = " << m_velocity.x << ", " << m_velocity.y << std::endl;
+
 }
 
 /// <summary>
@@ -120,7 +143,11 @@ void Ship::draw(Window & window, const float & deltaTime)
 /// </summary>
 void Ship::moveUp()
 {
-	m_position.y -= m_speed;
+	if (m_acceleration.y > -MAX_ACCEL)
+	{
+		m_acceleration.y -= m_accelerationRate * App::getUpdateDeltaTime();
+	}
+	//m_position.y -= m_speed;
 }
 
 /// <summary>
@@ -130,7 +157,11 @@ void Ship::moveUp()
 /// </summary>
 void Ship::moveDown()
 {
-	m_position.y += m_speed;
+	if (m_acceleration.y < MAX_ACCEL)
+	{
+		m_acceleration.y += m_accelerationRate * App::getUpdateDeltaTime();
+	}
+	//m_position.y += m_speed;
 }
 
 /// <summary>
@@ -140,7 +171,11 @@ void Ship::moveDown()
 /// </summary>
 void Ship::moveLeft()
 {
-	m_position.x -= m_speed;
+	if (m_acceleration.x > -MAX_ACCEL)
+	{
+		m_acceleration.x -= m_accelerationRate * App::getUpdateDeltaTime();
+	}
+	//m_position.x -= m_speed;
 }
 
 /// <summary>
@@ -150,7 +185,11 @@ void Ship::moveLeft()
 /// </summary>
 void Ship::moveRight()
 {
-	m_position.x += m_speed;
+	if (m_acceleration.x < MAX_ACCEL)
+	{
+		m_acceleration.x += m_accelerationRate * App::getUpdateDeltaTime();
+	}
+	//m_position.x += m_speed;
 }
 
 /// <summary>
@@ -225,6 +264,14 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	if (keysPressed.m_down)
 	{
 		moveDown();
+	}
+	if (!keysPressed.m_left && !keysPressed.m_right)
+	{
+		m_acceleration.x = 0;
+	}
+	if (!keysPressed.m_up && !keysPressed.m_down)
+	{
+		m_acceleration.y = 0;
 	}
 }
 
