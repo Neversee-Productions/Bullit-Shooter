@@ -10,7 +10,7 @@ const float bullets::Empowered::s_FIRE_RATE = 1.0f;
 /// <param name="angle">angle at which the bullet will fire</param>
 bullets::Empowered::Empowered()
 	: Bullet()
-	, m_damage(1.4f)
+	, m_damage(1.7f)
 {
 	m_speed = 10.0f * 60.0f;
 

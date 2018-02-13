@@ -27,7 +27,7 @@ public:
 	void reuseAsteroid();
 	void updateWindowCollisions();
 	tinyh::c2Circle getCollisionCircle();
-	void decrementHealth(float dmg);
+	void decrementHealth(float dmg, bool invurnState);
 	bool isInvulnerable();
 	void knockback();
 	bool isActive();

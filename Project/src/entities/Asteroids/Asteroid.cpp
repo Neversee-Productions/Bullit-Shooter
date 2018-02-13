@@ -186,12 +186,13 @@ tinyh::c2Circle Asteroid::getCollisionCircle()
 /// 
 /// </summary>
 /// <param name="dmg">amount of health to decrement</param>
-void Asteroid::decrementHealth(float dmg)
+/// <param name="invurnState">determine if asteroid is to become invurnelable.</param>
+void Asteroid::decrementHealth(float dmg, bool invurnState)
 {
 	if (!m_invulnerable)
 	{
 		m_health -= dmg;
-		m_invulnerable = true;
+		m_invulnerable = invurnState;
 		if (m_health <= 0)
 		{
 			m_active = false;

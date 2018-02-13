@@ -154,6 +154,8 @@ void CollisionSystem::updatePlayerToGameUi()
 void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bullet)
 {
 	using namespace bullets;
+	//This variable determines if the asteroid is to become invulnerable after a hit, set to true by default.
+	bool asteroidInvurnelabilityState = true; 
 	switch (bullet.getType())
 	{
 		case BulletTypes::DeathOrb:
@@ -162,8 +164,10 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 			break;
 		case BulletTypes::CometShot:
 			asteroid.knockback();
-		case BulletTypes::Standard:
 		case BulletTypes::Empowered:
+			bullet.hit();
+			asteroidInvurnelabilityState = false;
+		case BulletTypes::Standard:
 		case BulletTypes::FireBlast:
 		case BulletTypes::NullWave:
 			bullet.hit();
@@ -188,7 +192,7 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 	}
 	if (!asteroid.isInvulnerable())
 	{
-		asteroid.decrementHealth(bullet.getDamage());
+		asteroid.decrementHealth(bullet.getDamage(), asteroidInvurnelabilityState);
 		if (!asteroid.isActive() && !m_pickup.isActive()) //check if pickup is not active and if the asteroid was destroyed.
 		{
 			int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
@@ -219,7 +223,7 @@ void CollisionSystem::playerVsAsteroid(Player & player, Asteroid & asteroid)
 {
 	player.decrementShield(25.0f);
 	m_gameUi.decrementHealth(25.0f);
-	asteroid.decrementHealth(10.0f);
+	asteroid.decrementHealth(10.0f, false);
 }
 
 /// <summary>

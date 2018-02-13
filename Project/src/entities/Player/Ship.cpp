@@ -77,6 +77,8 @@ void Ship::update()
 	processInput(m_pressed);
 	m_shipRect.setPosition(m_position);
 
+	checkOffScreen();
+
 }
 
 /// <summary>
@@ -266,6 +268,33 @@ void Ship::setFrames(std::unique_ptr<ShipFrames> uptrShipFrames)
 {
 	m_shipFrames.swap(uptrShipFrames);
 	std::unique_ptr<ShipFrames>(nullptr).swap(uptrShipFrames);
+}
+
+/// <summary>
+/// @brief This is a function that will check if player has gone off the screen.
+/// 
+/// 
+/// </summary>
+void Ship::checkOffScreen()
+{
+	tinyh::c2AABB screenSize = App::getViewC2Rect(); // get the screen view rectangle.
+	auto shipRect = m_shipRect.getLocalBounds(); //get the ship rectangle in local bounds.
+	if (m_position.x + shipRect.width > screenSize.max.x) //if ship is going off the right side of the screen set them back
+	{
+		m_position.x = screenSize.max.x - shipRect.width;
+	}
+	if (m_position.x - shipRect.width < 0) //if ship is going off the left side of the screen set them back
+	{
+		m_position.x = 0 + shipRect.width;
+	}
+	if (m_position.y + (shipRect.height / 2) > screenSize.max.y) //if ship is going off the bottom of the screen set them back
+	{
+		m_position.y = screenSize.max.y - (shipRect.height / 2);
+	}
+	if (m_position.y - (shipRect.height / 2) < 0) //if ship is going off the top of the screen set them back
+	{
+		m_position.y = 0 + (shipRect.height / 2);
+	}
 }
 
 

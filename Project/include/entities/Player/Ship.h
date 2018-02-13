@@ -91,6 +91,7 @@ public:
 	const sf::RectangleShape & getShipRect() const;
 	void setTexture(std::shared_ptr<sf::Texture> sptrTexture);
 	void setFrames(std::unique_ptr<ShipFrames> uptrShipFrames);
+	void checkOffScreen();
 
 private:
 	void processInput(const KeysPressed &);
