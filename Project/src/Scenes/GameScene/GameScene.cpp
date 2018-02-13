@@ -5,18 +5,20 @@
 /// 
 /// Constructs a base Scene using the name of "Game".
 /// </summary>
-GameScene::GameScene(KeyHandler& keyHandler, Controller & controller)
+GameScene::GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller)
 	: Scene("Game")
 	, m_background()
-	, m_player(keyHandler, controller, m_background)
-	, m_keyHandler(keyHandler)
+	, m_player(*keyHandler, *controller, m_background)
+	, m_keyHandler(*keyHandler)
 	, m_soundManager(SoundManager::instance())
 	, m_resources(nullptr)
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_asteroidManager()
 	, m_enemy(m_player)
 	, m_pickup()
+	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this))
 	, m_collisionSystem(m_player, m_asteroidManager, m_pickup, m_ui)
+	, m_gamePaused(false)
 {
 	m_pickup.setActive(false);
 	m_asteroidManager.initAsteroidVector();
@@ -71,17 +73,25 @@ void GameScene::stop()
 /// </summary>
 void GameScene::update()
 {
-	m_background.update();
-	if (m_player.getShieldHealth() <= 0)
+	if (m_keyHandler.isPressed(sf::Keyboard::Escape) && !m_keyHandler.isPrevPressed(sf::Keyboard::Escape))
 	{
-		m_player.setAlive(false);
+		m_gamePaused = !m_gamePaused;
+		
 	}
-	m_player.update();
-	m_asteroidManager.update();
-	m_enemy.update();
+	if (!m_gamePaused)
+	{
+		m_background.update();
+		if (m_player.getShieldHealth() <= 0)
+		{
+			m_player.setAlive(false);
+		}
+		m_player.update();
+		m_asteroidManager.update();
+		m_enemy.update();
+		m_pickup.update();
+		m_collisionSystem.update();
+	}
 	m_ui.update();
-	m_pickup.update();
-	m_collisionSystem.update();
 }
 
 /// <summary>
@@ -99,6 +109,14 @@ void GameScene::draw(Window & window, const float & deltaTime)
 	m_enemy.draw(window, deltaTime);
 	m_ui.draw(window, deltaTime);
 	m_pickup.draw(window, deltaTime);
+}
+
+/// <summary>
+/// 
+/// </summary>
+void GameScene::backToMainMenu()
+{
+	Scene::setNextSceneName("MainMenu");
 }
 
 /// <summary>

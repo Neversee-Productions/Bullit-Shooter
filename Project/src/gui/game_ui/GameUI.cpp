@@ -5,9 +5,15 @@
 /// 
 /// 
 /// </summary>
-GameUI::GameUI()
+GameUI::GameUI(
+	std::shared_ptr<KeyHandler> keyHandler
+	, std::shared_ptr<Controller> controller
+	, std::function<void()> mainMenuFunction
+)
 	: m_healthTemplatePosition(sf::Vector2f(static_cast<sf::Vector2f>(App::getViewSize())))
 	, m_targetHealth(1.0f)
+	, m_gui(std::make_unique<gui::GUI>(keyHandler, controller, true))
+	, m_mainMenuFunc(mainMenuFunction)
 {
 }
 
@@ -29,6 +35,7 @@ void GameUI::update()
 	{
 		m_healthLostSprite.setScale(sf::Vector2f(0.0f, 1.0f));
 	}
+	m_gui->update(App::getUpdateDeltaTime());
 }
 
 
@@ -44,6 +51,7 @@ void GameUI::draw(Window & window, const float & deltaTime)
 	window.draw(m_healthTemplateSprite);
 	window.draw(m_healthLostSprite);
 	window.draw(m_healthSprite);
+	m_gui->draw(window);
 }
 
 /// <summary>
@@ -58,9 +66,16 @@ void GameUI::setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & r
 {
 	std::string const JSON_HEALTH_TEMPLATE_TEXTURE("healthTemplate");
 	std::string const JSON_HEALTH_TEXTURE("health");
+	std::string const JSON_BUTTON_FONT("font");
+	std::string const JSON_BUTTON_TEXTURE("buttonTexture");
+
 
 	sptrResources->m_sptrHealthTemplateTexture = resourceHandler.loadUp<sf::Texture>(UIParser.at(JSON_HEALTH_TEMPLATE_TEXTURE).get<std::string>(), JSON_HEALTH_TEMPLATE_TEXTURE);
 	sptrResources->m_sptrHealthTexture = resourceHandler.loadUp<sf::Texture>(UIParser.at(JSON_HEALTH_TEXTURE).get<std::string>(), JSON_HEALTH_TEXTURE);
+
+	sptrResources->m_sptrButtonFont = resourceHandler.loadUp<sf::Font>(UIParser.at(JSON_BUTTON_FONT).get<std::string>(), JSON_BUTTON_FONT);
+	sptrResources->m_sptrButtonTexture = resourceHandler.loadUp<sf::Texture>(UIParser.at(JSON_BUTTON_TEXTURE).get<std::string>(), JSON_BUTTON_TEXTURE);
+
 }
 
 /// <summary>
@@ -95,6 +110,35 @@ void GameUI::init(std::shared_ptr<Resources> resources)
 	m_healthCollisionRect.max.x = m_healthTemplatePosition.x + (m_healthTemplateSprite.getLocalBounds().width / 2);
 	m_healthCollisionRect.max.y = m_healthTemplatePosition.y + (m_healthTemplateSprite.getLocalBounds().height / 2);
 
+	//initiailze the pause screen
+	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
+	auto sptrButtonFont = resources->m_sptrButtonFont;
+	auto sptrButtonTexture = resources->m_sptrButtonTexture;
+
+	m_gui->addButton(
+		std::bind(&GameUI::btnMainMenu, this),
+		"Resume",
+		zero,
+		sptrButtonFont,
+		24,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+	m_gui->addButton(
+		m_mainMenuFunc,
+		"Exit",
+		zero,
+		sptrButtonFont,
+		24,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+	const auto& windowSize = App::getViewSize();
+	m_gui->configure(gui::GUI::Layouts::StackVertically, windowSize);
 }
 
 /// <summary>
@@ -140,4 +184,15 @@ void GameUI::setHealthTransparency(sf::Uint8 alphaVal)
 	m_healthSprite.setColor(sf::Color(m_healthSprite.getColor().r, m_healthSprite.getColor().g, m_healthSprite.getColor().b, alphaVal));
 	m_healthTemplateSprite.setColor(sf::Color(m_healthTemplateSprite.getColor().r, m_healthTemplateSprite.getColor().g, m_healthTemplateSprite.getColor().b, alphaVal));
 	m_healthLostSprite.setColor(sf::Color(m_healthLostSprite.getColor().r, m_healthLostSprite.getColor().g, m_healthLostSprite.getColor().b, alphaVal));
+}
+
+/// <summary>
+/// @brief the callback function for the exit button.
+/// 
+/// 
+/// 
+/// </summary>
+void GameUI::btnMainMenu()
+{
+	std::cout << "EXIT BUTTON PRESSED" << std::endl;
 }

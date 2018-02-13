@@ -75,7 +75,7 @@ private:
 	};
 
 public:
-	GameScene(KeyHandler& keyHandler, Controller & controller);
+	GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller);
 	void preStart(const std::string & resourceFilePath) final override;
 	void start(const std::string & resourceFilePath) final override;
 	void stop() final override;
@@ -83,6 +83,7 @@ public:
 	void draw(Window & window, const float & deltaTime) final override;
 
 private:
+	void backToMainMenu();
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
 	void setupSounds(
@@ -251,6 +252,13 @@ private:
 	/// This will handle collisions between different entities.
 	/// </summary>
 	CollisionSystem m_collisionSystem;
+
+	/// <summary>
+	/// @brief determines if the game is paused or not.
+	/// 
+	/// 
+	/// </summary>
+	bool m_gamePaused;
 };
 
 #endif // !GAMESCENE_H

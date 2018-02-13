@@ -1,4 +1,7 @@
 {
     "healthTemplate": "resources/gui/textures/UI_healthTemplate.png",
-    "health": "resources/gui/textures/UI_health.png"
+    "health": "resources/gui/textures/UI_health.png",
+    "buttonTexture": "resources/gui/textures/button.png",
+    "font": "resources/gui/fonts/QuartzMS.TTF",
+    "fontsize": 24
 }

@@ -108,6 +108,7 @@ void gui::GUI::configure(const Layouts & layout, const sf::Vector2u & windowSize
 		screen -= (margin * 2.0f);
 		grid = sf::Vector2f(0.0f, screen.y / static_cast<float>(m_layoutNr));
 		offset = sf::Vector2f(screen.x / 2.0f, grid.y / 2.0f) + margin;
+		m_rectangleStrip.rotate(90.0f);
 		break;
 	case Layouts::StripDiagonal:
 		screen -= (margin * 2.0f);

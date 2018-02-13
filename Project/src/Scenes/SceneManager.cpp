@@ -104,7 +104,7 @@ void SceneManager::addAllScenes()
 	this->addScene(sptrScene, std::move(uptrResources));
 
 	// Game Scene
-	sptrScene = std::make_shared<GameScene>(*m_keyHandler, *m_controller);
+	sptrScene = std::make_shared<GameScene>(m_keyHandler, m_controller);
 	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
 	this->addScene(sptrScene, std::move(uptrResources));
 }
