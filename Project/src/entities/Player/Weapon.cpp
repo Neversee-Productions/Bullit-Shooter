@@ -179,6 +179,7 @@ void Weapon::shoot()
 	auto & weaponShootAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->m_uptrShootAnimation);
 	std::string const & shootID = weaponShootAnimation.m_id;
 	m_weaponSprite.setTexture(*weaponShootAnimation.m_sptrTexture, true);
+	//m_weaponSprite.setTextureRect(weaponShootAnimation.)
 	m_weaponSprite.setOrigin(weaponShootAnimation.m_origin);
 	m_animator->playAnimation(shootID, false);
 }
@@ -247,6 +248,7 @@ void Weapon::setType(BulletTypes const & bulletType)
 	std::string const & beginID = weaponBeginAnimation.m_id;
 	std::string const & shootID = weaponShootAnimation.m_id;
 	m_weaponSprite.setTexture(*weaponBeginAnimation.m_sptrTexture, true);
+	m_weaponSprite.setTextureRect(weaponBeginAnimation.m_frame);
 	m_weaponSprite.setOrigin(weaponBeginAnimation.m_origin);
 
 	m_animator->playAnimation(beginID, false);

@@ -20,6 +20,7 @@ public: // Constructors/Destructor
 	~AsteroidManager() = default;
 
 public: // Public Member Functions
+	void init(std::shared_ptr<Asteroid::Resources> sptrResourcesr);
 	void update();
 	void draw(Window & window, float const & deltaTime);
 	void initAsteroidVector();
@@ -31,6 +32,13 @@ private: // Private Member Functions
 	void updateSpawning();
 	float generateRandomTimer() const;
 private: // Private Member Variables
+	/// <summary>
+	/// @brief shared pointer to loaded resources.
+	/// 
+	/// 
+	/// </summary>
+	std::shared_ptr<Asteroid::Resources> m_sptrResources;
+
 	/// <summary>
 	/// @brief store read-only reference to update delta time, in seconds.
 	/// 

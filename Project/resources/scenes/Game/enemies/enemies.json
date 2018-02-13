@@ -1,3 +1,4 @@
 {
+    "asteroid": "resources/scenes/game/enemies/asteroid/asteroid.json",
     "basic": "resources/scenes/game/enemies/basic/basic.json"
 }
