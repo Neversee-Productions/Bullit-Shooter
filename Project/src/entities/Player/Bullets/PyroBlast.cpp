@@ -19,6 +19,8 @@ bullets::PyroBlast::PyroBlast()
 	m_bulletRect.setSize(sf::Vector2f(100.0f, 120.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
+	m_type = BulletTypes::PyroBlast;
+
 	//change collision rectangle
 	updateBox();
 }

@@ -18,6 +18,8 @@ bullets::DeathOrb::DeathOrb()
 	//different size to parent
 	m_bulletRect.setSize(sf::Vector2f(40.0f, 40.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
+
+	m_type = BulletTypes::DeathOrb;
 	
 	//change collision rectangle
 	updateBox();
@@ -57,4 +59,15 @@ void bullets::DeathOrb::update()
 const float & bullets::DeathOrb::getDamage()
 {
 	return m_damage;
+}
+
+/// <summary>
+/// @brief Death Orb never enters impact state.
+/// 
+/// 
+/// </summary>
+/// <returns>always false.</returns>
+bool const & bullets::DeathOrb::isImpact() const
+{
+	return false;
 }

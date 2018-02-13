@@ -13,13 +13,12 @@ GameScene::GameScene(KeyHandler& keyHandler, Controller & controller)
 	, m_resources(nullptr)
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_asteroidManager()
-	, m_asteroidSpawnTimer(0.0f)
-	, m_asteroidSpawnFrequency(0.0f)
-	, UPDATE_DT(App::getUpdateDeltaTime())
 	, m_enemy(m_player)
+	, m_pickup()
+	, m_collisionSystem(m_player, m_asteroidManager, m_pickup, m_ui)
 {
+	m_pickup.setActive(false);
 	m_asteroidManager.initAsteroidVector();
-	m_asteroidSpawnFrequency = generateRandomTimer();
 }
 
 /// <summary>
@@ -42,6 +41,9 @@ void GameScene::preStart(const std::string & resourceFilePath)
 /// </summary>
 void GameScene::start(const std::string & resourceFilePath)
 {
+#ifdef _DEBUG
+	std::cout << "Starting Game Scene" << std::endl;
+#endif // _DEBUG
 	Scene::setNextSceneName("");
 	if (!m_resources)
 	{
@@ -56,6 +58,9 @@ void GameScene::start(const std::string & resourceFilePath)
 /// </summary>
 void GameScene::stop()
 {
+#ifdef _DEBUG
+	std::cout << "Stopping Game Scene" << std::endl;
+#endif // _DEBUG
 }
 
 /// <summary>
@@ -71,19 +76,11 @@ void GameScene::update()
 		m_player.setAlive(false);
 	}
 	m_player.update();
-	updateAsteroidSpawner();
-	for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
-	{
-		if (uptrAsteroid->isActive())
-		{
-			uptrAsteroid->update();
-		}
-	}
+	m_asteroidManager.update();
 	m_enemy.update();
-	playerPickupCollision();
-	m_pickup->update();
-	updateCollisions();
 	m_ui.update();
+	m_pickup.update();
+	m_collisionSystem.update();
 }
 
 /// <summary>
@@ -96,304 +93,11 @@ void GameScene::update()
 void GameScene::draw(Window & window, const float & deltaTime)
 {
 	m_background.draw(window, deltaTime);
-	for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
-	{
-		if (uptrAsteroid->isActive())
-		{
-			uptrAsteroid->draw(window, deltaTime);
-		}
-	}
+	m_asteroidManager.draw(window, deltaTime);
 	m_player.draw(window, deltaTime);
 	m_enemy.draw(window, deltaTime);
-	m_pickup->draw(window, deltaTime);
 	m_ui.draw(window, deltaTime);
-}
-
-/// <summary>
-/// @brief Update game collisions.
-/// 
-/// 
-/// </summary>
-void GameScene::updateCollisions()
-{
-	bulletAsteroidsCollision();
-	if (m_player.isAlive())
-	{
-		playerAsteroidCollision();
-		playerUICollision();
-	}
-}
-
-/// <summary>
-/// @brief update collisions between bullets and asteroids.
-/// 
-/// 
-/// </summary>
-void GameScene::bulletAsteroidsCollision()
-{
-	auto & m_bulletMap = m_player.getBulletMap();
-	for (const auto & pair : m_bulletMap)
-	{
-		auto & bulletVector = pair.second;
-		for (auto itt = bulletVector.begin(), end = bulletVector.end(); itt != end; ++itt)
-		{
-			auto & derivedBullet = **itt;
-			if (derivedBullet.isActive() && !derivedBullet.isImpact())
-			{
-				auto & asteroidVector = m_asteroidManager.getAsteroidVector();
-				for (auto itt2 = asteroidVector.begin(), end2 = asteroidVector.end(); itt2 != end2; ++itt2)
-				{
-					auto & asteroid = **itt2;
-					if (asteroid.isActive())
-					{
-						if (!asteroid.isInvulnerable() && derivedBullet.checkCircleCollision(asteroid.getCollisionCircle()))
-						{
-							switch (pair.first)
-							{
-							case BulletTypes::Standard:
-							case BulletTypes::Empowered:
-							case BulletTypes::FireBlast:
-								collisionResponse(asteroid, derivedBullet);
-								break;
-							case BulletTypes::DeathOrb:
-							case BulletTypes::HolySphere:
-								asteroid.decrementHealth(derivedBullet.getDamage());
-								break;
-							case BulletTypes::MagmaShot:
-								collisionResponse(asteroid, dynamic_cast<bullets::MagmaShot&>(derivedBullet)); //dynamic casting a parameter to magma shot reference from base bullet reference
-								break;
-							case BulletTypes::NapalmSphere:
-								collisionResponse(asteroid, dynamic_cast<bullets::NapalmSphere&>(derivedBullet));
-								break;
-							case BulletTypes::CometShot:
-								collisionResponse(asteroid, derivedBullet);
-								asteroid.knockback();
-								break;
-							case BulletTypes::NullWave:
-								collisionResponse(asteroid, derivedBullet);
-								break;
-							case BulletTypes::StaticSphere:
-								asteroid.decrementHealth(derivedBullet.getDamage());
-								break;
-							case BulletTypes::PyroBlast:
-								collisionResponse(asteroid, dynamic_cast<bullets::PyroBlast&>(derivedBullet));
-								break;
-							default:
-								break;
-							}
-						}
-						if (!asteroid.isActive() && ! m_pickup->isActive()) //check if pickup is not active and if the asteroid was destroyed.
-						{
-							int chance = (rand() % 11); //generate number from 0 - 10
-							if (chance > 2 )
-							{
-								BulletTypes pickupType = m_player.getWeaponType();
-								auto weaponNum = static_cast<int>(pickupType);
-								weaponNum++;
-								if (weaponNum < static_cast<int>(BulletTypes::AmountOfTypes))
-								{
-									pickupType = static_cast<BulletTypes>(weaponNum);
-									sf::Vector2f pos = sf::Vector2f(asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y);
-									m_pickup = std::make_unique<Pickup>(Pickup(m_resources->m_sptrPickup, pos, sf::Vector2f(100, 100), pickupType));
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-/// <summary>
-/// @brief this method checks collisions with all active asteroids.
-/// 
-/// 
-/// </summary>
-void GameScene::playerAsteroidCollision()
-{
-	if (m_player.isAlive())
-	{
-		auto & asteroidVector = m_asteroidManager.getAsteroidVector();
-		for (auto itt = asteroidVector.begin(), end2 = asteroidVector.end(); itt != end2; ++itt)
-		{
-			auto & asteroid = **itt;
-			if (asteroid.isActive())
-			{
-				if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
-				{
-					m_player.decrementShield(25.0f);
-					m_ui.decrementHealth(25.0f);
-					asteroid.decrementHealth(10.0f);
-				}
-			}
-		}
-	}
-}
-
-/// <summary>
-/// @brief Checks for collision between player and basic enemy.
-/// 
-/// 
-/// </summary>
-void GameScene::playerEnemyCollision()
-{
-	if (m_enemy.checkCollision(m_player.getShieldCollisionCircle()))
-	{
-		// Hit
-		std::cout << "Player Hit !\n";
-	}
-}
-
-/// <summary>
-/// @brief default collision response for most bullets.
-/// 
-/// Damages the asteroid and disappears.
-/// </summary>
-/// <param name="asteroid">reference to the asteroid collided with</param>
-/// <param name="bullet">reference to the bullet that has collided</param>
-void GameScene::collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet)
-{
-	asteroid.decrementHealth(bullet.getDamage());
-	bullet.hit();
-}
-
-/// <summary>
-/// @brief overloaded collision response for magma shot.
-/// 
-/// Damages asteroid and explodes on impact.
-/// </summary>
-/// <param name="asteroid">reference to the asteroid collided with</param>
-/// <param name="bullet">reference to the bullet that has collided</param>
-void GameScene::collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet)
-{
-	asteroid.decrementHealth(bullet.getDamage());
-	bullet.explode(true);
-}
-
-/// <summary>
-/// @brief overloaded collision response for Napalm Sphere.
-/// 
-/// Damages asteroid and explodes on impact.
-/// </summary>
-/// <param name="asteroid">reference to the asteroid collided with</param>
-/// <param name="bullet">reference to the bullet that has collided</param>
-void GameScene::collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet)
-{
-	asteroid.decrementHealth(bullet.getDamage());
-	bullet.explode(true);
-}
-
-/// <summary>
-/// @brief overloaded collision response for PyroBlast.
-/// 
-/// Damages asteroid and explodes on impact.
-/// </summary>
-/// <param name="asteroid">reference to the asteroid collided with</param>
-/// <param name="bullet">reference to the bullet that has collided</param>
-void GameScene::collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet)
-{
-	asteroid.decrementHealth(bullet.getDamage());
-	bullet.explode(true);
-}
-
-void GameScene::playerPickupCollision()
-{
-	if (m_pickup->isActive())
-	{
-		sf::Vector2f vector = m_player.getPosition() - m_pickup->getRightPosition();
-		float length = thor::length(vector);
-		if (length < 100)
-		{
-			m_player.setCanFire(false);
-			m_player.setAttachedWeapons(false);
-			//decrease alpha of the pickup effect
-			m_pickup->fadeOutEffect();
-
-			//LEFT WEAPON CALCULATIONS
-			sf::Vector2f leftPosVec = m_player.getLeftWeaponPos() - m_pickup->getRightPosition();
-			sf::Vector2f unitVecLeft = thor::unitVector(leftPosVec);
-			float leftLength = thor::length(leftPosVec);
-
-			//RIGHT WEAPON CALCULATIONS
-			sf::Vector2f rightPosVec = m_player.getRightWeaponPos() - m_pickup->getLeftPosition();
-			sf::Vector2f unitVecRight = thor::unitVector(rightPosVec);
-			float rightLength = thor::length(rightPosVec);
-
-			m_pickup->setRightVelocity((unitVecLeft * (length * 8.2f))* App::getUpdateDeltaTime());
-			m_pickup->setLeftVelocity((unitVecRight * (length * 8.2f)) * App::getUpdateDeltaTime());
-			m_player.fadeOutWeapons();
-			
-			m_player.setConnectorPos(m_pickup->getLeftPosition(), m_pickup->getRightPosition());
-
-			if (leftLength < 10 && rightLength < 10)
-			{
-				m_player.setWeaponsAlpha(255);
-				m_player.setAttachedWeapons(true);
-				m_player.nextWeapon();
-				m_pickup->setActive(false);
-			}
-		}
-		else
-		{
-			m_pickup->setEffectAlpha(255);
-		}
-	}
-}
-
-/// <summary>
-/// @brief if a player collides with the UI make it transparent.
-/// 
-/// 
-/// </summary>
-void GameScene::playerUICollision()
-{
-	if (tinyh::c2CircletoAABB(m_player.getShieldCollisionCircle(), m_ui.getHealthCollisionBox()))
-	{
-		m_ui.setHealthTransparency(100u);
-	}
-	else
-	{
-		m_ui.setHealthTransparency(255u);
-	}
-}
-
-/// <summary>
-/// @brief generates random float values for a timer from 0 to 3.
-/// 
-/// 
-/// </summary>
-float GameScene::generateRandomTimer()
-{
-	return m_asteroidSpawnFrequency = static_cast<float>(rand() % 4); //generate number from 0 to 3
-}
-
-/// <summary>
-/// @brief this method spawns an asteroid once a timer reaches its max.
-/// 
-/// 
-/// </summary>
-void GameScene::updateAsteroidSpawner()
-{
-	m_asteroidSpawnTimer += UPDATE_DT;
-	if (m_asteroidSpawnTimer >= m_asteroidSpawnFrequency)
-	{
-		int counter = 0;
-		//spawn next unused asteroid here
-		for (auto & uptrAsteroid : m_asteroidManager.getAsteroidVector())
-		{
-			if (uptrAsteroid && !uptrAsteroid->isActive())
-			{
-				if (counter == 0)
-				{
-					uptrAsteroid->reuseAsteroid();
-					counter++;
-				}
-			}
-			m_asteroidSpawnFrequency = generateRandomTimer();
-		}
-		m_asteroidSpawnTimer = 0.0f;
-	}
+	m_pickup.draw(window, deltaTime);
 }
 
 /// <summary>
@@ -451,8 +155,8 @@ void GameScene::setup(const std::string & filePath)
 	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemy);
 	m_player.init(m_resources->m_sptrPlayer);
 	m_background.init(m_resources->m_sptrBackground);
-	m_pickup = std::make_unique<Pickup>(Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered));
-	m_pickup->setActive(false);
+	m_pickup = Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered);
+	m_pickup.setActive(false);
 	m_ui.init(m_resources->m_sptrUI);
 }
 

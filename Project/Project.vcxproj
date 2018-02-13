@@ -69,6 +69,7 @@
     <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp" />
     <ClCompile Include="src\Scenes\TitleScene\TitleScene.cpp" />
     <ClCompile Include="src\tinyheaders\tinyc2.cpp" />
+    <ClCompile Include="src\util\CollisionSystem.cpp" />
     <ClCompile Include="src\util\JsonLoader.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
@@ -143,6 +144,7 @@
     <ClInclude Include="include\Scenes\SceneManager.h" />
     <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h" />
     <ClInclude Include="include\Scenes\TitleScene\TitleScene.h" />
+    <ClInclude Include="include\util\CollisionSystem.h" />
     <ClInclude Include="include\util\JsonLoader.h" />
     <ClInclude Include="include\Window.h" />
   </ItemGroup>

@@ -187,6 +187,7 @@ public:
 	Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::Vector2f size, BulletTypes const & pickupType);
 	void update();
 	void draw(Window & window, const float & deltaTime);
+	void spawn(sf::Vector2f const & position, sf::Vector2f const & size, BulletTypes const & pickupType);
 	void setRightPosition(sf::Vector2f pos);
 	void setLeftPosition(sf::Vector2f pos);
 	sf::Vector2f const & getRightPosition() const;
@@ -201,6 +202,13 @@ public:
 	void fadeOutEffect();
 
 private:
+	/// <summary>
+	/// @brief Define shared pointer to resources.
+	/// 
+	/// 
+	/// </summary>
+	std::shared_ptr<Resources> m_resources;
+
 	/// <summary>
 	/// @brief define texture.
 	/// 

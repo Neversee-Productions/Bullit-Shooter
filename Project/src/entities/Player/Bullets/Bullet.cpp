@@ -250,6 +250,17 @@ bool const & bullets::Bullet::isImpact() const
 }
 
 /// <summary>
+/// @brief gets the bullet type.
+/// 
+/// 
+/// </summary>
+/// <returns>read-only reference to Bullet::m_type.</returns>
+BulletTypes const & bullets::Bullet::getType() const
+{
+	return m_type;
+}
+
+/// <summary>
 /// @brief Sets the animation based on its id.
 /// 
 /// 

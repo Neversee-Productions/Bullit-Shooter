@@ -13,6 +13,7 @@
 #include "scenes\Scene.h"
 #include "Entities\Entities.h"
 #include "util\JsonLoader.h"
+#include "util\CollisionSystem.h"
 #include "gui\game_ui\GameUI.h"
 
 ///
@@ -79,20 +80,6 @@ public:
 	void stop() final override;
 	void update() final override;
 	void draw(Window & window, const float & deltaTime) final override;
-
-private:
-	void updateCollisions();
-	void bulletAsteroidsCollision();
-	void playerAsteroidCollision();
-	void playerEnemyCollision();
-	void collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet);
-	void collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet);
-	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
-	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
-	void playerPickupCollision();
-	void playerUICollision();
-	float generateRandomTimer();
-	void updateAsteroidSpawner();
 
 private:
 	void goToNextScene() final override;
@@ -212,32 +199,11 @@ private:
 	AsteroidManager m_asteroidManager;
 
 	/// <summary>
-	/// @brief define how long since last spawned asteroid.
+	/// @brief defines the a pickup.
 	/// 
 	/// 
 	/// </summary>
-	float m_asteroidSpawnTimer;
-
-	/// <summary>
-	/// @brief define length of time between asteroid spawns.
-	/// 
-	/// 
-	/// </summary>
-	float m_asteroidSpawnFrequency;
-
-	/// <summary>
-	/// @brief constant reference to update delta time.
-	/// 
-	/// 
-	/// </summary>
-	const float & UPDATE_DT;
-
-	/// <summary>
-	/// @brief testing a pickup.
-	/// 
-	/// 
-	/// </summary>
-	std::unique_ptr<Pickup> m_pickup;
+	Pickup m_pickup;
 
 	// HACK : Temporary enemy
 
@@ -249,6 +215,13 @@ private:
 	/// 
 	/// </summary>
 	GameUI m_ui;
+
+	/// <summary>
+	/// @brief defines the collision system.
+	/// 
+	/// This will handle collisions between different entities.
+	/// </summary>
+	CollisionSystem m_collisionSystem;
 };
 
 #endif // !GAMESCENE_H

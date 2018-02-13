@@ -19,6 +19,8 @@ bullets::FireBlast::FireBlast()
 	m_bulletRect.setSize(sf::Vector2f(40.0f, 30.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
+	m_type = BulletTypes::FireBlast;
+
 	//change collision rectangle
 	updateBox();
 }

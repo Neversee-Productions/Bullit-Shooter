@@ -33,7 +33,8 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	// define our current resolution.
 	///////////////////////////////////////////////////////
-	// //windowed mode
+	
+	 //windowed mode
 	m_style = sf::Style::Default;
 	m_resolution = sf::VideoMode(1366u, 768u);
 	 //fullscreen mode

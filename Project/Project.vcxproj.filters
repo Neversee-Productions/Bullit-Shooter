@@ -369,6 +369,9 @@
     <ClCompile Include="src\gui\game_ui\GameUI.cpp">
       <Filter>Source Files\gui\game ui</Filter>
     </ClCompile>
+    <ClCompile Include="src\util\CollisionSystem.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -582,6 +585,9 @@
     </ClInclude>
     <ClInclude Include="include\gui\game_ui\GameUI.h">
       <Filter>Header Files\gui\game ui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util\CollisionSystem.h">
+      <Filter>Header Files\util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

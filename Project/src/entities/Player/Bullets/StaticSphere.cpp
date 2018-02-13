@@ -33,6 +33,8 @@ bullets::StaticSphere::StaticSphere()
 
 	updateCollisionCircle();
 
+	m_type = BulletTypes::StaticSphere;
+
 	//change collision rectangle
 	updateBox();
 }
