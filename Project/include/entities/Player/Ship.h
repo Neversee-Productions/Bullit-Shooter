@@ -94,14 +94,8 @@ public:
 
 private:
 	void processInput(const KeysPressed &);
-	void moveUp();
-	void moveDown();
-	void moveLeft();
-	void moveRight();
 	void decFrame();
 	void incFrame();
-	float easeIn(float t, float b, float c, float d);
-	float easeOut(float t, float b, float c, float d);
 
 
 	/// <summary>

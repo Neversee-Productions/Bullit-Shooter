@@ -122,50 +122,6 @@ void Ship::draw(Window & window, const float & deltaTime)
 }
 
 /// <summary>
-/// @brief simple method that moves the player up.
-/// 
-/// 
-/// </summary>
-void Ship::moveUp()
-{
-	//m_position.y -= m_speed;
-	//m_velocity.y -= m_accelerationRate * App::getUpdateDeltaTime();
-}
-
-/// <summary>
-/// @brief sumple method that moves the player down.
-/// 
-/// 
-/// </summary>
-void Ship::moveDown()
-{
-	//m_position.y += m_speed;
-	//m_velocity.y += m_accelerationRate * App::getUpdateDeltaTime();
-}
-
-/// <summary>
-/// @brief sumple method that moves the player left.
-/// 
-/// 
-/// </summary>
-void Ship::moveLeft()
-{
-	//m_position.x -= m_speed;
-	//m_velocity.x -= m_accelerationRate * App::getUpdateDeltaTime();
-}
-
-/// <summary>
-/// @brief sumple method that moves the player right.
-/// 
-/// 
-/// </summary>
-void Ship::moveRight()
-{
-	//m_position.x += m_speed;
-	//m_velocity.x += m_accelerationRate * App::getUpdateDeltaTime();
-}
-
-/// <summary>
 /// @brief Where ship processes input.
 /// 
 /// 
@@ -179,7 +135,6 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	if (keysPressed.m_left)
 	{
 		m_directionVec.x = -1;
-		moveLeft();
 		if (m_currentFrame > (*m_FRAME_STILL) + OFFSET)
 		{
 			decFrame();
@@ -208,7 +163,6 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	if (keysPressed.m_right)
 	{
 		m_directionVec.x = 1;
-		moveRight();
 		if (m_currentFrame < (*m_FRAME_STILL) - OFFSET)
 		{
 			incFrame();
@@ -237,7 +191,6 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	if (keysPressed.m_up)
 	{
 		m_directionVec.y = -1;
-		moveUp();
 	}
 	else if (!keysPressed.m_down)
 	{
@@ -246,7 +199,6 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	if (keysPressed.m_down)
 	{
 		m_directionVec.y = 1;
-		moveDown();
 	}
 	else if (!keysPressed.m_up)
 	{
