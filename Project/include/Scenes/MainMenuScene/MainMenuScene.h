@@ -3,7 +3,7 @@
 
 #include "scenes\Scene.h"
 #include "gui\GUI.h"
-#include "App.h"
+#include "system\App.h"
 #include "entities\Background.h"
 #include "util\JsonLoader.h"
 

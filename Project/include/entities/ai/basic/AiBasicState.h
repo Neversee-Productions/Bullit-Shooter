@@ -12,7 +12,7 @@
 #include "Thor\Math.hpp"
 #include "Thor\Vectors.hpp"
 // Project Includes
-#include "Window.h"
+#include "system\Window.h"
 
 namespace ai
 {

@@ -6,8 +6,8 @@
 #include <fstream>
 #include "Thor\Graphics.hpp"
 #include "json\json.hpp"
-#include "ResourceHandler.h"
-#include "Window.h"
+#include "system\ResourceHandler.h"
+#include "system\Window.h"
 #include "input\Controller.h"
 
 /// 

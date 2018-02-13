@@ -111,7 +111,9 @@ void Pickup::draw(Window & window, const float & deltaTime)
 void Pickup::spawn(sf::Vector2f const & position, sf::Vector2f const & size, BulletTypes const & pickupType)
 {
 	m_rightPosition = position;
+	m_rightVelocity = { 0.0f, 0.0f };
 	m_leftPosition = position;
+	m_leftVelocity = { 0.0f, 0.0f };
 	m_size = size;
 	m_active = true;
 	m_effectSprite = sf::Sprite();

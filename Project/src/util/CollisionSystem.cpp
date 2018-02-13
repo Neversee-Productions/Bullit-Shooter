@@ -48,6 +48,7 @@ void CollisionSystem::updatePlayer()
 				}
 			}
 		}
+		this->updatePlayerToPickup();
 		this->updatePlayerToGameUi();
 	}
 	else
@@ -217,6 +218,7 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 void CollisionSystem::playerVsAsteroid(Player & player, Asteroid & asteroid)
 {
 	player.decrementShield(25.0f);
+	m_gameUi.decrementHealth(25.0f);
 	asteroid.decrementHealth(10.0f);
 }
 

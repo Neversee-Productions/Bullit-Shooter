@@ -16,6 +16,7 @@ Player::Player(KeyHandler& keyHandler, Controller & controller, Background & bac
 	, m_connectRightWeaponToShip()
 	, m_keyHandler(keyHandler)
 	, m_controller(controller)
+	, m_soundManager(SoundManager::instance())
 	, m_bulletManager()
 	, deltaTime(App::getUpdateDeltaTime())
 	, m_weaponLeftPos(sf::Vector2f(0.0f,0.0f))
@@ -29,7 +30,7 @@ Player::Player(KeyHandler& keyHandler, Controller & controller, Background & bac
 	m_weaponLeft.setFlipped(flip);
 	m_weaponRight.setRectPos(m_weaponLeftPos);
 	m_weaponRight.setFlipped(!flip);
-	//m_bulletManager.initBulletvector(m_weaponLeft.getBulletType());
+
 }
 
 /// <summary>

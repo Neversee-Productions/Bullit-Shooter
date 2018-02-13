@@ -1,6 +1,7 @@
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
 
+// STL Includes
 // SFML Includes
 #include "SFML\Graphics\RectangleShape.hpp"
 #include "SFML\Audio\Sound.hpp"
@@ -11,6 +12,7 @@
 #include "tinyheaders\tinyc2.h"
 // Project Includes
 #include "scenes\Scene.h"
+#include "sound\SoundManager.h"
 #include "Entities\Entities.h"
 #include "util\JsonLoader.h"
 #include "util\CollisionSystem.h"
@@ -26,7 +28,6 @@
 class GameScene : public Scene
 {
 private:
-
 	/// 
 	/// @author Rafael Plugge
 	/// @brief Container of shared pointers to our resources.
@@ -84,6 +85,27 @@ public:
 private:
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
+	void setupSounds(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & soundParser
+	);
+	void setupPlayerSounds(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & playerParser
+	);
+	void setupBulletsSounds(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & bulletsParser
+	);
+	void setupBulletSounds(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & bulletParser
+		, std::string const & bulletNum
+	);
 	void setupPlayer(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Player::Resources> sptrPlayerResources
@@ -169,6 +191,13 @@ private:
 	/// 
 	/// </summary>
 	KeyHandler& m_keyHandler;
+
+	/// <summary>
+	/// @brief reference to the sound manager.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
 
 	/// <summary>
 	/// @brief Unique pointer to our Resources struct.

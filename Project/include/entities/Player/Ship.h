@@ -11,10 +11,10 @@
 #include "SFML\Graphics\Texture.hpp"
 // For thor::Animator<>
 #include "Thor\Animations\Animator.hpp"
-#include "Window.h"
 //for vector calculations
 #include "Thor\Vectors.hpp" 
 #include <iostream>
+#include "system\Window.h"
 
 ///
 /// @brief Ship class.

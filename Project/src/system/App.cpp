@@ -1,4 +1,4 @@
-#include "App.h"
+#include "system\App.h"
 
 sf::Vector2u App::s_viewSize = sf::Vector2u(0, 0);
 

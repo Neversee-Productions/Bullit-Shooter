@@ -2,12 +2,13 @@
 #define ASTEROIDS_H
 
 #include "SFML\Graphics.hpp"
-#include "Window.h"
+#include "system\Window.h"
 #include <stdlib.h>
 #include "Entities\Player\Bullets\CometShot.h"
 
 ///
 /// @brief An asteroid entity class.
+/// @author Rafael Plugge
 /// @author Sebastian Kruzel
 /// 
 /// This class will

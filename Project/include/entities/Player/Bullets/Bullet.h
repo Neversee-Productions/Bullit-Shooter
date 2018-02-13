@@ -2,7 +2,7 @@
 #define BULLET_H
 
 #include "SFML\Graphics.hpp"
-#include "Window.h"
+#include "system\Window.h"
 #include "BulletTypes.h"
 #include "Thor\Animations.hpp"
 #include "Thor\Math.hpp"

@@ -6,7 +6,7 @@
 // For sf::RectangleShape
 #include "SFML\Graphics\RectangleShape.hpp"
 // For Window
-#include "Window.h"
+#include "system\Window.h"
 // For std::shared_ptr
 #include <memory>
 

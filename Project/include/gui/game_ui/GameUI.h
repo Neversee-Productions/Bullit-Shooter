@@ -3,8 +3,8 @@
 
 #include <memory>
 #include <SFML\Graphics.hpp>
-#include "Window.h"
-#include "ResourceHandler.h"
+#include "system\Window.h"
+#include "system\ResourceHandler.h"
 #include "tinyheaders\tinyc2.h"
 
 ///
