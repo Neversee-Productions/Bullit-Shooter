@@ -94,7 +94,7 @@ void CollisionSystem::updatePlayerBulletToAsteroids(bullets::Bullet & bullet)
 		auto & asteroidVector = m_asteroidManager.getAsteroidVector();
 		for (auto & asteroid : asteroidVector)
 		{
-			if (asteroid.isActive())
+			if (asteroid.isActive() && !asteroid.isExplosion())
 			{
 				if (bullet.checkCircleCollision(asteroid.getCollisionCircle()))
 				{
@@ -217,9 +217,12 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 /// <param name="asteroid">reference to asteroid</param>
 void CollisionSystem::playerVsAsteroid(Player & player, Asteroid & asteroid)
 {
-	player.decrementShield(25.0f);
-	m_gameUi.decrementHealth(25.0f);
-	asteroid.decrementHealth(10.0f);
+	if (!asteroid.isExplosion())
+	{
+		player.decrementShield(25.0f);
+		m_gameUi.decrementHealth(25.0f);
+		asteroid.decrementHealth(10.0f);
+	}
 }
 
 /// <summary>

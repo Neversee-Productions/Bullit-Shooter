@@ -4,22 +4,40 @@ float const Asteroid::INVULNERABILITY_FRAMES = 0.01f;
 
 
 /// <summary>
+/// @brief Setups resource pointer.
+/// 
+/// 
+/// </summary>
+/// <param name="sptrResources">shared pointer to asteroid resource.</param>
+void Asteroid::setup(std::shared_ptr<Resources> sptrResources, json::json & jsonParser)
+{
+	sptrResources->m_idleTexture = jsonParser.at("idle").at("texture").get<Resources::Texture>();
+	sptrResources->m_explodeTexture = jsonParser.at("explode").at("texture").get<Resources::Texture>();
+	sptrResources->m_explodeAnimation = jsonParser.at("explode").at("animation").get<Resources::Animation>();
+}
+
+/// <summary>
 /// @brief Default constructor.
 /// 
 /// 
 /// </summary>
-Asteroid::Asteroid()
-	: m_rectangle(sf::Vector2f(200.0f, 200.0f))
-	, m_circle(10.0f)
+Asteroid::Asteroid(std::shared_ptr<Resources> sptrResources)
+	: m_sptrResources(sptrResources)
+	, m_rectangle(sf::Vector2f(200.0f, 200.0f))
+	, m_circle(100.0f, 30u)
 	, m_velocity(0.0f, 0.0f)
 	, m_position(300.0f, 300.0f)
 	, m_active(false)
+	, m_explode(false)
 	, m_collisionCircle()
 	, m_windowC2Rect()
 	, m_health(10.0f)
 	, m_invulnerable(false)
 	, m_invulnTimer(0.0f)
 	, UPDATE_DT(App::getUpdateDeltaTime())
+	, UPDATE_TIME_DT(sf::seconds(UPDATE_DT))
+	, m_animator()
+	, m_explosionTimer(sf::milliseconds(0))
 {
 	const auto & windowRect = App::getViewC2Rect();
 	const auto & extraHeight = m_rectangle.getGlobalBounds().height * 2.0f;
@@ -29,12 +47,23 @@ Asteroid::Asteroid()
 	m_windowC2Rect.max.y = windowRect.max.y;
 	m_rectangle.setOrigin(m_rectangle.getGlobalBounds().width / 2, m_rectangle.getGlobalBounds().height / 2);
 	m_rectangle.setPosition(m_position);
-	m_circle.setFillColor(sf::Color::Red);
+	
+	// Initialize asteroid circle shape
 	m_circle.setPosition(m_position);
-	m_circle.setRadius(m_rectangle.getGlobalBounds().width / 2);
-	m_circle.setOrigin(m_rectangle.getOrigin());
+	m_circle.setOrigin(m_circle.getRadius(), m_circle.getRadius());
+	m_circle.setScale(sptrResources->m_idleTexture.m_scale);
+	m_circle.setTexture(sptrResources->m_idleTexture.m_sptrTexture.get(), true);
+	m_circle.setTextureRect(sptrResources->m_idleTexture.m_textureRect);
+	
+	// Initialize asteroid circle collider
 	m_collisionCircle.r = m_circle.getRadius();
 	updateCollisionCircle();
+
+	// Initialize asteroid explosion animation
+	m_animator.addAnimation(
+		sptrResources->m_explodeAnimation.m_id,
+		sptrResources->m_explodeAnimation.m_frames,
+		sptrResources->m_explodeAnimation.m_duration);
 }
 
 /// <summary>
@@ -46,7 +75,7 @@ void Asteroid::update()
 {
 	if (m_invulnerable)
 	{
-		m_circle.setFillColor(sf::Color::Blue);
+		//m_circle.setFillColor(sf::Color::White);
 		m_invulnTimer += App::getUpdateDeltaTime();
 		if (m_invulnTimer >= INVULNERABILITY_FRAMES)
 		{
@@ -56,10 +85,18 @@ void Asteroid::update()
 	}
 	else
 	{
-		m_circle.setFillColor(sf::Color::Red);
+		//m_circle.setFillColor(sf::Color::White);
 	}
 	if (m_active)
 	{
+		if (m_explode)
+		{
+			m_explosionTimer += UPDATE_TIME_DT;
+			if (m_explosionTimer > m_sptrResources->m_explodeAnimation.m_duration)
+			{
+				m_active = false;
+			}
+		}
 		m_position += m_velocity * UPDATE_DT;
 		m_rectangle.setPosition(m_position);
 		m_circle.setPosition(m_position);
@@ -79,6 +116,11 @@ void Asteroid::draw(Window & window, const float & deltaTime)
 {
 	if (m_active)
 	{
+		if (m_explode)
+		{
+			m_animator.update(sf::seconds(deltaTime));
+			m_animator.animate(m_circle);
+		}
 		//window.draw(m_rectangle);
 		window.draw(m_circle);
 	}
@@ -153,7 +195,12 @@ void Asteroid::reuseAsteroid()
 	generateRandomVel();
 	generateRandomPos();
 	m_health = 10.0f;
+	m_explode = false;
 	m_active = true;
+	m_circle.setOrigin(m_circle.getRadius(), m_circle.getRadius());
+	m_circle.setScale(m_sptrResources->m_idleTexture.m_scale);
+	m_circle.setTexture(m_sptrResources->m_idleTexture.m_sptrTexture.get(), true);
+	m_circle.setTextureRect(m_sptrResources->m_idleTexture.m_textureRect);
 }
 
 /// <summary>
@@ -194,7 +241,7 @@ void Asteroid::decrementHealth(float dmg)
 		m_invulnerable = true;
 		if (m_health <= 0)
 		{
-			m_active = false;
+			this->explode();
 		}
 	}
 }
@@ -225,9 +272,113 @@ void Asteroid::knockback()
 /// 
 /// 
 /// </summary>
-/// <returns>Return whether aseroid is active.</returns>
+/// <returns>Return whether asteroid is active.</returns>
 bool Asteroid::isActive()
 {
 	return m_active;
 }
 
+/// <summary>
+/// @brief check if asteroid has exploded.
+/// 
+/// 
+/// </summary>
+/// <returns>Whether asteroid has exploded.</returns>
+bool Asteroid::isExplosion() const
+{
+	return m_explode;
+}
+
+/// <summary>
+/// @brief Start explosion animation and enter explode state.
+/// 
+/// 
+/// </summary>
+void Asteroid::explode()
+{
+	this->setVelocity({ 0.0f, 0.0f });
+	m_explosionTimer = sf::Time();
+	m_circle.setPosition(m_position);
+	m_circle.setScale(m_sptrResources->m_explodeTexture.m_scale);
+	m_circle.setOrigin({ m_circle.getRadius(), m_circle.getRadius() });
+	m_circle.setTexture(m_sptrResources->m_explodeTexture.m_sptrTexture.get(), true);
+	m_circle.setTextureRect(m_sptrResources->m_explodeTexture.m_textureRect);
+	m_animator.playAnimation(m_sptrResources->m_explodeAnimation.m_id, false);
+	m_explode = true;
+}
+
+/// <summary>
+/// @brief json getter function.
+/// 
+/// Used by the json library when parsing the json file into 
+/// Asteroid::Resources::Texture type.
+/// </summary>
+/// <param name="j">read-only reference to json file to be parsed</param>
+/// <param name="textureData">reference to destination of data to be parsed</param>
+void from_json(const json::json & j, Asteroid::Resources::Texture & textureData)
+{
+	// Resource handler will load in out texture for us.
+	ResourceHandler & resourceHandler = ResourceHandler::get();
+
+	std::string const JSON_KEY("key");
+	std::string const JSON_PATH("path");
+	std::string const JSON_ORIGIN("origin");
+	std::string const JSON_SCALE("scale");
+	std::string const JSON_FRAME("frame");
+
+	textureData.m_id = j.at(JSON_KEY).get<std::string>();
+	textureData.m_origin.x = j.at(JSON_ORIGIN).at("x").get<float>();
+	textureData.m_origin.y = j.at(JSON_ORIGIN).at("y").get<float>();
+	textureData.m_scale.x = j.at(JSON_SCALE).at("x").get<float>();
+	textureData.m_scale.y = j.at(JSON_SCALE).at("y").get<float>();
+	textureData.m_textureRect.left = j.at(JSON_FRAME).at("x").get<int>();
+	textureData.m_textureRect.top = j.at(JSON_FRAME).at("y").get<int>();
+	textureData.m_textureRect.width = j.at(JSON_FRAME).at("w").get<int>();
+	textureData.m_textureRect.height = j.at(JSON_FRAME).at("h").get<int>();
+	textureData.m_sptrTexture =
+		resourceHandler.loadUp<sf::Texture>(j.at(JSON_PATH).get<std::string>(), textureData.m_id);
+	textureData.m_sptrTexture->setSmooth(true);
+}
+
+/// <summary>
+/// @brief json getter function.
+/// 
+/// Used by the json library when parsing the json file into 
+/// Asteroid::Resources::Animation type.
+/// </summary>
+/// <param name="j">read-only reference to json file to be parsed</param>
+/// <param name="animationData">reference to destination of data to be parsed</param>
+void from_json(const json::json & j, Asteroid::Resources::Animation & animationData)
+{
+	ResourceHandler & resourceHandler = ResourceHandler::get();
+
+	std::string const JSON_KEY("key");
+	std::string const JSON_TEXTURE_KEY("texture_key");
+	std::string const JSON_DURATION("duration");
+	std::string const JSON_WIDTH("width");
+	std::string const JSON_HEIGHT("height");
+	std::string const JSON_ORIGIN("origin");
+	std::string const JSON_FRAMES("frames");
+
+
+	animationData.m_id = j.at(JSON_KEY).get<std::string>();
+	animationData.m_duration = sf::seconds(j.at(JSON_DURATION).get<float>());
+	animationData.m_origin.x = j.at(JSON_ORIGIN).at("x").get<float>();
+	animationData.m_origin.y = j.at(JSON_ORIGIN).at("y").get<float>();
+	animationData.m_sptrTexture = resourceHandler.loadUp<sf::Texture>("", j.at(JSON_TEXTURE_KEY).get<std::string>());
+
+	animationData.m_frames = thor::FrameAnimation();
+	{ // Initialize animation frames.
+		float i = 0.0f;
+		sf::IntRect rect = { 0,0,0,0 };
+		rect.width = j.at(JSON_WIDTH).get<int>();
+		rect.height = j.at(JSON_HEIGHT).get<int>();
+		for (auto & jsonNode : j.at(JSON_FRAMES))
+		{
+			rect.left = jsonNode.at("x").get<int>();
+			rect.top = jsonNode.at("y").get<int>();
+
+			animationData.m_frames.addFrame(i++, rect);
+		}
+	}
+}

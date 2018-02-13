@@ -19,7 +19,6 @@ GameScene::GameScene(KeyHandler& keyHandler, Controller & controller)
 	, m_collisionSystem(m_player, m_asteroidManager, m_pickup, m_ui)
 {
 	m_pickup.setActive(false);
-	m_asteroidManager.initAsteroidVector();
 }
 
 /// <summary>
@@ -159,6 +158,7 @@ void GameScene::setup(const std::string & filePath)
 	}
 
 	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemy);
+	m_asteroidManager.init(m_resources->m_sptrEnemies->m_sptrAsteroid);
 	m_player.init(m_resources->m_sptrPlayer);
 	m_background.init(m_resources->m_sptrBackground);
 	m_pickup = Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered);
@@ -351,6 +351,20 @@ void GameScene::setupWeapons(ResourceHandler & resourceHandler, std::shared_ptr<
 /// <returns>returns a unique pointer to our Weapon::Resources::WeaponAnimation.</returns>
 std::unique_ptr<Weapon::Resources::IndividualWeapon> GameScene::setupWeaponAnim(ResourceHandler & resourceHandler, json::json & weaponParser, std::string const & id)
 {
+	auto loadFirstFrame = [](json::json const & parser)
+	{
+		std::string const JSON_WIDTH("width");
+		std::string const JSON_HEIGHT("height");
+		std::string const JSON_FRAME("frames");
+
+		sf::IntRect rect;
+		rect.left = parser.at(JSON_WIDTH).get<int>();
+		rect.top = parser.at(JSON_HEIGHT).get<int>();
+		rect.width = parser.at(JSON_FRAME).front().at("x").get<int>();
+		rect.height = parser.at(JSON_FRAME).front().at("y").get<int>();
+		return rect;
+	};
+
 	Weapon::Resources::IndividualWeapon weaponResource;
 
 	std::string const ANIM_STR = "animation";
@@ -361,6 +375,7 @@ std::unique_ptr<Weapon::Resources::IndividualWeapon> GameScene::setupWeaponAnim(
 	auto uptrBeginAnimation = std::make_unique<Weapon::Resources::Animation>();
 	auto & beginAnimation = *uptrBeginAnimation;
 	beginAnimation.m_id = BEGIN_ID;
+	beginAnimation.m_frame = loadFirstFrame(weaponParser.at(ANIM_STR).at(BEGIN_ID));
 	beginAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(weaponParser, BEGIN_ID);
 	beginAnimation.m_duration = sf::seconds(weaponParser.at(ANIM_STR).at(BEGIN_ID).at("duration").get<float>());
 	auto const & beginAnimationFrameWidth = weaponParser.at(ANIM_STR).at(BEGIN_ID).at("width").get<float>();
@@ -372,18 +387,19 @@ std::unique_ptr<Weapon::Resources::IndividualWeapon> GameScene::setupWeaponAnim(
 	
 	weaponResource.m_uptrBeginAnimation.swap(uptrBeginAnimation);
 
-	std::string const shootID = id + "_shoot";
+	std::string const SHOOT_ID = id + "_shoot";
 	auto uptrShootAnimation = std::make_unique<Weapon::Resources::Animation>();
 	auto & shootAnimation = *uptrShootAnimation;
-	shootAnimation.m_id = shootID;
-	shootAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(weaponParser, shootID);
-	shootAnimation.m_duration = sf::seconds(weaponParser.at(ANIM_STR).at(shootID).at("duration").get<float>());
-	auto const & shootAnimationFrameWidth = weaponParser.at(ANIM_STR).at(shootID).at("width").get<float>();
-	auto const & shootAnimationFrameHeight = weaponParser.at(ANIM_STR).at(shootID).at("height").get<float>();
-	auto & jsonShootOrigin = weaponParser.at(ANIM_STR).at(shootID).at("origin");
+	shootAnimation.m_id = SHOOT_ID;
+	shootAnimation.m_frame = loadFirstFrame(weaponParser.at(ANIM_STR).at(SHOOT_ID));
+	shootAnimation.m_sptrFrames = resourceHandler.loadUp<thor::FrameAnimation>(weaponParser, SHOOT_ID);
+	shootAnimation.m_duration = sf::seconds(weaponParser.at(ANIM_STR).at(SHOOT_ID).at("duration").get<float>());
+	auto const & shootAnimationFrameWidth = weaponParser.at(ANIM_STR).at(SHOOT_ID).at("width").get<float>();
+	auto const & shootAnimationFrameHeight = weaponParser.at(ANIM_STR).at(SHOOT_ID).at("height").get<float>();
+	auto & jsonShootOrigin = weaponParser.at(ANIM_STR).at(SHOOT_ID).at("origin");
 	auto shootAnimationOrigin = sf::Vector2f(jsonShootOrigin.at("x").get<float>(), jsonShootOrigin.at("y").get<float>());
 	shootAnimation.m_origin = std::move(shootAnimationOrigin);
-	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, shootID);
+	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, SHOOT_ID);
 
 	weaponResource.m_uptrShootAnimation.swap(uptrShootAnimation);
 
@@ -789,9 +805,11 @@ void GameScene::setupEnemies(ResourceHandler & resourceHandler, std::shared_ptr<
 	std::string const JSON_ENEMIES("enemies");
 	json::json enemiesJson = util::loadJsonFromFile(gameSceneParser.at(JSON_ENEMIES).get<std::string>());
 
+	std::string const JSON_ENEMY_ASTEROID("asteroid");
 	std::string const JSON_ENEMY_BASIC("basic");
 
 	ai::AiBasic::setup(sptrEnemies->m_sptrBasicEnemy, resourceHandler, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_BASIC).get<std::string>()));
+	Asteroid::setup(sptrEnemies->m_sptrAsteroid, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_ASTEROID).get<std::string>()));
 }
 
 /// <summary>
