@@ -81,9 +81,7 @@ void SceneManager::addAllScenes()
 
 	// load our scenes paths
 
-	std::ifstream rawFile("resources/scenes.json");
-	json::json jsonLoader;
-	rawFile >> jsonLoader;
+	json::json jsonLoader = util::loadJsonFromFile("resources/scenes.json");
 	
 	// Splash Scene
 	sptrScene = std::make_shared<SplashScene>();
@@ -106,7 +104,7 @@ void SceneManager::addAllScenes()
 	this->addScene(sptrScene, std::move(uptrResources));
 
 	// Game Scene
-	sptrScene = std::make_shared<GameScene>(*m_keyHandler);
+	sptrScene = std::make_shared<GameScene>(*m_keyHandler, *m_controller);
 	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
 	this->addScene(sptrScene, std::move(uptrResources));
 }
@@ -252,6 +250,7 @@ void SceneManager::goToNextScene()
 /// </summary>
 void SceneManager::update()
 {
+	m_controller->update();
 	if (m_currentScene->getNextSceneName() == "")
 	{
 		m_currentScene->update();
@@ -262,6 +261,7 @@ void SceneManager::update()
 		m_currentScene->update();
 	}
 	m_keyHandler->update();
+	m_controller->update();
 }
 
 /// <summary>

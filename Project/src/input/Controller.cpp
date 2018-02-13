@@ -38,11 +38,23 @@ void Controller::update()
 	if (isConnected())
 	{
 		m_previousState = m_currentState;
-
-		m_currentState.m_A = checkButton(ButtonMappings::A);
-		m_currentState.m_B = checkButton(ButtonMappings::B);
-		m_currentState.m_X = checkButton(ButtonMappings::X);
-		m_currentState.m_Y = checkButton(ButtonMappings::Y);
+#ifdef JOYSTICK_
+		m_currentState.m_btnX = this->checkButton(ButtonMappings::btnX);
+		m_currentState.m_btnCircle = this->checkButton(ButtonMappings::btnCircle);
+		m_currentState.m_btnSquare = this->checkButton(ButtonMappings::btnSquare);
+		m_currentState.m_btnTriangle = this->checkButton(ButtonMappings::btnTriangle);
+		m_currentState.m_btnTrigger = this->checkButton(ButtonMappings::FireTrigger);
+		m_currentState.m_flightStick = {
+			this->checkAxis(ButtonMappings::FlightStickX),
+			this->checkAxis(ButtonMappings::FlightStickY)
+		};
+		m_currentState.m_flightThruster = this->checkAxis(ButtonMappings::FlightThruster);
+#endif // JOYSTICK_
+#ifdef XBOX360_
+		m_currentState.m_A = checkButton(ButtonMappings::btnX);
+		m_currentState.m_B = checkButton(ButtonMappings::btnCircle);
+		m_currentState.m_X = checkButton(ButtonMappings::btnSquare);
+		m_currentState.m_Y = checkButton(ButtonMappings::btnTriangle);
 		m_currentState.m_LB = checkButton(ButtonMappings::LeftBumper);
 		m_currentState.m_RB = checkButton(ButtonMappings::RightBumper);
 		m_currentState.m_lTSClick = checkButton(ButtonMappings::LeftThumbClick);
@@ -140,6 +152,7 @@ void Controller::update()
 		{
 			m_currentState.m_rTS.y = 0.0f;
 		}
+#endif // XBOX360_
 	}
 	else
 	{
@@ -197,6 +210,15 @@ bool Controller::isAnyButtonPressed() const
 	bool buttonPressed = false;
 
 	if (
+#ifdef JOYSTICK_
+		m_currentState.m_btnX
+		|| m_currentState.m_btnCircle
+		|| m_currentState.m_btnSquare
+		|| m_currentState.m_btnTriangle
+		|| m_currentState.m_btnTrigger
+#endif // JOYSTICK_
+
+#ifdef XBOX360_
 		m_currentState.m_A
 		|| m_currentState.m_B
 		|| m_currentState.m_X
@@ -208,6 +230,7 @@ bool Controller::isAnyButtonPressed() const
 		|| m_currentState.m_lTSClick
 		|| m_currentState.m_RB
 		|| m_currentState.m_rTSClick
+#endif
 		)
 	{
 		buttonPressed = true;

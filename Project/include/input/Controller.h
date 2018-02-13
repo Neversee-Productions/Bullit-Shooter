@@ -4,6 +4,15 @@
 #include "SFML\Graphics.hpp"
 #include "SFML\Window\Joystick.hpp"
 
+
+/// <summary>
+/// @brief Define what type of controller to support.
+/// 
+/// 
+/// </summary>
+#define JOYSTICK_
+//#define XBOX360_
+
 ///
 /// @brief a struct of game pad state.
 /// @author Rafael Plugge
@@ -12,27 +21,21 @@
 /// 
 struct GamePadState
 {
-	GamePadState()
-		: m_A(false)
-		, m_B(false)
-		, m_X(false)
-		, m_Y(false)
-		, m_LB(false)
-		, m_RB(false)
-		, m_lTSClick(false)
-		, m_rTSClick(false)
-		, m_dpadUp(false)
-		, m_dpadDown(false)
-		, m_dpadLeft(false)
-		, m_dpadRight(false)
-		, m_start(false)
-		, m_back(false)
-		, m_xbox(false)
-		, m_rTrigger(0.0f)
-		, m_lTrigger(0.0f)
-		, m_rTS(0.0f, 0.0f)
-		, m_lTS(0.0f, 0.0f)
-	{}
+	GamePadState() = default;
+
+#ifdef JOYSTICK_
+	bool m_btnX;
+	bool m_btnCircle;
+	bool m_btnSquare;
+	bool m_btnTriangle;
+	bool m_btnTrigger;
+	sf::Vector2f m_flightStick;
+	float m_flightThruster;
+#endif // JOYSTICK_
+
+#ifdef XBOX360_
+
+
 	/// <summary>
 	/// @brief Gamepad A button.
 	/// 
@@ -165,8 +168,9 @@ struct GamePadState
 	/// 
 	/// </summary>
 	sf::Vector2f m_lTS;
+#endif // XBOX360_
+
 };
-#define XBOX360_
 #ifdef XBOX360_
 
 /// <summary>
@@ -176,10 +180,10 @@ struct GamePadState
 /// </summary>
 enum class ButtonMappings
 {
-	A = 0, /// = 0
-	B, /// = 1
-	X, /// = 2
-	Y, /// = 3
+	btnX = 0, /// = 0
+	btnCircle, /// = 1
+	btnSquare, /// = 2
+	btnTriangle, /// = 3
 	LeftBumper, /// = 4
 	RightBumper, /// = 5
 	Back, /// = 6
@@ -194,9 +198,26 @@ enum class ButtonMappings
 	DpadY = 7, /// Dpad Y = Axis::PovY(7)
 	DpadX = 6 /// Dpad X = Axis::PovX(6)
 };
-#else
+#endif 
+#ifdef JOYSTICK_
+/// <summary>
+/// @brief enumarator to define button mappings
+/// 
+/// 
+/// </summary>
+enum class ButtonMappings
+{
+	btnX = 5, /// = 5
+	btnCircle, /// = 6
+	btnSquare = 4, /// = 4
+	btnTriangle = 7, /// = 7
+	FireTrigger = 0, /// 
+	FlightStickX = 0, /// Flight Stick = Axis::X(0)
+	FlightStickY = 1, /// Flight Stick = Axis::Y(1)
+	FlightThruster = 2, /// Right Thumbstick = Axis::Z(2)
+};
+#endif // JOYSTICK_
 
-#endif // XBOX360_
 
 
 ///

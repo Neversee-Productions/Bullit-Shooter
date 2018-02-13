@@ -81,7 +81,6 @@ void OptionsScene::update()
 	}
 	else
 	{
-		m_controller->update();
 		m_gui->update(m_UPDATE_DT);
 	}
 }

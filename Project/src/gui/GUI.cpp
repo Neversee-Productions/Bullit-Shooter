@@ -373,6 +373,7 @@ void gui::GUI::processInput()
 {
 	if (m_controller->isConnected())
 	{
+#ifdef XBOX360_
 		const float& JOYSTICK_THRESHOLD = 50.0f;
 		const auto & DPAD_UP = m_controller->m_currentState.m_dpadUp;
 		const auto & PREV_DPAD_UP = m_controller->m_previousState.m_dpadUp;
@@ -397,6 +398,21 @@ void gui::GUI::processInput()
 		{
 			moveToNextWidgets();
 		}
+#endif
+#ifdef JOYSTICK_
+		const float & JOYSTICK_THRESHOLD = 50.0f;
+		const auto & FLIGHT_STICK_Y = m_controller->m_currentState.m_flightStick.y;
+		const auto & PREV_FLIGHT_STICK_Y = m_controller->m_previousState.m_flightStick.y;
+
+		if (FLIGHT_STICK_Y < -JOYSTICK_THRESHOLD && PREV_FLIGHT_STICK_Y >= -JOYSTICK_THRESHOLD)
+		{
+			this->moveToPrevWidgets();
+		}
+		if (FLIGHT_STICK_Y > JOYSTICK_THRESHOLD && PREV_FLIGHT_STICK_Y <= JOYSTICK_THRESHOLD)
+		{
+			this->moveToNextWidgets();
+		}
+#endif
 	}
 	const auto & IS_DIAGONAL = (m_layout == Layouts::StripDiagonal);
 

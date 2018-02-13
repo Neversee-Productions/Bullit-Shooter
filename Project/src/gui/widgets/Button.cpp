@@ -220,8 +220,16 @@ bool gui::Button::processInput(Controller & controller, KeyHandler & keyhandler)
 	//processInput(controller);
 	if (m_currentButtonState == ButtonState::HOVERED)
 	{
-		if (controller.m_currentState.m_A //if button pressed while hovered then go to pressed state
-			|| (keyhandler.isPressed(sf::Keyboard::Key::Return) && !keyhandler.isPrevPressed(sf::Keyboard::Return))
+		if (
+#ifdef XBOX360_
+			controller.m_currentState.m_A //if button pressed while hovered then go to pressed state
+			|| 
+#endif
+#ifdef JOYSTICK_
+			(controller.m_currentState.m_btnTrigger && !controller.m_previousState.m_btnTrigger)
+			||
+#endif
+			(keyhandler.isPressed(sf::Keyboard::Key::Return) && !keyhandler.isPrevPressed(sf::Keyboard::Return))
 			)
 		{
 			m_currentButtonState = ButtonState::PRESSED;

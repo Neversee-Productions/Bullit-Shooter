@@ -73,7 +73,7 @@ private:
 	};
 
 public:
-	GameScene(KeyHandler& keyHandler);
+	GameScene(KeyHandler& keyHandler, Controller & controller);
 	void preStart(const std::string & resourceFilePath) final override;
 	void start(const std::string & resourceFilePath) final override;
 	void stop() final override;

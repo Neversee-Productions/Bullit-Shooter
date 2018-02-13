@@ -178,9 +178,11 @@ bool gui::CheckBox::processInput(Controller & controller, KeyHandler & keyhandle
 	if (m_currentState == CheckboxState::HOVERED)
 	{
 		if (
+#ifdef XBOX360_
 			(controller.m_currentState.m_A
 				&& !controller.m_previousState.m_A)
 			||
+#endif
 			(keyhandler.isPressed(sf::Keyboard::Key::Return)
 				&& !keyhandler.isPrevPressed(sf::Keyboard::Key::Return))
 			) //if button pressed while hovered then go to pressed state

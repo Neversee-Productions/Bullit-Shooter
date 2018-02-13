@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include "Window.h"
+#include "input\Controller.h"
 #include "..\Background.h"
 #include "Ship.h"
 #include "Weapon.h"
@@ -60,7 +61,7 @@ public:
 	};
 
 public:
-	Player(KeyHandler& keyHandler, Background & background);
+	Player(KeyHandler& keyHandler, Controller& controller, Background & background);
 	void init(std::shared_ptr<Resources> resources);
 	void draw(Window & window, const float & deltaTime);
 	void update();
@@ -86,6 +87,7 @@ public:
 
 private:
 	void switchWeaponInput();
+	bool checkAxis(float const & axis, bool flipped);
 
 private:
 	/// <summary>
@@ -137,6 +139,13 @@ private:
 	/// 
 	/// </summary>
 	KeyHandler& m_keyHandler;
+
+	/// <summary>
+	/// @brief reference to the controller.
+	/// 
+	/// Allows for enquiry on inputs.
+	/// </summary>
+	Controller & m_controller;
 
 	/// <summary>
 	/// @brief the bullet manager object.

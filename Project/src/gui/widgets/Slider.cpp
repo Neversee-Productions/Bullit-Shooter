@@ -282,11 +282,13 @@ bool gui::Slider::processInput(Controller & controller, KeyHandler & keyhandler)
 {
 	if(m_currentState == SliderState::HOVERED)
 	{
-		if (
-			(controller.m_currentState.m_dpadRight 
-				|| controller.m_currentState.m_lTS.x > 50
-				|| keyhandler.isPressed(sf::Keyboard::Key::Right)
-				|| keyhandler.isPressed(sf::Keyboard::Key::D)
+		if ((
+#ifdef XBOX360_
+			controller.m_currentState.m_dpadRight ||
+				controller.m_currentState.m_lTS.x > 50 ||
+#endif
+				 keyhandler.isPressed(sf::Keyboard::Key::Right) ||
+				 keyhandler.isPressed(sf::Keyboard::Key::D)
 				)
 			&& !m_moved
 			) //if key pressed and slider hasnt moved yet
@@ -294,10 +296,13 @@ bool gui::Slider::processInput(Controller & controller, KeyHandler & keyhandler)
 			moveRight();
 		}
 		if (
-			(controller.m_currentState.m_dpadLeft 
-				|| controller.m_currentState.m_lTS.x < -50
-				|| keyhandler.isPressed(sf::Keyboard::Key::Left)
-				|| keyhandler.isPressed(sf::Keyboard::Key::A))
+			(
+#ifdef XBOX360_
+				controller.m_currentState.m_dpadLeft || 
+				controller.m_currentState.m_lTS.x < -50 || 
+#endif
+				keyhandler.isPressed(sf::Keyboard::Key::Left) || 
+				keyhandler.isPressed(sf::Keyboard::Key::A))
 			&& !m_moved
 			) //if key pressed and slider not moved yet
 		{

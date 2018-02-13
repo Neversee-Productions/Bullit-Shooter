@@ -5,10 +5,10 @@
 /// 
 /// Constructs a base Scene using the name of "Game".
 /// </summary>
-GameScene::GameScene(KeyHandler& keyHandler)
+GameScene::GameScene(KeyHandler& keyHandler, Controller & controller)
 	: Scene("Game")
 	, m_background()
-	, m_player(keyHandler, m_background)
+	, m_player(keyHandler, controller, m_background)
 	, m_keyHandler(keyHandler)
 	, m_resources(nullptr)
 	, m_windowC2Rect(App::getViewC2Rect())
