@@ -14,8 +14,10 @@ GameScene::GameScene(KeyHandler& keyHandler)
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_asteroidManager()
 	, m_enemy(m_player)
-	, m_collisionSystem(m_player, m_asteroidManager)
+	, m_pickup()
+	, m_collisionSystem(m_player, m_asteroidManager, m_pickup)
 {
+	m_pickup.setActive(false);
 	m_asteroidManager.initAsteroidVector();
 }
 
@@ -39,6 +41,9 @@ void GameScene::preStart(const std::string & resourceFilePath)
 /// </summary>
 void GameScene::start(const std::string & resourceFilePath)
 {
+#ifdef _DEBUG
+	std::cout << "Starting Game Scene" << std::endl;
+#endif // _DEBUG
 	Scene::setNextSceneName("");
 	if (!m_resources)
 	{
@@ -53,6 +58,9 @@ void GameScene::start(const std::string & resourceFilePath)
 /// </summary>
 void GameScene::stop()
 {
+#ifdef _DEBUG
+	std::cout << "Stopping Game Scene" << std::endl;
+#endif // _DEBUG
 }
 
 /// <summary>
@@ -71,7 +79,7 @@ void GameScene::update()
 	m_asteroidManager.update();
 	m_enemy.update();
 	playerPickupCollision();
-	m_pickup->update();
+	m_pickup.update();
 	m_collisionSystem.update();
 }
 
@@ -88,7 +96,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 	m_asteroidManager.draw(window, deltaTime);
 	m_player.draw(window, deltaTime);
 	m_enemy.draw(window, deltaTime);
-	m_pickup->draw(window, deltaTime);
+	m_pickup.draw(window, deltaTime);
 }
 
 /// <summary>
@@ -96,46 +104,6 @@ void GameScene::draw(Window & window, const float & deltaTime)
 /// </summary>
 void GameScene::playerPickupCollision()
 {
-	if (m_pickup->isActive())
-	{
-		sf::Vector2f vector = m_player.getPosition() - m_pickup->getRightPosition();
-		float length = thor::length(vector);
-		if (length < 100)
-		{
-			m_player.setCanFire(false);
-			m_player.setAttachedWeapons(false);
-			//decrease alpha of the pickup effect
-			m_pickup->fadeOutEffect();
-
-			//LEFT WEAPON CALCULATIONS
-			sf::Vector2f leftPosVec = m_player.getLeftWeaponPos() - m_pickup->getRightPosition();
-			sf::Vector2f unitVecLeft = thor::unitVector(leftPosVec);
-			float leftLength = thor::length(leftPosVec);
-
-			//RIGHT WEAPON CALCULATIONS
-			sf::Vector2f rightPosVec = m_player.getRightWeaponPos() - m_pickup->getLeftPosition();
-			sf::Vector2f unitVecRight = thor::unitVector(rightPosVec);
-			float rightLength = thor::length(rightPosVec);
-
-			m_pickup->setRightVelocity((unitVecLeft * (length * 5.2f))* App::getUpdateDeltaTime());
-			m_pickup->setLeftVelocity((unitVecRight * (length * 5.2f)) * App::getUpdateDeltaTime());
-			m_player.fadeOutWeapons();
-			
-			m_player.setConnectorPos(m_pickup->getLeftPosition(), m_pickup->getRightPosition());
-
-			if (leftLength < 10 && rightLength < 10)
-			{
-				m_player.setWeaponsAlpha(255);
-				m_player.setAttachedWeapons(true);
-				m_player.nextWeapon();
-				m_pickup->setActive(false);
-			}
-		}
-		else
-		{
-			m_pickup->setEffectAlpha(255);
-		}
-	}
 }
 
 /// <summary>
@@ -188,8 +156,8 @@ void GameScene::setup(const std::string & filePath)
 	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemy);
 	m_player.init(m_resources->m_sptrPlayer);
 	m_background.init(m_resources->m_sptrBackground);
-	m_pickup = std::make_unique<Pickup>(Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered));
-	m_pickup->setActive(false);
+	m_pickup = Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered);
+	m_pickup.setActive(false);
 }
 
 /// <summary>

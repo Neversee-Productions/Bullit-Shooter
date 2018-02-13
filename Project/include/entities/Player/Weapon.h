@@ -1,6 +1,7 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
+#include <iostream>
 #include <memory>
 #include "Window.h"
 #include "SFML\Graphics\RectangleShape.hpp"
@@ -143,6 +144,12 @@ public:
 	void setAlpha(float alpha);
 	sf::Color const & getBgColor() const;
 private:
+	/// <summary>
+	/// @brief sfml delta time of update frame call.
+	/// 
+	/// 
+	/// </summary>
+	sf::Time const m_DELTA_TIME;
 	/// <summary>
 	/// @brief define the weapon rectangle.
 	/// 

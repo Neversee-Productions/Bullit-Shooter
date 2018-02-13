@@ -9,9 +9,11 @@
 CollisionSystem::CollisionSystem(
 	Player& player
 	, AsteroidManager & asteroidManager
+	, Pickup & pickup
 )
 	: m_player(player)
 	, m_asteroidManager(asteroidManager)
+	, m_pickup(pickup)
 {
 }
 
@@ -99,8 +101,24 @@ void CollisionSystem::updatePlayerBulletToAsteroids(bullets::Bullet & bullet)
 	}
 }
 
-void CollisionSystem::updateAsteroids()
+/// <summary>
+/// @brief check and apply collisions from player 
+/// </summary>
+void CollisionSystem::updatePlayerToPickup()
 {
+	if (m_pickup.isActive())
+	{
+		sf::Vector2f vector = m_player.getPosition() - m_pickup.getRightPosition();
+		float length = thor::length(vector);
+		if (length < 100)
+		{
+			this->playerVsPickup(m_player, m_pickup);
+		}
+		else
+		{
+			m_pickup.setEffectAlpha(255);
+		}
+	}
 }
 
 /// <summary>
@@ -148,27 +166,23 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 	if (!asteroid.isInvulnerable())
 	{
 		asteroid.decrementHealth(bullet.getDamage());
-	}
-
-	/* TODO: Added in pickup spawning off asteroid destruction and enemy spawning.
-
-	if (!asteroid.isActive() && !m_pickup->isActive()) //check if pickup is not active and if the asteroid was destroyed.
-	{
-		int chance = (rand() % 11); //generate number from 0 - 10
-		if (chance > 2)
+		if (!asteroid.isActive() && !m_pickup.isActive()) //check if pickup is not active and if the asteroid was destroyed.
 		{
-			BulletTypes pickupType = m_player.getWeaponType();
-			auto weaponNum = static_cast<int>(pickupType);
-			weaponNum++;
-			if (weaponNum < static_cast<int>(BulletTypes::AmountOfTypes))
+			int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
+			if (SPAWN_CHANCE > 2)
 			{
-				pickupType = static_cast<BulletTypes>(weaponNum);
-				sf::Vector2f pos = sf::Vector2f(asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y);
-				m_pickup = std::make_unique<Pickup>(Pickup(m_resources->m_sptrPickup, pos, sf::Vector2f(100, 100), pickupType));
+				BulletTypes pickupType = m_player.getWeaponType();
+				auto weaponNum = static_cast<int>(pickupType);
+				weaponNum++;
+				if (weaponNum < static_cast<int>(BulletTypes::AmountOfTypes))
+				{
+					pickupType = static_cast<BulletTypes>(weaponNum);
+					sf::Vector2f pos = { asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y };
+					m_pickup.spawn(pos, { 100, 100 }, pickupType);
+				}
 			}
 		}
 	}
-	/**/
 }
 
 /// <summary>
@@ -182,4 +196,45 @@ void CollisionSystem::playerVsAsteroid(Player & player, Asteroid & asteroid)
 {
 	player.decrementShield(25.0f);
 	asteroid.decrementHealth(10.0f);
+}
+
+/// <summary>
+/// @brief Collision between player and a pickup as occured.
+/// 
+/// Details the appropriate response to player vs pickup collision.
+/// </summary>
+/// <param name="player">reference to the player that collided.</param>
+/// <param name="pickup"></param>
+void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
+{
+	float const LENGTH = thor::length(player.getPosition() - pickup.getRightPosition());
+
+	player.setCanFire(false);
+	player.setAttachedWeapons(false);
+	//decrease alpha of the pickup effect
+	pickup.fadeOutEffect();
+
+	//LEFT WEAPON CALCULATIONS
+	sf::Vector2f leftPosVec = player.getLeftWeaponPos() - pickup.getRightPosition();
+	sf::Vector2f unitVecLeft = thor::unitVector(leftPosVec);
+	float leftLength = thor::length(leftPosVec);
+
+	//RIGHT WEAPON CALCULATIONS
+	sf::Vector2f rightPosVec = player.getRightWeaponPos() - pickup.getLeftPosition();
+	sf::Vector2f unitVecRight = thor::unitVector(rightPosVec);
+	float rightLength = thor::length(rightPosVec);
+
+	pickup.setRightVelocity((unitVecLeft * (LENGTH * 5.2f))* App::getUpdateDeltaTime());
+	pickup.setLeftVelocity((unitVecRight * (LENGTH * 5.2f)) * App::getUpdateDeltaTime());
+	player.fadeOutWeapons();
+
+	player.setConnectorPos(pickup.getLeftPosition(), pickup.getRightPosition());
+
+	if (leftLength < 10 && rightLength < 10)
+	{
+		player.setWeaponsAlpha(255);
+		player.setAttachedWeapons(true);
+		player.nextWeapon();
+		pickup.setActive(false);
+	}
 }

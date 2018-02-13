@@ -20,6 +20,7 @@ bullets::CometShot::CometShot()
 	m_bulletRect.setSize(sf::Vector2f(60.0f, 25.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
+	m_type = BulletTypes::CometShot;
 
 	//change collision rectangle
 	updateBox();

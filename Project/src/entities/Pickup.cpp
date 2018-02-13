@@ -15,7 +15,8 @@ Pickup::Pickup()
 /// <param name="size">defines size</param>
 /// <param name="origin">defines origin</param>
 Pickup::Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::Vector2f size, BulletTypes const & pickupType)
-	: m_rightPosition(position)
+	: m_resources(resources)
+	, m_rightPosition(position)
 	, m_leftPosition(position)
 	, m_size(size)
 	, m_active(true)
@@ -56,7 +57,10 @@ Pickup::Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::V
 	m_effectSprite.setTexture(*effectTextureData.m_texture, true);
 	m_effectSprite.setTextureRect(effectTextureData.m_frame);
 
-	m_animator.addAnimation(resources->m_effect.m_animation.m_id, *resources->m_effect.m_animation.m_sptrFrames, resources->m_effect.m_animation.m_duration);
+	m_animator.addAnimation(
+		resources->m_effect.m_animation.m_id,
+		*resources->m_effect.m_animation.m_sptrFrames,
+		resources->m_effect.m_animation.m_duration);
 	m_animator.playAnimation(resources->m_effect.m_animation.m_id, true);
 }
 
@@ -94,6 +98,63 @@ void Pickup::draw(Window & window, const float & deltaTime)
 		window.draw(m_rightSprite);
 		window.draw(m_leftSprite);
 	}
+}
+
+/// <summary>
+/// @brief Spawn pickup at location with specified type.
+/// 
+/// 
+/// </summary>
+/// <param name="position">read-only reference to the spawn position.</param>
+/// <param name="size">read-only reference to the spawn size.</param>
+/// <param name="pickupType">read-only reference to the pickup type.</param>
+void Pickup::spawn(sf::Vector2f const & position, sf::Vector2f const & size, BulletTypes const & pickupType)
+{
+	m_rightPosition = position;
+	m_leftPosition = position;
+	m_size = size;
+	m_active = true;
+	m_effectSprite = sf::Sprite();
+	m_animator = thor::Animator<sf::Sprite, std::string>();
+
+	if (m_size.x > m_size.y) //make collision circle same as the bigger side
+	{
+		m_collisionCircle.r = m_size.x;
+	}
+	else
+	{
+		m_collisionCircle.r = m_size.y;
+	}
+	m_collisionCircle.p.x = m_rightPosition.x;
+	m_collisionCircle.p.y = m_rightPosition.y;
+
+	auto const & pickupData = m_resources->m_pickups.at(pickupType);
+
+	m_rightSprite.setPosition(m_rightPosition);
+	m_rightSprite.setOrigin(pickupData.m_origin);
+	m_rightSprite.setScale(pickupData.m_scale);
+	m_rightSprite.setTexture(*pickupData.m_texture, true);
+	m_rightSprite.setTextureRect(pickupData.m_frame);
+
+	m_leftSprite.setPosition(m_rightPosition);
+	m_leftSprite.setOrigin(pickupData.m_origin);
+	m_leftSprite.setScale(pickupData.m_scale);
+	m_leftSprite.setTexture(*pickupData.m_texture, true);
+	m_leftSprite.setTextureRect(pickupData.m_frame);
+
+	auto const & effectTextureData = m_resources->m_effect.m_texture;
+
+	m_effectSprite.setPosition(position);
+	m_effectSprite.setOrigin(effectTextureData.m_origin);
+	m_effectSprite.setScale(effectTextureData.m_scale);
+	m_effectSprite.setTexture(*effectTextureData.m_texture, true);
+	m_effectSprite.setTextureRect(effectTextureData.m_frame);
+
+	m_animator.addAnimation(
+		m_resources->m_effect.m_animation.m_id,
+		*m_resources->m_effect.m_animation.m_sptrFrames,
+		m_resources->m_effect.m_animation.m_duration);
+	m_animator.playAnimation(m_resources->m_effect.m_animation.m_id, true);
 }
 
 /// <summary>

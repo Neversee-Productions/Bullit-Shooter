@@ -193,11 +193,11 @@ private:
 
 
 	/// <summary>
-	/// @brief testing a pickup.
+	/// @brief defines the a pickup.
 	/// 
 	/// 
 	/// </summary>
-	std::unique_ptr<Pickup> m_pickup;
+	Pickup m_pickup;
 
 	// HACK : Temporary enemy
 

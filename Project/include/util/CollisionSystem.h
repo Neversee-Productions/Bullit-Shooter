@@ -11,13 +11,13 @@
 /// @brief
 ///		Simple collision system used for organizing collision code in one place.
 /// 
-/// `Non-copyable` system.
+/// `Non-Default Constructible`, `Non-Copyable` system.
 /// 
 class CollisionSystem
 {
 public: // Constructors/Destructor
 	CollisionSystem() = delete; // Default Constructor
-	CollisionSystem(Player& player, AsteroidManager & asteroidManager);
+	CollisionSystem(Player& player, AsteroidManager & asteroidManager, Pickup & pickup);
 	CollisionSystem(const CollisionSystem &) = delete; // Copy Constructor
 	CollisionSystem(CollisionSystem &&) = default; // Move Constructor
 
@@ -35,10 +35,11 @@ private: // Private Member Functions
 	void updatePlayer();
 	void updatePlayerBullets();
 	void updatePlayerBulletToAsteroids(bullets::Bullet & bullet);
-	void updateAsteroids();
+	void updatePlayerToPickup();
 
 	void asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bullet);
 	void playerVsAsteroid(Player & player, Asteroid & asteroid);
+	void playerVsPickup(Player & player, Pickup & pickup);
 private: // Private Member Variables
 	/// <summary>
 	/// @brief reference to player.
@@ -53,6 +54,13 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	AsteroidManager & m_asteroidManager;
+
+	/// <summary>
+	/// @brief reference to pickup.
+	/// 
+	/// 
+	/// </summary>
+	Pickup & m_pickup;
 
 };
 

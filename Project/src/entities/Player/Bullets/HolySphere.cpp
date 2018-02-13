@@ -29,6 +29,8 @@ bullets::HolySphere::HolySphere()
 	m_bulletRect.setSize(s_DEFAULT_SIZE);
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
+	m_type = BulletTypes::HolySphere;
+
 	updateBox();
 }
 

@@ -13,6 +13,8 @@ bullets::Empowered::Empowered()
 	, m_damage(1.4f)
 {
 	m_speed = 10.0f * 60.0f;
+
+	m_type = BulletTypes::Empowered;
 }
 
 /// <summary>

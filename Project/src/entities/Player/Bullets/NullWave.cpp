@@ -19,6 +19,8 @@ bullets::NullWave::NullWave()
 	m_bulletRect.setSize(sf::Vector2f(70.0f, 25.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
+	m_type = BulletTypes::NullWave;
+
 	//change collision rectangle
 	updateBox();
 }
