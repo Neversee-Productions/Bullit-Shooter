@@ -12,6 +12,9 @@
 // For thor::Animator<>
 #include "Thor\Animations\Animator.hpp"
 #include "Window.h"
+//for vector calculations
+#include "Thor\Vectors.hpp" 
+#include <iostream>
 
 ///
 /// @brief Ship class.
@@ -91,12 +94,9 @@ public:
 
 private:
 	void processInput(const KeysPressed &);
-	void moveUp();
-	void moveDown();
-	void moveLeft();
-	void moveRight();
 	void decFrame();
 	void incFrame();
+
 
 	/// <summary>
 	/// @brief Delta time update.
@@ -171,6 +171,50 @@ private:
 	/// @brief Defines a struct of pressed keys.
 	/// </summary>
 	KeysPressed m_pressed;
+
+	/// <summary>
+	/// @brief this is the velocity vector.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_velocity;
+
+	/// <summary>
+	/// @brief define the aount to accelerate by.
+	/// 
+	/// 
+	/// </summary>
+	float m_accelerationRate;
+
+	/// <summary>
+	/// @brief direction vector of movement based on input.
+	/// this may not be from 0-1 as we will use a joystick
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_directionVec;
+
+	/// <summary>
+	/// @brief vector of movement.
+	/// This is the normalized direction vector.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_moveDir;
+
+	/// <summary>
+	/// @brief this is the max velocity of the player ship.
+	/// 
+	/// 
+	/// </summary>
+	float m_maxVel = 1000.0f;
+
+	/// <summary>
+	/// @brief this defines the acceleration of the player.
+	/// 
+	/// 
+	/// </summary>
+	float m_acceleration;
 };
 
 #endif SHIP_H
