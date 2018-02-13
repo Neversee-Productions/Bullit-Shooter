@@ -223,6 +223,10 @@ bool gui::Button::processInput(Controller & controller, KeyHandler & keyhandler)
 			controller.m_currentState.m_A //if button pressed while hovered then go to pressed state
 			|| 
 #endif
+#ifdef JOYSTICK_
+			controller.m_currentState.m_btnTrigger
+			||
+#endif
 			keyhandler.isPressed(sf::Keyboard::Key::Return)
 			)
 		{
