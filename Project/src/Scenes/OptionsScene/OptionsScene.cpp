@@ -94,6 +94,7 @@ void OptionsScene::update()
 /// <param name="deltaTime">reference to draw time step</param>
 void OptionsScene::draw(Window & window, const float & deltaTime)
 {
+	window.draw(*m_helpSprite);
 	m_gui->draw(window);
 }
 
@@ -118,9 +119,7 @@ void OptionsScene::setup(const std::string & filePath)
 	auto & resourceHandler = ResourceHandler::get();
 	Scene::setNextSceneName("");
 
-	std::ifstream fileRaw(filePath);
-	json::json jsonLoader;
-	fileRaw >> jsonLoader;
+	json::json jsonLoader = util::loadJsonFromFile(filePath);
 
 	m_resources = std::make_unique<Resources>();
 
@@ -130,17 +129,30 @@ void OptionsScene::setup(const std::string & filePath)
 	m_resources->m_sptrButtonTexture = resourceHandler.loadUp<sf::Texture>(jsonLoader, "button");
 	assert(nullptr != m_resources->m_sptrButtonTexture);
 
+	m_resources->m_sptrHelpTexture = resourceHandler.loadUp<sf::Texture>(jsonLoader, "help");
+	assert(nullptr != m_resources->m_sptrHelpTexture);
+	m_resources->m_sptrHelpTexture->setSmooth(true);
+
 	loadGui(*m_resources, jsonLoader.at("fontsize").get<unsigned int>());
+
+	const auto & windowSize = static_cast<sf::Vector2f>(App::getViewSize());
+
+
+	//Setup the help sprite
+	m_helpSprite = std::make_unique<sf::Sprite>();
+	auto & helpSprite = *m_helpSprite;
+	helpSprite.setTexture(*m_resources->m_sptrHelpTexture);
+	helpSprite.setScale(windowSize.x / helpSprite.getLocalBounds().width, windowSize.y / helpSprite.getLocalBounds().height);
 }
 
 void OptionsScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)
 {
-	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
+	const sf::Vector2f & pos = { 70.0f, 720.0f };
 	auto sptrButtonFont = resources.m_sptrButtonFont;
 	auto sptrButtonTexture = resources.m_sptrButtonTexture;
 
 	// instantiate our gui object and assign ownership.
-	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, true);
+	m_gui = std::make_unique<gui::GUI>(m_keyHandler, m_controller, false);
 	// store dereferenced pointer
 	// used to avoid pointer syntax.
 	auto & gui = *m_gui;
@@ -148,7 +160,7 @@ void OptionsScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)
 	gui.addButton(
 		std::bind(&OptionsScene::btnBack, this),
 		"Back",
-		zero,
+		pos,
 		sptrButtonFont,
 		fontSize,
 		sptrButtonTexture,
@@ -158,7 +170,7 @@ void OptionsScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)
 	);
 
 	const auto& windowSize = App::getViewSize();
-	gui.configure(gui::GUI::Layouts::StackVertically, windowSize);
+	gui.configure(gui::GUI::Layouts::Custom, windowSize);
 
 }
 

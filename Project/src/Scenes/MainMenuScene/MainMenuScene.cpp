@@ -169,7 +169,7 @@ void MainMenuScene::loadGui(Resources & resources, const sf::Uint32 & fontSize)
 
 	m_gui->addButton(
 		std::bind(&MainMenuScene::btnOptions, this),
-		"Options",
+		"Help",
 		zero,
 		sptrButtonFont,
 		fontSize,

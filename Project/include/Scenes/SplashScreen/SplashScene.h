@@ -2,6 +2,7 @@
 #define SPLASHSCENE_H
 
 #include "scenes\Scene.h"
+#include "util\JsonLoader.h"
 
 /// 
 /// @brief Represents our splash scene.
