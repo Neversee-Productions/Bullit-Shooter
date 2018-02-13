@@ -20,6 +20,9 @@ Ship::Ship()
 	, m_pressed()
 	, m_velocity(sf::Vector2f(0.0f,0.0f))
 	, m_accelerationRate(7.0f * 60.0f)
+	, m_directionVec(0.0f,0.0f)
+	, m_moveDir(0.0f,0.0f)
+	, m_acceleration(10.0f)
 {
 	m_shipRect.setPosition(m_position);
 	m_shipRect.setSize(sf::Vector2f(75.0f, 100.0f));
@@ -55,6 +58,16 @@ void Ship::init(std::shared_ptr<Resources> resources)
 void Ship::update()
 {
 	auto dt = App::getUpdateDeltaTime();
+
+	if (thor::length(m_directionVec) != 0)
+	{
+		m_moveDir = thor::unitVector(m_directionVec);
+		if (thor::length(m_velocity) < m_maxVel)
+		{
+			m_velocity += m_moveDir * m_acceleration;
+		}
+	}
+
 
 	m_position.x += m_velocity.x * dt;
 	m_position.y += m_velocity.y * dt;
@@ -116,7 +129,7 @@ void Ship::draw(Window & window, const float & deltaTime)
 void Ship::moveUp()
 {
 	//m_position.y -= m_speed;
-	m_velocity.y -= m_accelerationRate * App::getUpdateDeltaTime();
+	//m_velocity.y -= m_accelerationRate * App::getUpdateDeltaTime();
 }
 
 /// <summary>
@@ -127,7 +140,7 @@ void Ship::moveUp()
 void Ship::moveDown()
 {
 	//m_position.y += m_speed;
-	m_velocity.y += m_accelerationRate * App::getUpdateDeltaTime();
+	//m_velocity.y += m_accelerationRate * App::getUpdateDeltaTime();
 }
 
 /// <summary>
@@ -138,7 +151,7 @@ void Ship::moveDown()
 void Ship::moveLeft()
 {
 	//m_position.x -= m_speed;
-	m_velocity.x -= m_accelerationRate * App::getUpdateDeltaTime();
+	//m_velocity.x -= m_accelerationRate * App::getUpdateDeltaTime();
 }
 
 /// <summary>
@@ -149,7 +162,7 @@ void Ship::moveLeft()
 void Ship::moveRight()
 {
 	//m_position.x += m_speed;
-	m_velocity.x += m_accelerationRate * App::getUpdateDeltaTime();
+	//m_velocity.x += m_accelerationRate * App::getUpdateDeltaTime();
 }
 
 /// <summary>
@@ -165,6 +178,7 @@ void Ship::processInput(const KeysPressed & keysPressed)
 
 	if (keysPressed.m_left)
 	{
+		m_directionVec.x = -1;
 		moveLeft();
 		if (m_currentFrame > (*m_FRAME_STILL) + OFFSET)
 		{
@@ -180,6 +194,7 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	}
 	else if (!keysPressed.m_right)
 	{
+		m_directionVec.x = 0;
 		if (m_currentFrame < (*m_FRAME_STILL) - OFFSET)
 		{
 			incFrame();
@@ -192,6 +207,7 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	}
 	if (keysPressed.m_right)
 	{
+		m_directionVec.x = 1;
 		moveRight();
 		if (m_currentFrame < (*m_FRAME_STILL) - OFFSET)
 		{
@@ -207,6 +223,7 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	}
 	else if (!keysPressed.m_left)
 	{
+		m_directionVec.x = 0;
 		if (m_currentFrame > (*m_FRAME_STILL) + OFFSET)
 		{
 			decFrame();
@@ -219,11 +236,21 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	}
 	if (keysPressed.m_up)
 	{
+		m_directionVec.y = -1;
 		moveUp();
+	}
+	else if (!keysPressed.m_down)
+	{
+		m_directionVec.y = 0;
 	}
 	if (keysPressed.m_down)
 	{
+		m_directionVec.y = 1;
 		moveDown();
+	}
+	else if (!keysPressed.m_up)
+	{
+		m_directionVec.y = 0;
 	}
 }
 
