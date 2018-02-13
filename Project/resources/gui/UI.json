@@ -1,0 +1,4 @@
+{
+    "healthTemplate": "resources/gui/textures/UI_healthTemplate.png",
+    "health": "resources/gui/textures/UI_health.png"
+}

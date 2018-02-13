@@ -1,14 +1,22 @@
 {
-	"textures":
-	{
-		"button": "resources/gui/textures/button.png"
-	},
-	"sounds":
-	{
-	},
-	"fonts":
-	{
-		"button": "resources/gui/fonts/QuartzMS.TTF"
-	},
-	"fontsize": 24
+    "textures":
+    {
+        "button": "resources/gui/textures/button.png"
+    },
+    "sounds":
+    {
+    },
+    "fonts":
+    {
+        "button": "resources/gui/fonts/QuartzMS.TTF"
+    },
+    "fontsize": 24,
+    "shaders":
+    {
+        "background":
+        {
+            "fragment": "resources/scenes/game/background/background.frag",
+            "vertex": "resources/scenes/game/background/background.vert"
+        }
+    }
 }

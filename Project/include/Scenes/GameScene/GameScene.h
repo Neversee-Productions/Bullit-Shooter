@@ -13,6 +13,7 @@
 #include "scenes\Scene.h"
 #include "Entities\Entities.h"
 #include "util\JsonLoader.h"
+#include "gui\game_ui\GameUI.h"
 
 ///
 /// @brief Main game scene.
@@ -66,6 +67,9 @@ private:
 
 		std::shared_ptr<Enemies> m_sptrEnemies =
 			std::make_shared<Enemies>();
+
+		std::shared_ptr<GameUI::Resources> m_sptrUI =
+			std::make_shared<GameUI::Resources>();
 	};
 
 public:
@@ -86,6 +90,7 @@ private:
 	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
 	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
 	void playerPickupCollision();
+	void playerUICollision();
 	float generateRandomTimer();
 	void updateAsteroidSpawner();
 
@@ -155,6 +160,12 @@ private:
 	void setupEnemies(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Resources::Enemies> sptrEnemies
+		, json::json & gameSceneParser
+	);
+
+	void setupUI(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<GameUI::Resources> sptrUI
 		, json::json & gameSceneParser
 	);
 
@@ -231,6 +242,13 @@ private:
 	// HACK : Temporary enemy
 
 	ai::AiBasic m_enemy;
+
+	/// <summary>
+	/// @brief this is the UI object.
+	/// 
+	/// 
+	/// </summary>
+	GameUI m_ui;
 };
 
 #endif // !GAMESCENE_H

@@ -21,7 +21,7 @@ SceneManager::SceneManager(
 	m_controller = std::make_shared<Controller>();
 	this->addAllScenes();
 	
-	const std::string firstScene = "Game";
+	const std::string firstScene = "MainMenu";
 	for (auto itt = m_sceneMap.begin(), end = m_sceneMap.end(); itt != end; ++itt)
 	{
 		auto & mapPair = *itt;

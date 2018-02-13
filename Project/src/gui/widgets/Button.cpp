@@ -1,8 +1,8 @@
 #include "gui\widgets\Button.h"
 
-const sf::IntRect gui::Button::s_TEXT_RECT_LEFT = sf::IntRect(0, 0, 25, 129);
-const sf::IntRect gui::Button::s_TEXT_RECT_MID = sf::IntRect(25, 0, 450, 129);
-const sf::IntRect gui::Button::s_TEXT_RECT_RIGHT = sf::IntRect(475, 0, 25, 129);
+const sf::IntRect gui::Button::s_TEXT_RECT_LEFT = sf::IntRect(0, 0, 0, 49);
+const sf::IntRect gui::Button::s_TEXT_RECT_MID = sf::IntRect(0, 0, 113, 49);
+const sf::IntRect gui::Button::s_TEXT_RECT_RIGHT = sf::IntRect(0, 0, 0, 49);
 
 
 /// <summary>
@@ -44,7 +44,7 @@ gui::Button::Button(	std::function<void()> function
 	m_rectanglePos.x = position.x;
 	m_rectanglePos.y = position.y;
 	//set color of highlight rectangle
-	m_highlightRectangle.setFillColor(sf::Color(255u, 255u, 0u, static_cast<sf::Uint8>(m_highlightAlpha)));
+	m_highlightRectangle.setFillColor(sf::Color(75u, 184u, 243u, static_cast<sf::Uint8>(m_highlightAlpha)));
 	//set position of rectangle
 	m_rectangleMiddle.setPosition(m_rectanglePos);
 	//set position of highlight rect
@@ -76,6 +76,7 @@ gui::Button::Button(	std::function<void()> function
 	m_highlightRectangle.setSize(sf::Vector2f(m_rectangleMiddle.getSize().x + (m_rectangleLeft.getSize().x * 2), m_rectangleMiddle.getSize().y));
 	//set origin of highlight box
 	m_highlightRectangle.setOrigin(m_highlightRectangle.getGlobalBounds().width / 2, m_highlightRectangle.getGlobalBounds().height / 2);
+	
 }
 
 /// <summary>
@@ -86,7 +87,7 @@ gui::Button::Button(	std::function<void()> function
 /// <param name="window">window target of all draw calls</param>
 void gui::Button::draw(Window & window) const
 {
-	if (m_currentButtonState == ButtonState::HOVERED)
+	if (m_currentButtonState == ButtonState::HOVERED || m_currentButtonState == ButtonState::PRESSED)
 	{
 		window.draw(m_highlightRectangle);
 	}
@@ -134,15 +135,16 @@ void gui::Button::update(const float & dt)
 		m_highlightAlpha = 255.0f;
 		break;
 	case Button::ButtonState::HOVERED:
-		setRectangleColors(sf::Color(130u, 130u, 255u, 255u));
-		scaleRectangles(1.2f, 1.2f);
+		//setRectangleColors(sf::Color(130u, 130u, 255u, 255u));
+		//scaleRectangles(1.2f, 1.2f);
 		fading();
-		m_highlightRectangle.setScale(1.22f, 1.3f);
-		m_highlightRectangle.setFillColor(sf::Color(255u, 255u, 0u, static_cast<sf::Uint8>(m_highlightAlpha)));
+		//m_highlightRectangle.setScale(1.22f, 1.3f);
+		m_highlightRectangle.setFillColor(sf::Color(75u, 184u, 243u, static_cast<sf::Uint8>(m_highlightAlpha)));
 		break;
 	case Button::ButtonState::PRESSED:
-		setRectangleColors(sf::Color::Red);
-		scaleRectangles(1.0f, 1.0f);
+		//setRectangleColors(sf::Color::Red);
+		//scaleRectangles(1.0f, 1.0f);
+		m_highlightRectangle.setFillColor(sf::Color(255u, 0u, 0u, 255u));
 		m_rectangleLeft.setPosition(m_rectangleMiddle.getPosition().x - (m_rectangleMiddle.getGlobalBounds().width / 2) - (m_rectangleLeft.getGlobalBounds().width / 2), m_rectangleMiddle.getPosition().y);
 		m_rectangleRight.setPosition(m_rectangleMiddle.getPosition().x + (m_rectangleMiddle.getGlobalBounds().width / 2) + (m_rectangleRight.getGlobalBounds().width / 2), m_rectangleMiddle.getPosition().y);
 		break;
@@ -219,7 +221,7 @@ bool gui::Button::processInput(Controller & controller, KeyHandler & keyhandler)
 	if (m_currentButtonState == ButtonState::HOVERED)
 	{
 		if (controller.m_currentState.m_A //if button pressed while hovered then go to pressed state
-			|| keyhandler.isPressed(sf::Keyboard::Key::Return)
+			|| (keyhandler.isPressed(sf::Keyboard::Key::Return) && !keyhandler.isPrevPressed(sf::Keyboard::Return))
 			)
 		{
 			m_currentButtonState = ButtonState::PRESSED;
@@ -238,7 +240,7 @@ bool gui::Button::processInput(Controller & controller, KeyHandler & keyhandler)
 void gui::Button::setPosition(sf::Vector2f position)
 {
 	//set label position
-	m_position = sf::Vector2f(position.x, position.y);
+	m_position = sf::Vector2f(position.x, position.y - 5.0f);
 	m_text.setPosition(m_position);
 	//rectangles position
 	m_rectanglePos.x = position.x;
@@ -249,6 +251,7 @@ void gui::Button::setPosition(sf::Vector2f position)
 	//set position of highlight rect
 	m_highlightRectangle.setPosition(m_rectanglePos);
 	m_rectangleLeft.setPosition(m_rectangleMiddle.getPosition().x - (m_rectangleMiddle.getGlobalBounds().width / 2) - (m_rectangleLeft.getGlobalBounds().width / 2), m_rectangleMiddle.getPosition().y);
+	m_rectangleRight.setPosition(m_rectangleMiddle.getPosition().x + (m_rectangleMiddle.getGlobalBounds().width / 2) + (m_rectangleRight.getGlobalBounds().width / 2), m_rectangleMiddle.getPosition().y);
 }
 
 /// <summary>

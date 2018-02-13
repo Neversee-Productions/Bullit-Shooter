@@ -205,6 +205,12 @@
     <Filter Include="Resource Files\scenes\Game\pickup">
       <UniqueIdentifier>{a3dd8f8c-0dbb-4f84-9054-824263ae3133}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\game ui">
+      <UniqueIdentifier>{7dda87e8-be3a-47d8-bc3f-061ef4ea15a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\game ui">
+      <UniqueIdentifier>{97469051-2d1a-4bcb-86c0-63bd2e67ca68}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -360,6 +366,9 @@
     <ClCompile Include="src\entities\ai\basic\ABRecoverState.cpp">
       <Filter>Source Files\entities\ai\basic</Filter>
     </ClCompile>
+    <ClCompile Include="src\gui\game_ui\GameUI.cpp">
+      <Filter>Source Files\gui\game ui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -409,6 +418,9 @@
     </None>
     <None Include="resources\scenes\Game\enemies\basic\basic.json">
       <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
+    </None>
+    <None Include="resources\gui\UI.json">
+      <Filter>Resource Files\gui</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -568,6 +580,9 @@
     <ClInclude Include="include\entities\ai\basic\ABRecoverState.h">
       <Filter>Header Files\entities\ai\basic</Filter>
     </ClInclude>
+    <ClInclude Include="include\gui\game_ui\GameUI.h">
+      <Filter>Header Files\gui\game ui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\gui\textures\button.png">
@@ -674,6 +689,12 @@
     </Image>
     <Image Include="resources\scenes\Game\enemies\basic\recover.png">
       <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
+    </Image>
+    <Image Include="resources\gui\textures\UI_health.png">
+      <Filter>Resource Files\gui\textures</Filter>
+    </Image>
+    <Image Include="resources\gui\textures\UI_healthTemplate.png">
+      <Filter>Resource Files\gui\textures</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

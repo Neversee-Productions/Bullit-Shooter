@@ -145,6 +145,8 @@ void gui::Label::getFocus()
 
 /// <summary>
 /// @brief label is not highlightable.
+/// 
+/// 
 /// </summary>
 void gui::Label::loseFocus()
 {
