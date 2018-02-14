@@ -89,6 +89,13 @@ public:
 			sf::Vector2f m_origin;
 
 			/// <summary>
+			/// @brief Defines the first frame of the animation.
+			/// 
+			/// 
+			/// </summary>
+			sf::IntRect m_frame;
+
+			/// <summary>
 			/// @brief Defines shared pointer to our animation's frames.
 			/// 
 			/// 

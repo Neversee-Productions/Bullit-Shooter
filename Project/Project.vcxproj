@@ -82,6 +82,7 @@
     <None Include="resources\scenes\Game\background\background.frag" />
     <None Include="resources\scenes\Game\background\background.json" />
     <None Include="resources\scenes\Game\background\background.vert" />
+    <None Include="resources\scenes\Game\enemies\asteroid\asteroid.json" />
     <None Include="resources\scenes\Game\enemies\basic\basic.json" />
     <None Include="resources\scenes\Game\enemies\enemies.json" />
     <None Include="resources\scenes\Game\Game.json" />
@@ -159,6 +160,8 @@
     <Image Include="resources\gui\textures\slider.png" />
     <Image Include="resources\gui\textures\UI_health.png" />
     <Image Include="resources\gui\textures\UI_healthTemplate.png" />
+    <Image Include="resources\scenes\Game\enemies\asteroid\asteroid.png" />
+    <Image Include="resources\scenes\Game\enemies\asteroid\asteroid_explode.png" />
     <Image Include="resources\scenes\Game\enemies\basic\charge.png" />
     <Image Include="resources\scenes\Game\enemies\basic\recover.png" />
     <Image Include="resources\scenes\Game\enemies\basic\seek.png" />

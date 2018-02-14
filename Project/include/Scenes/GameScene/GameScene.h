@@ -44,6 +44,8 @@ private:
 		/// 
 		struct Enemies
 		{
+			std::shared_ptr<Asteroid::Resources> m_sptrAsteroid =
+				std::make_shared<Asteroid::Resources>();
 			std::shared_ptr<ai::AiBasic::Resources> m_sptrBasicEnemy =
 				std::make_shared<ai::AiBasic::Resources>();
 		};

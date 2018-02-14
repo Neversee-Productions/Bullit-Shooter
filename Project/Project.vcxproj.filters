@@ -223,6 +223,9 @@
     <Filter Include="Header Files\sound">
       <UniqueIdentifier>{c5ab99b8-11b1-4d47-b177-7df2afb0a3d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\scenes\Game\enemies\asteroid">
+      <UniqueIdentifier>{fdcd8e12-25b8-4b64-b6c3-ac109447a771}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -445,6 +448,9 @@
     </None>
     <None Include="resources\scenes\Game\sounds.json">
       <Filter>Resource Files\scenes\Game</Filter>
+    </None>
+    <None Include="resources\scenes\Game\enemies\asteroid\asteroid.json">
+      <Filter>Resource Files\scenes\Game\enemies\asteroid</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -728,6 +734,12 @@
     </Image>
     <Image Include="resources\gui\textures\UI_healthTemplate.png">
       <Filter>Resource Files\gui\textures</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\enemies\asteroid\asteroid.png">
+      <Filter>Resource Files\scenes\Game\enemies\asteroid</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\enemies\asteroid\asteroid_explode.png">
+      <Filter>Resource Files\scenes\Game\enemies\asteroid</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

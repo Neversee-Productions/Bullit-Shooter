@@ -1,6 +1,5 @@
 #include "Entities\Asteroids\AsteroidManager.h"
 
-
 /// <summary>
 /// @brief default constructor.
 /// 
@@ -13,6 +12,18 @@ AsteroidManager::AsteroidManager()
 	, m_asteroidSpawnTimer(0.0f)
 {
 	m_asteroidSpawnFrequency = this->generateRandomTimer();
+}
+
+/// <summary>
+/// @brief Initialize asteroid manager resources.
+/// 
+/// 
+/// </summary>
+/// <param name="sptrResources">shared pointer to asteroid resources (assumed to be valid).</param>
+void AsteroidManager::init(std::shared_ptr<Asteroid::Resources> sptrResources)
+{
+	m_sptrResources = sptrResources;
+	this->initAsteroidVector();
 }
 
 /// <summary>
@@ -59,7 +70,7 @@ void AsteroidManager::initAsteroidVector()
 {
 	for (int count = 0; count <= 9; ++count)
 	{
-		m_asteroidsVector.push_back(Asteroid());
+		m_asteroidsVector.push_back(Asteroid(m_sptrResources));
 	}
 }
 
@@ -85,11 +96,11 @@ void AsteroidManager::updateSpawning()
 	if (m_asteroidSpawnTimer >= m_asteroidSpawnFrequency)
 	{
 		// spawn next unused asteroid here
-		for (auto & uptrAsteroid : m_asteroidsVector)
+		for (auto & asteroid : m_asteroidsVector)
 		{
-			if (!uptrAsteroid.isActive())
+			if (!asteroid.isActive())
 			{
-				uptrAsteroid.reuseAsteroid();
+				asteroid.reuseAsteroid();
 				break;
 			}
 			m_asteroidSpawnFrequency = generateRandomTimer();
