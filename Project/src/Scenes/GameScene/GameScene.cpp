@@ -48,6 +48,12 @@ void GameScene::start(const std::string & resourceFilePath)
 	std::cout << "Starting Game Scene" << std::endl;
 #endif // _DEBUG
 	Scene::setNextSceneName("");
+	//HERE WE REINITIALIZE THE GAME (FOR RESTARTING)
+	m_background.reset();
+	m_player.reset();
+	m_asteroidManager.resetAsteroids();
+	m_ui.setPaused(false);
+	
 	if (!m_resources)
 	{
 		this->setup(resourceFilePath);
@@ -76,7 +82,7 @@ void GameScene::update()
 	if (m_keyHandler.isPressed(sf::Keyboard::Escape) && !m_keyHandler.isPrevPressed(sf::Keyboard::Escape))
 	{
 		m_gamePaused = !m_gamePaused;
-		
+		m_ui.setPaused(m_gamePaused);
 	}
 	if (!m_gamePaused)
 	{
@@ -91,6 +97,13 @@ void GameScene::update()
 		m_pickup.update();
 		m_collisionSystem.update();
 	}
+	else
+	{
+		if (!m_ui.getPaused())
+		{
+			m_gamePaused = false;
+		}
+	}
 	m_ui.update();
 }
 
@@ -103,12 +116,24 @@ void GameScene::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void GameScene::draw(Window & window, const float & deltaTime)
 {
-	m_background.draw(window, deltaTime);
-	m_asteroidManager.draw(window, deltaTime);
-	m_player.draw(window, deltaTime);
-	m_enemy.draw(window, deltaTime);
-	m_ui.draw(window, deltaTime);
-	m_pickup.draw(window, deltaTime);
+	if (m_gamePaused)
+	{
+		m_background.draw(window, 0);
+		m_asteroidManager.draw(window, 0);
+		m_player.draw(window, 0);
+		m_enemy.draw(window, 0);
+		m_ui.draw(window, 0);
+		m_pickup.draw(window, 0);
+	}
+	else
+	{
+		m_background.draw(window, deltaTime);
+		m_asteroidManager.draw(window, deltaTime);
+		m_player.draw(window, deltaTime);
+		m_enemy.draw(window, deltaTime);
+		m_ui.draw(window, deltaTime);
+		m_pickup.draw(window, deltaTime);
+	}
 }
 
 /// <summary>
@@ -177,8 +202,8 @@ void GameScene::setup(const std::string & filePath)
 	}
 
 	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemy);
-	m_player.init(m_resources->m_sptrPlayer);
 	m_background.init(m_resources->m_sptrBackground);
+	m_player.init(m_resources->m_sptrPlayer);
 	m_pickup = Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered);
 	m_pickup.setActive(false);
 	m_ui.init(m_resources->m_sptrUI);

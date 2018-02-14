@@ -91,6 +91,8 @@ public:
 	const sf::RectangleShape & getShipRect() const;
 	void setTexture(std::shared_ptr<sf::Texture> sptrTexture);
 	void setFrames(std::unique_ptr<ShipFrames> uptrShipFrames);
+	void setPosition(sf::Vector2f pos);
+	void resetShip();
 
 private:
 	void processInput(const KeysPressed &);
@@ -215,6 +217,14 @@ private:
 	/// 
 	/// </summary>
 	float m_acceleration;
+
+	/// <summary>
+	/// @brief this is a vector2f that defines the initial position of the player on
+	/// game construction. This variable is used on resetting the game.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_initialPosition;
 };
 
 #endif SHIP_H

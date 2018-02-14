@@ -75,6 +75,22 @@ std::vector<Asteroid>& AsteroidManager::getAsteroidVector()
 }
 
 /// <summary>
+/// @brief this function will set all asteroids to inactive.
+/// 
+/// 
+/// </summary>
+void AsteroidManager::resetAsteroids()
+{
+	for (auto & asteroid : m_asteroidsVector)
+	{
+		if (asteroid.isActive())
+		{
+			asteroid.setActive(false);
+		}
+	}
+}
+
+/// <summary>
 /// @brief Updates the spawning mechanic of the asteroids.
 /// 
 /// 

@@ -24,6 +24,7 @@ public: // Public Member Functions
 	void draw(Window & window, float const & deltaTime);
 	void initAsteroidVector();
 	std::vector<Asteroid>& getAsteroidVector();
+	void resetAsteroids();
 public: // Public Member Variables
 protected: // Protected Member Functions
 protected: // Protected Member Variables

@@ -21,6 +21,7 @@ public:
 	const sf::CircleShape& getCircleShape();
 	const tinyh::c2Circle& getCollisionCircle();
 	const float& getHealth();
+	void resetShield();
 
 private:
 

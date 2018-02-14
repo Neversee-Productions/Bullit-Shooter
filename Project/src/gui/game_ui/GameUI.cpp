@@ -14,6 +14,7 @@ GameUI::GameUI(
 	, m_targetHealth(1.0f)
 	, m_gui(std::make_unique<gui::GUI>(keyHandler, controller, true))
 	, m_mainMenuFunc(mainMenuFunction)
+	, m_showPauseScreen(false)
 {
 }
 
@@ -51,7 +52,10 @@ void GameUI::draw(Window & window, const float & deltaTime)
 	window.draw(m_healthTemplateSprite);
 	window.draw(m_healthLostSprite);
 	window.draw(m_healthSprite);
-	m_gui->draw(window);
+	if (m_showPauseScreen)
+	{
+		m_gui->draw(window);
+	}
 }
 
 /// <summary>
@@ -116,7 +120,7 @@ void GameUI::init(std::shared_ptr<Resources> resources)
 	auto sptrButtonTexture = resources->m_sptrButtonTexture;
 
 	m_gui->addButton(
-		std::bind(&GameUI::btnMainMenu, this),
+		std::bind(&GameUI::btnResume, this),
 		"Resume",
 		zero,
 		sptrButtonFont,
@@ -187,12 +191,33 @@ void GameUI::setHealthTransparency(sf::Uint8 alphaVal)
 }
 
 /// <summary>
-/// @brief the callback function for the exit button.
-/// 
+/// @brief this disables the pause screen.
 /// 
 /// 
 /// </summary>
-void GameUI::btnMainMenu()
+void GameUI::btnResume()
 {
-	std::cout << "EXIT BUTTON PRESSED" << std::endl;
+	m_showPauseScreen = false;
+}
+
+/// <summary>
+/// @brief setter of the m_showPauseScreen boolean.
+/// 
+/// 
+/// </summary>
+/// <param name="check">boolean that represents the new value of show pause screen</param>
+void GameUI::setPaused(bool check)
+{
+	m_showPauseScreen = check;
+}
+
+/// <summary>
+/// @brief getter for the show pause screen bool.
+/// 
+/// 
+/// </summary>
+/// <returns>the m_showPauseScreen state</returns>
+bool GameUI::getPaused()
+{
+	return m_showPauseScreen;
 }

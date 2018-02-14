@@ -85,6 +85,10 @@ public:
 	void fadeOutWeapons();
 	void setWeaponsAlpha(float alpha);
 	void setCanFire(bool fire);
+	void setPosition(sf::Vector2f pos);
+	void resetBullets();
+	void resetWeapons();
+	void reset();
 
 private:
 	void switchWeaponInput();

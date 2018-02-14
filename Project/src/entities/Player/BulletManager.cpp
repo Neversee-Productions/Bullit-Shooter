@@ -377,6 +377,26 @@ const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>>& Bull
 }
 
 /// <summary>
+/// @brief This method will run through all the bullets and set them to inactive.
+/// This will be used on resetting the game to prevent bullets from still being active and on screen
+/// when the user restarts the game. This will iterate through the map of bullet vectors and then
+/// each bullet in a vector and set their active state to false.
+/// 
+/// 
+/// </summary>
+void BulletManager::clearAllBullets()
+{
+	for (auto & bulletVector : m_bulletMap)
+	{
+		for (auto & bullet : bulletVector.second)
+		{
+			bullet->setActive(false);
+		}
+	}
+
+}
+
+/// <summary>
 /// @brief Initialise vector inside map based on the type.
 /// 
 /// This method will insert a vector of unique pointers to standard bullets

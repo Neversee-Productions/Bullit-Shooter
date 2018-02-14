@@ -48,7 +48,9 @@ public: //public functions
 	void decrementHealth(float health);
 	const tinyh::c2AABB & getHealthCollisionBox();
 	void setHealthTransparency(sf::Uint8 alphaVal);
-	void btnMainMenu();
+	void btnResume();
+	void setPaused(bool check);
+	bool getPaused();
 private: //private functions.
 public: //public member variables.
 private: //private member variables.
