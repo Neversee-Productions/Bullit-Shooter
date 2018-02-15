@@ -95,6 +95,28 @@ void Asteroid::setVelocity(sf::Vector2f vel)
 }
 
 /// <summary>
+/// @brief this is the velocity getter.
+/// 
+/// 
+/// </summary>
+/// <returns>m_velocity, a vector2f that represents the velocity</returns>
+sf::Vector2f Asteroid::getVelocity()
+{
+	return m_velocity;
+}
+
+/// <summary>
+/// @brief getter for position.
+/// 
+/// 
+/// </summary>
+/// <returns>m_position a vector2f that represents the position.</returns>
+sf::Vector2f Asteroid::getPosition()
+{
+	return m_position;
+}
+
+/// <summary>
 /// @brief Sets active of asteroid to passed parameter.
 /// 
 /// 

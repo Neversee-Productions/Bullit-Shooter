@@ -23,6 +23,7 @@ Ship::Ship()
 	, m_directionVec(0.0f,0.0f)
 	, m_moveDir(0.0f,0.0f)
 	, m_acceleration(10.0f)
+	, m_isDocking(false)
 {
 	m_shipRect.setPosition(m_position);
 	m_shipRect.setSize(sf::Vector2f(75.0f, 100.0f));
@@ -64,13 +65,19 @@ void Ship::update()
 		m_moveDir = thor::unitVector(m_directionVec);
 		if (thor::length(m_velocity) < m_maxVel)
 		{
-			m_velocity += m_moveDir * m_acceleration;
+			m_velocity.x += m_moveDir.x * m_acceleration;
+			if (!m_isDocking)
+			{
+				m_velocity.y += m_moveDir.y * m_acceleration;
+			}
 		}
 	}
-
-
-	m_position.x += m_velocity.x * dt;
+	if (m_isDocking)
+	{
+		m_velocity.y = (App::getViewC2Rect().max.y - m_position.y);
+	}
 	m_position.y += m_velocity.y * dt;
+	m_position.x += m_velocity.x * dt;
 
 	m_velocity *= 0.98f;
 	
@@ -295,6 +302,28 @@ void Ship::checkOffScreen()
 	{
 		m_position.y = 0 + (shipRect.height / 2);
 	}
+}
+
+/// <summary>
+/// @brief a setter function that will set the docking state to passed parameter.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new value of m_isDocking</param>
+void Ship::setDocking(bool check)
+{
+	m_isDocking = check;
+}
+
+/// <summary>
+/// @brief a getter for the docking boolean.
+/// 
+/// 
+/// </summary>
+/// <returns></returns>
+bool Ship::getDocking()
+{
+	return m_isDocking;
 }
 
 

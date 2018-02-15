@@ -92,6 +92,8 @@ public:
 	void setTexture(std::shared_ptr<sf::Texture> sptrTexture);
 	void setFrames(std::unique_ptr<ShipFrames> uptrShipFrames);
 	void checkOffScreen();
+	void setDocking(bool check);
+	bool getDocking();
 
 private:
 	void processInput(const KeysPressed &);
@@ -216,6 +218,13 @@ private:
 	/// 
 	/// </summary>
 	float m_acceleration;
+
+	/// <summary>
+	/// @brief this parameter is a flag for the player being in docking state.
+	/// 
+	/// 
+	/// </summary>
+	bool m_isDocking;
 };
 
 #endif SHIP_H

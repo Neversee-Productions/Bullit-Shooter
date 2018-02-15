@@ -99,13 +99,29 @@ void Player::update()
 		const bool & KEY_FIRE =
 			m_keyHandler.isPressed(sf::Keyboard::Space)
 			|| m_controller.m_currentState.m_btnTrigger;
-
 		switchWeaponInput();
 
 		m_ship.move(Ship::Direction::Up, KEY_UP);
 		m_ship.move(Ship::Direction::Down, KEY_DOWN);
 		m_ship.move(Ship::Direction::Left, KEY_LEFT);
 		m_ship.move(Ship::Direction::Right, KEY_RIGHT);
+		
+		if (m_controller.isConnected())
+		{
+			if (checkAxisThruster(m_controller.m_currentState.m_flightThruster))
+			{
+				m_ship.setDocking(true);
+			}
+			else
+			{
+				m_ship.setDocking(false);
+			}
+		}
+		else if (m_keyHandler.isPressed(sf::Keyboard::LControl) && !m_keyHandler.isPrevPressed(sf::Keyboard::LControl))
+		{
+			m_ship.setDocking(!m_ship.getDocking());
+		}
+
 
 		if (KEY_FIRE && m_weaponLeft.getCanFire() && m_weaponRight.getCanFire())
 		{
@@ -283,6 +299,16 @@ bool Player::checkAxis(float const & axis, bool flipped)
 		{
 			return true;
 		}
+	}
+	return false;
+}
+
+bool Player::checkAxisThruster(float const & axis)
+{
+	float const THRESHOLD = 70.0f;
+	if (axis > THRESHOLD)
+	{
+		return true;
 	}
 	return false;
 }

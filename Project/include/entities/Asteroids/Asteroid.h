@@ -20,6 +20,8 @@ public:
 	void update();
 	void draw(Window & window, const float & deltaTime);
 	void setVelocity(sf::Vector2f vel);
+	sf::Vector2f getVelocity();
+	sf::Vector2f getPosition();
 	void setActive(bool active);
 	void updateCollisionCircle();
 	void generateRandomVel();
