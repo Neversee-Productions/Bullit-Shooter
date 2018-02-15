@@ -84,7 +84,7 @@ namespace ai
 		friend class ai::states::AiBasicRecoverState;
 
 	public: // Constructors/Destructor
-		AiBasic(Player const & player);
+		AiBasic(Player const & player, sf::Vector2f const & position = { 0.0f, 0.0f });
 		~AiBasic() = default;
 
 	public: // Public Member Functions

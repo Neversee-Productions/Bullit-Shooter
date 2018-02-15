@@ -9,11 +9,13 @@
 CollisionSystem::CollisionSystem(
 	Player& player
 	, AsteroidManager & asteroidManager
+	, BasicEnemyManager & basicEnemyManager
 	, Pickup & pickup
 	, GameUI & gameUi
 )
 	: m_player(player)
 	, m_asteroidManager(asteroidManager)
+	, m_basicEnemyManager(basicEnemyManager)
 	, m_pickup(pickup)
 	, m_gameUi(gameUi)
 {
@@ -189,20 +191,28 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 	if (!asteroid.isInvulnerable())
 	{
 		asteroid.decrementHealth(bullet.getDamage());
-		if (!asteroid.isActive() && !m_pickup.isActive()) //check if pickup is not active and if the asteroid was destroyed.
+		if (asteroid.isExplosion())
 		{
-			int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
-			if (SPAWN_CHANCE > 2)
+			if (!m_pickup.isActive())
 			{
-				BulletTypes pickupType = m_player.getWeaponType();
-				auto weaponNum = static_cast<int>(pickupType);
-				weaponNum++;
-				if (weaponNum < static_cast<int>(BulletTypes::AmountOfTypes))
+				int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
+				if (SPAWN_CHANCE > 2)
 				{
-					pickupType = static_cast<BulletTypes>(weaponNum);
-					sf::Vector2f pos = { asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y };
-					m_pickup.spawn(pos, { 100, 100 }, pickupType);
+					BulletTypes pickupType = m_player.getWeaponType();
+					auto weaponNum = static_cast<int>(pickupType);
+					weaponNum++;
+					if (weaponNum < static_cast<int>(BulletTypes::AmountOfTypes))
+					{
+						pickupType = static_cast<BulletTypes>(weaponNum);
+						sf::Vector2f pos = { asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y };
+						m_pickup.spawn(pos, { 100, 100 }, pickupType);
+					}
 				}
+			}
+			if (asteroid.containsEnemy())
+			{
+				sf::Vector2f spawnPos = { asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y };
+				m_basicEnemyManager.spawn(m_player, spawnPos);
 			}
 		}
 	}

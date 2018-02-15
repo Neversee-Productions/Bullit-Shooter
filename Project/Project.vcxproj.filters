@@ -393,6 +393,9 @@
     <ClCompile Include="src\sound\SoundSetting.cpp">
       <Filter>Source Files\sound</Filter>
     </ClCompile>
+    <ClCompile Include="src\entities\BasicEnemyManager.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -621,6 +624,9 @@
     </ClInclude>
     <ClInclude Include="include\sound\SoundSetting.h">
       <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\BasicEnemyManager.h">
+      <Filter>Header Files\entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

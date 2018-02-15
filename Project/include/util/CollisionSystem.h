@@ -5,6 +5,7 @@
 // SFML Includes
 // Project Includes
 #include "entities\Entities.h"
+#include "entities\BasicEnemyManager.h"
 #include "gui\game_ui\GameUI.h"
 
 /// 
@@ -18,7 +19,7 @@ class CollisionSystem
 {
 public: // Constructors/Destructor
 	CollisionSystem() = delete; // Default Constructor
-	CollisionSystem(Player& player, AsteroidManager & asteroidManager, Pickup & pickup, GameUI & gameUi);
+	CollisionSystem(Player& player, AsteroidManager & asteroidManager, BasicEnemyManager & basicEnemyManager, Pickup & pickup, GameUI & gameUi);
 	CollisionSystem(const CollisionSystem &) = delete; // Copy Constructor
 	CollisionSystem(CollisionSystem &&) = default; // Move Constructor
 
@@ -57,6 +58,13 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	AsteroidManager & m_asteroidManager;
+
+	/// <summary>
+	/// @brief reference to basic enemy manager.
+	/// 
+	/// 
+	/// </summary>
+	BasicEnemyManager & m_basicEnemyManager;
 
 	/// <summary>
 	/// @brief reference to pickup.

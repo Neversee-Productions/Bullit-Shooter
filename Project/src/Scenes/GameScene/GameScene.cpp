@@ -15,8 +15,9 @@ GameScene::GameScene(KeyHandler& keyHandler, Controller & controller)
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_asteroidManager()
 	, m_enemy(m_player)
+	, m_basicEnemyManager()
 	, m_pickup()
-	, m_collisionSystem(m_player, m_asteroidManager, m_pickup, m_ui)
+	, m_collisionSystem(m_player, m_asteroidManager, m_basicEnemyManager, m_pickup, m_ui)
 {
 	m_pickup.setActive(false);
 }
@@ -77,6 +78,7 @@ void GameScene::update()
 	}
 	m_player.update();
 	m_asteroidManager.update();
+	m_basicEnemyManager.update();
 	m_enemy.update();
 	m_ui.update();
 	m_pickup.update();
@@ -95,6 +97,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 	m_background.draw(window, deltaTime);
 	m_asteroidManager.draw(window, deltaTime);
 	m_player.draw(window, deltaTime);
+	m_basicEnemyManager.draw(window, deltaTime);
 	m_enemy.draw(window, deltaTime);
 	m_ui.draw(window, deltaTime);
 	m_pickup.draw(window, deltaTime);
@@ -157,7 +160,8 @@ void GameScene::setup(const std::string & filePath)
 		this->setupUI(resourceHandler, m_resources->m_sptrUI, gameSceneParser);
 	}
 
-	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemy);
+	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemyManager->m_sptrBasicEnemy);
+	m_basicEnemyManager.init(m_resources->m_sptrEnemies->m_sptrBasicEnemyManager, m_player);
 	m_asteroidManager.init(m_resources->m_sptrEnemies->m_sptrAsteroid);
 	m_player.init(m_resources->m_sptrPlayer);
 	m_background.init(m_resources->m_sptrBackground);
@@ -808,7 +812,7 @@ void GameScene::setupEnemies(ResourceHandler & resourceHandler, std::shared_ptr<
 	std::string const JSON_ENEMY_ASTEROID("asteroid");
 	std::string const JSON_ENEMY_BASIC("basic");
 
-	ai::AiBasic::setup(sptrEnemies->m_sptrBasicEnemy, resourceHandler, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_BASIC).get<std::string>()));
+	ai::AiBasic::setup(sptrEnemies->m_sptrBasicEnemyManager->m_sptrBasicEnemy, resourceHandler, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_BASIC).get<std::string>()));
 	Asteroid::setup(sptrEnemies->m_sptrAsteroid, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_ASTEROID).get<std::string>()));
 }
 

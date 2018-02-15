@@ -53,9 +53,9 @@ void ai::AiBasic::setup(std::shared_ptr<Resources> sptrResources, ResourceHandle
 /// 
 /// Construct our map of actions.
 /// </summary>
-ai::AiBasic::AiBasic(Player const & player)
+ai::AiBasic::AiBasic(Player const & player, sf::Vector2f const & position)
 	: AiBase()
-	, m_position{ 0.0f, 0.0f }
+	, m_position(position)
 	, m_speed(0.0f)
 	, m_heading{ 0.0f, 1.0f }
 	, m_angle(0.0f)
