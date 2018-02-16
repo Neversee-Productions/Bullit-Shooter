@@ -226,6 +226,15 @@
     <Filter Include="Resource Files\scenes\Game\enemies\asteroid">
       <UniqueIdentifier>{fdcd8e12-25b8-4b64-b6c3-ac109447a771}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\bullets\bullet02">
+      <UniqueIdentifier>{ec24afe5-da98-4887-91e6-f134787ac2c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\bullets\bullet03">
+      <UniqueIdentifier>{de38934d-2ab8-4286-8d0b-99d7cea18d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\bullets\bullet04">
+      <UniqueIdentifier>{1b013a62-4360-4c95-9371-0d6dbf269493}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -454,6 +463,15 @@
     </None>
     <None Include="resources\scenes\Game\enemies\asteroid\asteroid.json">
       <Filter>Resource Files\scenes\Game\enemies\asteroid</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\bullets\bullet02\bullet_fire.ogg">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet02</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\bullets\bullet03\bullet_fire.ogg">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet03</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\bullets\bullet04\bullet_fire.ogg">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet04</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -746,6 +764,21 @@
     </Image>
     <Image Include="resources\scenes\Game\enemies\asteroid\asteroid_explode.png">
       <Filter>Resource Files\scenes\Game\enemies\asteroid</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet02\bullet_impact.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet02</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet02\bullet_loop.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet02</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet03\bullet_loop.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet03</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet04\bullet_impact.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet04</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet04\bullet_loop.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet04</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
