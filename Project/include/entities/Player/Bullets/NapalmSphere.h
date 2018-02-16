@@ -21,6 +21,7 @@ namespace bullets
 		void update() override;
 		void setActive(bool active) override;
 		void explode(bool check);
+		bool isExplosion();
 		const float & getDamage() override;
 
 	private:

@@ -21,6 +21,7 @@ namespace bullets
 		static float getFireRate();
 		void setActive(bool active) override;
 		void explode(bool check);
+		bool isExplosion();
 		const float & getDamage() override;
 		virtual bool checkCircleCollision(const tinyh::c2Circle & other) final override;
 		virtual bool checkAABBCollision(const tinyh::c2AABB & other) final override;

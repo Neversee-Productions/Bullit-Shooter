@@ -2,6 +2,8 @@
 #define COLLISION_SYSTEM_H
 
 // STL Includes
+#include <string>
+#include <sstream>
 // SFML Includes
 // Project Includes
 #include "entities\Entities.h"

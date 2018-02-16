@@ -18,7 +18,7 @@
                 },
                 "impact":
                 {
-                    "volume": 100.0,
+                    "volume": 50.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -43,7 +43,7 @@
                 },
                 "impact":
                 {
-                    "volume": 100.0,
+                    "volume": 50.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -82,7 +82,7 @@
                 },
                 "impact":
                 {
-                    "volume": 100.0,
+                    "volume": 50.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -104,17 +104,6 @@
                         "key": "bullet05_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet05/bullet_fire.ogg"
                     }
-                },
-                "impact":
-                {
-                    "volume": 100.0,
-                    "loop": false,
-                    "attenuation": 1.0,
-                    "buffer":
-                    {
-                        "key": "bullet05_impact",
-                        "path": "resources/scenes/Game/player/bullets/bullet05/bullet_impact.ogg"
-                    }
                 }
             },
             "bullet06":
@@ -132,7 +121,7 @@
                 },
                 "impact":
                 {
-                    "volume": 100.0,
+                    "volume": 50.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -157,7 +146,7 @@
                 },
                 "impact":
                 {
-                    "volume": 100.0,
+                    "volume": 50.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -182,7 +171,7 @@
                 },
                 "impact":
                 {
-                    "volume": 100.0,
+                    "volume": 50.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -207,7 +196,7 @@
                 },
                 "impact":
                 {
-                    "volume": 100.0,
+                    "volume": 50.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -228,17 +217,6 @@
                     {
                         "key": "bullet10_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet10/bullet_fire.ogg"
-                    }
-                },
-                "impact":
-                {
-                    "volume": 100.0,
-                    "loop": false,
-                    "attenuation": 1.0,
-                    "buffer":
-                    {
-                        "key": "bullet10_impact",
-                        "path": "resources/scenes/Game/player/bullets/bullet10/bullet_impact.ogg"
                     }
                 }
             },

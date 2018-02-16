@@ -184,7 +184,7 @@ void SoundManager::setupBulletSounds(ResourceHandler & resourceHandler, SoundMan
 		case BulletTypes::PyroBlast:
 		{
 			std::string const BULLET_IMPACT_ID = bulletNum + "_impact";
-			//soundManager.addSound(bulletParser.at("impact").get<SoundSetting>(), BULLET_IMPACT_ID);
+			soundManager.addSound(bulletParser.at("impact").get<SoundSetting>(), BULLET_IMPACT_ID);
 		}	break;
 		case BulletTypes::DeathOrb:
 		case BulletTypes::HolySphere:
