@@ -111,6 +111,7 @@ namespace bullets
 		void updateVelocityVector();
 		bool isActive() const;
 		virtual bool checkCircleCollision(const tinyh::c2Circle & other);
+		virtual bool checkAABBCollision(const tinyh::c2AABB & other);
 		virtual const float & getDamage() = 0;
 		virtual bool const & isImpact() const;
 		BulletTypes const & getType() const;

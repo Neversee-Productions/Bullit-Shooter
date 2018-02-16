@@ -22,6 +22,7 @@ public:
 	const tinyh::c2Circle& getCollisionCircle();
 	const float& getHealth();
 	void resetShield();
+	bool const & isInvulnerable();
 
 private:
 

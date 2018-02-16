@@ -131,4 +131,16 @@ void Shield::resetShield()
 	m_health = 100;
 	m_invulnerable = false;
 	m_invulnTimer = 0.0f;
+	m_circle.setFillColor(sf::Color(0u, 0u, 255u, 50u));
+}
+
+/// <summary>
+/// @brief check if shield is unhittable.
+/// 
+/// 
+/// </summary>
+/// <returns></returns>
+bool const & Shield::isInvulnerable()
+{
+	return m_invulnerable;
 }

@@ -29,6 +29,7 @@ Asteroid::Asteroid(std::shared_ptr<Resources> sptrResources)
 	, m_position(300.0f, 300.0f)
 	, m_active(false)
 	, m_explode(false)
+	, m_spawnEnemy(false)
 	, m_collisionCircle()
 	, m_windowC2Rect()
 	, m_health(10.0f)
@@ -214,8 +215,9 @@ void Asteroid::generateRandomPos()
 /// </summary>
 void Asteroid::reuseAsteroid()
 {
-	generateRandomVel();
-	generateRandomPos();
+	this->generateRandomVel();
+	this->generateRandomPos();
+	this->generateRandomEnemy();
 	m_health = 10.0f;
 	m_explode = false;
 	m_active = true;
@@ -328,6 +330,29 @@ void Asteroid::explode()
 	m_circle.setTextureRect(m_sptrResources->m_explodeTexture.m_textureRect);
 	m_animator.playAnimation(m_sptrResources->m_explodeAnimation.m_id, false);
 	m_explode = true;
+}
+
+/// <summary>
+/// @brief Defines whether the asteroid contains a enemy.
+/// 
+/// 
+/// </summary>
+/// <returns>true if the asteroid contains a enemy.</returns>
+bool Asteroid::containsEnemy() const
+{
+	return m_spawnEnemy;
+}
+
+/// <summary>
+/// @brief determines with a random chance of the asteroid containing a enemy.
+/// 
+/// 
+/// </summary>
+void Asteroid::generateRandomEnemy()
+{
+	int const CHANCE = std::rand() % 101;
+	int const SPAWN_CHANCE = 100;
+	m_spawnEnemy = (CHANCE <= SPAWN_CHANCE);
 }
 
 /// <summary>

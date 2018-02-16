@@ -80,6 +80,10 @@ void Player::update()
 {
 	if (m_alive)
 	{
+		if (this->getShieldHealth() <= 0.0f)
+		{
+			this->setAlive(false);
+		}
 		const bool & KEY_UP =
 			m_keyHandler.isPressed(sf::Keyboard::Up)
 			|| m_keyHandler.isPressed(sf::Keyboard::W)
@@ -480,6 +484,17 @@ sf::Vector2f const & Player::getRightWeaponPos()
 bool const & Player::isAlive()
 {
 	return m_alive;
+}
+
+/// <summary>
+/// @brief checks if player is invulnerable.
+/// 
+/// 
+/// </summary>
+/// <returns>true means player is unhittable, false means he is hittable.</returns>
+bool const & Player::isInvulnerable()
+{
+	return m_shield.isInvulnerable();
 }
 
 /// <summary>

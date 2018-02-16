@@ -14,6 +14,7 @@
 #include "scenes\Scene.h"
 #include "sound\SoundManager.h"
 #include "Entities\Entities.h"
+#include "entities\BasicEnemyManager.h"
 #include "util\JsonLoader.h"
 #include "util\CollisionSystem.h"
 #include "gui\game_ui\GameUI.h"
@@ -46,8 +47,8 @@ private:
 		{
 			std::shared_ptr<Asteroid::Resources> m_sptrAsteroid =
 				std::make_shared<Asteroid::Resources>();
-			std::shared_ptr<ai::AiBasic::Resources> m_sptrBasicEnemy =
-				std::make_shared<ai::AiBasic::Resources>();
+			std::shared_ptr<BasicEnemyManager::Resources> m_sptrBasicEnemyManager =
+				std::make_shared<BasicEnemyManager::Resources>();
 		};
 
 		/// <summary>
@@ -237,9 +238,12 @@ private:
 	/// </summary>
 	Pickup m_pickup;
 
-	// HACK : Temporary enemy
-
-	ai::AiBasic m_enemy;
+	/// <summary>
+	/// @brief manages the instances of all basic enemies.
+	/// 
+	/// 
+	/// </summary>
+	BasicEnemyManager m_basicEnemyManager;
 
 	/// <summary>
 	/// @brief this is the UI object.

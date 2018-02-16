@@ -78,6 +78,7 @@ public:
 	sf::Vector2f const & getLeftWeaponPos();
 	sf::Vector2f const & getRightWeaponPos();
 	bool const & isAlive();
+	bool const & isInvulnerable();
 	void setConnectorPos(sf::Vector2f leftConnectorPos, sf::Vector2f rightConnectorPos);
 	void setAttachedWeapons(bool check);
 	const sf::Vector2f & getLeftConnectorPos();

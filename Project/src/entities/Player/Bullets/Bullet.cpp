@@ -239,6 +239,22 @@ bool bullets::Bullet::checkCircleCollision(const tinyh::c2Circle & other)
 }
 
 /// <summary>
+/// @brief check collision against a AABB Box.
+/// 
+/// 
+/// </summary>
+/// <param name="other">the AABB rectangle to collide with</param>
+/// <returns>true if collided</returns>
+bool bullets::Bullet::checkAABBCollision(const tinyh::c2AABB & other)
+{
+	if (tinyh::c2AABBtoAABB(other, m_bulletC2Rect))
+	{
+		return true;
+	}
+	return false;
+}
+
+/// <summary>
 /// @brief acquires whether or not the bullet is in the impact state.
 /// 
 /// 

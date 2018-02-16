@@ -14,10 +14,10 @@ GameScene::GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Con
 	, m_resources(nullptr)
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_asteroidManager()
-	, m_enemy(m_player)
+	, m_basicEnemyManager()
 	, m_pickup()
 	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this))
-	, m_collisionSystem(m_player, m_asteroidManager, m_pickup, m_ui)
+	, m_collisionSystem(m_player, m_asteroidManager, m_basicEnemyManager, m_pickup, m_ui)
 	, m_gamePaused(false)
 {
 	m_pickup.setActive(false);
@@ -51,8 +51,9 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_background.reset();
 	m_player.reset();
 	m_asteroidManager.resetAsteroids();
-	//TODO: reset the enemies here!
+	m_basicEnemyManager.reset();
 	m_ui.reset();
+	m_pickup.setActive(false);
 	m_ui.setPaused(false);
 	
 	if (!m_resources)
@@ -88,13 +89,9 @@ void GameScene::update()
 	if (!m_gamePaused)
 	{
 		m_background.update();
-		if (m_player.getShieldHealth() <= 0)
-		{
-			m_player.setAlive(false);
-		}
 		m_player.update();
 		m_asteroidManager.update();
-		m_enemy.update();
+		m_basicEnemyManager.update();
 		m_pickup.update();
 		m_collisionSystem.update();
 	}
@@ -120,18 +117,18 @@ void GameScene::draw(Window & window, const float & deltaTime)
 	if (m_gamePaused)
 	{
 		m_background.draw(window, 0);
+		m_basicEnemyManager.draw(window, 0);
 		m_asteroidManager.draw(window, 0);
 		m_player.draw(window, 0);
-		m_enemy.draw(window, 0);
 		m_ui.draw(window, 0);
 		m_pickup.draw(window, 0);
 	}
 	else
 	{
 		m_background.draw(window, deltaTime);
+		m_basicEnemyManager.draw(window, deltaTime);
 		m_asteroidManager.draw(window, deltaTime);
 		m_player.draw(window, deltaTime);
-		m_enemy.draw(window, deltaTime);
 		m_ui.draw(window, deltaTime);
 		m_pickup.draw(window, deltaTime);
 	}
@@ -202,7 +199,7 @@ void GameScene::setup(const std::string & filePath)
 		this->setupUI(resourceHandler, m_resources->m_sptrUI, gameSceneParser);
 	}
 
-	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemy);
+	m_basicEnemyManager.init(m_resources->m_sptrEnemies->m_sptrBasicEnemyManager, m_player);
 	m_asteroidManager.init(m_resources->m_sptrEnemies->m_sptrAsteroid);
 	m_player.init(m_resources->m_sptrPlayer);
 	m_background.init(m_resources->m_sptrBackground);
@@ -854,7 +851,7 @@ void GameScene::setupEnemies(ResourceHandler & resourceHandler, std::shared_ptr<
 	std::string const JSON_ENEMY_ASTEROID("asteroid");
 	std::string const JSON_ENEMY_BASIC("basic");
 
-	ai::AiBasic::setup(sptrEnemies->m_sptrBasicEnemy, resourceHandler, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_BASIC).get<std::string>()));
+	ai::AiBasic::setup(sptrEnemies->m_sptrBasicEnemyManager->m_sptrBasicEnemy, resourceHandler, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_BASIC).get<std::string>()));
 	Asteroid::setup(sptrEnemies->m_sptrAsteroid, util::loadJsonFromFile(enemiesJson.at(JSON_ENEMY_ASTEROID).get<std::string>()));
 }
 

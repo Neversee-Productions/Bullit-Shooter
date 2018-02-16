@@ -241,6 +241,19 @@ void Window::draw(const sf::Drawable & drawable, const sf::RenderStates & render
 }
 
 /// <summary>
+/// @brief Draws the vertices on the render texture.
+/// 
+/// Used when drawing primitives.
+/// </summary>
+/// <param name="vertices">pointer to array of vertices.</param>
+/// <param name="size">size of array</param>
+/// <param name="primitiveTypes">type of primitive to be drawn</param>
+void Window::draw(sf::Vertex const * vertices, int const & size, sf::PrimitiveType const & primitiveTypes)
+{
+	m_renderTexture.draw(vertices, size, primitiveTypes, sf::RenderStates::Default);
+}
+
+/// <summary>
 /// @brief Finalizes internal rendering processes.
 /// 
 /// Gets render texture drawn into our window and our window produces the frame.

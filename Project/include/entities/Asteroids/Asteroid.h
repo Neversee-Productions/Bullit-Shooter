@@ -152,8 +152,10 @@ public:
 	bool isActive();
 	bool isExplosion() const;
 	void explode();
+	bool containsEnemy() const;
 
 private:
+	void generateRandomEnemy();
 
 	/// <summary>
 	/// @brief define a shared pointer to loaded resources.
@@ -203,6 +205,13 @@ private:
 	/// 
 	/// </summary>
 	bool m_explode;
+
+	/// <summary>
+	/// @brief defines if the asteroid spawns a enemy on explosion.
+	/// 
+	/// 
+	/// </summary>
+	bool m_spawnEnemy;
 
 	/// <summary>
 	/// @brief define the collision circle.
