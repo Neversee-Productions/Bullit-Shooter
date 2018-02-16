@@ -171,7 +171,7 @@ void GameScene::setup(const std::string & filePath)
 		////////////////////////////////////////////
 		// Setup Sounds
 		////////////////////////////////////////////
-		this->setupSounds(resourceHandler, m_soundManager, util::loadJsonFromFile(gameSceneParser.at("sounds").get<std::string>()));
+		SoundManager::setup(resourceHandler, m_soundManager, util::loadJsonFromFile(gameSceneParser.at("sounds").get<std::string>()));
 
 		////////////////////////////////////////////
 		// Setup Enemies
@@ -207,82 +207,6 @@ void GameScene::setup(const std::string & filePath)
 	m_pickup = Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered);
 	m_pickup.setActive(false);
 	m_ui.init(m_resources->m_sptrUI);
-}
-
-/// <summary>
-/// @brief Setups sounds in the game scene.
-/// 
-/// 
-/// </summary>
-/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
-/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
-/// <param name="soundParser">reference to loaded json file ready to be parsed.</param>
-void GameScene::setupSounds(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & soundParser)
-{	
-	this->setupPlayerSounds(resourceHandler, soundManager, soundParser.at("player"));
-}
-
-/// <summary>
-/// @brief Setups player sounds.
-/// 
-/// 
-/// </summary>
-/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
-/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
-/// <param name="playerParser">reference to loaded json file ready to be parsed.</param>
-void GameScene::setupPlayerSounds(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & playerParser)
-{
-	this->setupBulletsSounds(resourceHandler, soundManager, playerParser.at("bullets"));
-}
-
-/// <summary>
-/// @brief Setups all the player bullet sounds.
-/// 
-/// Iterates through all the bullet sounds.
-/// </summary>
-/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
-/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
-/// <param name="bulletsParser">reference to loaded json file ready to be parsed.</param>
-void GameScene::setupBulletsSounds(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & bulletsParser)
-{
-	auto const & NUM_OF_BULLETS = static_cast<int>(BulletTypes::AmountOfTypes);
-
-	// initialize string stream to be 8 characters wide,
-	//	NOTE: the stream seek position is still at the start of the stream
-	//	meaning any insertion is done from the beginning of the stream
-	std::stringstream bulletID("--------");
-	bulletID << "bullet";
-	for (int i = 0; i < NUM_OF_BULLETS; ++i)
-	{
-		int const BULLET_NUM = i + 1;
-		if (BULLET_NUM < 10)
-		{
-			bulletID << "0" + std::to_string(BULLET_NUM);
-		}
-		else
-		{
-			bulletID << std::to_string(BULLET_NUM);
-		}
-		std::string const bulletIDString = bulletID.str();
-		this->setupBulletSounds(resourceHandler, soundManager, bulletsParser.at(bulletIDString), bulletIDString);
-
-		// move string stream's seek position back 2 places.
-		bulletID.seekp(-2, std::ios_base::end);
-	}
-}
-
-/// <summary>
-/// @brief Setups a single player bullet based on bulletNum.
-/// 
-/// </summary>
-/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
-/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
-/// <param name="bulletParser">reference to loaded json file ready to be parsed.</param>
-/// <param name="bulletNum">read-only reference to the bullet number string used as the </param>
-void GameScene::setupBulletSounds(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & bulletParser, std::string const & bulletNum)
-{
-	std::string const BULLET_FIRE_ID = bulletNum + "_fire";
-	soundManager.addSound(bulletParser.at("fire").get<SoundSetting>(), BULLET_FIRE_ID);
 }
 
 

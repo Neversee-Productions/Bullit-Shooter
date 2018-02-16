@@ -14,6 +14,7 @@ CollisionSystem::CollisionSystem(
 	, GameUI & gameUi
 )
 	: m_UPDATE_DT(App::getUpdateDeltaTime())
+	, m_soundManager(SoundManager::instance())
 	, m_player(player)
 	, m_asteroidManager(asteroidManager)
 	, m_basicEnemyManager(basicEnemyManager)
@@ -210,6 +211,8 @@ void CollisionSystem::updatePlayerToGameUi()
 /// <param name="bullet">reference to base bullet.</param>
 void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bullet)
 {
+	std::stringstream bulletImpactID;
+	bulletImpactID << "bullet";
 	using namespace bullets;
 	//This variable determines if the asteroid is to become invulnerable after a hit, set to true by default.
 	bool asteroidInvurnelabilityState = true; 
@@ -227,21 +230,42 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 		case BulletTypes::Standard:
 		case BulletTypes::FireBlast:
 		case BulletTypes::NullWave:
+			bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
 			bullet.hit();
+			bulletImpactID << "_impact";
+			m_soundManager.play(bulletImpactID.str());
 			break; // 1
 		case BulletTypes::MagmaShot:
 		{
 			auto & derivedBullet = dynamic_cast<MagmaShot&>(bullet);
+			if (!derivedBullet.isExplosion())
+			{
+				bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
+				bulletImpactID << "_impact";
+				m_soundManager.play(bulletImpactID.str());
+			}
 			derivedBullet.explode(true);
 		}	break; // 3
 		case BulletTypes::NapalmSphere:
 		{
 			auto & derivedBullet = dynamic_cast<NapalmSphere&>(bullet);
+			if (!derivedBullet.isExplosion())
+			{
+				bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
+				bulletImpactID << "_impact";
+				m_soundManager.play(bulletImpactID.str());
+			}
 			derivedBullet.explode(true);
 		}	break; // 3
 		case BulletTypes::PyroBlast:
 		{
 			auto & derivedBullet = dynamic_cast<PyroBlast&>(bullet);
+			if (!derivedBullet.isExplosion())
+			{
+				bulletImpactID << std::to_string(static_cast<int>(bullet.getType()) + 1);
+				bulletImpactID << "_impact";
+				m_soundManager.play(bulletImpactID.str());
+			}
 			derivedBullet.explode(true);
 		}	break; // 3
 		default:
@@ -252,6 +276,7 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 		asteroid.decrementHealth(bullet.getDamage(), asteroidInvurnelabilityState);
 		if (asteroid.isExplosion())
 		{
+			m_soundManager.play("asteroid_explosion");
 			if (!m_pickup.isActive())
 			{
 				int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
@@ -286,6 +311,8 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 /// <param name="bullet">reference to base bullet.</param>
 void CollisionSystem::enemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bullet)
 {
+	std::stringstream bulletImpactID;
+	bulletImpactID << "bullet";
 	using namespace bullets;
 	switch (bullet.getType())
 	{
@@ -299,21 +326,42 @@ void CollisionSystem::enemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bulle
 		case BulletTypes::Empowered:
 		case BulletTypes::FireBlast:
 		case BulletTypes::NullWave:
+			bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
 			bullet.hit();
+			bulletImpactID << "_impact";
+			m_soundManager.play(bulletImpactID.str());
 			break; // 1
 		case BulletTypes::MagmaShot:
 		{
 			auto & derivedBullet = dynamic_cast<MagmaShot&>(bullet);
+			if (!derivedBullet.isExplosion())
+			{
+				bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
+				bulletImpactID << "_impact";
+				m_soundManager.play(bulletImpactID.str());
+			}
 			derivedBullet.explode(true);
 		}	break; // 3
 		case BulletTypes::NapalmSphere:
 		{
 			auto & derivedBullet = dynamic_cast<NapalmSphere&>(bullet);
+			if (!derivedBullet.isExplosion())
+			{
+				bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
+				bulletImpactID << "_impact";
+				m_soundManager.play(bulletImpactID.str());
+			}
 			derivedBullet.explode(true);
 		}	break; // 3
 		case BulletTypes::PyroBlast:
 		{
 			auto & derivedBullet = dynamic_cast<PyroBlast&>(bullet);
+			if (!derivedBullet.isExplosion())
+			{
+				bulletImpactID << std::to_string(static_cast<int>(bullet.getType()) + 1);
+				bulletImpactID << "_impact";
+				m_soundManager.play(bulletImpactID.str());
+			}
 			derivedBullet.explode(true);
 		}	break; // 3
 		default:
@@ -322,6 +370,7 @@ void CollisionSystem::enemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bulle
 	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
 	if (ENEMY_DIED)
 	{
+		m_soundManager.play("enemy_death");
 		enemy.setActive(false);
 	}
 }
@@ -340,6 +389,10 @@ void CollisionSystem::playerVsAsteroid(Player & player, Asteroid & asteroid)
 		player.decrementShield(25.0f);
 		m_gameUi.decrementHealth(25.0f);
 		asteroid.decrementHealth(10.0f, false);
+		if (asteroid.isExplosion())
+		{
+			m_soundManager.play("asteroid_explosion");
+		}
 	}
 }
 

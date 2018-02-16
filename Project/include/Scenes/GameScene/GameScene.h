@@ -89,27 +89,6 @@ private:
 	void backToMainMenu();
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
-	void setupSounds(
-		ResourceHandler & resourceHandler
-		, SoundManager & soundManager
-		, json::json & soundParser
-	);
-	void setupPlayerSounds(
-		ResourceHandler & resourceHandler
-		, SoundManager & soundManager
-		, json::json & playerParser
-	);
-	void setupBulletsSounds(
-		ResourceHandler & resourceHandler
-		, SoundManager & soundManager
-		, json::json & bulletsParser
-	);
-	void setupBulletSounds(
-		ResourceHandler & resourceHandler
-		, SoundManager & soundManager
-		, json::json & bulletParser
-		, std::string const & bulletNum
-	);
 	void setupPlayer(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Player::Resources> sptrPlayerResources

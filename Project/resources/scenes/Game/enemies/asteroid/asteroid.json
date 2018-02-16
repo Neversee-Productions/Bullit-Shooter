@@ -1,9 +1,16 @@
 {
     "idle":
     {
+        "flash_frame":
+        {
+            "x": 190,
+            "y": 0,
+            "w": 190,
+            "h": 190
+        },
         "texture":
         {
-            "key":  "asteroid_idle",
+            "key": "asteroid_idle",
             "path": "resources/scenes/Game/enemies/asteroid/asteroid.png",
             "origin":
             {

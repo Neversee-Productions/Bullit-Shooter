@@ -106,6 +106,11 @@ void ai::AiBasic::update()
 /// <param name="deltaTime">read-only reference to delta time between last render calls.</param>
 void ai::AiBasic::draw(Window & window, float const & deltaTime)
 {
+	m_renderQuad.setFillColor(sf::Color(
+		255u,
+		static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
+		static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
+		255u));
 	m_sptrState->draw(window, deltaTime);
 }
 

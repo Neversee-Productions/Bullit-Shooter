@@ -2,6 +2,8 @@
 #define COLLISION_SYSTEM_H
 
 // STL Includes
+#include <string>
+#include <sstream>
 // SFML Includes
 // Project Includes
 #include "entities\Entities.h"
@@ -57,6 +59,13 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	float const & m_UPDATE_DT;
+
+	/// <summary>
+	/// @brief Reference to singleton sound manager instance.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
 
 	/// <summary>
 	/// @brief reference to player.
