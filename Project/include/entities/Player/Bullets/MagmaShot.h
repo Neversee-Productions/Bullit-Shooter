@@ -21,6 +21,7 @@ namespace bullets
 		static float getFireRate();
 		void setActive(bool active) override;
 		void explode(bool check);
+		bool isExplosion();
 		const float & getDamage() override;
 
 		/// <summary>

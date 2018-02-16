@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\DeathOrb.h"
 
-const float bullets::DeathOrb::s_FIRE_RATE = 1.0f;
+const float bullets::DeathOrb::s_FIRE_RATE = 0.7f;
 
 /// <summary>
 /// @brief this is the default constructor.
@@ -12,12 +12,12 @@ bullets::DeathOrb::DeathOrb()
 	, m_damage(0.25f)
 	, m_IMPACT(false)
 {
-	m_speed = 6.0f * 60.0f;
+	m_speed = 8.0f * 60.0f;
 	m_velocity.y = -m_speed;
 	m_angle = -90.0f;
 
 	//different size to parent
-	m_bulletRect.setSize(sf::Vector2f(40.0f, 40.0f));
+	m_bulletRect.setSize(sf::Vector2f(50.0f, 50.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
 	m_type = BulletTypes::DeathOrb;

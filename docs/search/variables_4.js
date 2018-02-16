@@ -28,5 +28,5 @@ var searchData=
   ['s_5fviewsize',['s_viewSize',['../class_app.html#ae9a5440bd5a998c9d4d16b65ec3df8fa',1,'App']]],
   ['s_5fwindup_5fid',['s_WINDUP_ID',['../classai_1_1_ai_basic.html#a5f7a8c17a7f7a0b7233748de877f7dc7',1,'ai::AiBasic']]],
   ['settings',['settings',['../struct_sound_manager_1_1_sound.html#afb4e79b627095365d8a00a3c7d21f7be',1,'SoundManager::Sound']]],
-  ['sound',['sound',['../struct_sound_manager_1_1_sound.html#af18a7bfab36c38229112dd1887fa52c0',1,'SoundManager::Sound']]]
+  ['soundplayers',['soundPlayers',['../struct_sound_manager_1_1_sound.html#ac51285d4979ef2aa529ce8b476687d42',1,'SoundManager::Sound']]]
 ];

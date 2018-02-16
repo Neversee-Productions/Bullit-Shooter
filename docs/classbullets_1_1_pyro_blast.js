@@ -6,6 +6,7 @@ var classbullets_1_1_pyro_blast =
     [ "explode", "classbullets_1_1_pyro_blast.html#a79a0f0dfb4d5761a61044c9751999785", null ],
     [ "getDamage", "classbullets_1_1_pyro_blast.html#aee53106785e2039149dffba012aa7f7a", null ],
     [ "getFireRate", "classbullets_1_1_pyro_blast.html#a76aa8e5981b82b4908f76b6c33859dd9", null ],
+    [ "isExplosion", "classbullets_1_1_pyro_blast.html#ac8aa748bcb55801f91b315aaaa5a1ef4", null ],
     [ "setActive", "classbullets_1_1_pyro_blast.html#afee6e9df2affe928ea58992045f78be4", null ],
     [ "update", "classbullets_1_1_pyro_blast.html#aabab03154f290dd877b075434f8dbbc3", null ],
     [ "updateExplosionCircle", "classbullets_1_1_pyro_blast.html#a541c8e363ce9e4e13a1f3c981c4c39d9", null ],

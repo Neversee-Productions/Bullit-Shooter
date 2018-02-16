@@ -4,6 +4,7 @@ var classbullets_1_1_napalm_sphere =
     [ "explode", "classbullets_1_1_napalm_sphere.html#aab385bf834d08356aa5b5f6fd3e61bd9", null ],
     [ "getDamage", "classbullets_1_1_napalm_sphere.html#a69f0f9a6f8b454c26127aaf2dd36e533", null ],
     [ "getFireRate", "classbullets_1_1_napalm_sphere.html#a3703716d09cee2716351f49cfd3f8150", null ],
+    [ "isExplosion", "classbullets_1_1_napalm_sphere.html#a6d34262c4491821e62db89b0e7519ca9", null ],
     [ "setActive", "classbullets_1_1_napalm_sphere.html#af14c981390d155f3b09c22537737c13e", null ],
     [ "update", "classbullets_1_1_napalm_sphere.html#a21c9459156af91906ba8096e078561af", null ],
     [ "m_damage", "classbullets_1_1_napalm_sphere.html#a601eb87d8fcd269ca572afc9f27e26a7", null ],

@@ -20,7 +20,7 @@ var searchData=
   ['isanypressed',['isAnyPressed',['../class_key_handler.html#ae9b72c706dd0ceae61d743d7569935a1',1,'KeyHandler']]],
   ['isconnected',['isConnected',['../class_controller.html#a7d038f37d2b4d68dd1588b57c062a0ee',1,'Controller']]],
   ['isdocking',['isDocking',['../class_player.html#a2c01384ff7d9a1b578a1558515d7b592',1,'Player']]],
-  ['isexplosion',['isExplosion',['../class_asteroid.html#ad845da586d704ad4c897814ca289a460',1,'Asteroid']]],
+  ['isexplosion',['isExplosion',['../class_asteroid.html#ad845da586d704ad4c897814ca289a460',1,'Asteroid::isExplosion()'],['../classbullets_1_1_magma_shot.html#aa9d26cb977ff73f1da06afbbdd23856d',1,'bullets::MagmaShot::isExplosion()'],['../classbullets_1_1_napalm_sphere.html#a6d34262c4491821e62db89b0e7519ca9',1,'bullets::NapalmSphere::isExplosion()'],['../classbullets_1_1_pyro_blast.html#ac8aa748bcb55801f91b315aaaa5a1ef4',1,'bullets::PyroBlast::isExplosion()']]],
   ['isimpact',['isImpact',['../classbullets_1_1_bullet.html#af88d2013aaf83d398e3a0182a60fe4e5',1,'bullets::Bullet::isImpact()'],['../classbullets_1_1_death_orb.html#ae83d9014789445c7b8d11d919e12b26a',1,'bullets::DeathOrb::isImpact()']]],
   ['isinvulnerable',['isInvulnerable',['../class_asteroid.html#a3e885bbb96ced5ddee6edf78d83ec218',1,'Asteroid::isInvulnerable()'],['../class_player.html#a18afb63fb91ba6e9487cf8a70c87f529',1,'Player::isInvulnerable()'],['../class_shield.html#a877ac643e11b46c1c2ab4b5bb6d40ea3',1,'Shield::isInvulnerable()']]],
   ['isopen',['isOpen',['../class_window.html#a761d614931fb5a5daa70e4f580c3e78e',1,'Window']]],

@@ -143,14 +143,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a1720031b70e644e1b6975b15decdda62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08213e60be0211836cebe55b28887cae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a08213e60be0211836cebe55b28887cae">setup</a> (const std::string &amp;filePath)</td></tr>
 <tr class="separator:a08213e60be0211836cebe55b28887cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24b7db4051bbfe2e5a19bfcf4eec6eef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a24b7db4051bbfe2e5a19bfcf4eec6eef">setupSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;soundParser)</td></tr>
-<tr class="separator:a24b7db4051bbfe2e5a19bfcf4eec6eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f8c1eabffed278ed0f430eff0bcfcc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8f8c1eabffed278ed0f430eff0bcfcc3">setupPlayerSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;playerParser)</td></tr>
-<tr class="separator:a8f8c1eabffed278ed0f430eff0bcfcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a158353cac266fa2122039948a6958068"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a158353cac266fa2122039948a6958068">setupBulletsSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;bulletsParser)</td></tr>
-<tr class="separator:a158353cac266fa2122039948a6958068"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33e0e3e98f774b1f8151eb47384240c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a33e0e3e98f774b1f8151eb47384240c0">setupBulletSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;bulletParser, std::string const &amp;bulletNum)</td></tr>
-<tr class="separator:a33e0e3e98f774b1f8151eb47384240c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b81a871ebc93dc4ce15bbe877d15e04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a1b81a871ebc93dc4ce15bbe877d15e04">setupPlayer</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Player::Resources</a> &gt; sptrPlayerResources, json::json &amp;gameSceneParser)</td></tr>
 <tr class="separator:a1b81a871ebc93dc4ce15bbe877d15e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c7b620a4134a637afe2a9c941fb1232"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8c7b620a4134a637afe2a9c941fb1232">setupShip</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_ship_1_1_resources.html">Ship::Resources</a> &gt; sptrShipResources, json::json &amp;shipParser)</td></tr>
@@ -585,116 +577,6 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="a33e0e3e98f774b1f8151eb47384240c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33e0e3e98f774b1f8151eb47384240c0">&#9670;&nbsp;</a></span>setupBulletSounds()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::setupBulletSounds </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
-          <td class="paramname"><em>resourceHandler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
-          <td class="paramname"><em>soundManager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
-          <td class="paramname"><em>bulletParser</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>bulletNum</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Setups a single player bullet based on bulletNum.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
-    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
-    <tr><td class="paramname">bulletParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
-    <tr><td class="paramname">bulletNum</td><td>read-only reference to the bullet number string used as the </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a158353cac266fa2122039948a6958068"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a158353cac266fa2122039948a6958068">&#9670;&nbsp;</a></span>setupBulletsSounds()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::setupBulletsSounds </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
-          <td class="paramname"><em>resourceHandler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
-          <td class="paramname"><em>soundManager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
-          <td class="paramname"><em>bulletsParser</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Setups all the player bullet sounds.</p>
-<p>Iterates through all the bullet sounds. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
-    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
-    <tr><td class="paramname">bulletsParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ab51d906e9997af13f6f0de576896163f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab51d906e9997af13f6f0de576896163f">&#9670;&nbsp;</a></span>setupConnector()</h2>
 
@@ -1005,57 +887,6 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="a8f8c1eabffed278ed0f430eff0bcfcc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f8c1eabffed278ed0f430eff0bcfcc3">&#9670;&nbsp;</a></span>setupPlayerSounds()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::setupPlayerSounds </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
-          <td class="paramname"><em>resourceHandler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
-          <td class="paramname"><em>soundManager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
-          <td class="paramname"><em>playerParser</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Setups player sounds.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
-    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
-    <tr><td class="paramname">playerParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a8c7b620a4134a637afe2a9c941fb1232"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c7b620a4134a637afe2a9c941fb1232">&#9670;&nbsp;</a></span>setupShip()</h2>
 
@@ -1102,57 +933,6 @@ Rafael Plugge</dd></dl>
     <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
     <tr><td class="paramname">sptrShipResources</td><td>shared pointer to our ship resources, assumed to be a valid pointer (initialized).</td></tr>
     <tr><td class="paramname">shipParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a24b7db4051bbfe2e5a19bfcf4eec6eef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24b7db4051bbfe2e5a19bfcf4eec6eef">&#9670;&nbsp;</a></span>setupSounds()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::setupSounds </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
-          <td class="paramname"><em>resourceHandler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
-          <td class="paramname"><em>soundManager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
-          <td class="paramname"><em>soundParser</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Setups sounds in the game scene.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
-    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
-    <tr><td class="paramname">soundParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
   </table>
   </dd>
 </dl>

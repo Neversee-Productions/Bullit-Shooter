@@ -26,5 +26,6 @@ var class_collision_system =
     [ "m_gameUi", "class_collision_system.html#a8f919d6bd3d9c9bb22cb88d1f9b67c32", null ],
     [ "m_pickup", "class_collision_system.html#a6c0691faa619a596ddb8b5add16db018", null ],
     [ "m_player", "class_collision_system.html#afaac54b92eb1c976d5d7433fa32fd49c", null ],
+    [ "m_soundManager", "class_collision_system.html#a12f905798b0f2b574455265dbc347f53", null ],
     [ "m_UPDATE_DT", "class_collision_system.html#afeb03c9ff8813b0314d93f0fc3884b76", null ]
 ];

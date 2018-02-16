@@ -105,6 +105,12 @@ void Player::update()
 			|| m_controller.m_currentState.m_btnTrigger;
 		switchWeaponInput();
 
+
+		if (m_keyHandler.isPressed(sf::Keyboard::P))
+		{
+			m_shield.setHealth(100000.0f);
+		}
+
 		m_ship.move(Ship::Direction::Up, KEY_UP);
 		m_ship.move(Ship::Direction::Down, KEY_DOWN);
 		m_ship.move(Ship::Direction::Left, KEY_LEFT);

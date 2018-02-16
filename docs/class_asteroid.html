@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('class_asteroid.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_asteroid-members.html">List of all members</a>  </div>
@@ -145,6 +146,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9b0dfbb65653601e62e13aff879b307c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acada18e8347e88438b2a39aa1af78107"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#acada18e8347e88438b2a39aa1af78107">containsEnemy</a> () const</td></tr>
 <tr class="separator:acada18e8347e88438b2a39aa1af78107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a148c1143836d43fdfbffb4d163ba31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a9a148c1143836d43fdfbffb4d163ba31">setPosition</a> (sf::Vector2f newPos)</td></tr>
+<tr class="separator:a9a148c1143836d43fdfbffb4d163ba31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c77dd9a52ea5a85357b925da78254d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a2c77dd9a52ea5a85357b925da78254d7">setRotation</a> (float newRotation)</td></tr>
+<tr class="separator:a2c77dd9a52ea5a85357b925da78254d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae38773661f34db80c27054434524d19f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ae38773661f34db80c27054434524d19f">getRotation</a> ()</td></tr>
+<tr class="separator:ae38773661f34db80c27054434524d19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -157,6 +164,11 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:aab7bb9d12da151279c1febc0223669d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09099c554fe7b0cdd61da1b7b17d155e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a09099c554fe7b0cdd61da1b7b17d155e">generateRandomRotation</a> ()</td></tr>
 <tr class="separator:a09099c554fe7b0cdd61da1b7b17d155e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a45f46e1271af9d29cacade4e73cf0fd8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a45f46e1271af9d29cacade4e73cf0fd8">setupFlashFrame</a> (sf::IntRect &amp;flashFrame, json::json &amp;idleFrame)</td></tr>
+<tr class="separator:a45f46e1271af9d29cacade4e73cf0fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -465,6 +477,25 @@ Sebastian Kruzel</dd></dl>
 
 </div>
 </div>
+<a id="ae38773661f34db80c27054434524d19f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae38773661f34db80c27054434524d19f">&#9670;&nbsp;</a></span>getRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Asteroid::getRotation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>getter for the rotation value.</p>
+<dl class="section return"><dt>Returns</dt><dd>rotation value as float in degrees</dd></dl>
+
+</div>
+</div>
 <a id="a129eba5f0096880b3a3738ec96740e11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a129eba5f0096880b3a3738ec96740e11">&#9670;&nbsp;</a></span>getVelocity()</h2>
 
@@ -603,6 +634,56 @@ Sebastian Kruzel</dd></dl>
 
 </div>
 </div>
+<a id="a9a148c1143836d43fdfbffb4d163ba31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a148c1143836d43fdfbffb4d163ba31">&#9670;&nbsp;</a></span>setPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>newPos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this is a setter function that will set the new position.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newPos</td><td>new position of the asteroid defined as a vector2f</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2c77dd9a52ea5a85357b925da78254d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c77dd9a52ea5a85357b925da78254d7">&#9670;&nbsp;</a></span>setRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::setRotation </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>newRotation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>setter for rotation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newRotation</td><td>new rotation value</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a29c762b1c89984777de370bc55cad0c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29c762b1c89984777de370bc55cad0c1">&#9670;&nbsp;</a></span>setup()</h2>
 
@@ -640,6 +721,50 @@ Sebastian Kruzel</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sptrResources</td><td>shared pointer to asteroid resource.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a45f46e1271af9d29cacade4e73cf0fd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f46e1271af9d29cacade4e73cf0fd8">&#9670;&nbsp;</a></span>setupFlashFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::setupFlashFrame </td>
+          <td>(</td>
+          <td class="paramtype">sf::IntRect &amp;&#160;</td>
+          <td class="paramname"><em>flashFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>flashFrameParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>load up flash frame.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flashFrame</td><td>reference to flash frame to be loaded.</td></tr>
+    <tr><td class="paramname">flashFrameParser</td><td>reference to json parser.</td></tr>
   </table>
   </dd>
 </dl>

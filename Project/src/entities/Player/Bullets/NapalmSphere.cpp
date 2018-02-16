@@ -103,6 +103,17 @@ void bullets::NapalmSphere::explode(bool check)
 }
 
 /// <summary>
+/// @brief returns yes/no on whether this bullet is in the explosion state.
+/// 
+/// 
+/// </summary>
+/// <returns>True for yes, false for no.</returns>
+bool bullets::NapalmSphere::isExplosion()
+{
+	return m_explode;
+}
+
+/// <summary>
 /// @brief get the damage of this bullet.
 /// 
 /// 

@@ -144,3 +144,14 @@ bool const & Shield::isInvulnerable()
 {
 	return m_invulnerable;
 }
+
+/// <summary>
+/// @brief a setter for the shield health.
+/// 
+/// 
+/// </summary>
+/// <param name="health">new health value</param>
+void Shield::setHealth(float health)
+{
+	m_health = health;
+}

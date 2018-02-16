@@ -38,6 +38,7 @@ var searchData=
   ['getrightconnectorpos',['getRightConnectorPos',['../class_player.html#a23265def47c1800d025625bcd4d14899',1,'Player']]],
   ['getrightposition',['getRightPosition',['../class_pickup.html#a653449e83ff8b51336ca9090a127233e',1,'Pickup']]],
   ['getrightweaponpos',['getRightWeaponPos',['../class_player.html#a8f33aaf81f382e1e3fd3c3543dbc50aa',1,'Player']]],
+  ['getrotation',['getRotation',['../class_asteroid.html#ae38773661f34db80c27054434524d19f',1,'Asteroid']]],
   ['getscene',['getScene',['../class_scene_manager.html#a59f6fa7e18e85c7eec4be442f17d969e',1,'SceneManager']]],
   ['getshieldcircle',['getShieldCircle',['../class_player.html#a55b1a12c5f5c134156f26fa98e988366',1,'Player']]],
   ['getshieldcollisioncircle',['getShieldCollisionCircle',['../class_player.html#a747e3e769a17f35bd50208e240933b58',1,'Player']]],

@@ -23,6 +23,7 @@ public:
 	const float& getHealth();
 	void resetShield();
 	bool const & isInvulnerable();
+	void setHealth(float health);
 
 private:
 

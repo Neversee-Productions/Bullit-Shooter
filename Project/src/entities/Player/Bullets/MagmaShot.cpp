@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\MagmaShot.h"
 
-const float bullets::MagmaShot::s_FIRE_RATE = 1.4f;
+const float bullets::MagmaShot::s_FIRE_RATE = 0.8f;
 const sf::Vector2f bullets::MagmaShot::s_SIZE_CHANGE = sf::Vector2f(1.0f, 1.0f);
 const sf::Vector2f bullets::MagmaShot::s_DEFAULT_SIZE = sf::Vector2f(45.0f, 45.0f);
 const float bullets::MagmaShot::s_MAX_SIZE = bullets::MagmaShot::s_DEFAULT_SIZE.x + 35.0f;
@@ -14,9 +14,9 @@ const float bullets::MagmaShot::s_MAX_SIZE = bullets::MagmaShot::s_DEFAULT_SIZE.
 bullets::MagmaShot::MagmaShot()
 	: Bullet()
 	, m_explode(false)
-	, m_damage(0.3f)
+	, m_damage(0.2f)
 {
-	m_speed = 4.0f * 60.0f;
+	m_speed = 6.0f * 60.0f;
 	//updateVelocityVector();
 	m_velocity.y = -m_speed;
 	m_angle = -90.0f;
@@ -97,6 +97,17 @@ void bullets::MagmaShot::explode(bool check)
 	m_explode = check;
 	std::string const IMPACT_ID("impact");
 	this->setAnimation(IMPACT_ID);
+}
+
+/// <summary>
+/// @brief returns yes/no on whether this bullet is in the explosion state.
+/// 
+/// 
+/// </summary>
+/// <returns>True for yes, false for no.</returns>
+bool bullets::MagmaShot::isExplosion()
+{
+	return m_explode;
 }
 
 /// <summary>
