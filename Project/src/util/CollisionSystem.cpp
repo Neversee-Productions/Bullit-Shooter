@@ -413,6 +413,10 @@ void CollisionSystem::playerVsGameUi(Player & player, GameUI & gameUi)
 /// <param name="asteroid2">asteroid 2</param>
 void CollisionSystem::solveElasticCollision(Asteroid & asteroid1, Asteroid & asteroid2)
 {
+	asteroid1.setPosition(asteroid1.getPosition() - (asteroid1.getVelocity() * App::getUpdateDeltaTime()));
+	asteroid2.setPosition(asteroid2.getPosition() - (asteroid2.getVelocity() * App::getUpdateDeltaTime()));
+
+
 	sf::Vector2f collisionVector = asteroid1.getPosition() - asteroid2.getPosition();
 	collisionVector = thor::unitVector(collisionVector);
 
@@ -426,6 +430,11 @@ void CollisionSystem::solveElasticCollision(Asteroid & asteroid1, Asteroid & ast
 	//set new velocities
 	asteroid1.setVelocity(asteroid1.getVelocity() + sf::Vector2f((dotProductB - dotProductA) * collisionVector.x, (dotProductB - dotProductA) * collisionVector.y));
 	asteroid2.setVelocity(asteroid2.getVelocity() + sf::Vector2f((dotProductA - dotProductB) * collisionVector.x, (dotProductA - dotProductB) * collisionVector.y));
+
+	float asteroid2Rot = asteroid2.getRotation();
+	asteroid2.setRotation(asteroid1.getRotation());
+	asteroid1.setRotation(asteroid2Rot);
+
 }
 
 /// <summary>

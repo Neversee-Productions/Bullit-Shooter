@@ -347,6 +347,40 @@ bool Asteroid::containsEnemy() const
 }
 
 /// <summary>
+/// @brief this is a setter function that will set the new position.
+/// 
+/// 
+/// </summary>
+/// <param name="newPos">new position of the asteroid defined as a vector2f</param>
+void Asteroid::setPosition(sf::Vector2f newPos)
+{
+	m_position = newPos;
+	this->updateCollisionCircle();
+}
+
+/// <summary>
+/// @brief setter for rotation.
+/// 
+/// 
+/// </summary>
+/// <param name="newRotation">new rotation value</param>
+void Asteroid::setRotation(float newRotation)
+{
+	m_rotation = newRotation;
+}
+
+/// <summary>
+/// @brief getter for the rotation value.
+/// 
+/// 
+/// </summary>
+/// <returns>rotation value as float in degrees</returns>
+float Asteroid::getRotation()
+{
+	return m_rotation;
+}
+
+/// <summary>
 /// @brief determines with a random chance of the asteroid containing a enemy.
 /// 
 /// 
