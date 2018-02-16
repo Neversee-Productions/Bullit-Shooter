@@ -6,7 +6,7 @@
 #include <functional>
 #include "input\Controller.h"
 #include "input\KeyHandler.h"
-#include "Window.h"
+#include "system\Window.h"
 
 namespace gui
 {

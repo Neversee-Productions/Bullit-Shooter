@@ -82,6 +82,7 @@ $(document).ready(function(){initNavTree('class_asteroid_manager.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_asteroid_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -98,18 +99,49 @@ $(document).ready(function(){initNavTree('class_asteroid_manager.html','');});
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f60197b9c284c845a7589adf9d08e6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a8f60197b9c284c845a7589adf9d08e6b">AsteroidManager</a> ()</td></tr>
 <tr class="separator:a8f60197b9c284c845a7589adf9d08e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef884362d5c531fd1a31793518b0013"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a3ef884362d5c531fd1a31793518b0013">~AsteroidManager</a> ()=default</td></tr>
+<tr class="separator:a3ef884362d5c531fd1a31793518b0013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ff56868980f736fbaa411000b4e08a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a77ff56868980f736fbaa411000b4e08a">init</a> (std::shared_ptr&lt; <a class="el" href="struct_asteroid_1_1_resources.html">Asteroid::Resources</a> &gt; sptrResourcesr)</td></tr>
+<tr class="separator:a77ff56868980f736fbaa411000b4e08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998ee2908933dd9bad98581374578221"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a998ee2908933dd9bad98581374578221">update</a> ()</td></tr>
+<tr class="separator:a998ee2908933dd9bad98581374578221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef330f60c4a125e7ee381631889d8391"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#aef330f60c4a125e7ee381631889d8391">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, float const &amp;deltaTime)</td></tr>
+<tr class="separator:aef330f60c4a125e7ee381631889d8391"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1022463f462f024de3d91e83708b110"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#ac1022463f462f024de3d91e83708b110">initAsteroidVector</a> ()</td></tr>
 <tr class="separator:ac1022463f462f024de3d91e83708b110"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac987354c630398756107476d1cfc474b"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="class_asteroid.html">Asteroid</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#ac987354c630398756107476d1cfc474b">getAsteroidVector</a> ()</td></tr>
-<tr class="separator:ac987354c630398756107476d1cfc474b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2007ebff0e0b7ff38fd18900a14ced0d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_asteroid.html">Asteroid</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a2007ebff0e0b7ff38fd18900a14ced0d">getAsteroidVector</a> ()</td></tr>
+<tr class="separator:a2007ebff0e0b7ff38fd18900a14ced0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a966f87ab6c9d0b4b63e7b9fb61bf235e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a966f87ab6c9d0b4b63e7b9fb61bf235e">setSpawnStartTimer</a> (float time)</td></tr>
+<tr class="separator:a966f87ab6c9d0b4b63e7b9fb61bf235e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73d7ff3ac072b1a980935ee10a33d51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#af73d7ff3ac072b1a980935ee10a33d51">resetAsteroids</a> ()</td></tr>
+<tr class="separator:af73d7ff3ac072b1a980935ee10a33d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a04be42ce873892cf6c608e84df534c68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a04be42ce873892cf6c608e84df534c68">updateSpawning</a> ()</td></tr>
+<tr class="separator:a04be42ce873892cf6c608e84df534c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2832f71dc976b6fcacb58af9c56761"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a7c2832f71dc976b6fcacb58af9c56761">generateRandomTimer</a> () const</td></tr>
+<tr class="separator:a7c2832f71dc976b6fcacb58af9c56761"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a27af80be979b9f62d9c4515235b4efad"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="class_asteroid.html">Asteroid</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a27af80be979b9f62d9c4515235b4efad">m_asteroidsVector</a></td></tr>
-<tr class="separator:a27af80be979b9f62d9c4515235b4efad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1656d6257c7a4d6b605fb34a71e83d8c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_asteroid_1_1_resources.html">Asteroid::Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a1656d6257c7a4d6b605fb34a71e83d8c">m_sptrResources</a></td></tr>
+<tr class="separator:a1656d6257c7a4d6b605fb34a71e83d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17948321621ea02d3cebfa53f2e94af4"><td class="memItemLeft" align="right" valign="top">float const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a17948321621ea02d3cebfa53f2e94af4">m_UPDATE_DT</a></td></tr>
+<tr class="separator:a17948321621ea02d3cebfa53f2e94af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3299e1d72666aed399724e233b840f58"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_asteroid.html">Asteroid</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a3299e1d72666aed399724e233b840f58">m_asteroidsVector</a></td></tr>
+<tr class="separator:a3299e1d72666aed399724e233b840f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aeab58c5c4e04d93eb9c0acfbd8ea3e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#a9aeab58c5c4e04d93eb9c0acfbd8ea3e">m_asteroidSpawnTimer</a></td></tr>
+<tr class="separator:a9aeab58c5c4e04d93eb9c0acfbd8ea3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa343310016a140fdc98e460a83a63225"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#aa343310016a140fdc98e460a83a63225">m_asteroidSpawnFrequency</a></td></tr>
+<tr class="separator:aa343310016a140fdc98e460a83a63225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5c45890cf3701730b89e33520f734b9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#aa5c45890cf3701730b89e33520f734b9">m_asteroidSpawnStart</a></td></tr>
+<tr class="separator:aa5c45890cf3701730b89e33520f734b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
+<dd>
+Rafael Plugge</dd></dl>
 <p>A manager of asteroids, reuses a vector of asteroids. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8f60197b9c284c845a7589adf9d08e6b"></a>
@@ -130,15 +162,103 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3ef884362d5c531fd1a31793518b0013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef884362d5c531fd1a31793518b0013">&#9670;&nbsp;</a></span>~AsteroidManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AsteroidManager::~AsteroidManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac987354c630398756107476d1cfc474b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac987354c630398756107476d1cfc474b">&#9670;&nbsp;</a></span>getAsteroidVector()</h2>
+<a id="aef330f60c4a125e7ee381631889d8391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef330f60c4a125e7ee381631889d8391">&#9670;&nbsp;</a></span>draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="class_asteroid.html">Asteroid</a> &gt; &gt; &amp; AsteroidManager::getAsteroidVector </td>
+          <td class="memname">void AsteroidManager::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_window.html">Window</a> &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float const &amp;&#160;</td>
+          <td class="paramname"><em>deltaTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Draw all alive asteroids</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>reference to target window</td></tr>
+    <tr><td class="paramname">deltaTime</td><td>read-only reference to delta time from last draw call.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7c2832f71dc976b6fcacb58af9c56761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c2832f71dc976b6fcacb58af9c56761">&#9670;&nbsp;</a></span>generateRandomTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AsteroidManager::generateRandomTimer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>generate number from 0 to 3.</p>
+<dl class="section return"><dt>Returns</dt><dd>A whole number from 0 [inclusive] to 3 [inclusive] as a float.</dd></dl>
+
+</div>
+</div>
+<a id="a2007ebff0e0b7ff38fd18900a14ced0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2007ebff0e0b7ff38fd18900a14ced0d">&#9670;&nbsp;</a></span>getAsteroidVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_asteroid.html">Asteroid</a> &gt; &amp; AsteroidManager::getAsteroidVector </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -147,6 +267,31 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>A getter of the vector of asteroid pointers.</p>
 <dl class="section return"><dt>Returns</dt><dd>Return the vector of pointers to asteroids.</dd></dl>
+
+</div>
+</div>
+<a id="a77ff56868980f736fbaa411000b4e08a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77ff56868980f736fbaa411000b4e08a">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AsteroidManager::init </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_asteroid_1_1_resources.html">Asteroid::Resources</a> &gt;&#160;</td>
+          <td class="paramname"><em>sptrResources</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize asteroid manager resources.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sptrResources</td><td>shared pointer to asteroid resources (assumed to be valid).</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -168,9 +313,68 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a27af80be979b9f62d9c4515235b4efad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27af80be979b9f62d9c4515235b4efad">&#9670;&nbsp;</a></span>m_asteroidsVector</h2>
+<a id="af73d7ff3ac072b1a980935ee10a33d51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73d7ff3ac072b1a980935ee10a33d51">&#9670;&nbsp;</a></span>resetAsteroids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AsteroidManager::resetAsteroids </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this function will set all asteroids to inactive.</p>
+
+</div>
+</div>
+<a id="a966f87ab6c9d0b4b63e7b9fb61bf235e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a966f87ab6c9d0b4b63e7b9fb61bf235e">&#9670;&nbsp;</a></span>setSpawnStartTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AsteroidManager::setSpawnStartTimer </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a998ee2908933dd9bad98581374578221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998ee2908933dd9bad98581374578221">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AsteroidManager::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Update vector of asteroids</p>
+
+</div>
+</div>
+<a id="a04be42ce873892cf6c608e84df534c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04be42ce873892cf6c608e84df534c68">&#9670;&nbsp;</a></span>updateSpawning()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +383,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="class_asteroid.html">Asteroid</a>&gt; &gt; AsteroidManager::m_asteroidsVector</td>
+          <td class="memname">void AsteroidManager::updateSpawning </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -188,6 +395,146 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Updates the spawning mechanic of the asteroids.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa343310016a140fdc98e460a83a63225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa343310016a140fdc98e460a83a63225">&#9670;&nbsp;</a></span>m_asteroidSpawnFrequency</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AsteroidManager::m_asteroidSpawnFrequency</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define length of time between asteroid spawns.</p>
+
+</div>
+</div>
+<a id="aa5c45890cf3701730b89e33520f734b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5c45890cf3701730b89e33520f734b9">&#9670;&nbsp;</a></span>m_asteroidSpawnStart</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AsteroidManager::m_asteroidSpawnStart</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define when the asteroids will start spawning.</p>
+
+</div>
+</div>
+<a id="a9aeab58c5c4e04d93eb9c0acfbd8ea3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aeab58c5c4e04d93eb9c0acfbd8ea3e">&#9670;&nbsp;</a></span>m_asteroidSpawnTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AsteroidManager::m_asteroidSpawnTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define how long since last spawned asteroid.</p>
+
+</div>
+</div>
+<a id="a3299e1d72666aed399724e233b840f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3299e1d72666aed399724e233b840f58">&#9670;&nbsp;</a></span>m_asteroidsVector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_asteroid.html">Asteroid</a>&gt; AsteroidManager::m_asteroidsVector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define our stl container of Asteroids.</p>
+
+</div>
+</div>
+<a id="a1656d6257c7a4d6b605fb34a71e83d8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1656d6257c7a4d6b605fb34a71e83d8c">&#9670;&nbsp;</a></span>m_sptrResources</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_asteroid_1_1_resources.html">Asteroid::Resources</a>&gt; AsteroidManager::m_sptrResources</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>shared pointer to loaded resources.</p>
+
+</div>
+</div>
+<a id="a17948321621ea02d3cebfa53f2e94af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17948321621ea02d3cebfa53f2e94af4">&#9670;&nbsp;</a></span>m_UPDATE_DT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float const&amp; AsteroidManager::m_UPDATE_DT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>store read-only reference to update delta time, in seconds.</p>
 
 </div>
 </div>

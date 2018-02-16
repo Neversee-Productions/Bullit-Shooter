@@ -21,7 +21,7 @@ SceneManager::SceneManager(
 	m_controller = std::make_shared<Controller>();
 	this->addAllScenes();
 	
-	const std::string firstScene = "Game";
+	const std::string firstScene = "MainMenu";
 	for (auto itt = m_sceneMap.begin(), end = m_sceneMap.end(); itt != end; ++itt)
 	{
 		auto & mapPair = *itt;
@@ -81,9 +81,7 @@ void SceneManager::addAllScenes()
 
 	// load our scenes paths
 
-	std::ifstream rawFile("resources/scenes.json");
-	json::json jsonLoader;
-	rawFile >> jsonLoader;
+	json::json jsonLoader = util::loadJsonFromFile("resources/scenes.json");
 	
 	// Splash Scene
 	sptrScene = std::make_shared<SplashScene>();
@@ -106,7 +104,7 @@ void SceneManager::addAllScenes()
 	this->addScene(sptrScene, std::move(uptrResources));
 
 	// Game Scene
-	sptrScene = std::make_shared<GameScene>(*m_keyHandler);
+	sptrScene = std::make_shared<GameScene>(m_keyHandler, m_controller);
 	uptrResources = std::make_unique<std::string>(jsonLoader.at(sptrScene->getName()).get<std::string>());
 	this->addScene(sptrScene, std::move(uptrResources));
 }
@@ -204,7 +202,8 @@ void SceneManager::loadScene(const std::string & name)
 		auto & mapValue = itt->second;
 		auto sptrScene = mapValue.m_scene;
 		const auto & resourcePath = *mapValue.m_resourcePath;
-		std::unique_ptr<std::thread> uptrThread = std::move(mapValue.m_thread);
+		std::unique_ptr<std::thread> uptrThread(nullptr);
+		uptrThread.swap(mapValue.m_thread);
 		if (uptrThread)
 		{
 			uptrThread->join();
@@ -252,6 +251,7 @@ void SceneManager::goToNextScene()
 /// </summary>
 void SceneManager::update()
 {
+	m_controller->update();
 	if (m_currentScene->getNextSceneName() == "")
 	{
 		m_currentScene->update();
@@ -262,6 +262,7 @@ void SceneManager::update()
 		m_currentScene->update();
 	}
 	m_keyHandler->update();
+	m_controller->update();
 }
 
 /// <summary>

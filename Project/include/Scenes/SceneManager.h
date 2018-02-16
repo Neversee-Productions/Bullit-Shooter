@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include <fstream>
 #include <string>
-#include "ResourceHandler.h"
+#include "system\ResourceHandler.h"
 #include "Scene.h"
 #include "Scenes\SplashScreen\SplashScene.h"
 #include "Scenes\TitleScene\TitleScene.h"

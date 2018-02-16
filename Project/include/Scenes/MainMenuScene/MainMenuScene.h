@@ -3,7 +3,9 @@
 
 #include "scenes\Scene.h"
 #include "gui\GUI.h"
-#include "App.h"
+#include "system\App.h"
+#include "entities\Background.h"
+#include "util\JsonLoader.h"
 
 /// 
 /// @brief Represents our main menu.
@@ -35,6 +37,9 @@ private:
 		/// 
 		/// </summary>
 		std::shared_ptr<sf::Texture> m_sptrButtonTexture;
+
+		std::shared_ptr<Background::Resources> m_sptrBackground =
+			std::make_shared<Background::Resources>();
 	};
 
 public:
@@ -103,6 +108,13 @@ private:
 	/// 
 	/// </summary>
 	std::string m_nextName;
+
+	/// <summary>
+	/// @brief This is the menu background.
+	/// 
+	/// 
+	/// </summary>
+	Background m_background;
 
 };
 

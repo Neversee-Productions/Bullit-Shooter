@@ -18,6 +18,13 @@ Ship::Ship()
 	, m_FRAME_STILL(nullptr)
 	, m_ID("ship")
 	, m_pressed()
+	, m_velocity(sf::Vector2f(0.0f,0.0f))
+	, m_accelerationRate(7.0f * 60.0f)
+	, m_directionVec(0.0f,0.0f)
+	, m_moveDir(0.0f,0.0f)
+	, m_acceleration(10.0f)
+	, m_isDocking(false)
+	, m_initialPosition(m_position)
 {
 	m_shipRect.setPosition(m_position);
 	m_shipRect.setSize(sf::Vector2f(75.0f, 100.0f));
@@ -52,8 +59,34 @@ void Ship::init(std::shared_ptr<Resources> resources)
 /// </summary>
 void Ship::update()
 {
+	auto dt = App::getUpdateDeltaTime();
+
+	if (thor::length(m_directionVec) != 0)
+	{
+		m_moveDir = thor::unitVector(m_directionVec);
+		if (thor::length(m_velocity) < m_maxVel)
+		{
+			m_velocity.x += m_moveDir.x * m_acceleration;
+			if (!m_isDocking)
+			{
+				m_velocity.y += m_moveDir.y * m_acceleration;
+			}
+		}
+	}
+	if (m_isDocking)
+	{
+		m_velocity.y = (App::getViewC2Rect().max.y - m_position.y);
+	}
+	m_position.y += m_velocity.y * dt;
+	m_position.x += m_velocity.x * dt;
+
+	m_velocity *= 0.98f;
+	
 	processInput(m_pressed);
 	m_shipRect.setPosition(m_position);
+
+	checkOffScreen();
+
 }
 
 /// <summary>
@@ -99,46 +132,6 @@ void Ship::draw(Window & window, const float & deltaTime)
 }
 
 /// <summary>
-/// @brief simple method that moves the player up.
-/// 
-/// 
-/// </summary>
-void Ship::moveUp()
-{
-	m_position.y -= m_speed;
-}
-
-/// <summary>
-/// @brief sumple method that moves the player down.
-/// 
-/// 
-/// </summary>
-void Ship::moveDown()
-{
-	m_position.y += m_speed;
-}
-
-/// <summary>
-/// @brief sumple method that moves the player left.
-/// 
-/// 
-/// </summary>
-void Ship::moveLeft()
-{
-	m_position.x -= m_speed;
-}
-
-/// <summary>
-/// @brief sumple method that moves the player right.
-/// 
-/// 
-/// </summary>
-void Ship::moveRight()
-{
-	m_position.x += m_speed;
-}
-
-/// <summary>
 /// @brief Where ship processes input.
 /// 
 /// 
@@ -151,7 +144,7 @@ void Ship::processInput(const KeysPressed & keysPressed)
 
 	if (keysPressed.m_left)
 	{
-		moveLeft();
+		m_directionVec.x = -1;
 		if (m_currentFrame > (*m_FRAME_STILL) + OFFSET)
 		{
 			decFrame();
@@ -166,6 +159,7 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	}
 	else if (!keysPressed.m_right)
 	{
+		m_directionVec.x = 0;
 		if (m_currentFrame < (*m_FRAME_STILL) - OFFSET)
 		{
 			incFrame();
@@ -178,7 +172,7 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	}
 	if (keysPressed.m_right)
 	{
-		moveRight();
+		m_directionVec.x = 1;
 		if (m_currentFrame < (*m_FRAME_STILL) - OFFSET)
 		{
 			incFrame();
@@ -193,6 +187,7 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	}
 	else if (!keysPressed.m_left)
 	{
+		m_directionVec.x = 0;
 		if (m_currentFrame > (*m_FRAME_STILL) + OFFSET)
 		{
 			decFrame();
@@ -205,11 +200,19 @@ void Ship::processInput(const KeysPressed & keysPressed)
 	}
 	if (keysPressed.m_up)
 	{
-		moveUp();
+		m_directionVec.y = -1;
+	}
+	else if (!keysPressed.m_down)
+	{
+		m_directionVec.y = 0;
 	}
 	if (keysPressed.m_down)
 	{
-		moveDown();
+		m_directionVec.y = 1;
+	}
+	else if (!keysPressed.m_up)
+	{
+		m_directionVec.y = 0;
 	}
 }
 
@@ -273,6 +276,76 @@ void Ship::setFrames(std::unique_ptr<ShipFrames> uptrShipFrames)
 {
 	m_shipFrames.swap(uptrShipFrames);
 	std::unique_ptr<ShipFrames>(nullptr).swap(uptrShipFrames);
+}
+
+/// <summary>
+/// @brief This is a function that will check if player has gone off the screen.
+/// 
+/// 
+/// </summary>
+void Ship::checkOffScreen()
+{
+	tinyh::c2AABB screenSize = App::getViewC2Rect(); // get the screen view rectangle.
+	auto shipRect = m_shipRect.getLocalBounds(); //get the ship rectangle in local bounds.
+	if (m_position.x + shipRect.width > screenSize.max.x) //if ship is going off the right side of the screen set them back
+	{
+		m_position.x = screenSize.max.x - shipRect.width;
+	}
+	if (m_position.x - shipRect.width < 0) //if ship is going off the left side of the screen set them back
+	{
+		m_position.x = 0 + shipRect.width;
+	}
+	if (m_position.y + (shipRect.height / 2) > screenSize.max.y) //if ship is going off the bottom of the screen set them back
+	{
+		m_position.y = screenSize.max.y - (shipRect.height / 2);
+	}
+	if (m_position.y - (shipRect.height / 2) < 0) //if ship is going off the top of the screen set them back
+	{
+		m_position.y = 0 + (shipRect.height / 2);
+	}
+}
+
+/// <summary>
+/// @brief a setter function that will set the docking state to passed parameter.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new value of m_isDocking</param>
+void Ship::setDocking(bool check)
+{
+	m_isDocking = check;
+}
+
+/// <summary>
+/// @brief a getter for the docking boolean.
+/// 
+/// 
+/// </summary>
+/// <returns></returns>
+bool Ship::getDocking()
+{
+	return m_isDocking;
+}
+/// <summary>
+/// @brief this method takes in a vector2f and assigns it to the position of the ship.
+/// 
+/// 
+/// </summary>
+/// <param name="pos">new position of the ship defined as vector2f</param>
+void Ship::setPosition(sf::Vector2f pos)
+{
+	m_position = pos;
+}
+
+/// <summary>
+/// @brief this method does all the resetting of the ship.
+/// 
+/// 
+/// </summary>
+void Ship::resetShip()
+{
+	m_position = m_initialPosition;
+	m_velocity = sf::Vector2f(0.0f, 0.0f);
 }
 
 

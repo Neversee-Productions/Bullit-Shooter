@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['b',['B',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a9d5ed678fe57bcca610140957afab571',1,'Controller.h']]],
-  ['back',['Back',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a0557fa923dcee4d0f86b1409f5c2167f',1,'Controller.h']]]
+  ['btncircle',['btnCircle',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a2d19343b22cc0b3c521c82b7498828fd',1,'Controller.h']]],
+  ['btnsquare',['btnSquare',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a113b34323d1de2757ee16ef6e3bff679',1,'Controller.h']]],
+  ['btntriangle',['btnTriangle',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0af3d3518fe08080eb6260c3923c2133e7',1,'Controller.h']]],
+  ['btnx',['btnX',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a80d8c3b88a3aea40117dfb630b5c2c66',1,'Controller.h']]]
 ];

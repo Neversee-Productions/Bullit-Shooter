@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "system\Window.h"
 
 /// <summary>
 /// @brief Creates and window wrapper.
@@ -33,10 +33,10 @@ Window::Window(KeyHandler & keyHandler)
 	///////////////////////////////////////////////////////
 	// define our current resolution.
 	///////////////////////////////////////////////////////
-	// //windowed mode
+	 //windowed mode
 	//m_style = sf::Style::Default;
 	//m_resolution = sf::VideoMode(1366u, 768u);
-	 //fullscreen mode
+	// //fullscreen mode
 	m_style = sf::Style::Fullscreen;
 	m_resolution = fullscreenRes.at(0);
 
@@ -238,6 +238,19 @@ void Window::draw(const sf::Drawable & drawable)
 void Window::draw(const sf::Drawable & drawable, const sf::RenderStates & renderState)
 {
 	m_renderTexture.draw(drawable, renderState);
+}
+
+/// <summary>
+/// @brief Draws the vertices on the render texture.
+/// 
+/// Used when drawing primitives.
+/// </summary>
+/// <param name="vertices">pointer to array of vertices.</param>
+/// <param name="size">size of array</param>
+/// <param name="primitiveTypes">type of primitive to be drawn</param>
+void Window::draw(sf::Vertex const * vertices, int const & size, sf::PrimitiveType const & primitiveTypes)
+{
+	m_renderTexture.draw(vertices, size, primitiveTypes, sf::RenderStates::Default);
 }
 
 /// <summary>

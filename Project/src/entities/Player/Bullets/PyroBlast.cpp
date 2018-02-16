@@ -19,6 +19,8 @@ bullets::PyroBlast::PyroBlast()
 	m_bulletRect.setSize(sf::Vector2f(100.0f, 120.0f));
 	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 
+	m_type = BulletTypes::PyroBlast;
+
 	//change collision rectangle
 	updateBox();
 }
@@ -125,6 +127,29 @@ bool bullets::PyroBlast::checkCircleCollision(const tinyh::c2Circle & other)
 		}
 	}
 	else if(tinyh::c2CircletoAABB(other, m_bulletC2Rect))
+	{
+		return true;
+	}
+	return false;
+}
+
+/// <summary>
+/// @brief Check collision between bullet and another object OR against bullets explosion and other object.
+/// 
+/// 
+/// </summary>
+/// <param name="other">other object.</param>
+/// <returns>true if collision happened otherwise false.</returns>
+bool bullets::PyroBlast::checkAABBCollision(const tinyh::c2AABB & other)
+{
+	if (m_explode)
+	{
+		if (tinyh::c2CircletoAABB(m_explosionCircleCollider, other))
+		{
+			return true;
+		}
+	}
+	else if (tinyh::c2AABBtoAABB(other, m_bulletC2Rect))
 	{
 		return true;
 	}

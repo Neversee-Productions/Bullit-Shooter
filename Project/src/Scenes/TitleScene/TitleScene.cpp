@@ -69,7 +69,11 @@ void TitleScene::stop()
 /// </summary>
 void TitleScene::update()
 {
-	if (m_keyHandler->isAnyPressed())
+	if (
+		m_keyHandler->isAnyPressed()
+		|| 
+		(m_controller->isConnected() && m_controller->isAnyButtonPressed())
+		)
 	{
 		goToNextScene();
 	}

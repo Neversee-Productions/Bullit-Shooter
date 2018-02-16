@@ -1,13 +1,15 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "Window.h"
+#include "input\Controller.h"
+#include "system\Window.h"
 #include "..\Background.h"
 #include "Ship.h"
 #include "Weapon.h"
 #include "BulletManager.h"
 #include "Shield.h"
 #include "Connector.h"
+#include "sound\SoundManager.h"
 
 ///
 /// @brief Player class.
@@ -60,7 +62,7 @@ public:
 	};
 
 public:
-	Player(KeyHandler& keyHandler, Background & background);
+	Player(KeyHandler& keyHandler, Controller& controller, Background & background);
 	void init(std::shared_ptr<Resources> resources);
 	void draw(Window & window, const float & deltaTime);
 	void update();
@@ -76,6 +78,7 @@ public:
 	sf::Vector2f const & getLeftWeaponPos();
 	sf::Vector2f const & getRightWeaponPos();
 	bool const & isAlive();
+	bool const & isInvulnerable();
 	void setConnectorPos(sf::Vector2f leftConnectorPos, sf::Vector2f rightConnectorPos);
 	void setAttachedWeapons(bool check);
 	const sf::Vector2f & getLeftConnectorPos();
@@ -83,9 +86,16 @@ public:
 	void fadeOutWeapons();
 	void setWeaponsAlpha(float alpha);
 	void setCanFire(bool fire);
+	const bool isDocking();
+	void setPosition(sf::Vector2f pos);
+	void resetBullets();
+	void resetWeapons();
+	void reset();
 
 private:
 	void switchWeaponInput();
+	bool checkAxis(float const & axis, bool flipped);
+	bool checkAxisThruster(float const & axis);
 
 private:
 	/// <summary>
@@ -137,6 +147,19 @@ private:
 	/// 
 	/// </summary>
 	KeyHandler& m_keyHandler;
+
+	/// <summary>
+	/// @brief reference to the controller.
+	/// 
+	/// Allows for enquiry on inputs.
+	/// </summary>
+	Controller & m_controller;
+
+	/// @brief reference to our sound manager instance.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
 
 	/// <summary>
 	/// @brief the bullet manager object.

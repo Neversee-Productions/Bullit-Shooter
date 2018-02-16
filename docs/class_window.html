@@ -108,6 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adfb2d5826942693e289d13f314a341f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae736a308a17d5f8e60dbc94cb96e6704"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#ae736a308a17d5f8e60dbc94cb96e6704">draw</a> (const sf::Drawable &amp;drawable, const sf::RenderStates &amp;renderState)</td></tr>
 <tr class="separator:ae736a308a17d5f8e60dbc94cb96e6704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adddf431e419af6fcb7717cee16e68bcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#adddf431e419af6fcb7717cee16e68bcb">draw</a> (sf::Vertex const *vertices, int const &amp;size, sf::PrimitiveType const &amp;primitiveTypes)</td></tr>
+<tr class="separator:adddf431e419af6fcb7717cee16e68bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afadfafa5a0b9472554759004aafb327e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#afadfafa5a0b9472554759004aafb327e">display</a> ()</td></tr>
 <tr class="separator:afadfafa5a0b9472554759004aafb327e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a761d614931fb5a5daa70e4f580c3e78e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a761d614931fb5a5daa70e4f580c3e78e">isOpen</a> () const</td></tr>
@@ -274,7 +276,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="adfb2d5826942693e289d13f314a341f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfb2d5826942693e289d13f314a341f7">&#9670;&nbsp;</a></span>draw() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb2d5826942693e289d13f314a341f7">&#9670;&nbsp;</a></span>draw() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -300,7 +302,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ae736a308a17d5f8e60dbc94cb96e6704"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae736a308a17d5f8e60dbc94cb96e6704">&#9670;&nbsp;</a></span>draw() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae736a308a17d5f8e60dbc94cb96e6704">&#9670;&nbsp;</a></span>draw() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,6 +332,50 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">drawable</td><td>target that will be rendered on next produced frame.</td></tr>
     <tr><td class="paramname">renderState</td><td>the render state we want to apply to our target.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adddf431e419af6fcb7717cee16e68bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adddf431e419af6fcb7717cee16e68bcb">&#9670;&nbsp;</a></span>draw() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Window::draw </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vertex const *&#160;</td>
+          <td class="paramname"><em>vertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int const &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::PrimitiveType const &amp;&#160;</td>
+          <td class="paramname"><em>primitiveTypes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Draws the vertices on the render texture.</p>
+<p>Used when drawing primitives. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>pointer to array of vertices.</td></tr>
+    <tr><td class="paramname">size</td><td>size of array</td></tr>
+    <tr><td class="paramname">primitiveTypes</td><td>type of primitive to be drawn</td></tr>
   </table>
   </dd>
 </dl>
@@ -614,8 +660,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Project/include/<a class="el" href="_window_8h_source.html">Window.h</a></li>
-<li>Project/src/<a class="el" href="_window_8cpp.html">Window.cpp</a></li>
+<li>Project/include/system/<a class="el" href="_window_8h_source.html">Window.h</a></li>
+<li>Project/src/system/<a class="el" href="_window_8cpp.html">Window.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

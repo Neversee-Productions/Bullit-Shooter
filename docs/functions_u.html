@@ -92,7 +92,9 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
 , <a class="el" href="classai_1_1states_1_1_ai_basic_state.html#a0a308e5ac89cb419f58092fe06d52230">ai::states::AiBasicState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_windup_state.html#a42dd398f027a46ed39a1046cf0c15ef7">ai::states::AiBasicWindupState</a>
 , <a class="el" href="class_asteroid.html#a02d59c663aaf19a46e2a4a6317a7adbe">Asteroid</a>
+, <a class="el" href="class_asteroid_manager.html#a998ee2908933dd9bad98581374578221">AsteroidManager</a>
 , <a class="el" href="class_background.html#acab58b65d4299d4bd51b8376e8c3e3d3">Background</a>
+, <a class="el" href="class_basic_enemy_manager.html#af3968c2178a499640c8219d16da0985b">BasicEnemyManager</a>
 , <a class="el" href="class_bullet_manager.html#ae8638f3b70fe44a15413e1107ea806fe">BulletManager</a>
 , <a class="el" href="classbullets_1_1_bullet.html#a5176e4323b31a7a86f7333f85bdc3491">bullets::Bullet</a>
 , <a class="el" href="classbullets_1_1_comet_shot.html#a0546931c863b0b8eef818d601d32550f">bullets::CometShot</a>
@@ -103,9 +105,11 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
 , <a class="el" href="classbullets_1_1_null_wave.html#af1c8ab480f814e4e0cd18863a114797c">bullets::NullWave</a>
 , <a class="el" href="classbullets_1_1_pyro_blast.html#aabab03154f290dd877b075434f8dbbc3">bullets::PyroBlast</a>
 , <a class="el" href="classbullets_1_1_static_sphere.html#a018155faef0e4847342296e5b8573f9f">bullets::StaticSphere</a>
+, <a class="el" href="class_collision_system.html#ac437e5f41c5e333bf852a5fc34c0c127">CollisionSystem</a>
 , <a class="el" href="class_connector.html#add9ea7d60b351ab378b071b13b550a48">Connector</a>
 , <a class="el" href="class_controller.html#a7d04c17913f04f99429aa29fa8505484">Controller</a>
 , <a class="el" href="class_game_scene.html#a31a272239cac07b320d01c5e632df22e">GameScene</a>
+, <a class="el" href="class_game_u_i.html#ab1eeb33aa889d01ce7c01fb59b7eb50f">GameUI</a>
 , <a class="el" href="classgui_1_1_button.html#ab10f34b685d2c75e5a84c0c4ccf88ff1">gui::Button</a>
 , <a class="el" href="classgui_1_1_check_box.html#ac77e9b13ab5777d627d25a4e3c941270">gui::CheckBox</a>
 , <a class="el" href="classgui_1_1_g_u_i.html#af3d897979ff697f1b64e673f29ca8ccd">gui::GUI</a>
@@ -120,6 +124,7 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
 , <a class="el" href="class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637">SceneManager</a>
 , <a class="el" href="class_shield.html#ac27e51621d183abc5280480b3155cfb0">Shield</a>
 , <a class="el" href="class_ship.html#a3ee2f77fa9920030dc3ff8268b2f73a4">Ship</a>
+, <a class="el" href="class_sound_manager.html#a05cb0697f1a993704821098883a291f5">SoundManager</a>
 , <a class="el" href="class_splash_scene.html#a5a3a7c73a52973e2cd37b573668045b4">SplashScene</a>
 , <a class="el" href="class_title_scene.html#a54f43bb05d23c6441f0dcf2e82122b8f">TitleScene</a>
 , <a class="el" href="class_weapon.html#a2e56ccac7dd78294ac479faa639955f6">Weapon</a>
@@ -127,10 +132,9 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
 <li>UPDATE_DT
 : <a class="el" href="class_asteroid.html#abf0f15cc417c725f8a4b0eb34715ba15">Asteroid</a>
 , <a class="el" href="classbullets_1_1_bullet.html#a4cada1964c6acdfca147f5c4d3b9c960">bullets::Bullet</a>
-, <a class="el" href="class_game_scene.html#a8403905ac9441b88d26ecca580a1dc0d">GameScene</a>
 </li>
-<li>updateAsteroidSpawner()
-: <a class="el" href="class_game_scene.html#a74d1cb5e45442fda5d7812c5fee46481">GameScene</a>
+<li>UPDATE_TIME_DT
+: <a class="el" href="class_asteroid.html#a088b1ae949938650c432a2bbf8483ef0">Asteroid</a>
 </li>
 <li>updateBox()
 : <a class="el" href="classbullets_1_1_bullet.html#afa446d8e06cf333ea39897966487a2af">bullets::Bullet</a>
@@ -138,9 +142,6 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
 <li>updateCollisionCircle()
 : <a class="el" href="class_asteroid.html#a62156d3f0c9cf7f475a6bc172f372e28">Asteroid</a>
 , <a class="el" href="classbullets_1_1_static_sphere.html#a533998958bac92e39da0974df9e454e3">bullets::StaticSphere</a>
-</li>
-<li>updateCollisions()
-: <a class="el" href="class_game_scene.html#a8aff89b2744bed5991838d0ab142fc53">GameScene</a>
 </li>
 <li>updateExplosionCircle()
 : <a class="el" href="classbullets_1_1_pyro_blast.html#a541c8e363ce9e4e13a1f3c981c4c39d9">bullets::PyroBlast</a>
@@ -151,12 +152,33 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
 <li>updateKey()
 : <a class="el" href="class_key_handler.html#a9286e652204a3e49b7674f47f0ac99fa">KeyHandler</a>
 </li>
+<li>updatePlayer()
+: <a class="el" href="class_collision_system.html#a48669d22216ee7dbbca479e2da102a59">CollisionSystem</a>
+</li>
+<li>updatePlayerBullets()
+: <a class="el" href="class_collision_system.html#a46dcd9e3709b690fdd3b2d5033dc8cfe">CollisionSystem</a>
+</li>
+<li>updatePlayerBulletToAsteroids()
+: <a class="el" href="class_collision_system.html#ac6f8e5f581918d68dfb127550b1e7b0b">CollisionSystem</a>
+</li>
+<li>updatePlayerBulletToEnemies()
+: <a class="el" href="class_collision_system.html#a9b5461a92c3a8c40a4d3c88fc70fc9ce">CollisionSystem</a>
+</li>
+<li>updatePlayerToGameUi()
+: <a class="el" href="class_collision_system.html#ade3c11d32e64f9ea4d3f307cf823e087">CollisionSystem</a>
+</li>
+<li>updatePlayerToPickup()
+: <a class="el" href="class_collision_system.html#a2e8e9da06eff9b3206ca42e00124d70a">CollisionSystem</a>
+</li>
 <li>updatePosition()
 : <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#aa4030856fcc1c3ee4c29a7ddef2e2df7">ai::states::AiBasicChargeState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html#ab92fb9273c08b7d67fbb4d4e1c78da11">ai::states::AiBasicSeekState</a>
 </li>
 <li>updateShape()
 : <a class="el" href="classgui_1_1_widget.html#ad76ef53c8e689a3b002e155ed436e168">gui::Widget</a>
+</li>
+<li>updateSpawning()
+: <a class="el" href="class_asteroid_manager.html#a04be42ce873892cf6c608e84df534c68">AsteroidManager</a>
 </li>
 <li>updateSpeed()
 : <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#a711c989bfe97fe82bb78d63004e19e64">ai::states::AiBasicChargeState</a>

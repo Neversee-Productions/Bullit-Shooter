@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('class_bullet_manager.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_bullet_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -130,6 +131,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7a1c306efeb419cf4df73cb940669dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55909cda5bcaa595efe6187880f2d812"><td class="memItemLeft" align="right" valign="top">const std::map&lt; <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &gt; &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a55909cda5bcaa595efe6187880f2d812">getBulletMap</a> ()</td></tr>
 <tr class="separator:a55909cda5bcaa595efe6187880f2d812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c0859aed5848da5037fa65df9db04f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a82c0859aed5848da5037fa65df9db04f">clearAllBullets</a> ()</td></tr>
+<tr class="separator:a82c0859aed5848da5037fa65df9db04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a4f40098016265b8ea173d998abcdc22a"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, const std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a4f40098016265b8ea173d998abcdc22a">BulletTypeStringMap</a></td></tr>
+<tr class="separator:a4f40098016265b8ea173d998abcdc22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -141,13 +149,41 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a094aedb5357033af0d21ffd714890105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a330391f4a26e794cb9980611bf15add9"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_bullet_manager_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a330391f4a26e794cb9980611bf15add9">m_resources</a></td></tr>
 <tr class="separator:a330391f4a26e794cb9980611bf15add9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52ca07bdae59784e195be4300cfaed01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a52ca07bdae59784e195be4300cfaed01">m_soundManager</a></td></tr>
+<tr class="separator:a52ca07bdae59784e195be4300cfaed01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a387ddca238e2ee29e0d663c508938f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bullet_manager.html#a4f40098016265b8ea173d998abcdc22a">BulletTypeStringMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a2a387ddca238e2ee29e0d663c508938f">m_soundFireMap</a></td></tr>
+<tr class="separator:a2a387ddca238e2ee29e0d663c508938f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
 <dd>
 Rafael Plugge</dd></dl>
 <p>A class to manage bullets. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a4f40098016265b8ea173d998abcdc22a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f40098016265b8ea173d998abcdc22a">&#9670;&nbsp;</a></span>BulletTypeStringMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::unordered_map&lt;<a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>, const std::string&gt; <a class="el" href="class_bullet_manager.html#a4f40098016265b8ea173d998abcdc22a">BulletManager::BulletTypeStringMap</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Alias for a (bullet_type: constant string) map.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4aae3d492898b93dd5730dc28f2cc910"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4aae3d492898b93dd5730dc28f2cc910">&#9670;&nbsp;</a></span>BulletManager()</h2>
 
@@ -167,6 +203,24 @@ Rafael Plugge</dd></dl>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a82c0859aed5848da5037fa65df9db04f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c0859aed5848da5037fa65df9db04f">&#9670;&nbsp;</a></span>clearAllBullets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BulletManager::clearAllBullets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method will run through all the bullets and set them to inactive. This will be used on resetting the game to prevent bullets from still being active and on screen when the user restarts the game. This will iterate through the map of bullet vectors and then each bullet in a vector and set their active state to false.</p>
+
+</div>
+</div>
 <a id="adc7565464b026ddc98b02a70c558c74a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc7565464b026ddc98b02a70c558c74a">&#9670;&nbsp;</a></span>draw()</h2>
 
@@ -602,6 +656,53 @@ template&lt;typename data_type &gt; </div>
 </div><div class="memdoc">
 <p>shared pointer to loaded resources.</p>
 <p>This shared pointer is nullptr until resources are loaded and <a class="el" href="class_bullet_manager.html#ad0d1d44d7cc99a2a57f7fe8234a2cf28">BulletManager::init</a> is called. </p>
+
+</div>
+</div>
+<a id="a2a387ddca238e2ee29e0d663c508938f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a387ddca238e2ee29e0d663c508938f">&#9670;&nbsp;</a></span>m_soundFireMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_bullet_manager.html#a4f40098016265b8ea173d998abcdc22a">BulletTypeStringMap</a> BulletManager::m_soundFireMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Map of bullet types to fire string.</p>
+
+</div>
+</div>
+<a id="a52ca07bdae59784e195be4300cfaed01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52ca07bdae59784e195be4300cfaed01">&#9670;&nbsp;</a></span>m_soundManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sound_manager.html">SoundManager</a>&amp; BulletManager::m_soundManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>reference to sound manager instance.</p>
+<p>used for playing sounds when firing. </p>
 
 </div>
 </div>

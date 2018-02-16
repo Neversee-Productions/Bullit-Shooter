@@ -8,7 +8,8 @@
 // Thor Includes
 #include "Thor/Animations.hpp"
 // Project Includes
-#include "Window.h"
+#include "system\Window.h"
+#include "sound\SoundManager.h"
 #include "Weapon.h"
 #include "Bullets/Bullet.h"
 #include "Bullets/Standard.h"
@@ -74,6 +75,15 @@ public:
 	void fireEmpowered(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
 	void setEmpowered(bullets::Bullet& bullet ,const float& angle, const sf::Vector2f& pos);
 	const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & getBulletMap();
+	void clearAllBullets();
+
+private:
+	/// <summary>
+	/// @brief Alias for a (bullet_type: constant string) map.
+	/// 
+	/// 
+	/// </summary>
+	typedef std::unordered_map<BulletTypes, const std::string> BulletTypeStringMap;
 
 private:
 	/// <summary>
@@ -104,6 +114,21 @@ private:
 	/// and BulletManager::init is called.
 	/// </summary>
 	std::shared_ptr<Resources> m_resources;
+
+	/// <summary>
+	/// @brief reference to sound manager instance.
+	/// 
+	/// used for playing sounds when firing.
+	/// </summary>
+	SoundManager & m_soundManager;
+
+	/// <summary>
+	/// @brief Map of bullet types to fire string.
+	/// 
+	/// 
+	/// </summary>
+	BulletTypeStringMap m_soundFireMap;
+
 };
 #endif // !BULLETMANAGER_H
 

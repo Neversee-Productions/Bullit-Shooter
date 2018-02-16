@@ -111,6 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab3d221289c869b982e8d4d7b3a49801f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ae33775a9a71f47c85130edc9cb6326"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a3ae33775a9a71f47c85130edc9cb6326">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
 <tr class="separator:a3ae33775a9a71f47c85130edc9cb6326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa581777d7859ebe3c69568e002bbe2e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#aa581777d7859ebe3c69568e002bbe2e4">spawn</a> (sf::Vector2f const &amp;position, sf::Vector2f const &amp;size, <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;pickupType)</td></tr>
+<tr class="separator:aa581777d7859ebe3c69568e002bbe2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0ad703af8b153c6e99c6047ec38256c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#ae0ad703af8b153c6e99c6047ec38256c">setRightPosition</a> (sf::Vector2f pos)</td></tr>
 <tr class="separator:ae0ad703af8b153c6e99c6047ec38256c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae75817cf6c64f7521398f91f92075392"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#ae75817cf6c64f7521398f91f92075392">setLeftPosition</a> (sf::Vector2f pos)</td></tr>
@@ -138,6 +140,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a371bdea3f77ab359ca9a5e2caa72fd16"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="struct_pickup_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a371bdea3f77ab359ca9a5e2caa72fd16">m_resources</a></td></tr>
+<tr class="separator:a371bdea3f77ab359ca9a5e2caa72fd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9e267c39e4a4b8da1bd7de9ee50391c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Texture &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#ae9e267c39e4a4b8da1bd7de9ee50391c">m_texture</a></td></tr>
 <tr class="separator:ae9e267c39e4a4b8da1bd7de9ee50391c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b2de1579e105f5b799c8a4d8bbcff19"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pickup.html#a0b2de1579e105f5b799c8a4d8bbcff19">m_rightPosition</a></td></tr>
@@ -542,6 +546,49 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa581777d7859ebe3c69568e002bbe2e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa581777d7859ebe3c69568e002bbe2e4">&#9670;&nbsp;</a></span>spawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pickup::spawn </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2f const &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f const &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;&#160;</td>
+          <td class="paramname"><em>pickupType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Spawn pickup at location with specified type.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>read-only reference to the spawn position.</td></tr>
+    <tr><td class="paramname">size</td><td>read-only reference to the spawn size.</td></tr>
+    <tr><td class="paramname">pickupType</td><td>read-only reference to the pickup type.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab3d221289c869b982e8d4d7b3a49801f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab3d221289c869b982e8d4d7b3a49801f">&#9670;&nbsp;</a></span>update()</h2>
 
@@ -742,6 +789,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>origin of the texture.</p>
+
+</div>
+</div>
+<a id="a371bdea3f77ab359ca9a5e2caa72fd16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a371bdea3f77ab359ca9a5e2caa72fd16">&#9670;&nbsp;</a></span>m_resources</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="struct_pickup_1_1_resources.html">Resources</a>&gt; Pickup::m_resources</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define shared pointer to resources.</p>
 
 </div>
 </div>

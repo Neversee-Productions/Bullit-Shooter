@@ -11,7 +11,7 @@
 // Json Includes
 #include "json\json.hpp"
 // Project Includes
-#include "ResourceHandler.h"
+#include "system\ResourceHandler.h"
 #include "entities\Entities.h"
 #include "entities\ai\AiBase.h"
 
@@ -84,7 +84,7 @@ namespace ai
 		friend class ai::states::AiBasicRecoverState;
 
 	public: // Constructors/Destructor
-		AiBasic(Player const & player);
+		AiBasic(Player const & player, sf::Vector2f const & position = { 0.0f, 0.0f });
 		~AiBasic() = default;
 
 	public: // Public Member Functions
@@ -95,6 +95,11 @@ namespace ai
 		bool checkCollision(tinyh::c2Circle const & collision) const;
 		bool checkCollision(tinyh::c2AABB const & collision) const;
 		bool checkCollision(tinyh::c2Capsule const & collision) const;
+		tinyh::c2AABB const & getCollisionAABB() const;
+		bool decrementHealth(float const & damage);
+		bool isActive() const;
+		void setActive(bool const & newActive);
+		void spawn(sf::Vector2f const & spawnPosition);
 
 	protected: // Protected Member Functions
 		void setState(std::shared_ptr<SeekState> sptrState, bool rememberPrevious);
@@ -103,6 +108,20 @@ namespace ai
 		void updateHitbox(sf::RectangleShape const & box);
 
 	protected: // Protected Member Variables
+		/// <summary>
+		/// @brief Determines if enemy is active.
+		/// 
+		/// 
+		/// </summary>
+		bool m_active;
+
+		/// <summary>
+		/// @brief Pertains the ai's current health.
+		/// 
+		/// 
+		/// </summary>
+		float m_health;
+
 		/// <summary>
 		/// @brief Describes the position of the ai.
 		/// 
@@ -138,6 +157,13 @@ namespace ai
 		/// Needed for search for him and for attack aiming.
 		/// </summary>
 		Player const & m_player;
+
+		/// <summary>
+		/// @brief Ai's sfml collision shape.
+		/// 
+		/// Used for setting the collision rect.
+		/// </summary>
+		sf::RectangleShape m_collisionShape;
 
 		/// <summary>
 		/// @brief Ai has a AABB Rectangular collision.
@@ -239,6 +265,13 @@ namespace ai
 		/// the render quad of each ai.
 		/// </summary>
 		static bool const s_COLOR_STATES;
+
+		/// <summary>
+		/// @brief Static defines what all ai's max health.
+		/// 
+		/// 
+		/// </summary>
+		static float const s_MAX_HEALTH;
 	};
 
 	/// <summary>

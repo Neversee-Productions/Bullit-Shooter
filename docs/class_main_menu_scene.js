@@ -13,6 +13,7 @@ var class_main_menu_scene =
     [ "start", "class_main_menu_scene.html#a7c8cf0e0bc5e4bb26891ee639b4ec837", null ],
     [ "stop", "class_main_menu_scene.html#a4a4c783bee20ab3af01c2b9de70d28db", null ],
     [ "update", "class_main_menu_scene.html#a583c4f8cdb58cb60f9fbecd0e8cfbcf2", null ],
+    [ "m_background", "class_main_menu_scene.html#ae23e89b56efeca33a15591fcaf633c50", null ],
     [ "m_controller", "class_main_menu_scene.html#a965a1496081cc4198571a1da23f17e52", null ],
     [ "m_DELAY_TIME", "class_main_menu_scene.html#af236e14ed9f988999b92421a55099921", null ],
     [ "m_gui", "class_main_menu_scene.html#a1b65e9fb6b9173e577e814174f68e2f4", null ],

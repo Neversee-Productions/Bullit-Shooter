@@ -1,8 +1,9 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
+#include <iostream>
 #include <memory>
-#include "Window.h"
+#include "system\Window.h"
 #include "SFML\Graphics\RectangleShape.hpp"
 #include "Thor\Animations.hpp"
 #include "Bullets\BulletTypes.h"
@@ -88,6 +89,13 @@ public:
 			sf::Vector2f m_origin;
 
 			/// <summary>
+			/// @brief Defines the first frame of the animation.
+			/// 
+			/// 
+			/// </summary>
+			sf::IntRect m_frame;
+
+			/// <summary>
 			/// @brief Defines shared pointer to our animation's frames.
 			/// 
 			/// 
@@ -142,7 +150,15 @@ public:
 	void fadeOut();
 	void setAlpha(float alpha);
 	sf::Color const & getBgColor() const;
+	void resetWeaponType();
+
 private:
+	/// <summary>
+	/// @brief sfml delta time of update frame call.
+	/// 
+	/// 
+	/// </summary>
+	sf::Time const m_DELTA_TIME;
 	/// <summary>
 	/// @brief define the weapon rectangle.
 	/// 

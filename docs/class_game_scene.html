@@ -113,8 +113,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aebd3972a13e0b6c8220c8d54d0b6e03e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#aebd3972a13e0b6c8220c8d54d0b6e03e">GameScene</a> (<a class="el" href="class_key_handler.html">KeyHandler</a> &amp;keyHandler)</td></tr>
-<tr class="separator:aebd3972a13e0b6c8220c8d54d0b6e03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6cce41b4a893c233dd0069af4b07429"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ac6cce41b4a893c233dd0069af4b07429">GameScene</a> (std::shared_ptr&lt; <a class="el" href="class_key_handler.html">KeyHandler</a> &gt; keyHandler, std::shared_ptr&lt; <a class="el" href="class_controller.html">Controller</a> &gt; controller)</td></tr>
+<tr class="separator:ac6cce41b4a893c233dd0069af4b07429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa047fdbc6f7cdae8eb76eda686eb49d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#aa047fdbc6f7cdae8eb76eda686eb49d5">preStart</a> (const std::string &amp;resourceFilePath) final override</td></tr>
 <tr class="separator:aa047fdbc6f7cdae8eb76eda686eb49d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18967f8879389db3e8b9d6a3d1ff58c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a18967f8879389db3e8b9d6a3d1ff58c0">start</a> (const std::string &amp;resourceFilePath) final override</td></tr>
@@ -137,32 +137,20 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a8aff89b2744bed5991838d0ab142fc53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8aff89b2744bed5991838d0ab142fc53">updateCollisions</a> ()</td></tr>
-<tr class="separator:a8aff89b2744bed5991838d0ab142fc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7231c6cf599365a4f9d003784348fef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ab7231c6cf599365a4f9d003784348fef">bulletAsteroidsCollision</a> ()</td></tr>
-<tr class="separator:ab7231c6cf599365a4f9d003784348fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3c7f1444e67a8462e4611dbe9319bc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ad3c7f1444e67a8462e4611dbe9319bc4">playerAsteroidCollision</a> ()</td></tr>
-<tr class="separator:ad3c7f1444e67a8462e4611dbe9319bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eedd378e6f6b32ec94248a2e7d9b285"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a7eedd378e6f6b32ec94248a2e7d9b285">playerEnemyCollision</a> ()</td></tr>
-<tr class="separator:a7eedd378e6f6b32ec94248a2e7d9b285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a939afc3d229df0b1531fe3c129e5daa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a939afc3d229df0b1531fe3c129e5daa6">collisionResponse</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
-<tr class="separator:a939afc3d229df0b1531fe3c129e5daa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8591af2894985a551835b5d7c67138e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8591af2894985a551835b5d7c67138e7">collisionResponse</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_magma_shot.html">bullets::MagmaShot</a> &amp;bullet)</td></tr>
-<tr class="separator:a8591af2894985a551835b5d7c67138e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04bbb69fd2e324c8480995d6c1ea7d14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a04bbb69fd2e324c8480995d6c1ea7d14">collisionResponse</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_napalm_sphere.html">bullets::NapalmSphere</a> &amp;bullet)</td></tr>
-<tr class="separator:a04bbb69fd2e324c8480995d6c1ea7d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c06cce94ec2a1c24f9c575d977d7a35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a0c06cce94ec2a1c24f9c575d977d7a35">collisionResponse</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_pyro_blast.html">bullets::PyroBlast</a> &amp;bullet)</td></tr>
-<tr class="separator:a0c06cce94ec2a1c24f9c575d977d7a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ad265a99cea48b606c907382e66cabc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a3ad265a99cea48b606c907382e66cabc">playerPickupCollision</a> ()</td></tr>
-<tr class="separator:a3ad265a99cea48b606c907382e66cabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77ab292bd9b967b90663ac915ff1b25e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a77ab292bd9b967b90663ac915ff1b25e">generateRandomTimer</a> ()</td></tr>
-<tr class="separator:a77ab292bd9b967b90663ac915ff1b25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74d1cb5e45442fda5d7812c5fee46481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a74d1cb5e45442fda5d7812c5fee46481">updateAsteroidSpawner</a> ()</td></tr>
-<tr class="separator:a74d1cb5e45442fda5d7812c5fee46481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c928fd778c96b1415237f1aadab0c38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8c928fd778c96b1415237f1aadab0c38">backToMainMenu</a> ()</td></tr>
+<tr class="separator:a8c928fd778c96b1415237f1aadab0c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1720031b70e644e1b6975b15decdda62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a1720031b70e644e1b6975b15decdda62">goToNextScene</a> () final override</td></tr>
 <tr class="separator:a1720031b70e644e1b6975b15decdda62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08213e60be0211836cebe55b28887cae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a08213e60be0211836cebe55b28887cae">setup</a> (const std::string &amp;filePath)</td></tr>
 <tr class="separator:a08213e60be0211836cebe55b28887cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b7db4051bbfe2e5a19bfcf4eec6eef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a24b7db4051bbfe2e5a19bfcf4eec6eef">setupSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;soundParser)</td></tr>
+<tr class="separator:a24b7db4051bbfe2e5a19bfcf4eec6eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8c1eabffed278ed0f430eff0bcfcc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8f8c1eabffed278ed0f430eff0bcfcc3">setupPlayerSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;playerParser)</td></tr>
+<tr class="separator:a8f8c1eabffed278ed0f430eff0bcfcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a158353cac266fa2122039948a6958068"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a158353cac266fa2122039948a6958068">setupBulletsSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;bulletsParser)</td></tr>
+<tr class="separator:a158353cac266fa2122039948a6958068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e0e3e98f774b1f8151eb47384240c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a33e0e3e98f774b1f8151eb47384240c0">setupBulletSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;bulletParser, std::string const &amp;bulletNum)</td></tr>
+<tr class="separator:a33e0e3e98f774b1f8151eb47384240c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b81a871ebc93dc4ce15bbe877d15e04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a1b81a871ebc93dc4ce15bbe877d15e04">setupPlayer</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_player_1_1_resources.html">Player::Resources</a> &gt; sptrPlayerResources, json::json &amp;gameSceneParser)</td></tr>
 <tr class="separator:a1b81a871ebc93dc4ce15bbe877d15e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c7b620a4134a637afe2a9c941fb1232"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8c7b620a4134a637afe2a9c941fb1232">setupShip</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_ship_1_1_resources.html">Ship::Resources</a> &gt; sptrShipResources, json::json &amp;shipParser)</td></tr>
@@ -187,6 +175,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:adb16fb1e5fb199773eb884657df79dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8544686d7101812f9d40c2f07f7b0205"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8544686d7101812f9d40c2f07f7b0205">setupEnemies</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html">Resources::Enemies</a> &gt; sptrEnemies, json::json &amp;gameSceneParser)</td></tr>
 <tr class="separator:a8544686d7101812f9d40c2f07f7b0205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00496354ef77c8af11df958ba93fc7cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a00496354ef77c8af11df958ba93fc7cd">setupUI</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_game_u_i_1_1_resources.html">GameUI::Resources</a> &gt; sptrUI, json::json &amp;gameSceneParser)</td></tr>
+<tr class="separator:a00496354ef77c8af11df958ba93fc7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -194,6 +184,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a814ec4e13fc13a8e8c2f29ef179abc8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae13dc9d4dc184866c5117909d988c02c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ae13dc9d4dc184866c5117909d988c02c">m_keyHandler</a></td></tr>
 <tr class="separator:ae13dc9d4dc184866c5117909d988c02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116632d087f53593146b50462bd84241"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a116632d087f53593146b50462bd84241">m_soundManager</a></td></tr>
+<tr class="separator:a116632d087f53593146b50462bd84241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9cfd2613e470aa84181a7a465ce76ac"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="struct_game_scene_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ac9cfd2613e470aa84181a7a465ce76ac">m_resources</a></td></tr>
 <tr class="separator:ac9cfd2613e470aa84181a7a465ce76ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eba18e031ee0d957b6fc74d21c443db"><td class="memItemLeft" align="right" valign="top">const tinyh::c2AABB &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a2eba18e031ee0d957b6fc74d21c443db">m_windowC2Rect</a></td></tr>
@@ -202,16 +194,16 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9da5a0720636440cd864f4dd665eeb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc06f7cf1d9009faf879677c2c615593"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_asteroid_manager.html">AsteroidManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#afc06f7cf1d9009faf879677c2c615593">m_asteroidManager</a></td></tr>
 <tr class="separator:afc06f7cf1d9009faf879677c2c615593"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9b179773133851cbaa67355e8c83829"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#aa9b179773133851cbaa67355e8c83829">m_asteroidSpawnTimer</a></td></tr>
-<tr class="separator:aa9b179773133851cbaa67355e8c83829"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c96ec36fdc4c779139ec17bc5a712ad"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a1c96ec36fdc4c779139ec17bc5a712ad">m_asteroidSpawnFrequency</a></td></tr>
-<tr class="separator:a1c96ec36fdc4c779139ec17bc5a712ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8403905ac9441b88d26ecca580a1dc0d"><td class="memItemLeft" align="right" valign="top">const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a8403905ac9441b88d26ecca580a1dc0d">UPDATE_DT</a></td></tr>
-<tr class="separator:a8403905ac9441b88d26ecca580a1dc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d2ddcc62810389125ac5ddf2bb442af"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_pickup.html">Pickup</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a9d2ddcc62810389125ac5ddf2bb442af">m_pickup</a></td></tr>
-<tr class="separator:a9d2ddcc62810389125ac5ddf2bb442af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a364a427b3dec937c1ee94a3f5f00ca70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a364a427b3dec937c1ee94a3f5f00ca70">m_enemy</a></td></tr>
-<tr class="separator:a364a427b3dec937c1ee94a3f5f00ca70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339136dc6a32d470c68aa4a486c79ca4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_pickup.html">Pickup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a339136dc6a32d470c68aa4a486c79ca4">m_pickup</a></td></tr>
+<tr class="separator:a339136dc6a32d470c68aa4a486c79ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a992da3de9f023cadb3839e6e708c9414"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_basic_enemy_manager.html">BasicEnemyManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a992da3de9f023cadb3839e6e708c9414">m_basicEnemyManager</a></td></tr>
+<tr class="separator:a992da3de9f023cadb3839e6e708c9414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61241f10fb8a06a9102b93ba37305a8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_u_i.html">GameUI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a61241f10fb8a06a9102b93ba37305a8b">m_ui</a></td></tr>
+<tr class="separator:a61241f10fb8a06a9102b93ba37305a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473a0f35610854a312c1c689744ef822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_collision_system.html">CollisionSystem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a473a0f35610854a312c1c689744ef822">m_collisionSystem</a></td></tr>
+<tr class="separator:a473a0f35610854a312c1c689744ef822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accac39b383c80afee0bf3df1a59d1469"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#accac39b383c80afee0bf3df1a59d1469">m_gamePaused</a></td></tr>
+<tr class="separator:accac39b383c80afee0bf3df1a59d1469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -225,8 +217,8 @@ Additional Inherited Members</h2></td></tr>
 Rafael Plugge</dd></dl>
 <p>Defines our main gameplay scene. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aebd3972a13e0b6c8220c8d54d0b6e03e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebd3972a13e0b6c8220c8d54d0b6e03e">&#9670;&nbsp;</a></span>GameScene()</h2>
+<a id="ac6cce41b4a893c233dd0069af4b07429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6cce41b4a893c233dd0069af4b07429">&#9670;&nbsp;</a></span>GameScene()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,9 +226,19 @@ Rafael Plugge</dd></dl>
         <tr>
           <td class="memname">GameScene::GameScene </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_key_handler.html">KeyHandler</a> &amp;&#160;</td>
-          <td class="paramname"><em>keyHandler</em></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_key_handler.html">KeyHandler</a> &gt;&#160;</td>
+          <td class="paramname"><em>keyHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_controller.html">Controller</a> &gt;&#160;</td>
+          <td class="paramname"><em>controller</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -246,8 +248,8 @@ Rafael Plugge</dd></dl>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab7231c6cf599365a4f9d003784348fef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7231c6cf599365a4f9d003784348fef">&#9670;&nbsp;</a></span>bulletAsteroidsCollision()</h2>
+<a id="a8c928fd778c96b1415237f1aadab0c38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c928fd778c96b1415237f1aadab0c38">&#9670;&nbsp;</a></span>backToMainMenu()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,7 +258,7 @@ Rafael Plugge</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameScene::bulletAsteroidsCollision </td>
+          <td class="memname">void GameScene::backToMainMenu </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -268,187 +270,6 @@ Rafael Plugge</dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>update collisions between bullets and asteroids.</p>
-
-</div>
-</div>
-<a id="a939afc3d229df0b1531fe3c129e5daa6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a939afc3d229df0b1531fe3c129e5daa6">&#9670;&nbsp;</a></span>collisionResponse() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::collisionResponse </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
-          <td class="paramname"><em>asteroid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;&#160;</td>
-          <td class="paramname"><em>bullet</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>default collision response for most bullets.</p>
-<p>Damages the asteroid and disappears. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">asteroid</td><td>reference to the asteroid collided with</td></tr>
-    <tr><td class="paramname">bullet</td><td>reference to the bullet that has collided</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8591af2894985a551835b5d7c67138e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8591af2894985a551835b5d7c67138e7">&#9670;&nbsp;</a></span>collisionResponse() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::collisionResponse </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
-          <td class="paramname"><em>asteroid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classbullets_1_1_magma_shot.html">bullets::MagmaShot</a> &amp;&#160;</td>
-          <td class="paramname"><em>bullet</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>overloaded collision response for magma shot.</p>
-<p>Damages asteroid and explodes on impact. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">asteroid</td><td>reference to the asteroid collided with</td></tr>
-    <tr><td class="paramname">bullet</td><td>reference to the bullet that has collided</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a04bbb69fd2e324c8480995d6c1ea7d14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04bbb69fd2e324c8480995d6c1ea7d14">&#9670;&nbsp;</a></span>collisionResponse() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::collisionResponse </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
-          <td class="paramname"><em>asteroid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classbullets_1_1_napalm_sphere.html">bullets::NapalmSphere</a> &amp;&#160;</td>
-          <td class="paramname"><em>bullet</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>overloaded collision response for Napalm Sphere.</p>
-<p>Damages asteroid and explodes on impact. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">asteroid</td><td>reference to the asteroid collided with</td></tr>
-    <tr><td class="paramname">bullet</td><td>reference to the bullet that has collided</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0c06cce94ec2a1c24f9c575d977d7a35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c06cce94ec2a1c24f9c575d977d7a35">&#9670;&nbsp;</a></span>collisionResponse() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::collisionResponse </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
-          <td class="paramname"><em>asteroid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classbullets_1_1_pyro_blast.html">bullets::PyroBlast</a> &amp;&#160;</td>
-          <td class="paramname"><em>bullet</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>overloaded collision response for PyroBlast.</p>
-<p>Damages asteroid and explodes on impact. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">asteroid</td><td>reference to the asteroid collided with</td></tr>
-    <tr><td class="paramname">bullet</td><td>reference to the bullet that has collided</td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -498,32 +319,6 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="a77ab292bd9b967b90663ac915ff1b25e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77ab292bd9b967b90663ac915ff1b25e">&#9670;&nbsp;</a></span>generateRandomTimer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float GameScene::generateRandomTimer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>generates random float values for a timer from 0 to 3.</p>
-
-</div>
-</div>
 <a id="a1720031b70e644e1b6975b15decdda62"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1720031b70e644e1b6975b15decdda62">&#9670;&nbsp;</a></span>goToNextScene()</h2>
 
@@ -549,83 +344,6 @@ Rafael Plugge</dd></dl>
 <p>Tells the <a class="el" href="class_scene_manager.html" title="Manager of Scenes. ">SceneManager</a> to change to another <a class="el" href="class_scene.html" title="Defines a interface for SceneManager to use. ">Scene</a>.</p>
 
 <p>Implements <a class="el" href="class_scene.html#a296905face0ec648e564c059a9404b44">Scene</a>.</p>
-
-</div>
-</div>
-<a id="ad3c7f1444e67a8462e4611dbe9319bc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3c7f1444e67a8462e4611dbe9319bc4">&#9670;&nbsp;</a></span>playerAsteroidCollision()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::playerAsteroidCollision </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>this method checks collisions with all active asteroids.</p>
-
-</div>
-</div>
-<a id="a7eedd378e6f6b32ec94248a2e7d9b285"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7eedd378e6f6b32ec94248a2e7d9b285">&#9670;&nbsp;</a></span>playerEnemyCollision()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::playerEnemyCollision </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Checks for collision between player and basic enemy.</p>
-
-</div>
-</div>
-<a id="a3ad265a99cea48b606c907382e66cabc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ad265a99cea48b606c907382e66cabc">&#9670;&nbsp;</a></span>playerPickupCollision()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::playerPickupCollision </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -861,6 +579,116 @@ Rafael Plugge</dd></dl>
     <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
     <tr><td class="paramname">sptrBulletManagerResources</td><td>shared pointer to our bullet manager resources, assumed to be a valid pointer (initialized).</td></tr>
     <tr><td class="paramname">bulletManagerParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a33e0e3e98f774b1f8151eb47384240c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33e0e3e98f774b1f8151eb47384240c0">&#9670;&nbsp;</a></span>setupBulletSounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::setupBulletSounds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>soundManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>bulletParser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>bulletNum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups a single player bullet based on bulletNum.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
+    <tr><td class="paramname">bulletParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+    <tr><td class="paramname">bulletNum</td><td>read-only reference to the bullet number string used as the </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a158353cac266fa2122039948a6958068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158353cac266fa2122039948a6958068">&#9670;&nbsp;</a></span>setupBulletsSounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::setupBulletsSounds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>soundManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>bulletsParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups all the player bullet sounds.</p>
+<p>Iterates through all the bullet sounds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
+    <tr><td class="paramname">bulletsParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1168,9 +996,60 @@ Rafael Plugge</dd></dl>
 <p>Setups <a class="el" href="struct_player_1_1_resources.html" title="Determines the resources the player needs. ">Player::Resources</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">resourceHandler</td><td></td></tr>
-    <tr><td class="paramname">sptrPlayerResources</td><td></td></tr>
-    <tr><td class="paramname">gameSceneParser</td><td></td></tr>
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">sptrPlayerResources</td><td>shared pointer to our player resources, assumed to be a valid pointer (initialized).</td></tr>
+    <tr><td class="paramname">gameSceneParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8f8c1eabffed278ed0f430eff0bcfcc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f8c1eabffed278ed0f430eff0bcfcc3">&#9670;&nbsp;</a></span>setupPlayerSounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::setupPlayerSounds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>soundManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>playerParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups player sounds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
+    <tr><td class="paramname">playerParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1223,6 +1102,108 @@ Rafael Plugge</dd></dl>
     <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
     <tr><td class="paramname">sptrShipResources</td><td>shared pointer to our ship resources, assumed to be a valid pointer (initialized).</td></tr>
     <tr><td class="paramname">shipParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a24b7db4051bbfe2e5a19bfcf4eec6eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b7db4051bbfe2e5a19bfcf4eec6eef">&#9670;&nbsp;</a></span>setupSounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::setupSounds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>soundManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>soundParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups sounds in the game scene.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
+    <tr><td class="paramname">soundParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a00496354ef77c8af11df958ba93fc7cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00496354ef77c8af11df958ba93fc7cd">&#9670;&nbsp;</a></span>setupUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::setupUI </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_game_u_i_1_1_resources.html">GameUI::Resources</a> &gt;&#160;</td>
+          <td class="paramname"><em>sptrUI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramname"><em>gameSceneParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>this function gets the json for the UI.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to the resource handler</td></tr>
+    <tr><td class="paramname">sptrUI</td><td>shared pointer to UI</td></tr>
+    <tr><td class="paramname">gameSceneParser</td><td>reference to loaded json file ready to be parsed</td></tr>
   </table>
   </dd>
 </dl>
@@ -1421,58 +1402,6 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="a74d1cb5e45442fda5d7812c5fee46481"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74d1cb5e45442fda5d7812c5fee46481">&#9670;&nbsp;</a></span>updateAsteroidSpawner()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::updateAsteroidSpawner </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>this method spawns an asteroid once a timer reaches its max.</p>
-
-</div>
-</div>
-<a id="a8aff89b2744bed5991838d0ab142fc53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8aff89b2744bed5991838d0ab142fc53">&#9670;&nbsp;</a></span>updateCollisions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameScene::updateCollisions </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Update game collisions.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="afc06f7cf1d9009faf879677c2c615593"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc06f7cf1d9009faf879677c2c615593">&#9670;&nbsp;</a></span>m_asteroidManager</h2>
@@ -1494,52 +1423,6 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>defines asteroid manager.</p>
-
-</div>
-</div>
-<a id="a1c96ec36fdc4c779139ec17bc5a712ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c96ec36fdc4c779139ec17bc5a712ad">&#9670;&nbsp;</a></span>m_asteroidSpawnFrequency</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float GameScene::m_asteroidSpawnFrequency</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>define length of time between asteroid spawns.</p>
-
-</div>
-</div>
-<a id="aa9b179773133851cbaa67355e8c83829"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9b179773133851cbaa67355e8c83829">&#9670;&nbsp;</a></span>m_asteroidSpawnTimer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float GameScene::m_asteroidSpawnTimer</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>define how long since last spawned asteroid.</p>
 
 </div>
 </div>
@@ -1566,8 +1449,8 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="a364a427b3dec937c1ee94a3f5f00ca70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a364a427b3dec937c1ee94a3f5f00ca70">&#9670;&nbsp;</a></span>m_enemy</h2>
+<a id="a992da3de9f023cadb3839e6e708c9414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a992da3de9f023cadb3839e6e708c9414">&#9670;&nbsp;</a></span>m_basicEnemyManager</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1576,7 +1459,7 @@ Rafael Plugge</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> GameScene::m_enemy</td>
+          <td class="memname"><a class="el" href="class_basic_enemy_manager.html">BasicEnemyManager</a> GameScene::m_basicEnemyManager</td>
         </tr>
       </table>
   </td>
@@ -1585,6 +1468,54 @@ Rafael Plugge</dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>manages the instances of all basic enemies.</p>
+
+</div>
+</div>
+<a id="a473a0f35610854a312c1c689744ef822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473a0f35610854a312c1c689744ef822">&#9670;&nbsp;</a></span>m_collisionSystem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_collision_system.html">CollisionSystem</a> GameScene::m_collisionSystem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>defines the collision system.</p>
+<p>This will handle collisions between different entities. </p>
+
+</div>
+</div>
+<a id="accac39b383c80afee0bf3df1a59d1469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accac39b383c80afee0bf3df1a59d1469">&#9670;&nbsp;</a></span>m_gamePaused</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameScene::m_gamePaused</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>determines if the game is paused or not.</p>
 
 </div>
 </div>
@@ -1611,8 +1542,8 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="a9d2ddcc62810389125ac5ddf2bb442af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d2ddcc62810389125ac5ddf2bb442af">&#9670;&nbsp;</a></span>m_pickup</h2>
+<a id="a339136dc6a32d470c68aa4a486c79ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339136dc6a32d470c68aa4a486c79ca4">&#9670;&nbsp;</a></span>m_pickup</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1621,7 +1552,7 @@ Rafael Plugge</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_pickup.html">Pickup</a>&gt; GameScene::m_pickup</td>
+          <td class="memname"><a class="el" href="class_pickup.html">Pickup</a> GameScene::m_pickup</td>
         </tr>
       </table>
   </td>
@@ -1630,7 +1561,7 @@ Rafael Plugge</dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>testing a pickup.</p>
+<p>defines the a pickup.</p>
 
 </div>
 </div>
@@ -1681,6 +1612,52 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="a116632d087f53593146b50462bd84241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a116632d087f53593146b50462bd84241">&#9670;&nbsp;</a></span>m_soundManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sound_manager.html">SoundManager</a>&amp; GameScene::m_soundManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>reference to the sound manager.</p>
+
+</div>
+</div>
+<a id="a61241f10fb8a06a9102b93ba37305a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61241f10fb8a06a9102b93ba37305a8b">&#9670;&nbsp;</a></span>m_ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_u_i.html">GameUI</a> GameScene::m_ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>this is the UI object.</p>
+
+</div>
+</div>
 <a id="a2eba18e031ee0d957b6fc74d21c443db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2eba18e031ee0d957b6fc74d21c443db">&#9670;&nbsp;</a></span>m_windowC2Rect</h2>
 
@@ -1701,29 +1678,6 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>constant reference to the window.</p>
-
-</div>
-</div>
-<a id="a8403905ac9441b88d26ecca580a1dc0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8403905ac9441b88d26ecca580a1dc0d">&#9670;&nbsp;</a></span>UPDATE_DT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float&amp; GameScene::UPDATE_DT</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>constant reference to update delta time.</p>
 
 </div>
 </div>

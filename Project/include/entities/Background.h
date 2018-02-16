@@ -6,7 +6,7 @@
 // For sf::RectangleShape
 #include "SFML\Graphics\RectangleShape.hpp"
 // For Window
-#include "Window.h"
+#include "system\Window.h"
 // For std::shared_ptr
 #include <memory>
 
@@ -37,6 +37,7 @@ public:
 	void update();
 	void draw(Window & window, const float & deltaTime);
 	void setTargetColor(sf::Color const & newColor);
+	void reset();
 
 private:
 	void interpolate(float & value, float const & targetValue);

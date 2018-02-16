@@ -38,11 +38,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_b_charge_state_8cpp.html",
-"class_asteroid.html#af4ab0f4e46a5d6a3b0410ddbca949c4a",
-"class_resource_handler.html#a98a9d30df19bc82fa8b3632ab89af1ef",
-"classai_1_1states_1_1_ai_basic_recover_state.html#ad226460b72243d2c0450d5539e508410",
-"classgui_1_1_check_box.html#accbd66a73e578083004120350a74dbd7a6b273343c454f9c53dcfc9c4ccf171d2",
-"struct_game_pad_state.html#abc539426197b7af7c08da5fafb004f9e"
+"class_asteroid.html#a6b18d4c13a9ace4dd85b19e783ac8d3e",
+"class_options_scene.html#a426946bde79cc4e4c7d4f343e4741ed8",
+"class_splash_scene.html#a9cd5fa8700c5493ca9b7aca19ef1dca2",
+"classbullets_1_1_death_orb.html#a83bf9b07d2a56918d93ddffa602b77e5",
+"classgui_1_1_slider.html#adea92301504508a2417743c7b1d6d856",
+"struct_splash_scene_1_1_resources.html#a62ffdbcfdbd0711facbe4d01c3b2b959"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

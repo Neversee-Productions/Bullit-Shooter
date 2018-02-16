@@ -2,7 +2,7 @@
 #define SHIELD_H
 
 #include "SFML\Graphics\CircleShape.hpp"
-#include "Window.h"
+#include "system\Window.h"
 ///
 /// @brief Shield class.
 /// @author Sebastian Kruzel
@@ -21,6 +21,8 @@ public:
 	const sf::CircleShape& getCircleShape();
 	const tinyh::c2Circle& getCollisionCircle();
 	const float& getHealth();
+	void resetShield();
+	bool const & isInvulnerable();
 
 private:
 

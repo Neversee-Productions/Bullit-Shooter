@@ -1,4 +1,4 @@
-#include "ResourceHandler.h"
+#include "system\ResourceHandler.h"
 
 /// <summary>
 /// @brief Instantiate the single instance of our Resource Handler.
@@ -49,6 +49,42 @@ std::shared_ptr<sf::Texture> ResourceHandler::loadUp<sf::Texture>(std::string co
 	try
 	{
 		return_value = std::make_shared<sf::Texture>(this->load<sf::Texture>(id, filePath));
+	}
+	catch (...) // catch any and all possible exceptions.
+	{
+		return nullptr;
+	}
+	return return_value;
+}
+
+/// <summary>
+/// 
+/// </summary>
+template<>
+std::shared_ptr<sf::SoundBuffer> ResourceHandler::loadUp<sf::SoundBuffer>(std::string const & filePath, std::string const & id)
+{
+	std::shared_ptr<sf::SoundBuffer> return_value;
+	try
+	{
+		return_value = std::make_shared<sf::SoundBuffer>(this->load<sf::SoundBuffer>(id, filePath));
+	}
+	catch (...) // catch any and all possible exceptions.
+	{
+		return nullptr;
+	}
+	return return_value;
+}
+
+/// <summary>
+/// 
+/// </summary>
+template<>
+std::shared_ptr<sf::Font> ResourceHandler::loadUp<sf::Font>(std::string const & filePath, std::string const & id)
+{
+	std::shared_ptr<sf::Font> return_value;
+	try
+	{
+		return_value = std::make_shared<sf::Font>(this->load<sf::Font>(id, filePath));
 	}
 	catch (...) // catch any and all possible exceptions.
 	{

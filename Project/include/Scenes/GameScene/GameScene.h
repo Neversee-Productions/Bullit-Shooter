@@ -1,6 +1,7 @@
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
 
+// STL Includes
 // SFML Includes
 #include "SFML\Graphics\RectangleShape.hpp"
 #include "SFML\Audio\Sound.hpp"
@@ -11,8 +12,12 @@
 #include "tinyheaders\tinyc2.h"
 // Project Includes
 #include "scenes\Scene.h"
+#include "sound\SoundManager.h"
 #include "Entities\Entities.h"
+#include "entities\BasicEnemyManager.h"
 #include "util\JsonLoader.h"
+#include "util\CollisionSystem.h"
+#include "gui\game_ui\GameUI.h"
 
 ///
 /// @brief Main game scene.
@@ -24,7 +29,6 @@
 class GameScene : public Scene
 {
 private:
-
 	/// 
 	/// @author Rafael Plugge
 	/// @brief Container of shared pointers to our resources.
@@ -41,8 +45,10 @@ private:
 		/// 
 		struct Enemies
 		{
-			std::shared_ptr<ai::AiBasic::Resources> m_sptrBasicEnemy =
-				std::make_shared<ai::AiBasic::Resources>();
+			std::shared_ptr<Asteroid::Resources> m_sptrAsteroid =
+				std::make_shared<Asteroid::Resources>();
+			std::shared_ptr<BasicEnemyManager::Resources> m_sptrBasicEnemyManager =
+				std::make_shared<BasicEnemyManager::Resources>();
 		};
 
 		/// <summary>
@@ -66,10 +72,13 @@ private:
 
 		std::shared_ptr<Enemies> m_sptrEnemies =
 			std::make_shared<Enemies>();
+
+		std::shared_ptr<GameUI::Resources> m_sptrUI =
+			std::make_shared<GameUI::Resources>();
 	};
 
 public:
-	GameScene(KeyHandler& keyHandler);
+	GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller);
 	void preStart(const std::string & resourceFilePath) final override;
 	void start(const std::string & resourceFilePath) final override;
 	void stop() final override;
@@ -77,21 +86,30 @@ public:
 	void draw(Window & window, const float & deltaTime) final override;
 
 private:
-	void updateCollisions();
-	void bulletAsteroidsCollision();
-	void playerAsteroidCollision();
-	void playerEnemyCollision();
-	void collisionResponse(Asteroid & asteroid, bullets::Bullet & bullet);
-	void collisionResponse(Asteroid & asteroid, bullets::MagmaShot & bullet);
-	void collisionResponse(Asteroid & asteroid, bullets::NapalmSphere & bullet);
-	void collisionResponse(Asteroid & asteroid, bullets::PyroBlast & bullet);
-	void playerPickupCollision();
-	float generateRandomTimer();
-	void updateAsteroidSpawner();
-
-private:
+	void backToMainMenu();
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
+	void setupSounds(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & soundParser
+	);
+	void setupPlayerSounds(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & playerParser
+	);
+	void setupBulletsSounds(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & bulletsParser
+	);
+	void setupBulletSounds(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & bulletParser
+		, std::string const & bulletNum
+	);
 	void setupPlayer(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Player::Resources> sptrPlayerResources
@@ -158,6 +176,12 @@ private:
 		, json::json & gameSceneParser
 	);
 
+	void setupUI(
+		ResourceHandler & resourceHandler
+		, std::shared_ptr<GameUI::Resources> sptrUI
+		, json::json & gameSceneParser
+	);
+
 	/// <summary>
 	/// @brief Represents the player object
 	/// 
@@ -171,6 +195,13 @@ private:
 	/// 
 	/// </summary>
 	KeyHandler& m_keyHandler;
+
+	/// <summary>
+	/// @brief reference to the sound manager.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
 
 	/// <summary>
 	/// @brief Unique pointer to our Resources struct.
@@ -201,36 +232,39 @@ private:
 	AsteroidManager m_asteroidManager;
 
 	/// <summary>
-	/// @brief define how long since last spawned asteroid.
+	/// @brief defines the a pickup.
 	/// 
 	/// 
 	/// </summary>
-	float m_asteroidSpawnTimer;
+	Pickup m_pickup;
 
 	/// <summary>
-	/// @brief define length of time between asteroid spawns.
+	/// @brief manages the instances of all basic enemies.
 	/// 
 	/// 
 	/// </summary>
-	float m_asteroidSpawnFrequency;
+	BasicEnemyManager m_basicEnemyManager;
 
 	/// <summary>
-	/// @brief constant reference to update delta time.
+	/// @brief this is the UI object.
 	/// 
 	/// 
 	/// </summary>
-	const float & UPDATE_DT;
+	GameUI m_ui;
 
 	/// <summary>
-	/// @brief testing a pickup.
+	/// @brief defines the collision system.
+	/// 
+	/// This will handle collisions between different entities.
+	/// </summary>
+	CollisionSystem m_collisionSystem;
+
+	/// <summary>
+	/// @brief determines if the game is paused or not.
 	/// 
 	/// 
 	/// </summary>
-	std::unique_ptr<Pickup> m_pickup;
-
-	// HACK : Temporary enemy
-
-	ai::AiBasic m_enemy;
+	bool m_gamePaused;
 };
 
 #endif // !GAMESCENE_H

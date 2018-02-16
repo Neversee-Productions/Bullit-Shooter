@@ -205,15 +205,39 @@
     <Filter Include="Resource Files\scenes\Game\pickup">
       <UniqueIdentifier>{a3dd8f8c-0dbb-4f84-9054-824263ae3133}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\game ui">
+      <UniqueIdentifier>{7dda87e8-be3a-47d8-bc3f-061ef4ea15a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\game ui">
+      <UniqueIdentifier>{97469051-2d1a-4bcb-86c0-63bd2e67ca68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\system">
+      <UniqueIdentifier>{6d1169ca-a3dc-4b6d-8e80-444fb2f5f0d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\system">
+      <UniqueIdentifier>{f8e8b47a-a0ba-4da7-89fa-a6022e786eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sound">
+      <UniqueIdentifier>{557e68df-a5aa-4a48-823e-558d337aff56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sound">
+      <UniqueIdentifier>{c5ab99b8-11b1-4d47-b177-7df2afb0a3d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\enemies\asteroid">
+      <UniqueIdentifier>{fdcd8e12-25b8-4b64-b6c3-ac109447a771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\bullets\bullet02">
+      <UniqueIdentifier>{ec24afe5-da98-4887-91e6-f134787ac2c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\bullets\bullet03">
+      <UniqueIdentifier>{de38934d-2ab8-4286-8d0b-99d7cea18d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\player\bullets\bullet04">
+      <UniqueIdentifier>{1b013a62-4360-4c95-9371-0d6dbf269493}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\gui\GUI.cpp">
@@ -243,9 +267,6 @@
     <ClCompile Include="src\input\Controller.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
-    <ClCompile Include="src\App.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Scenes\GameScene\GameScene.cpp">
       <Filter>Source Files\scenes\GameScene</Filter>
     </ClCompile>
@@ -260,9 +281,6 @@
     </ClCompile>
     <ClCompile Include="src\Scenes\SplashScreen\SplashScene.cpp">
       <Filter>Source Files\scenes\SplashScene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ResourceHandler.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Background.cpp">
       <Filter>Source Files\entities</Filter>
@@ -360,6 +378,33 @@
     <ClCompile Include="src\entities\ai\basic\ABRecoverState.cpp">
       <Filter>Source Files\entities\ai\basic</Filter>
     </ClCompile>
+    <ClCompile Include="src\gui\game_ui\GameUI.cpp">
+      <Filter>Source Files\gui\game ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\CollisionSystem.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\App.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\Application.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\ResourceHandler.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\Window.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\SoundManager.cpp">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\SoundSetting.cpp">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\BasicEnemyManager.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -410,14 +455,26 @@
     <None Include="resources\scenes\Game\enemies\basic\basic.json">
       <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
     </None>
+    <None Include="resources\gui\UI.json">
+      <Filter>Resource Files\gui</Filter>
+    </None>
+    <None Include="resources\scenes\Game\sounds.json">
+      <Filter>Resource Files\scenes\Game</Filter>
+    </None>
+    <None Include="resources\scenes\Game\enemies\asteroid\asteroid.json">
+      <Filter>Resource Files\scenes\Game\enemies\asteroid</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\bullets\bullet02\bullet_fire.ogg">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet02</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\bullets\bullet03\bullet_fire.ogg">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet03</Filter>
+    </None>
+    <None Include="resources\scenes\Game\player\bullets\bullet04\bullet_fire.ogg">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet04</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Scenes\MainMenuScene\MainMenuScene.h">
       <Filter>Header Files\scenes\MainMenuScene</Filter>
     </ClInclude>
@@ -445,9 +502,6 @@
     <ClInclude Include="include\input\Controller.h">
       <Filter>Header Files\input</Filter>
     </ClInclude>
-    <ClInclude Include="include\App.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Scenes\GameScene\GameScene.h">
       <Filter>Header Files\scenes\GameScene</Filter>
     </ClInclude>
@@ -459,9 +513,6 @@
     </ClInclude>
     <ClInclude Include="include\Scenes\SplashScreen\SplashScene.h">
       <Filter>Header Files\scenes\SplashScene</Filter>
-    </ClInclude>
-    <ClInclude Include="include\ResourceHandler.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Entities\Background.h">
       <Filter>Header Files\entities</Filter>
@@ -567,6 +618,33 @@
     </ClInclude>
     <ClInclude Include="include\entities\ai\basic\ABRecoverState.h">
       <Filter>Header Files\entities\ai\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gui\game_ui\GameUI.h">
+      <Filter>Header Files\gui\game ui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util\CollisionSystem.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\system\App.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\system\Application.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\system\ResourceHandler.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\system\Window.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sound\SoundManager.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sound\SoundSetting.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\BasicEnemyManager.h">
+      <Filter>Header Files\entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -674,6 +752,33 @@
     </Image>
     <Image Include="resources\scenes\Game\enemies\basic\recover.png">
       <Filter>Resource Files\scenes\Game\enemies\basic</Filter>
+    </Image>
+    <Image Include="resources\gui\textures\UI_health.png">
+      <Filter>Resource Files\gui\textures</Filter>
+    </Image>
+    <Image Include="resources\gui\textures\UI_healthTemplate.png">
+      <Filter>Resource Files\gui\textures</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\enemies\asteroid\asteroid.png">
+      <Filter>Resource Files\scenes\Game\enemies\asteroid</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\enemies\asteroid\asteroid_explode.png">
+      <Filter>Resource Files\scenes\Game\enemies\asteroid</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet02\bullet_impact.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet02</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet02\bullet_loop.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet02</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet03\bullet_loop.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet03</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet04\bullet_impact.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet04</Filter>
+    </Image>
+    <Image Include="resources\scenes\Game\player\bullets\bullet04\bullet_loop.png">
+      <Filter>Resource Files\scenes\Game\player\bullets\bullet04</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

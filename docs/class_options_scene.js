@@ -14,6 +14,7 @@ var class_options_scene =
     [ "m_controller", "class_options_scene.html#a39e07b6db3af496b2b5240aadd10e011", null ],
     [ "m_DELAY_TIME", "class_options_scene.html#aa76250f0eca3dc6bf2948800a256564b", null ],
     [ "m_gui", "class_options_scene.html#a77e97dc8740720d57011ff815152bdc2", null ],
+    [ "m_helpSprite", "class_options_scene.html#a41942f71531660f9c5519a0e849f9473", null ],
     [ "m_keyHandler", "class_options_scene.html#a19ea3b014f94f2ea52f1641e7e956077", null ],
     [ "m_nextName", "class_options_scene.html#a9e8417da0b7886c642aa59b398d84bf7", null ],
     [ "m_resources", "class_options_scene.html#a426946bde79cc4e4c7d4f343e4741ed8", null ],

@@ -8,6 +8,7 @@ var class_window =
     [ "display", "class_window.html#afadfafa5a0b9472554759004aafb327e", null ],
     [ "draw", "class_window.html#adfb2d5826942693e289d13f314a341f7", null ],
     [ "draw", "class_window.html#ae736a308a17d5f8e60dbc94cb96e6704", null ],
+    [ "draw", "class_window.html#adddf431e419af6fcb7717cee16e68bcb", null ],
     [ "getStyle", "class_window.html#a8c2db4cd369bc7627efa38ee7df08739", null ],
     [ "isOpen", "class_window.html#a761d614931fb5a5daa70e4f580c3e78e", null ],
     [ "processEvents", "class_window.html#a381364c2704bed978cdf9df669c4b629", null ],

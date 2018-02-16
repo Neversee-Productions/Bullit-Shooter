@@ -158,10 +158,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaa99b721acc4f2ceba75fd95cb55b015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfdff6141121c2eb89f1abcec498d606"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#acfdff6141121c2eb89f1abcec498d606">checkCircleCollision</a> (const tinyh::c2Circle &amp;other)</td></tr>
 <tr class="separator:acfdff6141121c2eb89f1abcec498d606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b11f0989cc44280bd352605268968b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#a49b11f0989cc44280bd352605268968b">checkAABBCollision</a> (const tinyh::c2AABB &amp;other)</td></tr>
+<tr class="separator:a49b11f0989cc44280bd352605268968b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04ee5a7fd77837aa7f0f6f965be13f4"><td class="memItemLeft" align="right" valign="top">virtual const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#ac04ee5a7fd77837aa7f0f6f965be13f4">getDamage</a> ()=0</td></tr>
 <tr class="separator:ac04ee5a7fd77837aa7f0f6f965be13f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af88d2013aaf83d398e3a0182a60fe4e5"><td class="memItemLeft" align="right" valign="top">bool const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#af88d2013aaf83d398e3a0182a60fe4e5">isImpact</a> () const</td></tr>
+<tr class="memitem:af88d2013aaf83d398e3a0182a60fe4e5"><td class="memItemLeft" align="right" valign="top">virtual bool const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#af88d2013aaf83d398e3a0182a60fe4e5">isImpact</a> () const</td></tr>
 <tr class="separator:af88d2013aaf83d398e3a0182a60fe4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace28164e2d24b2d083acf702ee5a56b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbullets_1_1_bullet.html#ace28164e2d24b2d083acf702ee5a56b6">getType</a> () const</td></tr>
+<tr class="separator:ace28164e2d24b2d083acf702ee5a56b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
 Protected Types</h2></td></tr>
@@ -290,6 +294,42 @@ Static Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a49b11f0989cc44280bd352605268968b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b11f0989cc44280bd352605268968b">&#9670;&nbsp;</a></span>checkAABBCollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bullets::Bullet::checkAABBCollision </td>
+          <td>(</td>
+          <td class="paramtype">const tinyh::c2AABB &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check collision against a AABB Box.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the AABB rectangle to collide with</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if collided</dd></dl>
+
+<p>Reimplemented in <a class="el" href="classbullets_1_1_pyro_blast.html#a4b19c33b6ee12b39fc66b21d8de444ba">bullets::PyroBlast</a>.</p>
+
+</div>
+</div>
 <a id="acfdff6141121c2eb89f1abcec498d606"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acfdff6141121c2eb89f1abcec498d606">&#9670;&nbsp;</a></span>checkCircleCollision()</h2>
 
@@ -418,6 +458,25 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ace28164e2d24b2d083acf702ee5a56b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace28164e2d24b2d083acf702ee5a56b6">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const  &amp; bullets::Bullet::getType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>gets the bullet type.</p>
+<dl class="section return"><dt>Returns</dt><dd>read-only reference to <a class="el" href="classbullets_1_1_bullet.html#ac70c4d94b81f7fca3d1e5845b9aefda9">Bullet::m_type</a>.</dd></dl>
+
+</div>
+</div>
 <a id="ad04b377d7e1a4bea10dbd8abdaedddbb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad04b377d7e1a4bea10dbd8abdaedddbb">&#9670;&nbsp;</a></span>hit()</h2>
 
@@ -506,6 +565,9 @@ Static Protected Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool const  &amp; bullets::Bullet::isImpact </td>
@@ -514,9 +576,16 @@ Static Protected Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>acquires whether or not the bullet is in the impact state.</p>
 <dl class="section return"><dt>Returns</dt><dd>true if in impact state, else false</dd></dl>
+
+<p>Reimplemented in <a class="el" href="classbullets_1_1_death_orb.html#ae83d9014789445c7b8d11d919e12b26a">bullets::DeathOrb</a>.</p>
 
 </div>
 </div>

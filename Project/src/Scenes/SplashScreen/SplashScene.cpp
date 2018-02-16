@@ -118,9 +118,7 @@ void SplashScene::setup(const std::string & filePath)
 
 	if (!m_resources)
 	{
-		std::ifstream rawFile(filePath);
-		json::json jsonLoader;
-		rawFile >> jsonLoader;
+		json::json jsonLoader = util::loadJsonFromFile(filePath);
 
 		// instatiate our resource pointers that will "own"
 		// the asset on the heap.

@@ -2,6 +2,7 @@
 #define OPTIONSSCENE_H
 
 #include "scenes\Scene.h"
+#include "util\JsonLoader.h"
 #include "gui\GUI.h"
 
 /// 
@@ -34,6 +35,13 @@ private:
 		/// 
 		/// </summary>
 		std::shared_ptr<sf::Texture> m_sptrButtonTexture;
+
+		/// <summary>
+		/// @brief shared pointer to the help texture.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<sf::Texture> m_sptrHelpTexture;
 	};
 
 public:
@@ -99,6 +107,13 @@ private:
 	/// 
 	/// </summary>
 	std::string m_nextName;
+
+	/// <summary>
+	/// @brief Unique pointer to the help sprite.
+	/// 
+	/// 
+	/// </summary>
+	std::unique_ptr<sf::Sprite> m_helpSprite;
 
 };
 

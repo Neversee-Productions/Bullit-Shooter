@@ -6,7 +6,8 @@
 /// Will construct the player and initializes members
 /// </summary>
 /// <param name="keyHandler">Reference to the key handler</param>
-Player::Player(KeyHandler& keyHandler, Background & background)
+/// <param name="controller">Reference to the controller.</param>
+Player::Player(KeyHandler& keyHandler, Controller & controller, Background & background)
 	: m_background(background)
 	, m_ship()
 	, m_weaponLeft()
@@ -14,6 +15,8 @@ Player::Player(KeyHandler& keyHandler, Background & background)
 	, m_weaponRight()
 	, m_connectRightWeaponToShip()
 	, m_keyHandler(keyHandler)
+	, m_controller(controller)
+	, m_soundManager(SoundManager::instance())
 	, m_bulletManager()
 	, deltaTime(App::getUpdateDeltaTime())
 	, m_weaponLeftPos(sf::Vector2f(0.0f,0.0f))
@@ -27,7 +30,7 @@ Player::Player(KeyHandler& keyHandler, Background & background)
 	m_weaponLeft.setFlipped(flip);
 	m_weaponRight.setRectPos(m_weaponLeftPos);
 	m_weaponRight.setFlipped(!flip);
-	//m_bulletManager.initBulletvector(m_weaponLeft.getBulletType());
+
 }
 
 /// <summary>
@@ -77,26 +80,52 @@ void Player::update()
 {
 	if (m_alive)
 	{
+		if (this->getShieldHealth() <= 0.0f)
+		{
+			this->setAlive(false);
+		}
 		const bool & KEY_UP =
 			m_keyHandler.isPressed(sf::Keyboard::Up)
-			|| m_keyHandler.isPressed(sf::Keyboard::W);
+			|| m_keyHandler.isPressed(sf::Keyboard::W)
+			|| checkAxis(m_controller.m_currentState.m_flightStick.y, true);
 		const bool & KEY_DOWN =
 			m_keyHandler.isPressed(sf::Keyboard::Down)
-			|| m_keyHandler.isPressed(sf::Keyboard::S);
+			|| m_keyHandler.isPressed(sf::Keyboard::S)
+			|| checkAxis(m_controller.m_currentState.m_flightStick.y, false);
 		const bool & KEY_LEFT =
 			m_keyHandler.isPressed(sf::Keyboard::Left)
-			|| m_keyHandler.isPressed(sf::Keyboard::A);
+			|| m_keyHandler.isPressed(sf::Keyboard::A)
+			|| checkAxis(m_controller.m_currentState.m_flightStick.x, true);
 		const bool & KEY_RIGHT =
 			m_keyHandler.isPressed(sf::Keyboard::Right)
-			|| m_keyHandler.isPressed(sf::Keyboard::D);
-		const bool & KEY_FIRE = m_keyHandler.isPressed(sf::Keyboard::Space);
-
+			|| m_keyHandler.isPressed(sf::Keyboard::D)
+			|| checkAxis(m_controller.m_currentState.m_flightStick.x, false);
+		const bool & KEY_FIRE =
+			m_keyHandler.isPressed(sf::Keyboard::Space)
+			|| m_controller.m_currentState.m_btnTrigger;
 		switchWeaponInput();
 
 		m_ship.move(Ship::Direction::Up, KEY_UP);
 		m_ship.move(Ship::Direction::Down, KEY_DOWN);
 		m_ship.move(Ship::Direction::Left, KEY_LEFT);
 		m_ship.move(Ship::Direction::Right, KEY_RIGHT);
+		
+		if (m_controller.isConnected())
+		{
+			if (checkAxisThruster(m_controller.m_currentState.m_flightThruster))
+			{
+				m_ship.setDocking(true);
+			}
+			else
+			{
+				m_ship.setDocking(false);
+			}
+		}
+		else if (m_keyHandler.isPressed(sf::Keyboard::LControl) && !m_keyHandler.isPrevPressed(sf::Keyboard::LControl))
+		{
+			m_ship.setDocking(!m_ship.getDocking());
+		}
+
 
 		if (KEY_FIRE && m_weaponLeft.getCanFire() && m_weaponRight.getCanFire())
 		{
@@ -248,6 +277,44 @@ void Player::switchWeaponInput()
 		m_weaponRight.setType(BulletTypes::PyroBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 	}
+}
+
+/// <summary>
+/// @brief Check if axis is over threshold.
+/// 
+/// 
+/// </summary>
+/// <param name="axis">axis to be checked</param>
+/// <param name="flipped">determines whether to check below a negative threshold or above a positive threshold.</param>
+/// <returns>true if axis is over threshold.</returns>
+bool Player::checkAxis(float const & axis, bool flipped)
+{
+	float const THRESHOLD = 10.0f;
+	if (flipped)
+	{
+		if (axis < -THRESHOLD)
+		{
+			return true;
+		}
+	}
+	else
+	{
+		if (axis > THRESHOLD)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Player::checkAxisThruster(float const & axis)
+{
+	float const THRESHOLD = 70.0f;
+	if (axis > THRESHOLD)
+	{
+		return true;
+	}
+	return false;
 }
 
 /// <summary>
@@ -420,6 +487,17 @@ bool const & Player::isAlive()
 }
 
 /// <summary>
+/// @brief checks if player is invulnerable.
+/// 
+/// 
+/// </summary>
+/// <returns>true means player is unhittable, false means he is hittable.</returns>
+bool const & Player::isInvulnerable()
+{
+	return m_shield.isInvulnerable();
+}
+
+/// <summary>
 /// @brief This method sets end points of the connectors.
 /// 
 /// 
@@ -499,4 +577,64 @@ void Player::setCanFire(bool fire)
 {
 	m_weaponLeft.setCanFire(fire);
 	m_weaponRight.setCanFire(fire);
+}
+
+/// <summary>
+/// @brief a getter for the is docking bool of the ship.
+/// 
+/// 
+/// </summary>
+/// <returns>constant boolean that is the is docking variable of Ship</returns>
+const bool Player::isDocking()
+{
+	return m_ship.getDocking();
+}
+
+/// <summary>
+/// @brief this function will take the passsed in vector2f and assign the players ship position to the passed vector.
+/// 
+/// 
+/// </summary>
+/// <param name="pos">new position of the Ship defined as Vector2f</param>
+void Player::setPosition(sf::Vector2f pos)
+{
+	m_ship.setPosition(pos);
+}
+
+/// <summary>
+/// @brief this method will call the method that belongs to the BulletManager and iterates through the 
+/// vector of bullets and sets them to active. Used on restarting the game.
+/// 
+/// 
+/// </summary>
+void Player::resetBullets()
+{
+	m_bulletManager.clearAllBullets();
+}
+
+/// <summary>
+/// @brief this method resets the type of the weapon back to standard.
+/// 
+/// 
+/// </summary>
+void Player::resetWeapons()
+{
+	m_weaponLeft.resetWeaponType();
+	m_weaponRight.resetWeaponType();
+}
+
+/// <summary>
+/// @brief this method will reset the player and all his components.
+/// this means that the bullets,shield, weapon, position and velocity will reset.
+/// 
+/// 
+/// </summary>
+void Player::reset()
+{
+	m_ship.resetShip();
+	this->setAlive(true);
+	resetBullets();
+	resetWeapons();
+	m_shield.resetShield();
+	m_background.setTargetColor(m_weaponLeft.getBgColor());
 }

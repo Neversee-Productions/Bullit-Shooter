@@ -5,6 +5,7 @@ var class_background =
     [ "draw", "class_background.html#ab64ba5922f8a497205725c021953d730", null ],
     [ "init", "class_background.html#a9e48d290fdba0d7cb52032c6fa454c62", null ],
     [ "interpolate", "class_background.html#ae958beb9f0026965327a465d90176575", null ],
+    [ "reset", "class_background.html#a05f88936aa2209af03d4f5fbe9eacaee", null ],
     [ "setTargetColor", "class_background.html#a646e0cce504f8fd62fb2c836672d3da6", null ],
     [ "update", "class_background.html#acab58b65d4299d4bd51b8376e8c3e3d3", null ],
     [ "m_bgColor", "class_background.html#a227df2ea5c059e73058f9ea0767078d0", null ],

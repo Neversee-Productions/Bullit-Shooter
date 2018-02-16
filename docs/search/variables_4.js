@@ -10,10 +10,12 @@ var searchData=
   ['s_5finstance',['s_instance',['../class_resource_handler.html#a58a35b535a836c1e7044abd677a367e9',1,'ResourceHandler']]],
   ['s_5fknock_5fback',['s_KNOCK_BACK',['../classbullets_1_1_comet_shot.html#a950ec1a54248148202598b08f52dc4e6',1,'bullets::CometShot']]],
   ['s_5floop_5fid',['s_LOOP_ID',['../classbullets_1_1_bullet.html#a2bcee48fdbee7c6acb491c6ea1c1c473',1,'bullets::Bullet']]],
+  ['s_5fmax_5fhealth',['s_MAX_HEALTH',['../classai_1_1_ai_basic.html#aa2103ed8ebc8275ad9bc87ee657c3070',1,'ai::AiBasic']]],
   ['s_5fmax_5fsize',['s_MAX_SIZE',['../classbullets_1_1_magma_shot.html#a3c7cc10efd51b055090283c55ecd1926',1,'bullets::MagmaShot']]],
   ['s_5frecover_5fid',['s_RECOVER_ID',['../classai_1_1_ai_basic.html#a3661e26299c9dba8d15596ba0b7d97e1',1,'ai::AiBasic']]],
   ['s_5frectview',['s_rectView',['../class_app.html#a9f4d7db2c246f006c1ab183747e897b7',1,'App']]],
   ['s_5fseek_5fid',['s_SEEK_ID',['../classai_1_1_ai_basic.html#ac1c9059110de82f2ad7648c6b4da3fc6',1,'ai::AiBasic']]],
+  ['s_5fsoundmanager',['s_soundManager',['../class_sound_manager.html#a1726b2830f6604dca2dbc5a5e3ffca1d',1,'SoundManager']]],
   ['s_5ftext_5frect_5fempty',['s_TEXT_RECT_EMPTY',['../classgui_1_1_slider.html#ad4110d5c12af149300777189d5f4d49f',1,'gui::Slider']]],
   ['s_5ftext_5frect_5ffill',['s_TEXT_RECT_FILL',['../classgui_1_1_slider.html#a49d63504570a9240d9fe5f9aa1ab51db',1,'gui::Slider']]],
   ['s_5ftext_5frect_5fleft',['s_TEXT_RECT_LEFT',['../classgui_1_1_button.html#a38d54d9e935d4cc776a6e7bc06b31ba5',1,'gui::Button']]],
@@ -24,5 +26,7 @@ var searchData=
   ['s_5ftext_5frect_5fsquare',['s_TEXT_RECT_SQUARE',['../classgui_1_1_slider.html#adc4d1500c51db827b3e3d7e19fcc022e',1,'gui::Slider']]],
   ['s_5fupdatedeltatime',['s_updateDeltaTime',['../class_app.html#a04f4b5f0e04c4ff1bb1428a101f118da',1,'App']]],
   ['s_5fviewsize',['s_viewSize',['../class_app.html#ae9a5440bd5a998c9d4d16b65ec3df8fa',1,'App']]],
-  ['s_5fwindup_5fid',['s_WINDUP_ID',['../classai_1_1_ai_basic.html#a5f7a8c17a7f7a0b7233748de877f7dc7',1,'ai::AiBasic']]]
+  ['s_5fwindup_5fid',['s_WINDUP_ID',['../classai_1_1_ai_basic.html#a5f7a8c17a7f7a0b7233748de877f7dc7',1,'ai::AiBasic']]],
+  ['settings',['settings',['../struct_sound_manager_1_1_sound.html#afb4e79b627095365d8a00a3c7d21f7be',1,'SoundManager::Sound']]],
+  ['sound',['sound',['../struct_sound_manager_1_1_sound.html#af18a7bfab36c38229112dd1887fa52c0',1,'SoundManager::Sound']]]
 ];

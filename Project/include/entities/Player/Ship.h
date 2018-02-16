@@ -11,7 +11,10 @@
 #include "SFML\Graphics\Texture.hpp"
 // For thor::Animator<>
 #include "Thor\Animations\Animator.hpp"
-#include "Window.h"
+//for vector calculations
+#include "Thor\Vectors.hpp" 
+#include <iostream>
+#include "system\Window.h"
 
 ///
 /// @brief Ship class.
@@ -88,15 +91,17 @@ public:
 	const sf::RectangleShape & getShipRect() const;
 	void setTexture(std::shared_ptr<sf::Texture> sptrTexture);
 	void setFrames(std::unique_ptr<ShipFrames> uptrShipFrames);
+	void checkOffScreen();
+	void setDocking(bool check);
+	bool getDocking();
+	void setPosition(sf::Vector2f pos);
+	void resetShip();
 
 private:
 	void processInput(const KeysPressed &);
-	void moveUp();
-	void moveDown();
-	void moveLeft();
-	void moveRight();
 	void decFrame();
 	void incFrame();
+
 
 	/// <summary>
 	/// @brief Delta time update.
@@ -171,6 +176,65 @@ private:
 	/// @brief Defines a struct of pressed keys.
 	/// </summary>
 	KeysPressed m_pressed;
+
+	/// <summary>
+	/// @brief this is the velocity vector.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_velocity;
+
+	/// <summary>
+	/// @brief define the aount to accelerate by.
+	/// 
+	/// 
+	/// </summary>
+	float m_accelerationRate;
+
+	/// <summary>
+	/// @brief direction vector of movement based on input.
+	/// this may not be from 0-1 as we will use a joystick
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_directionVec;
+
+	/// <summary>
+	/// @brief vector of movement.
+	/// This is the normalized direction vector.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_moveDir;
+
+	/// <summary>
+	/// @brief this is the max velocity of the player ship.
+	/// 
+	/// 
+	/// </summary>
+	float m_maxVel = 1000.0f;
+
+	/// <summary>
+	/// @brief this defines the acceleration of the player.
+	/// 
+	/// 
+	/// </summary>
+	float m_acceleration;
+
+	/// <summary>
+	/// @brief this parameter is a flag for the player being in docking state.
+	/// 
+	/// 
+	/// </summary>
+	bool m_isDocking;
+
+	/// <summary>
+	/// @brief this is a vector2f that defines the initial position of the player on
+	/// game construction. This variable is used on resetting the game.
+	/// 
+	/// 
+	/// </summary>
+	sf::Vector2f m_initialPosition;
 };
 
 #endif SHIP_H

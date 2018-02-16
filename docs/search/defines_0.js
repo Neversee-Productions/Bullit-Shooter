@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ndebug',['NDEBUG',['../main_8hpp.html#a8de3ed741dadc9c979a4ff17c0a9116e',1,'NDEBUG():&#160;main.hpp'],['../main_8cpp.html#a8de3ed741dadc9c979a4ff17c0a9116e',1,'NDEBUG():&#160;main.cpp']]]
+  ['joystick_5f',['JOYSTICK_',['../_controller_8h.html#a5a1d5355e7f89ff05e29087841616ca9',1,'Controller.h']]]
 ];

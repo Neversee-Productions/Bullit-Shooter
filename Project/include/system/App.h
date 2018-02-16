@@ -9,7 +9,6 @@
 /// @author Rafael Plugge
 /// 
 /// Will contain static variables that are used throughout the application.
-/// Example: Window dimensions.
 /// 
 class App
 {

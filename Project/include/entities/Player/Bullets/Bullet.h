@@ -2,7 +2,7 @@
 #define BULLET_H
 
 #include "SFML\Graphics.hpp"
-#include "Window.h"
+#include "system\Window.h"
 #include "BulletTypes.h"
 #include "Thor\Animations.hpp"
 #include "Thor\Math.hpp"
@@ -111,8 +111,10 @@ namespace bullets
 		void updateVelocityVector();
 		bool isActive() const;
 		virtual bool checkCircleCollision(const tinyh::c2Circle & other);
+		virtual bool checkAABBCollision(const tinyh::c2AABB & other);
 		virtual const float & getDamage() = 0;
-		bool const & isImpact() const;
+		virtual bool const & isImpact() const;
+		BulletTypes const & getType() const;
 
 	protected:
 		virtual void setAnimation(std::string const & animationId);

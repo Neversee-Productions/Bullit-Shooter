@@ -7,6 +7,10 @@ var dir_3e1dc876969ac49f2895e3f7ec46ddec =
       [ "Background", "class_background.html", "class_background" ],
       [ "Resources", "struct_background_1_1_resources.html", "struct_background_1_1_resources" ]
     ] ],
+    [ "BasicEnemyManager.h", "_basic_enemy_manager_8h.html", [
+      [ "BasicEnemyManager", "class_basic_enemy_manager.html", "class_basic_enemy_manager" ],
+      [ "Resources", "struct_basic_enemy_manager_1_1_resources.html", "struct_basic_enemy_manager_1_1_resources" ]
+    ] ],
     [ "Entities.h", "_entities_8h.html", null ],
     [ "Pickup.h", "_pickup_8h.html", [
       [ "Pickup", "class_pickup.html", "class_pickup" ],

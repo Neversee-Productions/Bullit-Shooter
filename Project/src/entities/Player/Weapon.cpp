@@ -7,7 +7,8 @@
 /// </summary>
 /// <param name="position">defines the position of the weapon rectangle</param>
 Weapon::Weapon(sf::Vector2f position, bool const & flipped)
-	: m_weaponSprite()
+	: m_DELTA_TIME(sf::seconds(App::getUpdateDeltaTime()))
+	, m_weaponSprite()
 	, m_currentBullet(BulletTypes::Standard)
 	, m_position(position)
 	, m_animator(nullptr)
@@ -87,16 +88,8 @@ void Weapon::init(std::shared_ptr<Resources> sptrResources)
 				animator.addAnimation(shootAnimation.m_id, *(shootAnimation.m_sptrFrames), shootAnimation.m_duration);
 			}
 		}
-		
-
-		auto & startingWeaponAnimation = *sptrResources->m_weaponAnimations.at(static_cast<int>(m_currentBullet));
-		auto & weaponBeginAnimation = *startingWeaponAnimation.m_uptrBeginAnimation;
-		auto & weaponShootAnimation = *startingWeaponAnimation.m_uptrShootAnimation;
-		auto & weaponBeginTexture = *(startingWeaponAnimation.m_uptrBeginAnimation->m_sptrTexture);
-		m_weaponSprite.setTexture(weaponBeginTexture, true);
-		m_weaponSprite.setOrigin(weaponBeginAnimation.m_origin);
-		animator.playAnimation(startingWeaponAnimation.m_uptrBeginAnimation->m_id, false);
 	}
+	this->setType(BulletTypes::Standard);
 }
 
 /// <summary>
@@ -108,8 +101,6 @@ void Weapon::init(std::shared_ptr<Resources> sptrResources)
 /// <param name="deltaTime">define reference to draw time step.</param>
 void Weapon::draw(Window & window, const float & deltaTime)
 {
-	m_animator->update(sf::seconds(deltaTime));
-	m_animator->animate(m_weaponSprite);
 	window.draw(m_weaponSprite);
 }
 
@@ -130,6 +121,8 @@ void Weapon::update(const sf::Vector2f& pos)
 		sf::Vector2f const weaponPos = sf::Vector2f(pos.x + 75.0f, pos.y);
 		m_weaponSprite.setPosition(weaponPos);
 	}
+	m_animator->update(m_DELTA_TIME);
+	m_animator->animate(m_weaponSprite);
 	if (false == m_canFire)
 	{
 		if (m_animator)
@@ -186,6 +179,7 @@ void Weapon::shoot()
 	auto & weaponShootAnimation = *(m_resources->m_weaponAnimations.at(weaponID)->m_uptrShootAnimation);
 	std::string const & shootID = weaponShootAnimation.m_id;
 	m_weaponSprite.setTexture(*weaponShootAnimation.m_sptrTexture, true);
+	//m_weaponSprite.setTextureRect(weaponShootAnimation.)
 	m_weaponSprite.setOrigin(weaponShootAnimation.m_origin);
 	m_animator->playAnimation(shootID, false);
 }
@@ -254,6 +248,7 @@ void Weapon::setType(BulletTypes const & bulletType)
 	std::string const & beginID = weaponBeginAnimation.m_id;
 	std::string const & shootID = weaponShootAnimation.m_id;
 	m_weaponSprite.setTexture(*weaponBeginAnimation.m_sptrTexture, true);
+	m_weaponSprite.setTextureRect(weaponBeginAnimation.m_frame);
 	m_weaponSprite.setOrigin(weaponBeginAnimation.m_origin);
 
 	m_animator->playAnimation(beginID, false);
@@ -328,4 +323,15 @@ sf::Color const & Weapon::getBgColor() const
 {
 	auto weaponIndex = static_cast<int>(m_currentBullet);
 	return *m_resources->m_weaponAnimations.at(weaponIndex)->m_uptrBgColor;
+}
+
+/// <summary>
+/// @brief this function simply resets weapon type to the default type.
+/// used on resetting the game.
+/// 
+/// 
+/// </summary>
+void Weapon::resetWeaponType()
+{
+	this->setType(BulletTypes::Standard);
 }

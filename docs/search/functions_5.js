@@ -7,5 +7,6 @@ var searchData=
   ['fireblast',['FireBlast',['../classbullets_1_1_fire_blast.html#aee5c419c26fd0556a3cda6d480b3ae8b',1,'bullets::FireBlast']]],
   ['firebullet',['fireBullet',['../class_bullet_manager.html#a5821be7f60c44744f7b1817afe54864e',1,'BulletManager']]],
   ['fireempowered',['fireEmpowered',['../class_bullet_manager.html#a507393ed5ccbe692e93f7763ed714435',1,'BulletManager']]],
-  ['fireone',['fireOne',['../class_bullet_manager.html#ac752231cf91a59e7eb5113f18a7b5f1d',1,'BulletManager']]]
+  ['fireone',['fireOne',['../class_bullet_manager.html#ac752231cf91a59e7eb5113f18a7b5f1d',1,'BulletManager']]],
+  ['from_5fjson',['from_json',['../_asteroid_8cpp.html#a33651b88ce79269889758de9c054d1a9',1,'from_json(const json::json &amp;j, Asteroid::Resources::Texture &amp;textureData):&#160;Asteroid.cpp'],['../_asteroid_8cpp.html#aab921e83e8ffca095d06442ce8957eee',1,'from_json(const json::json &amp;j, Asteroid::Resources::Animation &amp;animationData):&#160;Asteroid.cpp'],['../_sound_setting_8cpp.html#a98b8c10d4a2178907ea1fd5a1ff1ceb0',1,'from_json(const json::json &amp;j, SoundSetting &amp;soundSetting):&#160;SoundSetting.cpp']]]
 ];

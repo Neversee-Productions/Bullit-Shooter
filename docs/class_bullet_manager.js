@@ -1,7 +1,9 @@
 var class_bullet_manager =
 [
     [ "Resources", "struct_bullet_manager_1_1_resources.html", "struct_bullet_manager_1_1_resources" ],
+    [ "BulletTypeStringMap", "class_bullet_manager.html#a4f40098016265b8ea173d998abcdc22a", null ],
     [ "BulletManager", "class_bullet_manager.html#a4aae3d492898b93dd5730dc28f2cc910", null ],
+    [ "clearAllBullets", "class_bullet_manager.html#a82c0859aed5848da5037fa65df9db04f", null ],
     [ "draw", "class_bullet_manager.html#adc7565464b026ddc98b02a70c558c74a", null ],
     [ "fireBullet", "class_bullet_manager.html#a5821be7f60c44744f7b1817afe54864e", null ],
     [ "fireEmpowered", "class_bullet_manager.html#a507393ed5ccbe692e93f7763ed714435", null ],
@@ -16,6 +18,8 @@ var class_bullet_manager =
     [ "updateWindowCollisions", "class_bullet_manager.html#a918189f778d2c5f3258092535dfc9c55", null ],
     [ "m_bulletMap", "class_bullet_manager.html#a094aedb5357033af0d21ffd714890105", null ],
     [ "m_resources", "class_bullet_manager.html#a330391f4a26e794cb9980611bf15add9", null ],
+    [ "m_soundFireMap", "class_bullet_manager.html#a2a387ddca238e2ee29e0d663c508938f", null ],
+    [ "m_soundManager", "class_bullet_manager.html#a52ca07bdae59784e195be4300cfaed01", null ],
     [ "m_timeSinceFire", "class_bullet_manager.html#adc312c9d67f9c48ff35d0316be779779", null ],
     [ "m_windowC2Rect", "class_bullet_manager.html#ada6972d3c7730d60d0085c27e3348861", null ]
 ];

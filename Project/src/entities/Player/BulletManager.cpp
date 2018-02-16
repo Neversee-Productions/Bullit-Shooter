@@ -8,7 +8,35 @@
 BulletManager::BulletManager()
 	: m_timeSinceFire(10.0f)
 	, m_windowC2Rect(App::getViewC2Rect())
+	, m_soundManager(SoundManager::instance())
+	, m_soundFireMap()
 {
+	std::size_t const BULLET_TYPES = static_cast<std::size_t>(BulletTypes::AmountOfTypes);
+	m_soundFireMap.reserve(BULLET_TYPES);
+
+	std::stringstream bulletFireID("bullet00_fire");
+	bulletFireID << "bullet";
+	for (std::size_t i = 0; i < BULLET_TYPES; ++i)
+	{
+		auto const TYPE = static_cast<BulletTypes>(i);
+		auto const BULLET_NUM = i + 1;
+		if (BULLET_NUM < 10u)
+		{
+			bulletFireID << "0" + std::to_string(BULLET_NUM);
+		}
+		else
+		{
+			bulletFireID << std::to_string(BULLET_NUM);
+		}
+		m_soundFireMap.insert(std::make_pair(TYPE, bulletFireID.str()));
+
+		// store current stream position
+		std::streampos const cursor = bulletFireID.tellp();
+		// Convert 2u to a stream offset
+		std::streamoff const cursorOffset = 2u;
+		// Move internal stream cursor back 2 places
+		bulletFireID.seekp(cursor - cursorOffset);
+	}
 }
 
 /// <summary>
@@ -48,6 +76,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	case BulletTypes::Empowered:
@@ -56,6 +85,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireEmpowered(position1, position2);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	case BulletTypes::DeathOrb:
@@ -64,6 +94,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	case BulletTypes::FireBlast:
@@ -72,6 +103,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	case BulletTypes::HolySphere:
@@ -80,6 +112,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	case BulletTypes::MagmaShot:
@@ -88,6 +121,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 	break;
 	case BulletTypes::NapalmSphere:
@@ -96,6 +130,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	case BulletTypes::CometShot:
@@ -104,6 +139,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	case BulletTypes::NullWave:
@@ -112,6 +148,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	case BulletTypes::StaticSphere:
@@ -120,6 +157,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	case BulletTypes::PyroBlast:
@@ -128,6 +166,7 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 			fireOne(position1, position2, type);
 			weapon1.shoot();
 			weapon2.shoot();
+			m_soundManager.play(m_soundFireMap.at(type));
 		}
 		break;
 	default:
@@ -335,6 +374,26 @@ void BulletManager::setEmpowered(bullets::Bullet & bullet, const float & angle, 
 const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>>& BulletManager::getBulletMap()
 {
 	return m_bulletMap;
+}
+
+/// <summary>
+/// @brief This method will run through all the bullets and set them to inactive.
+/// This will be used on resetting the game to prevent bullets from still being active and on screen
+/// when the user restarts the game. This will iterate through the map of bullet vectors and then
+/// each bullet in a vector and set their active state to false.
+/// 
+/// 
+/// </summary>
+void BulletManager::clearAllBullets()
+{
+	for (auto & bulletVector : m_bulletMap)
+	{
+		for (auto & bullet : bulletVector.second)
+		{
+			bullet->setActive(false);
+		}
+	}
+
 }
 
 /// <summary>

@@ -149,6 +149,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7eff8546728a5ad3c77e0d924998ca80"><td class="memItemLeft" align="right" valign="top">sf::Color const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a7eff8546728a5ad3c77e0d924998ca80">getBgColor</a> () const</td></tr>
 <tr class="memdesc:a7eff8546728a5ad3c77e0d924998ca80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the background color.  <a href="#a7eff8546728a5ad3c77e0d924998ca80">More...</a><br /></td></tr>
 <tr class="separator:a7eff8546728a5ad3c77e0d924998ca80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1ad9f889b879ac5480b523dd9d4680"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a1c1ad9f889b879ac5480b523dd9d4680">resetWeaponType</a> ()</td></tr>
+<tr class="separator:a1c1ad9f889b879ac5480b523dd9d4680"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -157,6 +159,8 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a21eeaa4fdd47fe79b79aa822e8ce13e2"><td class="memItemLeft" align="right" valign="top">sf::Time const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a21eeaa4fdd47fe79b79aa822e8ce13e2">m_DELTA_TIME</a></td></tr>
+<tr class="separator:a21eeaa4fdd47fe79b79aa822e8ce13e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86e4ba9cee6161da1dd16e99b2de49e9"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a86e4ba9cee6161da1dd16e99b2de49e9">m_weaponSprite</a></td></tr>
 <tr class="separator:a86e4ba9cee6161da1dd16e99b2de49e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17c50d12732395f94cf4e04665416406"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a17c50d12732395f94cf4e04665416406">m_currentBullet</a></td></tr>
@@ -436,6 +440,24 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="a1c1ad9f889b879ac5480b523dd9d4680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1ad9f889b879ac5480b523dd9d4680">&#9670;&nbsp;</a></span>resetWeaponType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Weapon::resetWeaponType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>this function simply resets weapon type to the default type. used on resetting the game.</p>
+
+</div>
+</div>
 <a id="aee0c6edb6202919f074a51e97ff6353e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee0c6edb6202919f074a51e97ff6353e">&#9670;&nbsp;</a></span>setAlpha()</h2>
 
@@ -692,6 +714,29 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>hold the type of the current bullet.</p>
+
+</div>
+</div>
+<a id="a21eeaa4fdd47fe79b79aa822e8ce13e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21eeaa4fdd47fe79b79aa822e8ce13e2">&#9670;&nbsp;</a></span>m_DELTA_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Time const Weapon::m_DELTA_TIME</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>sfml delta time of update frame call.</p>
 
 </div>
 </div>

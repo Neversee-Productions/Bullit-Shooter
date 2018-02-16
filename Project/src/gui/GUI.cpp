@@ -23,8 +23,8 @@ gui::GUI::GUI(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller
 		const auto & aspectRatio = windowSize.y / windowSize.x;
 		m_rectangleStrip = sf::RectangleShape(sf::Vector2f(windowSize.x * 1.5f, windowSize.y * 0.5f));
 		m_rectangleStrip.setPosition(windowSize.x * 0.5f, windowSize.y * 0.5f);
-		m_rectangleStrip.setFillColor(sf::Color(0u, 50u, 250u, 100u));
-		m_rectangleStrip.setOutlineColor(sf::Color(255u, 255u, 0u, 100u));
+		m_rectangleStrip.setFillColor(sf::Color(91u, 94u, 101u, 100u));
+		m_rectangleStrip.setOutlineColor(sf::Color(84u, 190u, 126u, 100u));
 		m_rectangleStrip.setOutlineThickness(2.0f);
 		const auto & localRect = m_rectangleStrip.getLocalBounds();
 		m_rectangleStrip.setOrigin(sf::Vector2f(localRect.width / 2, localRect.height / 2));
@@ -108,6 +108,7 @@ void gui::GUI::configure(const Layouts & layout, const sf::Vector2u & windowSize
 		screen -= (margin * 2.0f);
 		grid = sf::Vector2f(0.0f, screen.y / static_cast<float>(m_layoutNr));
 		offset = sf::Vector2f(screen.x / 2.0f, grid.y / 2.0f) + margin;
+		m_rectangleStrip.rotate(90.0f);
 		break;
 	case Layouts::StripDiagonal:
 		screen -= (margin * 2.0f);
@@ -373,6 +374,7 @@ void gui::GUI::processInput()
 {
 	if (m_controller->isConnected())
 	{
+#ifdef XBOX360_
 		const float& JOYSTICK_THRESHOLD = 50.0f;
 		const auto & DPAD_UP = m_controller->m_currentState.m_dpadUp;
 		const auto & PREV_DPAD_UP = m_controller->m_previousState.m_dpadUp;
@@ -397,50 +399,71 @@ void gui::GUI::processInput()
 		{
 			moveToNextWidgets();
 		}
+#endif
+#ifdef JOYSTICK_
+		const float & JOYSTICK_THRESHOLD = 50.0f;
+		const auto & FLIGHT_STICK_Y = m_controller->m_currentState.m_flightStick.y;
+		const auto & PREV_FLIGHT_STICK_Y = m_controller->m_previousState.m_flightStick.y;
+		const auto & FLIGHT_STICK_X = m_controller->m_currentState.m_flightStick.x;
+		const auto & PREV_FLIGHT_STICK_X = m_controller->m_previousState.m_flightStick.x;
+		const auto & FLIGHT_THURSTER = m_controller->m_currentState.m_flightThruster;
+		const auto & PREV_FLIGHT_THURSTER = m_controller->m_previousState.m_flightThruster;
+
+		const auto & FLIGHT_STICK_MAX = std::max({ FLIGHT_STICK_X, FLIGHT_STICK_Y, FLIGHT_THURSTER });
+		const auto & PREV_FLIGHT_STICK_MAX = std::max({ PREV_FLIGHT_STICK_X, PREV_FLIGHT_STICK_Y, PREV_FLIGHT_THURSTER });
+		const auto & FLIGHT_STICK_MIN = std::min({ FLIGHT_STICK_X, FLIGHT_STICK_Y, FLIGHT_THURSTER });
+		const auto & PREV_FLIGHT_STICK_MIN = std::min({ PREV_FLIGHT_STICK_X, PREV_FLIGHT_STICK_Y, PREV_FLIGHT_THURSTER });
+
+		if (FLIGHT_STICK_MIN < -JOYSTICK_THRESHOLD && PREV_FLIGHT_STICK_MIN >= -JOYSTICK_THRESHOLD)
+		{
+			this->moveToPrevWidgets();
+		}
+
+		if (FLIGHT_STICK_MAX > JOYSTICK_THRESHOLD && PREV_FLIGHT_STICK_MAX <= JOYSTICK_THRESHOLD)
+		{
+			this->moveToNextWidgets();
+		}
+#endif
 	}
-	else
+	const auto & IS_DIAGONAL = (m_layout == Layouts::StripDiagonal);
+
+	const auto & KEY_UP = m_keyHandler->isPressed(sf::Keyboard::Key::Up);
+	const auto & PREV_KEY_UP = m_keyHandler->isPrevPressed(sf::Keyboard::Key::Up);
+	const auto & KEY_DOWN = m_keyHandler->isPressed(sf::Keyboard::Key::Down);
+	const auto & PREV_KEY_DOWN = m_keyHandler->isPrevPressed(sf::Keyboard::Key::Down);
+
+	const auto & KEY_LEFT = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::Left);
+	const auto & PREV_KEY_LEFT = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::Left);
+	const auto & KEY_RIGHT = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::Right);
+	const auto & PREV_KEY_RIGHT = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::Right);
+
+	const auto & KEY_W = m_keyHandler->isPressed(sf::Keyboard::Key::W);
+	const auto & PREV_KEY_W = m_keyHandler->isPrevPressed(sf::Keyboard::Key::W);
+	const auto & KEY_S = m_keyHandler->isPressed(sf::Keyboard::Key::S);
+	const auto & PREV_KEY_S = m_keyHandler->isPrevPressed(sf::Keyboard::Key::S);
+
+	const auto & KEY_A = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::A);
+	const auto & PREV_KEY_A = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::A);
+	const auto & KEY_D = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::D);
+	const auto & PREV_KEY_D = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::D);
+
+	if (
+		(KEY_UP && !PREV_KEY_UP)
+		|| (KEY_LEFT && !PREV_KEY_LEFT)
+		|| (KEY_W && !PREV_KEY_W)
+		|| (KEY_A && !PREV_KEY_A)
+		)
 	{
-
-		const auto & IS_DIAGONAL = (m_layout == Layouts::StripDiagonal);
-
-		const auto & KEY_UP = m_keyHandler->isPressed(sf::Keyboard::Key::Up);
-		const auto & PREV_KEY_UP = m_keyHandler->isPrevPressed(sf::Keyboard::Key::Up);
-		const auto & KEY_DOWN = m_keyHandler->isPressed(sf::Keyboard::Key::Down);
-		const auto & PREV_KEY_DOWN = m_keyHandler->isPrevPressed(sf::Keyboard::Key::Down);
-
-		const auto & KEY_LEFT = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::Left);
-		const auto & PREV_KEY_LEFT = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::Left);
-		const auto & KEY_RIGHT = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::Right);
-		const auto & PREV_KEY_RIGHT = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::Right);
-
-		const auto & KEY_W = m_keyHandler->isPressed(sf::Keyboard::Key::W);
-		const auto & PREV_KEY_W = m_keyHandler->isPrevPressed(sf::Keyboard::Key::W);
-		const auto & KEY_S = m_keyHandler->isPressed(sf::Keyboard::Key::S);
-		const auto & PREV_KEY_S = m_keyHandler->isPrevPressed(sf::Keyboard::Key::S);
-
-		const auto & KEY_A = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::A);
-		const auto & PREV_KEY_A = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::A);
-		const auto & KEY_D = IS_DIAGONAL && m_keyHandler->isPressed(sf::Keyboard::Key::D);
-		const auto & PREV_KEY_D = IS_DIAGONAL && m_keyHandler->isPrevPressed(sf::Keyboard::Key::D);
-
-		if (
-			(KEY_UP && !PREV_KEY_UP)
-			|| (KEY_LEFT && !PREV_KEY_LEFT)
-			|| (KEY_W && !PREV_KEY_W)
-			|| (KEY_A && !PREV_KEY_A)
-			)
-		{
-			moveToPrevWidgets();
-		}
-		if (
-			(KEY_DOWN && !PREV_KEY_DOWN)
-			|| (KEY_RIGHT && !PREV_KEY_RIGHT)
-			|| (KEY_S && !PREV_KEY_S)
-			|| (KEY_D && !PREV_KEY_D)
-			)
-		{
-			moveToNextWidgets();
-		}
+		moveToPrevWidgets();
+	}
+	if (
+		(KEY_DOWN && !PREV_KEY_DOWN)
+		|| (KEY_RIGHT && !PREV_KEY_RIGHT)
+		|| (KEY_S && !PREV_KEY_S)
+		|| (KEY_D && !PREV_KEY_D)
+		)
+	{
+		moveToNextWidgets();
 	}
 }
 

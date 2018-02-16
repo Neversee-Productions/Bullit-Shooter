@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project: Project/src/ResourceHandler.cpp File Reference</title>
+<title>Project: Project/src/system/ResourceHandler.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,13 +86,19 @@ $(document).ready(function(){initNavTree('_resource_handler_8cpp.html','');});
 <div class="title">ResourceHandler.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_resource_handler_8h_source.html">ResourceHandler.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_resource_handler_8h_source.html">system\ResourceHandler.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0e59462d29385d4262f6aa06879798f2"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
 <tr class="memitem:a0e59462d29385d4262f6aa06879798f2"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Texture &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_resource_handler_8cpp.html#a0e59462d29385d4262f6aa06879798f2">ResourceHandler::loadUp&lt; sf::Texture &gt;</a> (std::string const &amp;filePath, std::string const &amp;id)</td></tr>
 <tr class="separator:a0e59462d29385d4262f6aa06879798f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b90cbc56f2517de5ae41d5eec09b6b5"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:a5b90cbc56f2517de5ae41d5eec09b6b5"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::SoundBuffer &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_resource_handler_8cpp.html#a5b90cbc56f2517de5ae41d5eec09b6b5">ResourceHandler::loadUp&lt; sf::SoundBuffer &gt;</a> (std::string const &amp;filePath, std::string const &amp;id)</td></tr>
+<tr class="separator:a5b90cbc56f2517de5ae41d5eec09b6b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca73e60ffe01a2b5ea9241e8c0cb3190"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:aca73e60ffe01a2b5ea9241e8c0cb3190"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Font &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_resource_handler_8cpp.html#aca73e60ffe01a2b5ea9241e8c0cb3190">ResourceHandler::loadUp&lt; sf::Font &gt;</a> (std::string const &amp;filePath, std::string const &amp;id)</td></tr>
+<tr class="separator:aca73e60ffe01a2b5ea9241e8c0cb3190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cb3fdd1b7cefb1d90e1f6bae9351a74"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
 <tr class="memitem:a7cb3fdd1b7cefb1d90e1f6bae9351a74"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Texture &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_resource_handler_8cpp.html#a7cb3fdd1b7cefb1d90e1f6bae9351a74">ResourceHandler::loadUp&lt; sf::Texture &gt;</a> (json::json &amp;jsonParser, const std::string &amp;id)</td></tr>
 <tr class="separator:a7cb3fdd1b7cefb1d90e1f6bae9351a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -347,8 +353,38 @@ template&lt;&gt; </div>
 
 </div>
 </div>
+<a id="aca73e60ffe01a2b5ea9241e8c0cb3190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca73e60ffe01a2b5ea9241e8c0cb3190">&#9670;&nbsp;</a></span>ResourceHandler::loadUp< sf::Font >() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;sf::Font&gt; <a class="el" href="class_resource_handler.html#a82a7c8b1618cfe9150cbb5c4a78879d5">ResourceHandler::loadUp</a>&lt; sf::Font &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>filePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab7543c858e58ef73864bef5f53f1eaba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7543c858e58ef73864bef5f53f1eaba">&#9670;&nbsp;</a></span>ResourceHandler::loadUp< sf::Font >()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7543c858e58ef73864bef5f53f1eaba">&#9670;&nbsp;</a></span>ResourceHandler::loadUp< sf::Font >() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -426,7 +462,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="af115b53f997411de9fe6a4a934b079a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af115b53f997411de9fe6a4a934b079a5">&#9670;&nbsp;</a></span>ResourceHandler::loadUp< sf::SoundBuffer >()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af115b53f997411de9fe6a4a934b079a5">&#9670;&nbsp;</a></span>ResourceHandler::loadUp< sf::SoundBuffer >() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,6 +497,36 @@ template&lt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns a shared pointer to our loaded resource.</dd></dl>
+
+</div>
+</div>
+<a id="a5b90cbc56f2517de5ae41d5eec09b6b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b90cbc56f2517de5ae41d5eec09b6b5">&#9670;&nbsp;</a></span>ResourceHandler::loadUp< sf::SoundBuffer >() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;sf::SoundBuffer&gt; <a class="el" href="class_resource_handler.html#a82a7c8b1618cfe9150cbb5c4a78879d5">ResourceHandler::loadUp</a>&lt; sf::SoundBuffer &gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>filePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -664,7 +730,7 @@ template&lt;&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_ca517da7c0ff3c5dcf7de7aebdabe148.html">src</a></li><li class="navelem"><a class="el" href="_resource_handler_8cpp.html">ResourceHandler.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_ca517da7c0ff3c5dcf7de7aebdabe148.html">src</a></li><li class="navelem"><a class="el" href="dir_6caa4463ee6517cc3c6de5344f8ee4b3.html">system</a></li><li class="navelem"><a class="el" href="_resource_handler_8cpp.html">ResourceHandler.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

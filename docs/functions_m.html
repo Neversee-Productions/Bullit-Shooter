@@ -83,11 +83,15 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_m"></a>- m -</h3><ul>
-<li>m_A
-: <a class="el" href="struct_game_pad_state.html#af6f7ccf8f4d763656ce269292c2ee30b">GamePadState</a>
+<li>m_acceleration
+: <a class="el" href="class_ship.html#a64bff63c54f4775c074d7e34b072e732">Ship</a>
+</li>
+<li>m_accelerationRate
+: <a class="el" href="class_ship.html#a8fad6e6f0ffebcbae9a436f6d3debb39">Ship</a>
 </li>
 <li>m_active
-: <a class="el" href="class_asteroid.html#af4ab0f4e46a5d6a3b0410ddbca949c4a">Asteroid</a>
+: <a class="el" href="classai_1_1_ai_basic.html#af1d4c6d8596c9df4a648a771f0dd6933">ai::AiBasic</a>
+, <a class="el" href="class_asteroid.html#af4ab0f4e46a5d6a3b0410ddbca949c4a">Asteroid</a>
 , <a class="el" href="classbullets_1_1_bullet.html#a892f5a383bf15183acf426288b8b2c27">bullets::Bullet</a>
 , <a class="el" href="class_pickup.html#a112fcf9e9e7ee5cbc1d85688ff56d96f">Pickup</a>
 </li>
@@ -121,20 +125,25 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_animator
 : <a class="el" href="classai_1_1_ai_basic.html#a8f5ff8f02ee0706c0aa7df0c4dfc9ae4">ai::AiBasic</a>
+, <a class="el" href="class_asteroid.html#af2b811d77856817b9736ff247ae10efd">Asteroid</a>
 , <a class="el" href="class_pickup.html#a4d4bfbfeb2ab4ae7294032342f2f9f06">Pickup</a>
 , <a class="el" href="class_weapon.html#af9a7c027ab7ff27bb9877ad7c7f0032b">Weapon</a>
 </li>
 <li>m_asteroidManager
-: <a class="el" href="class_game_scene.html#afc06f7cf1d9009faf879677c2c615593">GameScene</a>
+: <a class="el" href="class_collision_system.html#a50dfb1cb132ae6169068e2fe21dadef0">CollisionSystem</a>
+, <a class="el" href="class_game_scene.html#afc06f7cf1d9009faf879677c2c615593">GameScene</a>
 </li>
 <li>m_asteroidSpawnFrequency
-: <a class="el" href="class_game_scene.html#a1c96ec36fdc4c779139ec17bc5a712ad">GameScene</a>
+: <a class="el" href="class_asteroid_manager.html#aa343310016a140fdc98e460a83a63225">AsteroidManager</a>
+</li>
+<li>m_asteroidSpawnStart
+: <a class="el" href="class_asteroid_manager.html#aa5c45890cf3701730b89e33520f734b9">AsteroidManager</a>
 </li>
 <li>m_asteroidSpawnTimer
-: <a class="el" href="class_game_scene.html#aa9b179773133851cbaa67355e8c83829">GameScene</a>
+: <a class="el" href="class_asteroid_manager.html#a9aeab58c5c4e04d93eb9c0acfbd8ea3e">AsteroidManager</a>
 </li>
 <li>m_asteroidsVector
-: <a class="el" href="class_asteroid_manager.html#a27af80be979b9f62d9c4515235b4efad">AsteroidManager</a>
+: <a class="el" href="class_asteroid_manager.html#a3299e1d72666aed399724e233b840f58">AsteroidManager</a>
 </li>
 <li>m_attachedWeapons
 : <a class="el" href="class_player.html#a25030663302c7d904ed24a0ad5443060">Player</a>
@@ -142,14 +151,12 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_ATTACK_RADIUS
 : <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#a087139c4603294e8070f52c347c515c6">ai::states::AiBasicChargeState</a>
 </li>
-<li>m_B
-: <a class="el" href="struct_game_pad_state.html#ad195fc90155dbc9592486904e2f2366d">GamePadState</a>
-</li>
-<li>m_back
-: <a class="el" href="struct_game_pad_state.html#acfeeec0457da03a308999b9a6dd867e7">GamePadState</a>
+<li>m_attenuation
+: <a class="el" href="class_sound_setting.html#aa4ea057a21b19eb8a9bb9565053f9618">SoundSetting</a>
 </li>
 <li>m_background
 : <a class="el" href="class_game_scene.html#a9da5a0720636440cd864f4dd665eeb8d">GameScene</a>
+, <a class="el" href="class_main_menu_scene.html#ae23e89b56efeca33a15591fcaf633c50">MainMenuScene</a>
 , <a class="el" href="class_player.html#a229ea5312ff9092888ee71c0c88fc80e">Player</a>
 </li>
 <li>m_backgroundColor
@@ -162,6 +169,10 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_backgroundTexture
 : <a class="el" href="struct_splash_scene_1_1_resources.html#a62ffdbcfdbd0711facbe4d01c3b2b959">SplashScene::Resources</a>
 </li>
+<li>m_basicEnemyManager
+: <a class="el" href="class_collision_system.html#a6a3cfa6ccb62bf5b09243a97d46b8150">CollisionSystem</a>
+, <a class="el" href="class_game_scene.html#a992da3de9f023cadb3839e6e708c9414">GameScene</a>
+</li>
 <li>m_bgColor
 : <a class="el" href="class_background.html#a227df2ea5c059e73058f9ea0767078d0">Background</a>
 </li>
@@ -170,6 +181,21 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_bottomLabel
 : <a class="el" href="classgui_1_1_slider.html#a70f14d748f4b483f4079ff92c74013fc">gui::Slider</a>
+</li>
+<li>m_btnCircle
+: <a class="el" href="struct_game_pad_state.html#a0623e0e0f0ba1149efe8f53af6299b7d">GamePadState</a>
+</li>
+<li>m_btnSquare
+: <a class="el" href="struct_game_pad_state.html#a1abf38fe98bbfdcbc3eec02284154506">GamePadState</a>
+</li>
+<li>m_btnTriangle
+: <a class="el" href="struct_game_pad_state.html#a1437f7ab7333afa6571db32bce87e1b5">GamePadState</a>
+</li>
+<li>m_btnTrigger
+: <a class="el" href="struct_game_pad_state.html#a988a2ebbfc1d34c300409ac2bcae992f">GamePadState</a>
+</li>
+<li>m_btnX
+: <a class="el" href="struct_game_pad_state.html#ae6b3e3a538b9aa9c55281f2dd8eb212d">GamePadState</a>
 </li>
 <li>m_bulletC2Rect
 : <a class="el" href="classbullets_1_1_bullet.html#a6d72379ed0bee15d114dfc9ca0840a2e">bullets::Bullet</a>
@@ -207,6 +233,12 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_collisionRect
 : <a class="el" href="classai_1_1_ai_basic.html#a3126d5bfcd2a6245dfbb47a86dbdeec7">ai::AiBasic</a>
 </li>
+<li>m_collisionShape
+: <a class="el" href="classai_1_1_ai_basic.html#a16f2c55fab11f8c4853143729af432c7">ai::AiBasic</a>
+</li>
+<li>m_collisionSystem
+: <a class="el" href="class_game_scene.html#a473a0f35610854a312c1c689744ef822">GameScene</a>
+</li>
 <li>m_COLOR_CHANGE
 : <a class="el" href="class_background.html#a9eedbd8b13ea2a00123068dd45e06b4d">Background</a>
 </li>
@@ -226,6 +258,7 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 : <a class="el" href="classgui_1_1_g_u_i.html#a2a25d69b79031de4274d53db9ce26db9">gui::GUI</a>
 , <a class="el" href="class_main_menu_scene.html#a965a1496081cc4198571a1da23f17e52">MainMenuScene</a>
 , <a class="el" href="class_options_scene.html#a39e07b6db3af496b2b5240aadd10e011">OptionsScene</a>
+, <a class="el" href="class_player.html#ab0ed3e3d0e4416cc558214b1cb29342e">Player</a>
 , <a class="el" href="class_scene_manager.html#a4bf437806adce1ca5b4273c53c4bd7ef">SceneManager</a>
 , <a class="el" href="class_title_scene.html#a0d34f92c448f39cbb8f6cab4504abf88">TitleScene</a>
 </li>
@@ -272,27 +305,20 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_DELTA_TIME
 : <a class="el" href="classai_1_1states_1_1_ai_basic_state.html#a815c2e26aa73f9faaaf349ee14271b39">ai::states::AiBasicState</a>
 , <a class="el" href="class_background.html#aed7743d670b7202121da0a64bd399797">Background</a>
+, <a class="el" href="class_weapon.html#a21eeaa4fdd47fe79b79aa822e8ce13e2">Weapon</a>
+</li>
+<li>m_directionVec
+: <a class="el" href="class_ship.html#ae29388d3fb3c03976d9b142661084829">Ship</a>
 </li>
 <li>m_down
 : <a class="el" href="struct_ship_1_1_keys_pressed.html#af827c12698b076e9dd09b193ef20da08">Ship::KeysPressed</a>
-</li>
-<li>m_dpadDown
-: <a class="el" href="struct_game_pad_state.html#abc539426197b7af7c08da5fafb004f9e">GamePadState</a>
-</li>
-<li>m_dpadLeft
-: <a class="el" href="struct_game_pad_state.html#ab42f5c1e41b76e70ac26b8b480c5c8cd">GamePadState</a>
-</li>
-<li>m_dpadRight
-: <a class="el" href="struct_game_pad_state.html#a0ebf3cbd36c7e823a4494fd312f43c11">GamePadState</a>
-</li>
-<li>m_dpadUp
-: <a class="el" href="struct_game_pad_state.html#a189fc9c32e1efabb19adf79ef2966548">GamePadState</a>
 </li>
 <li>m_drawStrip
 : <a class="el" href="classgui_1_1_g_u_i.html#a0cf8fc128063fd6325dd20a7318ad44d">gui::GUI</a>
 </li>
 <li>m_duration
 : <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_animation.html#a12ca17b8046cd1bd7c4f68585113807c">ai::AiBase::Resources::Animation</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_animation.html#a88976dd02dcc6f4553ebef667761fcad">Asteroid::Resources::Animation</a>
 , <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a127f531d3bf12ef6ffb923422d07d956">bullets::Bullet::Resources::Animation</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#a45b2a37d6cf10ce26bcfee759f868293">Pickup::Resources::Effect::Animation</a>
 , <a class="el" href="struct_weapon_1_1_resources_1_1_animation.html#a3d865bc4b53beeb42c57ce9a373c31a0">Weapon::Resources::Animation</a>
@@ -306,16 +332,26 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_emptyTextRect
 : <a class="el" href="classgui_1_1_slider.html#a88740adc74863e5c6c30084e2f72de99">gui::Slider</a>
 </li>
-<li>m_enemy
-: <a class="el" href="class_game_scene.html#a364a427b3dec937c1ee94a3f5f00ca70">GameScene</a>
+<li>m_enemies
+: <a class="el" href="class_basic_enemy_manager.html#a9b3de37d8ce3e91f668a8ed40c33a243">BasicEnemyManager</a>
 </li>
 <li>m_explode
-: <a class="el" href="classbullets_1_1_magma_shot.html#ad5299693b1586ab5569f85eb48059005">bullets::MagmaShot</a>
+: <a class="el" href="class_asteroid.html#a8ee3ad2bec9ed08978e91f079235caa1">Asteroid</a>
+, <a class="el" href="classbullets_1_1_magma_shot.html#ad5299693b1586ab5569f85eb48059005">bullets::MagmaShot</a>
 , <a class="el" href="classbullets_1_1_napalm_sphere.html#aecaaf1b7ae0bcc2d6bcf8a870d6bca21">bullets::NapalmSphere</a>
 , <a class="el" href="classbullets_1_1_pyro_blast.html#a148199fcf78d9a6730f5d13313a401b9">bullets::PyroBlast</a>
 </li>
+<li>m_explodeAnimation
+: <a class="el" href="struct_asteroid_1_1_resources.html#a62502ac8faeea817f0528436beff3f57">Asteroid::Resources</a>
+</li>
+<li>m_explodeTexture
+: <a class="el" href="struct_asteroid_1_1_resources.html#a3fdec7b11a0a35b6a06da1a6e38a1159">Asteroid::Resources</a>
+</li>
 <li>m_explosionCircleCollider
 : <a class="el" href="classbullets_1_1_pyro_blast.html#a39b6b28d2cc08cc7577d21f263bb71fc">bullets::PyroBlast</a>
+</li>
+<li>m_explosionTimer
+: <a class="el" href="class_asteroid.html#a6b18d4c13a9ace4dd85b19e783ac8d3e">Asteroid</a>
 </li>
 <li>m_fadeOut
 : <a class="el" href="classgui_1_1_button.html#aafb8c807cdc03854df3e10ffc887aeb7">gui::Button</a>
@@ -328,6 +364,12 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_filledTextRect
 : <a class="el" href="classgui_1_1_slider.html#a4d18f1a91aa610d7b41b2f592f6c6996">gui::Slider</a>
 </li>
+<li>m_flightStick
+: <a class="el" href="struct_game_pad_state.html#acc3af1ee943090fd45f57a73b1f13d36">GamePadState</a>
+</li>
+<li>m_flightThruster
+: <a class="el" href="struct_game_pad_state.html#ac9bbd725451e26318eb65649a54ad73c">GamePadState</a>
+</li>
 <li>m_font
 : <a class="el" href="classgui_1_1_label.html#a668e7f7846bebdfde6ea9219602e5af4">gui::Label</a>
 </li>
@@ -337,6 +379,7 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_frame
 : <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_texture.html#a60d2b0bff7e0692714fddbf855436d0c">Pickup::Resources::Effect::Texture</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_individual_pickup.html#a1482b09108298829fc1117ba3e2a70dc">Pickup::Resources::IndividualPickup</a>
+, <a class="el" href="struct_weapon_1_1_resources_1_1_animation.html#a80b25c1f82580d69a965d6ceb4ee0c12">Weapon::Resources::Animation</a>
 </li>
 <li>m_FRAME_CHANGE
 : <a class="el" href="class_ship.html#a6f93c201c1b473ff131105b6bc2ccf25">Ship</a>
@@ -346,6 +389,7 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_frames
 : <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_animation.html#a6b69f74d37668d28965ce3ea7c5e39e5">ai::AiBase::Resources::Animation</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_animation.html#a301167742b76285f538b15cddb6d0bb8">Asteroid::Resources::Animation</a>
 </li>
 <li>m_function
 : <a class="el" href="classgui_1_1_button.html#a8a6b48089d25010ade7ebefcc7a04a96">gui::Button</a>
@@ -353,16 +397,42 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_gamepadIndex
 : <a class="el" href="class_controller.html#ae865ed7281dfe60171e0c8bf9a929f18">Controller</a>
 </li>
+<li>m_gamePaused
+: <a class="el" href="class_game_scene.html#accac39b383c80afee0bf3df1a59d1469">GameScene</a>
+</li>
+<li>m_gameUi
+: <a class="el" href="class_collision_system.html#a8f919d6bd3d9c9bb22cb88d1f9b67c32">CollisionSystem</a>
+</li>
 <li>m_gui
-: <a class="el" href="class_main_menu_scene.html#a1b65e9fb6b9173e577e814174f68e2f4">MainMenuScene</a>
+: <a class="el" href="class_game_u_i.html#a118c14e9021f4a39bc61201f2ef4b72c">GameUI</a>
+, <a class="el" href="class_main_menu_scene.html#a1b65e9fb6b9173e577e814174f68e2f4">MainMenuScene</a>
 , <a class="el" href="class_options_scene.html#a77e97dc8740720d57011ff815152bdc2">OptionsScene</a>
 </li>
 <li>m_heading
 : <a class="el" href="classai_1_1_ai_basic.html#ac4c406b8753bfe404056d68ec0459aaf">ai::AiBasic</a>
 </li>
 <li>m_health
-: <a class="el" href="class_asteroid.html#acb5188ed5bbd7b0b05b64aa47dc6a202">Asteroid</a>
+: <a class="el" href="classai_1_1_ai_basic.html#a3f3b82a7f001c4830738a319de69308f">ai::AiBasic</a>
+, <a class="el" href="class_asteroid.html#acb5188ed5bbd7b0b05b64aa47dc6a202">Asteroid</a>
 , <a class="el" href="class_shield.html#a1072401f292290d9f153a112c37e2f0e">Shield</a>
+</li>
+<li>m_healthCollisionRect
+: <a class="el" href="class_game_u_i.html#aae86167a1c905898682da5a555685548">GameUI</a>
+</li>
+<li>m_healthLostSprite
+: <a class="el" href="class_game_u_i.html#a6020eae0e46d27dab0a61ca2213d3e48">GameUI</a>
+</li>
+<li>m_healthSprite
+: <a class="el" href="class_game_u_i.html#a123ed82e671cc49416b74c1406ebe388">GameUI</a>
+</li>
+<li>m_healthTemplatePosition
+: <a class="el" href="class_game_u_i.html#a2811abb02174a021af5ab3d8f53b7798">GameUI</a>
+</li>
+<li>m_healthTemplateSprite
+: <a class="el" href="class_game_u_i.html#a9da41c50e3faeb67a377866b3ff52d97">GameUI</a>
+</li>
+<li>m_helpSprite
+: <a class="el" href="class_options_scene.html#a41942f71531660f9c5519a0e849f9473">OptionsScene</a>
 </li>
 <li>m_HIGHLIGHT_BORDER
 : <a class="el" href="classgui_1_1_check_box.html#a3edf41d4d4079e52bb6bcf0ef79b5071">gui::CheckBox</a>
@@ -386,6 +456,8 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_id
 : <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_animation.html#ae3b49b01404e2a510e049537730f5d03">ai::AiBase::Resources::Animation</a>
 , <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_texture.html#a8a6c01d2f608d0cd22b24d17d4d9b529">ai::AiBase::Resources::Texture</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_animation.html#a12615aa79a8352ab233cca32b14c52ca">Asteroid::Resources::Animation</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_texture.html#a06e97a8d503de1ece63074abfe283903">Asteroid::Resources::Texture</a>
 , <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#aac30428d83cf1f2034fed04fdabcef79">bullets::Bullet::Resources::Animation</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#add44c0904398609cee7eb91739ca2685">Pickup::Resources::Effect::Animation</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_texture.html#a75e61d683a9985e215a1670c163cc7d9">Pickup::Resources::Effect::Texture</a>
@@ -400,11 +472,17 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_ID_STRATEGY
 : <a class="el" href="class_resource_handler.html#a531dae66f8789c7ca2a74d11a37e47c3">ResourceHandler</a>
 </li>
+<li>m_idleTexture
+: <a class="el" href="struct_asteroid_1_1_resources.html#a8fa523f04a2d1c21d2971f0e3f958b0c">Asteroid::Resources</a>
+</li>
 <li>m_image
 : <a class="el" href="class_background.html#a7cd1bd39894aa393a3797e60bcbf66e9">Background</a>
 </li>
 <li>m_incrementColor
 : <a class="el" href="class_splash_scene.html#ae6a4d115fbf158669915d1eab9b738ea">SplashScene</a>
+</li>
+<li>m_initialPosition
+: <a class="el" href="class_ship.html#a80863f092fb4f5830011c6f2df6e5fb1">Ship</a>
 </li>
 <li>m_invulnerable
 : <a class="el" href="class_asteroid.html#a9e16fbf2e5a961ab8099538abb594425">Asteroid</a>
@@ -413,6 +491,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_invulnTimer
 : <a class="el" href="class_asteroid.html#ae51f5725ecb89f48e85d15998ab3aee6">Asteroid</a>
 , <a class="el" href="class_shield.html#ae258bc66d267ea45fc1a0acb1109ac11">Shield</a>
+</li>
+<li>m_isDocking
+: <a class="el" href="class_ship.html#ac243cfd2fd8ae32857810eb6ac077022">Ship</a>
 </li>
 <li>m_jump
 : <a class="el" href="classgui_1_1_slider.html#a66b3de03bc0aa89c215ea5346d0795b7">gui::Slider</a>
@@ -441,9 +522,6 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_layoutNr
 : <a class="el" href="classgui_1_1_g_u_i.html#aa8772402b10f06c910ebd8ef58be83aa">gui::GUI</a>
 </li>
-<li>m_LB
-: <a class="el" href="struct_game_pad_state.html#a5549ec745ae2ec79ad1f29734b3e66de">GamePadState</a>
-</li>
 <li>m_left
 : <a class="el" href="struct_ship_1_1_keys_pressed.html#a8eae65d3d3a62f17bde2f7a1488fc3f8">Ship::KeysPressed</a>
 </li>
@@ -465,17 +543,14 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_leftVelocity
 : <a class="el" href="class_pickup.html#ac040ac24b8bc47d80cff437ff369edc9">Pickup</a>
 </li>
+<li>m_loop
+: <a class="el" href="class_sound_setting.html#a7d89ca49f76de1614293382ec22cffb8">SoundSetting</a>
+</li>
 <li>m_LOW_SPEED
 : <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#ab1c17b04e33d75428b5bd951fa212e84">ai::states::AiBasicChargeState</a>
 </li>
-<li>m_lTrigger
-: <a class="el" href="struct_game_pad_state.html#a0a4eddeaeb340f08cdefd7ec561ddfca">GamePadState</a>
-</li>
-<li>m_lTS
-: <a class="el" href="struct_game_pad_state.html#ade80cd604d8af3a8bce868b46196e6ac">GamePadState</a>
-</li>
-<li>m_lTSClick
-: <a class="el" href="struct_game_pad_state.html#a09f106342e5809eba0615900ff67d622">GamePadState</a>
+<li>m_mainMenuFunc
+: <a class="el" href="class_game_u_i.html#a09a9e9fe84a3947cdb03284548b2d474">GameUI</a>
 </li>
 <li>m_MARGIN_SIZE
 : <a class="el" href="classgui_1_1_button.html#ade57641795c0ebf814cbd080379b2f8b">gui::Button</a>
@@ -488,6 +563,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_MAX_TURN_RATE
 : <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html#ae06ea857029e494225af868386250aec">ai::states::AiBasicSeekState</a>
+</li>
+<li>m_maxVel
+: <a class="el" href="class_ship.html#a7f06e641d264895917f1590d1869d960">Ship</a>
 </li>
 <li>m_middleTextRect
 : <a class="el" href="classgui_1_1_button.html#ac7b9f4922122ebed3180514dd62f8704">gui::Button</a>
@@ -503,6 +581,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_moved
 : <a class="el" href="classgui_1_1_slider.html#acbbf3c52dc81e0250a08b37ea2ee5fdc">gui::Slider</a>
+</li>
+<li>m_moveDir
+: <a class="el" href="class_ship.html#af44c6236a2f42d832d97aafbe6cec5a0">Ship</a>
 </li>
 <li>m_mutex
 : <a class="el" href="struct_resource_handler_1_1_mutex_holder_pair.html#a73213fec59d670d9b219e8583aa7d476">ResourceHandler::MutexHolderPair&lt; holder_type &gt;</a>
@@ -529,6 +610,8 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_origin
 : <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_animation.html#abc34091300eb2e59073de3801bfb4597">ai::AiBase::Resources::Animation</a>
 , <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_texture.html#a633bbf66f5bb50aa9e247dbba91d5e6b">ai::AiBase::Resources::Texture</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_animation.html#a26762c74ca04f8eb17ffa5c9123b5cf8">Asteroid::Resources::Animation</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_texture.html#a3e59f0332ca2cab356e9af976e4dbe6f">Asteroid::Resources::Texture</a>
 , <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a98774edf7fd394e5714d7235894228c3">bullets::Bullet::Resources::Animation</a>
 , <a class="el" href="class_pickup.html#a2d8b2083e1dc3919dd8ad81ecfa36af7">Pickup</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#aa9307195c0ee5dbd7be753866a104775">Pickup::Resources::Effect::Animation</a>
@@ -558,13 +641,15 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 : <a class="el" href="class_resource_handler.html#af957c90eb1423b21ef18093f282a211e">ResourceHandler</a>
 </li>
 <li>m_pickup
-: <a class="el" href="class_game_scene.html#a9d2ddcc62810389125ac5ddf2bb442af">GameScene</a>
+: <a class="el" href="class_collision_system.html#a6c0691faa619a596ddb8b5add16db018">CollisionSystem</a>
+, <a class="el" href="class_game_scene.html#a339136dc6a32d470c68aa4a486c79ca4">GameScene</a>
 </li>
 <li>m_pickups
 : <a class="el" href="struct_pickup_1_1_resources.html#ae6dd20b85336d90ac3427523fbdd27fa">Pickup::Resources</a>
 </li>
 <li>m_player
 : <a class="el" href="classai_1_1_ai_basic.html#a4bc0fcd4998c35147a2c535fad92f164">ai::AiBasic</a>
+, <a class="el" href="class_collision_system.html#afaac54b92eb1c976d5d7433fa32fd49c">CollisionSystem</a>
 , <a class="el" href="class_game_scene.html#a814ec4e13fc13a8e8c2f29ef179abc8b">GameScene</a>
 </li>
 <li>m_position
@@ -576,6 +661,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 , <a class="el" href="class_shield.html#aead0b2685ff22eacbd1c3b845fc663d6">Shield</a>
 , <a class="el" href="class_ship.html#a42a1eb695d4909bee43e7f5cd28dd66b">Ship</a>
 , <a class="el" href="class_weapon.html#a64e42f89ecdc9ab9715969d670933887">Weapon</a>
+</li>
+<li>m_pPosition
+: <a class="el" href="class_sound_setting.html#a81ce58f22c90eb366489d21e80c48d49">SoundSetting</a>
 </li>
 <li>m_pressed
 : <a class="el" href="class_ship.html#a78e2e496b786d3a6d184772c7a907153">Ship</a>
@@ -604,9 +692,6 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_pulseTimer
 : <a class="el" href="classbullets_1_1_static_sphere.html#a1974c3383680a7888c60a82608a2915b">bullets::StaticSphere</a>
-</li>
-<li>m_RB
-: <a class="el" href="struct_game_pad_state.html#a3a70809e44405f156b99219929216df3">GamePadState</a>
 </li>
 <li>m_RECOVERY_TIME
 : <a class="el" href="classai_1_1states_1_1_ai_basic_recover_state.html#a48d8abb9689697c919edeff561069d0b">ai::states::AiBasicRecoverState</a>
@@ -651,6 +736,7 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 , <a class="el" href="class_game_scene.html#ac9cfd2613e470aa84181a7a465ce76ac">GameScene</a>
 , <a class="el" href="class_main_menu_scene.html#a601fb7206a4d0aae5c634b7472fff89f">MainMenuScene</a>
 , <a class="el" href="class_options_scene.html#a426946bde79cc4e4c7d4f343e4741ed8">OptionsScene</a>
+, <a class="el" href="class_pickup.html#a371bdea3f77ab359ca9a5e2caa72fd16">Pickup</a>
 , <a class="el" href="class_splash_scene.html#a82d84a0c05a128e84f1b433f3e65cb5d">SplashScene</a>
 , <a class="el" href="class_title_scene.html#a795728efd2207e3dd96711999af6ae2c">TitleScene</a>
 , <a class="el" href="class_weapon.html#a4057988b09d7aa897ff2dbb56f29c080">Weapon</a>
@@ -676,17 +762,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_rightVelocity
 : <a class="el" href="class_pickup.html#abd6895107349e9915cbd0068754b139f">Pickup</a>
 </li>
-<li>m_rTrigger
-: <a class="el" href="struct_game_pad_state.html#a60d3d1b3e18bb7c53603d75d0819268f">GamePadState</a>
-</li>
-<li>m_rTS
-: <a class="el" href="struct_game_pad_state.html#ac72976b3e811f0782ff46025d1a1989f">GamePadState</a>
-</li>
-<li>m_rTSClick
-: <a class="el" href="struct_game_pad_state.html#a7f652ba5c84791cf36567d7cf57d19a1">GamePadState</a>
-</li>
 <li>m_scale
 : <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_texture.html#aaad24d88505616270b1fef0deedcfcbc">ai::AiBase::Resources::Texture</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_texture.html#ac97bd5afcc1fc6ac7d04f86c2bbe94af">Asteroid::Resources::Texture</a>
 , <a class="el" href="classgui_1_1_check_box.html#a7da2b3a675c1be4fa60ae806041bcd3d">gui::CheckBox</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_texture.html#a43add3fc442e5f9f064c102fe3e038a0">Pickup::Resources::Effect::Texture</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_individual_pickup.html#a1f52265167716b31fa6d5a0f4ad415e8">Pickup::Resources::IndividualPickup</a>
@@ -732,6 +810,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_shipRect
 : <a class="el" href="class_ship.html#ab7a03c934538fd6100e1ed3b85f92fcb">Ship</a>
 </li>
+<li>m_showPauseScreen
+: <a class="el" href="class_game_u_i.html#af74c469aba2022eef46176d8f2859d21">GameUI</a>
+</li>
 <li>m_size
 : <a class="el" href="class_pickup.html#a8e20c9d03a32b9f0435878426ffc3254">Pickup</a>
 </li>
@@ -744,6 +825,20 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_sliderBarFill
 : <a class="el" href="classgui_1_1_slider.html#ad80e845fdbac03e407a495f98e9dba2b">gui::Slider</a>
 </li>
+<li>m_soundFireMap
+: <a class="el" href="class_bullet_manager.html#a2a387ddca238e2ee29e0d663c508938f">BulletManager</a>
+</li>
+<li>m_soundManager
+: <a class="el" href="class_bullet_manager.html#a52ca07bdae59784e195be4300cfaed01">BulletManager</a>
+, <a class="el" href="class_game_scene.html#a116632d087f53593146b50462bd84241">GameScene</a>
+, <a class="el" href="class_player.html#aa28f0adc545b0388afb60e818bf8a85a">Player</a>
+</li>
+<li>m_soundMap
+: <a class="el" href="class_sound_manager.html#adf1933b2840f3f73764818abe734adaa">SoundManager</a>
+</li>
+<li>m_spawnEnemy
+: <a class="el" href="class_asteroid.html#a7062ca4b4750a833f7ef40e8ec229019">Asteroid</a>
+</li>
 <li>m_speed
 : <a class="el" href="classai_1_1_ai_basic.html#af1681a69c8bf8874ef69317b6414c686">ai::AiBasic</a>
 , <a class="el" href="classbullets_1_1_bullet.html#a0b67476aa9f0504417a9526b3203acd8">bullets::Bullet</a>
@@ -752,27 +847,39 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_sprite
 : <a class="el" href="class_connector.html#a22b6da1b59ae6abb3efe227d86431c6d">Connector</a>
 </li>
+<li>m_sptrAsteroid
+: <a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html#ae3c0a60fdd20179706a1fbdcdda24713">GameScene::Resources::Enemies</a>
+</li>
 <li>m_sptrBackground
 : <a class="el" href="struct_game_scene_1_1_resources.html#a8acd98214716941f4756b3e5e57fc120">GameScene::Resources</a>
+, <a class="el" href="struct_main_menu_scene_1_1_resources.html#ab38e44dc61b8fc2c789d5b83a9c40614">MainMenuScene::Resources</a>
 </li>
 <li>m_sptrBackgroundTexture
 : <a class="el" href="struct_title_scene_1_1_resources.html#ae92363cd3f22b67bdd597f907595a140">TitleScene::Resources</a>
 </li>
 <li>m_sptrBasicEnemy
-: <a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html#a39aee6a894c5fdee28216e845247e2b8">GameScene::Resources::Enemies</a>
+: <a class="el" href="struct_basic_enemy_manager_1_1_resources.html#a3427000102d19923af4e83af1eaa5fc0">BasicEnemyManager::Resources</a>
+</li>
+<li>m_sptrBasicEnemyManager
+: <a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html#ac4c213ff87523272199de1c10a0d2a9a">GameScene::Resources::Enemies</a>
 </li>
 <li>m_sptrBgShader
 : <a class="el" href="struct_background_1_1_resources.html#aaa3b5fd665bd86917bc64f6fbb9b0138">Background::Resources</a>
+</li>
+<li>m_sptrBuffer
+: <a class="el" href="class_sound_setting.html#ac2aeff3ecfbbd25433a18afd2379cbca">SoundSetting</a>
 </li>
 <li>m_sptrBulletsResources
 : <a class="el" href="struct_bullet_manager_1_1_resources.html#aea73c780637e8df65c8f39e389854bea">BulletManager::Resources</a>
 </li>
 <li>m_sptrButtonFont
-: <a class="el" href="struct_main_menu_scene_1_1_resources.html#a65ff95ab45a68c3f763ec3cc8b16119f">MainMenuScene::Resources</a>
+: <a class="el" href="struct_game_u_i_1_1_resources.html#aa14d8646d9aefaddc4e54094356e8ed2">GameUI::Resources</a>
+, <a class="el" href="struct_main_menu_scene_1_1_resources.html#a65ff95ab45a68c3f763ec3cc8b16119f">MainMenuScene::Resources</a>
 , <a class="el" href="struct_options_scene_1_1_resources.html#a1b7b84221eab4399acaa4b7b5ea07748">OptionsScene::Resources</a>
 </li>
 <li>m_sptrButtonTexture
-: <a class="el" href="struct_main_menu_scene_1_1_resources.html#a1b0c884f37ac6320361b0a2a0dc5cf3c">MainMenuScene::Resources</a>
+: <a class="el" href="struct_game_u_i_1_1_resources.html#ade8a54cae3101d5afabb25bfbf8157ad">GameUI::Resources</a>
+, <a class="el" href="struct_main_menu_scene_1_1_resources.html#a1b0c884f37ac6320361b0a2a0dc5cf3c">MainMenuScene::Resources</a>
 , <a class="el" href="struct_options_scene_1_1_resources.html#a0aae1b3168a81f08818e0614fd1b676d">OptionsScene::Resources</a>
 </li>
 <li>m_sptrCnShader
@@ -785,6 +892,15 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 : <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a248c6e22634b611cb2ddf31231a76a24">bullets::Bullet::Resources::Animation</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#aa0129d3584cd2602c8ca08c5ba2a5d88">Pickup::Resources::Effect::Animation</a>
 , <a class="el" href="struct_weapon_1_1_resources_1_1_animation.html#a9e68f7c8f09332dddf4372fe628653c9">Weapon::Resources::Animation</a>
+</li>
+<li>m_sptrHealthTemplateTexture
+: <a class="el" href="struct_game_u_i_1_1_resources.html#aa76101d946bf8dbaabfb8b147401d4b7">GameUI::Resources</a>
+</li>
+<li>m_sptrHealthTexture
+: <a class="el" href="struct_game_u_i_1_1_resources.html#afc18cd0b37c5eabfa004a2e2ff7a579f">GameUI::Resources</a>
+</li>
+<li>m_sptrHelpTexture
+: <a class="el" href="struct_options_scene_1_1_resources.html#a7afbed5dbc7ba2a09a5cd972ff8f5670">OptionsScene::Resources</a>
 </li>
 <li>m_sptrImpactAnimation
 : <a class="el" href="structbullets_1_1_bullet_1_1_resources.html#a22932eae178185245d57a7c95c492d5a">bullets::Bullet::Resources</a>
@@ -800,6 +916,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_sptrResources
 : <a class="el" href="classai_1_1_ai_basic.html#ac423ed4894b350d49fb857798161c11a">ai::AiBasic</a>
+, <a class="el" href="class_asteroid.html#a72a2b1872c893cb978ee03e1e5a17eab">Asteroid</a>
+, <a class="el" href="class_asteroid_manager.html#a1656d6257c7a4d6b605fb34a71e83d8c">AsteroidManager</a>
+, <a class="el" href="class_basic_enemy_manager.html#ae6517a9f8de7ca6ef82ade02854f62e7">BasicEnemyManager</a>
 , <a class="el" href="classbullets_1_1_bullet.html#a336300580e2d55f22432a1d78cfaaaee">bullets::Bullet</a>
 </li>
 <li>m_sptrState
@@ -811,6 +930,8 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_sptrTexture
 : <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_animation.html#a435638d5ab2f37e9dd8000e64a192aaf">ai::AiBase::Resources::Animation</a>
 , <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_texture.html#acf3ac225968ed6d2cb4ede01f099eb3b">ai::AiBase::Resources::Texture</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_animation.html#a648803c933cd61b77da951d861a17eab">Asteroid::Resources::Animation</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_texture.html#a7f4af6d1f990bc9ff500a745056be08d">Asteroid::Resources::Texture</a>
 , <a class="el" href="structbullets_1_1_bullet_1_1_resources_1_1_animation.html#a83a4e2a23abd47da9653db5c167ce4ac">bullets::Bullet::Resources::Animation</a>
 , <a class="el" href="struct_pickup_1_1_resources_1_1_effect_1_1_animation.html#a416d0dabbde9e784715ea7ce76b94edb">Pickup::Resources::Effect::Animation</a>
 , <a class="el" href="struct_ship_1_1_resources.html#a15c9f3485ca425cb1494b2038da7629f">Ship::Resources</a>
@@ -819,11 +940,11 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_sptrTitleTexture
 : <a class="el" href="struct_title_scene_1_1_resources.html#a7db1b53808284c2934bffec51724d473">TitleScene::Resources</a>
 </li>
+<li>m_sptrUI
+: <a class="el" href="struct_game_scene_1_1_resources.html#ac35d68f3a28c15489526db43d8c765ab">GameScene::Resources</a>
+</li>
 <li>m_squareTextRect
 : <a class="el" href="classgui_1_1_slider.html#ab6f25a49e95e5b7dbfc42cee00b24835">gui::Slider</a>
-</li>
-<li>m_start
-: <a class="el" href="struct_game_pad_state.html#aa569940068ccffe29982b52902d6d976">GamePadState</a>
 </li>
 <li>m_state
 : <a class="el" href="classgui_1_1_check_box.html#a6f1c7a71c4174a4357d13ec4fd65bcb9">gui::CheckBox</a>
@@ -836,6 +957,9 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_supportedResolutions
 : <a class="el" href="class_window.html#afb1e1ea74c7b266f71bc21c87a57a265">Window</a>
+</li>
+<li>m_targetHealth
+: <a class="el" href="class_game_u_i.html#a247243f183df85a0fb56b4391aedd3d5">GameUI</a>
 </li>
 <li>m_text
 : <a class="el" href="classgui_1_1_label.html#abc9fac1e5819823007aa24fd072cf94c">gui::Label</a>
@@ -857,6 +981,7 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 </li>
 <li>m_textureRect
 : <a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_texture.html#ad5287c40aabb0dcf1acce263f0cb1130">ai::AiBase::Resources::Texture</a>
+, <a class="el" href="struct_asteroid_1_1_resources_1_1_texture.html#a9f65c8f4be2063c2207866c11356f113">Asteroid::Resources::Texture</a>
 </li>
 <li>m_textureRenderer
 : <a class="el" href="class_window.html#a328bc625cf152d7b15d13495e7f0f99a">Window</a>
@@ -902,11 +1027,16 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_type
 : <a class="el" href="classbullets_1_1_bullet.html#ac70c4d94b81f7fca3d1e5845b9aefda9">bullets::Bullet</a>
 </li>
+<li>m_ui
+: <a class="el" href="class_game_scene.html#a61241f10fb8a06a9102b93ba37305a8b">GameScene</a>
+</li>
 <li>m_up
 : <a class="el" href="struct_ship_1_1_keys_pressed.html#ab1fad388171bc1a101ca3f854e1a4608">Ship::KeysPressed</a>
 </li>
 <li>m_UPDATE_DT
-: <a class="el" href="class_scene.html#a4d9417e5e266363d6967278a073200ca">Scene</a>
+: <a class="el" href="class_asteroid_manager.html#a17948321621ea02d3cebfa53f2e94af4">AsteroidManager</a>
+, <a class="el" href="class_collision_system.html#afeb03c9ff8813b0314d93f0fc3884b76">CollisionSystem</a>
+, <a class="el" href="class_scene.html#a4d9417e5e266363d6967278a073200ca">Scene</a>
 , <a class="el" href="class_ship.html#a7d6c53355337e2fba47164275374dcb3">Ship</a>
 </li>
 <li>m_uptrBeginAnimation
@@ -939,6 +1069,10 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_velocity
 : <a class="el" href="class_asteroid.html#a8dd7cd60da2412c5859e078a5902f03d">Asteroid</a>
 , <a class="el" href="classbullets_1_1_bullet.html#a4a39935b0bbd51d686e9e66577fa5045">bullets::Bullet</a>
+, <a class="el" href="class_ship.html#acef49b75ca3e17b717715ca7161a6b3e">Ship</a>
+</li>
+<li>m_volume
+: <a class="el" href="class_sound_setting.html#ac90ec5864c3e4e324e92611699f456e7">SoundSetting</a>
 </li>
 <li>m_weapon
 : <a class="el" href="struct_player_1_1_resources.html#ac63192254b2e9cc92cc835b9507cec0f">Player::Resources</a>
@@ -976,15 +1110,6 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>m_WINDUP_TIME
 : <a class="el" href="classai_1_1states_1_1_ai_basic_windup_state.html#a4e0759786c200359800295e95bf3c53b">ai::states::AiBasicWindupState</a>
 </li>
-<li>m_X
-: <a class="el" href="struct_game_pad_state.html#a261a275aed8dffe0524626ef1f22af25">GamePadState</a>
-</li>
-<li>m_xbox
-: <a class="el" href="struct_game_pad_state.html#a4d4276e943badd22481e907e9bff88b6">GamePadState</a>
-</li>
-<li>m_Y
-: <a class="el" href="struct_game_pad_state.html#a42415717134cd5eaad30bdfe5e2f2e6b">GamePadState</a>
-</li>
 <li>MagmaShot()
 : <a class="el" href="classbullets_1_1_magma_shot.html#a890517672f9e6e6dc2dafadc86b357b4">bullets::MagmaShot</a>
 </li>
@@ -1000,25 +1125,17 @@ $(document).ready(function(){initNavTree('functions_m.html','');});
 <li>move()
 : <a class="el" href="class_ship.html#a237e1ba8f03d5e62e2d348e66c95083c">Ship</a>
 </li>
-<li>moveDown()
-: <a class="el" href="class_ship.html#af9ecf9bca8a9d9c737ad892f6f83e14f">Ship</a>
-</li>
 <li>moveLeft()
 : <a class="el" href="classgui_1_1_slider.html#a90d712eab516ac7c2be533b954ed57f6">gui::Slider</a>
-, <a class="el" href="class_ship.html#a70c2c948125e113966035cde59fee420">Ship</a>
 </li>
 <li>moveRight()
 : <a class="el" href="classgui_1_1_slider.html#a7aab63dfcc69e3150ac54c9914def379">gui::Slider</a>
-, <a class="el" href="class_ship.html#aefe208ae015ae3d3475f4593327b4f23">Ship</a>
 </li>
 <li>moveToNextWidgets()
 : <a class="el" href="classgui_1_1_g_u_i.html#a8b044c590e06df5d6b9f6f3240c0d273">gui::GUI</a>
 </li>
 <li>moveToPrevWidgets()
 : <a class="el" href="classgui_1_1_g_u_i.html#a26126d3649a6c44c717b50200060e246">gui::GUI</a>
-</li>
-<li>moveUp()
-: <a class="el" href="class_ship.html#a75c26377c47413abf8129036bd4cdc65">Ship</a>
 </li>
 </ul>
 </div><!-- contents -->

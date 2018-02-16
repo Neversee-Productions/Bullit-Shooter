@@ -1,6 +1,9 @@
 {
+    "sounds": "resources/scenes/game/sounds.json",
     "player": "resources/scenes/game/player/player.json",
     "background": "resources/scenes/game/background/background.json",
     "pickup": "resources/scenes/game/pickup/pickup.json",
-    "enemies": "resources/scenes/game/enemies/enemies.json"
+    "enemies": "resources/scenes/game/enemies/enemies.json",
+    "UI": "resources/gui/UI.json",
+    "GUI":  "resources/gui/GUI.json"
 }
