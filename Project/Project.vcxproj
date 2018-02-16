@@ -287,7 +287,7 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"</Comma
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -299,6 +299,7 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\dbg\*.dll" "$(TargetDir)"</Comma
       <AdditionalLibraryDirectories>.\lib;.\libs\rls;.\libs\rls\doxygen;.\libs\rls\sfml;.\libs\rls\sfeMovie;.\libs\rls\thor;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>C:\windows\system32\xcopy /Y "$(ProjectDir)dlls\*.dll" "$(TargetDir)"

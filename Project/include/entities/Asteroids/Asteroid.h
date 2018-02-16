@@ -114,16 +114,22 @@ public:
 		};
 
 		/// <summary>
-		/// @brief Contains 
+		/// @brief Contains idle texture.
+		/// 
+		/// 
 		/// </summary>
 		Texture m_idleTexture;
 
 		/// <summary>
+		/// @brief Contains explosion texture.
+		/// 
 		/// 
 		/// </summary>
 		Texture m_explodeTexture;
 
 		/// <summary>
+		/// @brief Contains explosion animation.
+		/// 
 		/// 
 		/// </summary>
 		Animation m_explodeAnimation;
@@ -156,6 +162,7 @@ public:
 
 private:
 	void generateRandomEnemy();
+	void generateRandomRotation();
 
 	/// <summary>
 	/// @brief define a shared pointer to loaded resources.
@@ -191,6 +198,13 @@ private:
 	/// 
 	/// </summary>
 	sf::Vector2f m_position;
+
+	/// <summary>
+	/// @brief defines the rotation speed of the asteroid.
+	/// 
+	/// 
+	/// </summary>
+	float m_rotation;
 
 	/// <summary>
 	/// @brief define if the asteroid is active.

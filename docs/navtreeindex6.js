@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"struct_sound_manager_1_1_sound.html#af18a7bfab36c38229112dd1887fa52c0":[2,0,26,0,1],
+"struct_sound_manager_1_1_sound.html#afb4e79b627095365d8a00a3c7d21f7be":[2,0,26,0,0],
+"struct_splash_scene_1_1_resources.html":[2,0,28,0],
 "struct_splash_scene_1_1_resources.html#a62ffdbcfdbd0711facbe4d01c3b2b959":[2,0,28,0,0],
 "struct_title_scene_1_1_resources.html":[2,0,29,0],
 "struct_title_scene_1_1_resources.html#a2b5929ca5fb3f3f918039f6f7da42833":[2,0,29,0,1],

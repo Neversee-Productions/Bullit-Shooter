@@ -155,6 +155,8 @@ Static Public Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aab7bb9d12da151279c1febc0223669d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#aab7bb9d12da151279c1febc0223669d8">generateRandomEnemy</a> ()</td></tr>
 <tr class="separator:aab7bb9d12da151279c1febc0223669d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09099c554fe7b0cdd61da1b7b17d155e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a09099c554fe7b0cdd61da1b7b17d155e">generateRandomRotation</a> ()</td></tr>
+<tr class="separator:a09099c554fe7b0cdd61da1b7b17d155e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -168,6 +170,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8dd7cd60da2412c5859e078a5902f03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3e457510348bac65ce659bb679c81dd"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ac3e457510348bac65ce659bb679c81dd">m_position</a></td></tr>
 <tr class="separator:ac3e457510348bac65ce659bb679c81dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac04acf9b672d86a7075c24f34559af5a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ac04acf9b672d86a7075c24f34559af5a">m_rotation</a></td></tr>
+<tr class="separator:ac04acf9b672d86a7075c24f34559af5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4ab0f4e46a5d6a3b0410ddbca949c4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#af4ab0f4e46a5d6a3b0410ddbca949c4a">m_active</a></td></tr>
 <tr class="separator:af4ab0f4e46a5d6a3b0410ddbca949c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ee3ad2bec9ed08978e91f079235caa1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a8ee3ad2bec9ed08978e91f079235caa1">m_explode</a></td></tr>
@@ -375,6 +379,32 @@ Sebastian Kruzel</dd></dl>
 </div><div class="memdoc">
 <p>generate random position.</p>
 <p>Generates a random y position x will always be the same when spawning a new asteroid. </p>
+
+</div>
+</div>
+<a id="a09099c554fe7b0cdd61da1b7b17d155e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09099c554fe7b0cdd61da1b7b17d155e">&#9670;&nbsp;</a></span>generateRandomRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::generateRandomRotation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>determines a random number for rotation speed.</p>
 
 </div>
 </div>
@@ -965,6 +995,29 @@ Sebastian Kruzel</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>define rectangle to draw texture on.</p>
+
+</div>
+</div>
+<a id="ac04acf9b672d86a7075c24f34559af5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac04acf9b672d86a7075c24f34559af5a">&#9670;&nbsp;</a></span>m_rotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Asteroid::m_rotation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>defines the rotation speed of the asteroid.</p>
 
 </div>
 </div>

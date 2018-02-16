@@ -7,5 +7,6 @@ var classbullets_1_1_death_orb =
     [ "isImpact", "classbullets_1_1_death_orb.html#ae83d9014789445c7b8d11d919e12b26a", null ],
     [ "update", "classbullets_1_1_death_orb.html#a71e4d572261576cb27bf1c978a638786", null ],
     [ "m_damage", "classbullets_1_1_death_orb.html#ae7017fc5f743e6fc8d312df50087dbd2", null ],
+    [ "m_IMPACT", "classbullets_1_1_death_orb.html#a671fd454e3da84cce5997be506913b68", null ],
     [ "s_FIRE_RATE", "classbullets_1_1_death_orb.html#abf3300c01f9823a4bc6c5d97320ead84", null ]
 ];

@@ -46,6 +46,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_damage;
+
+		/// <summary>
+		/// @brief Defines whether or not the death orb is a impact.
+		/// 
+		/// Added in because isImpact returns a read-only reference.
+		/// </summary>
+		bool const m_IMPACT;
 	};
 }
 

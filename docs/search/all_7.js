@@ -9,6 +9,7 @@ var searchData=
   ['gameui_2eh',['GameUI.h',['../_game_u_i_8h.html',1,'']]],
   ['generaterandomenemy',['generateRandomEnemy',['../class_asteroid.html#aab7bb9d12da151279c1febc0223669d8',1,'Asteroid']]],
   ['generaterandompos',['generateRandomPos',['../class_asteroid.html#a66677a18808fbfa7df569b920b833ea8',1,'Asteroid']]],
+  ['generaterandomrotation',['generateRandomRotation',['../class_asteroid.html#a09099c554fe7b0cdd61da1b7b17d155e',1,'Asteroid']]],
   ['generaterandomtimer',['generateRandomTimer',['../class_asteroid_manager.html#a7c2832f71dc976b6fcacb58af9c56761',1,'AsteroidManager']]],
   ['generaterandomvel',['generateRandomVel',['../class_asteroid.html#a42186d68ba22d3a1c5dfb20ae8a0ff72',1,'Asteroid']]],
   ['get',['get',['../class_resource_handler.html#abd1c8ec7342772fc6d281f53f1c576fb',1,'ResourceHandler']]],
