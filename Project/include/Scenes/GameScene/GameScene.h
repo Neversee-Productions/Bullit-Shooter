@@ -84,7 +84,6 @@ public:
 
 private:
 	void goToNextScene() final override;
-	void solveElasticCollision(Asteroid asteroid1, Asteroid asteroid2);
 	void setup(const std::string & filePath);
 	void setupSounds(
 		ResourceHandler & resourceHandler

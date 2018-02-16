@@ -24,6 +24,7 @@ public: // Public Member Functions
 	void draw(Window & window, float const & deltaTime);
 	void initAsteroidVector();
 	std::vector<Asteroid>& getAsteroidVector();
+	void setSpawnStartTimer(float time);
 public: // Public Member Variables
 protected: // Protected Member Functions
 protected: // Protected Member Variables
@@ -58,6 +59,13 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	float m_asteroidSpawnFrequency;
+
+	/// <summary>
+	/// @brief define when the asteroids will start spawning.
+	/// 
+	/// 
+	/// </summary>
+	float m_asteroidSpawnStart;
 
 };
 

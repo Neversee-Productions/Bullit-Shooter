@@ -85,6 +85,7 @@ public:
 	void fadeOutWeapons();
 	void setWeaponsAlpha(float alpha);
 	void setCanFire(bool fire);
+	const bool isDocking();
 
 private:
 	void switchWeaponInput();

@@ -82,17 +82,6 @@ void GameScene::update()
 	m_ui.update();
 	m_pickup.update();
 	m_collisionSystem.update();
-
-	for (auto & asteroid : m_asteroidManager.getAsteroidVector())
-	{
-		for (auto & asteroid2 : m_asteroidManager.getAsteroidVector())
-		{
-			if (tinyh::c2CircletoCircle(asteroid.getCollisionCircle(), asteroid2.getCollisionCircle()))
-			{
-				solveElasticCollision(asteroid, asteroid2);
-			}
-		}
-	}
 }
 
 /// <summary>
@@ -120,58 +109,6 @@ void GameScene::draw(Window & window, const float & deltaTime)
 void GameScene::goToNextScene()
 {
 	Scene::setNextSceneName("");
-}
-
-/// <summary>
-/// @brief this is the method that will resolve elastic collisions between asteroids.
-/// 
-/// 
-/// </summary>
-/// <param name="asteroid1">asteroid 1</param>
-/// <param name="asteroid2">asteroid 2</param>
-void GameScene::solveElasticCollision(Asteroid asteroid1, Asteroid asteroid2)
-{
-	//// Check whether there actually was a collision
-	//if (a == b)
-	//	return;
-
-	//Vector collision = a.position() - b.position();
-	//double distance = collision.length();
-	//if (distance == 0.0) {              // hack to avoid div by zero
-	//	collision = Vector(1.0, 0.0);
-	//	distance = 1.0;
-	//}
-	//if (distance > 1.0)
-	//	return;
-
-	//// Get the components of the velocity vectors which are parallel to the collision.
-	//// The perpendicular component remains the same for both fish
-	//collision = collision / distance;
-	//double aci = a.velocity().dot(collision);
-	//double bci = b.velocity().dot(collision);
-
-	//// Solve for the new velocities using the 1-dimensional elastic collision equations.
-	//// Turns out it's really simple when the masses are the same.
-	//double acf = bci;
-	//double bcf = aci;
-
-	//// Replace the collision velocity components with the new ones
-	//a.velocity() += (acf - aci) * collision;
-	//b.velocity() += (bcf - bci) * collision;
-
-	sf::Vector2f collisionVector = asteroid1.getPosition() - asteroid2.getPosition();
-	collisionVector = thor::unitVector(collisionVector);
-
-	//// Get the components of the velocity vectors which are parallel to the collision.
-	//// The perpendicular component remains the same for both asteroids
-	/// since mass is the same we dont need to calculate future velocity we can reuse the before minus previous (dotProdA - dotProdB)
-	double dotProductA = thor::dotProduct(asteroid1.getVelocity(), collisionVector);
-	double dotProductB = thor::dotProduct(asteroid2.getVelocity(), collisionVector);
-
-
-	//set new velocities
-	asteroid1.setVelocity(asteroid1.getVelocity() + sf::Vector2f((dotProductB - dotProductA) * collisionVector.x, (dotProductB - dotProductA) * collisionVector.y));
-	asteroid2.setVelocity(asteroid2.getVelocity() + sf::Vector2f((dotProductA - dotProductB) * collisionVector.x, (dotProductA - dotProductB) * collisionVector.y));
 }
 
 /// <summary>

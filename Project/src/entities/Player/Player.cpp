@@ -563,3 +563,14 @@ void Player::setCanFire(bool fire)
 	m_weaponLeft.setCanFire(fire);
 	m_weaponRight.setCanFire(fire);
 }
+
+/// <summary>
+/// @brief a getter for the is docking bool of the ship.
+/// 
+/// 
+/// </summary>
+/// <returns>constant boolean that is the is docking variable of Ship</returns>
+const bool Player::isDocking()
+{
+	return m_ship.getDocking();
+}

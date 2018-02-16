@@ -11,6 +11,7 @@ AsteroidManager::AsteroidManager()
 	, m_asteroidsVector()
 	, m_asteroidSpawnFrequency(0.0f)
 	, m_asteroidSpawnTimer(0.0f)
+	, m_asteroidSpawnStart(5.0f)
 {
 	m_asteroidSpawnFrequency = this->generateRandomTimer();
 }
@@ -22,12 +23,16 @@ AsteroidManager::AsteroidManager()
 /// </summary>
 void AsteroidManager::update()
 {
-	this->updateSpawning();
-	for (auto & asteroid : m_asteroidsVector)
+	m_asteroidSpawnStart -= App::getUpdateDeltaTime();
+	if (m_asteroidSpawnStart <= 0.0f)
 	{
-		if (asteroid.isActive())
+		this->updateSpawning();
+		for (auto & asteroid : m_asteroidsVector)
 		{
-			asteroid.update();
+			if (asteroid.isActive())
+			{
+				asteroid.update();
+			}
 		}
 	}
 }
@@ -72,6 +77,15 @@ void AsteroidManager::initAsteroidVector()
 std::vector<Asteroid>& AsteroidManager::getAsteroidVector()
 {
 	return m_asteroidsVector;
+}
+
+/// <summary>
+/// @brief 
+/// </summary>
+/// <param name="time"></param>
+void AsteroidManager::setSpawnStartTimer(float time)
+{
+	m_asteroidSpawnStart = time;
 }
 
 /// <summary>
