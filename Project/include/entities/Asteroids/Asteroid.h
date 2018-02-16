@@ -159,6 +159,9 @@ public:
 	bool isExplosion() const;
 	void explode();
 	bool containsEnemy() const;
+	void setPosition(sf::Vector2f newPos);
+	void setRotation(float newRotation);
+	float getRotation();
 
 private:
 	void generateRandomEnemy();
