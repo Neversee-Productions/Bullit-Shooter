@@ -92,11 +92,29 @@ std::vector<Asteroid>& AsteroidManager::getAsteroidVector()
 
 /// <summary>
 /// @brief 
+/// 
+/// 
 /// </summary>
 /// <param name="time"></param>
 void AsteroidManager::setSpawnStartTimer(float time)
 {
 	m_asteroidSpawnStart = time;
+}
+
+/// <summary>
+/// @brief this function will set all asteroids to inactive.
+/// 
+/// 
+/// </summary>
+void AsteroidManager::resetAsteroids()
+{
+	for (auto & asteroid : m_asteroidsVector)
+	{
+		if (asteroid.isActive())
+		{
+			asteroid.setActive(false);
+		}
+	}
 }
 
 /// <summary>

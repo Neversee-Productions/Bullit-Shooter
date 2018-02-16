@@ -26,6 +26,7 @@ public: // Public Member Functions
 	void initAsteroidVector();
 	std::vector<Asteroid>& getAsteroidVector();
 	void setSpawnStartTimer(float time);
+	void resetAsteroids();
 public: // Public Member Variables
 protected: // Protected Member Functions
 protected: // Protected Member Variables

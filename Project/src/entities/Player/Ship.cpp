@@ -24,6 +24,7 @@ Ship::Ship()
 	, m_moveDir(0.0f,0.0f)
 	, m_acceleration(10.0f)
 	, m_isDocking(false)
+	, m_initialPosition(m_position)
 {
 	m_shipRect.setPosition(m_position);
 	m_shipRect.setSize(sf::Vector2f(75.0f, 100.0f));
@@ -324,6 +325,27 @@ void Ship::setDocking(bool check)
 bool Ship::getDocking()
 {
 	return m_isDocking;
+}
+/// <summary>
+/// @brief this method takes in a vector2f and assigns it to the position of the ship.
+/// 
+/// 
+/// </summary>
+/// <param name="pos">new position of the ship defined as vector2f</param>
+void Ship::setPosition(sf::Vector2f pos)
+{
+	m_position = pos;
+}
+
+/// <summary>
+/// @brief this method does all the resetting of the ship.
+/// 
+/// 
+/// </summary>
+void Ship::resetShip()
+{
+	m_position = m_initialPosition;
+	m_velocity = sf::Vector2f(0.0f, 0.0f);
 }
 
 

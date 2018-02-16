@@ -37,6 +37,7 @@ public:
 	void update();
 	void draw(Window & window, const float & deltaTime);
 	void setTargetColor(sf::Color const & newColor);
+	void reset();
 
 private:
 	void interpolate(float & value, float const & targetValue);

@@ -86,6 +86,10 @@ public:
 	void setWeaponsAlpha(float alpha);
 	void setCanFire(bool fire);
 	const bool isDocking();
+	void setPosition(sf::Vector2f pos);
+	void resetBullets();
+	void resetWeapons();
+	void reset();
 
 private:
 	void switchWeaponInput();

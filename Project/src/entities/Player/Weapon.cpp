@@ -324,3 +324,14 @@ sf::Color const & Weapon::getBgColor() const
 	auto weaponIndex = static_cast<int>(m_currentBullet);
 	return *m_resources->m_weaponAnimations.at(weaponIndex)->m_uptrBgColor;
 }
+
+/// <summary>
+/// @brief this function simply resets weapon type to the default type.
+/// used on resetting the game.
+/// 
+/// 
+/// </summary>
+void Weapon::resetWeaponType()
+{
+	this->setType(BulletTypes::Standard);
+}

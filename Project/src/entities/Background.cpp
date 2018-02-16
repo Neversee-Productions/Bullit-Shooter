@@ -78,6 +78,18 @@ void Background::setTargetColor(sf::Color const & newColor)
 }
 
 /// <summary>
+/// @brief this method will reset the shader to initial state.
+/// 
+/// 
+/// </summary>
+void Background::reset()
+{
+	m_bgColor = sf::Color::Black;
+	m_bgTargetColor = sf::Color::Black;
+	m_timer = std::make_unique<sf::Clock>();
+}
+
+/// <summary>
 /// @brief Interpolates value towards target value.
 /// 
 /// 

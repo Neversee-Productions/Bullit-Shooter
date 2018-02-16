@@ -150,6 +150,8 @@ public:
 	void fadeOut();
 	void setAlpha(float alpha);
 	sf::Color const & getBgColor() const;
+	void resetWeaponType();
+
 private:
 	/// <summary>
 	/// @brief sfml delta time of update frame call.

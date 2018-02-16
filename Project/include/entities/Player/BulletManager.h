@@ -75,6 +75,7 @@ public:
 	void fireEmpowered(const sf::Vector2f& pos1, const sf::Vector2f& pos2);
 	void setEmpowered(bullets::Bullet& bullet ,const float& angle, const sf::Vector2f& pos);
 	const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & getBulletMap();
+	void clearAllBullets();
 
 private:
 	/// <summary>

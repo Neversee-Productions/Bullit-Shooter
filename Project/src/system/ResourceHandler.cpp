@@ -76,6 +76,24 @@ std::shared_ptr<sf::SoundBuffer> ResourceHandler::loadUp<sf::SoundBuffer>(std::s
 }
 
 /// <summary>
+/// 
+/// </summary>
+template<>
+std::shared_ptr<sf::Font> ResourceHandler::loadUp<sf::Font>(std::string const & filePath, std::string const & id)
+{
+	std::shared_ptr<sf::Font> return_value;
+	try
+	{
+		return_value = std::make_shared<sf::Font>(this->load<sf::Font>(id, filePath));
+	}
+	catch (...) // catch any and all possible exceptions.
+	{
+		return nullptr;
+	}
+	return return_value;
+}
+
+/// <summary>
 /// @brief Our loader of assets.
 /// 
 /// 

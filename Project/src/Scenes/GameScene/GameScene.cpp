@@ -5,18 +5,20 @@
 /// 
 /// Constructs a base Scene using the name of "Game".
 /// </summary>
-GameScene::GameScene(KeyHandler& keyHandler, Controller & controller)
+GameScene::GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller)
 	: Scene("Game")
 	, m_background()
-	, m_player(keyHandler, controller, m_background)
-	, m_keyHandler(keyHandler)
+	, m_player(*keyHandler, *controller, m_background)
+	, m_keyHandler(*keyHandler)
 	, m_soundManager(SoundManager::instance())
 	, m_resources(nullptr)
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_asteroidManager()
 	, m_enemy(m_player)
 	, m_pickup()
+	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this))
 	, m_collisionSystem(m_player, m_asteroidManager, m_pickup, m_ui)
+	, m_gamePaused(false)
 {
 	m_pickup.setActive(false);
 }
@@ -45,6 +47,14 @@ void GameScene::start(const std::string & resourceFilePath)
 	std::cout << "Starting Game Scene" << std::endl;
 #endif // _DEBUG
 	Scene::setNextSceneName("");
+	//HERE WE REINITIALIZE THE GAME (FOR RESTARTING)
+	m_background.reset();
+	m_player.reset();
+	m_asteroidManager.resetAsteroids();
+	//TODO: reset the enemies here!
+	m_ui.reset();
+	m_ui.setPaused(false);
+	
 	if (!m_resources)
 	{
 		this->setup(resourceFilePath);
@@ -70,17 +80,32 @@ void GameScene::stop()
 /// </summary>
 void GameScene::update()
 {
-	m_background.update();
-	if (m_player.getShieldHealth() <= 0)
+	if (m_keyHandler.isPressed(sf::Keyboard::Escape) && !m_keyHandler.isPrevPressed(sf::Keyboard::Escape))
 	{
-		m_player.setAlive(false);
+		m_gamePaused = !m_gamePaused;
+		m_ui.setPaused(m_gamePaused);
 	}
-	m_player.update();
-	m_asteroidManager.update();
-	m_enemy.update();
+	if (!m_gamePaused)
+	{
+		m_background.update();
+		if (m_player.getShieldHealth() <= 0)
+		{
+			m_player.setAlive(false);
+		}
+		m_player.update();
+		m_asteroidManager.update();
+		m_enemy.update();
+		m_pickup.update();
+		m_collisionSystem.update();
+	}
+	else
+	{
+		if (!m_ui.getPaused())
+		{
+			m_gamePaused = false;
+		}
+	}
 	m_ui.update();
-	m_pickup.update();
-	m_collisionSystem.update();
 }
 
 /// <summary>
@@ -92,12 +117,32 @@ void GameScene::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void GameScene::draw(Window & window, const float & deltaTime)
 {
-	m_background.draw(window, deltaTime);
-	m_asteroidManager.draw(window, deltaTime);
-	m_player.draw(window, deltaTime);
-	m_enemy.draw(window, deltaTime);
-	m_ui.draw(window, deltaTime);
-	m_pickup.draw(window, deltaTime);
+	if (m_gamePaused)
+	{
+		m_background.draw(window, 0);
+		m_asteroidManager.draw(window, 0);
+		m_player.draw(window, 0);
+		m_enemy.draw(window, 0);
+		m_ui.draw(window, 0);
+		m_pickup.draw(window, 0);
+	}
+	else
+	{
+		m_background.draw(window, deltaTime);
+		m_asteroidManager.draw(window, deltaTime);
+		m_player.draw(window, deltaTime);
+		m_enemy.draw(window, deltaTime);
+		m_ui.draw(window, deltaTime);
+		m_pickup.draw(window, deltaTime);
+	}
+}
+
+/// <summary>
+/// 
+/// </summary>
+void GameScene::backToMainMenu()
+{
+	Scene::setNextSceneName("MainMenu");
 }
 
 /// <summary>
@@ -161,6 +206,7 @@ void GameScene::setup(const std::string & filePath)
 	m_asteroidManager.init(m_resources->m_sptrEnemies->m_sptrAsteroid);
 	m_player.init(m_resources->m_sptrPlayer);
 	m_background.init(m_resources->m_sptrBackground);
+	m_player.init(m_resources->m_sptrPlayer);
 	m_pickup = Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered);
 	m_pickup.setActive(false);
 	m_ui.init(m_resources->m_sptrUI);

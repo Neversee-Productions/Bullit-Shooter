@@ -574,3 +574,52 @@ const bool Player::isDocking()
 {
 	return m_ship.getDocking();
 }
+
+/// <summary>
+/// @brief this function will take the passsed in vector2f and assign the players ship position to the passed vector.
+/// 
+/// 
+/// </summary>
+/// <param name="pos">new position of the Ship defined as Vector2f</param>
+void Player::setPosition(sf::Vector2f pos)
+{
+	m_ship.setPosition(pos);
+}
+
+/// <summary>
+/// @brief this method will call the method that belongs to the BulletManager and iterates through the 
+/// vector of bullets and sets them to active. Used on restarting the game.
+/// 
+/// 
+/// </summary>
+void Player::resetBullets()
+{
+	m_bulletManager.clearAllBullets();
+}
+
+/// <summary>
+/// @brief this method resets the type of the weapon back to standard.
+/// 
+/// 
+/// </summary>
+void Player::resetWeapons()
+{
+	m_weaponLeft.resetWeaponType();
+	m_weaponRight.resetWeaponType();
+}
+
+/// <summary>
+/// @brief this method will reset the player and all his components.
+/// this means that the bullets,shield, weapon, position and velocity will reset.
+/// 
+/// 
+/// </summary>
+void Player::reset()
+{
+	m_ship.resetShip();
+	this->setAlive(true);
+	resetBullets();
+	resetWeapons();
+	m_shield.resetShield();
+	m_background.setTargetColor(m_weaponLeft.getBgColor());
+}

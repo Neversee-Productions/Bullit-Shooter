@@ -120,3 +120,15 @@ const float & Shield::getHealth()
 {
 	return m_health;
 }
+
+/// <summary>
+/// @brief this function will reset the shield health to full and reset all variables associated to it.
+/// 
+/// 
+/// </summary>
+void Shield::resetShield()
+{
+	m_health = 100;
+	m_invulnerable = false;
+	m_invulnTimer = 0.0f;
+}
