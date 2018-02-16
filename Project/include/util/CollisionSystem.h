@@ -43,6 +43,8 @@ private: // Private Member Functions
 	void playerVsAsteroid(Player & player, Asteroid & asteroid);
 	void playerVsPickup(Player & player, Pickup & pickup);
 	void playerVsGameUi(Player & player, GameUI & gameUi);
+	void solveElasticCollision(Asteroid & asteroid1, Asteroid & asteroid2);
+
 private: // Private Member Variables
 	/// <summary>
 	/// @brief reference to player.

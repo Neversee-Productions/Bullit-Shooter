@@ -137,6 +137,8 @@ public:
 	void update();
 	void draw(Window & window, const float & deltaTime);
 	void setVelocity(sf::Vector2f vel);
+	sf::Vector2f getVelocity();
+	sf::Vector2f getPosition();
 	void setActive(bool active);
 	void updateCollisionCircle();
 	void generateRandomVel();
@@ -144,7 +146,7 @@ public:
 	void reuseAsteroid();
 	void updateWindowCollisions();
 	tinyh::c2Circle getCollisionCircle();
-	void decrementHealth(float dmg);
+	void decrementHealth(float dmg, bool invurnState);
 	bool isInvulnerable();
 	void knockback();
 	bool isActive();

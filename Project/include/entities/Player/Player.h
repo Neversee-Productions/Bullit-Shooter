@@ -85,10 +85,12 @@ public:
 	void fadeOutWeapons();
 	void setWeaponsAlpha(float alpha);
 	void setCanFire(bool fire);
+	const bool isDocking();
 
 private:
 	void switchWeaponInput();
 	bool checkAxis(float const & axis, bool flipped);
+	bool checkAxisThruster(float const & axis);
 
 private:
 	/// <summary>

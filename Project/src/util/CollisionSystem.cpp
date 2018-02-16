@@ -28,6 +28,26 @@ CollisionSystem::CollisionSystem(
 void CollisionSystem::update()
 {
 	this->updatePlayer();
+	auto & asteroidVec = m_asteroidManager.getAsteroidVector();
+
+	auto & endItt = asteroidVec.end();
+	auto & endMinusOneItt = asteroidVec.end() - 1;
+	for (auto itt = asteroidVec.begin(); itt != endItt; ++itt)
+	{
+		if (itt->isActive() && !itt->isExplosion())
+		{
+			for (auto itt2 = itt + 1; itt2 != endMinusOneItt; ++itt2)
+			{
+				if (itt2->isActive() && !itt2->isExplosion())
+				{
+					if (tinyh::c2CircletoCircle(itt->getCollisionCircle(), itt2->getCollisionCircle()))
+					{
+						solveElasticCollision(*itt, *itt2);
+					}
+				}
+			}
+		}
+	}
 }
 
 /// <summary>
@@ -154,6 +174,8 @@ void CollisionSystem::updatePlayerToGameUi()
 void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bullet)
 {
 	using namespace bullets;
+	//This variable determines if the asteroid is to become invulnerable after a hit, set to true by default.
+	bool asteroidInvurnelabilityState = true; 
 	switch (bullet.getType())
 	{
 		case BulletTypes::DeathOrb:
@@ -162,8 +184,10 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 			break;
 		case BulletTypes::CometShot:
 			asteroid.knockback();
-		case BulletTypes::Standard:
 		case BulletTypes::Empowered:
+			bullet.hit();
+			asteroidInvurnelabilityState = false;
+		case BulletTypes::Standard:
 		case BulletTypes::FireBlast:
 		case BulletTypes::NullWave:
 			bullet.hit();
@@ -188,7 +212,7 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 	}
 	if (!asteroid.isInvulnerable())
 	{
-		asteroid.decrementHealth(bullet.getDamage());
+		asteroid.decrementHealth(bullet.getDamage(), asteroidInvurnelabilityState);
 		if (!asteroid.isActive() && !m_pickup.isActive()) //check if pickup is not active and if the asteroid was destroyed.
 		{
 			int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
@@ -221,7 +245,7 @@ void CollisionSystem::playerVsAsteroid(Player & player, Asteroid & asteroid)
 	{
 		player.decrementShield(25.0f);
 		m_gameUi.decrementHealth(25.0f);
-		asteroid.decrementHealth(10.0f);
+		asteroid.decrementHealth(10.0f, false);
 	}
 }
 
@@ -251,8 +275,16 @@ void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
 	sf::Vector2f unitVecRight = thor::unitVector(rightPosVec);
 	float rightLength = thor::length(rightPosVec);
 
-	pickup.setRightVelocity((unitVecLeft * (LENGTH * 5.2f))* App::getUpdateDeltaTime());
-	pickup.setLeftVelocity((unitVecRight * (LENGTH * 5.2f)) * App::getUpdateDeltaTime());
+	if (!m_player.isDocking())
+	{
+		pickup.setRightVelocity((unitVecLeft * (LENGTH * 5.2f))* App::getUpdateDeltaTime());
+		pickup.setLeftVelocity((unitVecRight * (LENGTH * 5.2f)) * App::getUpdateDeltaTime());
+	}
+	else //move faster when docking to prevent outrunning the pickup
+	{
+		pickup.setRightVelocity((unitVecLeft * (LENGTH * 8.2f))* App::getUpdateDeltaTime());
+		pickup.setLeftVelocity((unitVecRight * (LENGTH * 8.2f)) * App::getUpdateDeltaTime());
+	}
 	player.fadeOutWeapons();
 
 	player.setConnectorPos(pickup.getLeftPosition(), pickup.getRightPosition());
@@ -276,4 +308,28 @@ void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
 void CollisionSystem::playerVsGameUi(Player & player, GameUI & gameUi)
 {
 	m_gameUi.setHealthTransparency(100u);
+}
+
+/// <summary>
+/// @brief this is the method that will resolve elastic collisions between asteroids.
+/// 
+/// 
+/// </summary>
+/// <param name="asteroid1">asteroid 1</param>
+/// <param name="asteroid2">asteroid 2</param>
+void CollisionSystem::solveElasticCollision(Asteroid & asteroid1, Asteroid & asteroid2)
+{
+	sf::Vector2f collisionVector = asteroid1.getPosition() - asteroid2.getPosition();
+	collisionVector = thor::unitVector(collisionVector);
+
+	//// Get the components of the velocity vectors which are parallel to the collision.
+	//// The perpendicular component remains the same for both asteroids
+	/// since mass is the same we dont need to calculate future velocity we can reuse the before minus previous (dotProdA - dotProdB)
+	double dotProductA = thor::dotProduct(asteroid1.getVelocity(), collisionVector);
+	double dotProductB = thor::dotProduct(asteroid2.getVelocity(), collisionVector);
+
+
+	//set new velocities
+	asteroid1.setVelocity(asteroid1.getVelocity() + sf::Vector2f((dotProductB - dotProductA) * collisionVector.x, (dotProductB - dotProductA) * collisionVector.y));
+	asteroid2.setVelocity(asteroid2.getVelocity() + sf::Vector2f((dotProductA - dotProductB) * collisionVector.x, (dotProductA - dotProductB) * collisionVector.y));
 }

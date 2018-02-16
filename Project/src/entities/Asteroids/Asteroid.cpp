@@ -137,6 +137,28 @@ void Asteroid::setVelocity(sf::Vector2f vel)
 }
 
 /// <summary>
+/// @brief this is the velocity getter.
+/// 
+/// 
+/// </summary>
+/// <returns>m_velocity, a vector2f that represents the velocity</returns>
+sf::Vector2f Asteroid::getVelocity()
+{
+	return m_velocity;
+}
+
+/// <summary>
+/// @brief getter for position.
+/// 
+/// 
+/// </summary>
+/// <returns>m_position a vector2f that represents the position.</returns>
+sf::Vector2f Asteroid::getPosition()
+{
+	return m_position;
+}
+
+/// <summary>
 /// @brief Sets active of asteroid to passed parameter.
 /// 
 /// 
@@ -233,12 +255,13 @@ tinyh::c2Circle Asteroid::getCollisionCircle()
 /// 
 /// </summary>
 /// <param name="dmg">amount of health to decrement</param>
-void Asteroid::decrementHealth(float dmg)
+/// <param name="invurnState">determine if asteroid is to become invurnelable.</param>
+void Asteroid::decrementHealth(float dmg, bool invurnState)
 {
 	if (!m_invulnerable)
 	{
 		m_health -= dmg;
-		m_invulnerable = true;
+		m_invulnerable = invurnState;
 		if (m_health <= 0)
 		{
 			this->explode();

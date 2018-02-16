@@ -23,6 +23,7 @@ Ship::Ship()
 	, m_directionVec(0.0f,0.0f)
 	, m_moveDir(0.0f,0.0f)
 	, m_acceleration(10.0f)
+	, m_isDocking(false)
 {
 	m_shipRect.setPosition(m_position);
 	m_shipRect.setSize(sf::Vector2f(75.0f, 100.0f));
@@ -64,18 +65,26 @@ void Ship::update()
 		m_moveDir = thor::unitVector(m_directionVec);
 		if (thor::length(m_velocity) < m_maxVel)
 		{
-			m_velocity += m_moveDir * m_acceleration;
+			m_velocity.x += m_moveDir.x * m_acceleration;
+			if (!m_isDocking)
+			{
+				m_velocity.y += m_moveDir.y * m_acceleration;
+			}
 		}
 	}
-
-
-	m_position.x += m_velocity.x * dt;
+	if (m_isDocking)
+	{
+		m_velocity.y = (App::getViewC2Rect().max.y - m_position.y);
+	}
 	m_position.y += m_velocity.y * dt;
+	m_position.x += m_velocity.x * dt;
 
 	m_velocity *= 0.98f;
 	
 	processInput(m_pressed);
 	m_shipRect.setPosition(m_position);
+
+	checkOffScreen();
 
 }
 
@@ -266,6 +275,55 @@ void Ship::setFrames(std::unique_ptr<ShipFrames> uptrShipFrames)
 {
 	m_shipFrames.swap(uptrShipFrames);
 	std::unique_ptr<ShipFrames>(nullptr).swap(uptrShipFrames);
+}
+
+/// <summary>
+/// @brief This is a function that will check if player has gone off the screen.
+/// 
+/// 
+/// </summary>
+void Ship::checkOffScreen()
+{
+	tinyh::c2AABB screenSize = App::getViewC2Rect(); // get the screen view rectangle.
+	auto shipRect = m_shipRect.getLocalBounds(); //get the ship rectangle in local bounds.
+	if (m_position.x + shipRect.width > screenSize.max.x) //if ship is going off the right side of the screen set them back
+	{
+		m_position.x = screenSize.max.x - shipRect.width;
+	}
+	if (m_position.x - shipRect.width < 0) //if ship is going off the left side of the screen set them back
+	{
+		m_position.x = 0 + shipRect.width;
+	}
+	if (m_position.y + (shipRect.height / 2) > screenSize.max.y) //if ship is going off the bottom of the screen set them back
+	{
+		m_position.y = screenSize.max.y - (shipRect.height / 2);
+	}
+	if (m_position.y - (shipRect.height / 2) < 0) //if ship is going off the top of the screen set them back
+	{
+		m_position.y = 0 + (shipRect.height / 2);
+	}
+}
+
+/// <summary>
+/// @brief a setter function that will set the docking state to passed parameter.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new value of m_isDocking</param>
+void Ship::setDocking(bool check)
+{
+	m_isDocking = check;
+}
+
+/// <summary>
+/// @brief a getter for the docking boolean.
+/// 
+/// 
+/// </summary>
+/// <returns></returns>
+bool Ship::getDocking()
+{
+	return m_isDocking;
 }
 
 
