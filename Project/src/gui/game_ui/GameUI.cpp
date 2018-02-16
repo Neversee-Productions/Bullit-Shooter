@@ -35,8 +35,12 @@ void GameUI::update()
 	else
 	{
 		m_healthLostSprite.setScale(sf::Vector2f(0.0f, 1.0f));
+		m_healthSprite.setScale(0.0f, 1.0f);
 	}
-	m_gui->update(App::getUpdateDeltaTime());
+	if (m_showPauseScreen)
+	{
+		m_gui->update(App::getUpdateDeltaTime());
+	}
 }
 
 
