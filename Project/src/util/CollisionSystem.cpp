@@ -34,18 +34,20 @@ void CollisionSystem::update()
 	auto & asteroidVec = m_asteroidManager.getAsteroidVector();
 
 	auto & endItt = asteroidVec.end();
-	auto & endMinusOneItt = asteroidVec.end() - 1;
 	for (auto itt = asteroidVec.begin(); itt != endItt; ++itt)
 	{
 		if (itt->isActive() && !itt->isExplosion())
 		{
-			for (auto itt2 = itt + 1; itt2 != endMinusOneItt; ++itt2)
+			for (auto itt2 = itt; itt2 != endItt; ++itt2)
 			{
-				if (itt2->isActive() && !itt2->isExplosion())
+				if (itt != itt2)
 				{
-					if (tinyh::c2CircletoCircle(itt->getCollisionCircle(), itt2->getCollisionCircle()))
+					if (itt2->isActive() && !itt2->isExplosion())
 					{
-						solveElasticCollision(*itt, *itt2);
+						if (tinyh::c2CircletoCircle(itt->getCollisionCircle(), itt2->getCollisionCircle()))
+						{
+							solveElasticCollision(*itt, *itt2);
+						}
 					}
 				}
 			}

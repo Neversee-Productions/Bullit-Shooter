@@ -101,6 +101,7 @@ void Asteroid::update()
 		m_position += m_velocity * UPDATE_DT;
 		m_rectangle.setPosition(m_position);
 		m_circle.setPosition(m_position);
+		m_circle.rotate(m_rotation * UPDATE_DT);
 		updateCollisionCircle();
 		updateWindowCollisions();
 	}
@@ -217,6 +218,7 @@ void Asteroid::reuseAsteroid()
 {
 	this->generateRandomVel();
 	this->generateRandomPos();
+	this->generateRandomRotation();
 	this->generateRandomEnemy();
 	m_health = 10.0f;
 	m_explode = false;
@@ -322,6 +324,7 @@ bool Asteroid::isExplosion() const
 void Asteroid::explode()
 {
 	this->setVelocity({ 0.0f, 0.0f });
+	m_rotation = 0.0f;
 	m_explosionTimer = sf::Time();
 	m_circle.setPosition(m_position);
 	m_circle.setScale(m_sptrResources->m_explodeTexture.m_scale);
@@ -353,6 +356,18 @@ void Asteroid::generateRandomEnemy()
 	int const CHANCE = std::rand() % 101;
 	int const SPAWN_CHANCE = 100;
 	m_spawnEnemy = (CHANCE <= SPAWN_CHANCE);
+}
+
+/// <summary>
+/// @brief determines a random number for rotation speed.
+/// 
+/// 
+/// </summary>
+void Asteroid::generateRandomRotation()
+{
+	auto const randomWholeNumber = (std::rand() % 180) - 90;
+	auto const randomDecimal = (std::rand() % 100000) / 100000;
+	m_rotation = static_cast<float>(randomWholeNumber + randomDecimal); // generate number from -90.000 to 90.000 per second
 }
 
 /// <summary>
