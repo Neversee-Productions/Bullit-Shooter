@@ -46,6 +46,13 @@ namespace bullets
 		/// 
 		/// </summary>
 		float m_damage;
+
+		/// <summary>
+		/// @brief Defines whether death orb can impact.
+		/// 
+		/// 
+		/// </summary>
+		bool const m_IS_IMPACT;
 	};
 }
 

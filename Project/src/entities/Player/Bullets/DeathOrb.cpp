@@ -10,6 +10,7 @@ const float bullets::DeathOrb::s_FIRE_RATE = 1.0f;
 bullets::DeathOrb::DeathOrb()
 	: Bullet()
 	, m_damage(0.25f)
+	, m_IS_IMPACT(false)
 {
 	m_speed = 6.0f * 60.0f;
 	m_velocity.y = -m_speed;
@@ -69,5 +70,5 @@ const float & bullets::DeathOrb::getDamage()
 /// <returns>always false.</returns>
 bool const & bullets::DeathOrb::isImpact() const
 {
-	return false;
+	return m_IS_IMPACT;
 }
