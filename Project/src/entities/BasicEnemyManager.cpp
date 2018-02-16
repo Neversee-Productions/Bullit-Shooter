@@ -22,7 +22,10 @@ void BasicEnemyManager::update()
 {
 	for (auto & enemy : m_enemies)
 	{
-		enemy.update();
+		if (enemy.isActive())
+		{
+			enemy.update();
+		}
 	}
 }
 
@@ -37,7 +40,10 @@ void BasicEnemyManager::draw(Window & window, float const & deltaTime)
 {
 	for (auto & enemy : m_enemies)
 	{
-		enemy.draw(window, deltaTime);
+		if (enemy.isActive())
+		{
+			enemy.draw(window, deltaTime);
+		}
 	}
 }
 
@@ -50,6 +56,17 @@ void BasicEnemyManager::draw(Window & window, float const & deltaTime)
 /// <param name="spawnPosition">determines spawn location.</param>
 void BasicEnemyManager::spawn(Player & player, sf::Vector2f const & spawnPosition)
 {
+	for (auto & enemy : m_enemies)
+	{
+		if (!enemy.isActive())
+		{
+			enemy.spawn(spawnPosition);
+		}
+	}
+
+	// Enemy must be pushed into the vector upon creation
+	// Else a read-access violation will occur due to
+	// basic ai's states referencing their creator.
 	m_enemies.push_back(ai::AiBasic(player, spawnPosition));
 	m_enemies.back().init(m_sptrResources->m_sptrBasicEnemy);
 }
@@ -60,7 +77,18 @@ void BasicEnemyManager::spawn(Player & player, sf::Vector2f const & spawnPositio
 /// 
 /// </summary>
 /// <param name="_where">iterator of which enemy to remove</param>
-void BasicEnemyManager::despawn(std::list<ai::AiBasic>::iterator _where)
+std::list<ai::AiBasic>::iterator BasicEnemyManager::despawn(std::list<ai::AiBasic>::iterator & _where)
 {
-	m_enemies.erase(_where);
+	return m_enemies.erase(_where);
+}
+
+/// <summary>
+/// @brief get a reference to all enemies.
+/// 
+/// 
+/// </summary>
+/// <returns></returns>
+std::list<ai::AiBasic> & BasicEnemyManager::getEnemies()
+{
+	return m_enemies;
 }

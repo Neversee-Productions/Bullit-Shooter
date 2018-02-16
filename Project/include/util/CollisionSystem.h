@@ -37,14 +37,24 @@ private: // Private Member Functions
 	void updatePlayer();
 	void updatePlayerBullets();
 	void updatePlayerBulletToAsteroids(bullets::Bullet & bullet);
+	void updatePlayerBulletToEnemies(bullets::Bullet & bullet);
 	void updatePlayerToPickup();
 	void updatePlayerToGameUi();
 
 	void asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bullet);
+	void enemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bullet);
 	void playerVsAsteroid(Player & player, Asteroid & asteroid);
 	void playerVsPickup(Player & player, Pickup & pickup);
 	void playerVsGameUi(Player & player, GameUI & gameUi);
+	void playerVsEnemy(Player & player, ai::AiBasic & enemy);
 private: // Private Member Variables
+	/// <summary>
+	/// @brief read-only reference to the update delta time.
+	/// 
+	/// 
+	/// </summary>
+	float const & m_UPDATE_DT;
+
 	/// <summary>
 	/// @brief reference to player.
 	/// 

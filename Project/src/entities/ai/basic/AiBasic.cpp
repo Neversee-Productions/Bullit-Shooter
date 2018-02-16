@@ -5,6 +5,7 @@ std::string ai::AiBasic::s_CHARGE_ID = "";
 std::string ai::AiBasic::s_WINDUP_ID = "";
 std::string ai::AiBasic::s_RECOVER_ID = "";
 bool const ai::AiBasic::s_COLOR_STATES = false;
+float const ai::AiBasic::s_MAX_HEALTH = 10.0f;
 
 /// <summary>
 /// @brief Setups ai::AiBasic::Resources.
@@ -55,17 +56,20 @@ void ai::AiBasic::setup(std::shared_ptr<Resources> sptrResources, ResourceHandle
 /// </summary>
 ai::AiBasic::AiBasic(Player const & player, sf::Vector2f const & position)
 	: AiBase()
+	, m_active(false)
 	, m_position(position)
 	, m_speed(0.0f)
 	, m_heading{ 0.0f, 1.0f }
 	, m_angle(0.0f)
 	, m_player(player)
+	, m_collisionShape({ 50.0f, 50.0f })
 	, m_collisionRect()
 	, m_renderQuad({80.0f , 80.0f}) // Implicitly call sf::Vector2f() constructor
 	, m_stateStack()
 	, m_sptrState(nullptr)
 	, m_sptrResources(nullptr)
 	, m_animator()
+	, m_health(s_MAX_HEALTH)
 {
 	this->initRenderingQuad();
 }
@@ -92,6 +96,7 @@ void ai::AiBasic::init(std::shared_ptr<Resources> sptrResources)
 void ai::AiBasic::update()
 {
 	m_sptrState->update();
+	this->updateHitbox(m_renderQuad);
 }
 
 /// <summary>
@@ -135,6 +140,58 @@ bool ai::AiBasic::checkCollision(tinyh::c2Capsule const & collision) const
 }
 
 /// <summary>
+/// @brief Gets the rotated collision box.
+/// 
+/// 
+/// </summary>
+/// <returns>read-only reference the AABB collision box.</returns>
+tinyh::c2AABB const & ai::AiBasic::getCollisionAABB() const
+{
+	return m_collisionRect;
+}
+
+/// <summary>
+/// @brief Decreases the ai's health.
+/// 
+/// Also returns whether the ai died from this hit or not.
+/// </summary>
+/// <param name="damage">amount of damage.</param>
+/// <returns>true if ai died from this hit.</returns>
+bool ai::AiBasic::decrementHealth(float const & damage)
+{
+	m_health -= damage;
+
+	bool const IS_DEAD = (m_health <= 0.0f);
+	if (IS_DEAD)
+	{
+		m_health = 0.0f;
+	}
+	return IS_DEAD;
+}
+
+bool ai::AiBasic::isActive() const
+{
+	return m_active;
+}
+
+void ai::AiBasic::setActive(bool const & newActive)
+{
+	m_active = newActive;
+}
+
+void ai::AiBasic::spawn(sf::Vector2f const & spawnPosition)
+{
+	m_position = spawnPosition;
+	m_speed = 0.0f;
+	m_heading = { 0.0f, 1.0f };
+	m_angle = 0.0f;
+	m_health = s_MAX_HEALTH;
+	this->setActive(true);
+	this->setTexture(this->s_SEEK_ID);
+	this->initStates();
+}
+
+/// <summary>
 /// @brief Constructs a base pointer and passes the call down.
 /// 
 /// 
@@ -155,17 +212,13 @@ void ai::AiBasic::setState(std::shared_ptr<ai::states::Seek> sptrState, bool rem
 /// <param name="box">read-only reference to a rectangle shape</param>
 void ai::AiBasic::updateHitbox(sf::RectangleShape const & box)
 {
-	sf::Transform const & transform = box.getTransform();
-	sf::FloatRect const & localBounds = box.getLocalBounds();
-	sf::Vector2f const min =
-		transform.transformPoint(localBounds.left, localBounds.top);
-	m_collisionRect.min.x = min.x;
-	m_collisionRect.min.y = min.y;
+	m_collisionShape.setPosition(box.getPosition());
+	m_collisionShape.setScale(box.getScale());
+	m_collisionShape.setOrigin(m_collisionShape.getSize() * 0.5f);
 
-	sf::Vector2f const max =
-		transform.transformPoint(localBounds.left + localBounds.width, localBounds.top + localBounds.height);
-	m_collisionRect.max.x = max.x;
-	m_collisionRect.max.y = max.y;
+	auto const & boxBounds = m_collisionShape.getGlobalBounds();
+	m_collisionRect.min = { boxBounds.left, boxBounds.top };
+	m_collisionRect.max = { boxBounds.left + boxBounds.width, boxBounds.top + boxBounds.height };
 }
 
 /// <summary>
@@ -307,6 +360,10 @@ void ai::AiBasic::setup(AiBase::Resources::Animation & animResources, ResourceHa
 /// </summary>
 void ai::AiBasic::initStates()
 {
+	while (!m_stateStack.empty())
+	{
+		m_stateStack.pop();
+	}
 	std::shared_ptr<ai::states::Seek> sptrFirstState = std::make_shared<ai::states::Seek>(ai::states::Seek(*this));
 	this->setState(sptrFirstState, true);
 }

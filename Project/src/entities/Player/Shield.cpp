@@ -120,3 +120,14 @@ const float & Shield::getHealth()
 {
 	return m_health;
 }
+
+/// <summary>
+/// @brief check if shield is unhittable.
+/// 
+/// 
+/// </summary>
+/// <returns></returns>
+bool const & Shield::isInvulnerable()
+{
+	return m_invulnerable;
+}

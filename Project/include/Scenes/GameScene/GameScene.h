@@ -237,10 +237,6 @@ private:
 	/// </summary>
 	Pickup m_pickup;
 
-	// HACK : Temporary enemy
-
-	ai::AiBasic m_enemy;
-
 	/// <summary>
 	/// @brief manages the instances of all basic enemies.
 	/// 

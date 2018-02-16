@@ -13,7 +13,8 @@ CollisionSystem::CollisionSystem(
 	, Pickup & pickup
 	, GameUI & gameUi
 )
-	: m_player(player)
+	: m_UPDATE_DT(App::getUpdateDeltaTime())
+	, m_player(player)
 	, m_asteroidManager(asteroidManager)
 	, m_basicEnemyManager(basicEnemyManager)
 	, m_pickup(pickup)
@@ -50,6 +51,14 @@ void CollisionSystem::updatePlayer()
 				}
 			}
 		}
+		for (auto & enemy : m_basicEnemyManager.getEnemies())
+		{
+			if (enemy.isActive() && enemy.checkCollision(m_player.getShieldCollisionCircle()))
+			{
+				this->playerVsEnemy(m_player, enemy);
+			}
+		}
+
 		this->updatePlayerToPickup();
 		this->updatePlayerToGameUi();
 	}
@@ -77,6 +86,7 @@ void CollisionSystem::updatePlayerBullets()
 		{
 			auto & bullet = *uptrBullet;
 			this->updatePlayerBulletToAsteroids(bullet);
+			this->updatePlayerBulletToEnemies(bullet);
 		}
 	}
 }
@@ -102,6 +112,29 @@ void CollisionSystem::updatePlayerBulletToAsteroids(bullets::Bullet & bullet)
 				{
 					this->asteroidVsBullet(asteroid, bullet);
 				}
+			}
+		}
+	}
+}
+
+/// <summary>
+/// @brief check and apply collisions from bullet onto every other enemy.
+/// 
+/// Iterate through all asteroids and check if they collided.
+/// If true than call CollisionSystem::enemyVsBullet.
+/// @see CollisionSystem::enemyVsBullet
+/// </summary>
+/// <param name="bullet">reference to bullet.</param>
+void CollisionSystem::updatePlayerBulletToEnemies(bullets::Bullet & bullet)
+{
+	if (bullet.isActive() && !bullet.isImpact())
+	{
+		auto & enemies = m_basicEnemyManager.getEnemies();
+		for (auto & enemy : enemies)
+		{
+			if (enemy.isActive() && bullet.checkAABBCollision(enemy.getCollisionAABB()))
+			{
+				this->enemyVsBullet(enemy, bullet);
 			}
 		}
 	}
@@ -219,6 +252,55 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 }
 
 /// <summary>
+/// @brief Collision between a bullet and enemy has occured.
+/// 
+/// Details the appropriate response to bullet vs enemy collision.
+/// </summary>
+/// <param name="asteroid">reference to enemy</param>
+/// <param name="bullet">reference to base bullet.</param>
+void CollisionSystem::enemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bullet)
+{
+	using namespace bullets;
+	switch (bullet.getType())
+	{
+		case BulletTypes::DeathOrb:
+		case BulletTypes::HolySphere:
+		case BulletTypes::StaticSphere:
+			break;
+		case BulletTypes::CometShot:
+			//enemy.knockback();
+		case BulletTypes::Standard:
+		case BulletTypes::Empowered:
+		case BulletTypes::FireBlast:
+		case BulletTypes::NullWave:
+			bullet.hit();
+			break; // 1
+		case BulletTypes::MagmaShot:
+		{
+			auto & derivedBullet = dynamic_cast<MagmaShot&>(bullet);
+			derivedBullet.explode(true);
+		}	break; // 3
+		case BulletTypes::NapalmSphere:
+		{
+			auto & derivedBullet = dynamic_cast<NapalmSphere&>(bullet);
+			derivedBullet.explode(true);
+		}	break; // 3
+		case BulletTypes::PyroBlast:
+		{
+			auto & derivedBullet = dynamic_cast<PyroBlast&>(bullet);
+			derivedBullet.explode(true);
+		}	break; // 3
+		default:
+			break;
+	}
+	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
+	if (ENEMY_DIED)
+	{
+		enemy.setActive(false);
+	}
+}
+
+/// <summary>
 /// @brief Collision between player and a asteroid has occured.
 /// 
 /// Details the appropriate response to player vs asteroid collision.
@@ -286,4 +368,21 @@ void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
 void CollisionSystem::playerVsGameUi(Player & player, GameUI & gameUi)
 {
 	m_gameUi.setHealthTransparency(100u);
+}
+
+/// <summary>
+/// @brief Collision between player and enemy has occured.
+/// 
+/// Details the appropriate response to player vs enemy collision
+/// </summary>
+/// <param name="player">reference to the player that collided.</param>
+/// <param name="enemy">reference to the enemy that collided.</param>
+void CollisionSystem::playerVsEnemy(Player & player, ai::AiBasic & enemy)
+{
+	float const PLAYER_DMG = 4.0f;
+	if (!player.isInvulnerable())
+	{
+		m_gameUi.decrementHealth(PLAYER_DMG);
+	}
+	player.decrementShield(PLAYER_DMG);
 }

@@ -40,7 +40,9 @@ public: // Public Member Functions
 	void update();
 	void draw(Window & window, float const & deltaTime);
 	void spawn(Player & player, sf::Vector2f const & spawnPosition);
-	void despawn(std::list<ai::AiBasic>::iterator _where);
+	std::list<ai::AiBasic>::iterator despawn(std::list<ai::AiBasic>::iterator & _where);
+	std::list<ai::AiBasic> & getEnemies();
+
 public: // Public Member Variables
 private: // Private Member Functions
 private: // Private Member Variables

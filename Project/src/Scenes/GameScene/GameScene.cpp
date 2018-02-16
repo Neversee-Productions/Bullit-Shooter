@@ -14,7 +14,6 @@ GameScene::GameScene(KeyHandler& keyHandler, Controller & controller)
 	, m_resources(nullptr)
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_asteroidManager()
-	, m_enemy(m_player)
 	, m_basicEnemyManager()
 	, m_pickup()
 	, m_collisionSystem(m_player, m_asteroidManager, m_basicEnemyManager, m_pickup, m_ui)
@@ -72,14 +71,9 @@ void GameScene::stop()
 void GameScene::update()
 {
 	m_background.update();
-	if (m_player.getShieldHealth() <= 0)
-	{
-		m_player.setAlive(false);
-	}
 	m_player.update();
 	m_asteroidManager.update();
 	m_basicEnemyManager.update();
-	m_enemy.update();
 	m_ui.update();
 	m_pickup.update();
 	m_collisionSystem.update();
@@ -98,7 +92,6 @@ void GameScene::draw(Window & window, const float & deltaTime)
 	m_asteroidManager.draw(window, deltaTime);
 	m_player.draw(window, deltaTime);
 	m_basicEnemyManager.draw(window, deltaTime);
-	m_enemy.draw(window, deltaTime);
 	m_ui.draw(window, deltaTime);
 	m_pickup.draw(window, deltaTime);
 }
@@ -160,7 +153,6 @@ void GameScene::setup(const std::string & filePath)
 		this->setupUI(resourceHandler, m_resources->m_sptrUI, gameSceneParser);
 	}
 
-	m_enemy.init(m_resources->m_sptrEnemies->m_sptrBasicEnemyManager->m_sptrBasicEnemy);
 	m_basicEnemyManager.init(m_resources->m_sptrEnemies->m_sptrBasicEnemyManager, m_player);
 	m_asteroidManager.init(m_resources->m_sptrEnemies->m_sptrAsteroid);
 	m_player.init(m_resources->m_sptrPlayer);

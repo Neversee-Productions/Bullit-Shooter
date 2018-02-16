@@ -29,6 +29,7 @@ public:
 	void changeStyle(const sf::Uint32 & newStyle);
 	void draw(const sf::Drawable & drawable);
 	void draw(const sf::Drawable & drawable, const sf::RenderStates & renderState);
+	void draw(sf::Vertex const * vertices, int const & size, sf::PrimitiveType const & primitiveTypes);
 	void display();
 	bool isOpen() const;
 	void clear();
