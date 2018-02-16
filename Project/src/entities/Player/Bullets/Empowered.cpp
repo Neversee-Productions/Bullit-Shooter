@@ -1,18 +1,21 @@
 #include "Entities\Player\Bullets\Empowered.h"
 
-const float bullets::Empowered::s_FIRE_RATE = 1.0f;
+const float bullets::Empowered::s_FIRE_RATE = 0.5f;
 
 /// <summary>
 /// @brief default constructor
 /// 
 /// 
 /// </summary>
-/// <param name="angle">angle at which the bullet will fire</param>
 bullets::Empowered::Empowered()
 	: Bullet()
-	, m_damage(1.7f)
+	, m_damage(1.5f)
 {
-	m_speed = 10.0f * 60.0f;
+	m_bulletRect.setSize(sf::Vector2f(25.0f, 25.0f));
+	m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
+	
+	updateBox();
+	m_speed = 11.0f * 60.0f;
 
 	m_type = BulletTypes::Empowered;
 }

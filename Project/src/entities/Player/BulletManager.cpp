@@ -319,22 +319,22 @@ void BulletManager::fireEmpowered(const sf::Vector2f & pos1, const sf::Vector2f 
 			switch (numFired)
 			{
 			case 0:
-				setEmpowered(bullet, -95, pos1);
+				setEmpowered(bullet, -98, pos1);
 				break;
 			case 1:
 				setEmpowered(bullet, -90, pos1);
 				break;
 			case 2:
-				setEmpowered(bullet, -85, pos1);
+				setEmpowered(bullet, -82, pos1);
 				break;
 			case 3:
-				setEmpowered(bullet, -95, pos2);
+				setEmpowered(bullet, -98, pos2);
 				break;
 			case 4:
 				setEmpowered(bullet, -90, pos2);
 				break;
 			case 5:
-				setEmpowered(bullet, -85, pos2);
+				setEmpowered(bullet, -82, pos2);
 				break;
 			default:
 				break;
