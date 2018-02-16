@@ -14,6 +14,7 @@ CollisionSystem::CollisionSystem(
 	, GameUI & gameUi
 )
 	: m_UPDATE_DT(App::getUpdateDeltaTime())
+	, m_soundManager(SoundManager::instance())
 	, m_player(player)
 	, m_asteroidManager(asteroidManager)
 	, m_basicEnemyManager(basicEnemyManager)
@@ -252,6 +253,7 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 		asteroid.decrementHealth(bullet.getDamage(), asteroidInvurnelabilityState);
 		if (asteroid.isExplosion())
 		{
+			m_soundManager.play("asteroid_explosion");
 			if (!m_pickup.isActive())
 			{
 				int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
@@ -322,6 +324,7 @@ void CollisionSystem::enemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bulle
 	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
 	if (ENEMY_DIED)
 	{
+		m_soundManager.play("enemy_death");
 		enemy.setActive(false);
 	}
 }

@@ -59,6 +59,13 @@ private: // Private Member Variables
 	float const & m_UPDATE_DT;
 
 	/// <summary>
+	/// @brief Reference to singleton sound manager instance.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
+
+	/// <summary>
 	/// @brief reference to player.
 	/// 
 	/// 

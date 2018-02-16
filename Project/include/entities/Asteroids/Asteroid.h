@@ -133,6 +133,13 @@ public:
 		/// 
 		/// </summary>
 		Animation m_explodeAnimation;
+
+		/// <summary>
+		/// @brief Contains flashing texture rectangle.
+		/// 
+		/// 
+		/// </summary>
+		sf::IntRect m_flashTextureRect;
 	};
 
 
@@ -161,6 +168,8 @@ public:
 	bool containsEnemy() const;
 
 private:
+	static void setupFlashFrame(sf::IntRect & flashFrame, json::json & idleFrame);
+
 	void generateRandomEnemy();
 	void generateRandomRotation();
 

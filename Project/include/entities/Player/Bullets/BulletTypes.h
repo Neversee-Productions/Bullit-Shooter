@@ -8,17 +8,17 @@
 ///
 enum class BulletTypes
 {
-	  Standard //Defines the type Standard
-	, Empowered //Defines an Empowered type
-	, DeathOrb //Defines DeathOrb type
-	, FireBlast //Defines FireBlast type
-	, HolySphere //Defines HolySphere type
-	, MagmaShot //Defines MagmaShot type
-	, NapalmSphere //Defines NapalmSphere type 
-	, CometShot //Defines CometShot type
-	, NullWave //Define a NullWave type
-	, StaticSphere //Define a StaticSphere type
-	, PyroBlast //Defines the PyroBlast type
+	  Standard //Defines the type Standard, Number 1
+	, Empowered //Defines an Empowered type, Number 2
+	, DeathOrb //Defines DeathOrb type, no impact, Number 3
+	, FireBlast //Defines FireBlast type, Number 4
+	, HolySphere //Defines HolySphere type, no impact, Number 5
+	, MagmaShot //Defines MagmaShot type, Number 6
+	, NapalmSphere //Defines NapalmSphere type, Number 7
+	, CometShot //Defines CometShot type, Number 8
+	, NullWave //Define a NullWave type, Number 9
+	, StaticSphere //Define a StaticSphere type, no impact, Number 10
+	, PyroBlast //Defines the PyroBlast type, big nuke, Number 11
 	, AmountOfTypes //Defines the total number of types
 };
 

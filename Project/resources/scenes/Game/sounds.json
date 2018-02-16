@@ -15,6 +15,17 @@
                         "key": "bullet01_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet01/bullet_fire.ogg"
                     }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet01_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet01/bullet_impact.ogg"
+                    }
                 }
             },
             "bullet02":
@@ -28,6 +39,17 @@
                     {
                         "key": "bullet02_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet02/bullet_fire.ogg"
+                    }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet02_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet02/bullet_impact.ogg"
                     }
                 }
             },
@@ -57,6 +79,17 @@
                         "key": "bullet04_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet04/bullet_fire.ogg"
                     }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet04_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet04/bullet_impact.ogg"
+                    }
                 }
             },
             "bullet05":
@@ -70,6 +103,17 @@
                     {
                         "key": "bullet05_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet05/bullet_fire.ogg"
+                    }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet05_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet05/bullet_impact.ogg"
                     }
                 }
             },
@@ -85,6 +129,17 @@
                         "key": "bullet06_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet06/bullet_fire.ogg"
                     }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet06_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet06/bullet_impact.ogg"
+                    }
                 }
             },
             "bullet07":
@@ -98,6 +153,17 @@
                     {
                         "key": "bullet07_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet07/bullet_fire.ogg"
+                    }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet07_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet07/bullet_impact.ogg"
                     }
                 }
             },
@@ -113,6 +179,17 @@
                         "key": "bullet08_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet08/bullet_fire.ogg"
                     }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet08_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet08/bullet_impact.ogg"
+                    }
                 }
             },
             "bullet09":
@@ -126,6 +203,17 @@
                     {
                         "key": "bullet09_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet09/bullet_fire.ogg"
+                    }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet09_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet09/bullet_impact.ogg"
                     }
                 }
             },
@@ -141,6 +229,17 @@
                         "key": "bullet10_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet10/bullet_fire.ogg"
                     }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet10_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet10/bullet_impact.ogg"
+                    }
                 }
             },
             "bullet11":
@@ -155,7 +254,46 @@
                         "key": "bullet11_fire",
                         "path": "resources/scenes/Game/player/bullets/bullet11/bullet_fire.ogg"
                     }
+                },
+                "impact":
+                {
+                    "volume": 100.0,
+                    "loop": false,
+                    "attenuation": 1.0,
+                    "buffer":
+                    {
+                        "key": "bullet11_impact",
+                        "path": "resources/scenes/Game/player/bullets/bullet11/bullet_impact.ogg"
+                    }
                 }
+            }
+        }
+    },
+    "asteroid":
+    {
+        "explosion":
+        {
+            "volume": 75.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "asteroid_explosion",
+                "path": "resources/scenes/Game/enemies/asteroid/asteroid_explosion.ogg"
+            }
+        }
+    },
+    "basic-enemy":
+    {
+        "death":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "basic_enemy_death",
+                "path": "resources/scenes/Game/enemies/basic/enemy_death.ogg"
             }
         }
     }

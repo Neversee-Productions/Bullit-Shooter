@@ -11,6 +11,7 @@ float const Asteroid::INVULNERABILITY_FRAMES = 0.01f;
 /// <param name="sptrResources">shared pointer to asteroid resource.</param>
 void Asteroid::setup(std::shared_ptr<Resources> sptrResources, json::json & jsonParser)
 {
+	setupFlashFrame(sptrResources->m_flashTextureRect, jsonParser.at("idle").at("flash_frame"));
 	sptrResources->m_idleTexture = jsonParser.at("idle").at("texture").get<Resources::Texture>();
 	sptrResources->m_explodeTexture = jsonParser.at("explode").at("texture").get<Resources::Texture>();
 	sptrResources->m_explodeAnimation = jsonParser.at("explode").at("animation").get<Resources::Animation>();
@@ -76,17 +77,13 @@ void Asteroid::update()
 {
 	if (m_invulnerable)
 	{
-		//m_circle.setFillColor(sf::Color::White);
 		m_invulnTimer += App::getUpdateDeltaTime();
 		if (m_invulnTimer >= INVULNERABILITY_FRAMES)
 		{
 			m_invulnerable = false;
 			m_invulnTimer = 0.0f;
+			m_circle.setTextureRect(m_sptrResources->m_idleTexture.m_textureRect);
 		}
-	}
-	else
-	{
-		//m_circle.setFillColor(sf::Color::White);
 	}
 	if (m_active)
 	{
@@ -270,6 +267,17 @@ void Asteroid::decrementHealth(float dmg, bool invurnState)
 		{
 			this->explode();
 		}
+		else
+		{
+			if (m_invulnerable)
+			{
+				m_circle.setTextureRect(m_sptrResources->m_flashTextureRect);
+			}
+			else
+			{
+				m_circle.setTextureRect(m_sptrResources->m_idleTexture.m_textureRect);
+			}
+		}
 	}
 }
 
@@ -344,6 +352,23 @@ void Asteroid::explode()
 bool Asteroid::containsEnemy() const
 {
 	return m_spawnEnemy;
+}
+
+/// <summary>
+/// @brief load up flash frame.
+/// 
+/// 
+/// </summary>
+/// <param name="flashFrame">reference to flash frame to be loaded.</param>
+/// <param name="flashFrameParser">reference to json parser.</param>
+void Asteroid::setupFlashFrame(sf::IntRect & flashFrame, json::json & flashFrameParser)
+{
+	flashFrame = sf::IntRect(
+		flashFrameParser.at("x").get<int>()
+		, flashFrameParser.at("y").get<int>()
+		, flashFrameParser.at("w").get<int>()
+		, flashFrameParser.at("h").get<int>()
+	);
 }
 
 /// <summary>
