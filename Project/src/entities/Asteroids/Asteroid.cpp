@@ -1,7 +1,7 @@
 #include "Entities\Asteroids\Asteroid.h"
 
 float const Asteroid::INVULNERABILITY_FRAMES = 0.01f;
-
+sf::Time const Asteroid::s_FLASH_TIME = sf::seconds(0.5f);
 
 /// <summary>
 /// @brief Setups resource pointer.
@@ -40,6 +40,8 @@ Asteroid::Asteroid(std::shared_ptr<Resources> sptrResources)
 	, UPDATE_TIME_DT(sf::seconds(UPDATE_DT))
 	, m_animator()
 	, m_explosionTimer(sf::milliseconds(0))
+	, m_flashTimer(sf::milliseconds(0))
+	, m_flash(false)
 {
 	const auto & windowRect = App::getViewC2Rect();
 	const auto & extraHeight = m_rectangle.getGlobalBounds().height * 2.0f;
@@ -82,7 +84,6 @@ void Asteroid::update()
 		{
 			m_invulnerable = false;
 			m_invulnTimer = 0.0f;
-			m_circle.setTextureRect(m_sptrResources->m_idleTexture.m_textureRect);
 		}
 	}
 	if (m_active)
@@ -93,6 +94,18 @@ void Asteroid::update()
 			if (m_explosionTimer > m_sptrResources->m_explodeAnimation.m_duration)
 			{
 				m_active = false;
+			}
+		}
+		else
+		{
+			if (m_flash)
+			{
+				m_flashTimer += UPDATE_TIME_DT;
+				if (m_flashTimer > s_FLASH_TIME)
+				{
+					m_flash = false;
+					m_circle.setTextureRect(m_sptrResources->m_idleTexture.m_textureRect);
+				}
 			}
 		}
 		m_position += m_velocity * UPDATE_DT;
@@ -221,6 +234,8 @@ void Asteroid::reuseAsteroid()
 	m_explode = false;
 	m_active = true;
 	m_invulnerable = false;
+	m_flash = false;
+	m_flashTimer = sf::milliseconds(0);
 	m_circle.setOrigin(m_circle.getRadius(), m_circle.getRadius());
 	m_circle.setScale(m_sptrResources->m_idleTexture.m_scale);
 	m_circle.setTexture(m_sptrResources->m_idleTexture.m_sptrTexture.get(), true);
@@ -270,14 +285,9 @@ void Asteroid::decrementHealth(float dmg, bool invurnState)
 		}
 		else
 		{
-			if (m_invulnerable)
-			{
-				m_circle.setTextureRect(m_sptrResources->m_flashTextureRect);
-			}
-			else
-			{
-				m_circle.setTextureRect(m_sptrResources->m_idleTexture.m_textureRect);
-			}
+			m_flash = true;
+			m_flashTimer = sf::seconds(0.0f);
+			m_circle.setTextureRect(m_sptrResources->m_flashTextureRect);
 		}
 	}
 }

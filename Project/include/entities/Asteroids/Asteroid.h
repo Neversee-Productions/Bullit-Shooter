@@ -308,6 +308,28 @@ private:
 	/// 
 	/// </summary>
 	sf::Time m_explosionTimer;
+
+	/// <summary>
+	/// @brief Tracks how long the asteroid has to be in flash mode.
+	/// 
+	/// 
+	/// </summary>
+	sf::Time m_flashTimer;
+
+	/// <summary>
+	/// @brief Determines whether to flash or not.
+	/// 
+	/// 	
+	/// </summary>
+	bool m_flash;
+
+	
+	/// <summary>
+	/// @brief Determines how long should the asteroid flash.
+	/// 
+	/// 	
+	/// </summary>
+	static sf::Time const s_FLASH_TIME;
 };
 
 #endif // !ASTEROIDS_H
