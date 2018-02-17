@@ -1,7 +1,7 @@
 #include "Entities\Asteroids\Asteroid.h"
 
 float const Asteroid::INVULNERABILITY_FRAMES = 0.01f;
-sf::Time const Asteroid::s_FLASH_TIME = sf::seconds(0.5f);
+sf::Time const Asteroid::s_FLASH_TIME = sf::seconds(0.05f);
 
 /// <summary>
 /// @brief Setups resource pointer.
