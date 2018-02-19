@@ -16,9 +16,11 @@ GameScene::GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Con
 	, m_asteroidManager()
 	, m_basicEnemyManager()
 	, m_pickup()
-	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this))
+	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this), std::bind(&GameScene::restartGame, this))
 	, m_collisionSystem(m_player, m_asteroidManager, m_basicEnemyManager, m_pickup, m_ui)
 	, m_gamePaused(false)
+	, m_gameEnded(false)
+	, m_controller(*controller)
 {
 	m_pickup.setActive(false);
 }
@@ -52,9 +54,10 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_player.reset();
 	m_asteroidManager.resetAsteroids();
 	m_basicEnemyManager.reset();
+	m_gamePaused = false;
+	m_gameEnded = false;
 	m_ui.reset();
 	m_pickup.setActive(false);
-	m_ui.setPaused(false);
 	
 	if (!m_resources)
 	{
@@ -81,12 +84,12 @@ void GameScene::stop()
 /// </summary>
 void GameScene::update()
 {
-	if (m_keyHandler.isPressed(sf::Keyboard::Escape) && !m_keyHandler.isPrevPressed(sf::Keyboard::Escape))
+	if (((m_keyHandler.isPressed(sf::Keyboard::Escape) && !m_keyHandler.isPrevPressed(sf::Keyboard::Escape)) || (m_controller.m_currentState.m_l1 && !m_controller.m_previousState.m_l1)) && !m_gameEnded)
 	{
 		m_gamePaused = !m_gamePaused;
 		m_ui.setPaused(m_gamePaused);
 	}
-	if (!m_gamePaused)
+	if (!m_gamePaused && !m_ui.getShowEnd())
 	{
 		m_background.update();
 		m_player.update();
@@ -94,6 +97,12 @@ void GameScene::update()
 		m_basicEnemyManager.update();
 		m_pickup.update();
 		m_collisionSystem.update();
+
+		if (!m_player.isAlive())
+		{
+			m_gameEnded = true;
+			m_ui.setShowEnd(m_gameEnded);
+		}
 	}
 	else
 	{
@@ -114,7 +123,7 @@ void GameScene::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void GameScene::draw(Window & window, const float & deltaTime)
 {
-	if (m_gamePaused)
+	if (m_gamePaused || m_ui.getShowEnd())
 	{
 		m_background.draw(window, 0);
 		m_pickup.draw(window, 0);
@@ -140,6 +149,11 @@ void GameScene::draw(Window & window, const float & deltaTime)
 void GameScene::backToMainMenu()
 {
 	Scene::setNextSceneName("MainMenu");
+}
+
+void GameScene::restartGame()
+{
+	Scene::setNextSceneName("Game");
 }
 
 /// <summary>

@@ -40,7 +40,8 @@ public: //public member classes/structs.
 	};
 private: //private member classes/structs.
 public: //public functions
-	GameUI(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller, std::function<void()> mainMenuFunction);
+	GameUI(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller, std::function<void()> mainMenuFunction, std::function<void()> restartGameFunction
+	);
 	void update();
 	void draw(Window & window, const float & deltaTime);
 	static void setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, json::json & UIParser);
@@ -51,6 +52,8 @@ public: //public functions
 	void btnResume();
 	void setPaused(bool check);
 	bool getPaused();
+	void setShowEnd(bool check);
+	bool getShowEnd();
 	void reset();
 private: //private functions.
 public: //public member variables.
@@ -115,12 +118,32 @@ private: //private member variables.
 	std::function<void()> m_mainMenuFunc;
 
 	/// <summary>
+	/// @brief define the function that will restart the game.
+	/// 
+	/// 
+	/// </summary>
+	std::function<void()> m_restartGameFunc;
+
+	/// <summary>
 	/// @brief Define if the pause menu is to be shown and updated.
 	/// 
 	/// 
 	/// </summary>
 	bool m_showPauseScreen;
 
+	/// <summary>
+	/// @brief unique ptr to the game end ui.
+	/// 
+	/// 
+	/// </summary>
+	std::unique_ptr<gui::GUI> m_gameEndUI;
+
+	/// <summary>
+	/// @brief this defines if we show the game end screen.
+	/// 
+	/// 
+	/// </summary>
+	bool m_showGameEnd;
 };
 
 

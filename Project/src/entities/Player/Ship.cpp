@@ -326,6 +326,17 @@ bool Ship::getDocking()
 {
 	return m_isDocking;
 }
+
+/// <summary>
+/// @brief a function that makes the ship dash.
+/// 
+///  
+/// </summary>
+void Ship::dash()
+{
+	m_velocity = sf::Vector2f(m_velocity.x, -(m_maxVel* 0.5));
+}
+
 /// <summary>
 /// @brief this method takes in a vector2f and assigns it to the position of the ship.
 /// 

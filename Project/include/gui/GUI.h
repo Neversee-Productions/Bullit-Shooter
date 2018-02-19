@@ -48,6 +48,7 @@ namespace gui
 		void draw(Window&) const;
 		void configure(const Layouts&, const sf::Vector2u & windowSize);
 		void configure(const Layouts&, const unsigned int & windowWidth, const unsigned int & windowHeight);
+		void resetSelectedWidget();
 		void addLabel(sf::String contents
 			, unsigned int fontSize
 			, sf::Vector2f position

@@ -32,6 +32,7 @@ public:
 	void init(std::shared_ptr<Resources> resources);
 	void update(sf::Vector2f const & startPos, sf::Vector2f const & endPos);
 	void draw(Window & window, float const & deltaTime);
+	void reset(sf::Vector2f pos);
 
 private:
 	

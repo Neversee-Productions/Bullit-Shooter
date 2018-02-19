@@ -94,6 +94,7 @@ public:
 	void checkOffScreen();
 	void setDocking(bool check);
 	bool getDocking();
+	void dash();
 	void setPosition(sf::Vector2f pos);
 	void resetShip();
 

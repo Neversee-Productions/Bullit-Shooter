@@ -171,6 +171,20 @@ void gui::GUI::configure(const Layouts & layout, const unsigned int & windowWidt
 }
 
 /// <summary>
+/// @brief this method will reset the gui for the widgets that are selected.
+/// 
+/// 
+/// </summary>
+void gui::GUI::resetSelectedWidget()
+{
+	for (auto & widget : m_widgets)
+	{
+		widget->loseFocus();
+	}
+	m_selectedWidget = m_widgets.front();
+}
+
+/// <summary>
 /// @brief Adds in a label.
 /// 
 /// takes in the parameters needed for a label

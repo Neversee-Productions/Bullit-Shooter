@@ -9,12 +9,16 @@ GameUI::GameUI(
 	std::shared_ptr<KeyHandler> keyHandler
 	, std::shared_ptr<Controller> controller
 	, std::function<void()> mainMenuFunction
+	, std::function<void()> restartGameFunction
 )
 	: m_healthTemplatePosition(sf::Vector2f(static_cast<sf::Vector2f>(App::getViewSize())))
 	, m_targetHealth(1.0f)
 	, m_gui(std::make_unique<gui::GUI>(keyHandler, controller, true))
 	, m_mainMenuFunc(mainMenuFunction)
+	, m_restartGameFunc(restartGameFunction)
 	, m_showPauseScreen(false)
+	, m_gameEndUI(std::make_unique<gui::GUI>(keyHandler, controller, true))
+	, m_showGameEnd(false)
 {
 }
 
@@ -41,6 +45,10 @@ void GameUI::update()
 	{
 		m_gui->update(App::getUpdateDeltaTime());
 	}
+	if (m_showGameEnd)
+	{
+		m_gameEndUI->update(App::getUpdateDeltaTime());
+	}
 }
 
 
@@ -59,6 +67,10 @@ void GameUI::draw(Window & window, const float & deltaTime)
 	if (m_showPauseScreen)
 	{
 		m_gui->draw(window);
+	}
+	if (m_showGameEnd)
+	{
+		m_gameEndUI->draw(window);
 	}
 }
 
@@ -145,8 +157,33 @@ void GameUI::init(std::shared_ptr<Resources> resources)
 		gui::Button::s_TEXT_RECT_MID,
 		gui::Button::s_TEXT_RECT_RIGHT
 	);
+	m_gameEndUI->addButton(
+		m_restartGameFunc,
+		"Restart",
+		zero,
+		sptrButtonFont,
+		24,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+	m_gameEndUI->addButton(
+		m_mainMenuFunc,
+		"Exit",
+		zero,
+		sptrButtonFont,
+		24,
+		sptrButtonTexture,
+		gui::Button::s_TEXT_RECT_LEFT,
+		gui::Button::s_TEXT_RECT_MID,
+		gui::Button::s_TEXT_RECT_RIGHT
+	);
+	m_gameEndUI->addLabel("Game Over", 50, sf::Vector2f(App::getViewSize().x / 2, App::getViewSize().y * 0.1), sptrButtonFont, sf::Color::White);
+	m_gui->addLabel("Pause", 50, sf::Vector2f(App::getViewSize().x / 2, App::getViewSize().y * 0.1), sptrButtonFont, sf::Color::White);
 	const auto& windowSize = App::getViewSize();
 	m_gui->configure(gui::GUI::Layouts::StackVertically, windowSize);
+	m_gameEndUI->configure(gui::GUI::Layouts::StackVertically, windowSize);
 }
 
 /// <summary>
@@ -212,6 +249,10 @@ void GameUI::btnResume()
 /// <param name="check">boolean that represents the new value of show pause screen</param>
 void GameUI::setPaused(bool check)
 {
+	if (check)
+	{
+		m_gui->resetSelectedWidget();
+	}
 	m_showPauseScreen = check;
 }
 
@@ -227,6 +268,32 @@ bool GameUI::getPaused()
 }
 
 /// <summary>
+/// @brief method that will determine if we show game end screen.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new value of the show game end bool</param>
+void GameUI::setShowEnd(bool check)
+{
+	if (check)
+	{
+		m_gameEndUI->resetSelectedWidget();
+	}
+	m_showGameEnd = check;
+}
+
+/// <summary>
+/// @brief a getter for the show end game bool.
+/// 
+///
+/// </summary>
+/// <returns>returns m_showGameEnd bool</returns>
+bool GameUI::getShowEnd()
+{
+	return m_showGameEnd;
+}
+
+/// <summary>
 /// @brief this method resets the game ui.
 /// 
 /// 
@@ -236,4 +303,6 @@ void GameUI::reset()
 	m_healthSprite.setScale(1.0f, 1.0f);
 	m_healthLostSprite.setScale(1.0f, 1.0f);
 	m_targetHealth = 1.0f;
+	m_showPauseScreen = false;
+	m_showGameEnd = false;
 }

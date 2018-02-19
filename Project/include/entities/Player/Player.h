@@ -95,7 +95,8 @@ public:
 private:
 	void switchWeaponInput();
 	bool checkAxis(float const & axis, bool flipped);
-	bool checkAxisThruster(float const & axis);
+	bool checkAxisThrusterPositive(float const & axis);
+	bool checkAxisThrusterNegative(float const & axis);
 
 private:
 	/// <summary>

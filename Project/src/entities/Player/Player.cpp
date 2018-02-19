@@ -118,7 +118,7 @@ void Player::update()
 		
 		if (m_controller.isConnected())
 		{
-			if (checkAxisThruster(m_controller.m_currentState.m_flightThruster))
+			if (checkAxisThrusterPositive(m_controller.m_currentState.m_flightThruster))
 			{
 				m_ship.setDocking(true);
 			}
@@ -126,10 +126,17 @@ void Player::update()
 			{
 				m_ship.setDocking(false);
 			}
+			if (checkAxisThrusterNegative(m_controller.m_currentState.m_flightThruster) && !checkAxisThrusterNegative(m_controller.m_previousState.m_flightThruster))
+			{
+				m_ship.dash();
+			}
 		}
-		else if (m_keyHandler.isPressed(sf::Keyboard::LControl) && !m_keyHandler.isPrevPressed(sf::Keyboard::LControl))
+		else
 		{
-			m_ship.setDocking(!m_ship.getDocking());
+			if (m_keyHandler.isPressed(sf::Keyboard::LControl) && !m_keyHandler.isPrevPressed(sf::Keyboard::LControl))
+			{
+				m_ship.setDocking(!m_ship.getDocking());
+			}
 		}
 
 
@@ -313,10 +320,34 @@ bool Player::checkAxis(float const & axis, bool flipped)
 	return false;
 }
 
-bool Player::checkAxisThruster(float const & axis)
+/// <summary>
+/// @brief defines a function that checks if thruster is above a threshold.
+/// 
+/// 
+/// </summary>
+/// <param name="axis">axis of thruster</param>
+/// <returns>return true if axis above threshold else false</returns>
+bool Player::checkAxisThrusterPositive(float const & axis)
 {
 	float const THRESHOLD = 70.0f;
 	if (axis > THRESHOLD)
+	{
+		return true;
+	}
+	return false;
+}
+
+/// <summary>
+/// @brief defines a function that checks if thruster is below a threshold.
+/// 
+/// 
+/// </summary>
+/// <param name="axis">axis of thruster</param>
+/// <returns>return true if axis below threshold else false</returns>
+bool Player::checkAxisThrusterNegative(float const & axis)
+{
+	float const THRESHOLD = 70.0f;
+	if (axis < -THRESHOLD)
 	{
 		return true;
 	}
@@ -626,7 +657,9 @@ void Player::resetBullets()
 void Player::resetWeapons()
 {
 	m_weaponLeft.resetWeaponType();
+	m_weaponLeft.setAlpha(255.0f);
 	m_weaponRight.resetWeaponType();
+	m_weaponRight.setAlpha(255.0f);
 }
 
 /// <summary>
@@ -643,4 +676,5 @@ void Player::reset()
 	resetWeapons();
 	m_shield.resetShield();
 	m_background.setTargetColor(m_weaponLeft.getBgColor());
+	this->setAttachedWeapons(true);
 }
