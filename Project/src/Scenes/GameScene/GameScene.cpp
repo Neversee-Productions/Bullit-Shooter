@@ -48,6 +48,10 @@ void GameScene::start(const std::string & resourceFilePath)
 #endif // _DEBUG
 	Scene::setNextSceneName("");
 	//HERE WE REINITIALIZE THE GAME (FOR RESTARTING)
+	if (!m_resources)
+	{
+		this->setup(resourceFilePath);
+	}
 	m_soundManager.stop("bg-soundtrack");
 	m_soundManager.play("bg_game_soundtrack", false);
 	m_background.reset();
@@ -57,11 +61,6 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_ui.reset();
 	m_pickup.setActive(false);
 	m_ui.setPaused(false);
-	
-	if (!m_resources)
-	{
-		this->setup(resourceFilePath);
-	}
 }
 
 /// <summary>
