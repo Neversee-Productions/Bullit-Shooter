@@ -6,6 +6,7 @@
 #include "system\App.h"
 #include "entities\Background.h"
 #include "util\JsonLoader.h"
+#include "sound\SoundManager.h"
 
 /// 
 /// @brief Represents our main menu.
@@ -115,6 +116,13 @@ private:
 	/// 
 	/// </summary>
 	Background m_background;
+
+	/// <summary>
+	/// @brief reference to sound manager instance.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
 
 };
 

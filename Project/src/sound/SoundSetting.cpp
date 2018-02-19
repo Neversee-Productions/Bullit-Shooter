@@ -55,5 +55,6 @@ void from_json(const json::json & j, SoundSetting & soundSetting)
 	{
 		soundSetting.m_sptrBuffer =
 			resourceHandler.loadUp<sf::SoundBuffer>(result->at("path").get<std::string>(), result->at("key").get<std::string>());
+		assert(nullptr != soundSetting.m_sptrBuffer);
 	}
 }

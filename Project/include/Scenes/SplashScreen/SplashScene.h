@@ -2,6 +2,7 @@
 #define SPLASHSCENE_H
 
 #include "scenes\Scene.h"
+#include "sound\SoundManager.h"
 #include "util\JsonLoader.h"
 
 /// 
@@ -60,6 +61,13 @@ private:
 	std::unique_ptr<Resources> m_resources;
 
 	/// <summary>
+	/// @brief reference to sound manager instance.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
+
+	/// <summary>
 	/// @brief unique pointer to our background sprite.
 	/// 
 	/// 
@@ -86,6 +94,13 @@ private:
 	/// 
 	/// </summary>
 	FadeState m_fadeState;
+
+	/// <summary>
+	/// @brief id of background sound.
+	/// 
+	/// 
+	/// </summary>
+	std::string const m_BG_SOUND_ID;
 };
 
 #endif // !SPLASHSCENE_H

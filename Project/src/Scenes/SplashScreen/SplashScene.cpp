@@ -8,10 +8,12 @@
 SplashScene::SplashScene()
 	: Scene("Splash")
 	, m_resources(nullptr)
+	, m_soundManager(SoundManager::instance())
 	, m_backgroundSprite(nullptr)
 	, m_backgroundColor(nullptr)
 	, m_incrementColor(1u)
 	, m_fadeState(FadeState::FadeIn)
+	, m_BG_SOUND_ID("bg-soundtrack")
 {
 }
 
@@ -35,6 +37,7 @@ void SplashScene::preStart(const std::string & resourceFilePath)
 void SplashScene::start(const std::string & resourceFilePath)
 {
 	setup(resourceFilePath);
+	m_soundManager.play(m_BG_SOUND_ID);
 }
 
 /// <summary>
@@ -114,6 +117,7 @@ void SplashScene::goToNextScene()
 void SplashScene::setup(const std::string & filePath)
 {
 	auto & resourceHandler = ResourceHandler::get();
+	auto & soundManager = SoundManager::instance();
 	Scene::setNextSceneName("");
 
 	if (!m_resources)
@@ -146,5 +150,7 @@ void SplashScene::setup(const std::string & filePath)
 		backgroundSprite.setPosition(windowSize.x * 0.5f, windowSize.y * 0.5f);
 		backgroundSprite.setScale(0.5f, 0.5f);
 		backgroundSprite.setColor(backgroundColor);
+
+		m_soundManager.addSound(jsonLoader.at("sounds").at("bg-soundtrack").get<SoundSetting>(), m_BG_SOUND_ID);
 	}
 }

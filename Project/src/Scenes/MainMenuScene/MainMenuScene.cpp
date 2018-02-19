@@ -19,6 +19,7 @@ MainMenuScene::MainMenuScene(
 	, m_timer(nullptr)
 	, m_DELAY_TIME(0.5f)
 	, m_nextName()
+	, m_soundManager(SoundManager::instance())
 {
 }
 
@@ -43,6 +44,11 @@ void MainMenuScene::start(const std::string & resourceFilePath)
 {
 	Scene::setNextSceneName("");
 	this->setup(resourceFilePath);
+	std::string const BG_SOUNDTRACK_ID("bg-soundtrack");
+	if (!m_soundManager.checkSound(BG_SOUNDTRACK_ID))
+	{
+		m_soundManager.play(BG_SOUNDTRACK_ID, false);
+	}
 }
 
 /// <summary>

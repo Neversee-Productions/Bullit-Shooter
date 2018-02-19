@@ -48,6 +48,8 @@ void GameScene::start(const std::string & resourceFilePath)
 #endif // _DEBUG
 	Scene::setNextSceneName("");
 	//HERE WE REINITIALIZE THE GAME (FOR RESTARTING)
+	m_soundManager.stop("bg-soundtrack");
+	m_soundManager.play("bg_game_soundtrack", false);
 	m_background.reset();
 	m_player.reset();
 	m_asteroidManager.resetAsteroids();
@@ -72,6 +74,7 @@ void GameScene::stop()
 #ifdef _DEBUG
 	std::cout << "Stopping Game Scene" << std::endl;
 #endif // _DEBUG
+	m_soundManager.stop("bg_game_soundtrack");
 }
 
 /// <summary>

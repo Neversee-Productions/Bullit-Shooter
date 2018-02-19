@@ -39,6 +39,7 @@ SoundManager & SoundManager::instance()
 /// <param name="soundParser">reference to loaded json file ready to be parsed.</param>
 void SoundManager::setup(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & soundParser)
 {
+	setupBg(resourceHandler, soundManager, soundParser.at("background"));
 	setupPlayer(resourceHandler, soundManager, soundParser.at("player"));
 	setupAsteroid(resourceHandler, soundManager, soundParser.at("asteroid"));
 	setupBasicEnemy(resourceHandler, soundManager, soundParser.at("basic-enemy"));
@@ -77,18 +78,31 @@ void SoundManager::addSound(SoundSetting settings, std::string const & id)
 }
 
 /// <summary>
-/// @brief 
+/// @brief Starts playing a sound based on its id.
 /// 
 /// 
 /// </summary>
 /// <param name="id">read-only reference to the string id of the sound.</param>
-void SoundManager::play(std::string const & id)
+/// <param name="stack">determines whether to stop the current playing sound.</param>
+void SoundManager::play(std::string const & id, bool stack)
 {
 	assert(true == this->checkSoundInMap(id)); // Must be within the map.
 
 	auto & soundList = m_soundMap.at(id).soundPlayers;
 	auto const & settings = m_soundMap.at(id).settings;
 	
+	if (false == stack)
+	{
+		for (sf::Sound & sound : soundList)
+		{
+			if (sound.getStatus() != sf::Sound::Status::Playing)
+			{
+				sound.stop();
+				sound.play();
+				return;
+			}
+		}
+	}
 	for (sf::Sound & sound : soundList)
 	{
 		if (sound.getStatus() != sf::Sound::Status::Playing)
@@ -108,6 +122,65 @@ void SoundManager::play(std::string const & id)
 	}
 	soundList.push_back(std::move(sfmlSound));
 	soundList.back().play();
+}
+
+/// <summary>
+/// @brief Stops the sound based on id if its currently playing.
+/// 
+/// 
+/// </summary>
+/// <param name="id">read-only reference to the string id</param>
+void SoundManager::stop(std::string const & id)
+{
+	SoundMap::iterator result = m_soundMap.find(id);
+	if (result != m_soundMap.end())
+	{
+		auto & soundList = result->second.soundPlayers;
+		for (auto & sound : soundList)
+		{
+			if (sound.getStatus() != sf::Sound::Status::Stopped)
+			{
+				sound.stop();
+			}
+		}
+	}
+}
+
+/// <summary>
+/// @brief searches if the sound is playing.
+/// 
+/// 
+/// </summary>
+/// <param name="id">read-only reference of the sound's id.</param>
+/// <returns>true if the sound is playing, false if it's paused, stopped or does not exist.</returns>
+bool SoundManager::checkSound(std::string const & id)
+{
+	SoundMap::const_iterator result = m_soundMap.find(id);
+	if (result != m_soundMap.end())
+	{
+		for (auto & sound : result->second.soundPlayers)
+		{
+			if (sound.getStatus() == sf::Sound::Status::Playing)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+/// <summary>
+/// @brief Setups background sounds.
+/// 
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
+/// <param name="bgParser">reference to loaded json file ready to be parsed.</param>
+void SoundManager::setupBg(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & bgParser)
+{
+	std::string const BG_SOUND_ID("bg_game_soundtrack");
+	soundManager.addSound(bgParser.at("bg-soundtrack").get<SoundSetting>(), BG_SOUND_ID);
 }
 
 /// <summary>

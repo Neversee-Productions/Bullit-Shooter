@@ -60,11 +60,18 @@ public: // Public Member Functions
 		, json::json & soundParser);
 	void update();
 	void addSound(SoundSetting settings, std::string const & id);
-	void play(std::string const & id);
+	void play(std::string const & id, bool stack = true);
+	void stop(std::string const & id);
+	bool checkSound(std::string const & id);
 public: // Public Member Variables
 protected: // Protected Member Functions
 protected: // Protected Member Variables
 private: // Private Member Functions
+	static void setupBg(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & bgParser
+	);
 	static void setupPlayer(
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
