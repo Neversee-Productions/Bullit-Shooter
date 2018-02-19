@@ -208,11 +208,17 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af2b811d77856817b9736ff247ae10efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b18d4c13a9ace4dd85b19e783ac8d3e"><td class="memItemLeft" align="right" valign="top">sf::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a6b18d4c13a9ace4dd85b19e783ac8d3e">m_explosionTimer</a></td></tr>
 <tr class="separator:a6b18d4c13a9ace4dd85b19e783ac8d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218ad6789ebe8228d18f5780b923f3ee"><td class="memItemLeft" align="right" valign="top">sf::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a218ad6789ebe8228d18f5780b923f3ee">m_flashTimer</a></td></tr>
+<tr class="separator:a218ad6789ebe8228d18f5780b923f3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe7676af8d707f47733560033896dfe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#aabe7676af8d707f47733560033896dfe">m_flash</a></td></tr>
+<tr class="separator:aabe7676af8d707f47733560033896dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a92858a0bbfd0567abe520ac9935f496b"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a92858a0bbfd0567abe520ac9935f496b">INVULNERABILITY_FRAMES</a> = 0.01f</td></tr>
 <tr class="separator:a92858a0bbfd0567abe520ac9935f496b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a967e137d6585839a79ad6240078beb2c"><td class="memItemLeft" align="right" valign="top">static sf::Time const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a967e137d6585839a79ad6240078beb2c">s_FLASH_TIME</a> = sf::seconds(0.05f)</td></tr>
+<tr class="separator:a967e137d6585839a79ad6240078beb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd>
@@ -1008,6 +1014,52 @@ Sebastian Kruzel</dd></dl>
 
 </div>
 </div>
+<a id="aabe7676af8d707f47733560033896dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabe7676af8d707f47733560033896dfe">&#9670;&nbsp;</a></span>m_flash</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Asteroid::m_flash</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Determines whether to flash or not.</p>
+
+</div>
+</div>
+<a id="a218ad6789ebe8228d18f5780b923f3ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a218ad6789ebe8228d18f5780b923f3ee">&#9670;&nbsp;</a></span>m_flashTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Time Asteroid::m_flashTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tracks how long the asteroid has to be in flash mode.</p>
+
+</div>
+</div>
 <a id="acb5188ed5bbd7b0b05b64aa47dc6a202"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb5188ed5bbd7b0b05b64aa47dc6a202">&#9670;&nbsp;</a></span>m_health</h2>
 
@@ -1235,6 +1287,29 @@ Sebastian Kruzel</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>window collision box.</p>
+
+</div>
+</div>
+<a id="a967e137d6585839a79ad6240078beb2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967e137d6585839a79ad6240078beb2c">&#9670;&nbsp;</a></span>s_FLASH_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Time const Asteroid::s_FLASH_TIME = sf::seconds(0.05f)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Determines how long should the asteroid flash.</p>
 
 </div>
 </div>

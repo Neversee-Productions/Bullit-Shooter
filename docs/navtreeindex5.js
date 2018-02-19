@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"classgui_1_1_slider.html#a7aab63dfcc69e3150ac54c9914def379":[2,0,2,4,10],
+"classgui_1_1_slider.html#a88740adc74863e5c6c30084e2f72de99":[2,0,2,4,17],
+"classgui_1_1_slider.html#a8a21c1a4276013dd3bd29f97466690aa":[2,0,2,4,4],
 "classgui_1_1_slider.html#a8bd413df6f7d285004a14aa01a9de2b8":[2,0,2,4,35],
 "classgui_1_1_slider.html#a90d712eab516ac7c2be533b954ed57f6":[2,0,2,4,9],
 "classgui_1_1_slider.html#a9874913cd00602060e705ebe140b18dd":[2,0,2,4,30],
@@ -143,8 +146,8 @@ var NAVTREEINDEX5 =
 "main_8hpp.html":[3,0,0,0,7],
 "main_8hpp.html#a8de3ed741dadc9c979a4ff17c0a9116e":[3,0,0,0,7,0],
 "main_8hpp_source.html":[3,0,0,0,7],
-"namespaceai.html":[2,0,0],
 "namespaceai.html":[1,0,0],
+"namespaceai.html":[2,0,0],
 "namespaceai_1_1states.html":[1,0,0,0],
 "namespaceai_1_1states.html":[2,0,0,0],
 "namespacebullets.html":[1,0,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX5 =
 "struct_player_1_1_resources.html#a62704cc3159746ffa22abab653f6f3e5":[2,0,20,0,1],
 "struct_player_1_1_resources.html#aa3229a4f722ff6756b90f266d11322a3":[2,0,20,0,2],
 "struct_player_1_1_resources.html#ac63192254b2e9cc92cc835b9507cec0f":[2,0,20,0,3],
-"struct_resource_handler_1_1_mutex_holder_pair.html":[2,0,21,0],
-"struct_resource_handler_1_1_mutex_holder_pair.html#a73213fec59d670d9b219e8583aa7d476":[2,0,21,0,1],
-"struct_resource_handler_1_1_mutex_holder_pair.html#ab906b91aa813ddaa2a96a6e76cdf66f4":[2,0,21,0,0],
-"struct_scene_manager_1_1_managed_scene.html":[2,0,23,0]
+"struct_resource_handler_1_1_mutex_holder_pair.html":[2,0,21,0]
 };

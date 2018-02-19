@@ -35,6 +35,8 @@ var class_asteroid =
     [ "m_collisionCircle", "class_asteroid.html#af2c2388afb2c00cc1779912110bfb527", null ],
     [ "m_explode", "class_asteroid.html#a8ee3ad2bec9ed08978e91f079235caa1", null ],
     [ "m_explosionTimer", "class_asteroid.html#a6b18d4c13a9ace4dd85b19e783ac8d3e", null ],
+    [ "m_flash", "class_asteroid.html#aabe7676af8d707f47733560033896dfe", null ],
+    [ "m_flashTimer", "class_asteroid.html#a218ad6789ebe8228d18f5780b923f3ee", null ],
     [ "m_health", "class_asteroid.html#acb5188ed5bbd7b0b05b64aa47dc6a202", null ],
     [ "m_invulnerable", "class_asteroid.html#a9e16fbf2e5a961ab8099538abb594425", null ],
     [ "m_invulnTimer", "class_asteroid.html#ae51f5725ecb89f48e85d15998ab3aee6", null ],
@@ -45,6 +47,7 @@ var class_asteroid =
     [ "m_sptrResources", "class_asteroid.html#a72a2b1872c893cb978ee03e1e5a17eab", null ],
     [ "m_velocity", "class_asteroid.html#a8dd7cd60da2412c5859e078a5902f03d", null ],
     [ "m_windowC2Rect", "class_asteroid.html#a17d2ded1192f1c0b20f7193e546295a4", null ],
+    [ "s_FLASH_TIME", "class_asteroid.html#a967e137d6585839a79ad6240078beb2c", null ],
     [ "UPDATE_DT", "class_asteroid.html#abf0f15cc417c725f8a4b0eb34715ba15", null ],
     [ "UPDATE_TIME_DT", "class_asteroid.html#a088b1ae949938650c432a2bbf8483ef0", null ]
 ];

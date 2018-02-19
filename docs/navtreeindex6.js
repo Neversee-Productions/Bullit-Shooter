@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"struct_resource_handler_1_1_mutex_holder_pair.html#a73213fec59d670d9b219e8583aa7d476":[2,0,21,0,1],
+"struct_resource_handler_1_1_mutex_holder_pair.html#ab906b91aa813ddaa2a96a6e76cdf66f4":[2,0,21,0,0],
+"struct_scene_manager_1_1_managed_scene.html":[2,0,23,0],
 "struct_scene_manager_1_1_managed_scene.html#a1c9f31c5c34f062df1eca0e29b7f0bff":[2,0,23,0,0],
 "struct_scene_manager_1_1_managed_scene.html#a7eb297dc13a261e220b4536f9daeef02":[2,0,23,0,1],
 "struct_scene_manager_1_1_managed_scene.html#a971f20e8ad00ad6dcb44f2663b1f205f":[2,0,23,0,2],
