@@ -91,6 +91,11 @@ public:
 	void resetBullets();
 	void resetWeapons();
 	void reset();
+	float getFireRate();
+	float getTimeSinceFire();
+	float getOvercharge();
+	bool getOverheat();
+	void setOverheat(bool check);
 
 private:
 	void switchWeaponInput();

@@ -49,6 +49,10 @@ void GameScene::start(const std::string & resourceFilePath)
 	std::cout << "Starting Game Scene" << std::endl;
 #endif // _DEBUG
 	Scene::setNextSceneName("");
+	if (!m_resources)
+	{
+		this->setup(resourceFilePath);
+	}
 	//HERE WE REINITIALIZE THE GAME (FOR RESTARTING)
 	m_background.reset();
 	m_player.reset();
@@ -58,11 +62,6 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_gameEnded = false;
 	m_ui.reset();
 	m_pickup.setActive(false);
-	
-	if (!m_resources)
-	{
-		this->setup(resourceFilePath);
-	}
 }
 
 /// <summary>
@@ -97,7 +96,7 @@ void GameScene::update()
 		m_basicEnemyManager.update();
 		m_pickup.update();
 		m_collisionSystem.update();
-
+		updateUI();
 		if (!m_player.isAlive())
 		{
 			m_gameEnded = true;
@@ -223,6 +222,19 @@ void GameScene::setup(const std::string & filePath)
 	m_ui.init(m_resources->m_sptrUI);
 }
 
+/// <summary>
+/// @brief method to update the ui.
+/// 
+/// 
+/// </summary>
+void GameScene::updateUI()
+{
+	m_ui.setFireRate(m_player.getFireRate());
+	m_ui.setTimeSinceFire(m_player.getTimeSinceFire());
+	m_ui.updateOvercharge(m_player.getOvercharge());
+	m_ui.setOverheat(m_player.getOverheat());
+}
+
 
 /// <summary>
 /// @brief Setups Player::Resources.
@@ -274,6 +286,7 @@ void GameScene::setupShip(ResourceHandler & resourceHandler, std::shared_ptr<Shi
 
 	sptrShipResources->m_sptrTexture = resourceHandler.loadUp<sf::Texture>(shipParser, SHIP_ID);
 	assert(nullptr != sptrShipResources->m_sptrTexture);
+	sptrShipResources->m_sptrTexture->setSmooth(true);
 
 	sptrShipResources->m_uptrFrames = std::make_unique<Ship::ShipFrames>();
 	auto & frames = *sptrShipResources->m_uptrFrames;
@@ -365,6 +378,7 @@ std::unique_ptr<Weapon::Resources::IndividualWeapon> GameScene::setupWeaponAnim(
 	auto beginAnimationOrigin = sf::Vector2f(jsonBeginOrigin.at("x").get<float>(), jsonBeginOrigin.at("y").get<float>());
 	beginAnimation.m_origin = std::move(beginAnimationOrigin);
 	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, BEGIN_ID);
+	beginAnimation.m_sptrTexture->setSmooth(true);
 	
 	weaponResource.m_uptrBeginAnimation.swap(uptrBeginAnimation);
 
@@ -381,6 +395,7 @@ std::unique_ptr<Weapon::Resources::IndividualWeapon> GameScene::setupWeaponAnim(
 	auto shootAnimationOrigin = sf::Vector2f(jsonShootOrigin.at("x").get<float>(), jsonShootOrigin.at("y").get<float>());
 	shootAnimation.m_origin = std::move(shootAnimationOrigin);
 	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, SHOOT_ID);
+	shootAnimation.m_sptrTexture->setSmooth(true);
 
 	weaponResource.m_uptrShootAnimation.swap(uptrShootAnimation);
 

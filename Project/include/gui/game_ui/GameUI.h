@@ -37,6 +37,34 @@ public: //public member classes/structs.
 		/// 
 		/// </summary>
 		std::shared_ptr<sf::Texture> m_sptrButtonTexture = nullptr;
+
+		/// <summary>
+		/// @brief shared pointer to texture.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<sf::Texture> m_sptrRechargeBarTexture = nullptr;
+
+		/// <summary>
+		/// @brief shared pointer to texture.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<sf::Texture> m_sptrRechargeBarFrameTexture = nullptr;
+
+		/// <summary>
+		/// @brief shared pointer to texture.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<sf::Texture> m_sptrBorderTexture = nullptr;
+
+		/// <summary>
+		/// @brief shared pointer to texture.
+		/// 
+		/// 
+		/// </summary>
+		std::shared_ptr<sf::Texture> m_sptrOverchargeFrameTexture = nullptr;
 	};
 private: //private member classes/structs.
 public: //public functions
@@ -54,7 +82,12 @@ public: //public functions
 	bool getPaused();
 	void setShowEnd(bool check);
 	bool getShowEnd();
+	void setRecharge(float val);
 	void reset();
+	void setFireRate(float val);
+	void setTimeSinceFire(float val);
+	void updateOvercharge(float overchargeValue);
+	void setOverheat(bool check);
 private: //private functions.
 public: //public member variables.
 private: //private member variables.
@@ -144,6 +177,104 @@ private: //private member variables.
 	/// 
 	/// </summary>
 	bool m_showGameEnd;
+
+	/// <summary>
+	/// @brief define the border sprite.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_borderSprite;
+
+	/// <summary>
+	/// @brief define right recharge bar.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_rechargeBarRight;
+
+	/// <summary>
+	/// @brief define left recharge bar.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_rechargeBarLeft;
+
+	/// <summary>
+	/// @brief define the right recharge frame.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_rechargeFrameRight;
+
+	/// <summary>
+	/// @brief define left recharge frame.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_rechargeFrameLeft;
+
+	/// <summary>
+	/// @brief define right overcharge frame.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_overchargeFrameRight;
+
+	/// <summary>
+	/// @brief define the right overcharge bar.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_overchargeBarRight;
+
+	/// <summary>
+	/// @brief define the overcharge left bar.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_overchargeBarLeft;
+
+	/// <summary>
+	/// @brief define left overcharge frame.
+	/// 
+	/// 
+	/// </summary>
+	sf::Sprite m_overchargeFrameLeft;
+
+	/// <summary>
+	/// @brief define target scale for the recharge bar.
+	/// 
+	/// 
+	/// </summary>
+	float m_targetRecharge;
+
+	/// <summary>
+	/// @brief how long since last fire.
+	/// 
+	/// 
+	/// </summary>
+	float m_timeSinceFire;
+
+	/// <summary>
+	/// @brief define the current fireRate.
+	/// 
+	/// 
+	/// </summary>
+	float m_fireRateVal;
+
+	/// <summary>
+	/// @brief is the players weapon overheating.
+	/// 
+	/// 
+	/// </summary>
+	bool m_overheating;
+
+	/// <summary>
+	/// @brief a timer used in the change of the overcharge bar color
+	/// 
+	/// 
+	/// </summary>
+	float m_colorFlipTimer;
 };
 
 

@@ -423,56 +423,67 @@ void Player::nextWeapon()
 		m_weaponLeft.setType(BulletTypes::Empowered);
 		m_weaponRight.setType(BulletTypes::Empowered);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::Empowered:
 		m_weaponLeft.setType(BulletTypes::DeathOrb);
 		m_weaponRight.setType(BulletTypes::DeathOrb);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::DeathOrb:
 		m_weaponLeft.setType(BulletTypes::FireBlast);
 		m_weaponRight.setType(BulletTypes::FireBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.12f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::FireBlast:
 		m_weaponLeft.setType(BulletTypes::HolySphere);
 		m_weaponRight.setType(BulletTypes::HolySphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.05f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::HolySphere:
 		m_weaponLeft.setType(BulletTypes::MagmaShot);
 		m_weaponRight.setType(BulletTypes::MagmaShot);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.15f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::MagmaShot:
 		m_weaponLeft.setType(BulletTypes::NapalmSphere);
 		m_weaponRight.setType(BulletTypes::NapalmSphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.25f, 0.005f, 0.004f);
 		break;
 	case BulletTypes::NapalmSphere:
 		m_weaponLeft.setType(BulletTypes::CometShot);
 		m_weaponRight.setType(BulletTypes::CometShot);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.005f, 0.004f);
 		break;
 	case BulletTypes::CometShot:
 		m_weaponLeft.setType(BulletTypes::NullWave);
 		m_weaponRight.setType(BulletTypes::NullWave);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.006f, 0.005f);
 		break;
 	case BulletTypes::NullWave:
 		m_weaponLeft.setType(BulletTypes::StaticSphere);
 		m_weaponRight.setType(BulletTypes::StaticSphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::StaticSphere:
 		m_weaponLeft.setType(BulletTypes::PyroBlast);
 		m_weaponRight.setType(BulletTypes::PyroBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::PyroBlast:
 		m_weaponLeft.setType(BulletTypes::Standard);
 		m_weaponRight.setType(BulletTypes::Standard);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.35f, 0.003f, 0.002f);
 		break;
 	default:
 		break;
@@ -677,4 +688,60 @@ void Player::reset()
 	m_shield.resetShield();
 	m_background.setTargetColor(m_weaponLeft.getBgColor());
 	this->setAttachedWeapons(true);
+	m_bulletManager.setWeaponOverheatingValues(0.1f, 0.004f, 0.003f);
+}
+
+/// <summary>
+/// @brief get the fire rate from the bullet manager.
+/// 
+/// 
+/// </summary>
+/// <returns>fire rate of current bullet type</returns>
+float Player::getFireRate()
+{
+	return m_bulletManager.getFireRate();
+}
+
+/// <summary>
+/// @brief get the time since fired from bullet manager.
+/// 
+/// 
+/// </summary>
+/// <returns>time since firing previous bullet</returns>
+float Player::getTimeSinceFire()
+{
+	return m_bulletManager.getTimeSinceFire();
+}
+
+/// <summary>
+/// @brief get overcharge value from bullet manager.
+/// 
+/// 
+/// </summary>
+/// <returns>the current overload value as a float</returns>
+float Player::getOvercharge()
+{
+	return m_bulletManager.getOvercharge();
+}
+
+/// <summary>
+/// @getter for the overheat bool.
+/// 
+/// 
+/// </summary>
+/// <returns>overheat boolean</returns>
+bool Player::getOverheat()
+{
+	return m_bulletManager.getOverheat();
+}
+
+/// <summary>
+/// @brief setter for the overheat bool.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new value of overheat</param>
+void Player::setOverheat(bool check)
+{
+	m_bulletManager.setOverheat(check);
 }

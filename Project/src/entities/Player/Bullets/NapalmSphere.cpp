@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\NapalmSphere.h"
 
-const float bullets::NapalmSphere::s_FIRE_RATE = 0.5f;
+const float bullets::NapalmSphere::s_FIRE_RATE = 0.2f;
 const sf::Vector2f bullets::NapalmSphere::s_DEFAULT_SIZE = sf::Vector2f(70.0f, 50.0f);
 const sf::Vector2f bullets::NapalmSphere::s_CLOUD_SIZE = sf::Vector2f(100.0f, 100.0f);
 
@@ -15,7 +15,7 @@ bullets::NapalmSphere::NapalmSphere()
 	, m_timeAlive(0.0f)
 	, m_damage(0.1f)
 {
-	m_speed = 9.0f * 60.0f;
+	m_speed = 12.0f * 60.0f;
 	//updateVelocityVector();
 	m_velocity.y = -m_speed;
 	m_angle = -90.0f;

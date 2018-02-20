@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\StaticSphere.h"
 
-const float bullets::StaticSphere::s_FIRE_RATE = 1.0f;
+const float bullets::StaticSphere::s_FIRE_RATE = 0.5f;
 
 
 /// <summary>
@@ -14,9 +14,9 @@ bullets::StaticSphere::StaticSphere()
 	, m_pulseTimer(0.0f)
 	, m_pulseCircleCollider()
 	, m_uptrStasisAnimator(nullptr)
-	, m_damage(0.4f)
+	, m_damage(0.6f)
 {
-	m_speed = 4.0f * 60.0f;
+	m_speed = 7.0f * 60.0f;
 	m_velocity.y = -m_speed;
 	m_angle = -90.0f;
 
@@ -68,14 +68,14 @@ void bullets::StaticSphere::update()
 	Bullet::update();
 	if (m_pulseTimer > 0.3f)
 	{
-		m_pulseCircle.setRadius(m_pulseCircle.getRadius() + 2.0f);
+		m_pulseCircle.setRadius(m_pulseCircle.getRadius() + 5.0f);
 		m_pulseCircle.setOrigin(m_pulseCircle.getRadius(), m_pulseCircle.getRadius());
 		m_pulseCircle.setPosition(m_position);
 		m_pulse = true;
 
 		updateCollisionCircle();
 	}
-	if (m_pulseCircle.getRadius() > 100)
+	if (m_pulseCircle.getRadius() > 200)
 	{
 		m_pulseCircle.setRadius(0.0f);
 		m_pulseTimer = 0.0f;

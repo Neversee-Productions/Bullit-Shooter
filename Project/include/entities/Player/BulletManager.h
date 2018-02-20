@@ -76,6 +76,13 @@ public:
 	void setEmpowered(bullets::Bullet& bullet ,const float& angle, const sf::Vector2f& pos);
 	const std::map<BulletTypes, std::vector<std::unique_ptr<bullets::Bullet>>> & getBulletMap();
 	void clearAllBullets();
+	float getFireRate();
+	float getTimeSinceFire();
+	float getOvercharge();
+	float getCooldown();
+	bool  getOverheat();
+	void setOverheat(bool check);
+	void setWeaponOverheatingValues(float overchargePerBullet, float bulletCooldownRate, float overheatCooldownRate);
 
 private:
 	/// <summary>
@@ -129,6 +136,54 @@ private:
 	/// </summary>
 	BulletTypeStringMap m_soundFireMap;
 
+	/// <summary>
+	/// @brief define the current fireRate.
+	/// 
+	/// 
+	/// </summary>
+	float m_fireRateVal;
+	
+	/// <summary>
+	/// @brief define the overcharge amount per bullet fired.
+	/// 
+	/// 
+	/// </summary>
+	float m_overchargePerBullet;
+
+	/// <summary>
+	/// @brief define the current overcharge value.
+	/// 
+	/// 
+	/// </summary>
+	float m_currentOvercharge;
+
+	/// <summary>
+	/// @brief define cooldown rate of the weapon.
+	/// 
+	/// 
+	/// </summary>
+	float m_cooldownRate;
+
+	/// <summary>
+	/// @brief define the cooldown rate of bullet.
+	/// 
+	/// 
+	/// </summary>
+	float m_bulletCooldownRate;
+
+	/// <summary>
+	/// @brief define the cooldown rate when overheated.
+	/// 
+	/// 
+	/// </summary>
+	float m_overheatCooldownRate;
+
+	/// <summary>
+	/// @bool to check if overheated.
+	/// 
+	/// 
+	/// </summary>
+	bool m_overheat;
 };
 #endif // !BULLETMANAGER_H
 

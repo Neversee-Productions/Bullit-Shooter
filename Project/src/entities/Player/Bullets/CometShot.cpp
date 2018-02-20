@@ -10,7 +10,7 @@ const float bullets::CometShot::s_KNOCK_BACK = 40.0f;
 /// </summary>
 bullets::CometShot::CometShot()
 	: Bullet()
-	, m_damage(1.0f)
+	, m_damage(1.5f)
 {
 	m_speed = 12.0f * 60.0f;
 	m_velocity.y = -m_speed;

@@ -90,6 +90,7 @@ private:
 	void restartGame();
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
+	void updateUI();
 	void setupPlayer(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Player::Resources> sptrPlayerResources

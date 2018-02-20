@@ -440,6 +440,7 @@ void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
 		player.setWeaponsAlpha(255);
 		player.setAttachedWeapons(true);
 		player.nextWeapon();
+		player.setOverheat(false);
 		pickup.setActive(false);
 	}
 }

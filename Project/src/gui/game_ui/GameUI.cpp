@@ -19,6 +19,11 @@ GameUI::GameUI(
 	, m_showPauseScreen(false)
 	, m_gameEndUI(std::make_unique<gui::GUI>(keyHandler, controller, true))
 	, m_showGameEnd(false)
+	, m_targetRecharge(0.0f)
+	, m_fireRateVal(0.0f)
+	, m_timeSinceFire(0.0f)
+	, m_overheating(false)
+	, m_colorFlipTimer(0.0f)
 {
 }
 
@@ -33,7 +38,7 @@ void GameUI::update()
 	{
 		if (m_healthLostSprite.getScale().x > m_targetHealth)
 		{
-			m_healthLostSprite.setScale(sf::Vector2f(m_healthLostSprite.getScale().x - 0.005f, 1.0f));
+			m_healthLostSprite.setScale(sf::Vector2f(m_healthLostSprite.getScale().x - 0.5f * App::getUpdateDeltaTime(), 1.0f));
 		}
 	}
 	else
@@ -48,6 +53,40 @@ void GameUI::update()
 	if (m_showGameEnd)
 	{
 		m_gameEndUI->update(App::getUpdateDeltaTime());
+	}
+	m_rechargeBarRight.setScale(1.0f, 1 - (m_timeSinceFire / m_fireRateVal));
+	m_rechargeBarLeft.setScale(1.0f, 1 - (m_timeSinceFire / m_fireRateVal));
+	if (m_rechargeBarRight.getScale().y < 0)
+	{
+		m_rechargeBarRight.setScale(m_rechargeBarRight.getScale().x, 0.0f);
+		m_rechargeBarLeft.setScale(m_rechargeBarLeft.getScale().x, 0.0f);
+	}
+
+	if (m_overheating)
+	{
+		m_colorFlipTimer += App::getUpdateDeltaTime();
+		if (m_colorFlipTimer > 0.3f)
+		{
+			if (m_overchargeBarLeft.getColor().g > 0.0f)
+			{
+				m_overchargeBarLeft.setColor(sf::Color::Red);
+				m_overchargeBarRight.setColor(sf::Color::Red);
+				m_borderSprite.setColor(sf::Color::Red);
+			}
+			else
+			{
+				m_overchargeBarLeft.setColor(sf::Color(0, 255, 0));
+				m_overchargeBarRight.setColor(sf::Color(0, 255, 0));
+				m_borderSprite.setColor(sf::Color::White);
+			}
+			m_colorFlipTimer = 0.0f;
+		}
+	}
+	else
+	{
+		m_overchargeBarRight.setColor(sf::Color(0, 255, 0));
+		m_overchargeBarLeft.setColor(sf::Color(0, 255, 0));
+		m_borderSprite.setColor(sf::Color::White);
 	}
 }
 
@@ -64,6 +103,15 @@ void GameUI::draw(Window & window, const float & deltaTime)
 	window.draw(m_healthTemplateSprite);
 	window.draw(m_healthLostSprite);
 	window.draw(m_healthSprite);
+	window.draw(m_borderSprite);
+	window.draw(m_rechargeFrameRight);
+	window.draw(m_rechargeBarRight);
+	window.draw(m_rechargeFrameLeft);
+	window.draw(m_rechargeBarLeft);
+	window.draw(m_overchargeFrameLeft);
+	window.draw(m_overchargeBarLeft);
+	window.draw(m_overchargeFrameRight);
+	window.draw(m_overchargeBarRight);
 	if (m_showPauseScreen)
 	{
 		m_gui->draw(window);
@@ -88,6 +136,10 @@ void GameUI::setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & r
 	std::string const JSON_HEALTH_TEXTURE("health");
 	std::string const JSON_BUTTON_FONT("font");
 	std::string const JSON_BUTTON_TEXTURE("buttonTexture");
+	std::string const JSON_RECHARGE_BAR_TEXTURE("rechargeBar");
+	std::string const JSON_RECHARGE_FRAME_TEXTURE("rechargeFrame");
+	std::string const JSON_BORDER_TEXTURE("border");
+	std::string const JSON_OVERCHARGE_FRAME_TEXTURE("overchargeFrame");
 
 
 	sptrResources->m_sptrHealthTemplateTexture = resourceHandler.loadUp<sf::Texture>(UIParser.at(JSON_HEALTH_TEMPLATE_TEXTURE).get<std::string>(), JSON_HEALTH_TEMPLATE_TEXTURE);
@@ -95,6 +147,12 @@ void GameUI::setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & r
 
 	sptrResources->m_sptrButtonFont = resourceHandler.loadUp<sf::Font>(UIParser.at(JSON_BUTTON_FONT).get<std::string>(), JSON_BUTTON_FONT);
 	sptrResources->m_sptrButtonTexture = resourceHandler.loadUp<sf::Texture>(UIParser.at(JSON_BUTTON_TEXTURE).get<std::string>(), JSON_BUTTON_TEXTURE);
+
+	sptrResources->m_sptrRechargeBarTexture = resourceHandler.loadUp<sf::Texture>(UIParser.at(JSON_RECHARGE_BAR_TEXTURE).get<std::string>(), JSON_RECHARGE_BAR_TEXTURE);
+	sptrResources->m_sptrRechargeBarFrameTexture = resourceHandler.loadUp<sf::Texture>(UIParser.at(JSON_RECHARGE_FRAME_TEXTURE).get<std::string>(), JSON_RECHARGE_FRAME_TEXTURE);
+	sptrResources->m_sptrOverchargeFrameTexture = resourceHandler.loadUp<sf::Texture>(UIParser.at(JSON_OVERCHARGE_FRAME_TEXTURE).get<std::string>(), JSON_OVERCHARGE_FRAME_TEXTURE);
+
+	sptrResources->m_sptrBorderTexture = resourceHandler.loadUp<sf::Texture>(UIParser.at(JSON_BORDER_TEXTURE).get<std::string>(), JSON_BORDER_TEXTURE);
 
 }
 
@@ -129,6 +187,58 @@ void GameUI::init(std::shared_ptr<Resources> resources)
 	m_healthCollisionRect.min.y = m_healthTemplatePosition.y - (m_healthTemplateSprite.getLocalBounds().height / 2);
 	m_healthCollisionRect.max.x = m_healthTemplatePosition.x + (m_healthTemplateSprite.getLocalBounds().width / 2);
 	m_healthCollisionRect.max.y = m_healthTemplatePosition.y + (m_healthTemplateSprite.getLocalBounds().height / 2);
+
+	//initialize border
+	m_borderSprite.setTexture(*resources->m_sptrBorderTexture, false);
+	m_borderSprite.setScale(sf::Vector2f(0.724f, 0.73f));
+
+	//initialize right recharge BAR
+	m_rechargeBarRight.setTexture(*resources->m_sptrRechargeBarTexture, false);
+	m_rechargeBarRight.setOrigin(m_rechargeBarRight.getLocalBounds().width / 2, m_rechargeBarRight.getLocalBounds().height);
+	m_rechargeBarRight.setPosition(sf::Vector2f(App::getViewSize().x - 50.0f, (App::getViewSize().y / 2) + (m_rechargeBarRight.getLocalBounds().height / 2)));
+	m_rechargeBarRight.setColor(sf::Color(73, 237, 237));
+
+
+	//initialize right recharge FRAME
+	m_rechargeFrameRight.setTexture(*resources->m_sptrRechargeBarFrameTexture, false);
+	m_rechargeFrameRight.setOrigin(m_rechargeFrameRight.getLocalBounds().width / 2, m_rechargeFrameRight.getLocalBounds().height);
+	m_rechargeFrameRight.setPosition(m_rechargeBarRight.getPosition().x - 1.6f, m_rechargeBarRight.getPosition().y + 25.0f);
+
+
+	//initialize left recharge BAR
+	m_rechargeBarLeft.setTexture(*resources->m_sptrRechargeBarTexture, false);
+	m_rechargeBarLeft.setOrigin(m_rechargeBarLeft.getLocalBounds().width / 2, m_rechargeBarLeft.getLocalBounds().height);
+	m_rechargeBarLeft.setPosition(sf::Vector2f(50.0f, (App::getViewSize().y / 2) + (m_rechargeBarLeft.getLocalBounds().height / 2)));
+	m_rechargeBarLeft.setScale(1.0f, 1.0f);
+	m_rechargeBarLeft.setColor(sf::Color(73, 237, 237));
+
+	//initialize left recharge FRAME
+	m_rechargeFrameLeft.setTexture(*resources->m_sptrRechargeBarFrameTexture, false);
+	m_rechargeFrameLeft.setOrigin(m_rechargeFrameLeft.getLocalBounds().width / 2, m_rechargeFrameLeft.getLocalBounds().height);
+	m_rechargeFrameLeft.setPosition(m_rechargeBarLeft.getPosition().x - 1.6f, m_rechargeBarLeft.getPosition().y + 25.0f);
+
+	//initialize the left overcharge BAR
+	m_overchargeBarLeft.setTexture(*resources->m_sptrRechargeBarTexture, false);
+	m_overchargeBarLeft.setOrigin(m_overchargeBarLeft.getLocalBounds().width / 2, m_overchargeBarLeft.getLocalBounds().height);
+	m_overchargeBarLeft.setPosition(sf::Vector2f(25.0f, (App::getViewSize().y / 2) + (m_overchargeBarLeft.getLocalBounds().height / 2)));
+	m_overchargeBarLeft.setColor(sf::Color(0, 255, 0));
+
+	//initialize left overcharge FRAME
+	m_overchargeFrameLeft.setTexture(*resources->m_sptrOverchargeFrameTexture, false);
+	m_overchargeFrameLeft.setOrigin(m_overchargeFrameLeft.getLocalBounds().width / 2, m_overchargeFrameLeft.getLocalBounds().height);
+	m_overchargeFrameLeft.setPosition(m_overchargeBarLeft.getPosition().x - 1.6f, m_overchargeBarLeft.getPosition().y + 25.0f);
+
+	//initialize the right overcharge BAR
+	m_overchargeBarRight.setTexture(*resources->m_sptrRechargeBarTexture, false);
+	m_overchargeBarRight.setOrigin(m_overchargeBarRight.getLocalBounds().width / 2, m_overchargeBarRight.getLocalBounds().height);
+	m_overchargeBarRight.setPosition(sf::Vector2f(App::getViewSize().x - 25.0f, (App::getViewSize().y / 2) + (m_overchargeBarRight.getLocalBounds().height / 2)));
+	m_overchargeBarRight.setColor(sf::Color(0, 255, 0));
+
+	//initialize right overcharge FRAME
+	m_overchargeFrameRight.setTexture(*resources->m_sptrOverchargeFrameTexture, false);
+	m_overchargeFrameRight.setOrigin(m_overchargeFrameRight.getLocalBounds().width / 2, m_overchargeFrameRight.getLocalBounds().height);
+	m_overchargeFrameRight.setPosition(m_overchargeBarRight.getPosition().x - 1.6f, m_overchargeBarRight.getPosition().y + 25.0f);
+
 
 	//initiailze the pause screen
 	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
@@ -294,6 +404,17 @@ bool GameUI::getShowEnd()
 }
 
 /// <summary>
+/// @brief set the target of the recharge value.
+/// 
+/// 
+/// </summary>
+/// <param name="val">new target for recharge</param>
+void GameUI::setRecharge(float val)
+{
+	m_targetRecharge = val;
+}
+
+/// <summary>
 /// @brief this method resets the game ui.
 /// 
 /// 
@@ -305,4 +426,49 @@ void GameUI::reset()
 	m_targetHealth = 1.0f;
 	m_showPauseScreen = false;
 	m_showGameEnd = false;
+}
+
+/// <summary>
+/// @brief setter for the fire rate.
+/// 
+/// 
+/// </summary>
+/// <param name="val">new value of fire rate</param>
+void GameUI::setFireRate(float val)
+{
+	m_fireRateVal = val;
+}
+
+/// <summary>
+/// @brief setter for the time since fire.
+/// 
+/// 
+/// </summary>
+/// <param name="val">new value of time since fire</param>
+void GameUI::setTimeSinceFire(float val)
+{
+	m_timeSinceFire = val;
+}
+
+/// <summary>
+/// @brief update the overcharge value to represent actual overcharge.
+/// 
+/// 
+/// </summary>
+/// <param name="overchargeValue">the actual overcharge value</param>
+void GameUI::updateOvercharge(float overchargeValue)
+{
+	m_overchargeBarLeft.setScale(m_overchargeBarLeft.getScale().x, overchargeValue);
+	m_overchargeBarRight.setScale(m_overchargeBarRight.getScale().x, overchargeValue);
+}
+
+/// <summary>
+/// @brief setter for the overheat bool
+/// 
+/// 
+/// </summary>
+/// <param name="check">new overheat value</param>
+void GameUI::setOverheat(bool check)
+{
+	m_overheating = check;
 }
