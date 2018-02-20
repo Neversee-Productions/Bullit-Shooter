@@ -116,7 +116,7 @@ void TitleScene::setup(const std::string & filePath)
 	Scene::setNextSceneName("");
 
 	std::ifstream rawFile(filePath);
-	json::json jsonLoader;
+	js::json jsonLoader;
 	rawFile >> jsonLoader;
 
 	// instatiate our resource pointers that will "own"

@@ -101,7 +101,7 @@ std::shared_ptr<sf::Font> ResourceHandler::loadUp<sf::Font>(std::string const & 
 /// <param name="jsonParser">Defines the json parser.</param>
 /// <param name="id">Defines the id of the data we are loading</param>
 /// <returns>Returns a shared pointer to our loaded resource.</returns>
-template<> std::shared_ptr<sf::Texture> ResourceHandler::loadUp<sf::Texture>(json::json & jsonParser, const std::string & id)
+template<> std::shared_ptr<sf::Texture> ResourceHandler::loadUp<sf::Texture>(js::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<sf::Texture> return_value;
 	std::string const & path = jsonParser.at("textures").at(id).get<std::string>();
@@ -124,7 +124,7 @@ template<> std::shared_ptr<sf::Texture> ResourceHandler::loadUp<sf::Texture>(jso
 /// <param name="jsonParser">Defines the json parser.</param>
 /// <param name="id">Defines the id of the data we are loading</param>
 /// <returns>Returns a shared pointer to our loaded resource.</returns>
-template<> std::shared_ptr<sf::Font> ResourceHandler::loadUp<sf::Font>(json::json & jsonParser, const std::string & id)
+template<> std::shared_ptr<sf::Font> ResourceHandler::loadUp<sf::Font>(js::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<sf::Font> return_value;
 	std::string const & path = jsonParser.at("fonts").at(id).get<std::string>();
@@ -147,7 +147,7 @@ template<> std::shared_ptr<sf::Font> ResourceHandler::loadUp<sf::Font>(json::jso
 /// <param name="jsonParser">Defines the json parser.</param>
 /// <param name="id">Defines the id of the data we are loading</param>
 /// <returns>Returns a shared pointer to our loaded resource.</returns>
-template<> std::shared_ptr<sf::SoundBuffer> ResourceHandler::loadUp<sf::SoundBuffer>(json::json & jsonParser, const std::string & id)
+template<> std::shared_ptr<sf::SoundBuffer> ResourceHandler::loadUp<sf::SoundBuffer>(js::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<sf::SoundBuffer> return_value;
 	std::string const & path = jsonParser.at("sounds").at(id).get<std::string>();
@@ -170,7 +170,7 @@ template<> std::shared_ptr<sf::SoundBuffer> ResourceHandler::loadUp<sf::SoundBuf
 /// <param name="jsonParser">Defines the json parser.</param>
 /// <param name="id">Defines the id of the data we are loading</param>
 /// <returns>Returns a shared pointer to our loaded resource.</returns>
-template<> std::shared_ptr<thor::BigTexture> ResourceHandler::loadUp<thor::BigTexture>(json::json & jsonParser, const std::string & id)
+template<> std::shared_ptr<thor::BigTexture> ResourceHandler::loadUp<thor::BigTexture>(js::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<thor::BigTexture> return_value;
 	std::string const & path = jsonParser.at("textures").at(id).get<std::string>();
@@ -193,7 +193,7 @@ template<> std::shared_ptr<thor::BigTexture> ResourceHandler::loadUp<thor::BigTe
 /// <param name="jsonParser">Defines the json parser.</param>
 /// <param name="id">Defines the id of the data we are loading</param>
 /// <returns>Returns a shared pointer to our loaded resource.</returns>
-template<> std::shared_ptr<thor::FrameAnimation> ResourceHandler::loadUp<thor::FrameAnimation>(json::json & jsonParser, const std::string & id)
+template<> std::shared_ptr<thor::FrameAnimation> ResourceHandler::loadUp<thor::FrameAnimation>(js::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<thor::FrameAnimation> return_value;
 	try
@@ -215,7 +215,7 @@ template<> std::shared_ptr<thor::FrameAnimation> ResourceHandler::loadUp<thor::F
 /// <param name="jsonParser">Defines the json parser.</param>
 /// <param name="id">Defines the id of the data we are loading</param>
 /// <returns>Returns a shared pointer to our loaded resource.</returns>
-template<> std::shared_ptr<std::vector<sf::IntRect>> ResourceHandler::loadUp<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id)
+template<> std::shared_ptr<std::vector<sf::IntRect>> ResourceHandler::loadUp<std::vector<sf::IntRect>>(js::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<std::vector<sf::IntRect>> return_value;
 	try
@@ -237,7 +237,7 @@ template<> std::shared_ptr<std::vector<sf::IntRect>> ResourceHandler::loadUp<std
 /// <param name="jsonParser">Defines the json parser.</param>
 /// <param name="id">Defines the id of the data we are loading</param>
 /// <returns>Returns a shared pointer to our loaded resource.</returns>
-template<> std::shared_ptr<sf::Shader> ResourceHandler::loadUp<sf::Shader>(json::json & jsonParser, const std::string & id)
+template<> std::shared_ptr<sf::Shader> ResourceHandler::loadUp<sf::Shader>(js::json & jsonParser, const std::string & id)
 {
 	std::shared_ptr<sf::Shader> return_value;
 	try
@@ -251,7 +251,7 @@ template<> std::shared_ptr<sf::Shader> ResourceHandler::loadUp<sf::Shader>(json:
 	return return_value;
 }
 
-template<> thor::FrameAnimation & ResourceHandler::load<thor::FrameAnimation>(json::json & jsonParser, const std::string & id)
+template<> thor::FrameAnimation & ResourceHandler::load<thor::FrameAnimation>(js::json & jsonParser, const std::string & id)
 {
 	std::lock_guard<std::mutex> lock(m_pairAnimationHolder.m_mutex);
 	auto & map = *(m_pairAnimationHolder.m_holder);
@@ -267,16 +267,15 @@ template<> thor::FrameAnimation & ResourceHandler::load<thor::FrameAnimation>(js
 		const auto & width = jsonAnimation.at("width").get<int>();
 		const auto & height = jsonAnimation.at("height").get<int>();
 		const auto & jsonFrames = jsonAnimation.at("frames");
-		float count = 0.0f;
 		for (
 			auto itt = jsonFrames.begin(), end = jsonFrames.end();
 			itt != end;
-			++itt, ++count
+			++itt
 			)
 		{
 			auto x = itt->at("x").get<int>();
 			auto y = itt->at("y").get<int>();
-			frameAnimation.addFrame(count, sf::IntRect(x, y, width, height));
+			frameAnimation.addFrame(1.0f, sf::IntRect(x, y, width, height));
 		}
 
 		return frameAnimation;
@@ -284,7 +283,7 @@ template<> thor::FrameAnimation & ResourceHandler::load<thor::FrameAnimation>(js
 }
 
 
-template<> std::vector<sf::IntRect> & ResourceHandler::load<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id)
+template<> std::vector<sf::IntRect> & ResourceHandler::load<std::vector<sf::IntRect>>(js::json & jsonParser, const std::string & id)
 {
 	std::lock_guard<std::mutex> lock(m_pairFrameHolder.m_mutex);
 	auto & map = *(m_pairFrameHolder.m_holder);
@@ -315,7 +314,7 @@ template<> std::vector<sf::IntRect> & ResourceHandler::load<std::vector<sf::IntR
 	}
 }
 
-template<> std::shared_ptr<sf::Shader>& ResourceHandler::load<std::shared_ptr<sf::Shader>>(json::json & jsonParser, const std::string & id)
+template<> std::shared_ptr<sf::Shader>& ResourceHandler::load<std::shared_ptr<sf::Shader>>(js::json & jsonParser, const std::string & id)
 {
 	std::lock_guard<std::mutex> lock(m_pairShaderHolder.m_mutex);
 	auto & map = *(m_pairShaderHolder.m_holder);

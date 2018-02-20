@@ -18,7 +18,10 @@ float const ai::AiBasic::s_MAX_HEALTH = 10.0f;
 /// @warning No checks are made as to the validity of the pointer.
 /// </param>
 /// <param name="basicEnemyParser">reference to loaded json file ready to be parsed.</param>
-void ai::AiBasic::setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, json::json & basicEnemyParser)
+void ai::AiBasic::setup(
+	std::shared_ptr<Resources> sptrResources
+	, ResourceHandler & resourceHandler
+	, js::json & basicEnemyParser)
 {
 	std::string const JSON_SEEK("seek");
 	std::string const JSON_WINDUP("windup");
@@ -35,18 +38,18 @@ void ai::AiBasic::setup(std::shared_ptr<Resources> sptrResources, ResourceHandle
 	// Loading/Parsing Texture
 
 	std::string const JSON_TEXTURE("texture");
-	ai::AiBasic::setup(sptrResources->m_textureSeek, resourceHandler, basicEnemyParser.at(JSON_SEEK).at(JSON_TEXTURE), ai::AiBasic::s_SEEK_ID);
-	ai::AiBasic::setup(sptrResources->m_textureWindup, resourceHandler, basicEnemyParser.at(JSON_WINDUP).at(JSON_TEXTURE), ai::AiBasic::s_WINDUP_ID);
-	ai::AiBasic::setup(sptrResources->m_textureCharge, resourceHandler, basicEnemyParser.at(JSON_CHARGE).at(JSON_TEXTURE), ai::AiBasic::s_CHARGE_ID);
-	ai::AiBasic::setup(sptrResources->m_textureRecover, resourceHandler, basicEnemyParser.at(JSON_RECOVER).at(JSON_TEXTURE), ai::AiBasic::s_RECOVER_ID);
+	ai::AiBase::setup(sptrResources->m_textureSeek, resourceHandler, basicEnemyParser.at(JSON_SEEK).at(JSON_TEXTURE), ai::AiBasic::s_SEEK_ID);
+	ai::AiBase::setup(sptrResources->m_textureWindup, resourceHandler, basicEnemyParser.at(JSON_WINDUP).at(JSON_TEXTURE), ai::AiBasic::s_WINDUP_ID);
+	ai::AiBase::setup(sptrResources->m_textureCharge, resourceHandler, basicEnemyParser.at(JSON_CHARGE).at(JSON_TEXTURE), ai::AiBasic::s_CHARGE_ID);
+	ai::AiBase::setup(sptrResources->m_textureRecover, resourceHandler, basicEnemyParser.at(JSON_RECOVER).at(JSON_TEXTURE), ai::AiBasic::s_RECOVER_ID);
 
 	// Loading/Parsing Animations
 
 	std::string const JSON_ANIMATION("animation");
-	ai::AiBasic::setup(sptrResources->m_animationSeek, resourceHandler, basicEnemyParser.at(JSON_SEEK).at(JSON_ANIMATION), ai::AiBasic::s_SEEK_ID);
-	ai::AiBasic::setup(sptrResources->m_animationWindup, resourceHandler, basicEnemyParser.at(JSON_WINDUP).at(JSON_ANIMATION), ai::AiBasic::s_WINDUP_ID);
-	ai::AiBasic::setup(sptrResources->m_animationCharge, resourceHandler, basicEnemyParser.at(JSON_CHARGE).at(JSON_ANIMATION), ai::AiBasic::s_CHARGE_ID);
-	ai::AiBasic::setup(sptrResources->m_animationRecover, resourceHandler, basicEnemyParser.at(JSON_RECOVER).at(JSON_ANIMATION), ai::AiBasic::s_RECOVER_ID);
+	ai::AiBase::setup(sptrResources->m_animationSeek, resourceHandler, basicEnemyParser.at(JSON_SEEK).at(JSON_ANIMATION), ai::AiBasic::s_SEEK_ID);
+	ai::AiBase::setup(sptrResources->m_animationWindup, resourceHandler, basicEnemyParser.at(JSON_WINDUP).at(JSON_ANIMATION), ai::AiBasic::s_WINDUP_ID);
+	ai::AiBase::setup(sptrResources->m_animationCharge, resourceHandler, basicEnemyParser.at(JSON_CHARGE).at(JSON_ANIMATION), ai::AiBasic::s_CHARGE_ID);
+	ai::AiBase::setup(sptrResources->m_animationRecover, resourceHandler, basicEnemyParser.at(JSON_RECOVER).at(JSON_ANIMATION), ai::AiBasic::s_RECOVER_ID);
 }
 
 /// <summary>
@@ -280,82 +283,6 @@ void ai::AiBasic::setState(std::shared_ptr<ai::states::Basic> sptrState, bool re
 		m_sptrState = m_stateStack.top();
 	}
 	m_sptrState->enter();
-}
-
-/// <summary>
-/// @brief Sets up a texture resource.
-/// 
-/// Parses the json with a expected format.
-/// </summary>
-/// <param name="animResources">reference to the data struct that stores the loaded resource.</param>
-/// <param name="resourceHandler">reference to the resource loader.</param>
-/// <param name="animationParser">reference to the json parser.</param>
-/// <param name="id">id of the animation to be loaded.</param>
-void ai::AiBasic::setup(AiBase::Resources::Texture & textureResources, ResourceHandler & resourceHandler, json::json & textureParser, std::string const & id)
-{
-	std::string const JSON_TEXTURE_PATH("path");
-	std::string const JSON_TEXTURE_ORIGIN("origin");
-	std::string const JSON_TEXTURE_SCALE("scale");
-	std::string const JSON_TEXTURE_FRAME("frame");
-
-	textureResources.m_id = id;
-	textureResources.m_origin.x = textureParser.at(JSON_TEXTURE_ORIGIN).at("x").get<float>();
-	textureResources.m_origin.y = textureParser.at(JSON_TEXTURE_ORIGIN).at("y").get<float>();
-	textureResources.m_scale.x = textureParser.at(JSON_TEXTURE_SCALE).at("x").get<float>();
-	textureResources.m_scale.y = textureParser.at(JSON_TEXTURE_SCALE).at("y").get<float>();
-	textureResources.m_textureRect.left = textureParser.at(JSON_TEXTURE_FRAME).at("x").get<int>();
-	textureResources.m_textureRect.top = textureParser.at(JSON_TEXTURE_FRAME).at("y").get<int>();
-	textureResources.m_textureRect.width = textureParser.at(JSON_TEXTURE_FRAME).at("w").get<int>();
-	textureResources.m_textureRect.height = textureParser.at(JSON_TEXTURE_FRAME).at("h").get<int>();
-	textureResources.m_sptrTexture =
-		resourceHandler.loadUp<sf::Texture>(textureParser.at(JSON_TEXTURE_PATH).get<std::string>(), textureResources.m_id);
-	textureResources.m_sptrTexture->setSmooth(true);
-}
-
-/// <summary>
-/// @brief Sets up a animation resource.
-/// 
-/// Parses the json with a expected format.
-/// </summary>
-/// <param name="animResources">reference to the data struct that stores the loaded resource.</param>
-/// <param name="resourceHandler">reference to the resource loader.</param>
-/// <param name="animationParser">reference to the json parser.</param>
-/// <param name="id">id of the animation to be loaded.</param>
-void ai::AiBasic::setup(AiBase::Resources::Animation & animResources, ResourceHandler & resourceHandler, json::json & animationParser, std::string const & id)
-{
-	std::string const JSON_ANIMATION_TEXTURE("texture");
-	std::string const JSON_ANIMATION_DURATION("duration");
-	std::string const JSON_ANIMATION_WIDTH("width");
-	std::string const JSON_ANIMATION_HEIGHT("height");
-	std::string const JSON_ANIMATION_ORIGIN("origin");
-	std::string const JSON_ANIMATION_FRAMES("frames");
-
-	animResources.m_id = id;
-	animResources.m_duration = sf::seconds(animationParser.at(JSON_ANIMATION_DURATION).get<float>());
-	animResources.m_origin.x = animationParser.at(JSON_ANIMATION_ORIGIN).at("x").get<float>();
-	animResources.m_origin.y = animationParser.at(JSON_ANIMATION_ORIGIN).at("y").get<float>();
-	animResources.m_sptrTexture = resourceHandler.loadUp<sf::Texture>("", animationParser.at(JSON_ANIMATION_TEXTURE).get<std::string>());
-
-	animResources.m_frames = thor::FrameAnimation();
-	json::json & idleFramesParser = animationParser.at(JSON_ANIMATION_FRAMES);
-	auto const FRAME_WIDTH = animationParser.at(JSON_ANIMATION_WIDTH).get<int>();
-	auto const FRAME_HEIGHT = animationParser.at(JSON_ANIMATION_HEIGHT).get<int>();
-	float i = 0.0f;
-	for (
-		json::json::iterator itt = idleFramesParser.begin(), end = idleFramesParser.end();
-		itt != end;
-		++itt, ++i
-		)
-	{
-		auto & jsonNode = *itt;
-		sf::IntRect rect;
-		rect.left = jsonNode.at("x").get<int>();
-		rect.top = jsonNode.at("y").get<int>();
-		rect.width = FRAME_WIDTH;
-		rect.height = FRAME_HEIGHT;
-
-		animResources.m_frames.addFrame(i, rect);
-	}
 }
 
 /// <summary>

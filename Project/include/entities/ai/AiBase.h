@@ -10,6 +10,7 @@
 // Project Includes
 #include "system\App.h"
 #include "system\Window.h"
+#include "system\ResourceHandler.h"
 
 /// 
 /// @author Rafael Plugge
@@ -133,13 +134,15 @@ namespace ai
 			};
 		};
 
-
 	public:
 		AiBase() = default;
 		~AiBase() = default;
-		virtual void update() = 0;
-		virtual void draw(Window & window, float const & deltaTime) = 0;
+		virtual void update() abstract;
+		virtual void draw(Window & window, float const & deltaTime) abstract;
 
+	protected:
+		static void setup(AiBase::Resources::Texture & textureResources, ResourceHandler & resourceHandler, js::json & textureParser, std::string const & id);
+		static void setup(AiBase::Resources::Animation & animResources, ResourceHandler & resourceHandler, js::json & animationParser, std::string const & id);
 	protected:
 		/// <summary>
 		/// @brief Store read-only reference to update delta time.

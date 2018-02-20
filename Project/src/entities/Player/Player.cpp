@@ -13,7 +13,7 @@ Player::Player(KeyHandler& keyHandler, Controller & controller, Background & bac
 	, m_weaponLeft()
 	, m_connectLeftWeaponToShip()
 	, m_weaponRight()
-	, m_connectRightWeaponToShip()
+	, m_connectRightWeaponToShip(true)
 	, m_keyHandler(keyHandler)
 	, m_controller(controller)
 	, m_soundManager(SoundManager::instance())
@@ -64,7 +64,7 @@ void Player::draw(Window & window, const float & deltaTime)
 	{
 		m_connectLeftWeaponToShip.draw(window, deltaTime);
 		m_weaponLeft.draw(window, deltaTime);
-		m_connectRightWeaponToShip.draw(window, -deltaTime);
+		m_connectRightWeaponToShip.draw(window, deltaTime);
 		m_weaponRight.draw(window, deltaTime);
 		m_ship.draw(window, deltaTime);
 		m_shield.draw(window, deltaTime);

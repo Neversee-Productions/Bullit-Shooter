@@ -5,15 +5,16 @@
 /// 
 /// 
 /// </summary>
-Connector::Connector()
+Connector::Connector(bool flipped)
 	: m_CLEAR_COLOR(sf::Color::Transparent)
 	, m_THICKNESS(20.0f)
 	, m_sprite({20.0f, 100.0f})
 	, m_shader(nullptr)
-	, m_timer(nullptr)
+	, m_timer()
 	, m_renderState()
 	, m_shaderTexture()
 	, m_shaderQuad()
+	, m_FLIPPED(flipped)
 {
 	////////////////////////////////
 	// Initializing shader texture
@@ -54,11 +55,6 @@ void Connector::init(std::shared_ptr<Resources> resources)
 		m_shader = resources->m_sptrCnShader;
 	}
 	m_renderState.shader = m_shader.get();
-
-	if (!m_timer)
-	{
-		m_timer = std::make_unique<sf::Clock>();
-	}
 }
 
 /// <summary>
@@ -85,13 +81,15 @@ void Connector::update(sf::Vector2f const & startPos, sf::Vector2f const & endPo
 /// <param name="deltaTime">draw delta time.</param>
 void Connector::draw(Window & window, float const & deltaTime)
 {
-	if (deltaTime < 0.0f)
+	if (m_FLIPPED)
 	{
-		m_shader->setUniform("time", -m_timer->getElapsedTime().asSeconds());
+		m_timer -= sf::seconds(deltaTime);
+		m_shader->setUniform("time", m_timer.asSeconds());
 	}
 	else
 	{
-		m_shader->setUniform("time", m_timer->getElapsedTime().asSeconds());
+		m_timer += sf::seconds(deltaTime);
+		m_shader->setUniform("time", m_timer.asSeconds());
 	}
 	m_shader->setUniform("resolution", m_shaderQuad.getSize());
 	m_shaderTexture.clear(m_CLEAR_COLOR);

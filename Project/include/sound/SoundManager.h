@@ -57,7 +57,7 @@ public: // Public Member Functions
 	static void setup(
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
-		, json::json & soundParser);
+		, js::json & soundParser);
 	void update();
 	void addSound(SoundSetting settings, std::string const & id);
 	void play(std::string const & id, bool stack = true);
@@ -70,31 +70,31 @@ private: // Private Member Functions
 	static void setupBg(
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
-		, json::json & bgParser
+		, js::json & bgParser
 	);
 	static void setupPlayer(
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
-		, json::json & playerParser);
+		, js::json & playerParser);
 	static void setupPlayerBullets(
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
-		, json::json & playerBulletsParser);
+		, js::json & playerBulletsParser);
 	static void setupBulletSounds(
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
-		, json::json & bulletParser
+		, js::json & bulletParser
 		, std::string const & bulletNum
 		, BulletTypes const & type);
 	static void setupAsteroid(
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
-		, json::json & asteroidParser
+		, js::json & asteroidParser
 	);
 	static void setupBasicEnemy(
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
-		, json::json & basicEnemyParser
+		, js::json & basicEnemyParser
 	);
 	bool checkSoundInMap(std::string const & id) const;
 private: // Private Member Variables

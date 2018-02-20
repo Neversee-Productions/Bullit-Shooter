@@ -81,7 +81,7 @@ void SceneManager::addAllScenes()
 
 	// load our scenes paths
 
-	json::json jsonLoader = util::loadJsonFromFile("resources/scenes.json");
+	js::json jsonLoader = util::loadJsonFromFile("resources/scenes.json");
 	
 	// Splash Scene
 	sptrScene = std::make_shared<SplashScene>();

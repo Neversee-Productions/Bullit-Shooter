@@ -24,7 +24,7 @@ public: // Constructors/Destructor
 	~SoundSetting() = default;
 
 public: // Public Member Functions
-	friend void from_json(const json::json& j, SoundSetting& soundSetting);
+	friend void from_json(const js::json& j, SoundSetting& soundSetting);
 
 public: // Public Member Variables
 	/// <summary>

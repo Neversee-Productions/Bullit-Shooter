@@ -88,7 +88,7 @@ namespace ai
 		~AiBasic() = default;
 
 	public: // Public Member Functions
-		static void setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, json::json & basicEnemyParser);
+		static void setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, js::json & basicEnemyParser);
 		void init(std::shared_ptr<Resources> sptrResources);
 		virtual void update() final override;
 		virtual void draw(Window & window, float const & deltaTime) final override;
@@ -189,8 +189,6 @@ namespace ai
 		thor::Animator<sf::RectangleShape, std::string> m_animator;
 
 	private: // Private Member Functions
-		static void setup(AiBase::Resources::Texture & textureResources, ResourceHandler & resourceHandler, json::json & textureParser, std::string const & id);
-		static void setup(AiBase::Resources::Animation & animResources, ResourceHandler & resourceHandler, json::json & animationParser, std::string const & id);
 		void initStates();
 		void initRenderingQuad();
 		void initAnimations();

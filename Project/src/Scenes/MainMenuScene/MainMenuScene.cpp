@@ -118,7 +118,7 @@ void MainMenuScene::setup(const std::string & resourceFilePath)
 {
 	auto & resourceHandler = ResourceHandler::get();
 
-	json::json jsonLoader = util::loadJsonFromFile(resourceFilePath);
+	js::json jsonLoader = util::loadJsonFromFile(resourceFilePath);
 
 	if (!m_resources)
 	{

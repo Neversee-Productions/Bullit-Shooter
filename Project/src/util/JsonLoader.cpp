@@ -1,9 +1,9 @@
 #include "util\JsonLoader.h"
 
-json::json util::loadJsonFromFile(std::string const & filePath)
+js::json util::loadJsonFromFile(std::string const & filePath)
 {
 	std::ifstream rawFile(filePath);
-	json::json jsonFile;
+	js::json jsonFile;
 	rawFile >> jsonFile;
 	return jsonFile;
 }

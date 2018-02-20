@@ -37,7 +37,7 @@ SoundManager & SoundManager::instance()
 /// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
 /// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
 /// <param name="soundParser">reference to loaded json file ready to be parsed.</param>
-void SoundManager::setup(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & soundParser)
+void SoundManager::setup(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & soundParser)
 {
 	setupBg(resourceHandler, soundManager, soundParser.at("background"));
 	setupPlayer(resourceHandler, soundManager, soundParser.at("player"));
@@ -177,7 +177,7 @@ bool SoundManager::checkSound(std::string const & id)
 /// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
 /// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
 /// <param name="bgParser">reference to loaded json file ready to be parsed.</param>
-void SoundManager::setupBg(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & bgParser)
+void SoundManager::setupBg(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & bgParser)
 {
 	std::string const BG_SOUND_ID("bg_game_soundtrack");
 	soundManager.addSound(bgParser.at("bg-soundtrack").get<SoundSetting>(), BG_SOUND_ID);
@@ -191,7 +191,7 @@ void SoundManager::setupBg(ResourceHandler & resourceHandler, SoundManager & sou
 /// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
 /// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
 /// <param name="playerParser">reference to loaded json file ready to be parsed.</param>
-void SoundManager::setupPlayer(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & playerParser)
+void SoundManager::setupPlayer(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & playerParser)
 {
 	setupPlayerBullets(resourceHandler, soundManager, playerParser.at("bullets"));
 }
@@ -204,7 +204,7 @@ void SoundManager::setupPlayer(ResourceHandler & resourceHandler, SoundManager &
 /// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
 /// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
 /// <param name="bulletsParser">reference to loaded json file ready to be parsed.</param>
-void SoundManager::setupPlayerBullets(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & playerBulletsParser)
+void SoundManager::setupPlayerBullets(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & playerBulletsParser)
 {
 	auto const & NUM_OF_BULLETS = static_cast<int>(BulletTypes::AmountOfTypes);
 
@@ -241,7 +241,7 @@ void SoundManager::setupPlayerBullets(ResourceHandler & resourceHandler, SoundMa
 /// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
 /// <param name="bulletParser">reference to loaded json file ready to be parsed.</param>
 /// <param name="bulletNum">read-only reference to the bullet number string used as the </param>
-void SoundManager::setupBulletSounds(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & bulletParser, std::string const & bulletNum, BulletTypes const & type)
+void SoundManager::setupBulletSounds(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & bulletParser, std::string const & bulletNum, BulletTypes const & type)
 {
 	std::string const BULLET_FIRE_ID = bulletNum + "_fire";
 	soundManager.addSound(bulletParser.at("fire").get<SoundSetting>(), BULLET_FIRE_ID);
@@ -276,7 +276,7 @@ void SoundManager::setupBulletSounds(ResourceHandler & resourceHandler, SoundMan
 /// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
 /// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
 /// <param name="asteroidParser">reference to loaded json file ready to be parsed.</param>
-void SoundManager::setupAsteroid(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & asteroidParser)
+void SoundManager::setupAsteroid(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & asteroidParser)
 {
 	std::string const ASTEROID_EXPLOSION_ID = "asteroid_explosion";
 	soundManager.addSound(asteroidParser.at("explosion").get<SoundSetting>(), ASTEROID_EXPLOSION_ID);
@@ -289,7 +289,7 @@ void SoundManager::setupAsteroid(ResourceHandler & resourceHandler, SoundManager
 /// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
 /// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
 /// <param name="basicEnemyParser">reference to loaded json file ready to be parsed.</param>
-void SoundManager::setupBasicEnemy(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & basicEnemyParser)
+void SoundManager::setupBasicEnemy(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & basicEnemyParser)
 {
 	std::string const BASIC_ENEMY_DEATH_ID = "enemy_death";
 	soundManager.addSound(basicEnemyParser.at("death").get<SoundSetting>(), BASIC_ENEMY_DEATH_ID);

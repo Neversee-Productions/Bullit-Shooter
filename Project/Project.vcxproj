@@ -20,12 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\entities\ai\AiBase.cpp" />
+    <ClCompile Include="src\entities\ai\AiBaseState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABChargeState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABRecoverState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABSeekState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABWindupState.cpp" />
     <ClCompile Include="src\entities\ai\basic\AiBasic.cpp" />
     <ClCompile Include="src\entities\ai\basic\AiBasicState.cpp" />
+    <ClCompile Include="src\entities\ai\ranged\AiRanged.cpp" />
+    <ClCompile Include="src\entities\ai\ranged\AiRangedState.cpp" />
+    <ClCompile Include="src\entities\ai\ranged\ARMoveState.cpp" />
     <ClCompile Include="src\Entities\Asteroids\Asteroid.cpp" />
     <ClCompile Include="src\Entities\Asteroids\AsteroidManager.cpp" />
     <ClCompile Include="src\Entities\Background.cpp" />
@@ -49,6 +53,7 @@
     <ClCompile Include="src\Entities\Player\Shield.cpp" />
     <ClCompile Include="src\Entities\Player\Ship.cpp" />
     <ClCompile Include="src\Entities\Player\Weapon.cpp" />
+    <ClCompile Include="src\entities\RangedEnemyManager.cpp" />
     <ClCompile Include="src\gui\game_ui\GameUI.cpp" />
     <ClCompile Include="src\gui\GUI.cpp" />
     <ClCompile Include="src\gui\widgets\Button.cpp" />
@@ -86,6 +91,8 @@
     <None Include="resources\scenes\Game\enemies\asteroid\asteroid.json" />
     <None Include="resources\scenes\Game\enemies\basic\basic.json" />
     <None Include="resources\scenes\Game\enemies\enemies.json" />
+    <None Include="resources\scenes\Game\enemies\ranged\enemy_death.ogg" />
+    <None Include="resources\scenes\Game\enemies\ranged\ranged.json" />
     <None Include="resources\scenes\Game\Game.json" />
     <None Include="resources\scenes\Game\pickup\pickup.json" />
     <None Include="resources\scenes\Game\player\bullets\bullet02\bullet_fire.ogg" />
@@ -102,12 +109,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\entities\ai\AiBase.h" />
+    <ClInclude Include="include\entities\ai\AiBaseState.h" />
     <ClInclude Include="include\entities\ai\basic\ABChargeState.h" />
     <ClInclude Include="include\entities\ai\basic\ABRecoverState.h" />
     <ClInclude Include="include\entities\ai\basic\ABSeekState.h" />
     <ClInclude Include="include\entities\ai\basic\ABWindupState.h" />
     <ClInclude Include="include\entities\ai\basic\AiBasic.h" />
     <ClInclude Include="include\entities\ai\basic\AiBasicState.h" />
+    <ClInclude Include="include\entities\ai\ranged\AiRanged.h" />
+    <ClInclude Include="include\entities\ai\ranged\AiRangedState.h" />
+    <ClInclude Include="include\entities\ai\ranged\ARMoveState.h" />
     <ClInclude Include="include\Entities\Asteroids\Asteroid.h" />
     <ClInclude Include="include\Entities\Asteroids\AsteroidManager.h" />
     <ClInclude Include="include\Entities\Background.h" />
@@ -133,6 +144,7 @@
     <ClInclude Include="include\Entities\Player\Shield.h" />
     <ClInclude Include="include\Entities\Player\Ship.h" />
     <ClInclude Include="include\Entities\Player\Weapon.h" />
+    <ClInclude Include="include\entities\RangedEnemyManager.h" />
     <ClInclude Include="include\gui\game_ui\GameUI.h" />
     <ClInclude Include="include\gui\GUI.h" />
     <ClInclude Include="include\gui\widgets\Button.h" />

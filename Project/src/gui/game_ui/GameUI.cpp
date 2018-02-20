@@ -70,7 +70,7 @@ void GameUI::draw(Window & window, const float & deltaTime)
 /// <param name="sptrResources">reference to the resource struct</param>
 /// <param name="resourceHandler">reference to resource handler</param>
 /// <param name="UIParser">the json ui parser ready to be parsed</param>
-void GameUI::setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, json::json & UIParser)
+void GameUI::setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, js::json & UIParser)
 {
 	std::string const JSON_HEALTH_TEMPLATE_TEXTURE("healthTemplate");
 	std::string const JSON_HEALTH_TEXTURE("health");
