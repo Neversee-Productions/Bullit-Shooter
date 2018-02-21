@@ -24,6 +24,7 @@ GameUI::GameUI(
 	, m_timeSinceFire(0.0f)
 	, m_overheating(false)
 	, m_colorFlipTimer(0.0f)
+	, m_soundManager(SoundManager::instance())
 {
 }
 
@@ -64,19 +65,24 @@ void GameUI::update()
 
 	if (m_overheating && !m_pauseFlashing)
 	{
+		if (!m_playAlarm)
+		{
+			m_playAlarm = true;
+			m_soundManager.play("overcharge_alarm");
+		}
 		m_colorFlipTimer += App::getUpdateDeltaTime();
 		if (m_colorFlipTimer > 0.3f)
 		{
 			if (m_overchargeBarLeft.getColor().g > 0.0f)
 			{
-				m_overchargeBarLeft.setColor(sf::Color::Red);
-				m_overchargeBarRight.setColor(sf::Color::Red);
+				m_overchargeBarLeft.setColor(sf::Color(255u,0u,0u,m_overchargeBarLeft.getColor().a));
+				m_overchargeBarRight.setColor(sf::Color(255u, 0u, 0u, m_overchargeBarRight.getColor().a));
 				m_borderSprite.setColor(sf::Color::Red);
 			}
 			else
 			{
-				m_overchargeBarLeft.setColor(sf::Color(0, 255, 0));
-				m_overchargeBarRight.setColor(sf::Color(0, 255, 0));
+				m_overchargeBarLeft.setColor(sf::Color(0u, 255u, 0u, m_overchargeBarLeft.getColor().a));
+				m_overchargeBarRight.setColor(sf::Color(0u, 255u, 0u, m_overchargeBarRight.getColor().a));
 				m_borderSprite.setColor(sf::Color::White);
 			}
 			m_colorFlipTimer = 0.0f;
@@ -84,8 +90,9 @@ void GameUI::update()
 	}
 	else
 	{
-		m_overchargeBarRight.setColor(sf::Color(0, 255, 0));
-		m_overchargeBarLeft.setColor(sf::Color(0, 255, 0));
+		m_playAlarm = false;
+		m_overchargeBarLeft.setColor(sf::Color(0u, 255u, 0u, m_overchargeBarLeft.getColor().a));
+		m_overchargeBarRight.setColor(sf::Color(0u, 255u, 0u, m_overchargeBarRight.getColor().a));
 		m_borderSprite.setColor(sf::Color::White);
 	}
 }
@@ -240,6 +247,19 @@ void GameUI::init(std::shared_ptr<Resources> resources)
 	m_overchargeFrameRight.setPosition(m_overchargeBarRight.getPosition().x - 1.6f, m_overchargeBarRight.getPosition().y + 25.0f);
 
 
+	//initialize right ui collision rect
+	m_leftUICollisionRect.min.x = m_overchargeFrameLeft.getPosition().x - (m_overchargeFrameLeft.getLocalBounds().width / 2);
+	m_leftUICollisionRect.min.y = m_overchargeFrameLeft.getPosition().y - (m_overchargeFrameLeft.getLocalBounds().height);
+	m_leftUICollisionRect.max.x = m_rechargeFrameLeft.getPosition().x + (m_rechargeFrameLeft.getLocalBounds().width / 2);
+	m_leftUICollisionRect.max.y = m_rechargeFrameLeft.getPosition().y;
+
+	//initialize left ui collision rect
+	m_rightUICollisionRect.min.x = m_overchargeFrameRight.getPosition().x - (m_overchargeFrameRight.getLocalBounds().width / 2);
+	m_rightUICollisionRect.min.y = m_overchargeFrameRight.getPosition().y - (m_overchargeFrameRight.getLocalBounds().height);
+	m_rightUICollisionRect.max.x = m_rechargeFrameRight.getPosition().x + (m_rechargeFrameRight.getLocalBounds().width / 2);
+	m_rightUICollisionRect.max.y = m_rechargeFrameRight.getPosition().y;
+
+
 	//initiailze the pause screen
 	const sf::Vector2f & zero = sf::Vector2f(0.0f, 0.0f);
 	auto sptrButtonFont = resources->m_sptrButtonFont;
@@ -329,6 +349,28 @@ const tinyh::c2AABB & GameUI::getHealthCollisionBox()
 }
 
 /// <summary>
+/// @brief getter for right ui collision box.
+/// 
+/// 
+/// </summary>
+/// <returns>constant reference to collision box</returns>
+const tinyh::c2AABB & GameUI::getRightUICollisionBox()
+{
+	return m_rightUICollisionRect;
+}
+
+/// <summary>
+/// @brief getter for left ui collision box.
+/// 
+/// 
+/// </summary>
+/// <returns>constant reference to collision box</returns>
+const tinyh::c2AABB & GameUI::getLeftUICollisionBox()
+{
+	return m_leftUICollisionRect;
+}
+
+/// <summary>
 /// @brief This function sets the alpha of health components to passed in value.
 /// 
 /// 
@@ -339,6 +381,34 @@ void GameUI::setHealthTransparency(sf::Uint8 alphaVal)
 	m_healthSprite.setColor(sf::Color(m_healthSprite.getColor().r, m_healthSprite.getColor().g, m_healthSprite.getColor().b, alphaVal));
 	m_healthTemplateSprite.setColor(sf::Color(m_healthTemplateSprite.getColor().r, m_healthTemplateSprite.getColor().g, m_healthTemplateSprite.getColor().b, alphaVal));
 	m_healthLostSprite.setColor(sf::Color(m_healthLostSprite.getColor().r, m_healthLostSprite.getColor().g, m_healthLostSprite.getColor().b, alphaVal));
+}
+
+/// <summary>
+/// @brief set transparency of right UI elements.
+/// 
+/// 
+/// </summary>
+/// <param name="alphaVal">new UI value of right UI elements</param>
+void GameUI::setRightBarsTransparency(sf::Uint8 alphaVal)
+{
+	m_overchargeBarRight.setColor(sf::Color(m_overchargeBarRight.getColor().r, m_overchargeBarRight.getColor().g, m_overchargeBarRight.getColor().b, alphaVal));
+	m_rechargeBarRight.setColor(sf::Color(m_rechargeBarRight.getColor().r, m_rechargeBarRight.getColor().g, m_rechargeBarRight.getColor().b, alphaVal));
+	m_overchargeFrameRight.setColor(sf::Color(m_overchargeFrameRight.getColor().r, m_overchargeFrameRight.getColor().g, m_overchargeFrameRight.getColor().b, alphaVal));
+	m_rechargeFrameRight.setColor(sf::Color(m_rechargeFrameRight.getColor().r, m_rechargeFrameRight.getColor().g, m_rechargeFrameRight.getColor().b, alphaVal));
+}
+
+/// <summary>
+/// @brief set transparency of Left UI elements.
+/// 
+/// 
+/// </summary>
+/// <param name="alphaVal">new UI value of Left UI elements</param>
+void GameUI::setLeftBarsTransparency(sf::Uint8 alphaVal)
+{
+	m_overchargeBarLeft.setColor(sf::Color(m_overchargeBarLeft.getColor().r, m_overchargeBarLeft.getColor().g, m_overchargeBarLeft.getColor().b, alphaVal));
+	m_rechargeBarLeft.setColor(sf::Color(m_rechargeBarLeft.getColor().r, m_rechargeBarLeft.getColor().g, m_rechargeBarLeft.getColor().b, alphaVal));
+	m_overchargeFrameLeft.setColor(sf::Color(m_overchargeFrameLeft.getColor().r, m_overchargeFrameLeft.getColor().g, m_overchargeFrameLeft.getColor().b, alphaVal));
+	m_rechargeFrameLeft.setColor(sf::Color(m_rechargeFrameLeft.getColor().r, m_rechargeFrameLeft.getColor().g, m_rechargeFrameLeft.getColor().b, alphaVal));
 }
 
 /// <summary>

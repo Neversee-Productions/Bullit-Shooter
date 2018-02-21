@@ -9,7 +9,7 @@
 Ship::Ship()
 	: m_UPDATE_DT(App::getUpdateDeltaTime())
 	, m_shipRect()
-	, m_speed(4.0f)
+	, m_speed(10.0f)
 	, m_position(sf::Vector2f(100.0f, 400.0f))
 	, m_shipFrames(nullptr)
 	, m_texture(nullptr)
@@ -75,7 +75,7 @@ void Ship::update()
 	}
 	if (m_isDocking)
 	{
-		m_velocity.y = (App::getViewC2Rect().max.y - m_position.y);
+		m_velocity.y = (App::getViewC2Rect().max.y - m_position.y) * 3;
 	}
 	m_position.y += m_velocity.y * dt;
 	m_position.x += m_velocity.x * dt;
@@ -334,7 +334,7 @@ bool Ship::getDocking()
 /// </summary>
 void Ship::dash()
 {
-	m_velocity = sf::Vector2f(m_velocity.x, -(m_maxVel* 0.5f));
+	m_velocity = sf::Vector2f(m_velocity.x, -(m_maxVel));
 }
 
 /// <summary>

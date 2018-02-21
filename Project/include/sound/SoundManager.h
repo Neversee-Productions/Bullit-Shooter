@@ -89,6 +89,21 @@ private: // Private Member Functions
 		, SoundManager & soundManager
 		, json::json & basicEnemyParser
 	);
+	static void setupUI(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & uiParser
+	);
+	static void setupPickup(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & pickupParser
+	);
+	static void setupPlayerWeapons(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & weaponParser
+	);
 	bool checkSoundInMap(std::string const & id) const;
 private: // Private Member Variables
 	/// <summary>

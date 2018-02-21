@@ -9,7 +9,7 @@
 ai::states::AiBasicChargeState::AiBasicChargeState(AiBasic & aiUnit)
 	: AiBasicState(aiUnit)
 	, m_ATTACK_RADIUS(100.0f)
-	, m_CHARGE_SPEED(400.0f)
+	, m_CHARGE_SPEED(450.0f)
 	, m_DECCELERATION(250.0f)
 	, m_LOW_SPEED(180.0f * m_DELTA_TIME)
 {

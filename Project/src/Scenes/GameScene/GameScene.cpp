@@ -60,8 +60,9 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_basicEnemyManager.reset();
 	m_gamePaused = false;
 	m_gameEnded = false;
+	m_collisionSystem.setPickingUp(false);
 	m_ui.reset();
-	m_pickup.setActive(false);
+	m_pickup.resetPickup();
 }
 
 /// <summary>

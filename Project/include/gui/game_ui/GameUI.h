@@ -8,6 +8,7 @@
 #include "tinyheaders\tinyc2.h"
 #include "gui\GUI.h"
 #include "Scenes\Scene.h"
+#include "sound\SoundManager.h"
 
 
 ///
@@ -76,7 +77,11 @@ public: //public functions
 	void init(std::shared_ptr<Resources> resources);
 	void decrementHealth(float health);
 	const tinyh::c2AABB & getHealthCollisionBox();
+	const tinyh::c2AABB & getRightUICollisionBox();
+	const tinyh::c2AABB & getLeftUICollisionBox();
 	void setHealthTransparency(sf::Uint8 alphaVal);
+	void setRightBarsTransparency(sf::Uint8 alphaVal);
+	void setLeftBarsTransparency(sf::Uint8 alphaVal);
 	void btnResume();
 	void setPaused(bool check);
 	bool getPaused();
@@ -131,11 +136,25 @@ private: //private member variables.
 	float m_targetHealth;
 
 	/// <summary>
-	/// @brief this is a tiny headers rectangle object to deal with collisions.
+	/// @brief this is a tiny headers rectangle object to deal with health ui collisions.
 	/// 
 	/// 
 	/// </summary>
 	tinyh::c2AABB m_healthCollisionRect;
+
+	/// <summary>
+	/// @brief this is a tiny headers rectangle object to deal with overcharge frame right ui collisions.
+	/// 
+	/// 
+	/// </summary>
+	tinyh::c2AABB m_rightUICollisionRect;
+
+	/// <summary>
+	/// @brief this is a tiny headers rectangle object to deal with recharge frame right ui collisions.
+	/// 
+	/// 
+	/// </summary>
+	tinyh::c2AABB m_leftUICollisionRect;
 
 	/// <summary>
 	/// @brief Unique pointer to our GUI (pause screen).
@@ -284,6 +303,20 @@ private: //private member variables.
 	/// 
 	/// </summary>
 	bool m_pauseFlashing;
+
+	/// <summary>
+	/// @brief reference to the sound manager.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
+
+	/// <summary>
+	/// @brief is alarm to play.
+	/// 
+	/// 
+	/// </summary>
+	bool m_playAlarm;
 };
 
 

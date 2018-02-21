@@ -4,6 +4,7 @@ std::string ai::AiBasic::s_SEEK_ID = "";
 std::string ai::AiBasic::s_CHARGE_ID = "";
 std::string ai::AiBasic::s_WINDUP_ID = "";
 std::string ai::AiBasic::s_RECOVER_ID = "";
+std::string ai::AiBasic::s_DEATH_ID = "";
 bool const ai::AiBasic::s_COLOR_STATES = false;
 float const ai::AiBasic::s_MAX_HEALTH = 10.0f;
 
@@ -24,6 +25,7 @@ void ai::AiBasic::setup(std::shared_ptr<Resources> sptrResources, ResourceHandle
 	std::string const JSON_WINDUP("windup");
 	std::string const JSON_CHARGE("charge");
 	std::string const JSON_RECOVER("recover");
+	std::string const JSON_DEATH("death");
 
 	std::string const JSON_KEY("key");
 
@@ -31,6 +33,7 @@ void ai::AiBasic::setup(std::shared_ptr<Resources> sptrResources, ResourceHandle
 	ai::AiBasic::s_WINDUP_ID = basicEnemyParser.at(JSON_WINDUP).at(JSON_KEY).get<std::string>();
 	ai::AiBasic::s_CHARGE_ID = basicEnemyParser.at(JSON_CHARGE).at(JSON_KEY).get<std::string>();
 	ai::AiBasic::s_RECOVER_ID = basicEnemyParser.at(JSON_RECOVER).at(JSON_KEY).get<std::string>();
+	ai::AiBasic::s_DEATH_ID = basicEnemyParser.at(JSON_DEATH).at(JSON_KEY).get<std::string>();
 	
 	// Loading/Parsing Texture
 
@@ -39,6 +42,7 @@ void ai::AiBasic::setup(std::shared_ptr<Resources> sptrResources, ResourceHandle
 	ai::AiBasic::setup(sptrResources->m_textureWindup, resourceHandler, basicEnemyParser.at(JSON_WINDUP).at(JSON_TEXTURE), ai::AiBasic::s_WINDUP_ID);
 	ai::AiBasic::setup(sptrResources->m_textureCharge, resourceHandler, basicEnemyParser.at(JSON_CHARGE).at(JSON_TEXTURE), ai::AiBasic::s_CHARGE_ID);
 	ai::AiBasic::setup(sptrResources->m_textureRecover, resourceHandler, basicEnemyParser.at(JSON_RECOVER).at(JSON_TEXTURE), ai::AiBasic::s_RECOVER_ID);
+	ai::AiBasic::setup(sptrResources->m_textureDeath, resourceHandler, basicEnemyParser.at(JSON_DEATH).at(JSON_TEXTURE), ai::AiBasic::s_DEATH_ID);
 
 	// Loading/Parsing Animations
 
@@ -47,6 +51,10 @@ void ai::AiBasic::setup(std::shared_ptr<Resources> sptrResources, ResourceHandle
 	ai::AiBasic::setup(sptrResources->m_animationWindup, resourceHandler, basicEnemyParser.at(JSON_WINDUP).at(JSON_ANIMATION), ai::AiBasic::s_WINDUP_ID);
 	ai::AiBasic::setup(sptrResources->m_animationCharge, resourceHandler, basicEnemyParser.at(JSON_CHARGE).at(JSON_ANIMATION), ai::AiBasic::s_CHARGE_ID);
 	ai::AiBasic::setup(sptrResources->m_animationRecover, resourceHandler, basicEnemyParser.at(JSON_RECOVER).at(JSON_ANIMATION), ai::AiBasic::s_RECOVER_ID);
+	ai::AiBasic::setup(sptrResources->m_animationDeath, resourceHandler, basicEnemyParser.at(JSON_DEATH).at(JSON_ANIMATION), ai::AiBasic::s_DEATH_ID);
+
+
+
 }
 
 /// <summary>
@@ -106,11 +114,11 @@ void ai::AiBasic::update()
 /// <param name="deltaTime">read-only reference to delta time between last render calls.</param>
 void ai::AiBasic::draw(Window & window, float const & deltaTime)
 {
-	m_renderQuad.setFillColor(sf::Color(
-		255u,
-		static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
-		static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
-		255u));
+	//m_renderQuad.setFillColor(sf::Color(
+	//	255u,
+	//	static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
+	//	static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
+	//	255u));
 	m_sptrState->draw(window, deltaTime);
 }
 
@@ -380,11 +388,11 @@ void ai::AiBasic::initStates()
 /// </summary>
 void ai::AiBasic::initRenderingQuad()
 {
-	sf::Color const QUAD_FILL = sf::Color::Yellow;
+	//sf::Color const QUAD_FILL = sf::Color::Yellow;
 	sf::FloatRect const QUAD_BOUND_BOX = m_renderQuad.getGlobalBounds();
 	sf::Vector2f const QUAD_ORIGIN = { QUAD_BOUND_BOX.width * 0.5f, QUAD_BOUND_BOX.height *0.5f };
 
-	m_renderQuad.setFillColor(QUAD_FILL);
+	//m_renderQuad.setFillColor(QUAD_FILL);
 	m_renderQuad.setOrigin(QUAD_ORIGIN);
 }
 

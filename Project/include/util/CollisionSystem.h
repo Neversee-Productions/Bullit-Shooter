@@ -32,6 +32,7 @@ public: // Constructors/Destructor
 
 public: // Public Member Functions
 	void update();
+	void setPickingUp(bool check);
 public: // Public Member Variables
 protected: // Protected Member Functions
 protected: // Protected Member Variables
@@ -47,7 +48,6 @@ private: // Private Member Functions
 	void enemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bullet);
 	void playerVsAsteroid(Player & player, Asteroid & asteroid);
 	void playerVsPickup(Player & player, Pickup & pickup);
-	void playerVsGameUi(Player & player, GameUI & gameUi);
 	void playerVsEnemy(Player & player, ai::AiBasic & enemy);
 
 	void solveElasticCollision(Asteroid & asteroid1, Asteroid & asteroid2);
@@ -101,6 +101,20 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	GameUI & m_gameUi;
+
+	/// <summary>
+	/// @brief check if power up being picked up.
+	/// 
+	///
+	/// </summary>
+	bool m_pickingUp;
+
+	/// <summary>
+	/// @brief define if the pickup sound is currently playing.
+	/// 
+	/// 
+	/// </summary>
+	bool m_pickupSoundPlaying;
 };
 
 #endif // !COLLISION_SYSTEM_H

@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\DeathOrb.h"
 
-const float bullets::DeathOrb::s_FIRE_RATE = 0.3f;
+const float bullets::DeathOrb::s_FIRE_RATE = 0.15f;
 
 /// <summary>
 /// @brief this is the default constructor.
@@ -9,10 +9,10 @@ const float bullets::DeathOrb::s_FIRE_RATE = 0.3f;
 /// </summary>
 bullets::DeathOrb::DeathOrb()
 	: Bullet()
-	, m_damage(0.2f)
+	, m_damage(0.1f)
 	, m_IMPACT(false)
 {
-	m_speed = 9.0f * 60.0f;
+	m_speed = 14.0f * 60.0f;
 	m_velocity.y = -m_speed;
 	m_angle = -90.0f;
 

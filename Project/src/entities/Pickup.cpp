@@ -24,7 +24,12 @@ Pickup::Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::V
 	, m_animator()
 	, m_disappearing(false)
 	, m_timeToStartDisappear(2.5f)
-	, m_timeToDisappear(3.0f)
+	, m_timeToFlash(0.5f)
+	, m_startDisappearTimer(0.0f)
+	, m_timeToDisappear(9.0f)
+	, m_flashTimer(0.0f)
+	, m_flashFasterTime(4.0f)
+	, m_canDisappear(true)
 {
 	if (m_size.x > m_size.y) //make collision circle same as the bigger side
 	{
@@ -80,10 +85,42 @@ void Pickup::update()
 		m_rightSprite.setPosition(m_rightPosition);
 		m_leftSprite.setPosition(m_leftPosition);
 		m_effectSprite.rotate(45 * App::getUpdateDeltaTime());
-		//if (m_disappearing)
-		//{
-
-		//}
+		m_startDisappearTimer += App::getUpdateDeltaTime();
+		if (m_startDisappearTimer > m_timeToStartDisappear && m_canDisappear)
+		{
+			m_disappearing = true;
+			m_timeToDisappear -= App::getUpdateDeltaTime();
+			m_flashTimer += App::getUpdateDeltaTime();
+			m_flashFasterTime -= App::getUpdateDeltaTime();
+			if (m_flashTimer > m_timeToFlash)
+			{
+				if (m_flashFasterTime < 0.0f)
+				{
+					m_timeToFlash = 0.1f;
+				}
+				m_invisible = !m_invisible;
+				m_flashTimer = 0.0f;
+				if (m_invisible)
+				{
+					m_leftSprite.setColor(sf::Color(255.0f, 255.0f, 255.0f, 0.0f));
+					m_rightSprite.setColor(sf::Color(255.0f, 255.0f, 255.0f, 0.0f));
+				}
+				else
+				{
+					m_leftSprite.setColor(sf::Color::White);
+					m_rightSprite.setColor(sf::Color::White);
+				}
+			}
+		}
+		else
+		{
+			m_leftSprite.setColor(sf::Color::White);
+			m_rightSprite.setColor(sf::Color::White);
+		}
+		if (m_disappearing && m_timeToDisappear <= 0.0f)
+		{
+			resetPickup();
+		}
 	}
 }
 
@@ -298,6 +335,35 @@ void Pickup::fadeOutEffect()
 	{
 		m_effectSprite.setColor(sf::Color(255u, 255u, 255u, static_cast<sf::Uint8>(m_effectSprite.getColor().a - fadeVal)));
 	}
+}
+
+/// <summary>
+/// @brief a function that resets the pickup properties.
+/// 
+/// 
+/// </summary>
+void Pickup::resetPickup()
+{
+	m_active = false;
+	m_disappearing = false;
+	m_timeToStartDisappear = 2.5f;
+	m_timeToFlash = 0.5f;
+	m_startDisappearTimer = 0.0f;
+	m_timeToDisappear = 9.0f;
+	m_flashTimer = 0.0f;
+	m_flashFasterTime = 4.0f;
+	m_canDisappear = true;
+}
+
+/// <summary>
+/// @brief setter for can disappear bool.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new value of can disappear.</param>
+void Pickup::setCanDisappear(bool check)
+{
+	m_canDisappear = check;
 }
 
 

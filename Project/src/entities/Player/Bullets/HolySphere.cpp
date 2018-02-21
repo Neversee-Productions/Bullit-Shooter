@@ -1,8 +1,8 @@
 #include "Entities\Player\Bullets\HolySphere.h"
 
-const float bullets::HolySphere::s_FIRE_RATE = 0.5f;
+const float bullets::HolySphere::s_FIRE_RATE = 0.2f;
 const float bullets::HolySphere::s_MAX_SIZE = 120.0f;
-const sf::Vector2f bullets::HolySphere::s_SIZE_CHANGE = sf::Vector2f(7.0f, 7.0f);
+const sf::Vector2f bullets::HolySphere::s_SIZE_CHANGE = sf::Vector2f(8.0f, 8.0f);
 const sf::Vector2f bullets::HolySphere::s_DEFAULT_SIZE = sf::Vector2f(5.0f, 5.0f);
 const float bullets::HolySphere::s_DEF_TTL = 0.3f;
 const float bullets::HolySphere::s_ALPHA_DECREASE = 10.0f;
@@ -19,9 +19,9 @@ bullets::HolySphere::HolySphere()
 	: Bullet()
 	, m_timeToLive(s_DEF_TTL)
 	, m_alpha(255.0f)
-	, m_damage(0.2f)
+	, m_damage(0.1f)
 {
-	m_speed = 8.0f * 60.0f;
+	m_speed = 10.0f * 60.0f;
 	m_velocity.y = -m_speed;
 	m_angle = -90.0f;
 
@@ -90,6 +90,10 @@ void bullets::HolySphere::setActive(bool active)
 		m_bulletRect.setSize(s_DEFAULT_SIZE);
 		m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 		m_timeToLive = s_DEF_TTL;
+		m_alpha = 255.0f;
+	}
+	else
+	{
 		m_alpha = 255.0f;
 	}
 	m_active = active;

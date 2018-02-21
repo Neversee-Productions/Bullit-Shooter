@@ -42,6 +42,8 @@ void SoundManager::setup(ResourceHandler & resourceHandler, SoundManager & sound
 	setupPlayer(resourceHandler, soundManager, soundParser.at("player"));
 	setupAsteroid(resourceHandler, soundManager, soundParser.at("asteroid"));
 	setupBasicEnemy(resourceHandler, soundManager, soundParser.at("basic-enemy"));
+	setupUI(resourceHandler, soundManager, soundParser.at("ui"));
+	setupPickup(resourceHandler, soundManager, soundParser.at("pickup"));
 }
 
 /// <summary>
@@ -121,6 +123,7 @@ void SoundManager::play(std::string const & id)
 void SoundManager::setupPlayer(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & playerParser)
 {
 	setupPlayerBullets(resourceHandler, soundManager, playerParser.at("bullets"));
+	setupPlayerWeapons(resourceHandler, soundManager, playerParser.at("weapons"));
 }
 
 /// <summary>
@@ -220,6 +223,45 @@ void SoundManager::setupBasicEnemy(ResourceHandler & resourceHandler, SoundManag
 {
 	std::string const BASIC_ENEMY_DEATH_ID = "enemy_death";
 	soundManager.addSound(basicEnemyParser.at("death").get<SoundSetting>(), BASIC_ENEMY_DEATH_ID);
+}
+
+/// <summary>
+/// @brief Setups ui sounds.
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
+/// <param name="uiParser">reference to loaded json file ready to be parsed.</param>
+void SoundManager::setupUI(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & uiParser)
+{
+	std::string const UI_ALARM_ID = "overcharge_alarm";
+	soundManager.addSound(uiParser.at("alarm").get<SoundSetting>(), UI_ALARM_ID);
+}
+
+/// <summary>
+/// @brief Setups ui sounds.
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
+/// <param name="pickupParser">reference to loaded json file ready to be parsed.</param>
+void SoundManager::setupPickup(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & pickupParser)
+{
+	std::string const PICKUP_POWERUP_ID = "power-up";
+	soundManager.addSound(pickupParser.at("power-up").get<SoundSetting>(), PICKUP_POWERUP_ID);
+}
+
+/// <summary>
+/// @brief Setups ui sounds.
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
+/// <param name="weaponParser">reference to loaded json file ready to be parsed.</param>
+void SoundManager::setupPlayerWeapons(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & weaponParser)
+{
+	std::string const WEAPON_BEGIN_ID = "weapon-begin";
+	soundManager.addSound(weaponParser.at("weapon-begin").get<SoundSetting>(), WEAPON_BEGIN_ID);
 }
 
 /// <summary>

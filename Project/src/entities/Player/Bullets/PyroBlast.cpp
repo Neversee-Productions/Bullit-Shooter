@@ -10,7 +10,7 @@ const float bullets::PyroBlast::s_FIRE_RATE = 0.7f;
 bullets::PyroBlast::PyroBlast()
 	: Bullet()
 	, m_explode(false)
-	, m_damage(6.0f)
+	, m_damage(0.5f)
 {
 	m_speed = 6.0f * 60.0f;
 	m_velocity.y = -m_speed;

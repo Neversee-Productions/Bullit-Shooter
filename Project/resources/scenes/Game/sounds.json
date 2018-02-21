@@ -18,7 +18,7 @@
                 },
                 "impact":
                 {
-                    "volume": 50.0,
+                    "volume": 30.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -43,7 +43,7 @@
                 },
                 "impact":
                 {
-                    "volume": 50.0,
+                    "volume": 30.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -82,7 +82,7 @@
                 },
                 "impact":
                 {
-                    "volume": 50.0,
+                    "volume": 30.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -121,7 +121,7 @@
                 },
                 "impact":
                 {
-                    "volume": 50.0,
+                    "volume": 30.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -146,7 +146,7 @@
                 },
                 "impact":
                 {
-                    "volume": 50.0,
+                    "volume": 30.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -171,7 +171,7 @@
                 },
                 "impact":
                 {
-                    "volume": 50.0,
+                    "volume": 30.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -196,7 +196,7 @@
                 },
                 "impact":
                 {
-                    "volume": 50.0,
+                    "volume": 30.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":
@@ -245,6 +245,20 @@
                     }
                 }
             }
+        },
+        "weapons":
+        {
+            "weapon-begin":
+            {
+                "volume": 60.0,
+                "loop": false,
+                "attenuation": 1.0,
+                "buffer":
+                {
+                    "key": "weapon-begin",
+                    "path": "resources/scenes/Game/player/weapons/weapon01/weapon_begin.ogg"
+                }
+            }
         }
     },
     "asteroid":
@@ -272,6 +286,34 @@
             {
                 "key": "basic_enemy_death",
                 "path": "resources/scenes/Game/enemies/basic/enemy_death.ogg"
+            }
+        }
+    },
+    "ui":
+    {
+        "alarm":
+        {
+            "volume": 70.0,
+            "loop": true,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "ui_alarm",
+                "path": "resources/gui/sounds/OverheatAlarm.ogg"
+            }
+        }
+    },
+    "pickup":
+    {
+        "power-up":
+        {
+            "volume": 80.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "power-up",
+                "path": "resources/scenes/Game/pickup/PowerUp.ogg"
             }
         }
     }

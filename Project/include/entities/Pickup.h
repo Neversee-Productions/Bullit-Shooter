@@ -200,6 +200,8 @@ public:
 	void setActive(bool active);
 	void setEffectAlpha(float alpha);
 	void fadeOutEffect();
+	void resetPickup();
+	void setCanDisappear(bool check);
 
 private:
 	/// <summary>
@@ -319,7 +321,49 @@ private:
 	/// 
 	/// 
 	/// </summary>
+	float m_timeToFlash;
+
+	/// <summary>
+	/// @brief define the current timer used for the start to disappear of the pickup.
+	/// 
+	/// 
+	/// </summary>
+	float m_startDisappearTimer;
+
+	/// <summary>
+	/// @brief a variable to check when the pickup actually disappears.
+	/// 
+	/// 
+	/// </summary>
 	float m_timeToDisappear;
+
+	/// <summary>
+	/// @brief define the current time for the pickup to flash.
+	/// 
+	/// 
+	/// </summary>
+	float m_flashTimer;
+
+	/// <summary>
+	/// @brief define when the pickup is to disappear or appear.
+	/// 
+	/// 
+	/// </summary>
+	bool m_invisible;
+
+	/// <summary>
+	/// @brief define when the sprite is to flash faster.
+	/// 
+	/// 
+	/// </summary>
+	float m_flashFasterTime;
+
+	/// <summary>
+	/// @brief define if the pickup can or cannot flash.
+	/// 
+	/// 
+	/// </summary>
+	bool m_canDisappear;
 };
 
 #endif // !PICKUP_H

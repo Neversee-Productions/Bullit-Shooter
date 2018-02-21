@@ -182,6 +182,22 @@ void bullets::StaticSphere::setPosition(const sf::Vector2f & pos)
 }
 
 /// <summary>
+/// @brief rectangle collisions
+/// 
+/// 
+/// </summary>
+/// <param name="rect"></param>
+/// <returns></returns>
+bool bullets::StaticSphere::checkAABBCollision(const tinyh::c2AABB & rect)
+{
+	if (tinyh::c2AABBtoAABB(rect, m_bulletC2Rect) || tinyh::c2CircletoAABB(m_pulseCircleCollider, rect))
+	{
+		return true;
+	}
+	return false;
+}
+
+/// <summary>
 /// @brief Sets the animation based on its id.
 /// 
 /// 

@@ -214,37 +214,37 @@ void BulletManager::initBulletvector(BulletTypes type)
 	switch (type)
 	{
 	case BulletTypes::Standard:
-		initBulletMapVector<bullets::Standard>(type, 14);
+		initBulletMapVector<bullets::Standard>(type, 25);
 		break;
 	case BulletTypes::Empowered:
-		initBulletMapVector<bullets::Empowered>(type, 24);
+		initBulletMapVector<bullets::Empowered>(type, 70);
 		break;
 	case BulletTypes::DeathOrb:
-		initBulletMapVector<bullets::DeathOrb>(type, 24);
+		initBulletMapVector<bullets::DeathOrb>(type, 40);
 		break;
 	case BulletTypes::FireBlast:
-		initBulletMapVector<bullets::FireBlast>(type, 30);
+		initBulletMapVector<bullets::FireBlast>(type, 40);
 		break;
 	case BulletTypes::HolySphere:
-		initBulletMapVector<bullets::HolySphere>(type, 15);
+		initBulletMapVector<bullets::HolySphere>(type, 30);
 		break;
 	case BulletTypes::MagmaShot:
-		initBulletMapVector<bullets::MagmaShot>(type, 15);
+		initBulletMapVector<bullets::MagmaShot>(type, 30);
 		break;
 	case BulletTypes::NapalmSphere:
-		initBulletMapVector<bullets::NapalmSphere>(type, 20);
+		initBulletMapVector<bullets::NapalmSphere>(type, 35);
 		break;
 	case BulletTypes::CometShot:
-		initBulletMapVector<bullets::CometShot>(type, 35);
+		initBulletMapVector<bullets::CometShot>(type, 40);
 		break;
 	case BulletTypes::NullWave:
-		initBulletMapVector<bullets::NullWave>(type, 15);
+		initBulletMapVector<bullets::NullWave>(type, 30);
 		break;
 	case BulletTypes::StaticSphere:
-		initBulletMapVector<bullets::StaticSphere>(type, 15);
+		initBulletMapVector<bullets::StaticSphere>(type, 30);
 		break;
 	case BulletTypes::PyroBlast:
-		initBulletMapVector<bullets::PyroBlast>(type, 15);
+		initBulletMapVector<bullets::PyroBlast>(type, 30);
 		break;
 	default:
 		break;
