@@ -7,7 +7,6 @@
 // Project Includes
 #include "entities\ai\AiBase.h"
 #include "entities\Player\Player.h"
-#include "entities\ai\ranged\ARMoveState.h"
 
 namespace ai
 {
@@ -15,6 +14,8 @@ namespace ai
 	{// Forward References
 		class AiRangedState;
 		class AiRangedMoveState;
+		class AiRangedDeployState;
+		class AiRangedShootState;
 	}
 
 	/// 
@@ -45,6 +46,8 @@ namespace ai
 	private: // Private Friend classes
 		friend class states::AiRangedState;
 		friend class states::AiRangedMoveState;
+		friend class states::AiRangedDeployState;
+		friend class states::AiRangedShootState;
 
 	public: // Constructors/Destructor
 		AiRanged(Player const & player, sf::Vector2f position = { 0.0f, 0.0f });
@@ -66,22 +69,11 @@ namespace ai
 	protected: // Protected Member Variables
 	private: // Private Member Functions
 		void updateHitbox(sf::RectangleShape const & box);
-		/// <summary>
-		/// @brief Defines a new state for the ranged ai.
-		/// 
-		/// @warning New State must be a derived type of ai::states::AiRangedState.
-		/// </summary>
-		/// <typeparam name="State">Type of the new state.</typeparam>
-		/// <param name="sptrNewState">shared pointer to the new state.</param>
-		template<typename State>
-		void setNewState(std::shared_ptr<State> sptrNewState, bool rememberPrevious = false)
-		{
-			std::shared_ptr<ai::states::AiRangedState> sptrState = sptrNewState;
-			this->setState(sptrState, rememberPrevious);
-		}
+		void playAnimation(Resources::Animation const & animation, Resources::Texture const & texture, bool const & loop);
 		void setState(std::shared_ptr<ai::states::AiRangedState> sptrNewState, bool rememberPrevious);
 		void initStates();
 		void initAnimations();
+		void initAnimation(Resources::Animation const & animation);
 	private: // Private Static Member Variables
 		/// <summary>
 		/// @brief Defines the max health of all ranged ai's.
@@ -101,6 +93,18 @@ namespace ai
 		/// 
 		/// </summary>
 		static std::string s_MOVE_ID;
+		/// <summary>
+		/// @brief Defines the id of the deploy state.
+		/// 
+		/// 
+		/// </summary>
+		static std::string s_DEPLOY_ID;
+		/// <summary>
+		/// @brief Defines the ID of the shoot state.
+		/// 
+		/// 
+		/// </summary>
+		static std::string s_SHOOT_ID;
 		/// <summary>
 		/// @brief Defines whether to color the ai's states.
 		/// 
@@ -175,14 +179,14 @@ namespace ai
 		/// Represents a size defined quad that a texture
 		/// will be drawn on, frame animations will be targeted to this quad.
 		/// </summary>
-		sf::RectangleShape m_renderQuad;
+		sf::Sprite m_renderQuad;
 		/// <summary>
 		/// @brief Ai will use this to animate the AiRanged::m_renderQuad.
 		/// 
 		/// Represents the thor animator that will play a spritesheet
 		/// animation on the render quad.
 		/// </summary>
-		thor::Animator<sf::RectangleShape, std::string> m_animator;
+		thor::Animator<sf::Sprite, std::string> m_animator;
 		/// <summary>
 		/// @brief Defines the area that is on-screen.
 		/// 
@@ -217,9 +221,18 @@ namespace ai
 		/// 
 		/// </summary>
 		std::shared_ptr<Resources> m_sptrResources;
+		/// <summary>
+		/// @brief Defines the collection of bullets.
+		/// 
+		/// Bullets can be active or innactive.
+		/// </summary>
+		
 	};
 }
 
 #include "AiRangedState.h"
+#include "entities\ai\ranged\ARMoveState.h"
+#include "entities\ai\ranged\ARDeployState.h"
+#include "entities\ai\ranged\ARShootState.h"
 
 #endif // !AI_RANGED_H

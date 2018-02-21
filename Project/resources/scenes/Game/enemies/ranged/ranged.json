@@ -7,8 +7,8 @@
             "path": "resources/scenes/Game/enemies/ranged/move.png",
             "origin":
             {
-                "x": -1,
-                "y": -1
+                "x": 38,
+                "y": 34
             },
             "scale":
             {

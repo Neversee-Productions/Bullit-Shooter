@@ -11,7 +11,10 @@ namespace ai
 	namespace states
 	{
 		/// 
-		/// @brief 
+		/// @author Rafael Plugge
+		/// @brief Ranged Ai's Move State.
+		/// 
+		/// 
 		/// 
 		class AiRangedMoveState : public AiRangedState
 		{
@@ -22,7 +25,6 @@ namespace ai
 		public: // Public Member Functions
 			virtual void enter() final override;
 			virtual void update() final override;
-			virtual void draw(Window & window, float const & deltaTime) final override;
 			virtual void exit() final override;
 		public: // Public Member Variables
 		protected: // Protected Member Functions

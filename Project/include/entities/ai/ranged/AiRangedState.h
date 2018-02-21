@@ -24,6 +24,7 @@ namespace ai
 			~AiRangedState() = default;
 
 		public: // Public Member Functions
+			virtual void draw(Window & window, float const & deltaTime) override;
 		public: // Public Member Variables
 		protected: // Protected Member Functions
 		protected: // Protected Member Variables

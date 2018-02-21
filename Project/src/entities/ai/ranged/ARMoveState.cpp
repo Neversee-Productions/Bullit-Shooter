@@ -9,7 +9,7 @@ float const ai::states::AiRangedMoveState::s_MIN_DISTANCE = 30.0f;
 /// 
 /// Pass ai unit into base constructor.
 /// </summary>
-/// <param name="aiUnit">reference to ai unit.</param>
+/// <param name="aiUnit">pointer to ai unit.</param>
 ai::states::AiRangedMoveState::AiRangedMoveState(AiRanged * aiUnit)
 	: ai::states::AiRangedState(aiUnit)
 {
@@ -24,15 +24,11 @@ void ai::states::AiRangedMoveState::enter()
 {
 	if (ai::AiRanged::s_COLOR_QUAD)
 	{
-		m_ai->m_renderQuad.setFillColor(sf::Color::Green);
+		m_ai->m_renderQuad.setColor(sf::Color::Green);
 	}
 	m_ai->m_deployPosition = this->generateDeployPosition();
-
-	m_ai->m_renderQuad.setScale(m_ai->m_sptrResources->m_textureMove.m_scale);
-	m_ai->m_renderQuad.setTexture(m_ai->m_sptrResources->m_textureMove.m_sptrTexture.get(), true);
-	m_ai->m_renderQuad.setTextureRect(m_ai->m_sptrResources->m_textureMove.m_textureRect);
-	m_ai->m_renderQuad.setOrigin(m_ai->m_renderQuad.getSize() * 0.5f);
-	m_ai->m_animator.playAnimation(m_ai->m_sptrResources->m_animationMove.m_id, true);
+	m_ai->m_animator.stopAnimation();
+	m_ai->playAnimation(m_ai->m_sptrResources->m_animationMove, m_ai->m_sptrResources->m_textureMove, true);
 }
 
 /// <summary>
@@ -50,34 +46,13 @@ void ai::states::AiRangedMoveState::update()
 }
 
 /// <summary>
-/// @brief render the ai to the screen.
-/// 
-/// Using a quad to render the ai he is rendered at
-/// AiRanged::m_position facing the direction
-/// represented by the angle, in degrees, AiRanged::m_angle.
-/// </summary>
-/// <param name="window">reference to the window, used as the target for render calls.</param>
-/// <param name="deltaTime">read-only reference to the delta time for the last draw call, in seconds.</param>
-void ai::states::AiRangedMoveState::draw(Window & window, float const & deltaTime)
-{
-	m_ai->m_renderQuad.setPosition(m_ai->m_position);
-	m_ai->m_renderQuad.setRotation(m_ai->m_angle + 90.0f);
-	m_ai->m_animator.update(sf::seconds(deltaTime));
-	m_ai->m_animator.animate(m_ai->m_renderQuad);
-	window.draw(m_ai->m_renderQuad);
-}
-
-/// <summary>
 /// @brief What ai does when exiting this state.
 /// 
 /// 
 /// </summary>
 void ai::states::AiRangedMoveState::exit()
 {
-	if (m_ai->m_animator.isPlayingAnimation())
-	{
-		m_ai->m_animator.stopAnimation();
-	}
+	m_ai->m_animator.stopAnimation();
 }
 
 /// <summary>
@@ -107,10 +82,7 @@ void ai::states::AiRangedMoveState::updateState(sf::Vector2f const & aiToDeploy)
 {
 	if (this->checkState(aiToDeploy))
 	{
-		//typedef ai::states::AiRangedState NewState;
-		//std::shared_ptr<NewState> newState = std::make_shared<NewState>();
-		//m_ai->setNewState<NewState>(newState);
-		m_ai->m_renderQuad.setFillColor(sf::Color::Red);
+		m_ai->setState(std::make_shared<ai::states::AiRangedDeployState>(m_ai), false);
 	}
 }
 

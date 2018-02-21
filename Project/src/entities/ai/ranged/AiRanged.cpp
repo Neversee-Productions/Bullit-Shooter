@@ -3,6 +3,8 @@
 float const ai::AiRanged::s_MAX_HEALTH = 10.0f;
 sf::Vector2f const ai::AiRanged::s_SIZE = { 60.0f, 60.0f };
 std::string ai::AiRanged::s_MOVE_ID = "";
+std::string ai::AiRanged::s_DEPLOY_ID = "";
+std::string ai::AiRanged::s_SHOOT_ID = "";
 bool const ai::AiRanged::s_COLOR_QUAD = false;
 
 /// <summary>
@@ -23,7 +25,7 @@ ai::AiRanged::AiRanged(Player const & player, sf::Vector2f position)
 	, m_angle(0.0f)
 	, m_collisionShape(s_SIZE)
 	, m_collisionRect()
-	, m_renderQuad(s_SIZE)
+	, m_renderQuad()
 	, m_animator()
 	, m_onScreenRect({ 100, 0 }, { 1100, 200 })
 	, m_stateStack()
@@ -58,8 +60,9 @@ void ai::AiRanged::setup(
 
 	std::string const JSON_KEY("key");
 
-	ai::AiRanged::s_MOVE_ID =
-		rangedEnemyParser.at(JSON_MOVE).at(JSON_KEY).get<std::string>();
+	ai::AiRanged::s_MOVE_ID = rangedEnemyParser.at(JSON_MOVE).at(JSON_KEY).get<std::string>();
+	ai::AiRanged::s_DEPLOY_ID = rangedEnemyParser.at(JSON_DEPLOY).at(JSON_KEY).get<std::string>();
+	ai::AiRanged::s_SHOOT_ID = rangedEnemyParser.at(JSON_SHOOT).at(JSON_KEY).get<std::string>();
 
 	// Loading/Parsing Texture
 
@@ -69,6 +72,18 @@ void ai::AiRanged::setup(
 		resourceHandler,
 		rangedEnemyParser.at(JSON_MOVE).at(JSON_TEXTURE),
 		ai::AiRanged::s_MOVE_ID);
+	ai::AiBase::setup(
+		sptrResources->m_textureDeploy,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_DEPLOY).at(JSON_TEXTURE),
+		ai::AiRanged::s_DEPLOY_ID
+	);
+	ai::AiBase::setup(
+		sptrResources->m_textureShoot,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_SHOOT).at(JSON_TEXTURE),
+		ai::AiRanged::s_SHOOT_ID
+	);
 
 	// Loading/Parsing Animations
 
@@ -78,6 +93,18 @@ void ai::AiRanged::setup(
 		resourceHandler,
 		rangedEnemyParser.at(JSON_MOVE).at(JSON_ANIMATION),
 		ai::AiRanged::s_MOVE_ID);
+	ai::AiBase::setup(
+		sptrResources->m_animationDeploy,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_DEPLOY).at(JSON_ANIMATION),
+		ai::AiRanged::s_DEPLOY_ID
+	);
+	ai::AiBase::setup(
+		sptrResources->m_animationShoot,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_SHOOT).at(JSON_ANIMATION),
+		ai::AiRanged::s_SHOOT_ID
+	);
 }
 
 /// <summary>
@@ -165,6 +192,23 @@ void ai::AiRanged::updateHitbox(sf::RectangleShape const & box)
 }
 
 /// <summary>
+/// @brief Defines ai's new animation.
+/// 
+/// 
+/// </summary>
+/// <param name="animation">read-only reference to the animation.</param>
+/// <param name="texture">read-only reference to the texture.</param>
+/// <param name="loop">read-only reference whether to loop or not.</param>
+void ai::AiRanged::playAnimation(Resources::Animation const & animation, Resources::Texture const & texture, bool const & loop)
+{
+	m_renderQuad.setScale(texture.m_scale);
+	m_renderQuad.setTexture(*texture.m_sptrTexture, true);
+	m_renderQuad.setTextureRect(texture.m_textureRect);
+	m_renderQuad.setOrigin(texture.m_origin);
+	m_animator.playAnimation(animation.m_id, loop);
+}
+
+/// <summary>
 /// @brief Set a new state.
 /// 
 /// Assigns our curret state pointer to the new state and pushes that
@@ -228,8 +272,22 @@ void ai::AiRanged::initStates()
 /// </summary>
 void ai::AiRanged::initAnimations()
 {
+	this->initAnimation(m_sptrResources->m_animationMove);
+	this->initAnimation(m_sptrResources->m_animationDeploy);
+	this->initAnimation(m_sptrResources->m_animationShoot);
+}
+
+/// <summary>
+/// @brief Add individual animation to animator map.
+/// 
+/// 
+/// </summary>
+/// <param name="animation">read-only reference loaded animation data.</param>
+void ai::AiRanged::initAnimation(Resources::Animation const & animation)
+{
 	m_animator.addAnimation(
-		m_sptrResources->m_animationMove.m_id,
-		m_sptrResources->m_animationMove.m_frames,
-		m_sptrResources->m_animationMove.m_duration);
+		animation.m_id,
+		animation.m_frames,
+		animation.m_duration
+	);
 }
