@@ -5,6 +5,7 @@ sf::Vector2f const ai::AiRanged::s_SIZE = { 60.0f, 60.0f };
 std::string ai::AiRanged::s_MOVE_ID = "";
 std::string ai::AiRanged::s_DEPLOY_ID = "";
 std::string ai::AiRanged::s_SHOOT_ID = "";
+std::string ai::AiRanged::s_EBOLA_ID = "";
 bool const ai::AiRanged::s_COLOR_QUAD = false;
 
 /// <summary>
@@ -31,6 +32,7 @@ ai::AiRanged::AiRanged(Player const & player, sf::Vector2f position)
 	, m_stateStack()
 	, m_sptrState(nullptr)
 	, m_sptrResources(nullptr)
+	, m_bulletManager()
 {
 }
 
@@ -49,7 +51,7 @@ ai::AiRanged::AiRanged(Player const & player, sf::Vector2f position)
 /// </param>
 /// <param name="basicEnemyParser">reference to loaded json file ready to be parsed.</param>
 void ai::AiRanged::setup(
-	std::shared_ptr<Resources> sptrResources
+	std::shared_ptr<ai::Resources> sptrResources
 	, ResourceHandler & resourceHandler
 	, js::json & rangedEnemyParser)
 {
@@ -63,6 +65,7 @@ void ai::AiRanged::setup(
 	ai::AiRanged::s_MOVE_ID = rangedEnemyParser.at(JSON_MOVE).at(JSON_KEY).get<std::string>();
 	ai::AiRanged::s_DEPLOY_ID = rangedEnemyParser.at(JSON_DEPLOY).at(JSON_KEY).get<std::string>();
 	ai::AiRanged::s_SHOOT_ID = rangedEnemyParser.at(JSON_SHOOT).at(JSON_KEY).get<std::string>();
+	ai::AiRanged::s_EBOLA_ID = rangedEnemyParser.at(JSON_SPIT).at(JSON_KEY).get<std::string>();
 
 	// Loading/Parsing Texture
 
@@ -83,6 +86,12 @@ void ai::AiRanged::setup(
 		resourceHandler,
 		rangedEnemyParser.at(JSON_SHOOT).at(JSON_TEXTURE),
 		ai::AiRanged::s_SHOOT_ID
+	);
+	ai::AiBase::setup(
+		sptrResources->m_textureEbola,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_SPIT).at(JSON_TEXTURE),
+		ai::AiRanged::s_EBOLA_ID
 	);
 
 	// Loading/Parsing Animations
@@ -105,6 +114,12 @@ void ai::AiRanged::setup(
 		rangedEnemyParser.at(JSON_SHOOT).at(JSON_ANIMATION),
 		ai::AiRanged::s_SHOOT_ID
 	);
+	ai::AiBase::setup(
+		sptrResources->m_animationEbola,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_SPIT).at(JSON_ANIMATION),
+		ai::AiRanged::s_EBOLA_ID
+	);
 }
 
 /// <summary>
@@ -113,9 +128,10 @@ void ai::AiRanged::setup(
 /// 
 /// </summary>
 /// <param name="sptrResources">shared pointer to loaded resources.</param>
-void ai::AiRanged::init(std::shared_ptr<Resources> sptrResources)
+void ai::AiRanged::init(std::shared_ptr<ai::Resources> sptrResources)
 {
 	m_sptrResources = sptrResources;
+	m_bulletManager.init(sptrResources);
 	this->initAnimations();
 	this->initStates();
 }
@@ -128,6 +144,7 @@ void ai::AiRanged::init(std::shared_ptr<Resources> sptrResources)
 void ai::AiRanged::update()
 {
 	m_sptrState->update();
+	m_bulletManager.update();
 }
 
 /// <summary>
@@ -140,6 +157,7 @@ void ai::AiRanged::update()
 void ai::AiRanged::draw(Window & window, float const & deltaTime)
 {
 	m_sptrState->draw(window, deltaTime);
+	m_bulletManager.draw(window, deltaTime);
 }
 
 /// <summary>
@@ -154,7 +172,7 @@ void ai::AiRanged::spawn(sf::Vector2f const & spawnPosition)
 	m_health = s_MAX_HEALTH;
 	m_position = spawnPosition;
 	m_speed = 0.0f;
-	m_heading = { 0.0f, 0.0f };
+	m_heading = { 0.0f, 1.0f };
 	m_angle = 0.0f;
 	while (!m_stateStack.empty())
 	{

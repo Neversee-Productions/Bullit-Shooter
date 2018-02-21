@@ -19,7 +19,7 @@ RangedEnemyManager::RangedEnemyManager(Player const & player)
 /// 
 /// </summary>
 /// <param name="sptrResources">shared pointer to initialized resources.</param>
-void RangedEnemyManager::init(std::shared_ptr<ai::AiRanged::Resources> sptrResources)
+void RangedEnemyManager::init(std::shared_ptr<ai::Resources> sptrResources)
 {
 	m_sptrResources = sptrResources;
 }

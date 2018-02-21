@@ -30,9 +30,9 @@ namespace ai
 		protected: // Protected Member Functions
 		protected: // Protected Member Variables
 		private: // Private Member Functions
-			void updateState();
-			bool checkState() const;
+			void updateShooting(sf::Vector2f const & aiToPlayer);
 			void updateTimer();
+			void shoot(sf::Vector2f const & direction);
 		private: // Private Static Variables
 		private: // Private Member Variables
 			/// <summary>
@@ -41,6 +41,13 @@ namespace ai
 			/// 
 			/// </summary>
 			sf::Time m_timer;
+			/// <summary>
+			/// @brief Determines whether the minimum angle of shooting.
+			/// 
+			/// 
+			/// </summary>
+			float const m_MIN_ANGLE;
+			sf::Time const m_FIRE_RATE;
 		};
 	}
 }

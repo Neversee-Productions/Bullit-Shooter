@@ -44,7 +44,6 @@ void ai::states::AiRangedDeployState::update()
 /// </summary>
 void ai::states::AiRangedDeployState::exit()
 {
-	m_ai->m_animator.stopAnimation();
 }
 
 /// <summary>

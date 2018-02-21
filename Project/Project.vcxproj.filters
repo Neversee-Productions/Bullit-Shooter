@@ -441,6 +441,12 @@
     <ClCompile Include="src\entities\ai\ranged\ARShootState.cpp">
       <Filter>Source Files\entities\ai\ranged</Filter>
     </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\bullets\AiBullet.cpp">
+      <Filter>Source Files\entities\ai\ranged\bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\bullets\AiBulletManager.cpp">
+      <Filter>Source Files\entities\ai\ranged\bullets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -714,6 +720,9 @@
     </ClInclude>
     <ClInclude Include="include\entities\ai\ranged\bullets\AiBulletManager.h">
       <Filter>Header Files\entities\ai\ranged\bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\AiResources.h">
+      <Filter>Header Files\entities\ai\ranged</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

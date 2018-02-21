@@ -32,6 +32,8 @@
     <ClCompile Include="src\entities\ai\ranged\ARDeployState.cpp" />
     <ClCompile Include="src\entities\ai\ranged\ARMoveState.cpp" />
     <ClCompile Include="src\entities\ai\ranged\ARShootState.cpp" />
+    <ClCompile Include="src\entities\ai\ranged\bullets\AiBullet.cpp" />
+    <ClCompile Include="src\entities\ai\ranged\bullets\AiBulletManager.cpp" />
     <ClCompile Include="src\Entities\Asteroids\Asteroid.cpp" />
     <ClCompile Include="src\Entities\Asteroids\AsteroidManager.cpp" />
     <ClCompile Include="src\Entities\Background.cpp" />
@@ -120,6 +122,7 @@
     <ClInclude Include="include\entities\ai\basic\AiBasicState.h" />
     <ClInclude Include="include\entities\ai\ranged\AiRanged.h" />
     <ClInclude Include="include\entities\ai\ranged\AiRangedState.h" />
+    <ClInclude Include="include\entities\ai\ranged\AiResources.h" />
     <ClInclude Include="include\entities\ai\ranged\ARDeployState.h" />
     <ClInclude Include="include\entities\ai\ranged\ARMoveState.h" />
     <ClInclude Include="include\entities\ai\ranged\ARShootState.h" />

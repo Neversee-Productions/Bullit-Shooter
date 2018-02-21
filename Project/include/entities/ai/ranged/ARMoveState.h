@@ -30,13 +30,7 @@ namespace ai
 		protected: // Protected Member Functions
 		protected: // Protected Member Variables
 		private: // Private Member Functions
-			float clamp(float const & value, float const & min, float const & max) const;
 			void updateState(sf::Vector2f const & aiToDeploy);
-			bool checkState(sf::Vector2f const & aiToDeploy);
-			void updateSpeed(sf::Vector2f const & aiToDeploy);
-			void updateTurn(sf::Vector2f const & aiToDeploy);
-			void updatePosition();
-			sf::Vector2f generateDeployPosition() const;
 		private: // Private Static Variables
 			/// <summary>
 			/// @brief Defines the max speed of the ai.

@@ -16,6 +16,7 @@
 #include "Entities\Entities.h"
 #include "entities\BasicEnemyManager.h"
 #include "entities\RangedEnemyManager.h"
+#include "entities\ai\ranged\AiResources.h"
 #include "util\JsonLoader.h"
 #include "util\CollisionSystem.h"
 #include "gui\game_ui\GameUI.h"
@@ -50,8 +51,8 @@ private:
 				std::make_shared<Asteroid::Resources>();
 			std::shared_ptr<BasicEnemyManager::Resources> m_sptrBasicEnemyManager =
 				std::make_shared<BasicEnemyManager::Resources>();
-			std::shared_ptr<ai::AiRanged::Resources> m_sptrRangedEnemy =
-				std::make_shared<ai::AiRanged::Resources>();
+			std::shared_ptr<ai::Resources> m_sptrRangedEnemy =
+				std::make_shared<ai::Resources>();
 		};
 
 		/// <summary>

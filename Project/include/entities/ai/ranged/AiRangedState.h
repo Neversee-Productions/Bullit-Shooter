@@ -27,6 +27,12 @@ namespace ai
 			virtual void draw(Window & window, float const & deltaTime) override;
 		public: // Public Member Variables
 		protected: // Protected Member Functions
+			float clamp(float const & value, float const & min, float const & max) const;
+			bool checkState(sf::Vector2f const & aiToDeploy, float const & minDistance);
+			void updateSpeed(sf::Vector2f const & aiToDeploy, float const & speed);
+			void updateTurn(sf::Vector2f const & aiToDeploy, float const & maxTurnRate, float const & maxSpeed);
+			void updatePosition();
+			sf::Vector2f generateDeployPosition() const;
 		protected: // Protected Member Variables
 			/// <summary>
 			/// @brief Reference to the ai in this state.

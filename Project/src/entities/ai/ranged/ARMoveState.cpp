@@ -39,8 +39,8 @@ void ai::states::AiRangedMoveState::enter()
 void ai::states::AiRangedMoveState::update()
 {
 	sf::Vector2f const AI_TO_DEPLOY = m_ai->m_deployPosition - m_ai->m_position;
-	this->updateSpeed(AI_TO_DEPLOY);
-	this->updateTurn(AI_TO_DEPLOY);
+	this->updateSpeed(AI_TO_DEPLOY, AiRangedMoveState::s_MAX_SPEED);
+	this->updateTurn(AI_TO_DEPLOY, AiRangedMoveState::s_MAX_TURN_RATE, AiRangedMoveState::s_MAX_SPEED);
 	this->updatePosition();
 	this->updateState(AI_TO_DEPLOY);
 }
@@ -56,23 +56,6 @@ void ai::states::AiRangedMoveState::exit()
 }
 
 /// <summary>
-/// @brief clamps value between min and max.
-/// 
-/// if value is outside the range than it returns
-/// the closest of the two.
-/// </summary>
-/// <param name="value">value to be clamped.</param>
-/// <param name="min">minimum value, inclusive.</param>
-/// <param name="max">maximum value, inclusive.</param>
-/// <returns>the clamped value.</returns>
-float ai::states::AiRangedMoveState::clamp(float const & value, float const & min, float const & max) const
-{
-	float clampedValue = value > max ? max : value;
-	clampedValue = clampedValue < min ? min : clampedValue;
-	return clampedValue;
-}
-
-/// <summary>
 /// @brief checks if state is to be terminated and responds appropriatly.
 /// 
 /// 
@@ -80,79 +63,8 @@ float ai::states::AiRangedMoveState::clamp(float const & value, float const & mi
 /// <param name="aiToPlayer">read-only reference to the vector from the ai to the player.</param>
 void ai::states::AiRangedMoveState::updateState(sf::Vector2f const & aiToDeploy)
 {
-	if (this->checkState(aiToDeploy))
+	if (this->checkState(aiToDeploy, AiRangedMoveState::s_MIN_DISTANCE))
 	{
 		m_ai->setState(std::make_shared<ai::states::AiRangedDeployState>(m_ai), false);
 	}
-}
-
-/// <summary>
-/// @brief Checks if state is to be terminated.
-/// 
-/// True if the ai is within a small radius of the deployment area.
-/// </summary>
-/// <param name="aiToDeploy">read-only reference to the vector from the ai to the deploy point.</param>
-/// <returns>True if ai is close enough to player to commence attack sequence.</returns>
-bool ai::states::AiRangedMoveState::checkState(sf::Vector2f const & aiToDeploy)
-{
-	return thor::length(aiToDeploy) < AiRangedMoveState::s_MIN_DISTANCE;
-}
-
-/// <summary>
-/// @brief calculate the ai's new speed.
-/// 
-/// the speed is determined by the distance from aiToPlayer.
-/// </summary>
-/// <param name="aiToPlayer">read-only reference to the vector from the ai to the player.</param>
-void ai::states::AiRangedMoveState::updateSpeed(sf::Vector2f const & aiToDeploy)
-{
-	m_ai->m_speed = AiRangedMoveState::s_MAX_SPEED;
-}
-
-/// <summary>
-/// @brief calculate the ai's heading and the angle he is looking at.
-/// 
-/// 
-/// </summary>
-/// <param name="aiToPlayer">read-only reference to the vector from the ai to the player,</param>
-void ai::states::AiRangedMoveState::updateTurn(sf::Vector2f const & aiToDeploy)
-{
-	float const MAX_TURN_RATE = s_MAX_TURN_RATE * (1.0f / m_ai->m_speed) * s_MAX_SPEED;
-	float const TURN_ANGLE = this->clamp(thor::signedAngle(m_ai->m_heading, aiToDeploy), -(MAX_TURN_RATE), MAX_TURN_RATE);
-	while (m_ai->m_angle > 360.0f)
-	{
-		m_ai->m_angle -= 360.0f;
-	}
-	while (m_ai->m_angle < -360.0f)
-	{
-		m_ai->m_angle += 360.0f;
-	}
-	m_ai->m_angle += TURN_ANGLE * m_DELTA_TIME;
-	m_ai->m_heading = thor::unitVector(thor::rotatedVector(m_ai->m_heading, TURN_ANGLE * m_DELTA_TIME));
-}
-
-/// <summary>
-/// @brief Calculate new position of ai.
-/// 
-/// New position calculated using heading for direction,
-/// by speed, by delta time, in seconds so that the
-/// position gets updated at a rate of per second.
-/// </summary>
-void ai::states::AiRangedMoveState::updatePosition()
-{
-	m_ai->m_position += m_ai->m_heading * m_ai->m_speed * m_DELTA_TIME;
-}
-
-/// <summary>
-/// @brief Generate random position within the deploy zone.
-/// 
-/// 
-/// </summary>
-/// <returns>deploy position generated within the deploy zone.</returns>
-sf::Vector2f ai::states::AiRangedMoveState::generateDeployPosition() const
-{
-	return sf::Vector2f {
-		static_cast<float>(std::rand() % m_ai->m_onScreenRect.width + m_ai->m_onScreenRect.left),
-		static_cast<float>(std::rand() % m_ai->m_onScreenRect.height + m_ai->m_onScreenRect.top)
-	};
 }

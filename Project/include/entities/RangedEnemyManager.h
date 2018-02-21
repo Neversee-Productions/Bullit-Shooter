@@ -6,6 +6,7 @@
 // SFML Includes
 // Project Includes
 #include "entities\ai\ranged\AiRanged.h"
+#include "entities\ai\ranged\AiResources.h"
 
 /// 
 /// @brief Defines the enemy manager for ranged enemy ai.
@@ -20,7 +21,7 @@ public: // Constructors/Destructor
 	~RangedEnemyManager() = default;
 
 public: // Public Member Functions
-	void init(std::shared_ptr<ai::AiRanged::Resources> sptrResources);
+	void init(std::shared_ptr<ai::Resources> sptrResources);
 	void update();
 	void draw(Window & window, float const & deltaTime);
 	void spawn(sf::Vector2f const & spawnPoint);
@@ -46,7 +47,7 @@ private: // Private Member Variables
 	/// 
 	/// 
 	/// </summary>
-	std::shared_ptr<ai::AiRanged::Resources> m_sptrResources;
+	std::shared_ptr<ai::Resources> m_sptrResources;
 };
 
 

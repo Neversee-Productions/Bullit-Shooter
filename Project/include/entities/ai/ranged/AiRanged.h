@@ -7,6 +7,8 @@
 // Project Includes
 #include "entities\ai\AiBase.h"
 #include "entities\Player\Player.h"
+#include "bullets\AiBulletManager.h"
+#include "AiResources.h"
 
 namespace ai
 {
@@ -26,23 +28,6 @@ namespace ai
 	/// 
 	class AiRanged : public AiBase
 	{
-	public: // Public Assets Struct
-		/// 
-		/// @brief Defines the assets required by this ai.
-		/// @author Rafael Plugge
-		/// 
-		/// 
-		struct Resources : public AiBase::Resources
-		{
-			AiBase::Resources::Texture m_textureMove;
-			AiBase::Resources::Texture m_textureDeploy;
-			AiBase::Resources::Texture m_textureShoot;
-
-			AiBase::Resources::Animation m_animationMove;
-			AiBase::Resources::Animation m_animationDeploy;
-			AiBase::Resources::Animation m_animationShoot;
-		};
-
 	private: // Private Friend classes
 		friend class states::AiRangedState;
 		friend class states::AiRangedMoveState;
@@ -55,11 +40,11 @@ namespace ai
 
 	public: // Public Static Member Functions
 		static void setup(
-			std::shared_ptr<Resources> sptrResources,
+			std::shared_ptr<ai::Resources> sptrResources,
 			ResourceHandler & resourceHandler,
 			js::json & rangedEnemyParser);
 	public: // Public Member Functions
-		void init(std::shared_ptr<Resources> sptrResources);
+		void init(std::shared_ptr<ai::Resources> sptrResources);
 		virtual void update() final override;
 		virtual void draw(Window & window, float const & deltaTime) final override;
 		void spawn(sf::Vector2f const & spawnPosition);
@@ -105,6 +90,12 @@ namespace ai
 		/// 
 		/// </summary>
 		static std::string s_SHOOT_ID;
+		/// <summary>
+		/// @brief Defines the ID of the ebola spit.
+		/// 
+		/// 
+		/// </summary>
+		static std::string s_EBOLA_ID;
 		/// <summary>
 		/// @brief Defines whether to color the ai's states.
 		/// 
@@ -220,13 +211,13 @@ namespace ai
 		/// 
 		/// 
 		/// </summary>
-		std::shared_ptr<Resources> m_sptrResources;
+		std::shared_ptr<ai::Resources> m_sptrResources;
 		/// <summary>
-		/// @brief Defines the collection of bullets.
+		/// @brief Defines the manager of the collection of bullets.
 		/// 
 		/// Bullets can be active or innactive.
 		/// </summary>
-		
+		AiBulletManager m_bulletManager;
 	};
 }
 
