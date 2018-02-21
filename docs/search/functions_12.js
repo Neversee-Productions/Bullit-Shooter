@@ -6,6 +6,7 @@ var searchData=
   ['updateexplosioncircle',['updateExplosionCircle',['../classbullets_1_1_pyro_blast.html#a541c8e363ce9e4e13a1f3c981c4c39d9',1,'bullets::PyroBlast']]],
   ['updatehitbox',['updateHitbox',['../classai_1_1_ai_basic.html#ac9528d3032e18c57a6d33cf27a53ff3a',1,'ai::AiBasic']]],
   ['updatekey',['updateKey',['../class_key_handler.html#a9286e652204a3e49b7674f47f0ac99fa',1,'KeyHandler']]],
+  ['updateovercharge',['updateOvercharge',['../class_game_u_i.html#af7d8f8199369ee60bac301c6290aa134',1,'GameUI']]],
   ['updateplayer',['updatePlayer',['../class_collision_system.html#a48669d22216ee7dbbca479e2da102a59',1,'CollisionSystem']]],
   ['updateplayerbullets',['updatePlayerBullets',['../class_collision_system.html#a46dcd9e3709b690fdd3b2d5033dc8cfe',1,'CollisionSystem']]],
   ['updateplayerbullettoasteroids',['updatePlayerBulletToAsteroids',['../class_collision_system.html#ac6f8e5f581918d68dfb127550b1e7b0b',1,'CollisionSystem']]],
@@ -18,6 +19,7 @@ var searchData=
   ['updatespeed',['updateSpeed',['../classai_1_1states_1_1_ai_basic_charge_state.html#a711c989bfe97fe82bb78d63004e19e64',1,'ai::states::AiBasicChargeState::updateSpeed()'],['../classai_1_1states_1_1_ai_basic_seek_state.html#a674df30e3e0b6dd382065ea18219897d',1,'ai::states::AiBasicSeekState::updateSpeed()']]],
   ['updatestate',['updateState',['../classai_1_1states_1_1_ai_basic_charge_state.html#a7ccf88e1e3303ad7228a2aff059157dc',1,'ai::states::AiBasicChargeState::updateState()'],['../classai_1_1states_1_1_ai_basic_recover_state.html#ad5088ee55f87dbd2c5afb27f0f1dd2a8',1,'ai::states::AiBasicRecoverState::updateState()'],['../classai_1_1states_1_1_ai_basic_seek_state.html#ad4bf7d540658143d6ae3d48d232efab9',1,'ai::states::AiBasicSeekState::updateState()'],['../classai_1_1states_1_1_ai_basic_windup_state.html#ad0bdb14fb460524834b26b0fa22d222b',1,'ai::states::AiBasicWindupState::updateState()']]],
   ['updateturn',['updateTurn',['../classai_1_1states_1_1_ai_basic_seek_state.html#ad71b7cc0cc9f5f9d497f1e1cb7780dd2',1,'ai::states::AiBasicSeekState']]],
+  ['updateui',['updateUI',['../class_game_scene.html#a8aee8fc76657004682a34b580d32bdfc',1,'GameScene']]],
   ['updatevelocityvector',['updateVelocityVector',['../classbullets_1_1_bullet.html#a9da1ed1d52f5047216d162171bbf1af4',1,'bullets::Bullet']]],
   ['updatewindowcollisions',['updateWindowCollisions',['../class_asteroid.html#a693c1df43589c9f9417bbba59a3b61b0',1,'Asteroid::updateWindowCollisions()'],['../class_bullet_manager.html#a918189f778d2c5f3258092535dfc9c55',1,'BulletManager::updateWindowCollisions()']]]
 ];

@@ -7,5 +7,6 @@ var struct_game_pad_state =
     [ "m_btnTrigger", "struct_game_pad_state.html#a988a2ebbfc1d34c300409ac2bcae992f", null ],
     [ "m_btnX", "struct_game_pad_state.html#ae6b3e3a538b9aa9c55281f2dd8eb212d", null ],
     [ "m_flightStick", "struct_game_pad_state.html#acc3af1ee943090fd45f57a73b1f13d36", null ],
-    [ "m_flightThruster", "struct_game_pad_state.html#ac9bbd725451e26318eb65649a54ad73c", null ]
+    [ "m_flightThruster", "struct_game_pad_state.html#ac9bbd725451e26318eb65649a54ad73c", null ],
+    [ "m_l1", "struct_game_pad_state.html#a8dc56ccf54dc9a3e6451909b1d6f5408", null ]
 ];

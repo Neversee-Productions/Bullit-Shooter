@@ -62,7 +62,7 @@ void GameUI::update()
 		m_rechargeBarLeft.setScale(m_rechargeBarLeft.getScale().x, 0.0f);
 	}
 
-	if (m_overheating)
+	if (m_overheating && !m_pauseFlashing)
 	{
 		m_colorFlipTimer += App::getUpdateDeltaTime();
 		if (m_colorFlipTimer > 0.3f)
@@ -289,8 +289,8 @@ void GameUI::init(std::shared_ptr<Resources> resources)
 		gui::Button::s_TEXT_RECT_MID,
 		gui::Button::s_TEXT_RECT_RIGHT
 	);
-	m_gameEndUI->addLabel("Game Over", 50, sf::Vector2f(App::getViewSize().x / 2, App::getViewSize().y * 0.1), sptrButtonFont, sf::Color::White);
-	m_gui->addLabel("Pause", 50, sf::Vector2f(App::getViewSize().x / 2, App::getViewSize().y * 0.1), sptrButtonFont, sf::Color::White);
+	m_gameEndUI->addLabel("Game Over", 50u, sf::Vector2f(App::getViewSize().x / 2.0f, App::getViewSize().y * 0.1f), sptrButtonFont, sf::Color::White);
+	m_gui->addLabel("Pause", 50u, sf::Vector2f(App::getViewSize().x / 2.0f, App::getViewSize().y * 0.1f), sptrButtonFont, sf::Color::White);
 	const auto& windowSize = App::getViewSize();
 	m_gui->configure(gui::GUI::Layouts::StackVertically, windowSize);
 	m_gameEndUI->configure(gui::GUI::Layouts::StackVertically, windowSize);
@@ -426,6 +426,7 @@ void GameUI::reset()
 	m_targetHealth = 1.0f;
 	m_showPauseScreen = false;
 	m_showGameEnd = false;
+	m_pauseFlashing = false;
 }
 
 /// <summary>
@@ -471,4 +472,15 @@ void GameUI::updateOvercharge(float overchargeValue)
 void GameUI::setOverheat(bool check)
 {
 	m_overheating = check;
+}
+
+/// <summary>
+/// @brief setter that will make the ui start or stop flashing.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new value of the flashing bool</param>
+void GameUI::setPauseFlashing(bool check)
+{
+	m_pauseFlashing = check;
 }

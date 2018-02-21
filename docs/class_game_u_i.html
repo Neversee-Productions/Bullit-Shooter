@@ -103,8 +103,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d3e17321f14a669ef4a2d6058d23b60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a0d3e17321f14a669ef4a2d6058d23b60">GameUI</a> (std::shared_ptr&lt; <a class="el" href="class_key_handler.html">KeyHandler</a> &gt; keyHandler, std::shared_ptr&lt; <a class="el" href="class_controller.html">Controller</a> &gt; controller, std::function&lt; void()&gt; mainMenuFunction)</td></tr>
-<tr class="separator:a0d3e17321f14a669ef4a2d6058d23b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a302d7011a2d50253634dd0fe97140ca8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a302d7011a2d50253634dd0fe97140ca8">GameUI</a> (std::shared_ptr&lt; <a class="el" href="class_key_handler.html">KeyHandler</a> &gt; keyHandler, std::shared_ptr&lt; <a class="el" href="class_controller.html">Controller</a> &gt; controller, std::function&lt; void()&gt; mainMenuFunction, std::function&lt; void()&gt; restartGameFunction)</td></tr>
+<tr class="separator:a302d7011a2d50253634dd0fe97140ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1eeb33aa889d01ce7c01fb59b7eb50f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#ab1eeb33aa889d01ce7c01fb59b7eb50f">update</a> ()</td></tr>
 <tr class="separator:ab1eeb33aa889d01ce7c01fb59b7eb50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1a4b8579b013d6bc5755fe4606afb7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#ad1a4b8579b013d6bc5755fe4606afb7b">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, const float &amp;deltaTime)</td></tr>
@@ -123,8 +123,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a781ca2c75f93193c1d504cfbaacb1b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fd9342b45c7703c87be8f5637c0ad3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a70fd9342b45c7703c87be8f5637c0ad3">getPaused</a> ()</td></tr>
 <tr class="separator:a70fd9342b45c7703c87be8f5637c0ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c0ecc369c56cd7ba300daa8b3838c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#ae9c0ecc369c56cd7ba300daa8b3838c0">setShowEnd</a> (bool check)</td></tr>
+<tr class="separator:ae9c0ecc369c56cd7ba300daa8b3838c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b4091ca9b886e738c20809160f41289"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a6b4091ca9b886e738c20809160f41289">getShowEnd</a> ()</td></tr>
+<tr class="separator:a6b4091ca9b886e738c20809160f41289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc046cc971a875069b022122936971b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#abc046cc971a875069b022122936971b8">setRecharge</a> (float val)</td></tr>
+<tr class="separator:abc046cc971a875069b022122936971b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaa3380b63d7545f8408eb76888ababa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#aeaa3380b63d7545f8408eb76888ababa">reset</a> ()</td></tr>
 <tr class="separator:aeaa3380b63d7545f8408eb76888ababa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ea63d6e20b3df47c9efb852b9b8d94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#aa7ea63d6e20b3df47c9efb852b9b8d94">setFireRate</a> (float val)</td></tr>
+<tr class="separator:aa7ea63d6e20b3df47c9efb852b9b8d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2764db8a043a59ee60f8e7d74b7d9462"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a2764db8a043a59ee60f8e7d74b7d9462">setTimeSinceFire</a> (float val)</td></tr>
+<tr class="separator:a2764db8a043a59ee60f8e7d74b7d9462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7d8f8199369ee60bac301c6290aa134"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#af7d8f8199369ee60bac301c6290aa134">updateOvercharge</a> (float overchargeValue)</td></tr>
+<tr class="separator:af7d8f8199369ee60bac301c6290aa134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54b64a07b2250e44966691a0af61b91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#ab54b64a07b2250e44966691a0af61b91">setOverheat</a> (bool check)</td></tr>
+<tr class="separator:ab54b64a07b2250e44966691a0af61b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52fcafe7c2bbbe5ac373a584aebba19a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a52fcafe7c2bbbe5ac373a584aebba19a">setPauseFlashing</a> (bool check)</td></tr>
+<tr class="separator:a52fcafe7c2bbbe5ac373a584aebba19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -149,15 +165,51 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a118c14e9021f4a39bc61201f2ef4b72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09a9e9fe84a3947cdb03284548b2d474"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a09a9e9fe84a3947cdb03284548b2d474">m_mainMenuFunc</a></td></tr>
 <tr class="separator:a09a9e9fe84a3947cdb03284548b2d474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fff6c6c42a053a2434112ce933b294d"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a0fff6c6c42a053a2434112ce933b294d">m_restartGameFunc</a></td></tr>
+<tr class="separator:a0fff6c6c42a053a2434112ce933b294d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af74c469aba2022eef46176d8f2859d21"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#af74c469aba2022eef46176d8f2859d21">m_showPauseScreen</a></td></tr>
 <tr class="separator:af74c469aba2022eef46176d8f2859d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d8dea36309ef61ad3a43322e6e1376"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classgui_1_1_g_u_i.html">gui::GUI</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a05d8dea36309ef61ad3a43322e6e1376">m_gameEndUI</a></td></tr>
+<tr class="separator:a05d8dea36309ef61ad3a43322e6e1376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66dd7dd00fd4004a46d73e7527b3fc6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a66dd7dd00fd4004a46d73e7527b3fc6c">m_showGameEnd</a></td></tr>
+<tr class="separator:a66dd7dd00fd4004a46d73e7527b3fc6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b9160a33c9a81de8f17cb0125bfb40"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#ac3b9160a33c9a81de8f17cb0125bfb40">m_borderSprite</a></td></tr>
+<tr class="separator:ac3b9160a33c9a81de8f17cb0125bfb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3b4311b2b8921835513daf541aa5c4"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#aad3b4311b2b8921835513daf541aa5c4">m_rechargeBarRight</a></td></tr>
+<tr class="separator:aad3b4311b2b8921835513daf541aa5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ca18814aabb13641f45f112098174b"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a87ca18814aabb13641f45f112098174b">m_rechargeBarLeft</a></td></tr>
+<tr class="separator:a87ca18814aabb13641f45f112098174b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a952dae8b7cf92450ccce64a0561cdf36"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a952dae8b7cf92450ccce64a0561cdf36">m_rechargeFrameRight</a></td></tr>
+<tr class="separator:a952dae8b7cf92450ccce64a0561cdf36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f75a4df3313e6e0e67570e035c7f217"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a4f75a4df3313e6e0e67570e035c7f217">m_rechargeFrameLeft</a></td></tr>
+<tr class="separator:a4f75a4df3313e6e0e67570e035c7f217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a419526440782195d376aa499b1230f58"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a419526440782195d376aa499b1230f58">m_overchargeFrameRight</a></td></tr>
+<tr class="separator:a419526440782195d376aa499b1230f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765d232acb9c78d6b862d20c596ba16f"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a765d232acb9c78d6b862d20c596ba16f">m_overchargeBarRight</a></td></tr>
+<tr class="separator:a765d232acb9c78d6b862d20c596ba16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9b4fbdadf26795c800030fae12b20b"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#abf9b4fbdadf26795c800030fae12b20b">m_overchargeBarLeft</a></td></tr>
+<tr class="separator:abf9b4fbdadf26795c800030fae12b20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacb9d6bb1447f3c0032c60753cd1ef16"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#aacb9d6bb1447f3c0032c60753cd1ef16">m_overchargeFrameLeft</a></td></tr>
+<tr class="separator:aacb9d6bb1447f3c0032c60753cd1ef16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a933590c0a3c4dcfe04068c22784b7b6b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a933590c0a3c4dcfe04068c22784b7b6b">m_targetRecharge</a></td></tr>
+<tr class="separator:a933590c0a3c4dcfe04068c22784b7b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634b90eefd3c05a8b8f1d12fae7d3c79"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a634b90eefd3c05a8b8f1d12fae7d3c79">m_timeSinceFire</a></td></tr>
+<tr class="separator:a634b90eefd3c05a8b8f1d12fae7d3c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5e2059581d584f4c23888670f9cf751"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#aa5e2059581d584f4c23888670f9cf751">m_fireRateVal</a></td></tr>
+<tr class="separator:aa5e2059581d584f4c23888670f9cf751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa44c413650bcbe166af2b0accae536b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#aa44c413650bcbe166af2b0accae536b9">m_overheating</a></td></tr>
+<tr class="separator:aa44c413650bcbe166af2b0accae536b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa912e49e4fbad726317cb9bd7733ca26"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#aa912e49e4fbad726317cb9bd7733ca26">m_colorFlipTimer</a></td></tr>
+<tr class="separator:aa912e49e4fbad726317cb9bd7733ca26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25445ef04a6b9d8e5c2874cbc69fce7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_u_i.html#a25445ef04a6b9d8e5c2874cbc69fce7d">m_pauseFlashing</a></td></tr>
+<tr class="separator:a25445ef04a6b9d8e5c2874cbc69fce7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel</dd></dl>
 <p>Defines the UI of the game. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0d3e17321f14a669ef4a2d6058d23b60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d3e17321f14a669ef4a2d6058d23b60">&#9670;&nbsp;</a></span>GameUI()</h2>
+<a id="a302d7011a2d50253634dd0fe97140ca8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a302d7011a2d50253634dd0fe97140ca8">&#9670;&nbsp;</a></span>GameUI()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,7 +230,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
-          <td class="paramname"><em>mainMenuFunction</em>&#160;</td>
+          <td class="paramname"><em>mainMenuFunction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>restartGameFunction</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -309,6 +367,25 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a6b4091ca9b886e738c20809160f41289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b4091ca9b886e738c20809160f41289">&#9670;&nbsp;</a></span>getShowEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameUI::getShowEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>a getter for the show end game bool.</p>
+<dl class="section return"><dt>Returns</dt><dd>returns m_showGameEnd bool</dd></dl>
+
+</div>
+</div>
 <a id="ae664577d9dda470267aa5c5eb68aed53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae664577d9dda470267aa5c5eb68aed53">&#9670;&nbsp;</a></span>init()</h2>
 
@@ -352,6 +429,31 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa7ea63d6e20b3df47c9efb852b9b8d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ea63d6e20b3df47c9efb852b9b8d94">&#9670;&nbsp;</a></span>setFireRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUI::setFireRate </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>setter for the fire rate.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>new value of fire rate</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ade4b483c349f1b86884cb4b6677ae772"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade4b483c349f1b86884cb4b6677ae772">&#9670;&nbsp;</a></span>setHealthTransparency()</h2>
 
@@ -377,6 +479,31 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab54b64a07b2250e44966691a0af61b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab54b64a07b2250e44966691a0af61b91">&#9670;&nbsp;</a></span>setOverheat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUI::setOverheat </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>check</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>setter for the overheat bool</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">check</td><td>new overheat value</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a781ca2c75f93193c1d504cfbaacb1b8f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a781ca2c75f93193c1d504cfbaacb1b8f">&#9670;&nbsp;</a></span>setPaused()</h2>
 
@@ -396,6 +523,106 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">check</td><td>boolean that represents the new value of show pause screen</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a52fcafe7c2bbbe5ac373a584aebba19a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52fcafe7c2bbbe5ac373a584aebba19a">&#9670;&nbsp;</a></span>setPauseFlashing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUI::setPauseFlashing </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>check</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>setter that will make the ui start or stop flashing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">check</td><td>new value of the flashing bool</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abc046cc971a875069b022122936971b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc046cc971a875069b022122936971b8">&#9670;&nbsp;</a></span>setRecharge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUI::setRecharge </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set the target of the recharge value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>new target for recharge</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae9c0ecc369c56cd7ba300daa8b3838c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c0ecc369c56cd7ba300daa8b3838c0">&#9670;&nbsp;</a></span>setShowEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUI::setShowEnd </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>check</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>method that will determine if we show game end screen.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">check</td><td>new value of the show game end bool</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2764db8a043a59ee60f8e7d74b7d9462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2764db8a043a59ee60f8e7d74b7d9462">&#9670;&nbsp;</a></span>setTimeSinceFire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUI::setTimeSinceFire </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>setter for the time since fire.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>new value of time since fire</td></tr>
   </table>
   </dd>
 </dl>
@@ -471,7 +698,124 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af7d8f8199369ee60bac301c6290aa134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7d8f8199369ee60bac301c6290aa134">&#9670;&nbsp;</a></span>updateOvercharge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUI::updateOvercharge </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>overchargeValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>update the overcharge value to represent actual overcharge.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">overchargeValue</td><td>the actual overcharge value</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac3b9160a33c9a81de8f17cb0125bfb40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3b9160a33c9a81de8f17cb0125bfb40">&#9670;&nbsp;</a></span>m_borderSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GameUI::m_borderSprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the border sprite.</p>
+
+</div>
+</div>
+<a id="aa912e49e4fbad726317cb9bd7733ca26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa912e49e4fbad726317cb9bd7733ca26">&#9670;&nbsp;</a></span>m_colorFlipTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameUI::m_colorFlipTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>a timer used in the change of the overcharge bar color</p>
+
+</div>
+</div>
+<a id="aa5e2059581d584f4c23888670f9cf751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e2059581d584f4c23888670f9cf751">&#9670;&nbsp;</a></span>m_fireRateVal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameUI::m_fireRateVal</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the current fireRate.</p>
+
+</div>
+</div>
+<a id="a05d8dea36309ef61ad3a43322e6e1376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d8dea36309ef61ad3a43322e6e1376">&#9670;&nbsp;</a></span>m_gameEndUI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classgui_1_1_g_u_i.html">gui::GUI</a>&gt; GameUI::m_gameEndUI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>unique ptr to the game end ui.</p>
+
+</div>
+</div>
 <a id="a118c14e9021f4a39bc61201f2ef4b72c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a118c14e9021f4a39bc61201f2ef4b72c">&#9670;&nbsp;</a></span>m_gui</h2>
 
@@ -633,6 +977,282 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="abf9b4fbdadf26795c800030fae12b20b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9b4fbdadf26795c800030fae12b20b">&#9670;&nbsp;</a></span>m_overchargeBarLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GameUI::m_overchargeBarLeft</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the overcharge left bar.</p>
+
+</div>
+</div>
+<a id="a765d232acb9c78d6b862d20c596ba16f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765d232acb9c78d6b862d20c596ba16f">&#9670;&nbsp;</a></span>m_overchargeBarRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GameUI::m_overchargeBarRight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the right overcharge bar.</p>
+
+</div>
+</div>
+<a id="aacb9d6bb1447f3c0032c60753cd1ef16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacb9d6bb1447f3c0032c60753cd1ef16">&#9670;&nbsp;</a></span>m_overchargeFrameLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GameUI::m_overchargeFrameLeft</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define left overcharge frame.</p>
+
+</div>
+</div>
+<a id="a419526440782195d376aa499b1230f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a419526440782195d376aa499b1230f58">&#9670;&nbsp;</a></span>m_overchargeFrameRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GameUI::m_overchargeFrameRight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define right overcharge frame.</p>
+
+</div>
+</div>
+<a id="aa44c413650bcbe166af2b0accae536b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa44c413650bcbe166af2b0accae536b9">&#9670;&nbsp;</a></span>m_overheating</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameUI::m_overheating</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>is the players weapon overheating.</p>
+
+</div>
+</div>
+<a id="a25445ef04a6b9d8e5c2874cbc69fce7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25445ef04a6b9d8e5c2874cbc69fce7d">&#9670;&nbsp;</a></span>m_pauseFlashing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameUI::m_pauseFlashing</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>bool that will determine if the UI should be flashing used mainly for pausing and game over.</p>
+
+</div>
+</div>
+<a id="a87ca18814aabb13641f45f112098174b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ca18814aabb13641f45f112098174b">&#9670;&nbsp;</a></span>m_rechargeBarLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GameUI::m_rechargeBarLeft</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define left recharge bar.</p>
+
+</div>
+</div>
+<a id="aad3b4311b2b8921835513daf541aa5c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3b4311b2b8921835513daf541aa5c4">&#9670;&nbsp;</a></span>m_rechargeBarRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GameUI::m_rechargeBarRight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define right recharge bar.</p>
+
+</div>
+</div>
+<a id="a4f75a4df3313e6e0e67570e035c7f217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f75a4df3313e6e0e67570e035c7f217">&#9670;&nbsp;</a></span>m_rechargeFrameLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GameUI::m_rechargeFrameLeft</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define left recharge frame.</p>
+
+</div>
+</div>
+<a id="a952dae8b7cf92450ccce64a0561cdf36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a952dae8b7cf92450ccce64a0561cdf36">&#9670;&nbsp;</a></span>m_rechargeFrameRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite GameUI::m_rechargeFrameRight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the right recharge frame.</p>
+
+</div>
+</div>
+<a id="a0fff6c6c42a053a2434112ce933b294d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fff6c6c42a053a2434112ce933b294d">&#9670;&nbsp;</a></span>m_restartGameFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void()&gt; GameUI::m_restartGameFunc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the function that will restart the game.</p>
+
+</div>
+</div>
+<a id="a66dd7dd00fd4004a46d73e7527b3fc6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66dd7dd00fd4004a46d73e7527b3fc6c">&#9670;&nbsp;</a></span>m_showGameEnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameUI::m_showGameEnd</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>this defines if we show the game end screen.</p>
+
+</div>
+</div>
 <a id="af74c469aba2022eef46176d8f2859d21"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af74c469aba2022eef46176d8f2859d21">&#9670;&nbsp;</a></span>m_showPauseScreen</h2>
 
@@ -676,6 +1296,52 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>this is the variable that will specify how low the health bar is to go.</p>
+
+</div>
+</div>
+<a id="a933590c0a3c4dcfe04068c22784b7b6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a933590c0a3c4dcfe04068c22784b7b6b">&#9670;&nbsp;</a></span>m_targetRecharge</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameUI::m_targetRecharge</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define target scale for the recharge bar.</p>
+
+</div>
+</div>
+<a id="a634b90eefd3c05a8b8f1d12fae7d3c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634b90eefd3c05a8b8f1d12fae7d3c79">&#9670;&nbsp;</a></span>m_timeSinceFire</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameUI::m_timeSinceFire</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>how long since last fire.</p>
 
 </div>
 </div>

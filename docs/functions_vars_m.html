@@ -179,6 +179,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_bgTargetColor
 : <a class="el" href="class_background.html#aa6b3cd8577849dc30b1b2e81188cabe4">Background</a>
 </li>
+<li>m_borderSprite
+: <a class="el" href="class_game_u_i.html#ac3b9160a33c9a81de8f17cb0125bfb40">GameUI</a>
+</li>
 <li>m_bottomLabel
 : <a class="el" href="classgui_1_1_slider.html#a70f14d748f4b483f4079ff92c74013fc">gui::Slider</a>
 </li>
@@ -199,6 +202,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_bulletC2Rect
 : <a class="el" href="classbullets_1_1_bullet.html#a6d72379ed0bee15d114dfc9ca0840a2e">bullets::Bullet</a>
+</li>
+<li>m_bulletCooldownRate
+: <a class="el" href="class_bullet_manager.html#a37d8dfb232edca85a7de7f8b110acd67">BulletManager</a>
 </li>
 <li>m_bulletManager
 : <a class="el" href="class_player.html#a6d27e83de4dc129a5976c1ea6d32cbd1">Player</a>
@@ -242,6 +248,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_COLOR_CHANGE
 : <a class="el" href="class_background.html#a9eedbd8b13ea2a00123068dd45e06b4d">Background</a>
 </li>
+<li>m_colorFlipTimer
+: <a class="el" href="class_game_u_i.html#aa912e49e4fbad726317cb9bd7733ca26">GameUI</a>
+</li>
 <li>m_connectLeftWeaponToShip
 : <a class="el" href="class_player.html#a92ad0d1c8057a1ccab8e4d06b1e79b3e">Player</a>
 </li>
@@ -255,12 +264,16 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 : <a class="el" href="class_title_scene.html#a26339e7ac9e0fb76c236d16ca53662f7">TitleScene</a>
 </li>
 <li>m_controller
-: <a class="el" href="classgui_1_1_g_u_i.html#a2a25d69b79031de4274d53db9ce26db9">gui::GUI</a>
+: <a class="el" href="class_game_scene.html#a8d4b303139480e6d6930af594c5f006c">GameScene</a>
+, <a class="el" href="classgui_1_1_g_u_i.html#a2a25d69b79031de4274d53db9ce26db9">gui::GUI</a>
 , <a class="el" href="class_main_menu_scene.html#a965a1496081cc4198571a1da23f17e52">MainMenuScene</a>
 , <a class="el" href="class_options_scene.html#a39e07b6db3af496b2b5240aadd10e011">OptionsScene</a>
 , <a class="el" href="class_player.html#ab0ed3e3d0e4416cc558214b1cb29342e">Player</a>
 , <a class="el" href="class_scene_manager.html#a4bf437806adce1ca5b4273c53c4bd7ef">SceneManager</a>
 , <a class="el" href="class_title_scene.html#a0d34f92c448f39cbb8f6cab4504abf88">TitleScene</a>
+</li>
+<li>m_cooldownRate
+: <a class="el" href="class_bullet_manager.html#ad8486cfd6f35eb718ac068fd02307fb5">BulletManager</a>
 </li>
 <li>m_current
 : <a class="el" href="classgui_1_1_slider.html#a9b55252e5872c284df039172d98e2bfa">gui::Slider</a>
@@ -273,6 +286,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_currentFrame
 : <a class="el" href="class_ship.html#a6f89b4845f1fb7c739892c7a83ae6731">Ship</a>
+</li>
+<li>m_currentOvercharge
+: <a class="el" href="class_bullet_manager.html#a0810eb35f25f844633b5a9c6a8a6015d">BulletManager</a>
 </li>
 <li>m_currentScene
 : <a class="el" href="class_scene_manager.html#a69467e0ba9a034a9dd4034b315985b06">SceneManager</a>
@@ -364,6 +380,10 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_filledTextRect
 : <a class="el" href="classgui_1_1_slider.html#a4d18f1a91aa610d7b41b2f592f6c6996">gui::Slider</a>
 </li>
+<li>m_fireRateVal
+: <a class="el" href="class_bullet_manager.html#aa4f209212bf5ec0695f36761d6ec7978">BulletManager</a>
+, <a class="el" href="class_game_u_i.html#aa5e2059581d584f4c23888670f9cf751">GameUI</a>
+</li>
 <li>m_flash
 : <a class="el" href="class_asteroid.html#aabe7676af8d707f47733560033896dfe">Asteroid</a>
 </li>
@@ -402,6 +422,12 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_function
 : <a class="el" href="classgui_1_1_button.html#a8a6b48089d25010ade7ebefcc7a04a96">gui::Button</a>
+</li>
+<li>m_gameEnded
+: <a class="el" href="class_game_scene.html#ad95084e720c2198fd586239e3501eb17">GameScene</a>
+</li>
+<li>m_gameEndUI
+: <a class="el" href="class_game_u_i.html#a05d8dea36309ef61ad3a43322e6e1376">GameUI</a>
 </li>
 <li>m_gamepadIndex
 : <a class="el" href="class_controller.html#ae865ed7281dfe60171e0c8bf9a929f18">Controller</a>
@@ -524,6 +550,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_keyMap
 : <a class="el" href="class_key_handler.html#a4e9538df774f0f167178798e3e7014e3">KeyHandler</a>
 </li>
+<li>m_l1
+: <a class="el" href="struct_game_pad_state.html#a8dc56ccf54dc9a3e6451909b1d6f5408">GamePadState</a>
+</li>
 <li>m_LABEL_OFFSET
 : <a class="el" href="classgui_1_1_check_box.html#a3ab14d276cb196bf70b80ba7252ef816">gui::CheckBox</a>
 , <a class="el" href="classgui_1_1_slider.html#a2f493cbbb9932fd29978994deafaa70c">gui::Slider</a>
@@ -631,6 +660,30 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 , <a class="el" href="struct_pickup_1_1_resources_1_1_individual_pickup.html#a62b7508f7b5ff86fa8b568e069f65f3e">Pickup::Resources::IndividualPickup</a>
 , <a class="el" href="struct_weapon_1_1_resources_1_1_animation.html#aedc575217e93b24fcd4787cfed18f6c9">Weapon::Resources::Animation</a>
 </li>
+<li>m_overchargeBarLeft
+: <a class="el" href="class_game_u_i.html#abf9b4fbdadf26795c800030fae12b20b">GameUI</a>
+</li>
+<li>m_overchargeBarRight
+: <a class="el" href="class_game_u_i.html#a765d232acb9c78d6b862d20c596ba16f">GameUI</a>
+</li>
+<li>m_overchargeFrameLeft
+: <a class="el" href="class_game_u_i.html#aacb9d6bb1447f3c0032c60753cd1ef16">GameUI</a>
+</li>
+<li>m_overchargeFrameRight
+: <a class="el" href="class_game_u_i.html#a419526440782195d376aa499b1230f58">GameUI</a>
+</li>
+<li>m_overchargePerBullet
+: <a class="el" href="class_bullet_manager.html#a4c69aabaffe892ff2c4abae0d0ab54fc">BulletManager</a>
+</li>
+<li>m_overheat
+: <a class="el" href="class_bullet_manager.html#aedc6d2ce46ad859edb9cbe9f21009287">BulletManager</a>
+</li>
+<li>m_overheatCooldownRate
+: <a class="el" href="class_bullet_manager.html#a2bc742143ebf3744d1ffa036412728e9">BulletManager</a>
+</li>
+<li>m_overheating
+: <a class="el" href="class_game_u_i.html#aa44c413650bcbe166af2b0accae536b9">GameUI</a>
+</li>
 <li>m_pairAnimationHolder
 : <a class="el" href="class_resource_handler.html#a5392f91fc4bd7d351840bd43a8c69926">ResourceHandler</a>
 </li>
@@ -651,6 +704,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_pairTextureHolder
 : <a class="el" href="class_resource_handler.html#af957c90eb1423b21ef18093f282a211e">ResourceHandler</a>
+</li>
+<li>m_pauseFlashing
+: <a class="el" href="class_game_u_i.html#a25445ef04a6b9d8e5c2874cbc69fce7d">GameUI</a>
 </li>
 <li>m_pickup
 : <a class="el" href="class_collision_system.html#a6c0691faa619a596ddb8b5add16db018">CollisionSystem</a>
@@ -705,6 +761,18 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_pulseTimer
 : <a class="el" href="classbullets_1_1_static_sphere.html#a1974c3383680a7888c60a82608a2915b">bullets::StaticSphere</a>
 </li>
+<li>m_rechargeBarLeft
+: <a class="el" href="class_game_u_i.html#a87ca18814aabb13641f45f112098174b">GameUI</a>
+</li>
+<li>m_rechargeBarRight
+: <a class="el" href="class_game_u_i.html#aad3b4311b2b8921835513daf541aa5c4">GameUI</a>
+</li>
+<li>m_rechargeFrameLeft
+: <a class="el" href="class_game_u_i.html#a4f75a4df3313e6e0e67570e035c7f217">GameUI</a>
+</li>
+<li>m_rechargeFrameRight
+: <a class="el" href="class_game_u_i.html#a952dae8b7cf92450ccce64a0561cdf36">GameUI</a>
+</li>
 <li>m_RECOVERY_TIME
 : <a class="el" href="classai_1_1states_1_1_ai_basic_recover_state.html#a48d8abb9689697c919edeff561069d0b">ai::states::AiBasicRecoverState</a>
 </li>
@@ -752,6 +820,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 , <a class="el" href="class_splash_scene.html#a82d84a0c05a128e84f1b433f3e65cb5d">SplashScene</a>
 , <a class="el" href="class_title_scene.html#a795728efd2207e3dd96711999af6ae2c">TitleScene</a>
 , <a class="el" href="class_weapon.html#a4057988b09d7aa897ff2dbb56f29c080">Weapon</a>
+</li>
+<li>m_restartGameFunc
+: <a class="el" href="class_game_u_i.html#a0fff6c6c42a053a2434112ce933b294d">GameUI</a>
 </li>
 <li>m_right
 : <a class="el" href="struct_ship_1_1_keys_pressed.html#a950253aa3c3983ace8568804aaa06198">Ship::KeysPressed</a>
@@ -825,6 +896,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_shipRect
 : <a class="el" href="class_ship.html#ab7a03c934538fd6100e1ed3b85f92fcb">Ship</a>
 </li>
+<li>m_showGameEnd
+: <a class="el" href="class_game_u_i.html#a66dd7dd00fd4004a46d73e7527b3fc6c">GameUI</a>
+</li>
 <li>m_showPauseScreen
 : <a class="el" href="class_game_u_i.html#af74c469aba2022eef46176d8f2859d21">GameUI</a>
 </li>
@@ -882,6 +956,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_sptrBgShader
 : <a class="el" href="struct_background_1_1_resources.html#aaa3b5fd665bd86917bc64f6fbb9b0138">Background::Resources</a>
 </li>
+<li>m_sptrBorderTexture
+: <a class="el" href="struct_game_u_i_1_1_resources.html#a3f3d142a32efb6c5733833320fdcf5be">GameUI::Resources</a>
+</li>
 <li>m_sptrBuffer
 : <a class="el" href="class_sound_setting.html#ac2aeff3ecfbbd25433a18afd2379cbca">SoundSetting</a>
 </li>
@@ -924,11 +1001,20 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 <li>m_sptrLoopAnimation
 : <a class="el" href="structbullets_1_1_bullet_1_1_resources.html#aac59a9fdc2787f497d8ded28096f41c2">bullets::Bullet::Resources</a>
 </li>
+<li>m_sptrOverchargeFrameTexture
+: <a class="el" href="struct_game_u_i_1_1_resources.html#a3864409ef9903c634a2b11bf1246084a">GameUI::Resources</a>
+</li>
 <li>m_sptrPickup
 : <a class="el" href="struct_game_scene_1_1_resources.html#aa9d779b05249c4ff47178011766c36dd">GameScene::Resources</a>
 </li>
 <li>m_sptrPlayer
 : <a class="el" href="struct_game_scene_1_1_resources.html#a4f1104bf85333cb3fd35e80eba42ac52">GameScene::Resources</a>
+</li>
+<li>m_sptrRechargeBarFrameTexture
+: <a class="el" href="struct_game_u_i_1_1_resources.html#a42ef62f7f8f719a9bbd18086b57e1438">GameUI::Resources</a>
+</li>
+<li>m_sptrRechargeBarTexture
+: <a class="el" href="struct_game_u_i_1_1_resources.html#a0b12afe5c686b7c2f17579a2dc84fbff">GameUI::Resources</a>
 </li>
 <li>m_sptrResources
 : <a class="el" href="classai_1_1_ai_basic.html#ac423ed4894b350d49fb857798161c11a">ai::AiBasic</a>
@@ -976,6 +1062,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_targetHealth
 : <a class="el" href="class_game_u_i.html#a247243f183df85a0fb56b4391aedd3d5">GameUI</a>
+</li>
+<li>m_targetRecharge
+: <a class="el" href="class_game_u_i.html#a933590c0a3c4dcfe04068c22784b7b6b">GameUI</a>
 </li>
 <li>m_text
 : <a class="el" href="classgui_1_1_label.html#abc9fac1e5819823007aa24fd072cf94c">gui::Label</a>
@@ -1027,6 +1116,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html','');});
 </li>
 <li>m_timeSinceFire
 : <a class="el" href="class_bullet_manager.html#adc312c9d67f9c48ff35d0316be779779">BulletManager</a>
+, <a class="el" href="class_game_u_i.html#a634b90eefd3c05a8b8f1d12fae7d3c79">GameUI</a>
 </li>
 <li>m_timeToLive
 : <a class="el" href="classbullets_1_1_holy_sphere.html#a57e2e6efac1f6df43e1588c81d60905c">bullets::HolySphere</a>

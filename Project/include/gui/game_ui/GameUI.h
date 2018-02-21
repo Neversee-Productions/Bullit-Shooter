@@ -88,6 +88,7 @@ public: //public functions
 	void setTimeSinceFire(float val);
 	void updateOvercharge(float overchargeValue);
 	void setOverheat(bool check);
+	void setPauseFlashing(bool check);
 private: //private functions.
 public: //public member variables.
 private: //private member variables.
@@ -275,6 +276,14 @@ private: //private member variables.
 	/// 
 	/// </summary>
 	float m_colorFlipTimer;
+
+	/// <summary>
+	/// @brief bool that will determine if the UI should be flashing
+	/// used mainly for pausing and game over.
+	/// 
+	/// 
+	/// </summary>
+	bool m_pauseFlashing;
 };
 
 

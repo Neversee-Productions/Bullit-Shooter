@@ -162,6 +162,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac5a293144b5f757dd4ed2d5797611139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1af5d39f7bac2aeaa1e30c7dda2332fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a1af5d39f7bac2aeaa1e30c7dda2332fa">reset</a> ()</td></tr>
 <tr class="separator:a1af5d39f7bac2aeaa1e30c7dda2332fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac81962f3fcd0c78c2da40e0bfec9466f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ac81962f3fcd0c78c2da40e0bfec9466f">getFireRate</a> ()</td></tr>
+<tr class="separator:ac81962f3fcd0c78c2da40e0bfec9466f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd842ce18ca0f9943a0c090b795da96"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aafd842ce18ca0f9943a0c090b795da96">getTimeSinceFire</a> ()</td></tr>
+<tr class="separator:aafd842ce18ca0f9943a0c090b795da96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaea55b9ef84b238c5f59f47f6b925e6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#afaea55b9ef84b238c5f59f47f6b925e6">getOvercharge</a> ()</td></tr>
+<tr class="separator:afaea55b9ef84b238c5f59f47f6b925e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd703b9162327da6fa9806416ac75f7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#acd703b9162327da6fa9806416ac75f7c">getOverheat</a> ()</td></tr>
+<tr class="memdesc:acd703b9162327da6fa9806416ac75f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">for the overheat bool.  <a href="#acd703b9162327da6fa9806416ac75f7c">More...</a><br /></td></tr>
+<tr class="separator:acd703b9162327da6fa9806416ac75f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8127bd0dfb5b3d0dfd92944448d7d672"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8127bd0dfb5b3d0dfd92944448d7d672">setOverheat</a> (bool check)</td></tr>
+<tr class="separator:a8127bd0dfb5b3d0dfd92944448d7d672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -169,8 +180,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:af7fcd21eac1a7cf26a111ae8d97cdbae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72a637c2c77eafbf62845a21f65034db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a72a637c2c77eafbf62845a21f65034db">checkAxis</a> (float const &amp;axis, bool flipped)</td></tr>
 <tr class="separator:a72a637c2c77eafbf62845a21f65034db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0b91b78c850e633ef96569be659d6dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab0b91b78c850e633ef96569be659d6dd">checkAxisThruster</a> (float const &amp;axis)</td></tr>
-<tr class="separator:ab0b91b78c850e633ef96569be659d6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa785309431284ec0dd40b356ba5345ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa785309431284ec0dd40b356ba5345ac">checkAxisThrusterPositive</a> (float const &amp;axis)</td></tr>
+<tr class="separator:aa785309431284ec0dd40b356ba5345ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1531a7104b76118a69a44807e99d77e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a1531a7104b76118a69a44807e99d77e2">checkAxisThrusterNegative</a> (float const &amp;axis)</td></tr>
+<tr class="separator:a1531a7104b76118a69a44807e99d77e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -307,8 +320,8 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="ab0b91b78c850e633ef96569be659d6dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0b91b78c850e633ef96569be659d6dd">&#9670;&nbsp;</a></span>checkAxisThruster()</h2>
+<a id="a1531a7104b76118a69a44807e99d77e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1531a7104b76118a69a44807e99d77e2">&#9670;&nbsp;</a></span>checkAxisThrusterNegative()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,7 +330,7 @@ Rafael Plugge</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Player::checkAxisThruster </td>
+          <td class="memname">bool Player::checkAxisThrusterNegative </td>
           <td>(</td>
           <td class="paramtype">float const &amp;&#160;</td>
           <td class="paramname"><em>axis</em></td><td>)</td>
@@ -330,6 +343,48 @@ Rafael Plugge</dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>defines a function that checks if thruster is below a threshold.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">axis</td><td>axis of thruster</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>return true if axis below threshold else false</dd></dl>
+
+</div>
+</div>
+<a id="aa785309431284ec0dd40b356ba5345ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa785309431284ec0dd40b356ba5345ac">&#9670;&nbsp;</a></span>checkAxisThrusterPositive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::checkAxisThrusterPositive </td>
+          <td>(</td>
+          <td class="paramtype">float const &amp;&#160;</td>
+          <td class="paramname"><em>axis</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>defines a function that checks if thruster is above a threshold.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">axis</td><td>axis of thruster</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>return true if axis above threshold else false</dd></dl>
 
 </div>
 </div>
@@ -431,6 +486,25 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="ac81962f3fcd0c78c2da40e0bfec9466f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac81962f3fcd0c78c2da40e0bfec9466f">&#9670;&nbsp;</a></span>getFireRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Player::getFireRate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get the fire rate from the bullet manager.</p>
+<dl class="section return"><dt>Returns</dt><dd>fire rate of current bullet type</dd></dl>
+
+</div>
+</div>
 <a id="ad917e615a87b8eb7460c676fc407cd66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad917e615a87b8eb7460c676fc407cd66">&#9670;&nbsp;</a></span>getLeftConnectorPos()</h2>
 
@@ -466,6 +540,43 @@ Rafael Plugge</dd></dl>
 </div><div class="memdoc">
 <p>get the left weapon position.</p>
 <dl class="section return"><dt>Returns</dt><dd>a vector2f that defines position.</dd></dl>
+
+</div>
+</div>
+<a id="afaea55b9ef84b238c5f59f47f6b925e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaea55b9ef84b238c5f59f47f6b925e6">&#9670;&nbsp;</a></span>getOvercharge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Player::getOvercharge </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get overcharge value from bullet manager.</p>
+<dl class="section return"><dt>Returns</dt><dd>the current overload value as a float</dd></dl>
+
+</div>
+</div>
+<a id="acd703b9162327da6fa9806416ac75f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd703b9162327da6fa9806416ac75f7c">&#9670;&nbsp;</a></span>getOverheat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::getOverheat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>overheat boolean</dd></dl>
 
 </div>
 </div>
@@ -580,6 +691,25 @@ Rafael Plugge</dd></dl>
 </div><div class="memdoc">
 <p>Get health of the shield.</p>
 <dl class="section return"><dt>Returns</dt><dd>Constant reference to health of shield.</dd></dl>
+
+</div>
+</div>
+<a id="aafd842ce18ca0f9943a0c090b795da96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafd842ce18ca0f9943a0c090b795da96">&#9670;&nbsp;</a></span>getTimeSinceFire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Player::getTimeSinceFire </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get the time since fired from bullet manager.</p>
+<dl class="section return"><dt>Returns</dt><dd>time since firing previous bullet</dd></dl>
 
 </div>
 </div>
@@ -862,6 +992,31 @@ Rafael Plugge</dd></dl>
   <table class="params">
     <tr><td class="paramname">leftConnectorPos</td><td>new position of the left connector.</td></tr>
     <tr><td class="paramname">rightConnectorPos</td><td>new position of the right connector.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8127bd0dfb5b3d0dfd92944448d7d672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8127bd0dfb5b3d0dfd92944448d7d672">&#9670;&nbsp;</a></span>setOverheat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setOverheat </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>check</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>setter for the overheat bool.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">check</td><td>new value of overheat</td></tr>
   </table>
   </dd>
 </dl>

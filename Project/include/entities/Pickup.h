@@ -299,6 +299,27 @@ private:
 	/// 
 	/// </summary>
 	thor::Animator<sf::Sprite, std::string> m_animator;
+
+	/// <summary>
+	/// @brief define if the pickup is to start flashing.
+	/// 
+	/// 
+	/// </summary>
+	bool m_disappearing;
+
+	/// <summary>
+	/// @brief define when pickup will start disappearing.
+	/// 
+	/// 
+	/// </summary>
+	float m_timeToStartDisappear;
+
+	/// <summary>
+	/// @brief define how long until the pickup disappears.
+	/// 
+	/// 
+	/// </summary>
+	float m_timeToDisappear;
 };
 
 #endif // !PICKUP_H

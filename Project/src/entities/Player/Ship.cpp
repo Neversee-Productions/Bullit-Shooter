@@ -334,7 +334,7 @@ bool Ship::getDocking()
 /// </summary>
 void Ship::dash()
 {
-	m_velocity = sf::Vector2f(m_velocity.x, -(m_maxVel* 0.5));
+	m_velocity = sf::Vector2f(m_velocity.x, -(m_maxVel* 0.5f));
 }
 
 /// <summary>

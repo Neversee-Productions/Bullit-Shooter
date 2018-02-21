@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['dash',['dash',['../class_ship.html#a951903f469400792482dfdec5113510a',1,'Ship']]],
   ['deathorb',['DeathOrb',['../classbullets_1_1_death_orb.html',1,'bullets::DeathOrb'],['../classbullets_1_1_death_orb.html#a8caaa53a50e8ade1b5e6fa2262cca9e4',1,'bullets::DeathOrb::DeathOrb()'],['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca2dd88656c4fbf8191d796485fe6636ea',1,'DeathOrb():&#160;BulletTypes.h']]],
   ['deathorb_2ecpp',['DeathOrb.cpp',['../_death_orb_8cpp.html',1,'']]],
   ['deathorb_2eh',['DeathOrb.h',['../_death_orb_8h.html',1,'']]],

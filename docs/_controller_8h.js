@@ -9,6 +9,7 @@ var _controller_8h =
       [ "btnSquare", "_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a113b34323d1de2757ee16ef6e3bff679", null ],
       [ "btnTriangle", "_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0af3d3518fe08080eb6260c3923c2133e7", null ],
       [ "FireTrigger", "_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a79d8b266c185ef5bde6ab411542d2e33", null ],
+      [ "L1", "_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a9ec4c0afd450ceac7adb81c3bcfc9732", null ],
       [ "FlightStickX", "_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a3c1077b43b0b99940244c4e1ab8ea50a", null ],
       [ "FlightStickY", "_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a2644856b29e3248a041aeb4b35b251ba", null ],
       [ "FlightThruster", "_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a6c070353048aeaa185d95303a3e8b1af", null ]

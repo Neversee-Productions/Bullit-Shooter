@@ -22,7 +22,9 @@ Pickup::Pickup(std::shared_ptr<Resources> resources,sf::Vector2f position, sf::V
 	, m_active(true)
 	, m_effectSprite()
 	, m_animator()
-	
+	, m_disappearing(false)
+	, m_timeToStartDisappear(2.5f)
+	, m_timeToDisappear(3.0f)
 {
 	if (m_size.x > m_size.y) //make collision circle same as the bigger side
 	{
@@ -78,6 +80,10 @@ void Pickup::update()
 		m_rightSprite.setPosition(m_rightPosition);
 		m_leftSprite.setPosition(m_leftPosition);
 		m_effectSprite.rotate(45 * App::getUpdateDeltaTime());
+		//if (m_disappearing)
+		//{
+
+		//}
 	}
 }
 

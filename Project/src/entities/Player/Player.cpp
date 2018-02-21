@@ -229,66 +229,77 @@ void Player::switchWeaponInput()
 		m_weaponLeft.setType(BulletTypes::Standard);
 		m_weaponRight.setType(BulletTypes::Standard);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.004f, 0.003f);
 	}
 	else if (KEY_TWO)
 	{
 		m_weaponLeft.setType(BulletTypes::Empowered);
 		m_weaponRight.setType(BulletTypes::Empowered);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
 	}
 	else if (KEY_THREE)
 	{
 		m_weaponLeft.setType(BulletTypes::DeathOrb);
 		m_weaponRight.setType(BulletTypes::DeathOrb);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.12f, 0.004f, 0.003f);
 	}
 	else if (KEY_FOUR)
 	{
 		m_weaponLeft.setType(BulletTypes::FireBlast);
 		m_weaponRight.setType(BulletTypes::FireBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.05f, 0.004f, 0.003f);
 	}
 	else if (KEY_FIVE)
 	{
 		m_weaponLeft.setType(BulletTypes::HolySphere);
 		m_weaponRight.setType(BulletTypes::HolySphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.15f, 0.004f, 0.003f);
 	}
 	else if (KEY_SIX)
 	{
 		m_weaponLeft.setType(BulletTypes::MagmaShot);
 		m_weaponRight.setType(BulletTypes::MagmaShot);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.25f, 0.005f, 0.004f);
 	}
 	else if (KEY_SEVEN)
 	{
 		m_weaponLeft.setType(BulletTypes::NapalmSphere);
 		m_weaponRight.setType(BulletTypes::NapalmSphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.005f, 0.004f);
 	}
 	else if (KEY_EIGHT)
 	{
 		m_weaponLeft.setType(BulletTypes::CometShot);
 		m_weaponRight.setType(BulletTypes::CometShot);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.006f, 0.005f);
 	}
 	else if (KEY_NINE)
 	{
 		m_weaponLeft.setType(BulletTypes::NullWave);
 		m_weaponRight.setType(BulletTypes::NullWave);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
 	}
 	else if (KEY_ZERO)
 	{
 		m_weaponLeft.setType(BulletTypes::StaticSphere);
 		m_weaponRight.setType(BulletTypes::StaticSphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
 	}
 	else if (KEY_DASH)
 	{
 		m_weaponLeft.setType(BulletTypes::PyroBlast);
 		m_weaponRight.setType(BulletTypes::PyroBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
+		m_bulletManager.setWeaponOverheatingValues(0.35f, 0.003f, 0.002f);
 	}
 }
 
@@ -423,49 +434,49 @@ void Player::nextWeapon()
 		m_weaponLeft.setType(BulletTypes::Empowered);
 		m_weaponRight.setType(BulletTypes::Empowered);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.004f, 0.003f);
+		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::Empowered:
 		m_weaponLeft.setType(BulletTypes::DeathOrb);
 		m_weaponRight.setType(BulletTypes::DeathOrb);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
+		m_bulletManager.setWeaponOverheatingValues(0.12f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::DeathOrb:
 		m_weaponLeft.setType(BulletTypes::FireBlast);
 		m_weaponRight.setType(BulletTypes::FireBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.12f, 0.004f, 0.003f);
+		m_bulletManager.setWeaponOverheatingValues(0.05f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::FireBlast:
 		m_weaponLeft.setType(BulletTypes::HolySphere);
 		m_weaponRight.setType(BulletTypes::HolySphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.05f, 0.004f, 0.003f);
+		m_bulletManager.setWeaponOverheatingValues(0.15f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::HolySphere:
 		m_weaponLeft.setType(BulletTypes::MagmaShot);
 		m_weaponRight.setType(BulletTypes::MagmaShot);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.15f, 0.004f, 0.003f);
+		m_bulletManager.setWeaponOverheatingValues(0.25f, 0.005f, 0.004f);
 		break;
 	case BulletTypes::MagmaShot:
 		m_weaponLeft.setType(BulletTypes::NapalmSphere);
 		m_weaponRight.setType(BulletTypes::NapalmSphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.25f, 0.005f, 0.004f);
+		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.005f, 0.004f);
 		break;
 	case BulletTypes::NapalmSphere:
 		m_weaponLeft.setType(BulletTypes::CometShot);
 		m_weaponRight.setType(BulletTypes::CometShot);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.005f, 0.004f);
+		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.006f, 0.005f);
 		break;
 	case BulletTypes::CometShot:
 		m_weaponLeft.setType(BulletTypes::NullWave);
 		m_weaponRight.setType(BulletTypes::NullWave);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.006f, 0.005f);
+		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
 		break;
 	case BulletTypes::NullWave:
 		m_weaponLeft.setType(BulletTypes::StaticSphere);
@@ -477,13 +488,13 @@ void Player::nextWeapon()
 		m_weaponLeft.setType(BulletTypes::PyroBlast);
 		m_weaponRight.setType(BulletTypes::PyroBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
+		m_bulletManager.setWeaponOverheatingValues(0.35f, 0.003f, 0.002f);
 		break;
 	case BulletTypes::PyroBlast:
 		m_weaponLeft.setType(BulletTypes::Standard);
 		m_weaponRight.setType(BulletTypes::Standard);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
-		m_bulletManager.setWeaponOverheatingValues(0.35f, 0.003f, 0.002f);
+		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.004f, 0.003f);
 		break;
 	default:
 		break;

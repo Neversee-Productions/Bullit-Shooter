@@ -87,6 +87,14 @@ void GameScene::update()
 	{
 		m_gamePaused = !m_gamePaused;
 		m_ui.setPaused(m_gamePaused);
+		if (m_gamePaused == true)
+		{
+			m_ui.setPauseFlashing(true);
+		}
+		else
+		{
+			m_ui.setPauseFlashing(false);
+		}
 	}
 	if (!m_gamePaused && !m_ui.getShowEnd())
 	{
@@ -100,6 +108,8 @@ void GameScene::update()
 		if (!m_player.isAlive())
 		{
 			m_gameEnded = true;
+			m_ui.setPauseFlashing(true);
+			m_player.setOverheat(false);
 			m_ui.setShowEnd(m_gameEnded);
 		}
 	}
@@ -107,6 +117,7 @@ void GameScene::update()
 	{
 		if (!m_ui.getPaused())
 		{
+			m_ui.setPauseFlashing(false);
 			m_gamePaused = false;
 		}
 	}

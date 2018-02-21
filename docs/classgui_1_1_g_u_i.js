@@ -18,6 +18,7 @@ var classgui_1_1_g_u_i =
     [ "moveToNextWidgets", "classgui_1_1_g_u_i.html#a8b044c590e06df5d6b9f6f3240c0d273", null ],
     [ "moveToPrevWidgets", "classgui_1_1_g_u_i.html#a26126d3649a6c44c717b50200060e246", null ],
     [ "processInput", "classgui_1_1_g_u_i.html#ab7ed858973b6af6709956d4d3f518727", null ],
+    [ "resetSelectedWidget", "classgui_1_1_g_u_i.html#a185f4463e7a3e901fdccbb512783ee0c", null ],
     [ "update", "classgui_1_1_g_u_i.html#af3d897979ff697f1b64e673f29ca8ccd", null ],
     [ "m_controller", "classgui_1_1_g_u_i.html#a2a25d69b79031de4274d53db9ce26db9", null ],
     [ "m_drawStrip", "classgui_1_1_g_u_i.html#a0cf8fc128063fd6325dd20a7318ad44d", null ],
