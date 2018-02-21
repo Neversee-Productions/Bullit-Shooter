@@ -59,6 +59,7 @@ void AiBullet::draw(Window & window, float const & deltaTime)
 	m_quad.setRotation(m_angle);
 	m_animator.update(sf::seconds(deltaTime));
 	m_animator.animate(m_quad);
+	window.draw(m_collisionShape);
 	window.draw(m_quad);
 }
 

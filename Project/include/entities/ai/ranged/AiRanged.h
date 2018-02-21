@@ -48,12 +48,16 @@ namespace ai
 		virtual void update() final override;
 		virtual void draw(Window & window, float const & deltaTime) final override;
 		void spawn(sf::Vector2f const & spawnPosition);
-		bool const & isActive() const;
+		inline tinyh::c2Circle const & getC2Circle() const { return m_collisionCircle; }
+		inline std::vector<AiBullet> & getBullets() { return m_bulletManager.getBullets(); }
+		virtual bool checkCollision(tinyh::c2Circle const & collision) const final override;
+		virtual bool checkCollision(tinyh::c2AABB const & collision) const final override;
+		virtual bool checkCollision(tinyh::c2Capsule const & collision) const final override;
 	public: // Public Member Variables
 	protected: // Protected Member Functions
 	protected: // Protected Member Variables
 	private: // Private Member Functions
-		void updateHitbox(sf::RectangleShape const & box);
+		void updateHitbox();
 		void playAnimation(Resources::Animation const & animation, Resources::Texture const & texture, bool const & loop);
 		void setState(std::shared_ptr<ai::states::AiRangedState> sptrNewState, bool rememberPrevious);
 		void initStates();
@@ -102,6 +106,12 @@ namespace ai
 		/// 
 		/// </summary>
 		static bool const s_COLOR_QUAD;
+		/// <summary>
+		/// @brief Defines the collision circle's radius.
+		/// 
+		/// 
+		/// </summary>
+		static float const s_C2_RADIUS;
 	private: // Private Member Variables
 		/// <summary>
 		/// @brief Read-only reference to the player.
@@ -109,18 +119,6 @@ namespace ai
 		/// 
 		/// </summary>
 		Player const & m_player;
-		/// <summary>
-		/// @brief Defines whether the enemy is active or not.
-		/// 
-		/// A innactive enemy is considered dead and needs to be reactivated.
-		/// </summary>
-		bool m_active;
-		/// <summary>
-		/// @brief Defines the current amount of health this Ai has.
-		/// 
-		/// 
-		/// </summary>
-		float m_health;
 		/// <summary>
 		/// @brief Defines the ai's current position.
 		/// 
@@ -153,17 +151,11 @@ namespace ai
 		/// </summary>
 		sf::Vector2f m_deployPosition;
 		/// <summary>
-		/// @brief Ai's sfml collision shape.
-		/// 
-		/// Used for settings the AABB collision.
-		/// </summary>
-		sf::RectangleShape m_collisionShape;
-		/// <summary>
 		/// @brief Ai's AABB Collision Rectangle.
 		/// 
 		/// 
 		/// </summary>
-		tinyh::c2AABB m_collisionRect;
+		tinyh::c2Circle m_collisionCircle;
 		/// <summary>
 		/// @brief Ai will be drawn on this quad.
 		/// 

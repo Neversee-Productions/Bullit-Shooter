@@ -33,7 +33,7 @@ void RangedEnemyManager::update()
 {
 	for (auto & enemy : m_enemies)
 	{
-		if (enemy.isActive())
+		if (enemy.getActive())
 		{
 			enemy.update();
 		}
@@ -51,7 +51,7 @@ void RangedEnemyManager::draw(Window & window, float const & deltaTime)
 {
 	for (auto & enemy : m_enemies)
 	{
-		if (enemy.isActive())
+		if (enemy.getActive())
 		{
 			enemy.draw(window, deltaTime);
 		}
@@ -68,7 +68,7 @@ void RangedEnemyManager::spawn(sf::Vector2f const & spawnPoint)
 {
 	for (auto & enemy : m_enemies)
 	{
-		if (!enemy.isActive())
+		if (!enemy.getActive())
 		{
 			enemy.spawn(spawnPoint);
 			return;

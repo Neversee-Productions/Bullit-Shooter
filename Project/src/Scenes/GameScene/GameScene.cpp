@@ -18,7 +18,7 @@ GameScene::GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Con
 	, m_rangedEnemyManager(m_player)
 	, m_pickup()
 	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this))
-	, m_collisionSystem(m_player, m_asteroidManager, m_basicEnemyManager, m_pickup, m_ui)
+	, m_collisionSystem(m_player, m_asteroidManager, m_basicEnemyManager, m_rangedEnemyManager, m_pickup, m_ui)
 	, m_gamePaused(false)
 {
 	m_pickup.setActive(false);

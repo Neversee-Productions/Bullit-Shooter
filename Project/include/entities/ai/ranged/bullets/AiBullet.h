@@ -38,6 +38,7 @@ public: // Public Member Get's
 	inline sf::Vector2f const & getHeading() const { return m_heading; }
 	inline float const & getSpeed() const { return m_speed; }
 	inline float const & getRotation() const { return m_angle; }
+	inline tinyh::c2AABB const & getC2AABB() const { return m_c2Rect; }
 public: // Public Member Set's
 	inline void setActive(bool const & newActive) { m_active = newActive; }
 	inline void setPosition(sf::Vector2f const & newPosition) { m_position = newPosition; }

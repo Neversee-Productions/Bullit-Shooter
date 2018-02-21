@@ -130,6 +130,14 @@ namespace ai
 		~AiBase() = default;
 		virtual void update() abstract;
 		virtual void draw(Window & window, float const & deltaTime) abstract;
+		virtual bool decrementHealth(float const & damage);
+	public:
+		inline bool const & getActive() const { return m_active; }
+		virtual bool checkCollision(tinyh::c2Circle const & collision) const abstract;
+		virtual bool checkCollision(tinyh::c2AABB const & collision) const abstract;
+		virtual bool checkCollision(tinyh::c2Capsule const & collision) const abstract;
+	public:
+		inline virtual void setActive(bool const & newActive) { m_active = newActive; }
 
 	protected:
 		static void setup(AiBase::Resources::Texture & textureResources, ResourceHandler & resourceHandler, js::json & textureParser, std::string const & id);
@@ -141,6 +149,18 @@ namespace ai
 		/// 
 		/// </summary>
 		static float const & s_DELTA_TIME;
+		/// <summary>
+		/// @brief Determines if enemy is active.
+		/// 
+		/// 
+		/// </summary>
+		bool m_active;
+		/// <summary>
+		/// @brief Pertains the ai's current health.
+		/// 
+		/// 
+		/// </summary>
+		float m_health;
 	};
 
 }

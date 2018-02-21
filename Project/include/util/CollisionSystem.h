@@ -8,6 +8,7 @@
 // Project Includes
 #include "entities\Entities.h"
 #include "entities\BasicEnemyManager.h"
+#include "entities\RangedEnemyManager.h"
 #include "gui\game_ui\GameUI.h"
 
 /// 
@@ -21,7 +22,13 @@ class CollisionSystem
 {
 public: // Constructors/Destructor
 	CollisionSystem() = delete; // Default Constructor
-	CollisionSystem(Player& player, AsteroidManager & asteroidManager, BasicEnemyManager & basicEnemyManager, Pickup & pickup, GameUI & gameUi);
+	CollisionSystem(
+		Player& player
+		, AsteroidManager & asteroidManager
+		, BasicEnemyManager & basicEnemyManager
+		, RangedEnemyManager & rangedEnemyManager
+		, Pickup & pickup
+		, GameUI & gameUi);
 	CollisionSystem(const CollisionSystem &) = delete; // Copy Constructor
 	CollisionSystem(CollisionSystem &&) = default; // Move Constructor
 
@@ -39,18 +46,24 @@ private: // Private Member Functions
 	void updatePlayer();
 	void updatePlayerBullets();
 	void updatePlayerBulletToAsteroids(bullets::Bullet & bullet);
-	void updatePlayerBulletToEnemies(bullets::Bullet & bullet);
+	void updatePlayerBulletToBasicEnemies(bullets::Bullet & bullet);
+	void updatePlayerBulletToRangedEnemies(bullets::Bullet & bullet);
 	void updatePlayerToPickup();
 	void updatePlayerToGameUi();
+	void updateAsteroids();
+	void updateRangedEnemyBullets(ai::AiRanged & enemy);
+	void updateRangedEnemyBulletToPlayer(AiBullet & bullet);
 
 	void asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bullet);
-	void enemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bullet);
+	void baseEnemyVsBullet(ai::AiBase & enemy, bullets::Bullet & bullet);
+	void basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bullet);
+	void rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet & bullet);
+	void rangedEnemyBulletVsPlayer(AiBullet & bullet, Player & player);
 	void playerVsAsteroid(Player & player, Asteroid & asteroid);
 	void playerVsPickup(Player & player, Pickup & pickup);
 	void playerVsGameUi(Player & player, GameUI & gameUi);
-	void playerVsEnemy(Player & player, ai::AiBasic & enemy);
-
-	void solveElasticCollision(Asteroid & asteroid1, Asteroid & asteroid2);
+	void playerVsBasicEnemy(Player & player, ai::AiBasic & enemy);
+	void asteroidVsAsteroid(Asteroid & asteroid1, Asteroid & asteroid2);
 
 private: // Private Member Variables
 	/// <summary>
@@ -59,42 +72,42 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	float const & m_UPDATE_DT;
-
 	/// <summary>
 	/// @brief Reference to singleton sound manager instance.
 	/// 
 	/// 
 	/// </summary>
 	SoundManager & m_soundManager;
-
 	/// <summary>
 	/// @brief reference to player.
 	/// 
 	/// 
 	/// </summary>
 	Player & m_player;
-
 	/// <summary>
 	/// @brief reference to asteroid manager.
 	/// 
 	/// 
 	/// </summary>
 	AsteroidManager & m_asteroidManager;
-
 	/// <summary>
 	/// @brief reference to basic enemy manager.
 	/// 
 	/// 
 	/// </summary>
 	BasicEnemyManager & m_basicEnemyManager;
-
+	/// <summary>
+	/// @brief reference to ranged enemy manager.
+	/// 
+	/// 
+	/// </summary>
+	RangedEnemyManager & m_rangedEnemyManager;
 	/// <summary>
 	/// @brief reference to pickup.
 	/// 
 	/// 
 	/// </summary>
 	Pickup & m_pickup;
-
 	/// <summary>
 	/// @brief reference to game UI.
 	/// 

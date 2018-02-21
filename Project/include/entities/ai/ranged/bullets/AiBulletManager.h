@@ -32,6 +32,7 @@ public: // Public Member Functions
 	void update();
 	void draw(Window & window, float const & deltaTime);
 	void shoot(sf::Vector2f const & position, sf::Vector2f const & direction);
+	inline std::vector<AiBullet> & getBullets() { return m_bullets; }
 public: // Public Member Variables
 protected: // Protected Member Functions
 protected: // Protected Member Variables

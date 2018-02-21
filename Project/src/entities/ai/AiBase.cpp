@@ -3,6 +3,25 @@
 float const & ai::AiBase::s_DELTA_TIME = App::getUpdateDeltaTime();
 
 /// <summary>
+/// @brief Decreases the ai's health.
+/// 
+/// Also returns whether the ai died from this hit or not.
+/// </summary>
+/// <param name="damage">amount of damage.</param>
+/// <returns>true if ai died from this hit.</returns>
+bool ai::AiBase::decrementHealth(float const & damage)
+{
+	m_health -= damage;
+
+	bool const IS_DEAD = (m_health <= 0.0f);
+	if (IS_DEAD)
+	{
+		m_health = 0.0f;
+	}
+	return IS_DEAD;
+}
+
+/// <summary>
 /// @brief Sets up a texture resource.
 /// 
 /// Parses the json with a expected format.

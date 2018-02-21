@@ -1,12 +1,13 @@
 #include "entities\ai\ranged\AiRanged.h"
 
-float const ai::AiRanged::s_MAX_HEALTH = 10.0f;
+float const ai::AiRanged::s_MAX_HEALTH = 20.0f;
 sf::Vector2f const ai::AiRanged::s_SIZE = { 60.0f, 60.0f };
 std::string ai::AiRanged::s_MOVE_ID = "";
 std::string ai::AiRanged::s_DEPLOY_ID = "";
 std::string ai::AiRanged::s_SHOOT_ID = "";
 std::string ai::AiRanged::s_EBOLA_ID = "";
 bool const ai::AiRanged::s_COLOR_QUAD = false;
+float const ai::AiRanged::s_C2_RADIUS = 25.0f;
 
 /// <summary>
 /// @brief Ranged Ai Default constructor.
@@ -18,22 +19,22 @@ bool const ai::AiRanged::s_COLOR_QUAD = false;
 ai::AiRanged::AiRanged(Player const & player, sf::Vector2f position)
 	: ai::AiBase()
 	, m_player(player)
-	, m_active(true)
-	, m_health(s_MAX_HEALTH)
 	, m_position(position)
 	, m_speed(0.0f)
 	, m_heading({ 0.0f, 1.0f })
 	, m_angle(0.0f)
-	, m_collisionShape(s_SIZE)
-	, m_collisionRect()
+	, m_collisionCircle()
 	, m_renderQuad()
 	, m_animator()
-	, m_onScreenRect({ 100, 0 }, { 1100, 200 })
+	, m_onScreenRect({ 100, 100 }, { App::getViewSizeI().x - 200, (App::getViewSizeI().y / 2) - 100 })
 	, m_stateStack()
 	, m_sptrState(nullptr)
 	, m_sptrResources(nullptr)
 	, m_bulletManager()
 {
+	m_active = true;
+	m_health = s_MAX_HEALTH;
+	m_collisionCircle.r = s_C2_RADIUS;
 }
 
 
@@ -145,6 +146,7 @@ void ai::AiRanged::update()
 {
 	m_sptrState->update();
 	m_bulletManager.update();
+	this->updateHitbox();
 }
 
 /// <summary>
@@ -158,6 +160,12 @@ void ai::AiRanged::draw(Window & window, float const & deltaTime)
 {
 	m_sptrState->draw(window, deltaTime);
 	m_bulletManager.draw(window, deltaTime);
+	// TODO: Remove collision rendering.
+	sf::CircleShape c(m_collisionCircle.r);
+	c.setFillColor(sf::Color(255u, 255u, 255u, 125u));
+	c.setOrigin({ m_collisionCircle.r, m_collisionCircle.r });
+	c.setPosition(m_collisionCircle.p.x, m_collisionCircle.p.y);
+	window.draw(c);
 }
 
 /// <summary>
@@ -182,15 +190,33 @@ void ai::AiRanged::spawn(sf::Vector2f const & spawnPosition)
 }
 
 /// <summary>
-/// @brief Determines whether a enemy is active.
-/// 
-/// A enemy that is not active doesn't update not is drawn.
-/// (Considered in a dead state)
+/// Passes the call to the current state.
 /// </summary>
-/// <returns>true if enemy is active, else false.</returns>
-bool const & ai::AiRanged::isActive() const
+/// <param name="collision">read-only reference to a 2d collision AABB rectangle.</param>
+/// <returns>True if a collision has occured, else false.</returns>
+bool ai::AiRanged::checkCollision(tinyh::c2Circle const & collision) const
 {
-	return m_active;
+	return false;
+}
+
+/// <summary>
+/// Passes the call to the current state.
+/// </summary>
+/// <param name="collision">read-only reference to a 2d collision AABB rectangle.</param>
+/// <returns>True if a collision has occured, else false.</returns>
+bool ai::AiRanged::checkCollision(tinyh::c2AABB const & collision) const
+{
+	return false;
+}
+
+/// <summary>
+/// Passes the call to the current state.
+/// </summary>
+/// <param name="collision">read-only reference to a 2d collision AABB rectangle.</param>
+/// <returns>True if a collision has occured, else false.</returns>
+bool ai::AiRanged::checkCollision(tinyh::c2Capsule const & collision) const
+{
+	return false;
 }
 
 /// <summary>
@@ -198,15 +224,9 @@ bool const & ai::AiRanged::isActive() const
 /// 
 /// 
 /// </summary>
-void ai::AiRanged::updateHitbox(sf::RectangleShape const & box)
+void ai::AiRanged::updateHitbox()
 {
-	m_collisionShape.setPosition(box.getPosition());
-	m_collisionShape.setScale(box.getScale());
-	m_collisionShape.setOrigin(m_collisionShape.getSize() * 0.5f);
-
-	auto const & boxBounds = m_collisionShape.getGlobalBounds();
-	m_collisionRect.min = { boxBounds.left, boxBounds.top };
-	m_collisionRect.max = { boxBounds.left + boxBounds.width, boxBounds.top + boxBounds.height };
+	m_collisionCircle.p = { m_position.x, m_position.y };
 }
 
 /// <summary>

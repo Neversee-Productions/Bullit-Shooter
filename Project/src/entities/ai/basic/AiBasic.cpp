@@ -59,7 +59,6 @@ void ai::AiBasic::setup(
 /// </summary>
 ai::AiBasic::AiBasic(Player const & player, sf::Vector2f const & position)
 	: AiBase()
-	, m_active(false)
 	, m_position(position)
 	, m_speed(0.0f)
 	, m_heading{ 0.0f, 1.0f }
@@ -72,8 +71,9 @@ ai::AiBasic::AiBasic(Player const & player, sf::Vector2f const & position)
 	, m_sptrState(nullptr)
 	, m_sptrResources(nullptr)
 	, m_animator()
-	, m_health(s_MAX_HEALTH)
 {
+	m_active = true;
+	m_health = s_MAX_HEALTH;
 	this->initRenderingQuad();
 }
 
@@ -156,35 +156,6 @@ bool ai::AiBasic::checkCollision(tinyh::c2Capsule const & collision) const
 tinyh::c2AABB const & ai::AiBasic::getCollisionAABB() const
 {
 	return m_collisionRect;
-}
-
-/// <summary>
-/// @brief Decreases the ai's health.
-/// 
-/// Also returns whether the ai died from this hit or not.
-/// </summary>
-/// <param name="damage">amount of damage.</param>
-/// <returns>true if ai died from this hit.</returns>
-bool ai::AiBasic::decrementHealth(float const & damage)
-{
-	m_health -= damage;
-
-	bool const IS_DEAD = (m_health <= 0.0f);
-	if (IS_DEAD)
-	{
-		m_health = 0.0f;
-	}
-	return IS_DEAD;
-}
-
-bool ai::AiBasic::isActive() const
-{
-	return m_active;
-}
-
-void ai::AiBasic::setActive(bool const & newActive)
-{
-	m_active = newActive;
 }
 
 void ai::AiBasic::spawn(sf::Vector2f const & spawnPosition)

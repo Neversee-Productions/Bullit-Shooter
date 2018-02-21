@@ -22,7 +22,7 @@ void BasicEnemyManager::update()
 {
 	for (auto & enemy : m_enemies)
 	{
-		if (enemy.isActive())
+		if (enemy.getActive())
 		{
 			enemy.update();
 		}
@@ -40,7 +40,7 @@ void BasicEnemyManager::draw(Window & window, float const & deltaTime)
 {
 	for (auto & enemy : m_enemies)
 	{
-		if (enemy.isActive())
+		if (enemy.getActive())
 		{
 			enemy.draw(window, deltaTime);
 		}
@@ -58,7 +58,7 @@ void BasicEnemyManager::spawn(Player & player, sf::Vector2f const & spawnPositio
 {
 	for (auto & enemy : m_enemies)
 	{
-		if (!enemy.isActive())
+		if (!enemy.getActive())
 		{
 			enemy.spawn(spawnPosition);
 			return;

@@ -25,6 +25,7 @@ public: // Public Member Functions
 	void update();
 	void draw(Window & window, float const & deltaTime);
 	void spawn(sf::Vector2f const & spawnPoint);
+	inline std::vector<ai::AiRanged> & getEnemies() { return m_enemies; }
 public: // Public Member Variables
 protected: // Protected Member Functions
 protected: // Protected Member Variables

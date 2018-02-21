@@ -92,13 +92,10 @@ namespace ai
 		void init(std::shared_ptr<Resources> sptrResources);
 		virtual void update() final override;
 		virtual void draw(Window & window, float const & deltaTime) final override;
-		bool checkCollision(tinyh::c2Circle const & collision) const;
-		bool checkCollision(tinyh::c2AABB const & collision) const;
-		bool checkCollision(tinyh::c2Capsule const & collision) const;
+		virtual bool checkCollision(tinyh::c2Circle const & collision) const final override;
+		virtual bool checkCollision(tinyh::c2AABB const & collision) const final override;
+		virtual bool checkCollision(tinyh::c2Capsule const & collision) const final override;
 		tinyh::c2AABB const & getCollisionAABB() const;
-		bool decrementHealth(float const & damage);
-		bool isActive() const;
-		void setActive(bool const & newActive);
 		void spawn(sf::Vector2f const & spawnPosition);
 
 	protected: // Protected Member Functions
@@ -108,19 +105,6 @@ namespace ai
 		void updateHitbox(sf::RectangleShape const & box);
 
 	protected: // Protected Member Variables
-		/// <summary>
-		/// @brief Determines if enemy is active.
-		/// 
-		/// 
-		/// </summary>
-		bool m_active;
-
-		/// <summary>
-		/// @brief Pertains the ai's current health.
-		/// 
-		/// 
-		/// </summary>
-		float m_health;
 
 		/// <summary>
 		/// @brief Describes the position of the ai.
@@ -128,21 +112,18 @@ namespace ai
 		/// ai position in the world.
 		/// </summary>
 		sf::Vector2f m_position;
-
 		/// <summary>
 		/// @brief Describes the speed of the ai.
 		/// 
 		/// Amount the ai moves in its heading.
 		/// </summary>
 		float m_speed;
-
 		/// <summary>
 		/// @brief Describes the heading of the ai.
 		/// 
 		/// Heading is the direction the ai is moving in.
 		/// </summary>
 		sf::Vector2f m_heading;
-
 		/// <summary>
 		/// @brief Describes the direction of the ai, in degrees.
 		/// 
@@ -150,28 +131,24 @@ namespace ai
 		/// is facing.
 		/// </summary>
 		float m_angle;
-
 		/// <summary>
 		/// @brief Read-only reference to the player.
 		/// 
 		/// Needed for search for him and for attack aiming.
 		/// </summary>
 		Player const & m_player;
-
 		/// <summary>
 		/// @brief Ai's sfml collision shape.
 		/// 
 		/// Used for setting the collision rect.
 		/// </summary>
 		sf::RectangleShape m_collisionShape;
-
 		/// <summary>
 		/// @brief Ai has a AABB Rectangular collision.
 		/// 
 		/// Used for targeting the ai.
 		/// </summary>
 		tinyh::c2AABB m_collisionRect;
-
 		/// <summary>
 		/// @brief Ai will be drawn on this quad.
 		/// 
@@ -179,7 +156,6 @@ namespace ai
 		/// will be drawn on, frame animations will be targeted to this quad.
 		/// </summary>
 		sf::RectangleShape m_renderQuad;
-
 		/// <summary>
 		/// @brief Ai will use this to animate the AiBasic::m_renderQuad.
 		/// 

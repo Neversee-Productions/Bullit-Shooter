@@ -47,14 +47,12 @@ public: // Public Member Functions
 public: // Public Member Variables
 private: // Private Member Functions
 private: // Private Member Variables
-
 	/// <summary>
 	/// @brief shared pointer to enemy manager resources.
 	/// 
 	/// 
 	/// </summary>
 	std::shared_ptr<Resources> m_sptrResources;
-	
 	/// <summary>
 	/// @brief container of enemy instances.
 	/// 
