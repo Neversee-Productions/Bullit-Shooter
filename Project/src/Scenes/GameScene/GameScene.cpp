@@ -19,6 +19,7 @@ GameScene::GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Con
 	, m_pickup()
 	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this), std::bind(&GameScene::restartGame, this))
 	, m_collisionSystem(m_player, m_asteroidManager, m_basicEnemyManager, m_rangedEnemyManager, m_pickup, m_ui)
+	, m_gameProgression(m_player, m_asteroidManager, m_basicEnemyManager, m_rangedEnemyManager)
 	, m_gamePaused(false)
 	, m_gameEnded(false)
 	, m_controller(*controller)
@@ -68,6 +69,7 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_rangedEnemyManager.spawn({ 0.0f, -350.0f }); // TODO: Remove spawning ranged enemy instantly
 	m_ui.reset();
 	m_pickup.resetPickup();
+	m_gameProgression.reset();
 	auto random = (rand() % 3 + 1); //generate number between 1 and 2
 	if (random == 1)
 	{
@@ -126,6 +128,7 @@ void GameScene::update()
 		m_pickup.update();
 		m_collisionSystem.update();
 		updateUI();
+		m_gameProgression.update();
 		if (!m_player.isAlive())
 		{
 			m_gameEnded = true;
@@ -162,6 +165,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 		m_rangedEnemyManager.draw(window, 0);
 		m_asteroidManager.draw(window, 0);
 		m_player.draw(window, 0);
+		m_gameProgression.draw(window, 0);
 		m_ui.draw(window, 0);
 	}
 	else
@@ -172,6 +176,7 @@ void GameScene::draw(Window & window, const float & deltaTime)
 		m_rangedEnemyManager.draw(window, deltaTime);
 		m_asteroidManager.draw(window, deltaTime);
 		m_player.draw(window, deltaTime);
+		m_gameProgression.draw(window, deltaTime);
 		m_ui.draw(window, deltaTime);
 	}
 }
@@ -255,6 +260,7 @@ void GameScene::setup(const std::string & filePath)
 	m_pickup = Pickup(m_resources->m_sptrPickup, sf::Vector2f(500, 500), sf::Vector2f(100, 100), BulletTypes::Empowered);
 	m_pickup.setActive(false);
 	m_ui.init(m_resources->m_sptrUI);
+	m_gameProgression.init(m_resources->m_sptrUI);
 }
 
 /// <summary>

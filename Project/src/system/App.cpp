@@ -42,6 +42,17 @@ const sf::Vector2i App::getViewSizeI()
 }
 
 /// <summary>
+/// @brief Acquires the window size.
+/// 
+/// 
+/// </summary>
+/// <returns>The window size as 2 floats.</returns>
+const sf::Vector2f App::getViewSizeF()
+{
+	return static_cast<sf::Vector2f>(s_viewSize);
+}
+
+/// <summary>
 /// @brief Acquires the update delta time.
 /// 
 /// Update delta time is the time step for a 

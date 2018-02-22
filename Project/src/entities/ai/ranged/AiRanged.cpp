@@ -144,10 +144,14 @@ void ai::AiRanged::init(std::shared_ptr<ai::Resources> sptrResources)
 /// </summary>
 void ai::AiRanged::update()
 {
-	if (this->getActive())
+	if (this->getActive() && m_sptrState)
 	{
 		m_sptrState->update();
 		this->updateHitbox();
+	}
+	else if (!m_sptrState)
+	{
+		this->setActive(false);
 	}
 	m_bulletManager.update();
 }
@@ -161,9 +165,13 @@ void ai::AiRanged::update()
 /// <param name="deltaTime">read-only reference to delta time since last draw call.</param>
 void ai::AiRanged::draw(Window & window, float const & deltaTime)
 {
-	if (this->getActive())
+	if (this->getActive() && m_sptrState)
 	{
 		m_sptrState->draw(window, deltaTime);
+	}
+	else if (!m_sptrState)
+	{
+		this->setActive(false);
 	}
 	m_bulletManager.draw(window, deltaTime);
 }
