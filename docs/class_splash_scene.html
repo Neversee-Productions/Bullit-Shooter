@@ -154,6 +154,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a82d84a0c05a128e84f1b433f3e65cb5d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="struct_splash_scene_1_1_resources.html">Resources</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_splash_scene.html#a82d84a0c05a128e84f1b433f3e65cb5d">m_resources</a></td></tr>
 <tr class="separator:a82d84a0c05a128e84f1b433f3e65cb5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08181e281077881a80a7dfa1ac31a4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_splash_scene.html#aa08181e281077881a80a7dfa1ac31a4c">m_soundManager</a></td></tr>
+<tr class="separator:aa08181e281077881a80a7dfa1ac31a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bece4c7e2b6df659893aabd2357ca8d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; thor::BigSprite &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_splash_scene.html#a2bece4c7e2b6df659893aabd2357ca8d">m_backgroundSprite</a></td></tr>
 <tr class="separator:a2bece4c7e2b6df659893aabd2357ca8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6445c0aaa84c95d15b67a868c19d84e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; sf::Color &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_splash_scene.html#ab6445c0aaa84c95d15b67a868c19d84e">m_backgroundColor</a></td></tr>
@@ -162,6 +164,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae6a4d115fbf158669915d1eab9b738ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cb3025c5b78b4d9f79b327addfc562a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_splash_scene.html#a9b7c8f34a295dac9f58d1520449dbb8a">FadeState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_splash_scene.html#a5cb3025c5b78b4d9f79b327addfc562a">m_fadeState</a></td></tr>
 <tr class="separator:a5cb3025c5b78b4d9f79b327addfc562a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada428f1111c0893c564e1078374a4af4"><td class="memItemLeft" align="right" valign="top">std::string const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_splash_scene.html#ada428f1111c0893c564e1078374a4af4">m_BG_SOUND_ID</a></td></tr>
+<tr class="separator:ada428f1111c0893c564e1078374a4af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -502,6 +506,29 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ada428f1111c0893c564e1078374a4af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada428f1111c0893c564e1078374a4af4">&#9670;&nbsp;</a></span>m_BG_SOUND_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string const SplashScene::m_BG_SOUND_ID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>id of background sound.</p>
+
+</div>
+</div>
 <a id="a5cb3025c5b78b4d9f79b327addfc562a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5cb3025c5b78b4d9f79b327addfc562a">&#9670;&nbsp;</a></span>m_fadeState</h2>
 
@@ -569,6 +596,29 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Unique pointer to our <a class="el" href="struct_splash_scene_1_1_resources.html" title="Container of shared pointers to our resources. ">Resources</a>.</p>
 <p>Used as to determine the lifetime of its members. </p>
+
+</div>
+</div>
+<a id="aa08181e281077881a80a7dfa1ac31a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08181e281077881a80a7dfa1ac31a4c">&#9670;&nbsp;</a></span>m_soundManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sound_manager.html">SoundManager</a>&amp; SplashScene::m_soundManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>reference to sound manager instance.</p>
 
 </div>
 </div>

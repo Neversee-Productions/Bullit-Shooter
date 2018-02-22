@@ -102,8 +102,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a19a1a94cd477e5c3dffc5fb26802b64e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a19a1a94cd477e5c3dffc5fb26802b64e">Connector</a> ()</td></tr>
-<tr class="separator:a19a1a94cd477e5c3dffc5fb26802b64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12926d87bf0aef9e50a1e81d6a955a6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a12926d87bf0aef9e50a1e81d6a955a6a">Connector</a> (bool flipped=false)</td></tr>
+<tr class="separator:a12926d87bf0aef9e50a1e81d6a955a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96d3194e48edb6ab7d88cb64ae10ed60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a96d3194e48edb6ab7d88cb64ae10ed60">init</a> (std::shared_ptr&lt; <a class="el" href="struct_connector_1_1_resources.html">Resources</a> &gt; resources)</td></tr>
 <tr class="separator:a96d3194e48edb6ab7d88cb64ae10ed60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add9ea7d60b351ab378b071b13b550a48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#add9ea7d60b351ab378b071b13b550a48">update</a> (sf::Vector2f const &amp;startPos, sf::Vector2f const &amp;endPos)</td></tr>
@@ -123,21 +123,23 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a22b6da1b59ae6abb3efe227d86431c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01c99ed97a4f9134fe66e11a92e0a947"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Shader &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a01c99ed97a4f9134fe66e11a92e0a947">m_shader</a></td></tr>
 <tr class="separator:a01c99ed97a4f9134fe66e11a92e0a947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3cec3f081d7e0c000533a37a4052127"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; sf::Clock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#ab3cec3f081d7e0c000533a37a4052127">m_timer</a></td></tr>
-<tr class="separator:ab3cec3f081d7e0c000533a37a4052127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f24fce2673d5a810e09287647c1f431"><td class="memItemLeft" align="right" valign="top">sf::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a2f24fce2673d5a810e09287647c1f431">m_timer</a></td></tr>
+<tr class="separator:a2f24fce2673d5a810e09287647c1f431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94602f5c03234c5238f9a7d7e3ad65ad"><td class="memItemLeft" align="right" valign="top">sf::RenderStates&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a94602f5c03234c5238f9a7d7e3ad65ad">m_renderState</a></td></tr>
 <tr class="separator:a94602f5c03234c5238f9a7d7e3ad65ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c688dba173caf79d8a9219474e45f3d"><td class="memItemLeft" align="right" valign="top">sf::RenderTexture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a3c688dba173caf79d8a9219474e45f3d">m_shaderTexture</a></td></tr>
 <tr class="separator:a3c688dba173caf79d8a9219474e45f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bc43dff00ef73c38d69c7036e95fb46"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a4bc43dff00ef73c38d69c7036e95fb46">m_shaderQuad</a></td></tr>
 <tr class="separator:a4bc43dff00ef73c38d69c7036e95fb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28dea01333f49aee8422874e0ca2dd0f"><td class="memItemLeft" align="right" valign="top">bool const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a28dea01333f49aee8422874e0ca2dd0f">m_FLIPPED</a></td></tr>
+<tr class="separator:a28dea01333f49aee8422874e0ca2dd0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge</dd></dl>
 <p>This connector will have a shader applied to it. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a19a1a94cd477e5c3dffc5fb26802b64e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19a1a94cd477e5c3dffc5fb26802b64e">&#9670;&nbsp;</a></span>Connector()</h2>
+<a id="a12926d87bf0aef9e50a1e81d6a955a6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12926d87bf0aef9e50a1e81d6a955a6a">&#9670;&nbsp;</a></span>Connector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +147,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Connector::Connector </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flipped</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -296,6 +299,29 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a28dea01333f49aee8422874e0ca2dd0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28dea01333f49aee8422874e0ca2dd0f">&#9670;&nbsp;</a></span>m_FLIPPED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool const Connector::m_FLIPPED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Describes whether the connector is flipped.</p>
+
+</div>
+</div>
 <a id="a94602f5c03234c5238f9a7d7e3ad65ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a94602f5c03234c5238f9a7d7e3ad65ad">&#9670;&nbsp;</a></span>m_renderState</h2>
 
@@ -436,8 +462,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab3cec3f081d7e0c000533a37a4052127"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3cec3f081d7e0c000533a37a4052127">&#9670;&nbsp;</a></span>m_timer</h2>
+<a id="a2f24fce2673d5a810e09287647c1f431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f24fce2673d5a810e09287647c1f431">&#9670;&nbsp;</a></span>m_timer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -446,7 +472,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;sf::Clock&gt; Connector::m_timer</td>
+          <td class="memname">sf::Time Connector::m_timer</td>
         </tr>
       </table>
   </td>

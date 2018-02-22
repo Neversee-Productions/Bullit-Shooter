@@ -200,6 +200,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac243cfd2fd8ae32857810eb6ac077022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80863f092fb4f5830011c6f2df6e5fb1"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a80863f092fb4f5830011c6f2df6e5fb1">m_initialPosition</a></td></tr>
 <tr class="separator:a80863f092fb4f5830011c6f2df6e5fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bde64fc627fe8ae1b48c528a6897fe4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a1bde64fc627fe8ae1b48c528a6897fe4">m_soundManager</a></td></tr>
+<tr class="separator:a1bde64fc627fe8ae1b48c528a6897fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38ac13142b7267d471486ff982a671c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#ac38ac13142b7267d471486ff982a671c">m_playingDocking</a></td></tr>
+<tr class="separator:ac38ac13142b7267d471486ff982a671c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b5c0d26c6f0daaacc6bf4f68067889a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ship.html#a0b5c0d26c6f0daaacc6bf4f68067889a">m_playingUndocking</a></td></tr>
+<tr class="separator:a0b5c0d26c6f0daaacc6bf4f68067889a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
@@ -938,6 +944,52 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="ac38ac13142b7267d471486ff982a671c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38ac13142b7267d471486ff982a671c">&#9670;&nbsp;</a></span>m_playingDocking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Ship::m_playingDocking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check if docking soundp playing.</p>
+
+</div>
+</div>
+<a id="a0b5c0d26c6f0daaacc6bf4f68067889a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b5c0d26c6f0daaacc6bf4f68067889a">&#9670;&nbsp;</a></span>m_playingUndocking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Ship::m_playingUndocking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check if undocking sound playing.</p>
+
+</div>
+</div>
 <a id="a42a1eb695d4909bee43e7f5cd28dd66b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42a1eb695d4909bee43e7f5cd28dd66b">&#9670;&nbsp;</a></span>m_position</h2>
 
@@ -1027,6 +1079,29 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>Represents the ship.</p>
+
+</div>
+</div>
+<a id="a1bde64fc627fe8ae1b48c528a6897fe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bde64fc627fe8ae1b48c528a6897fe4">&#9670;&nbsp;</a></span>m_soundManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sound_manager.html">SoundManager</a>&amp; Ship::m_soundManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>reference to the sound manager.</p>
 
 </div>
 </div>

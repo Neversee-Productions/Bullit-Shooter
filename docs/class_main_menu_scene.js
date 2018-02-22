@@ -20,5 +20,6 @@ var class_main_menu_scene =
     [ "m_keyHandler", "class_main_menu_scene.html#af81e8ac8cabd5397c0ce3e57fe8b5dd5", null ],
     [ "m_nextName", "class_main_menu_scene.html#a37932ef362a0900750b5914e05bac8f5", null ],
     [ "m_resources", "class_main_menu_scene.html#a601fb7206a4d0aae5c634b7472fff89f", null ],
+    [ "m_soundManager", "class_main_menu_scene.html#a0004ee162bbe8c78aaaaec89a93db28d", null ],
     [ "m_timer", "class_main_menu_scene.html#af77847e54bc90d1ac9b4bd79f32642e7", null ]
 ];

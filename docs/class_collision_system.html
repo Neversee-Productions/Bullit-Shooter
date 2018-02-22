@@ -99,8 +99,8 @@ $(document).ready(function(){initNavTree('class_collision_system.html','');});
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b382f754bf0c8c58c57868561a8fc8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a8b382f754bf0c8c58c57868561a8fc8d">CollisionSystem</a> ()=delete</td></tr>
 <tr class="separator:a8b382f754bf0c8c58c57868561a8fc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abae4dee67838de2444ec4a62dd4fb89d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#abae4dee67838de2444ec4a62dd4fb89d">CollisionSystem</a> (<a class="el" href="class_player.html">Player</a> &amp;player, <a class="el" href="class_asteroid_manager.html">AsteroidManager</a> &amp;asteroidManager, <a class="el" href="class_basic_enemy_manager.html">BasicEnemyManager</a> &amp;basicEnemyManager, <a class="el" href="class_pickup.html">Pickup</a> &amp;pickup, <a class="el" href="class_game_u_i.html">GameUI</a> &amp;gameUi)</td></tr>
-<tr class="separator:abae4dee67838de2444ec4a62dd4fb89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c268568c688134d3f7ec6b22a8137d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a8c268568c688134d3f7ec6b22a8137d3">CollisionSystem</a> (<a class="el" href="class_player.html">Player</a> &amp;player, <a class="el" href="class_asteroid_manager.html">AsteroidManager</a> &amp;asteroidManager, <a class="el" href="class_basic_enemy_manager.html">BasicEnemyManager</a> &amp;basicEnemyManager, <a class="el" href="class_ranged_enemy_manager.html">RangedEnemyManager</a> &amp;rangedEnemyManager, <a class="el" href="class_pickup.html">Pickup</a> &amp;pickup, <a class="el" href="class_game_u_i.html">GameUI</a> &amp;gameUi)</td></tr>
+<tr class="separator:a8c268568c688134d3f7ec6b22a8137d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b88a8ec922c11d4834798b2230cc535"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a3b88a8ec922c11d4834798b2230cc535">CollisionSystem</a> (const <a class="el" href="class_collision_system.html">CollisionSystem</a> &amp;)=delete</td></tr>
 <tr class="separator:a3b88a8ec922c11d4834798b2230cc535"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab446bb0fd3b9da483229678085512c12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#ab446bb0fd3b9da483229678085512c12">CollisionSystem</a> (<a class="el" href="class_collision_system.html">CollisionSystem</a> &amp;&amp;)=default</td></tr>
@@ -113,6 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a272199177c97bbc4da63ecf44cf4001c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac437e5f41c5e333bf852a5fc34c0c127"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#ac437e5f41c5e333bf852a5fc34c0c127">update</a> ()</td></tr>
 <tr class="separator:ac437e5f41c5e333bf852a5fc34c0c127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2b9de34489482f800927693368c87b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#aea2b9de34489482f800927693368c87b">setPickingUp</a> (bool check)</td></tr>
+<tr class="separator:aea2b9de34489482f800927693368c87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -122,26 +124,38 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a46dcd9e3709b690fdd3b2d5033dc8cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6f8e5f581918d68dfb127550b1e7b0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#ac6f8e5f581918d68dfb127550b1e7b0b">updatePlayerBulletToAsteroids</a> (<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
 <tr class="separator:ac6f8e5f581918d68dfb127550b1e7b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b5461a92c3a8c40a4d3c88fc70fc9ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a9b5461a92c3a8c40a4d3c88fc70fc9ce">updatePlayerBulletToEnemies</a> (<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
-<tr class="separator:a9b5461a92c3a8c40a4d3c88fc70fc9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72cfe38af3d4711c794cc6fdfa0a168"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#aa72cfe38af3d4711c794cc6fdfa0a168">updatePlayerBulletToBasicEnemies</a> (<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
+<tr class="separator:aa72cfe38af3d4711c794cc6fdfa0a168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e6672995cb608057c055c94a4e68157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a6e6672995cb608057c055c94a4e68157">updatePlayerBulletToRangedEnemies</a> (<a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
+<tr class="separator:a6e6672995cb608057c055c94a4e68157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e8e9da06eff9b3206ca42e00124d70a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a2e8e9da06eff9b3206ca42e00124d70a">updatePlayerToPickup</a> ()</td></tr>
 <tr class="separator:a2e8e9da06eff9b3206ca42e00124d70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade3c11d32e64f9ea4d3f307cf823e087"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#ade3c11d32e64f9ea4d3f307cf823e087">updatePlayerToGameUi</a> ()</td></tr>
 <tr class="separator:ade3c11d32e64f9ea4d3f307cf823e087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e35eda57dc9eb063b22519c429f611"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#ab4e35eda57dc9eb063b22519c429f611">updateAsteroids</a> ()</td></tr>
+<tr class="separator:ab4e35eda57dc9eb063b22519c429f611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41673597033094afbef9964140a41e35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a41673597033094afbef9964140a41e35">updateRangedEnemyBullets</a> (<a class="el" href="classai_1_1_ai_ranged.html">ai::AiRanged</a> &amp;enemy)</td></tr>
+<tr class="separator:a41673597033094afbef9964140a41e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a672853266d39ac5ad4419723136f8ecf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a672853266d39ac5ad4419723136f8ecf">updateRangedEnemyBulletToPlayer</a> (<a class="el" href="class_ai_bullet.html">AiBullet</a> &amp;bullet)</td></tr>
+<tr class="separator:a672853266d39ac5ad4419723136f8ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd9ace71c9cb947b6c090212b9913eb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#acd9ace71c9cb947b6c090212b9913eb2">asteroidVsBullet</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid, <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
 <tr class="separator:acd9ace71c9cb947b6c090212b9913eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecd6959d3fa403cf2bd370bdcaa505ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#aecd6959d3fa403cf2bd370bdcaa505ab">enemyVsBullet</a> (<a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> &amp;enemy, <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
-<tr class="separator:aecd6959d3fa403cf2bd370bdcaa505ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae34de44783b8a1f5ede8d15f773c5e93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#ae34de44783b8a1f5ede8d15f773c5e93">baseEnemyVsBullet</a> (<a class="el" href="classai_1_1_ai_base.html">ai::AiBase</a> &amp;enemy, <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
+<tr class="separator:ae34de44783b8a1f5ede8d15f773c5e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08fa5ea4bf1c3c2aad791b0115368811"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a08fa5ea4bf1c3c2aad791b0115368811">basicEnemyVsBullet</a> (<a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> &amp;enemy, <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
+<tr class="separator:a08fa5ea4bf1c3c2aad791b0115368811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd8994b1b99a59105826dcda8ed0a36f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#abd8994b1b99a59105826dcda8ed0a36f">rangedEnemyVsBullet</a> (<a class="el" href="classai_1_1_ai_ranged.html">ai::AiRanged</a> &amp;enemy, <a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;bullet)</td></tr>
+<tr class="separator:abd8994b1b99a59105826dcda8ed0a36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8c68a978e9378ed176d75d741c6ffc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#aed8c68a978e9378ed176d75d741c6ffc">rangedEnemyBulletVsPlayer</a> (<a class="el" href="class_ai_bullet.html">AiBullet</a> &amp;bullet, <a class="el" href="class_player.html">Player</a> &amp;player)</td></tr>
+<tr class="separator:aed8c68a978e9378ed176d75d741c6ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0e7d14a74b7c6af72a2820148e27aed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#af0e7d14a74b7c6af72a2820148e27aed">playerVsAsteroid</a> (<a class="el" href="class_player.html">Player</a> &amp;player, <a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid)</td></tr>
 <tr class="separator:af0e7d14a74b7c6af72a2820148e27aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ee9d6b1aba07312d2e689984d9b14f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a76ee9d6b1aba07312d2e689984d9b14f">playerVsPickup</a> (<a class="el" href="class_player.html">Player</a> &amp;player, <a class="el" href="class_pickup.html">Pickup</a> &amp;pickup)</td></tr>
 <tr class="separator:a76ee9d6b1aba07312d2e689984d9b14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa053e30c4259d227cd173ba3871c259"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#afa053e30c4259d227cd173ba3871c259">playerVsGameUi</a> (<a class="el" href="class_player.html">Player</a> &amp;player, <a class="el" href="class_game_u_i.html">GameUI</a> &amp;gameUi)</td></tr>
-<tr class="separator:afa053e30c4259d227cd173ba3871c259"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72eb4fa881381c3a049e6493772ddfe9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a72eb4fa881381c3a049e6493772ddfe9">playerVsEnemy</a> (<a class="el" href="class_player.html">Player</a> &amp;player, <a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> &amp;enemy)</td></tr>
-<tr class="separator:a72eb4fa881381c3a049e6493772ddfe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cb095b3ac27397c29913c276750d234"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a9cb095b3ac27397c29913c276750d234">solveElasticCollision</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid1, <a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid2)</td></tr>
-<tr class="separator:a9cb095b3ac27397c29913c276750d234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e9c7bf6b2dba7593eba2e4668406313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a0e9c7bf6b2dba7593eba2e4668406313">playerVsBasicEnemy</a> (<a class="el" href="class_player.html">Player</a> &amp;player, <a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> &amp;enemy)</td></tr>
+<tr class="separator:a0e9c7bf6b2dba7593eba2e4668406313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c5778e2db32374d1fbefb82bed524f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a7c5778e2db32374d1fbefb82bed524f6">asteroidVsAsteroid</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid1, <a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid2)</td></tr>
+<tr class="separator:a7c5778e2db32374d1fbefb82bed524f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -155,10 +169,18 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a50dfb1cb132ae6169068e2fe21dadef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a3cfa6ccb62bf5b09243a97d46b8150"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_basic_enemy_manager.html">BasicEnemyManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a6a3cfa6ccb62bf5b09243a97d46b8150">m_basicEnemyManager</a></td></tr>
 <tr class="separator:a6a3cfa6ccb62bf5b09243a97d46b8150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a072fcf6dede0e9f8f25d5bb207bcd80c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ranged_enemy_manager.html">RangedEnemyManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a072fcf6dede0e9f8f25d5bb207bcd80c">m_rangedEnemyManager</a></td></tr>
+<tr class="separator:a072fcf6dede0e9f8f25d5bb207bcd80c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c0691faa619a596ddb8b5add16db018"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_pickup.html">Pickup</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a6c0691faa619a596ddb8b5add16db018">m_pickup</a></td></tr>
 <tr class="separator:a6c0691faa619a596ddb8b5add16db018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f919d6bd3d9c9bb22cb88d1f9b67c32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_u_i.html">GameUI</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a8f919d6bd3d9c9bb22cb88d1f9b67c32">m_gameUi</a></td></tr>
 <tr class="separator:a8f919d6bd3d9c9bb22cb88d1f9b67c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c1dce10f3960ab87973ff4c24f964e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#ae2c1dce10f3960ab87973ff4c24f964e">m_pickingUp</a></td></tr>
+<tr class="separator:ae2c1dce10f3960ab87973ff4c24f964e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f95974412ccfdae74389bb0c4ff299"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a16f95974412ccfdae74389bb0c4ff299">m_pickupSoundPlaying</a></td></tr>
+<tr class="separator:a16f95974412ccfdae74389bb0c4ff299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfa2d10d10a2fed3fe01a9fdabbe0a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a9cfa2d10d10a2fed3fe01a9fdabbe0a8">m_stayClearPlaying</a></td></tr>
+<tr class="separator:a9cfa2d10d10a2fed3fe01a9fdabbe0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge <code>Non-Default Constructible</code>, <code>Non-Copyable</code> system. </dd></dl>
@@ -188,8 +210,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="abae4dee67838de2444ec4a62dd4fb89d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abae4dee67838de2444ec4a62dd4fb89d">&#9670;&nbsp;</a></span>CollisionSystem() <span class="overload">[2/4]</span></h2>
+<a id="a8c268568c688134d3f7ec6b22a8137d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c268568c688134d3f7ec6b22a8137d3">&#9670;&nbsp;</a></span>CollisionSystem() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,6 +233,12 @@ Private Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype"><a class="el" href="class_basic_enemy_manager.html">BasicEnemyManager</a> &amp;&#160;</td>
           <td class="paramname"><em>basicEnemyManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_ranged_enemy_manager.html">RangedEnemyManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>rangedEnemyManager</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -314,6 +342,51 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7c5778e2db32374d1fbefb82bed524f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c5778e2db32374d1fbefb82bed524f6">&#9670;&nbsp;</a></span>asteroidVsAsteroid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::asteroidVsAsteroid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
+          <td class="paramname"><em>asteroid1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
+          <td class="paramname"><em>asteroid2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>this is the method that will resolve elastic collisions between asteroids.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asteroid1</td><td>asteroid 1</td></tr>
+    <tr><td class="paramname">asteroid2</td><td>asteroid 2</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The perpendicular component remains the same for both asteroids since mass is the same we dont need to calculate future velocity we can reuse the before minus previous (dotProdA - dotProdB) </p>
+
+</div>
+</div>
 <a id="acd9ace71c9cb947b6c090212b9913eb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd9ace71c9cb947b6c090212b9913eb2">&#9670;&nbsp;</a></span>asteroidVsBullet()</h2>
 
@@ -359,8 +432,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aecd6959d3fa403cf2bd370bdcaa505ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecd6959d3fa403cf2bd370bdcaa505ab">&#9670;&nbsp;</a></span>enemyVsBullet()</h2>
+<a id="ae34de44783b8a1f5ede8d15f773c5e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae34de44783b8a1f5ede8d15f773c5e93">&#9670;&nbsp;</a></span>baseEnemyVsBullet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,7 +442,52 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CollisionSystem::enemyVsBullet </td>
+          <td class="memname">void CollisionSystem::baseEnemyVsBullet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classai_1_1_ai_base.html">ai::AiBase</a> &amp;&#160;</td>
+          <td class="paramname"><em>enemy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;&#160;</td>
+          <td class="paramname"><em>bullet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Collision between a bullet and enemy has occured.</p>
+<p>Details the appropriate response to bullet vs enemy collision. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asteroid</td><td>reference to enemy</td></tr>
+    <tr><td class="paramname">bullet</td><td>reference to base bullet.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a08fa5ea4bf1c3c2aad791b0115368811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08fa5ea4bf1c3c2aad791b0115368811">&#9670;&nbsp;</a></span>basicEnemyVsBullet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::basicEnemyVsBullet </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> &amp;&#160;</td>
           <td class="paramname"><em>enemy</em>, </td>
@@ -501,8 +619,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a72eb4fa881381c3a049e6493772ddfe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72eb4fa881381c3a049e6493772ddfe9">&#9670;&nbsp;</a></span>playerVsEnemy()</h2>
+<a id="a0e9c7bf6b2dba7593eba2e4668406313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e9c7bf6b2dba7593eba2e4668406313">&#9670;&nbsp;</a></span>playerVsBasicEnemy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -511,7 +629,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CollisionSystem::playerVsEnemy </td>
+          <td class="memname">void CollisionSystem::playerVsBasicEnemy </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_player.html">Player</a> &amp;&#160;</td>
           <td class="paramname"><em>player</em>, </td>
@@ -540,51 +658,6 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">player</td><td>reference to the player that collided.</td></tr>
     <tr><td class="paramname">enemy</td><td>reference to the enemy that collided.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="afa053e30c4259d227cd173ba3871c259"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa053e30c4259d227cd173ba3871c259">&#9670;&nbsp;</a></span>playerVsGameUi()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CollisionSystem::playerVsGameUi </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_player.html">Player</a> &amp;&#160;</td>
-          <td class="paramname"><em>player</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_game_u_i.html">GameUI</a> &amp;&#160;</td>
-          <td class="paramname"><em>gameUi</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Collision between player and game ui has occured.</p>
-<p>Details the appropriate response to player vs game ui collision. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">player</td><td>reference to the player that collided.</td></tr>
-    <tr><td class="paramname">gameUi</td><td>reference to the game ui that collided.</td></tr>
   </table>
   </dd>
 </dl>
@@ -636,8 +709,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9cb095b3ac27397c29913c276750d234"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cb095b3ac27397c29913c276750d234">&#9670;&nbsp;</a></span>solveElasticCollision()</h2>
+<a id="aed8c68a978e9378ed176d75d741c6ffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed8c68a978e9378ed176d75d741c6ffc">&#9670;&nbsp;</a></span>rangedEnemyBulletVsPlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -646,16 +719,16 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CollisionSystem::solveElasticCollision </td>
+          <td class="memname">void CollisionSystem::rangedEnemyBulletVsPlayer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
-          <td class="paramname"><em>asteroid1</em>, </td>
+          <td class="paramtype"><a class="el" href="class_ai_bullet.html">AiBullet</a> &amp;&#160;</td>
+          <td class="paramname"><em>bullet</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_asteroid.html">Asteroid</a> &amp;&#160;</td>
-          <td class="paramname"><em>asteroid2</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_player.html">Player</a> &amp;&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -669,15 +742,85 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>this is the method that will resolve elastic collisions between asteroids.</p>
+<p>Collisions between a ranged enemy bullet and a player has occurred.</p>
+<p>Details the appropriate response to ranged enemy bullet vs player collision. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">asteroid1</td><td>asteroid 1</td></tr>
-    <tr><td class="paramname">asteroid2</td><td>asteroid 2</td></tr>
+    <tr><td class="paramname">bullet</td><td>reference to bullet.</td></tr>
+    <tr><td class="paramname">player</td><td>reference to player.</td></tr>
   </table>
   </dd>
 </dl>
-<p>The perpendicular component remains the same for both asteroids since mass is the same we dont need to calculate future velocity we can reuse the before minus previous (dotProdA - dotProdB) </p>
+
+</div>
+</div>
+<a id="abd8994b1b99a59105826dcda8ed0a36f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd8994b1b99a59105826dcda8ed0a36f">&#9670;&nbsp;</a></span>rangedEnemyVsBullet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::rangedEnemyVsBullet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classai_1_1_ai_ranged.html">ai::AiRanged</a> &amp;&#160;</td>
+          <td class="paramname"><em>enemy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;&#160;</td>
+          <td class="paramname"><em>bullet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Collisions between a enemy and a bullet has occurred.</p>
+<p>Details the appropriate response to player vs enemy collision. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enemy</td><td>reference to enemy.</td></tr>
+    <tr><td class="paramname">bullet</td><td>reference to bullet.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aea2b9de34489482f800927693368c87b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2b9de34489482f800927693368c87b">&#9670;&nbsp;</a></span>setPickingUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::setPickingUp </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>check</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>setter for the can pickup bool.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">check</td><td>new value of pickingup</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -697,6 +840,32 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Update collision system.</p>
 <p>Proceeds to check for collisions on each referenced object and applies appropriate responses. </p>
+
+</div>
+</div>
+<a id="ab4e35eda57dc9eb063b22519c429f611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e35eda57dc9eb063b22519c429f611">&#9670;&nbsp;</a></span>updateAsteroids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::updateAsteroids </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check and apply collisions from asteroid to every other asteroid.</p>
 
 </div>
 </div>
@@ -749,7 +918,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>check and apply collisions from all bullets to all bullet hit-ables.</p>
-<p>Iterates through all active and not impacted bullets, checking for collision against all active asteroids. </p>
+<p>Iterates through all active and not impacted bullets, checking for collision against all hit-ables. </p>
 
 </div>
 </div>
@@ -787,8 +956,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9b5461a92c3a8c40a4d3c88fc70fc9ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b5461a92c3a8c40a4d3c88fc70fc9ce">&#9670;&nbsp;</a></span>updatePlayerBulletToEnemies()</h2>
+<a id="aa72cfe38af3d4711c794cc6fdfa0a168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72cfe38af3d4711c794cc6fdfa0a168">&#9670;&nbsp;</a></span>updatePlayerBulletToBasicEnemies()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -797,7 +966,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CollisionSystem::updatePlayerBulletToEnemies </td>
+          <td class="memname">void CollisionSystem::updatePlayerBulletToBasicEnemies </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;&#160;</td>
           <td class="paramname"><em>bullet</em></td><td>)</td>
@@ -811,10 +980,44 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>check and apply collisions from bullet onto every other enemy.</p>
-<p>Iterate through all asteroids and check if they collided. If true than call <a class="el" href="class_collision_system.html#aecd6959d3fa403cf2bd370bdcaa505ab">CollisionSystem::enemyVsBullet</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_collision_system.html#aecd6959d3fa403cf2bd370bdcaa505ab">CollisionSystem::enemyVsBullet</a> </dd></dl>
+<p>Iterate through all enemies and check if they collided. If true than call <a class="el" href="class_collision_system.html#a08fa5ea4bf1c3c2aad791b0115368811">CollisionSystem::basicEnemyVsBullet</a>. </p><dl class="section see"><dt>See also</dt><dd>CollisionSystem::enemyVsBullet </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bullet</td><td>reference to bullet.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6e6672995cb608057c055c94a4e68157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e6672995cb608057c055c94a4e68157">&#9670;&nbsp;</a></span>updatePlayerBulletToRangedEnemies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::updatePlayerBulletToRangedEnemies </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbullets_1_1_bullet.html">bullets::Bullet</a> &amp;&#160;</td>
+          <td class="paramname"><em>bullet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check and apply collisions from bullet onto every other ranged enemy.</p>
+<p>Iterate through all ranged enemies and check if they collided. If true than call <a class="el" href="class_collision_system.html" title="Simple collision system used for organizing collision code in one place. ">CollisionSystem</a>:: </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bullet</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -870,6 +1073,73 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>check and apply collisions from player to pickup</p>
+
+</div>
+</div>
+<a id="a41673597033094afbef9964140a41e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41673597033094afbef9964140a41e35">&#9670;&nbsp;</a></span>updateRangedEnemyBullets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::updateRangedEnemyBullets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classai_1_1_ai_ranged.html">ai::AiRanged</a> &amp;&#160;</td>
+          <td class="paramname"><em>enemy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check and apply collisions for enemy bullets.</p>
+<p>Iterates through all active and not impacted bullets, checking for collision against all hit-ables. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enemy</td><td>reference to enemy.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a672853266d39ac5ad4419723136f8ecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a672853266d39ac5ad4419723136f8ecf">&#9670;&nbsp;</a></span>updateRangedEnemyBulletToPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::updateRangedEnemyBulletToPlayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_ai_bullet.html">AiBullet</a> &amp;&#160;</td>
+          <td class="paramname"><em>bullet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check and apply collisions from enemy bullet to player.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bullet</td><td>reference to bullet.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -943,6 +1213,29 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae2c1dce10f3960ab87973ff4c24f964e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2c1dce10f3960ab87973ff4c24f964e">&#9670;&nbsp;</a></span>m_pickingUp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionSystem::m_pickingUp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>check if power up being picked up.</p>
+
+</div>
+</div>
 <a id="a6c0691faa619a596ddb8b5add16db018"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c0691faa619a596ddb8b5add16db018">&#9670;&nbsp;</a></span>m_pickup</h2>
 
@@ -963,6 +1256,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>reference to pickup.</p>
+
+</div>
+</div>
+<a id="a16f95974412ccfdae74389bb0c4ff299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f95974412ccfdae74389bb0c4ff299">&#9670;&nbsp;</a></span>m_pickupSoundPlaying</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionSystem::m_pickupSoundPlaying</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define if the pickup sound is currently playing.</p>
 
 </div>
 </div>
@@ -989,6 +1305,29 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a072fcf6dede0e9f8f25d5bb207bcd80c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a072fcf6dede0e9f8f25d5bb207bcd80c">&#9670;&nbsp;</a></span>m_rangedEnemyManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ranged_enemy_manager.html">RangedEnemyManager</a>&amp; CollisionSystem::m_rangedEnemyManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>reference to ranged enemy manager.</p>
+
+</div>
+</div>
 <a id="a12f905798b0f2b574455265dbc347f53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12f905798b0f2b574455265dbc347f53">&#9670;&nbsp;</a></span>m_soundManager</h2>
 
@@ -1009,6 +1348,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Reference to singleton sound manager instance.</p>
+
+</div>
+</div>
+<a id="a9cfa2d10d10a2fed3fe01a9fdabbe0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cfa2d10d10a2fed3fe01a9fdabbe0a8">&#9670;&nbsp;</a></span>m_stayClearPlaying</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionSystem::m_stayClearPlaying</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define stay clear sound playing.</p>
 
 </div>
 </div>

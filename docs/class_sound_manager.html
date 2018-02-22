@@ -112,15 +112,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a05cb0697f1a993704821098883a291f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71374147e606d873d81f5d21a5fc9777"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a71374147e606d873d81f5d21a5fc9777">addSound</a> (<a class="el" href="class_sound_setting.html">SoundSetting</a> settings, std::string const &amp;id)</td></tr>
 <tr class="separator:a71374147e606d873d81f5d21a5fc9777"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a722fc9ea3fd58416b52ebe13868eb7ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a722fc9ea3fd58416b52ebe13868eb7ac">play</a> (std::string const &amp;id)</td></tr>
-<tr class="separator:a722fc9ea3fd58416b52ebe13868eb7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c1075b63f9efe7962b4c72bd3d64d88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a3c1075b63f9efe7962b4c72bd3d64d88">play</a> (std::string const &amp;id, bool stack=true)</td></tr>
+<tr class="separator:a3c1075b63f9efe7962b4c72bd3d64d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5328aecdaea209ebed017dafb052819a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a5328aecdaea209ebed017dafb052819a">stop</a> (std::string const &amp;id)</td></tr>
+<tr class="separator:a5328aecdaea209ebed017dafb052819a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5eb8287fceceb5582f83584326803de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#ad5eb8287fceceb5582f83584326803de">checkSound</a> (std::string const &amp;id)</td></tr>
+<tr class="separator:ad5eb8287fceceb5582f83584326803de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aae4237247bd8f6beae2c042411c903a8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#aae4237247bd8f6beae2c042411c903a8">instance</a> ()</td></tr>
 <tr class="separator:aae4237247bd8f6beae2c042411c903a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919b286f3eb437db650fc196a3f9414b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a919b286f3eb437db650fc196a3f9414b">setup</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;soundParser)</td></tr>
-<tr class="separator:a919b286f3eb437db650fc196a3f9414b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c2989e409f5aec040c5205bcde65d7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#ad0c2989e409f5aec040c5205bcde65d7">setup</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;soundParser)</td></tr>
+<tr class="separator:ad0c2989e409f5aec040c5205bcde65d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -136,16 +140,26 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a6b20a514e4888a866c42ecf7fcb184af"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a6b20a514e4888a866c42ecf7fcb184af">setupPlayer</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;playerParser)</td></tr>
-<tr class="separator:a6b20a514e4888a866c42ecf7fcb184af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6cfc4e47a880540cfef7b71fdad5c13"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#af6cfc4e47a880540cfef7b71fdad5c13">setupPlayerBullets</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;playerBulletsParser)</td></tr>
-<tr class="separator:af6cfc4e47a880540cfef7b71fdad5c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c1de5ae9ee9b4adb4aea8d7c3e20a0b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a6c1de5ae9ee9b4adb4aea8d7c3e20a0b">setupBulletSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;bulletParser, std::string const &amp;bulletNum, <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;type)</td></tr>
-<tr class="separator:a6c1de5ae9ee9b4adb4aea8d7c3e20a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a772d433e79bbab431a5575044de29ca3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a772d433e79bbab431a5575044de29ca3">setupAsteroid</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;asteroidParser)</td></tr>
-<tr class="separator:a772d433e79bbab431a5575044de29ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d525c89edeaf5d05ae933d6ff252b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a37d525c89edeaf5d05ae933d6ff252b3">setupBasicEnemy</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, json::json &amp;basicEnemyParser)</td></tr>
-<tr class="separator:a37d525c89edeaf5d05ae933d6ff252b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a466c80135dc13b5e712f6a2990cc4745"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a466c80135dc13b5e712f6a2990cc4745">setupBg</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;bgParser)</td></tr>
+<tr class="separator:a466c80135dc13b5e712f6a2990cc4745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a28421a95094fb93db1674ef1f86f01"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a8a28421a95094fb93db1674ef1f86f01">setupPlayer</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;playerParser)</td></tr>
+<tr class="separator:a8a28421a95094fb93db1674ef1f86f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a870f9544c9bddd377301d9eb5fa2a1d8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a870f9544c9bddd377301d9eb5fa2a1d8">setupPlayerBullets</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;playerBulletsParser)</td></tr>
+<tr class="separator:a870f9544c9bddd377301d9eb5fa2a1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97f0d2ae3c6b24cb67df3f42d082f2f5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a97f0d2ae3c6b24cb67df3f42d082f2f5">setupBulletSounds</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;bulletParser, std::string const &amp;bulletNum, <a class="el" href="_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cc">BulletTypes</a> const &amp;type)</td></tr>
+<tr class="separator:a97f0d2ae3c6b24cb67df3f42d082f2f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202df46eb196c006457bbbc218a84ccd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a202df46eb196c006457bbbc218a84ccd">setupAsteroid</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;asteroidParser)</td></tr>
+<tr class="separator:a202df46eb196c006457bbbc218a84ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11d878d5ed3e25cc95a4aab09a92c9ad"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a11d878d5ed3e25cc95a4aab09a92c9ad">setupBasicEnemy</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;basicEnemyParser)</td></tr>
+<tr class="separator:a11d878d5ed3e25cc95a4aab09a92c9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a858eb6557eeaed163ad315621f439ab7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a858eb6557eeaed163ad315621f439ab7">setupUI</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;uiParser)</td></tr>
+<tr class="separator:a858eb6557eeaed163ad315621f439ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7eb6d6589dfeeb862649d3b78b0aa4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a3a7eb6d6589dfeeb862649d3b78b0aa4">setupPickup</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;pickupParser)</td></tr>
+<tr class="separator:a3a7eb6d6589dfeeb862649d3b78b0aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee3a1b06895a2539a5a1390320f8f58d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#aee3a1b06895a2539a5a1390320f8f58d">setupPlayerWeapons</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;weaponParser)</td></tr>
+<tr class="separator:aee3a1b06895a2539a5a1390320f8f58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33974b3993ae187769dcbb2a0eb8fb6f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a33974b3993ae187769dcbb2a0eb8fb6f">setupVoices</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, <a class="el" href="class_sound_manager.html">SoundManager</a> &amp;soundManager, js::json &amp;voicesParser)</td></tr>
+<tr class="separator:a33974b3993ae187769dcbb2a0eb8fb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -249,6 +263,32 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ad5eb8287fceceb5582f83584326803de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5eb8287fceceb5582f83584326803de">&#9670;&nbsp;</a></span>checkSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SoundManager::checkSound </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>searches if the sound is playing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>read-only reference of the sound's id.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the sound is playing, false if it's paused, stopped or does not exist.</dd></dl>
+
+</div>
+</div>
 <a id="adac6e0e95d4ba0c27dcfd5e7242cd70f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adac6e0e95d4ba0c27dcfd5e7242cd70f">&#9670;&nbsp;</a></span>checkSoundInMap()</h2>
 
@@ -309,8 +349,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a722fc9ea3fd58416b52ebe13868eb7ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a722fc9ea3fd58416b52ebe13868eb7ac">&#9670;&nbsp;</a></span>play()</h2>
+<a id="a3c1075b63f9efe7962b4c72bd3d64d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1075b63f9efe7962b4c72bd3d64d88">&#9670;&nbsp;</a></span>play()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -319,22 +359,34 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">void SoundManager::play </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>stack</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Starts playing a sound based on its id.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>read-only reference to the string id of the sound.</td></tr>
+    <tr><td class="paramname">stack</td><td>determines whether to stop the current playing sound.</td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a919b286f3eb437db650fc196a3f9414b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a919b286f3eb437db650fc196a3f9414b">&#9670;&nbsp;</a></span>setup()</h2>
+<a id="ad0c2989e409f5aec040c5205bcde65d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c2989e409f5aec040c5205bcde65d7">&#9670;&nbsp;</a></span>setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,7 +409,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramtype">js::json &amp;&#160;</td>
           <td class="paramname"><em>soundParser</em>&#160;</td>
         </tr>
         <tr>
@@ -384,8 +436,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a772d433e79bbab431a5575044de29ca3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a772d433e79bbab431a5575044de29ca3">&#9670;&nbsp;</a></span>setupAsteroid()</h2>
+<a id="a202df46eb196c006457bbbc218a84ccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202df46eb196c006457bbbc218a84ccd">&#9670;&nbsp;</a></span>setupAsteroid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +460,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramtype">js::json &amp;&#160;</td>
           <td class="paramname"><em>asteroidParser</em>&#160;</td>
         </tr>
         <tr>
@@ -435,8 +487,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a37d525c89edeaf5d05ae933d6ff252b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37d525c89edeaf5d05ae933d6ff252b3">&#9670;&nbsp;</a></span>setupBasicEnemy()</h2>
+<a id="a11d878d5ed3e25cc95a4aab09a92c9ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d878d5ed3e25cc95a4aab09a92c9ad">&#9670;&nbsp;</a></span>setupBasicEnemy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -459,7 +511,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramtype">js::json &amp;&#160;</td>
           <td class="paramname"><em>basicEnemyParser</em>&#160;</td>
         </tr>
         <tr>
@@ -486,8 +538,59 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6c1de5ae9ee9b4adb4aea8d7c3e20a0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c1de5ae9ee9b4adb4aea8d7c3e20a0b">&#9670;&nbsp;</a></span>setupBulletSounds()</h2>
+<a id="a466c80135dc13b5e712f6a2990cc4745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a466c80135dc13b5e712f6a2990cc4745">&#9670;&nbsp;</a></span>setupBg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SoundManager::setupBg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>soundManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">js::json &amp;&#160;</td>
+          <td class="paramname"><em>bgParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups background sounds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
+    <tr><td class="paramname">bgParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a97f0d2ae3c6b24cb67df3f42d082f2f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f0d2ae3c6b24cb67df3f42d082f2f5">&#9670;&nbsp;</a></span>setupBulletSounds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -510,7 +613,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramtype">js::json &amp;&#160;</td>
           <td class="paramname"><em>bulletParser</em>, </td>
         </tr>
         <tr>
@@ -550,8 +653,59 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6b20a514e4888a866c42ecf7fcb184af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b20a514e4888a866c42ecf7fcb184af">&#9670;&nbsp;</a></span>setupPlayer()</h2>
+<a id="a3a7eb6d6589dfeeb862649d3b78b0aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7eb6d6589dfeeb862649d3b78b0aa4">&#9670;&nbsp;</a></span>setupPickup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SoundManager::setupPickup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>soundManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">js::json &amp;&#160;</td>
+          <td class="paramname"><em>pickupParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups ui sounds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
+    <tr><td class="paramname">pickupParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8a28421a95094fb93db1674ef1f86f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a28421a95094fb93db1674ef1f86f01">&#9670;&nbsp;</a></span>setupPlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -574,7 +728,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramtype">js::json &amp;&#160;</td>
           <td class="paramname"><em>playerParser</em>&#160;</td>
         </tr>
         <tr>
@@ -601,8 +755,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af6cfc4e47a880540cfef7b71fdad5c13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6cfc4e47a880540cfef7b71fdad5c13">&#9670;&nbsp;</a></span>setupPlayerBullets()</h2>
+<a id="a870f9544c9bddd377301d9eb5fa2a1d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a870f9544c9bddd377301d9eb5fa2a1d8">&#9670;&nbsp;</a></span>setupPlayerBullets()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -625,7 +779,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">json::json &amp;&#160;</td>
+          <td class="paramtype">js::json &amp;&#160;</td>
           <td class="paramname"><em>playerBulletsParser</em>&#160;</td>
         </tr>
         <tr>
@@ -647,6 +801,184 @@ Static Private Attributes</h2></td></tr>
     <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
     <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
     <tr><td class="paramname">bulletsParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aee3a1b06895a2539a5a1390320f8f58d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee3a1b06895a2539a5a1390320f8f58d">&#9670;&nbsp;</a></span>setupPlayerWeapons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SoundManager::setupPlayerWeapons </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>soundManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">js::json &amp;&#160;</td>
+          <td class="paramname"><em>weaponParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups weapon sounds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
+    <tr><td class="paramname">weaponParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a858eb6557eeaed163ad315621f439ab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a858eb6557eeaed163ad315621f439ab7">&#9670;&nbsp;</a></span>setupUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SoundManager::setupUI </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>soundManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">js::json &amp;&#160;</td>
+          <td class="paramname"><em>uiParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups ui sounds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
+    <tr><td class="paramname">uiParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a33974b3993ae187769dcbb2a0eb8fb6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33974b3993ae187769dcbb2a0eb8fb6f">&#9670;&nbsp;</a></span>setupVoices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SoundManager::setupVoices </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>soundManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">js::json &amp;&#160;</td>
+          <td class="paramname"><em>voicesParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setups voice sounds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceHandler</td><td>reference to resource handler, loads our resources using json parser and an ID.</td></tr>
+    <tr><td class="paramname">soundManager</td><td>reference to sound manager, handles the playing of our sounds.</td></tr>
+    <tr><td class="paramname">voicesParser</td><td>reference to loaded json file ready to be parsed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5328aecdaea209ebed017dafb052819a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5328aecdaea209ebed017dafb052819a">&#9670;&nbsp;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SoundManager::stop </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Stops the sound based on id if its currently playing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>read-only reference to the string id</td></tr>
   </table>
   </dd>
 </dl>

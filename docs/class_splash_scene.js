@@ -15,7 +15,9 @@ var class_splash_scene =
     [ "update", "class_splash_scene.html#a5a3a7c73a52973e2cd37b573668045b4", null ],
     [ "m_backgroundColor", "class_splash_scene.html#ab6445c0aaa84c95d15b67a868c19d84e", null ],
     [ "m_backgroundSprite", "class_splash_scene.html#a2bece4c7e2b6df659893aabd2357ca8d", null ],
+    [ "m_BG_SOUND_ID", "class_splash_scene.html#ada428f1111c0893c564e1078374a4af4", null ],
     [ "m_fadeState", "class_splash_scene.html#a5cb3025c5b78b4d9f79b327addfc562a", null ],
     [ "m_incrementColor", "class_splash_scene.html#ae6a4d115fbf158669915d1eab9b738ea", null ],
-    [ "m_resources", "class_splash_scene.html#a82d84a0c05a128e84f1b433f3e65cb5d", null ]
+    [ "m_resources", "class_splash_scene.html#a82d84a0c05a128e84f1b433f3e65cb5d", null ],
+    [ "m_soundManager", "class_splash_scene.html#aa08181e281077881a80a7dfa1ac31a4c", null ]
 ];

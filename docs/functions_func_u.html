@@ -84,13 +84,19 @@ $(document).ready(function(){initNavTree('functions_func_u.html','');});
 
 <h3><a id="index_u"></a>- u -</h3><ul>
 <li>update()
-: <a class="el" href="classai_1_1_ai_base.html#a2e8141637bdf9a84bad564ab0d226250">ai::AiBase</a>
+: <a class="el" href="classai_1_1_ai_base.html#a373f492ed664fb7f8f28589ddcdcf6f5">ai::AiBase</a>
 , <a class="el" href="classai_1_1_ai_basic.html#a8dc885717d8a6651e120135df928f55d">ai::AiBasic</a>
+, <a class="el" href="classai_1_1_ai_ranged.html#a17fff0138e02578e9c026b3ee53e3d90">ai::AiRanged</a>
+, <a class="el" href="classai_1_1states_1_1_ai_base_state.html#a5182d0298971c843f4140ff1d83a3f33">ai::states::AiBaseState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#a559f05f5f0bf801c0a7ab8c3d858d299">ai::states::AiBasicChargeState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_recover_state.html#ad226460b72243d2c0450d5539e508410">ai::states::AiBasicRecoverState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html#aaa77d3a0e18dc41ad48ef386ef3b4424">ai::states::AiBasicSeekState</a>
-, <a class="el" href="classai_1_1states_1_1_ai_basic_state.html#a0a308e5ac89cb419f58092fe06d52230">ai::states::AiBasicState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_windup_state.html#a42dd398f027a46ed39a1046cf0c15ef7">ai::states::AiBasicWindupState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_deploy_state.html#a11c0e883b175565d3a4e7b5840060422">ai::states::AiRangedDeployState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_move_state.html#a8a239b3639ddc451af11e5d8c6776270">ai::states::AiRangedMoveState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_shoot_state.html#a6a6c03c947e477a2a41c00d804156ae5">ai::states::AiRangedShootState</a>
+, <a class="el" href="class_ai_bullet.html#af86b8d4eb9f94d7cf424bae203a11210">AiBullet</a>
+, <a class="el" href="class_ai_bullet_manager.html#a83720b60fe82d7719e002b484c3173e4">AiBulletManager</a>
 , <a class="el" href="class_asteroid.html#a02d59c663aaf19a46e2a4a6317a7adbe">Asteroid</a>
 , <a class="el" href="class_asteroid_manager.html#a998ee2908933dd9bad98581374578221">AsteroidManager</a>
 , <a class="el" href="class_background.html#acab58b65d4299d4bd51b8376e8c3e3d3">Background</a>
@@ -120,6 +126,7 @@ $(document).ready(function(){initNavTree('functions_func_u.html','');});
 , <a class="el" href="class_options_scene.html#a81bb4f5115c825e795daa79751195ca0">OptionsScene</a>
 , <a class="el" href="class_pickup.html#ab3d221289c869b982e8d4d7b3a49801f">Pickup</a>
 , <a class="el" href="class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4">Player</a>
+, <a class="el" href="class_ranged_enemy_manager.html#ab5070af3b0289b8dcda2c860afd62512">RangedEnemyManager</a>
 , <a class="el" href="class_scene.html#ae72a3454e5d4e06d4125db5322fb0c91">Scene</a>
 , <a class="el" href="class_scene_manager.html#aa1aca67532fca8ae38c1ef8b2a6eb637">SceneManager</a>
 , <a class="el" href="class_shield.html#ac27e51621d183abc5280480b3155cfb0">Shield</a>
@@ -128,6 +135,9 @@ $(document).ready(function(){initNavTree('functions_func_u.html','');});
 , <a class="el" href="class_splash_scene.html#a5a3a7c73a52973e2cd37b573668045b4">SplashScene</a>
 , <a class="el" href="class_title_scene.html#a54f43bb05d23c6441f0dcf2e82122b8f">TitleScene</a>
 , <a class="el" href="class_weapon.html#a2e56ccac7dd78294ac479faa639955f6">Weapon</a>
+</li>
+<li>updateAsteroids()
+: <a class="el" href="class_collision_system.html#ab4e35eda57dc9eb063b22519c429f611">CollisionSystem</a>
 </li>
 <li>updateBox()
 : <a class="el" href="classbullets_1_1_bullet.html#afa446d8e06cf333ea39897966487a2af">bullets::Bullet</a>
@@ -141,6 +151,8 @@ $(document).ready(function(){initNavTree('functions_func_u.html','');});
 </li>
 <li>updateHitbox()
 : <a class="el" href="classai_1_1_ai_basic.html#ac9528d3032e18c57a6d33cf27a53ff3a">ai::AiBasic</a>
+, <a class="el" href="classai_1_1_ai_ranged.html#a62a7167824b7b350e61decf6de2e0476">ai::AiRanged</a>
+, <a class="el" href="class_ai_bullet.html#aed8b5315112a1239710b8bd8ed7e9053">AiBullet</a>
 </li>
 <li>updateKey()
 : <a class="el" href="class_key_handler.html#a9286e652204a3e49b7674f47f0ac99fa">KeyHandler</a>
@@ -157,8 +169,11 @@ $(document).ready(function(){initNavTree('functions_func_u.html','');});
 <li>updatePlayerBulletToAsteroids()
 : <a class="el" href="class_collision_system.html#ac6f8e5f581918d68dfb127550b1e7b0b">CollisionSystem</a>
 </li>
-<li>updatePlayerBulletToEnemies()
-: <a class="el" href="class_collision_system.html#a9b5461a92c3a8c40a4d3c88fc70fc9ce">CollisionSystem</a>
+<li>updatePlayerBulletToBasicEnemies()
+: <a class="el" href="class_collision_system.html#aa72cfe38af3d4711c794cc6fdfa0a168">CollisionSystem</a>
+</li>
+<li>updatePlayerBulletToRangedEnemies()
+: <a class="el" href="class_collision_system.html#a6e6672995cb608057c055c94a4e68157">CollisionSystem</a>
 </li>
 <li>updatePlayerToGameUi()
 : <a class="el" href="class_collision_system.html#ade3c11d32e64f9ea4d3f307cf823e087">CollisionSystem</a>
@@ -169,9 +184,19 @@ $(document).ready(function(){initNavTree('functions_func_u.html','');});
 <li>updatePosition()
 : <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#aa4030856fcc1c3ee4c29a7ddef2e2df7">ai::states::AiBasicChargeState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html#ab92fb9273c08b7d67fbb4d4e1c78da11">ai::states::AiBasicSeekState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_state.html#a3b4b64ceac66a3783ef9a33ff323766e">ai::states::AiRangedState</a>
+</li>
+<li>updateRangedEnemyBullets()
+: <a class="el" href="class_collision_system.html#a41673597033094afbef9964140a41e35">CollisionSystem</a>
+</li>
+<li>updateRangedEnemyBulletToPlayer()
+: <a class="el" href="class_collision_system.html#a672853266d39ac5ad4419723136f8ecf">CollisionSystem</a>
 </li>
 <li>updateShape()
 : <a class="el" href="classgui_1_1_widget.html#ad76ef53c8e689a3b002e155ed436e168">gui::Widget</a>
+</li>
+<li>updateShooting()
+: <a class="el" href="classai_1_1states_1_1_ai_ranged_shoot_state.html#a716ab175f92ffc433643ba17318e9a25">ai::states::AiRangedShootState</a>
 </li>
 <li>updateSpawning()
 : <a class="el" href="class_asteroid_manager.html#a04be42ce873892cf6c608e84df534c68">AsteroidManager</a>
@@ -179,15 +204,23 @@ $(document).ready(function(){initNavTree('functions_func_u.html','');});
 <li>updateSpeed()
 : <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#a711c989bfe97fe82bb78d63004e19e64">ai::states::AiBasicChargeState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html#a674df30e3e0b6dd382065ea18219897d">ai::states::AiBasicSeekState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_state.html#a612564af678a72aadff5b1eb4aeca578">ai::states::AiRangedState</a>
 </li>
 <li>updateState()
 : <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#a7ccf88e1e3303ad7228a2aff059157dc">ai::states::AiBasicChargeState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_recover_state.html#ad5088ee55f87dbd2c5afb27f0f1dd2a8">ai::states::AiBasicRecoverState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html#ad4bf7d540658143d6ae3d48d232efab9">ai::states::AiBasicSeekState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_windup_state.html#ad0bdb14fb460524834b26b0fa22d222b">ai::states::AiBasicWindupState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_deploy_state.html#a7a8139c393f09a975035bf134261d4af">ai::states::AiRangedDeployState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_move_state.html#a961607b828168975aeb70762e14170b7">ai::states::AiRangedMoveState</a>
+</li>
+<li>updateTimer()
+: <a class="el" href="classai_1_1states_1_1_ai_ranged_deploy_state.html#a7e30c035fa975b5692fcf9540ca7c345">ai::states::AiRangedDeployState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_shoot_state.html#ad75030b49850b8d0c10d0029a12fc284">ai::states::AiRangedShootState</a>
 </li>
 <li>updateTurn()
 : <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html#ad71b7cc0cc9f5f9d497f1e1cb7780dd2">ai::states::AiBasicSeekState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_state.html#ae02cc36dbbfb21e174d8f137fdf29202">ai::states::AiRangedState</a>
 </li>
 <li>updateUI()
 : <a class="el" href="class_game_scene.html#a8aee8fc76657004682a34b580d32bdfc">GameScene</a>

@@ -136,8 +136,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a7cd1bd39894aa393a3797e60bcbf66e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4d86ba55da683c0ef5ab087ff902e98"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Shader &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#ae4d86ba55da683c0ef5ab087ff902e98">m_shader</a></td></tr>
 <tr class="separator:ae4d86ba55da683c0ef5ab087ff902e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7032c4c990b5ad4d1c06265042b2e4ad"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; sf::Clock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a7032c4c990b5ad4d1c06265042b2e4ad">m_timer</a></td></tr>
-<tr class="separator:a7032c4c990b5ad4d1c06265042b2e4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a283a00cfa16429d2aadab1a1a6323640"><td class="memItemLeft" align="right" valign="top">sf::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a283a00cfa16429d2aadab1a1a6323640">m_timer</a></td></tr>
+<tr class="separator:a283a00cfa16429d2aadab1a1a6323640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb79192b099bce0944da785a9cca2b29"><td class="memItemLeft" align="right" valign="top">sf::RenderStates&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#abb79192b099bce0944da785a9cca2b29">m_renderState</a></td></tr>
 <tr class="separator:abb79192b099bce0944da785a9cca2b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -493,8 +493,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7032c4c990b5ad4d1c06265042b2e4ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7032c4c990b5ad4d1c06265042b2e4ad">&#9670;&nbsp;</a></span>m_timer</h2>
+<a id="a283a00cfa16429d2aadab1a1a6323640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a283a00cfa16429d2aadab1a1a6323640">&#9670;&nbsp;</a></span>m_timer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -503,7 +503,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;sf::Clock&gt; Background::m_timer</td>
+          <td class="memname">sf::Time Background::m_timer</td>
         </tr>
       </table>
   </td>
@@ -512,7 +512,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Defines unique pointer to the timer.</p>
+<p>Defines the timer.</p>
 <p>The timer is used in our shader to apply a color effect that changes over time. </p>
 
 </div>

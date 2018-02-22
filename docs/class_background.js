@@ -15,5 +15,5 @@ var class_background =
     [ "m_image", "class_background.html#a7cd1bd39894aa393a3797e60bcbf66e9", null ],
     [ "m_renderState", "class_background.html#abb79192b099bce0944da785a9cca2b29", null ],
     [ "m_shader", "class_background.html#ae4d86ba55da683c0ef5ab087ff902e98", null ],
-    [ "m_timer", "class_background.html#a7032c4c990b5ad4d1c06265042b2e4ad", null ]
+    [ "m_timer", "class_background.html#a283a00cfa16429d2aadab1a1a6323640", null ]
 ];

@@ -2,6 +2,7 @@ var classbullets_1_1_static_sphere =
 [
     [ "StasisAnimator", "classbullets_1_1_static_sphere.html#a0aadf92618cce0bc858850f971bb6817", null ],
     [ "StaticSphere", "classbullets_1_1_static_sphere.html#ad21101996c4f80e7451524108244eff6", null ],
+    [ "checkAABBCollision", "classbullets_1_1_static_sphere.html#a1ac746d6b78f7a37e2a4b5fafb5d62a5", null ],
     [ "checkCircleCollision", "classbullets_1_1_static_sphere.html#a895405895ddf27330e7b22e4965e6ee1", null ],
     [ "draw", "classbullets_1_1_static_sphere.html#a047f263277633489f9990065d5ddd48e", null ],
     [ "getDamage", "classbullets_1_1_static_sphere.html#a91d9778919434f13494198c286229b49", null ],

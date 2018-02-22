@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('functions_d.html','');});
 : <a class="el" href="class_ship.html#a7963cc9d019b5c2c7df85daa8815578f">Ship</a>
 </li>
 <li>decrementHealth()
-: <a class="el" href="classai_1_1_ai_basic.html#a2b7207dfde0bbb77bcc3f34f52446ab9">ai::AiBasic</a>
+: <a class="el" href="classai_1_1_ai_base.html#a78bca402299fa5be7d8e26586cba0c3d">ai::AiBase</a>
 , <a class="el" href="class_asteroid.html#ab78f0ef044ce61a0e105daf1f4c7527a">Asteroid</a>
 , <a class="el" href="class_game_u_i.html#a424ebdf50e17a3a316023fef697ae91c">GameUI</a>
 </li>
@@ -120,13 +120,17 @@ $(document).ready(function(){initNavTree('functions_d.html','');});
 : <a class="el" href="class_controller.html#a50ac5f1a92c735fc4e0015d1693947c1">Controller</a>
 </li>
 <li>draw()
-: <a class="el" href="classai_1_1_ai_base.html#a741d17cb50489b88bfd65375c97a7382">ai::AiBase</a>
+: <a class="el" href="classai_1_1_ai_base.html#a778e1942414fc97e3fd20ce1beffe052">ai::AiBase</a>
 , <a class="el" href="classai_1_1_ai_basic.html#a115cfc4c462967661ee211e6d50c06b3">ai::AiBasic</a>
+, <a class="el" href="classai_1_1_ai_ranged.html#aa1bba8f0e72290968ceede082a81662a">ai::AiRanged</a>
+, <a class="el" href="classai_1_1states_1_1_ai_base_state.html#a2669cdf197ac97a480096e77d81a3e4d">ai::states::AiBaseState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_charge_state.html#a1715839863dd314b01c417c559bddbdd">ai::states::AiBasicChargeState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_recover_state.html#a25af63327ba2f0d4c69e4c72ffc3f785">ai::states::AiBasicRecoverState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_seek_state.html#aab50a99955e316cda4f1c10253e153cc">ai::states::AiBasicSeekState</a>
-, <a class="el" href="classai_1_1states_1_1_ai_basic_state.html#ab31e4c3045ee0411c8b11a249e2029cf">ai::states::AiBasicState</a>
 , <a class="el" href="classai_1_1states_1_1_ai_basic_windup_state.html#ae28b887fe4047cf5dae79db52d60ee8d">ai::states::AiBasicWindupState</a>
+, <a class="el" href="classai_1_1states_1_1_ai_ranged_state.html#ac8dea142bdb4c7bc9794fdb4a983ec12">ai::states::AiRangedState</a>
+, <a class="el" href="class_ai_bullet.html#a2a90db20b546b00dddf1db61f03fc4ca">AiBullet</a>
+, <a class="el" href="class_ai_bullet_manager.html#aa7dcf9d1e6ff4ec319d854b556b31aea">AiBulletManager</a>
 , <a class="el" href="class_asteroid.html#a8fb65c8b468aba5d13b1f47a05597c91">Asteroid</a>
 , <a class="el" href="class_asteroid_manager.html#aef330f60c4a125e7ee381631889d8391">AsteroidManager</a>
 , <a class="el" href="class_background.html#ab64ba5922f8a497205725c021953d730">Background</a>
@@ -137,16 +141,17 @@ $(document).ready(function(){initNavTree('functions_d.html','');});
 , <a class="el" href="class_connector.html#a583f0836283bb8f579d06fd193f3d289">Connector</a>
 , <a class="el" href="class_game_scene.html#af58b670ba277a007dba8fdf05e5a60c5">GameScene</a>
 , <a class="el" href="class_game_u_i.html#ad1a4b8579b013d6bc5755fe4606afb7b">GameUI</a>
-, <a class="el" href="classgui_1_1_button.html#af95982e932a4aa6d1ea7a00e2aa6f77b">gui::Button</a>
+, <a class="el" href="classgui_1_1_button.html#ad50e5a7aa498c1fbcb9c2af1abe59779">gui::Button</a>
 , <a class="el" href="classgui_1_1_check_box.html#ada3fe8321426631419d93b25c34c978c">gui::CheckBox</a>
 , <a class="el" href="classgui_1_1_g_u_i.html#a9e7e938a57d1b04725cfaffe0c6b4703">gui::GUI</a>
-, <a class="el" href="classgui_1_1_label.html#ac4f1b330b4c44a3f4bd910073ff9a349">gui::Label</a>
-, <a class="el" href="classgui_1_1_slider.html#a8a21c1a4276013dd3bd29f97466690aa">gui::Slider</a>
+, <a class="el" href="classgui_1_1_label.html#abfc3e543f55913a83c8b89258322288a">gui::Label</a>
+, <a class="el" href="classgui_1_1_slider.html#a0c71034d60cc0d2b9f5a4990e162ef8f">gui::Slider</a>
 , <a class="el" href="classgui_1_1_widget.html#a4321deb1d8f00637c9d691ae7bd6d899">gui::Widget</a>
 , <a class="el" href="class_main_menu_scene.html#a689a8c7161df5d014a24bf71cab8eae4">MainMenuScene</a>
 , <a class="el" href="class_options_scene.html#ae10df53cc3b609c21f08bee5cb6bbcc4">OptionsScene</a>
 , <a class="el" href="class_pickup.html#a3ae33775a9a71f47c85130edc9cb6326">Pickup</a>
 , <a class="el" href="class_player.html#a5a4253c07c2dd1428de5d1dac00098c2">Player</a>
+, <a class="el" href="class_ranged_enemy_manager.html#a4d3c33abfd459a1a34b2093712bfe5e7">RangedEnemyManager</a>
 , <a class="el" href="class_scene.html#a41f191abbae537f7ba192074149e3518">Scene</a>
 , <a class="el" href="class_scene_manager.html#a3983ac6a695c838682b09cee938beb3c">SceneManager</a>
 , <a class="el" href="class_shield.html#ae3297b417f63dfbdaa7ceeecbd4c2fc3">Shield</a>

@@ -83,6 +83,8 @@ $(document).ready(function(){initNavTree('classai_1_1_ai_base.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="classai_1_1_ai_base-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -100,7 +102,8 @@ Inheritance diagram for ai::AiBase:</div>
  <div class="center">
   <img src="classai_1_1_ai_base.png" usemap="#ai::AiBase_map" alt=""/>
   <map id="ai::AiBase_map" name="ai::AiBase_map">
-<area href="classai_1_1_ai_basic.html" title="Represents basic ai. " alt="ai::AiBasic" shape="rect" coords="0,56,71,80"/>
+<area href="classai_1_1_ai_basic.html" title="Represents basic ai. " alt="ai::AiBasic" shape="rect" coords="0,56,83,80"/>
+<area href="classai_1_1_ai_ranged.html" title="Defines a Ranged AI. " alt="ai::AiRanged" shape="rect" coords="93,56,176,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -116,10 +119,36 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a81f354733c007b89c969e1da7d2028f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9240dc2292bfae1e43375a97f5d707d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#af9240dc2292bfae1e43375a97f5d707d">~AiBase</a> ()=default</td></tr>
 <tr class="separator:af9240dc2292bfae1e43375a97f5d707d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e8141637bdf9a84bad564ab0d226250"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a2e8141637bdf9a84bad564ab0d226250">update</a> ()=0</td></tr>
-<tr class="separator:a2e8141637bdf9a84bad564ab0d226250"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a741d17cb50489b88bfd65375c97a7382"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a741d17cb50489b88bfd65375c97a7382">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, float const &amp;deltaTime)=0</td></tr>
-<tr class="separator:a741d17cb50489b88bfd65375c97a7382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373f492ed664fb7f8f28589ddcdcf6f5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a373f492ed664fb7f8f28589ddcdcf6f5">update</a> () override</td></tr>
+<tr class="separator:a373f492ed664fb7f8f28589ddcdcf6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a778e1942414fc97e3fd20ce1beffe052"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a778e1942414fc97e3fd20ce1beffe052">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, float const &amp;deltaTime) override</td></tr>
+<tr class="separator:a778e1942414fc97e3fd20ce1beffe052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78bca402299fa5be7d8e26586cba0c3d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a78bca402299fa5be7d8e26586cba0c3d">decrementHealth</a> (float const &amp;damage)</td></tr>
+<tr class="separator:a78bca402299fa5be7d8e26586cba0c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3966a83b72ad2fdfef41e25fba5d196e"><td class="memItemLeft" align="right" valign="top">bool const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a3966a83b72ad2fdfef41e25fba5d196e">getActive</a> () const</td></tr>
+<tr class="separator:a3966a83b72ad2fdfef41e25fba5d196e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e17acc4ff7db16114810725ed1cb3a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a85e17acc4ff7db16114810725ed1cb3a">checkCollision</a> (tinyh::c2Circle const &amp;collision) const override</td></tr>
+<tr class="separator:a85e17acc4ff7db16114810725ed1cb3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a349f88b117552b7f2abff77a5bb92"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a21a349f88b117552b7f2abff77a5bb92">checkCollision</a> (tinyh::c2AABB const &amp;collision) const override</td></tr>
+<tr class="separator:a21a349f88b117552b7f2abff77a5bb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e34aa5a704dba0de9fc9718f6df64c5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a2e34aa5a704dba0de9fc9718f6df64c5">checkCollision</a> (tinyh::c2Capsule const &amp;collision) const override</td></tr>
+<tr class="separator:a2e34aa5a704dba0de9fc9718f6df64c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b27ad826e4e127ee9d283f8bc5b91d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a9b27ad826e4e127ee9d283f8bc5b91d6">setActive</a> (bool const &amp;newActive)</td></tr>
+<tr class="separator:a9b27ad826e4e127ee9d283f8bc5b91d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa2d448d8eb6ff6c868b0fe44d65a9a94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#aa2d448d8eb6ff6c868b0fe44d65a9a94">setup</a> (<a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_texture.html">AiBase::Resources::Texture</a> &amp;textureResources, <a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, js::json &amp;textureParser, std::string const &amp;id)</td></tr>
+<tr class="separator:aa2d448d8eb6ff6c868b0fe44d65a9a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc602e53fec89f82b9e69dfcee579e84"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#adc602e53fec89f82b9e69dfcee579e84">setup</a> (<a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_animation.html">AiBase::Resources::Animation</a> &amp;animResources, <a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, js::json &amp;animationParser, std::string const &amp;id)</td></tr>
+<tr class="separator:adc602e53fec89f82b9e69dfcee579e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a8dfa5b784892ae98b045142dd351c1c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a8dfa5b784892ae98b045142dd351c1c9">m_active</a></td></tr>
+<tr class="separator:a8dfa5b784892ae98b045142dd351c1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271500fce90c0d7ebc00857e3f6c7cdf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a271500fce90c0d7ebc00857e3f6c7cdf">m_health</a></td></tr>
+<tr class="separator:a271500fce90c0d7ebc00857e3f6c7cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
@@ -180,8 +209,127 @@ Static Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a741d17cb50489b88bfd65375c97a7382"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a741d17cb50489b88bfd65375c97a7382">&#9670;&nbsp;</a></span>draw()</h2>
+<a id="a85e17acc4ff7db16114810725ed1cb3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85e17acc4ff7db16114810725ed1cb3a">&#9670;&nbsp;</a></span>checkCollision() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ai::AiBase::checkCollision </td>
+          <td>(</td>
+          <td class="paramtype">tinyh::c2Circle const &amp;&#160;</td>
+          <td class="paramname"><em>collision</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#ab7d50b21bbc2a638d35ad2c7912b9eb7">ai::AiBasic</a>, and <a class="el" href="classai_1_1_ai_ranged.html#a4b791dc117f12b937807b179f88f0501">ai::AiRanged</a>.</p>
+
+</div>
+</div>
+<a id="a21a349f88b117552b7f2abff77a5bb92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21a349f88b117552b7f2abff77a5bb92">&#9670;&nbsp;</a></span>checkCollision() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ai::AiBase::checkCollision </td>
+          <td>(</td>
+          <td class="paramtype">tinyh::c2AABB const &amp;&#160;</td>
+          <td class="paramname"><em>collision</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#a832b1827c3c6e87bef6e2744d54074f1">ai::AiBasic</a>, and <a class="el" href="classai_1_1_ai_ranged.html#ac67523c5b32f9dad7672728a1c6ef2f1">ai::AiRanged</a>.</p>
+
+</div>
+</div>
+<a id="a2e34aa5a704dba0de9fc9718f6df64c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e34aa5a704dba0de9fc9718f6df64c5">&#9670;&nbsp;</a></span>checkCollision() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ai::AiBase::checkCollision </td>
+          <td>(</td>
+          <td class="paramtype">tinyh::c2Capsule const &amp;&#160;</td>
+          <td class="paramname"><em>collision</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#a832323cd9388a0524b3446165f6c9357">ai::AiBasic</a>, and <a class="el" href="classai_1_1_ai_ranged.html#a663aa445f14ff17f0203ac2257b01780">ai::AiRanged</a>.</p>
+
+</div>
+</div>
+<a id="a78bca402299fa5be7d8e26586cba0c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78bca402299fa5be7d8e26586cba0c3d">&#9670;&nbsp;</a></span>decrementHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ai::AiBase::decrementHealth </td>
+          <td>(</td>
+          <td class="paramtype">float const &amp;&#160;</td>
+          <td class="paramname"><em>damage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Decreases the ai's health.</p>
+<p>Also returns whether the ai died from this hit or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">damage</td><td>amount of damage.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if ai died from this hit.</dd></dl>
+
+</div>
+</div>
+<a id="a778e1942414fc97e3fd20ce1beffe052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a778e1942414fc97e3fd20ce1beffe052">&#9670;&nbsp;</a></span>draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,12 +362,181 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#a115cfc4c462967661ee211e6d50c06b3">ai::AiBasic</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#a115cfc4c462967661ee211e6d50c06b3">ai::AiBasic</a>, and <a class="el" href="classai_1_1_ai_ranged.html#aa1bba8f0e72290968ceede082a81662a">ai::AiRanged</a>.</p>
 
 </div>
 </div>
-<a id="a2e8141637bdf9a84bad564ab0d226250"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e8141637bdf9a84bad564ab0d226250">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a3966a83b72ad2fdfef41e25fba5d196e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3966a83b72ad2fdfef41e25fba5d196e">&#9670;&nbsp;</a></span>getActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool const&amp; ai::AiBase::getActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b27ad826e4e127ee9d283f8bc5b91d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b27ad826e4e127ee9d283f8bc5b91d6">&#9670;&nbsp;</a></span>setActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ai::AiBase::setActive </td>
+          <td>(</td>
+          <td class="paramtype">bool const &amp;&#160;</td>
+          <td class="paramname"><em>newActive</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2d448d8eb6ff6c868b0fe44d65a9a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d448d8eb6ff6c868b0fe44d65a9a94">&#9670;&nbsp;</a></span>setup() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ai::AiBase::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_texture.html">AiBase::Resources::Texture</a> &amp;&#160;</td>
+          <td class="paramname"><em>textureResources</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">js::json &amp;&#160;</td>
+          <td class="paramname"><em>textureParser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets up a texture resource.</p>
+<p>Parses the json with a expected format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">animResources</td><td>reference to the data struct that stores the loaded resource.</td></tr>
+    <tr><td class="paramname">resourceHandler</td><td>reference to the resource loader.</td></tr>
+    <tr><td class="paramname">animationParser</td><td>reference to the json parser.</td></tr>
+    <tr><td class="paramname">id</td><td>id of the animation to be loaded.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc602e53fec89f82b9e69dfcee579e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc602e53fec89f82b9e69dfcee579e84">&#9670;&nbsp;</a></span>setup() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ai::AiBase::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structai_1_1_ai_base_1_1_resources_1_1_animation.html">AiBase::Resources::Animation</a> &amp;&#160;</td>
+          <td class="paramname"><em>animResources</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>resourceHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">js::json &amp;&#160;</td>
+          <td class="paramname"><em>animationParser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets up a animation resource.</p>
+<p>Parses the json with a expected format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">animResources</td><td>reference to the data struct that stores the loaded resource.</td></tr>
+    <tr><td class="paramname">resourceHandler</td><td>reference to the resource loader.</td></tr>
+    <tr><td class="paramname">animationParser</td><td>reference to the json parser.</td></tr>
+    <tr><td class="paramname">id</td><td>id of the animation to be loaded.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a373f492ed664fb7f8f28589ddcdcf6f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373f492ed664fb7f8f28589ddcdcf6f5">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,11 +558,57 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#a8dc885717d8a6651e120135df928f55d">ai::AiBasic</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_ai_basic.html#a8dc885717d8a6651e120135df928f55d">ai::AiBasic</a>, and <a class="el" href="classai_1_1_ai_ranged.html#a17fff0138e02578e9c026b3ee53e3d90">ai::AiRanged</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8dfa5b784892ae98b045142dd351c1c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dfa5b784892ae98b045142dd351c1c9">&#9670;&nbsp;</a></span>m_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ai::AiBase::m_active</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Determines if enemy is active.</p>
+
+</div>
+</div>
+<a id="a271500fce90c0d7ebc00857e3f6c7cdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271500fce90c0d7ebc00857e3f6c7cdf">&#9670;&nbsp;</a></span>m_health</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ai::AiBase::m_health</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Pertains the ai's current health.</p>
+
+</div>
+</div>
 <a id="a32adfd024f8457d3b148a16c479ccc4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a32adfd024f8457d3b148a16c479ccc4c">&#9670;&nbsp;</a></span>s_DELTA_TIME</h2>
 
