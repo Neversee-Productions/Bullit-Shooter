@@ -22,6 +22,7 @@ CollisionSystem::CollisionSystem(
 	, m_gameUi(gameUi)
 	, m_pickingUp(false)
 	, m_pickupSoundPlaying(false)
+	, m_stayClearPlaying(false)
 {
 }
 
@@ -84,6 +85,15 @@ void CollisionSystem::updatePlayer()
 				if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
 				{
 					this->playerVsAsteroid(m_player, asteroid);
+					auto random = (rand() % 4 + 1); //generate number between 1 and 3
+					if (random == 4)
+					{
+						if (!m_stayClearPlaying)
+						{
+							m_stayClearPlaying = true;
+							m_soundManager.play("stay-clear");
+						}
+					}
 				}
 			}
 		}

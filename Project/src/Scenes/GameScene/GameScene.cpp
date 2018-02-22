@@ -63,6 +63,20 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_collisionSystem.setPickingUp(false);
 	m_ui.reset();
 	m_pickup.resetPickup();
+	auto random = (rand() % 3 + 1); //generate number between 1 and 2
+	if (random == 1)
+	{
+		m_soundManager.play("kill-bugs");
+	}
+	else if (random == 2)
+	{
+		m_soundManager.play("lets-go");
+	}
+	else
+	{
+		m_soundManager.play("stay-clear");
+	}
+
 }
 
 /// <summary>

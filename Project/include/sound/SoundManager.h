@@ -104,6 +104,11 @@ private: // Private Member Functions
 		, SoundManager & soundManager
 		, json::json & weaponParser
 	);
+	static void setupVoices(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, json::json & voicesParser
+	);
 	bool checkSoundInMap(std::string const & id) const;
 private: // Private Member Variables
 	/// <summary>

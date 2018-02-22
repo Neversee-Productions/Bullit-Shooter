@@ -115,6 +115,13 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	bool m_pickupSoundPlaying;
+
+	/// <summary>
+	/// @brief define stay clear sound playing.
+	/// 
+	/// 
+	/// </summary>
+	bool m_stayClearPlaying;
 };
 
 #endif // !COLLISION_SYSTEM_H

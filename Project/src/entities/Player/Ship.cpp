@@ -25,6 +25,9 @@ Ship::Ship()
 	, m_acceleration(10.0f)
 	, m_isDocking(false)
 	, m_initialPosition(m_position)
+	, m_soundManager(SoundManager::instance())
+	, m_playingDocking(false)
+	, m_playingUndocking(true)
 {
 	m_shipRect.setPosition(m_position);
 	m_shipRect.setSize(sf::Vector2f(75.0f, 100.0f));
@@ -70,12 +73,25 @@ void Ship::update()
 			if (!m_isDocking)
 			{
 				m_velocity.y += m_moveDir.y * m_acceleration;
+
 			}
 		}
 	}
 	if (m_isDocking)
 	{
+		if (!m_playingDocking)
+		{
+			m_playingUndocking = false;
+			m_playingDocking = true;
+			m_soundManager.play("docking");
+		}
 		m_velocity.y = (App::getViewC2Rect().max.y - m_position.y) * 3;
+	}
+	else if (!m_playingUndocking)
+	{
+		m_playingUndocking = true;
+		m_playingDocking = false;
+		m_soundManager.play("undocking");
 	}
 	m_position.y += m_velocity.y * dt;
 	m_position.x += m_velocity.x * dt;

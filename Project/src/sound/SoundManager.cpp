@@ -44,6 +44,7 @@ void SoundManager::setup(ResourceHandler & resourceHandler, SoundManager & sound
 	setupBasicEnemy(resourceHandler, soundManager, soundParser.at("basic-enemy"));
 	setupUI(resourceHandler, soundManager, soundParser.at("ui"));
 	setupPickup(resourceHandler, soundManager, soundParser.at("pickup"));
+	setupVoices(resourceHandler, soundManager, soundParser.at("voices"));
 }
 
 /// <summary>
@@ -252,7 +253,7 @@ void SoundManager::setupPickup(ResourceHandler & resourceHandler, SoundManager &
 }
 
 /// <summary>
-/// @brief Setups ui sounds.
+/// @brief Setups weapon sounds.
 /// 
 /// </summary>
 /// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
@@ -262,6 +263,40 @@ void SoundManager::setupPlayerWeapons(ResourceHandler & resourceHandler, SoundMa
 {
 	std::string const WEAPON_BEGIN_ID = "weapon-begin";
 	soundManager.addSound(weaponParser.at("weapon-begin").get<SoundSetting>(), WEAPON_BEGIN_ID);
+}
+
+/// <summary>
+/// @brief Setups voice sounds.
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
+/// <param name="voicesParser">reference to loaded json file ready to be parsed.</param>
+void SoundManager::setupVoices(ResourceHandler & resourceHandler, SoundManager & soundManager, json::json & voicesParser)
+{
+	std::string const CAREFUL_ID = "careful";
+	std::string const DOCKING_ID = "docking";
+	std::string const DONT_STOP_ID = "dont-stop";
+	std::string const KEEP_IT_UP_ID = "keep-it-up";
+	std::string const KILL_BUGS_ID = "kill-bugs";
+	std::string const LETS_GO_ID = "lets-go";
+	std::string const SHIELD_CRITICAL_ID = "shield-critical";
+	std::string const STAY_CLEAR_ID = "stay-clear";
+	std::string const UNDOCKING_ID = "undocking";
+	std::string const WHAT_HIT_ID = "what-hit";
+
+
+	soundManager.addSound(voicesParser.at(CAREFUL_ID).get<SoundSetting>(), CAREFUL_ID);
+	soundManager.addSound(voicesParser.at(DOCKING_ID).get<SoundSetting>(), DOCKING_ID);
+	soundManager.addSound(voicesParser.at(DONT_STOP_ID).get<SoundSetting>(), DONT_STOP_ID);
+	soundManager.addSound(voicesParser.at(KEEP_IT_UP_ID).get<SoundSetting>(), KEEP_IT_UP_ID);
+	soundManager.addSound(voicesParser.at(KILL_BUGS_ID).get<SoundSetting>(), KILL_BUGS_ID);
+	soundManager.addSound(voicesParser.at(LETS_GO_ID).get<SoundSetting>(), LETS_GO_ID);
+	soundManager.addSound(voicesParser.at(SHIELD_CRITICAL_ID).get<SoundSetting>(), SHIELD_CRITICAL_ID);
+	soundManager.addSound(voicesParser.at(STAY_CLEAR_ID).get<SoundSetting>(), STAY_CLEAR_ID);
+	soundManager.addSound(voicesParser.at(UNDOCKING_ID).get<SoundSetting>(), UNDOCKING_ID);
+	soundManager.addSound(voicesParser.at(WHAT_HIT_ID).get<SoundSetting>(), WHAT_HIT_ID);
+
 }
 
 /// <summary>

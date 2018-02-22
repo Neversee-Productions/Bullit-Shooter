@@ -316,5 +316,118 @@
                 "path": "resources/scenes/Game/pickup/PowerUp.ogg"
             }
         }
+    },
+    "voices":
+    {
+        "careful":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "careful",
+                "path": "resources/scenes/Game/voice/careful.ogg"
+            }
+        },
+        "docking":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "docking",
+                "path": "resources/scenes/Game/voice/docking.ogg"
+            }
+        },
+        "dont-stop":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "dont-stop",
+                "path": "resources/scenes/Game/voice/dont_stop.ogg"
+            }
+        },
+        "keep-it-up":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "keep-it-up",
+                "path": "resources/scenes/Game/voice/keep_it_up.ogg"
+            }
+        },
+        "kill-bugs":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "kill-bugs",
+                "path": "resources/scenes/Game/voice/kill_bugs.ogg"
+            }
+        },
+        "lets-go":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "lets-go",
+                "path": "resources/scenes/Game/voice/lets_go.ogg"
+            }
+        },
+        "shield-critical":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "shield-critical",
+                "path": "resources/scenes/Game/voice/shield_critical.ogg"
+            }
+        },
+        "stay-clear":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "stay-clear",
+                "path": "resources/scenes/Game/voice/stay_clear.ogg"
+            }
+        },
+        "undocking":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "undocking",
+                "path": "resources/scenes/Game/voice/undocking.ogg"
+            }
+        },
+        "what-hit":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "what-hit",
+                "path": "resources/scenes/Game/voice/what_hit.ogg"
+            }
+        }
     }
 }
