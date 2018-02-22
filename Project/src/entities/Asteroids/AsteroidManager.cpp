@@ -1,5 +1,7 @@
 #include "Entities\Asteroids\AsteroidManager.h"
 
+int AsteroidManager::s_spawnAmount = 1;
+
 /// <summary>
 /// @brief default constructor.
 /// 
@@ -10,7 +12,7 @@ AsteroidManager::AsteroidManager()
 	, m_asteroidsVector()
 	, m_asteroidSpawnFrequency(0.0f)
 	, m_asteroidSpawnTimer(0.0f)
-	, m_asteroidSpawnStart(5.0f)
+	, m_asteroidSpawnStart(3.0f)
 {
 	m_asteroidSpawnFrequency = this->generateRandomTimer();
 }
@@ -121,6 +123,36 @@ void AsteroidManager::resetAsteroids()
 }
 
 /// <summary>
+/// @brief Spawns a single asteroid.
+/// 
+/// 
+/// </summary>
+void AsteroidManager::spawn(int const & amountToSpawn)
+{
+	int spawnCounter = 0;
+	for (auto & asteroid : m_asteroidsVector)
+	{
+		if (!asteroid.isActive())
+		{
+			if (spawnCounter < amountToSpawn)
+			{
+				asteroid.reuseAsteroid();
+				++spawnCounter;
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+	while (spawnCounter < amountToSpawn)
+	{
+		++spawnCounter;
+		m_asteroidsVector.push_back(Asteroid(m_sptrResources));
+	}
+}
+
+/// <summary>
 /// @brief Updates the spawning mechanic of the asteroids.
 /// 
 /// 
@@ -130,16 +162,8 @@ void AsteroidManager::updateSpawning()
 	m_asteroidSpawnTimer += m_UPDATE_DT;
 	if (m_asteroidSpawnTimer >= m_asteroidSpawnFrequency)
 	{
-		// spawn next unused asteroid here
-		for (auto & asteroid : m_asteroidsVector)
-		{
-			if (!asteroid.isActive())
-			{
-				asteroid.reuseAsteroid();
-				break;
-			}
-			m_asteroidSpawnFrequency = generateRandomTimer();
-		}
+		this->spawn(std::rand() % s_spawnAmount + 1);
+		m_asteroidSpawnFrequency = generateRandomTimer();
 		m_asteroidSpawnTimer = 0.0f;
 	}
 }

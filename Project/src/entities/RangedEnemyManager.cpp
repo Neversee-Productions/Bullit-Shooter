@@ -10,7 +10,7 @@ RangedEnemyManager::RangedEnemyManager(Player const & player)
 	, m_player(player)
 	, m_sptrResources(nullptr)
 {
-	m_enemies.reserve(10);
+	m_enemies.reserve(40);
 }
 
 /// <summary>
@@ -68,8 +68,11 @@ void RangedEnemyManager::spawn(sf::Vector2f const & spawnPoint)
 			return;
 		}
 	}
-	m_enemies.push_back(ai::AiRanged(m_player, spawnPoint));
-	m_enemies.back().init(m_sptrResources);
+	if (m_enemies.size() < m_enemies.capacity())
+	{
+		m_enemies.push_back(ai::AiRanged(m_player, spawnPoint));
+		m_enemies.back().init(m_sptrResources);
+	}
 }
 
 /// <summary>

@@ -10,7 +10,6 @@
 void BasicEnemyManager::init(std::shared_ptr<Resources> sptrResources, Player & player)
 {
 	m_sptrResources = sptrResources;
-	this->spawn(player, { 760.0f, 0.0f });
 }
 
 /// <summary>
@@ -54,13 +53,13 @@ void BasicEnemyManager::draw(Window & window, float const & deltaTime)
 /// </summary>
 /// <param name="player">required for enemy behaviour.</param>
 /// <param name="spawnPosition">determines spawn location.</param>
-void BasicEnemyManager::spawn(Player & player, sf::Vector2f const & spawnPosition)
+void BasicEnemyManager::spawn(Player & player, sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading)
 {
 	for (auto & enemy : m_enemies)
 	{
 		if (!enemy.getActive())
 		{
-			enemy.spawn(spawnPosition);
+			enemy.spawn(spawnPosition, spawnHeading);
 			return;
 		}
 	}

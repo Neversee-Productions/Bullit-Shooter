@@ -9,7 +9,9 @@
 #include "entities\Entities.h"
 #include "entities\BasicEnemyManager.h"
 #include "entities\RangedEnemyManager.h"
+#include "entities\Progression.h"
 #include "gui\game_ui\GameUI.h"
+#include "gui\game_ui\GameUiResources.h"
 
 /// 
 /// @author Rafael Plugge

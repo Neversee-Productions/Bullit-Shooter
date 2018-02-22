@@ -162,9 +162,14 @@ void ai::AiRanged::update()
 		}
 	}
 	if (this->getActive())
+	if (this->getActive() && m_sptrState)
 	{
 		m_sptrState->update();
 		this->updateHitbox();
+	}
+	else if (!m_sptrState)
+	{
+		this->setActive(false);
 	}
 	m_bulletManager.update();
 }
@@ -187,9 +192,13 @@ void ai::AiRanged::draw(Window & window, float const & deltaTime)
 			255u));
 		window.draw(m_healthBar);
 	}
-	if (this->getActive())
+	if (this->getActive() && m_sptrState)
 	{
 		m_sptrState->draw(window, deltaTime);
+	}
+	else if (!m_sptrState)
+	{
+		this->setActive(false);
 	}
 	m_bulletManager.draw(window, deltaTime);
 }

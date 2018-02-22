@@ -24,6 +24,7 @@ public:
 	static void setViewSize(const unsigned int & width, const unsigned int & height);
 	static const sf::Vector2u & getViewSize();
 	static const sf::Vector2i getViewSizeI();
+	static const sf::Vector2f getViewSizeF();
 	static const float & getUpdateDeltaTime();
 	static const tinyh::c2AABB & getViewC2Rect();
 	static void setViewC2Rect(const sf::Vector2f& min, const sf::Vector2f& max);

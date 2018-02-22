@@ -396,6 +396,7 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 		if (asteroid.isExplosion())
 		{
 			m_soundManager.play("asteroid_explosion");
+			Score::s_scoreCurrent++;
 			if (!m_pickup.isActive())
 			{
 				int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
@@ -414,8 +415,13 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 			}
 			if (asteroid.containsEnemy())
 			{
-				sf::Vector2f spawnPos = { asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y };
-				m_basicEnemyManager.spawn(m_player, spawnPos);
+				for (int i = 0; i < Progression::getBasicEnemies(); ++i)
+				{
+					sf::Vector2f spawnPos = { asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y };
+					sf::Vector2f spawnHeading = { 0.0f, 1.0f };
+					thor::rotate(spawnHeading, 360.0f * i);
+					m_basicEnemyManager.spawn(m_player, spawnPos, spawnHeading);
+				}
 			}
 		}
 	}
@@ -501,6 +507,7 @@ void CollisionSystem::basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & 
 	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
 	if (ENEMY_DIED)
 	{
+		Score::s_scoreCurrent++;
 		m_soundManager.play("enemy_death");
 		auto random = (rand() % 6 + 1); //generate number between 1 and 6
 		if (random == 2)
@@ -524,6 +531,7 @@ void CollisionSystem::rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet 
 	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
 	if (ENEMY_DIED)
 	{
+		Score::s_scoreCurrent++;
 		m_soundManager.play("enemy_death");
 		auto random = (rand() % 6 + 1); //generate number between 1 and 6
 		if (random == 2)
@@ -642,6 +650,13 @@ void CollisionSystem::asteroidVsAsteroid(Asteroid & asteroid1, Asteroid & astero
 
 
 	sf::Vector2f collisionVector = asteroid1.getPosition() - asteroid2.getPosition();
+	if (thor::squaredLength(collisionVector) == 0)
+	{
+		// Exceptional case of when 2 asteroids happen to spawn
+		// at the exact same location
+		asteroid2.setActive(false);
+		return;
+	}
 	collisionVector = thor::unitVector(collisionVector);
 
 	//// Get the components of the velocity vectors which are parallel to the collision.
