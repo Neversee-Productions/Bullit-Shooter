@@ -59,6 +59,7 @@
     <ClCompile Include="src\Entities\Player\Weapon.cpp" />
     <ClCompile Include="src\entities\RangedEnemyManager.cpp" />
     <ClCompile Include="src\gui\game_ui\GameUI.cpp" />
+    <ClCompile Include="src\gui\game_ui\Score.cpp" />
     <ClCompile Include="src\gui\GUI.cpp" />
     <ClCompile Include="src\gui\widgets\Button.cpp" />
     <ClCompile Include="src\gui\widgets\CheckBox.cpp" />
@@ -155,6 +156,8 @@
     <ClInclude Include="include\Entities\Player\Weapon.h" />
     <ClInclude Include="include\entities\RangedEnemyManager.h" />
     <ClInclude Include="include\gui\game_ui\GameUI.h" />
+    <ClInclude Include="include\gui\game_ui\GameUiResources.h" />
+    <ClInclude Include="include\gui\game_ui\Score.h" />
     <ClInclude Include="include\gui\GUI.h" />
     <ClInclude Include="include\gui\widgets\Button.h" />
     <ClInclude Include="include\gui\widgets\CheckBox.h" />

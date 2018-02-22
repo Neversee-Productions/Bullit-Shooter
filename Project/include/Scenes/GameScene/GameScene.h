@@ -77,8 +77,8 @@ private:
 		std::shared_ptr<Enemies> m_sptrEnemies =
 			std::make_shared<Enemies>();
 
-		std::shared_ptr<GameUI::Resources> m_sptrUI =
-			std::make_shared<GameUI::Resources>();
+		std::shared_ptr<gameUi::Resources> m_sptrUI =
+			std::make_shared<gameUi::Resources>();
 	};
 
 public:
@@ -163,7 +163,7 @@ private:
 
 	void setupUI(
 		ResourceHandler & resourceHandler
-		, std::shared_ptr<GameUI::Resources> sptrUI
+		, std::shared_ptr<gameUi::Resources> sptrUI
 		, js::json & gameSceneParser
 	);
 

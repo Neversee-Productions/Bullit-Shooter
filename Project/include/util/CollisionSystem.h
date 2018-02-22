@@ -10,6 +10,7 @@
 #include "entities\BasicEnemyManager.h"
 #include "entities\RangedEnemyManager.h"
 #include "gui\game_ui\GameUI.h"
+#include "gui\game_ui\GameUiResources.h"
 
 /// 
 /// @author Rafael Plugge

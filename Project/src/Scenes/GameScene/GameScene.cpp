@@ -852,7 +852,7 @@ void GameScene::setupEnemies(ResourceHandler & resourceHandler, std::shared_ptr<
 /// <param name="resourceHandler">reference to the resource handler</param>
 /// <param name="sptrUI">shared pointer to UI</param>
 /// <param name="gameSceneParser">reference to loaded json file ready to be parsed</param>
-void GameScene::setupUI(ResourceHandler & resourceHandler, std::shared_ptr<GameUI::Resources> sptrUI, js::json & gameSceneParser)
+void GameScene::setupUI(ResourceHandler & resourceHandler, std::shared_ptr<gameUi::Resources> sptrUI, js::json & gameSceneParser)
 {
 	std::string const JSON_UI("UI");
 	js::json UIJsonParser = util::loadJsonFromFile(gameSceneParser.at(JSON_UI).get<std::string>());

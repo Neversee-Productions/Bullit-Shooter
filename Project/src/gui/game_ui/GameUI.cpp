@@ -96,6 +96,7 @@ void GameUI::update()
 		m_overchargeBarRight.setColor(sf::Color(0u, 255u, 0u, m_overchargeBarRight.getColor().a));
 		m_borderSprite.setColor(sf::Color::White);
 	}
+	m_score.update();
 }
 
 
@@ -120,6 +121,7 @@ void GameUI::draw(Window & window, const float & deltaTime)
 	window.draw(m_overchargeBarLeft);
 	window.draw(m_overchargeFrameRight);
 	window.draw(m_overchargeBarRight);
+	m_score.draw(window, deltaTime);
 	if (m_showPauseScreen)
 	{
 		m_gui->draw(window);
@@ -138,7 +140,7 @@ void GameUI::draw(Window & window, const float & deltaTime)
 /// <param name="sptrResources">reference to the resource struct</param>
 /// <param name="resourceHandler">reference to resource handler</param>
 /// <param name="UIParser">the json ui parser ready to be parsed</param>
-void GameUI::setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, js::json & UIParser)
+void GameUI::setup(std::shared_ptr<gameUi::Resources> sptrResources, ResourceHandler & resourceHandler, js::json & UIParser)
 {
 	std::string const JSON_HEALTH_TEMPLATE_TEXTURE("healthTemplate");
 	std::string const JSON_HEALTH_TEXTURE("health");
@@ -170,7 +172,7 @@ void GameUI::setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & r
 /// 
 /// </summary>
 /// <param name="resources">pointer to the resource struct</param>
-void GameUI::init(std::shared_ptr<Resources> resources)
+void GameUI::init(std::shared_ptr<gameUi::Resources> resources)
 {
 	//initialize the health template sprite
 	m_healthTemplateSprite.setTexture(*resources->m_sptrHealthTemplateTexture, false);
@@ -315,6 +317,7 @@ void GameUI::init(std::shared_ptr<Resources> resources)
 	const auto& windowSize = App::getViewSize();
 	m_gui->configure(gui::GUI::Layouts::StackVertically, windowSize);
 	m_gameEndUI->configure(gui::GUI::Layouts::StackVertically, windowSize);
+	m_score.init(resources);
 }
 
 /// <summary>

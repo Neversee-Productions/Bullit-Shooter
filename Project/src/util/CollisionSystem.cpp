@@ -396,6 +396,7 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 		if (asteroid.isExplosion())
 		{
 			m_soundManager.play("asteroid_explosion");
+			Score::s_scoreCurrent++;
 			if (!m_pickup.isActive())
 			{
 				int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
@@ -501,6 +502,7 @@ void CollisionSystem::basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & 
 	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
 	if (ENEMY_DIED)
 	{
+		Score::s_scoreCurrent++;
 		m_soundManager.play("enemy_death");
 		enemy.setActive(false);
 	}
@@ -519,6 +521,7 @@ void CollisionSystem::rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet 
 	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
 	if (ENEMY_DIED)
 	{
+		Score::s_scoreCurrent++;
 		m_soundManager.play("enemy_death");
 		enemy.setActive(false);
 	}
