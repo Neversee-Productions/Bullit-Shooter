@@ -6,6 +6,7 @@ std::string ai::AiRanged::s_MOVE_ID = "";
 std::string ai::AiRanged::s_DEPLOY_ID = "";
 std::string ai::AiRanged::s_SHOOT_ID = "";
 std::string ai::AiRanged::s_EBOLA_ID = "";
+std::string ai::AiRanged::s_DEATH_ID = "";
 bool const ai::AiRanged::s_COLOR_QUAD = false;
 float const ai::AiRanged::s_C2_RADIUS = 25.0f;
 
@@ -19,6 +20,7 @@ float const ai::AiRanged::s_C2_RADIUS = 25.0f;
 ai::AiRanged::AiRanged(Player const & player, sf::Vector2f position)
 	: ai::AiBase()
 	, m_player(player)
+	, m_alive(true)
 	, m_position(position)
 	, m_speed(0.0f)
 	, m_heading({ 0.0f, 1.0f })
@@ -66,6 +68,7 @@ void ai::AiRanged::setup(
 	std::string const JSON_DEPLOY("deploy");
 	std::string const JSON_SHOOT("shoot");
 	std::string const JSON_SPIT("ebola");
+	std::string const JSON_DEATH("death");
 
 	std::string const JSON_KEY("key");
 
@@ -73,6 +76,7 @@ void ai::AiRanged::setup(
 	ai::AiRanged::s_DEPLOY_ID = rangedEnemyParser.at(JSON_DEPLOY).at(JSON_KEY).get<std::string>();
 	ai::AiRanged::s_SHOOT_ID = rangedEnemyParser.at(JSON_SHOOT).at(JSON_KEY).get<std::string>();
 	ai::AiRanged::s_EBOLA_ID = rangedEnemyParser.at(JSON_SPIT).at(JSON_KEY).get<std::string>();
+	ai::AiRanged::s_DEATH_ID = rangedEnemyParser.at(JSON_DEATH).at(JSON_KEY).get < std::string>();
 
 	// Loading/Parsing Texture
 
@@ -100,6 +104,12 @@ void ai::AiRanged::setup(
 		rangedEnemyParser.at(JSON_SPIT).at(JSON_TEXTURE),
 		ai::AiRanged::s_EBOLA_ID
 	);
+	ai::AiBase::setup(
+		sptrResources->m_textureDeath,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_DEATH).at(JSON_TEXTURE),
+		ai::AiRanged::s_DEATH_ID
+	);
 
 	// Loading/Parsing Animations
 
@@ -126,6 +136,12 @@ void ai::AiRanged::setup(
 		resourceHandler,
 		rangedEnemyParser.at(JSON_SPIT).at(JSON_ANIMATION),
 		ai::AiRanged::s_EBOLA_ID
+	);
+	ai::AiBase::setup(
+		sptrResources->m_animationDeath,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_DEATH).at(JSON_ANIMATION),
+		ai::AiRanged::s_DEATH_ID
 	);
 }
 
@@ -212,6 +228,7 @@ void ai::AiRanged::draw(Window & window, float const & deltaTime)
 void ai::AiRanged::spawn(sf::Vector2f const & spawnPosition)
 {
 	m_active = true;
+	m_alive = true;
 	m_health = s_MAX_HEALTH;
 	m_position = spawnPosition;
 	m_speed = 0.0f;
@@ -252,6 +269,21 @@ bool ai::AiRanged::checkCollision(tinyh::c2AABB const & collision) const
 bool ai::AiRanged::checkCollision(tinyh::c2Capsule const & collision) const
 {
 	return false;
+}
+
+/// <summary>
+/// @brief 
+/// </summary>
+/// <param name="damage"></param>
+/// <returns></returns>
+bool ai::AiRanged::decrementHealth(float const & damage)
+{
+	bool const IS_DEAD = ai::AiBase::decrementHealth(damage);
+	if (IS_DEAD)
+	{
+		this->setState(std::make_shared<ai::states::AiRangedDeathState>(this), false);
+	}
+	return IS_DEAD;
 }
 
 /// <summary>
@@ -348,6 +380,7 @@ void ai::AiRanged::initAnimations()
 	this->initAnimation(m_sptrResources->m_animationMove);
 	this->initAnimation(m_sptrResources->m_animationDeploy);
 	this->initAnimation(m_sptrResources->m_animationShoot);
+	this->initAnimation(m_sptrResources->m_animationDeath);
 }
 
 /// <summary>

@@ -453,6 +453,12 @@
     <ClCompile Include="src\entities\Progression.cpp">
       <Filter>Source Files\entities</Filter>
     </ClCompile>
+    <ClCompile Include="src\entities\ai\basic\ABDeathState.cpp">
+      <Filter>Source Files\entities\ai\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\ARDeathState.cpp">
+      <Filter>Source Files\entities\ai\ranged</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -738,6 +744,12 @@
     </ClInclude>
     <ClInclude Include="include\entities\Progression.h">
       <Filter>Header Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\basic\ABDeathState.h">
+      <Filter>Header Files\entities\ai\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\ARDeathState.h">
+      <Filter>Header Files\entities\ai\ranged</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

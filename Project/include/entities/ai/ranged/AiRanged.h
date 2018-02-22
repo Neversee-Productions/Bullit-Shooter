@@ -19,6 +19,7 @@ namespace ai
 		class AiRangedMoveState;
 		class AiRangedDeployState;
 		class AiRangedShootState;
+		class AiRangedDeathState;
 	}
 
 	/// 
@@ -34,6 +35,7 @@ namespace ai
 		friend class states::AiRangedMoveState;
 		friend class states::AiRangedDeployState;
 		friend class states::AiRangedShootState;
+		friend class states::AiRangedDeathState;
 
 	public: // Constructors/Destructor
 		AiRanged(Player const & player, sf::Vector2f position = { 0.0f, 0.0f });
@@ -51,9 +53,12 @@ namespace ai
 		void spawn(sf::Vector2f const & spawnPosition);
 		inline tinyh::c2Circle const & getC2Circle() const { return m_collisionCircle; }
 		inline std::vector<AiBullet> & getBullets() { return m_bulletManager.getBullets(); }
+		inline bool const & isAlive() const { return m_alive; }
+		inline void setAlive(bool const & newAlive) { m_alive = newAlive; }
 		virtual bool checkCollision(tinyh::c2Circle const & collision) const final override;
 		virtual bool checkCollision(tinyh::c2AABB const & collision) const final override;
 		virtual bool checkCollision(tinyh::c2Capsule const & collision) const final override;
+		virtual bool decrementHealth(float const & damage) final override;
 	public: // Public Member Variables
 	protected: // Protected Member Functions
 	protected: // Protected Member Variables
@@ -102,6 +107,12 @@ namespace ai
 		/// </summary>
 		static std::string s_EBOLA_ID;
 		/// <summary>
+		/// @brief Defines the ID of the death animation.
+		/// 
+		/// 
+		/// </summary>
+		static std::string s_DEATH_ID;
+		/// <summary>
 		/// @brief Defines whether to color the ai's states.
 		/// 
 		/// 
@@ -120,6 +131,12 @@ namespace ai
 		/// 
 		/// </summary>
 		Player const & m_player;
+		/// <summary>
+		/// @brief Defines whether enemy is alive.
+		/// 
+		/// 
+		/// </summary>
+		bool m_alive;
 		/// <summary>
 		/// @brief Defines the ai's current position.
 		/// 
@@ -232,5 +249,6 @@ namespace ai
 #include "entities\ai\ranged\ARMoveState.h"
 #include "entities\ai\ranged\ARDeployState.h"
 #include "entities\ai\ranged\ARShootState.h"
+#include "entities\ai\ranged\ARDeathState.h"
 
 #endif // !AI_RANGED_H

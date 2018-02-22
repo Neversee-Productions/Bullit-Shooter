@@ -16,11 +16,13 @@ namespace ai
 		ai::AiBase::Resources::Texture m_textureDeploy;
 		ai::AiBase::Resources::Texture m_textureShoot;
 		ai::AiBase::Resources::Texture m_textureEbola;
+		ai::AiBase::Resources::Texture m_textureDeath;
 
 		ai::AiBase::Resources::Animation m_animationMove;
 		ai::AiBase::Resources::Animation m_animationDeploy;
 		ai::AiBase::Resources::Animation m_animationShoot;
 		ai::AiBase::Resources::Animation m_animationEbola;
+		ai::AiBase::Resources::Animation m_animationDeath;
 	};
 }
 

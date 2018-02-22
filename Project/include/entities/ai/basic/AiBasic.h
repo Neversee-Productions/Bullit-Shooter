@@ -27,6 +27,7 @@ namespace ai
 		class AiBasicChargeState;
 		class AiBasicWindupState;
 		class AiBasicRecoverState;
+		class AiBasicDeathState;
 	}
 
 	/// 
@@ -76,6 +77,7 @@ namespace ai
 		typedef ai::states::AiBasicChargeState ChargeState;
 		typedef ai::states::AiBasicWindupState WindupState;
 		typedef ai::states::AiBasicRecoverState RecoverState;
+		typedef ai::states::AiBasicDeathState DeathState;
 
 		// Friends
 
@@ -84,9 +86,10 @@ namespace ai
 		friend class ai::states::AiBasicChargeState;
 		friend class ai::states::AiBasicWindupState;
 		friend class ai::states::AiBasicRecoverState;
+		friend class ai::states::AiBasicDeathState;
 
 	public: // Constructors/Destructor
-		AiBasic(Player const & player, sf::Vector2f const & position = { 0.0f, 0.0f });
+		AiBasic(Player const & player, sf::Vector2f const & position = { 0.0f, 0.0f }, sf::Vector2f const & heading = { 0.0f, 1.0f });
 		~AiBasic() = default;
 
 	public: // Public Member Functions
@@ -99,6 +102,10 @@ namespace ai
 		virtual bool checkCollision(tinyh::c2Capsule const & collision) const final override;
 		tinyh::c2AABB const & getCollisionAABB() const;
 		void spawn(sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading);
+		virtual bool decrementHealth(float const & damage) final override;
+		inline bool isAlive() const { return !m_dead; }
+		inline bool const & isDead() const { return m_dead; }
+		inline void setDead(bool const & newDead) { m_dead = newDead; }
 
 	protected: // Protected Member Functions
 		void setState(std::shared_ptr<SeekState> sptrState, bool rememberPrevious);
@@ -107,7 +114,12 @@ namespace ai
 		void updateHitbox(sf::RectangleShape const & box);
 
 	protected: // Protected Member Variables
-
+		/// <summary>
+		/// @brief Defines whether the bug is alive or dead.
+		/// 
+		/// When the bug is dead no collisions occur with him.
+		/// </summary>
+		bool m_dead;
 		/// <summary>
 		/// @brief Describes the position of the ai.
 		/// 
@@ -189,7 +201,6 @@ namespace ai
 		/// push'ing/pop'ing from the stack.
 		/// </summary>
 		std::stack<std::shared_ptr<BasicState>> m_stateStack;
-
 		/// <summary>
 		/// @brief shared pointer to our currently active state.
 		/// 
@@ -198,49 +209,42 @@ namespace ai
 		/// the current state.
 		/// </summary>
 		std::shared_ptr<BasicState> m_sptrState;
-
 		/// <summary>
 		/// @brief shared pointer to our resources.
 		/// 
 		/// 
 		/// </summary>
 		std::shared_ptr<Resources> m_sptrResources;
-
 		/// <summary>
 		/// @brief Static id of idle state.
 		/// 
 		/// Used to access the idle animation.
 		/// </summary>
 		static std::string s_SEEK_ID;
-
 		/// <summary>
 		/// @brief Static id of windup state.
 		/// 
 		/// Used to access the windup animation.
 		/// </summary>
 		static std::string s_WINDUP_ID;
-
 		/// <summary>
 		/// @brief Static id of charge state.
 		/// 
 		/// Used to access the charge animation.
 		/// </summary>
 		static std::string s_CHARGE_ID;
-
 		/// <summary>
 		/// @brief Static id of recover state.
 		/// 
 		/// Used to access the recover animation.
 		/// </summary>
 		static std::string s_RECOVER_ID;
-
 		/// <summary>
 		/// @brief Static id of death state.
 		/// 
 		/// Used to access the death animation.
 		/// </summary>
 		static std::string s_DEATH_ID;
-
 		/// <summary>
 		/// @brief Static defines whether to color in states.
 		/// 
@@ -248,21 +252,18 @@ namespace ai
 		/// the render quad of each ai.
 		/// </summary>
 		static bool const s_COLOR_STATES;
-
 		/// <summary>
 		/// @brief Static defines what all ai's max health.
 		/// 
 		/// 
 		/// </summary>
 		static float const s_MAX_HEALTH;
-
 		/// <summary>
 		/// @brief define offset on the y axis about which the health bar will be.
 		/// 
 		/// 
 		/// </summary>
 		float m_healthbarOffstet;
-
 		/// <summary>
 		/// @brief starting width of the health bar.
 		/// 
@@ -285,5 +286,6 @@ namespace ai
 #include "ABChargeState.h"
 #include "ABWindupState.h"
 #include "ABRecoverState.h"
+#include "ABDeathState.h"
 
 #endif // !AI_BASIC_H

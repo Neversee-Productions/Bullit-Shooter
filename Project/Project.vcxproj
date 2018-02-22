@@ -22,6 +22,7 @@
     <ClCompile Include="src\entities\ai\AiBase.cpp" />
     <ClCompile Include="src\entities\ai\AiBaseState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABChargeState.cpp" />
+    <ClCompile Include="src\entities\ai\basic\ABDeathState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABRecoverState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABSeekState.cpp" />
     <ClCompile Include="src\entities\ai\basic\ABWindupState.cpp" />
@@ -29,6 +30,7 @@
     <ClCompile Include="src\entities\ai\basic\AiBasicState.cpp" />
     <ClCompile Include="src\entities\ai\ranged\AiRanged.cpp" />
     <ClCompile Include="src\entities\ai\ranged\AiRangedState.cpp" />
+    <ClCompile Include="src\entities\ai\ranged\ARDeathState.cpp" />
     <ClCompile Include="src\entities\ai\ranged\ARDeployState.cpp" />
     <ClCompile Include="src\entities\ai\ranged\ARMoveState.cpp" />
     <ClCompile Include="src\entities\ai\ranged\ARShootState.cpp" />
@@ -117,6 +119,7 @@
     <ClInclude Include="include\entities\ai\AiBase.h" />
     <ClInclude Include="include\entities\ai\AiBaseState.h" />
     <ClInclude Include="include\entities\ai\basic\ABChargeState.h" />
+    <ClInclude Include="include\entities\ai\basic\ABDeathState.h" />
     <ClInclude Include="include\entities\ai\basic\ABRecoverState.h" />
     <ClInclude Include="include\entities\ai\basic\ABSeekState.h" />
     <ClInclude Include="include\entities\ai\basic\ABWindupState.h" />
@@ -125,6 +128,7 @@
     <ClInclude Include="include\entities\ai\ranged\AiRanged.h" />
     <ClInclude Include="include\entities\ai\ranged\AiRangedState.h" />
     <ClInclude Include="include\entities\ai\ranged\AiResources.h" />
+    <ClInclude Include="include\entities\ai\ranged\ARDeathState.h" />
     <ClInclude Include="include\entities\ai\ranged\ARDeployState.h" />
     <ClInclude Include="include\entities\ai\ranged\ARMoveState.h" />
     <ClInclude Include="include\entities\ai\ranged\ARShootState.h" />

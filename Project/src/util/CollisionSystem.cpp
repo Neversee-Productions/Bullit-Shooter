@@ -80,7 +80,7 @@ void CollisionSystem::updatePlayer()
 		}
 		for (auto & enemy : m_basicEnemyManager.getEnemies())
 		{
-			if (enemy.getActive() && enemy.checkCollision(m_player.getShieldCollisionCircle()))
+			if (enemy.getActive() && enemy.isAlive() && enemy.checkCollision(m_player.getShieldCollisionCircle()))
 			{
 				this->playerVsBasicEnemy(m_player, enemy);
 			}
@@ -167,7 +167,7 @@ void CollisionSystem::updatePlayerBulletToBasicEnemies(bullets::Bullet & bullet)
 		auto & enemies = m_basicEnemyManager.getEnemies();
 		for (auto & enemy : enemies)
 		{
-			if (enemy.getActive() && bullet.checkAABBCollision(enemy.getCollisionAABB()))
+			if (enemy.getActive() && enemy.isAlive() && bullet.checkAABBCollision(enemy.getCollisionAABB()))
 			{
 				this->basicEnemyVsBullet(enemy, bullet);
 			}
@@ -189,7 +189,7 @@ void CollisionSystem::updatePlayerBulletToRangedEnemies(bullets::Bullet & bullet
 		auto & enemies = m_rangedEnemyManager.getEnemies();
 		for (auto & enemy : enemies)
 		{
-			if (enemy.getActive() && bullet.checkCircleCollision(enemy.getC2Circle()))
+			if (enemy.getActive() && enemy.isAlive() && bullet.checkCircleCollision(enemy.getC2Circle()))
 			{
 				this->rangedEnemyVsBullet(enemy, bullet);
 			}
@@ -514,7 +514,6 @@ void CollisionSystem::basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & 
 		{
 			m_soundManager.play("what-hit");
 		}
-		enemy.setActive(false);
 	}
 }
 
@@ -538,7 +537,6 @@ void CollisionSystem::rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet 
 		{
 			m_soundManager.play("what-hit");
 		}
-		enemy.setActive(false);
 	}
 }
 

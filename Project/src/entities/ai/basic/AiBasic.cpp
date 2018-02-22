@@ -62,11 +62,12 @@ void ai::AiBasic::setup(
 /// 
 /// Construct our map of actions.
 /// </summary>
-ai::AiBasic::AiBasic(Player const & player, sf::Vector2f const & position)
+ai::AiBasic::AiBasic(Player const & player, sf::Vector2f const & position, sf::Vector2f const & heading)
 	: AiBase()
+	, m_dead(false)
 	, m_position(position)
 	, m_speed(0.0f)
-	, m_heading{ 0.0f, 1.0f }
+	, m_heading(heading)
 	, m_angle(0.0f)
 	, m_player(player)
 	, m_collisionShape({ 50.0f, 50.0f })
@@ -194,6 +195,16 @@ void ai::AiBasic::spawn(sf::Vector2f const & spawnPosition, sf::Vector2f const &
 	this->setActive(true);
 	this->setTexture(this->s_SEEK_ID);
 	this->initStates();
+}
+
+bool ai::AiBasic::decrementHealth(float const & damage)
+{
+	bool const IS_DEAD = ai::AiBase::decrementHealth(damage);
+	if (IS_DEAD)
+	{
+		this->setState(std::make_shared<ai::states::AiBasicDeathState>(*this), false);
+	}
+	return IS_DEAD;
 }
 
 /// <summary>
@@ -335,6 +346,10 @@ void ai::AiBasic::initAnimations()
 		m_sptrResources->m_animationRecover.m_id,
 		m_sptrResources->m_animationRecover.m_frames,
 		m_sptrResources->m_animationRecover.m_duration);
+	m_animator.addAnimation(
+		m_sptrResources->m_animationDeath.m_id,
+		m_sptrResources->m_animationDeath.m_frames,
+		m_sptrResources->m_animationDeath.m_duration);
 }
 
 /// <summary>
@@ -372,6 +387,12 @@ void ai::AiBasic::setTexture(std::string const & id)
 		m_renderQuad.setScale(m_sptrResources->m_textureRecover.m_scale);
 		m_renderQuad.setTexture(m_sptrResources->m_textureRecover.m_sptrTexture.get(), true);
 		m_renderQuad.setTextureRect(m_sptrResources->m_textureRecover.m_textureRect);
+	}
+	else if (id == this->s_DEATH_ID)
+	{
+		m_renderQuad.setScale(m_sptrResources->m_textureDeath.m_scale);
+		m_renderQuad.setTexture(m_sptrResources->m_textureDeath.m_sptrTexture.get(), true);
+		m_renderQuad.setTextureRect(m_sptrResources->m_textureDeath.m_textureRect);
 	}
 }
 
