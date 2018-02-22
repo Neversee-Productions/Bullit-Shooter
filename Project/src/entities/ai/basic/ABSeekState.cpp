@@ -142,8 +142,6 @@ void ai::states::AiBasicSeekState::updateSpeed(sf::Vector2f const & aiToPlayer)
 	m_ai.m_speed = m_MAX_SPEED;
 }
 
-
-
 /// <summary>
 /// @brief calculate the ai's heading and the angle he is looking at.
 /// 

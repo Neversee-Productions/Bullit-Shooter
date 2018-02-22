@@ -28,7 +28,7 @@ public:
 	};
 
 public:
-	Connector();
+	Connector(bool flipped = false);
 	void init(std::shared_ptr<Resources> resources);
 	void update(sf::Vector2f const & startPos, sf::Vector2f const & endPos);
 	void draw(Window & window, float const & deltaTime);
@@ -71,7 +71,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	std::unique_ptr<sf::Clock> m_timer;
+	sf::Time m_timer;
 
 	/// <summary>
 	/// @brief Defines the render state of the connector.
@@ -97,6 +97,12 @@ private:
 	/// shader at a specified location.
 	/// </summary>
 	sf::RectangleShape m_shaderQuad;
+	/// <summary>
+	/// @brief Describes whether the connector is flipped.
+	/// 
+	/// 
+	/// </summary>
+	bool const m_FLIPPED;
 };
 
 #endif // !CONNECTOR_H

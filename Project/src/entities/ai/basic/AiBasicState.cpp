@@ -7,8 +7,8 @@
 /// 
 /// </summary>
 ai::states::AiBasicState::AiBasicState(AiBasic & aiUnit)
-	: m_ai(aiUnit)
-	, m_DELTA_TIME(App::getUpdateDeltaTime())
+	: ai::states::AiBaseState()
+	, m_ai(aiUnit)
 {
 }
 

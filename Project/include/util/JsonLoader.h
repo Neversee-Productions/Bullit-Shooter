@@ -22,7 +22,7 @@ namespace util
 	/// </summary>
 	/// <param name="filePath">string to the json file.</param>
 	/// <returns>json object ready to be parsed.</returns>
-	json::json loadJsonFromFile(std::string const & filePath);
+	js::json loadJsonFromFile(std::string const & filePath);
 }
 
 #endif // !JSON_LOADER_H

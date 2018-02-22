@@ -9,7 +9,7 @@ sf::Time const Asteroid::s_FLASH_TIME = sf::seconds(0.05f);
 /// 
 /// </summary>
 /// <param name="sptrResources">shared pointer to asteroid resource.</param>
-void Asteroid::setup(std::shared_ptr<Resources> sptrResources, json::json & jsonParser)
+void Asteroid::setup(std::shared_ptr<Resources> sptrResources, js::json & jsonParser)
 {
 	setupFlashFrame(sptrResources->m_flashTextureRect, jsonParser.at("idle").at("flash_frame"));
 	sptrResources->m_idleTexture = jsonParser.at("idle").at("texture").get<Resources::Texture>();
@@ -406,7 +406,7 @@ float Asteroid::getRotation()
 /// </summary>
 /// <param name="flashFrame">reference to flash frame to be loaded.</param>
 /// <param name="flashFrameParser">reference to json parser.</param>
-void Asteroid::setupFlashFrame(sf::IntRect & flashFrame, json::json & flashFrameParser)
+void Asteroid::setupFlashFrame(sf::IntRect & flashFrame, js::json & flashFrameParser)
 {
 	flashFrame = sf::IntRect(
 		flashFrameParser.at("x").get<int>()
@@ -448,7 +448,7 @@ void Asteroid::generateRandomRotation()
 /// </summary>
 /// <param name="j">read-only reference to json file to be parsed</param>
 /// <param name="textureData">reference to destination of data to be parsed</param>
-void from_json(const json::json & j, Asteroid::Resources::Texture & textureData)
+void from_json(const js::json & j, Asteroid::Resources::Texture & textureData)
 {
 	// Resource handler will load in out texture for us.
 	ResourceHandler & resourceHandler = ResourceHandler::get();
@@ -481,7 +481,7 @@ void from_json(const json::json & j, Asteroid::Resources::Texture & textureData)
 /// </summary>
 /// <param name="j">read-only reference to json file to be parsed</param>
 /// <param name="animationData">reference to destination of data to be parsed</param>
-void from_json(const json::json & j, Asteroid::Resources::Animation & animationData)
+void from_json(const js::json & j, Asteroid::Resources::Animation & animationData)
 {
 	ResourceHandler & resourceHandler = ResourceHandler::get();
 
@@ -502,7 +502,6 @@ void from_json(const json::json & j, Asteroid::Resources::Animation & animationD
 
 	animationData.m_frames = thor::FrameAnimation();
 	{ // Initialize animation frames.
-		float i = 0.0f;
 		sf::IntRect rect = { 0,0,0,0 };
 		rect.width = j.at(JSON_WIDTH).get<int>();
 		rect.height = j.at(JSON_HEIGHT).get<int>();
@@ -511,7 +510,7 @@ void from_json(const json::json & j, Asteroid::Resources::Animation & animationD
 			rect.left = jsonNode.at("x").get<int>();
 			rect.top = jsonNode.at("y").get<int>();
 
-			animationData.m_frames.addFrame(i++, rect);
+			animationData.m_frames.addFrame(1.0f, rect);
 		}
 	}
 }

@@ -119,7 +119,7 @@ void OptionsScene::setup(const std::string & filePath)
 	auto & resourceHandler = ResourceHandler::get();
 	Scene::setNextSceneName("");
 
-	json::json jsonLoader = util::loadJsonFromFile(filePath);
+	js::json jsonLoader = util::loadJsonFromFile(filePath);
 
 	m_resources = std::make_unique<Resources>();
 

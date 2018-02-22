@@ -12,7 +12,7 @@ Background::Background()
 	, m_COLOR_CHANGE(0.5f)
 	, m_image(static_cast<sf::Vector2f>(App::getViewSize()))
 	, m_shader(nullptr)
-	, m_timer(nullptr)
+	, m_timer()
 	, m_renderState()
 {
 }
@@ -31,11 +31,6 @@ void Background::init(std::shared_ptr<Resources> resources)
 		m_shader = resources->m_sptrBgShader;
 	}
 	m_renderState.shader = m_shader.get();
-
-	if (!m_timer)
-	{
-		m_timer = std::make_unique<sf::Clock>();
-	}
 }
 
 /// <summary>
@@ -60,7 +55,8 @@ void Background::update()
 /// <param name="deltaTime">draw delta time.</param>
 void Background::draw(Window & window, const float & deltaTime)
 {
-	m_shader->setUniform("time", m_timer->getElapsedTime().asSeconds());
+	m_timer += sf::seconds(deltaTime);
+	m_shader->setUniform("time", m_timer.asSeconds());
 	m_shader->setUniform("color", m_bgColor);
 	window.draw(m_image, m_renderState);
 }
@@ -86,7 +82,7 @@ void Background::reset()
 {
 	m_bgColor = sf::Color::Black;
 	m_bgTargetColor = sf::Color::Black;
-	m_timer = std::make_unique<sf::Clock>();
+	m_timer = sf::Time();
 }
 
 /// <summary>

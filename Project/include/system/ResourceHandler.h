@@ -70,7 +70,7 @@ public:
 	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
 	/// <returns>Returns std::shared_ptr to our loaded resource.</returns>
 	template<typename data_type>
-	std::shared_ptr<data_type> loadUp(json::json & jsonParser, const std::string & id);
+	std::shared_ptr<data_type> loadUp(js::json & jsonParser, const std::string & id);
 
 private:
 	ResourceHandler();
@@ -86,7 +86,7 @@ private:
 	/// <param name="id">Defines the key we use to identify our data in our resource holder.</param>
 	/// <returns>Reference to our loaded data.</returns>
 	template<typename data_type>
-	data_type & load(json::json & jsonParser, const std::string & id);
+	data_type & load(js::json & jsonParser, const std::string & id);
 
 	/// <summary>
 	/// @brief Loads a particular resource.
@@ -98,7 +98,7 @@ private:
 	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
 	/// <param name="id">defines its id in our resource holder.</param>
 	/// <returns>Reference to our loaded resource.</returns>
-	template<> thor::FrameAnimation & load<thor::FrameAnimation>(json::json & jsonParser, const std::string & id);
+	template<> thor::FrameAnimation & load<thor::FrameAnimation>(js::json & jsonParser, const std::string & id);
 
 	/// <summary>
 	/// @brief Loads a particular resource.
@@ -109,7 +109,7 @@ private:
 	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
 	/// <param name="id">defines its id in our resource holder.</param>
 	/// <returns>Reference to our loaded resource.</returns>
-	template<> std::vector<sf::IntRect> & load<std::vector<sf::IntRect>>(json::json & jsonParser, const std::string & id);
+	template<> std::vector<sf::IntRect> & load<std::vector<sf::IntRect>>(js::json & jsonParser, const std::string & id);
 
 	/// <summary>
 	/// @brief Loads a particular resource.
@@ -120,7 +120,7 @@ private:
 	/// <param name="jsonParser">defines the json file that our resource holder uses.</param>
 	/// <param name="id">defines its id in our resource holder.</param>
 	/// <returns>Reference to our loaded resource.</returns>
-	template<> std::shared_ptr<sf::Shader>& load<std::shared_ptr<sf::Shader>>(json::json & jsonParser, const std::string & id);
+	template<> std::shared_ptr<sf::Shader>& load<std::shared_ptr<sf::Shader>>(js::json & jsonParser, const std::string & id);
 
 	/// <summary>
 	/// @brief Template loader.

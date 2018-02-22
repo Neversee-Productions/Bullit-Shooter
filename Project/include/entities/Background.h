@@ -86,12 +86,12 @@ private:
 	std::shared_ptr<sf::Shader> m_shader;
 
 	/// <summary>
-	/// @brief Defines unique pointer to the timer.
+	/// @brief Defines the timer.
 	/// 
 	/// The timer is used in our shader to apply
 	/// a color effect that changes over time.
 	/// </summary>
-	std::unique_ptr<sf::Clock> m_timer;
+	sf::Time m_timer;
 
 	/// <summary>
 	/// @brief Defines the render state of the background.

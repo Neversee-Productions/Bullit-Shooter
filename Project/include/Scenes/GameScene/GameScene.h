@@ -15,6 +15,8 @@
 #include "sound\SoundManager.h"
 #include "Entities\Entities.h"
 #include "entities\BasicEnemyManager.h"
+#include "entities\RangedEnemyManager.h"
+#include "entities\ai\ranged\AiResources.h"
 #include "util\JsonLoader.h"
 #include "util\CollisionSystem.h"
 #include "gui\game_ui\GameUI.h"
@@ -49,6 +51,8 @@ private:
 				std::make_shared<Asteroid::Resources>();
 			std::shared_ptr<BasicEnemyManager::Resources> m_sptrBasicEnemyManager =
 				std::make_shared<BasicEnemyManager::Resources>();
+			std::shared_ptr<ai::Resources> m_sptrRangedEnemy =
+				std::make_shared<ai::Resources>();
 		};
 
 		/// <summary>
@@ -94,73 +98,73 @@ private:
 	void setupPlayer(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Player::Resources> sptrPlayerResources
-		, json::json & gameSceneParser
+		, js::json & gameSceneParser
 	);
 	void setupShip(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Ship::Resources> sptrShipResources
-		, json::json & shipParser
+		, js::json & shipParser
 	);
 	void setupWeapons(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Weapon::Resources> sptrWeaponResources
-		, json::json & weaponParser
+		, js::json & weaponParser
 	);
 	std::unique_ptr<Weapon::Resources::IndividualWeapon>
 		setupWeaponAnim(
 			ResourceHandler & resourceHandler
-			, json::json & weaponParser
+			, js::json & weaponParser
 			, std::string const & id
 		);
 	void setupConnector(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Connector::Resources> sptrConnectorResources
-		, json::json & connectorParser
+		, js::json & connectorParser
 	);
 	void setupBulletManager(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<BulletManager::Resources> sptrBulletManagerResources
-		, json::json & bulletManagerParser
+		, js::json & bulletManagerParser
 	);
 	void setupBullet(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<BulletManager::Resources::BulletResources> sptrBulletResources
 		, BulletTypes const & bulletType
-		, json::json & bulletParser
+		, js::json & bulletParser
 		, std::string const & id
 	);
 	void setupBackground(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Background::Resources> sptrBackgroundResources
-		, json::json & gameSceneParser
+		, js::json & gameSceneParser
 	);
 	void setupPickups(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Pickup::Resources> sptrPickupResources
-		, json::json & gameSceneParser
+		, js::json & gameSceneParser
 	);
 	void setupPickup(
 		ResourceHandler & resourceHandler
 		, Pickup::Resources::PickupMap & pickupMap
-		, json::json & pickupParser
+		, js::json & pickupParser
 		, BulletTypes const & pickupType
 	);
 	void setupPickupEffect(
 		ResourceHandler & resourceHandler
 		, Pickup::Resources::Effect & effect
-		, json::json & effectParser
+		, js::json & effectParser
 	);
 
 	void setupEnemies(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Resources::Enemies> sptrEnemies
-		, json::json & gameSceneParser
+		, js::json & gameSceneParser
 	);
 
 	void setupUI(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<GameUI::Resources> sptrUI
-		, json::json & gameSceneParser
+		, js::json & gameSceneParser
 	);
 
 	/// <summary>
@@ -225,6 +229,12 @@ private:
 	/// 
 	/// </summary>
 	BasicEnemyManager m_basicEnemyManager;
+	/// <summary>
+	/// @brief manages the isntances of all ranged enemies.
+	/// 
+	/// 
+	/// </summary>
+	RangedEnemyManager m_rangedEnemyManager;
 
 	/// <summary>
 	/// @brief this is the UI object.

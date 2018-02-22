@@ -35,28 +35,24 @@ public:
 			/// 
 			/// </summary>
 			std::string m_id = "";
-
 			/// <summary>
 			/// @brief Store the origin of the texture.
 			/// 
 			/// 
 			/// </summary>
 			sf::Vector2f m_origin;
-
 			/// <summary>
 			/// @brief Store the scale of the texture.
 			/// 
 			/// 
 			/// </summary>
 			sf::Vector2f m_scale;
-
 			/// <summary>
 			/// @brief Store the texture rectangle.
 			/// 
 			/// Source rectangle 
 			/// </summary>
 			sf::IntRect m_textureRect;
-
 			/// <summary>
 			/// @brief Store shared pointer to texture.
 			/// 
@@ -64,7 +60,7 @@ public:
 			/// </summary>
 			std::shared_ptr<sf::Texture> m_sptrTexture = nullptr;
 
-			friend void from_json(const json::json& j, Texture & t);
+			friend void from_json(const js::json& j, Texture & t);
 		};
 
 		/// 
@@ -81,28 +77,24 @@ public:
 			/// 
 			/// </summary>
 			std::string m_id = "";
-
 			/// <summary>
 			/// @brief Defines the duration of the animation.
 			/// 
 			/// 
 			/// </summary>
 			sf::Time m_duration;
-
 			/// <summary>
 			/// @brief Defines the origin of the animation frames.
 			/// 
 			/// 
 			/// </summary>
 			sf::Vector2f m_origin;
-
 			/// <summary>
 			/// @brief Defines shared pointer to our animation's frames.
 			/// 
 			/// 
 			/// </summary>
 			thor::FrameAnimation m_frames;
-
 			/// <summary>
 			/// @brief Defines shared pointer to our animation's texture.
 			/// 
@@ -110,7 +102,7 @@ public:
 			/// </summary>
 			std::shared_ptr<sf::Texture> m_sptrTexture = nullptr;
 
-			friend void from_json(const json::json& j, Animation & t);
+			friend void from_json(const js::json& j, Animation & t);
 		};
 
 		/// <summary>
@@ -119,21 +111,18 @@ public:
 		/// 
 		/// </summary>
 		Texture m_idleTexture;
-
 		/// <summary>
 		/// @brief Contains explosion texture.
 		/// 
 		/// 
 		/// </summary>
 		Texture m_explodeTexture;
-
 		/// <summary>
 		/// @brief Contains explosion animation.
 		/// 
 		/// 
 		/// </summary>
 		Animation m_explodeAnimation;
-
 		/// <summary>
 		/// @brief Contains flashing texture rectangle.
 		/// 
@@ -144,7 +133,7 @@ public:
 
 
 public:
-	static void setup(std::shared_ptr<Resources> sptrResources, json::json & jsonParser);
+	static void setup(std::shared_ptr<Resources> sptrResources, js::json & jsonParser);
 
 	Asteroid(std::shared_ptr<Resources> sptrResources);
 	void update();
@@ -171,7 +160,7 @@ public:
 	float getRotation();
 
 private:
-	static void setupFlashFrame(sf::IntRect & flashFrame, json::json & idleFrame);
+	static void setupFlashFrame(sf::IntRect & flashFrame, js::json & idleFrame);
 
 	void generateRandomEnemy();
 	void generateRandomRotation();

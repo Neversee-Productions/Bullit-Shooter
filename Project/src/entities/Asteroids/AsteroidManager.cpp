@@ -34,7 +34,6 @@ void AsteroidManager::init(std::shared_ptr<Asteroid::Resources> sptrResources)
 /// </summary>
 void AsteroidManager::update()
 {
-	m_asteroidSpawnStart -= App::getUpdateDeltaTime();
 	if (m_asteroidSpawnStart <= 0.0f)
 	{
 		this->updateSpawning();
@@ -45,6 +44,10 @@ void AsteroidManager::update()
 				asteroid.update();
 			}
 		}
+	}
+	else
+	{
+		m_asteroidSpawnStart -= App::getUpdateDeltaTime();
 	}
 }
 

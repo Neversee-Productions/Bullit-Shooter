@@ -10,6 +10,7 @@ CollisionSystem::CollisionSystem(
 	Player& player
 	, AsteroidManager & asteroidManager
 	, BasicEnemyManager & basicEnemyManager
+	, RangedEnemyManager & rangedEnemyManager
 	, Pickup & pickup
 	, GameUI & gameUi
 )
@@ -18,6 +19,7 @@ CollisionSystem::CollisionSystem(
 	, m_player(player)
 	, m_asteroidManager(asteroidManager)
 	, m_basicEnemyManager(basicEnemyManager)
+	, m_rangedEnemyManager(rangedEnemyManager)
 	, m_pickup(pickup)
 	, m_gameUi(gameUi)
 	, m_pickingUp(false)
@@ -35,28 +37,7 @@ CollisionSystem::CollisionSystem(
 void CollisionSystem::update()
 {
 	this->updatePlayer();
-	auto & asteroidVec = m_asteroidManager.getAsteroidVector();
-
-	auto & endItt = asteroidVec.end();
-	for (auto itt = asteroidVec.begin(); itt != endItt; ++itt)
-	{
-		if (itt->isActive() && !itt->isExplosion())
-		{
-			for (auto itt2 = itt; itt2 != endItt; ++itt2)
-			{
-				if (itt != itt2)
-				{
-					if (itt2->isActive() && !itt2->isExplosion())
-					{
-						if (tinyh::c2CircletoCircle(itt->getCollisionCircle(), itt2->getCollisionCircle()))
-						{
-							solveElasticCollision(*itt, *itt2);
-						}
-					}
-				}
-			}
-		}
-	}
+	this->updateAsteroids();
 }
 
 /// <summary>
@@ -99,9 +80,16 @@ void CollisionSystem::updatePlayer()
 		}
 		for (auto & enemy : m_basicEnemyManager.getEnemies())
 		{
-			if (enemy.isActive() && enemy.checkCollision(m_player.getShieldCollisionCircle()))
+			if (enemy.getActive() && enemy.checkCollision(m_player.getShieldCollisionCircle()))
 			{
-				this->playerVsEnemy(m_player, enemy);
+				this->playerVsBasicEnemy(m_player, enemy);
+			}
+		}
+		for (auto & enemy : m_rangedEnemyManager.getEnemies())
+		{
+			if (enemy.getActive())
+			{
+				this->updateRangedEnemyBullets(enemy);
 			}
 		}
 
@@ -120,7 +108,7 @@ void CollisionSystem::updatePlayer()
 /// @brief check and apply collisions from all bullets to all bullet hit-ables.
 /// 
 /// Iterates through all active and not impacted bullets,
-/// checking for collision against all active asteroids.
+/// checking for collision against all hit-ables.
 /// </summary>
 void CollisionSystem::updatePlayerBullets()
 {
@@ -132,7 +120,8 @@ void CollisionSystem::updatePlayerBullets()
 		{
 			auto & bullet = *uptrBullet;
 			this->updatePlayerBulletToAsteroids(bullet);
-			this->updatePlayerBulletToEnemies(bullet);
+			this->updatePlayerBulletToBasicEnemies(bullet);
+			this->updatePlayerBulletToRangedEnemies(bullet);
 		}
 	}
 }
@@ -166,21 +155,43 @@ void CollisionSystem::updatePlayerBulletToAsteroids(bullets::Bullet & bullet)
 /// <summary>
 /// @brief check and apply collisions from bullet onto every other enemy.
 /// 
-/// Iterate through all asteroids and check if they collided.
-/// If true than call CollisionSystem::enemyVsBullet.
+/// Iterate through all enemies and check if they collided.
+/// If true than call CollisionSystem::basicEnemyVsBullet.
 /// @see CollisionSystem::enemyVsBullet
 /// </summary>
 /// <param name="bullet">reference to bullet.</param>
-void CollisionSystem::updatePlayerBulletToEnemies(bullets::Bullet & bullet)
+void CollisionSystem::updatePlayerBulletToBasicEnemies(bullets::Bullet & bullet)
 {
 	if (bullet.isActive() && !bullet.isImpact())
 	{
 		auto & enemies = m_basicEnemyManager.getEnemies();
 		for (auto & enemy : enemies)
 		{
-			if (enemy.isActive() && bullet.checkAABBCollision(enemy.getCollisionAABB()))
+			if (enemy.getActive() && bullet.checkAABBCollision(enemy.getCollisionAABB()))
 			{
-				this->enemyVsBullet(enemy, bullet);
+				this->basicEnemyVsBullet(enemy, bullet);
+			}
+		}
+	}
+}
+
+/// <summary>
+/// @brief check and apply collisions from bullet onto every other ranged enemy.
+/// 
+/// Iterate through all ranged enemies and check if they collided.
+/// If true than call CollisionSystem::
+/// </summary>
+/// <param name="bullet"></param>
+void CollisionSystem::updatePlayerBulletToRangedEnemies(bullets::Bullet & bullet)
+{
+	if (bullet.isActive() && !bullet.isImpact())
+	{
+		auto & enemies = m_rangedEnemyManager.getEnemies();
+		for (auto & enemy : enemies)
+		{
+			if (enemy.getActive() && bullet.checkCircleCollision(enemy.getC2Circle()))
+			{
+				this->rangedEnemyVsBullet(enemy, bullet);
 			}
 		}
 	}
@@ -244,6 +255,70 @@ void CollisionSystem::updatePlayerToGameUi()
 	else
 	{
 		m_gameUi.setLeftBarsTransparency(255u);
+	}
+}
+
+/// <summary>
+/// @brief check and apply collisions from asteroid to every other asteroid.
+/// 
+/// 
+/// </summary>
+void CollisionSystem::updateAsteroids()
+{
+	auto & asteroidVec = m_asteroidManager.getAsteroidVector();
+
+	auto & endItt = asteroidVec.end();
+	for (auto itt = asteroidVec.begin(); itt != endItt; ++itt)
+	{
+		if (itt->isActive() && !itt->isExplosion())
+		{
+			for (auto itt2 = itt; itt2 != endItt; ++itt2)
+			{
+				if (itt != itt2)
+				{
+					if (itt2->isActive() && !itt2->isExplosion())
+					{
+						if (tinyh::c2CircletoCircle(itt->getCollisionCircle(), itt2->getCollisionCircle()))
+						{
+							asteroidVsAsteroid(*itt, *itt2);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/// <summary>
+/// @brief check and apply collisions for enemy bullets.
+/// 
+/// Iterates through all active and not impacted bullets,
+/// checking for collision against all hit-ables.
+/// </summary>
+/// <param name="enemy">reference to enemy.</param>
+void CollisionSystem::updateRangedEnemyBullets(ai::AiRanged & enemy)
+{
+	auto & bullets = enemy.getBullets();
+	for (auto & bullet : bullets)
+	{
+		if (bullet.getActive()) // TODO: Add in '&& !getImpact()' condition
+		{
+			this->updateRangedEnemyBulletToPlayer(bullet);
+		}
+	}
+}
+
+/// <summary>
+/// @brief check and apply collisions from enemy bullet to player.
+/// 
+/// 
+/// </summary>
+/// <param name="bullet">reference to bullet.</param>
+void CollisionSystem::updateRangedEnemyBulletToPlayer(AiBullet & bullet)
+{
+	if (tinyh::c2CircletoAABB(m_player.getShieldCollisionCircle(), bullet.getC2AABB()))
+	{
+		this->rangedEnemyBulletVsPlayer(bullet, m_player);
 	}
 }
 
@@ -353,70 +428,114 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 /// </summary>
 /// <param name="asteroid">reference to enemy</param>
 /// <param name="bullet">reference to base bullet.</param>
-void CollisionSystem::enemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bullet)
+void CollisionSystem::baseEnemyVsBullet(ai::AiBase & enemy, bullets::Bullet & bullet)
 {
 	std::stringstream bulletImpactID;
 	bulletImpactID << "bullet";
 	using namespace bullets;
 	switch (bullet.getType())
 	{
-		case BulletTypes::DeathOrb:
-		case BulletTypes::HolySphere:
-		case BulletTypes::StaticSphere:
-			break;
-		case BulletTypes::CometShot:
-			//enemy.knockback();
-		case BulletTypes::Standard:
-		case BulletTypes::Empowered:
-		case BulletTypes::FireBlast:
-		case BulletTypes::NullWave:
+	case BulletTypes::DeathOrb:
+	case BulletTypes::HolySphere:
+	case BulletTypes::StaticSphere:
+		break;
+	case BulletTypes::CometShot:
+		//enemy.knockback();
+	case BulletTypes::Standard:
+	case BulletTypes::Empowered:
+	case BulletTypes::FireBlast:
+	case BulletTypes::NullWave:
+		bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
+		bullet.hit();
+		bulletImpactID << "_impact";
+		m_soundManager.play(bulletImpactID.str());
+		break; // 1
+	case BulletTypes::MagmaShot:
+	{
+		auto & derivedBullet = dynamic_cast<MagmaShot&>(bullet);
+		if (!derivedBullet.isExplosion())
+		{
 			bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
-			bullet.hit();
 			bulletImpactID << "_impact";
 			m_soundManager.play(bulletImpactID.str());
-			break; // 1
-		case BulletTypes::MagmaShot:
+		}
+		derivedBullet.explode(true);
+	}	break; // 3
+	case BulletTypes::NapalmSphere:
+	{
+		auto & derivedBullet = dynamic_cast<NapalmSphere&>(bullet);
+		if (!derivedBullet.isExplosion())
 		{
-			auto & derivedBullet = dynamic_cast<MagmaShot&>(bullet);
-			if (!derivedBullet.isExplosion())
-			{
-				bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
-				bulletImpactID << "_impact";
-				m_soundManager.play(bulletImpactID.str());
-			}
-			derivedBullet.explode(true);
-		}	break; // 3
-		case BulletTypes::NapalmSphere:
+			bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
+			bulletImpactID << "_impact";
+			m_soundManager.play(bulletImpactID.str());
+		}
+		derivedBullet.explode(true);
+	}	break; // 3
+	case BulletTypes::PyroBlast:
+	{
+		auto & derivedBullet = dynamic_cast<PyroBlast&>(bullet);
+		if (!derivedBullet.isExplosion())
 		{
-			auto & derivedBullet = dynamic_cast<NapalmSphere&>(bullet);
-			if (!derivedBullet.isExplosion())
-			{
-				bulletImpactID << "0" << std::to_string(static_cast<int>(bullet.getType()) + 1);
-				bulletImpactID << "_impact";
-				m_soundManager.play(bulletImpactID.str());
-			}
-			derivedBullet.explode(true);
-		}	break; // 3
-		case BulletTypes::PyroBlast:
-		{
-			auto & derivedBullet = dynamic_cast<PyroBlast&>(bullet);
-			if (!derivedBullet.isExplosion())
-			{
-				bulletImpactID << std::to_string(static_cast<int>(bullet.getType()) + 1);
-				bulletImpactID << "_impact";
-				m_soundManager.play(bulletImpactID.str());
-			}
-			derivedBullet.explode(true);
-		}	break; // 3
-		default:
-			break;
+			bulletImpactID << std::to_string(static_cast<int>(bullet.getType()) + 1);
+			bulletImpactID << "_impact";
+			m_soundManager.play(bulletImpactID.str());
+		}
+		derivedBullet.explode(true);
+	}	break; // 3
+	default:
+		break;
 	}
+}
+
+/// <summary>
+/// @brief Collision between a bullet and enemy has occured.
+/// 
+/// Details the appropriate response to bullet vs enemy collision.
+/// </summary>
+/// <param name="asteroid">reference to enemy</param>
+/// <param name="bullet">reference to base bullet.</param>
+void CollisionSystem::basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bullet)
+{
+	this->baseEnemyVsBullet(enemy, bullet);
 	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
 	if (ENEMY_DIED)
 	{
 		m_soundManager.play("enemy_death");
 		enemy.setActive(false);
 	}
+}
+
+/// <summary>
+/// @brief Collisions between a enemy and a bullet has occurred.
+/// 
+/// Details the appropriate response to player vs enemy collision.
+/// </summary>
+/// <param name="enemy">reference to enemy.</param>
+/// <param name="bullet">reference to bullet.</param>
+void CollisionSystem::rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet & bullet)
+{
+	this->baseEnemyVsBullet(enemy, bullet);
+	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
+	if (ENEMY_DIED)
+	{
+		m_soundManager.play("enemy_death");
+		enemy.setActive(false);
+	}
+}
+
+/// <summary>
+/// @brief Collisions between a ranged enemy bullet and a player has occurred.
+/// 
+/// Details the appropriate response to ranged enemy bullet vs player collision.
+/// </summary>
+/// <param name="bullet">reference to bullet.</param>
+/// <param name="player">reference to player.</param>
+void CollisionSystem::rangedEnemyBulletVsPlayer(AiBullet & bullet, Player & player)
+{
+	player.decrementShield(5.0f);
+	m_gameUi.decrementHealth(5.0f);
+	bullet.setActive(false);
 }
 
 /// <summary>
@@ -506,7 +625,7 @@ void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
 /// </summary>
 /// <param name="asteroid1">asteroid 1</param>
 /// <param name="asteroid2">asteroid 2</param>
-void CollisionSystem::solveElasticCollision(Asteroid & asteroid1, Asteroid & asteroid2)
+void CollisionSystem::asteroidVsAsteroid(Asteroid & asteroid1, Asteroid & asteroid2)
 {
 	asteroid1.setPosition(asteroid1.getPosition() - (asteroid1.getVelocity() * App::getUpdateDeltaTime()));
 	asteroid2.setPosition(asteroid2.getPosition() - (asteroid2.getVelocity() * App::getUpdateDeltaTime()));
@@ -539,7 +658,7 @@ void CollisionSystem::solveElasticCollision(Asteroid & asteroid1, Asteroid & ast
 /// </summary>
 /// <param name="player">reference to the player that collided.</param>
 /// <param name="enemy">reference to the enemy that collided.</param>
-void CollisionSystem::playerVsEnemy(Player & player, ai::AiBasic & enemy)
+void CollisionSystem::playerVsBasicEnemy(Player & player, ai::AiBasic & enemy)
 {
 	float const PLAYER_DMG = 4.0f;
 	if (!player.isInvulnerable())

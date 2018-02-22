@@ -13,17 +13,12 @@
 #include "Thor\Vectors.hpp"
 // Project Includes
 #include "system\Window.h"
+#include "entities\ai\AiBaseState.h"
 
 namespace ai
 {
 	class AiBasic;
 
-	/// 
-	/// @author Rafael Plugge
-	/// @brief Encapsulate all the states into their own namespace.
-	/// 
-	/// 
-	/// 
 	namespace states
 	{
 
@@ -33,17 +28,13 @@ namespace ai
 		/// 
 		/// 
 		/// 
-		class AiBasicState
+		class AiBasicState : public AiBaseState
 		{
 		public: // Constructors/Destructor
 			AiBasicState(AiBasic & aiUnit);
 			~AiBasicState() = default;
 
 		public: // Public Member Functions
-			virtual void enter() = 0;
-			virtual void update() = 0;
-			virtual void draw(Window & window, float const & deltaTime) = 0;
-			virtual void exit() = 0;
 			virtual bool checkCollision(tinyh::c2AABB const & collision);
 			virtual bool checkCollision(tinyh::c2Circle const & collision);
 			virtual bool checkCollision(tinyh::c2Capsule const & collision);
@@ -56,13 +47,6 @@ namespace ai
 			/// 
 			/// </summary>
 			AiBasic & m_ai;
-
-			/// <summary>
-			/// @brief Time between each update call, in seconds.
-			/// 
-			/// 
-			/// </summary>
-			float const & m_DELTA_TIME;
 		private: // Private Member Functions
 		private: // Private Member Variables
 

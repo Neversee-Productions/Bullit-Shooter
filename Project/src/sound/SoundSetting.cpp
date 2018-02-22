@@ -21,7 +21,7 @@ SoundSetting::SoundSetting()
 /// </summary>
 /// <param name="j">read-only reference to json parser.</param>
 /// <param name="soundSetting">reference to sound setting to be parsed.</param>
-void from_json(const json::json & j, SoundSetting & soundSetting)
+void from_json(const js::json & j, SoundSetting & soundSetting)
 {
 	ResourceHandler & resourceHandler = ResourceHandler::get();
 
@@ -31,7 +31,7 @@ void from_json(const json::json & j, SoundSetting & soundSetting)
 	std::string const JSON_BUFFER("buffer");
 
 	auto const & jEnd = j.end();
-	json::json::const_iterator result;
+	js::json::const_iterator result;
 	result = j.find(JSON_LOOP);
 	if (result != jEnd)
 	{

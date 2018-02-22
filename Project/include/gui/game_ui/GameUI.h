@@ -73,7 +73,7 @@ public: //public functions
 	);
 	void update();
 	void draw(Window & window, const float & deltaTime);
-	static void setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, json::json & UIParser);
+	static void setup(std::shared_ptr<Resources> sptrResources, ResourceHandler & resourceHandler, js::json & UIParser);
 	void init(std::shared_ptr<Resources> resources);
 	void decrementHealth(float health);
 	const tinyh::c2AABB & getHealthCollisionBox();

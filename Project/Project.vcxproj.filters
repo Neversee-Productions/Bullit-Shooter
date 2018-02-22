@@ -235,6 +235,21 @@
     <Filter Include="Resource Files\scenes\Game\player\bullets\bullet04">
       <UniqueIdentifier>{1b013a62-4360-4c95-9371-0d6dbf269493}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\entities\ai\ranged">
+      <UniqueIdentifier>{9fce99ce-eb11-4680-956c-7d14acaa15d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities\ai\ranged">
+      <UniqueIdentifier>{d0146987-102f-4295-8813-c192fbf9afee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\scenes\Game\enemies\ranged">
+      <UniqueIdentifier>{5da37e3c-4fb7-4249-8a66-6325148fc537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\entities\ai\ranged\bullets">
+      <UniqueIdentifier>{49ed5456-1193-4e74-b476-d3247ecf4893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities\ai\ranged\bullets">
+      <UniqueIdentifier>{2756f65c-7d3c-4eff-91b0-c77a0e520642}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -405,6 +420,33 @@
     <ClCompile Include="src\entities\BasicEnemyManager.cpp">
       <Filter>Source Files\entities</Filter>
     </ClCompile>
+    <ClCompile Include="src\entities\ai\AiBaseState.cpp">
+      <Filter>Source Files\entities\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\AiRanged.cpp">
+      <Filter>Source Files\entities\ai\ranged</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\AiRangedState.cpp">
+      <Filter>Source Files\entities\ai\ranged</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\RangedEnemyManager.cpp">
+      <Filter>Source Files\entities\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\ARMoveState.cpp">
+      <Filter>Source Files\entities\ai\ranged</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\ARDeployState.cpp">
+      <Filter>Source Files\entities\ai\ranged</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\ARShootState.cpp">
+      <Filter>Source Files\entities\ai\ranged</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\bullets\AiBullet.cpp">
+      <Filter>Source Files\entities\ai\ranged\bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\ai\ranged\bullets\AiBulletManager.cpp">
+      <Filter>Source Files\entities\ai\ranged\bullets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -472,6 +514,12 @@
     </None>
     <None Include="resources\scenes\Game\player\bullets\bullet04\bullet_fire.ogg">
       <Filter>Resource Files\scenes\Game\player\bullets\bullet04</Filter>
+    </None>
+    <None Include="resources\scenes\Game\enemies\ranged\enemy_death.ogg">
+      <Filter>Resource Files\scenes\Game\enemies\ranged</Filter>
+    </None>
+    <None Include="resources\scenes\Game\enemies\ranged\ranged.json">
+      <Filter>Resource Files\scenes\Game\enemies\ranged</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -645,6 +693,36 @@
     </ClInclude>
     <ClInclude Include="include\entities\BasicEnemyManager.h">
       <Filter>Header Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\AiBaseState.h">
+      <Filter>Header Files\entities\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\AiRanged.h">
+      <Filter>Header Files\entities\ai\ranged</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\AiRangedState.h">
+      <Filter>Header Files\entities\ai\ranged</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\ARMoveState.h">
+      <Filter>Header Files\entities\ai\ranged</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\RangedEnemyManager.h">
+      <Filter>Header Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\ARDeployState.h">
+      <Filter>Header Files\entities\ai\ranged</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\ARShootState.h">
+      <Filter>Header Files\entities\ai\ranged</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\bullets\AiBullet.h">
+      <Filter>Header Files\entities\ai\ranged\bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\bullets\AiBulletManager.h">
+      <Filter>Header Files\entities\ai\ranged\bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\entities\ai\ranged\AiResources.h">
+      <Filter>Header Files\entities\ai\ranged</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
