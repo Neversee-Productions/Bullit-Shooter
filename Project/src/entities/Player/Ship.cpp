@@ -84,6 +84,7 @@ void Ship::update()
 			m_playingUndocking = false;
 			m_playingDocking = true;
 			m_soundManager.play("docking");
+			m_soundManager.play("ship-dock-sound");
 		}
 		m_velocity.y = (App::getViewC2Rect().max.y - m_position.y) * 3;
 	}
@@ -350,6 +351,7 @@ bool Ship::getDocking()
 /// </summary>
 void Ship::dash()
 {
+	m_soundManager.play("ship-dash-sound");
 	m_velocity = sf::Vector2f(m_velocity.x, -(m_maxVel));
 }
 

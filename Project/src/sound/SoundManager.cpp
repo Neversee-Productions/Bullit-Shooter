@@ -183,7 +183,10 @@ bool SoundManager::checkSound(std::string const & id)
 void SoundManager::setupBg(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & bgParser)
 {
 	std::string const BG_SOUND_ID("bg_game_soundtrack");
+	std::string const BG_END_SOUND_ID("bg_game_end_soundtrack");
+
 	soundManager.addSound(bgParser.at("bg-soundtrack").get<SoundSetting>(), BG_SOUND_ID);
+	soundManager.addSound(bgParser.at("bg-soundtrack-end").get<SoundSetting>(), BG_END_SOUND_ID);
 }
 
 /// <summary>
@@ -198,6 +201,25 @@ void SoundManager::setupPlayer(ResourceHandler & resourceHandler, SoundManager &
 {
 	setupPlayerBullets(resourceHandler, soundManager, playerParser.at("bullets"));
 	setupPlayerWeapons(resourceHandler, soundManager, playerParser.at("weapons"));
+	setupPlayerShip(resourceHandler, soundManager, playerParser.at("ship"));
+}
+
+/// <summary>
+/// @brief Setups player ship sounds.
+/// 
+/// 
+/// </summary>
+/// <param name="resourceHandler">reference to resource handler, loads our resources using json parser and an ID.</param>
+/// <param name="soundManager">reference to sound manager, handles the playing of our sounds.</param>
+/// <param name="shipParser">reference to loaded json file ready to be parsed.</param>
+void SoundManager::setupPlayerShip(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & shipParser)
+{
+	std::string const DASH_ID = "dash";
+	std::string const DOCK_ID = "dock";
+
+	soundManager.addSound(shipParser.at(DASH_ID).get<SoundSetting>(), "ship-dash-sound");
+	soundManager.addSound(shipParser.at(DOCK_ID).get<SoundSetting>(), "ship-dock-sound");
+
 }
 
 /// <summary>

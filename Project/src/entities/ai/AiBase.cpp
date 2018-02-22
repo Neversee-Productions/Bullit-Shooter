@@ -11,6 +11,8 @@ float const & ai::AiBase::s_DELTA_TIME = App::getUpdateDeltaTime();
 /// <returns>true if ai died from this hit.</returns>
 bool ai::AiBase::decrementHealth(float const & damage)
 {
+	m_showHealthbar = true;
+	m_healthbarShowTimer = 0.0f;
 	m_health -= damage;
 
 	bool const IS_DEAD = (m_health <= 0.0f);

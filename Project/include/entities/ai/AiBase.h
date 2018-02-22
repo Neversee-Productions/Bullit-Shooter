@@ -12,6 +12,8 @@
 #include "system\Window.h"
 #include "system\ResourceHandler.h"
 
+#include "SFML\Graphics.hpp"
+
 /// 
 /// @author Rafael Plugge
 /// @brief Scope for all Ai classes.
@@ -161,6 +163,34 @@ namespace ai
 		/// 
 		/// </summary>
 		float m_health;
+
+		/// <summary>
+		/// @brief define healthbar for the enemy.
+		/// 
+		/// 
+		/// </summary>
+		sf::RectangleShape m_healthBar;
+
+		/// <summary>
+		/// @brief should healthbar be displayed
+		/// 
+		/// 
+		/// </summary>
+		bool m_showHealthbar = false;
+
+		/// <summary>
+		/// @brief how long healthbar has been displayed.
+		/// 
+		/// 
+		/// </summary>
+		float m_healthbarShowTimer = 0.0f;
+
+		/// <summary>
+		/// @brief how long to show healthbar for.
+		/// 
+		/// 
+		/// </summary>
+		float m_healthbarShowForTime = 1.5f;
 	};
 
 }

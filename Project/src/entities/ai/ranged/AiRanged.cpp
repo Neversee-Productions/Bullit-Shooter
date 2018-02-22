@@ -31,7 +31,13 @@ ai::AiRanged::AiRanged(Player const & player, sf::Vector2f position)
 	, m_sptrState(nullptr)
 	, m_sptrResources(nullptr)
 	, m_bulletManager()
+	, m_healthbarOffstet(50.0f)
+	, m_healthBarStartWidth(60.0f)
 {
+	m_healthBar.setSize(sf::Vector2f(m_healthBarStartWidth, 10.0f));
+	m_healthBar.setFillColor(sf::Color::Green);
+	m_healthBar.setOrigin(0.0f, m_healthBar.getLocalBounds().height / 2);
+	m_healthBar.setPosition(m_position.x - (m_healthBar.getLocalBounds().width / 2), m_position.y + m_healthbarOffstet);
 	m_active = true;
 	m_health = s_MAX_HEALTH;
 	m_collisionCircle.r = s_C2_RADIUS;
@@ -144,6 +150,17 @@ void ai::AiRanged::init(std::shared_ptr<ai::Resources> sptrResources)
 /// </summary>
 void ai::AiRanged::update()
 {
+	m_healthBar.setPosition(m_position.x - (m_healthBar.getLocalBounds().width / 2), m_position.y + m_healthbarOffstet);
+	m_healthBar.setScale(m_health / s_MAX_HEALTH, 1.0f);
+	if (m_showHealthbar)
+	{
+		m_healthbarShowTimer += App::getUpdateDeltaTime();
+		if (m_healthbarShowTimer >= m_healthbarShowForTime)
+		{
+			m_showHealthbar = false;
+			m_healthbarShowTimer = 0.0f;
+		}
+	}
 	if (this->getActive())
 	{
 		m_sptrState->update();
@@ -161,6 +178,15 @@ void ai::AiRanged::update()
 /// <param name="deltaTime">read-only reference to delta time since last draw call.</param>
 void ai::AiRanged::draw(Window & window, float const & deltaTime)
 {
+	if (m_showHealthbar)
+	{
+		m_healthBar.setFillColor(sf::Color(
+			255u - static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)),
+			static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
+			0u,
+			255u));
+		window.draw(m_healthBar);
+	}
 	if (this->getActive())
 	{
 		m_sptrState->draw(window, deltaTime);

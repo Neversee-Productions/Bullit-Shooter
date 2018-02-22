@@ -502,6 +502,11 @@ void CollisionSystem::basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & 
 	if (ENEMY_DIED)
 	{
 		m_soundManager.play("enemy_death");
+		auto random = (rand() % 6 + 1); //generate number between 1 and 6
+		if (random == 2)
+		{
+			m_soundManager.play("what-hit");
+		}
 		enemy.setActive(false);
 	}
 }
@@ -520,6 +525,11 @@ void CollisionSystem::rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet 
 	if (ENEMY_DIED)
 	{
 		m_soundManager.play("enemy_death");
+		auto random = (rand() % 6 + 1); //generate number between 1 and 6
+		if (random == 2)
+		{
+			m_soundManager.play("what-hit");
+		}
 		enemy.setActive(false);
 	}
 }

@@ -9,6 +9,7 @@
 #include "entities\Player\Player.h"
 #include "bullets\AiBulletManager.h"
 #include "AiResources.h"
+#include "SFML\Graphics.hpp"
 
 namespace ai
 {
@@ -210,6 +211,20 @@ namespace ai
 		/// Bullets can be active or innactive.
 		/// </summary>
 		AiBulletManager m_bulletManager;
+
+		/// <summary>
+		/// @brief define offset on the y axis about which the health bar will be.
+		/// 
+		/// 
+		/// </summary>
+		float m_healthbarOffstet;
+
+		/// <summary>
+		/// @brief starting width of the health bar.
+		/// 
+		/// 
+		/// </summary>
+		float m_healthBarStartWidth;
 	};
 }
 

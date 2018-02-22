@@ -17,6 +17,23 @@
 /// 
 class Asteroid
 {
+private:
+	/// <summary>
+	/// @brief struct that holds an animator and its sprite.
+	/// 
+	/// 
+	/// </summary>
+	struct ExplosionAnim
+	{
+		thor::Animator<sf::Sprite, int> animator;
+		sf::Sprite sprite;
+		bool active = false;
+		float xOffset;
+		float yOffset;
+		float timer;
+		float timeToExplosion;
+	};
+
 public:
 
 	struct Resources
@@ -158,6 +175,7 @@ public:
 	void setPosition(sf::Vector2f newPos);
 	void setRotation(float newRotation);
 	float getRotation();
+	void generateAnimStructVals(ExplosionAnim & animstruct);
 
 private:
 	static void setupFlashFrame(sf::IntRect & flashFrame, js::json & idleFrame);
@@ -319,6 +337,36 @@ private:
 	/// 	
 	/// </summary>
 	static sf::Time const s_FLASH_TIME;
+
+
+
+	/// <summary>
+	/// @brief define vector of animators which will be used to explode asteroid as it takes dmg.
+	/// 
+	/// 
+	/// </summary>
+	std::array<ExplosionAnim, 9> m_explodeAnimations;
+
+	/// <summary>
+	/// @brief when is health sixth.
+	/// 
+	/// 
+	/// </summary>
+	bool m_sixthHealth;
+
+	/// <summary>
+	/// @brief when is health third.
+	/// 
+	/// 
+	/// </summary>
+	bool m_thirdHealth;
+
+	/// <summary>
+	/// @brief define maximum health.
+	/// 
+	/// 
+	/// </summary>
+	static const float s_MAX_HEALTH;
 };
 
 #endif // !ASTEROIDS_H

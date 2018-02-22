@@ -3,7 +3,7 @@
     {
         "bg-soundtrack":
         {
-            "volume": 70.0,
+            "volume": 60.0,
             "loop": true,
             "attenuation": 1.0,
             "buffer":
@@ -11,10 +11,46 @@
                 "key": "bg_game_soundtrack",
                 "path": "resources/scenes/Game/sounds/game_music.ogg"
             }
+        },
+        "bg-soundtrack-end":
+        {
+            "volume": 60.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "bg-game-end",
+                "path": "resources/scenes/Game/sounds/game_end_music.ogg"
+            }
         }
     },
     "player":
     {
+        "ship":
+        {
+            "dash":
+            {
+                "volume": 50.0,
+                "loop": false,
+                "attenuation": 1.0,
+                "buffer":
+                {
+                    "key": "dash",
+                    "path": "resources/scenes/Game/player/ship/dash.ogg"
+                }
+            },
+            "dock":
+            {
+                "volume": 50.0,
+                "loop": false,
+                "attenuation": 1.0,
+                "buffer":
+                {
+                    "key": "dock",
+                    "path": "resources/scenes/Game/player/ship/dock.ogg"
+                }
+            }
+        },
         "bullets":
         {
             "bullet01":
@@ -307,7 +343,7 @@
     {
         "alarm":
         {
-            "volume": 70.0,
+            "volume": 60.0,
             "loop": true,
             "attenuation": 1.0,
             "buffer":

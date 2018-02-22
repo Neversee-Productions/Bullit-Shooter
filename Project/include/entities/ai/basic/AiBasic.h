@@ -255,6 +255,20 @@ namespace ai
 		/// 
 		/// </summary>
 		static float const s_MAX_HEALTH;
+
+		/// <summary>
+		/// @brief define offset on the y axis about which the health bar will be.
+		/// 
+		/// 
+		/// </summary>
+		float m_healthbarOffstet;
+
+		/// <summary>
+		/// @brief starting width of the health bar.
+		/// 
+		/// 
+		/// </summary>
+		float m_healthBarStartWidth;
 	};
 
 	/// <summary>

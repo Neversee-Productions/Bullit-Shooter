@@ -76,7 +76,13 @@ ai::AiBasic::AiBasic(Player const & player, sf::Vector2f const & position)
 	, m_sptrState(nullptr)
 	, m_sptrResources(nullptr)
 	, m_animator()
+	, m_healthbarOffstet(50.0f)
+	, m_healthBarStartWidth(60.0f)
 {
+	m_healthBar.setSize(sf::Vector2f(m_healthBarStartWidth, 10.0f));
+	m_healthBar.setFillColor(sf::Color::Green);
+	m_healthBar.setOrigin(0.0f, m_healthBar.getLocalBounds().height / 2);
+	m_healthBar.setPosition(m_position.x - (m_healthBar.getLocalBounds().width / 2), m_position.y + m_healthbarOffstet);
 	m_active = true;
 	m_health = s_MAX_HEALTH;
 	this->initRenderingQuad();
@@ -103,6 +109,17 @@ void ai::AiBasic::init(std::shared_ptr<Resources> sptrResources)
 /// </summary>
 void ai::AiBasic::update()
 {
+	m_healthBar.setPosition(m_position.x - (m_healthBar.getLocalBounds().width / 2), m_position.y + m_healthbarOffstet);
+	m_healthBar.setScale(m_health / s_MAX_HEALTH, 1.0f);
+	if (m_showHealthbar)
+	{
+		m_healthbarShowTimer += App::getUpdateDeltaTime();
+		if (m_healthbarShowTimer >= m_healthbarShowForTime)
+		{
+			m_showHealthbar = false;
+			m_healthbarShowTimer = 0.0f;
+		}
+	}
 	m_sptrState->update();
 	this->updateHitbox(m_renderQuad);
 }
@@ -114,11 +131,15 @@ void ai::AiBasic::update()
 /// <param name="deltaTime">read-only reference to delta time between last render calls.</param>
 void ai::AiBasic::draw(Window & window, float const & deltaTime)
 {
-	//m_renderQuad.setFillColor(sf::Color(
-	//	255u,
-	//	static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
-	//	static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
-	//	255u));
+	if (m_showHealthbar)
+	{
+		m_healthBar.setFillColor(sf::Color(
+			255u - static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)),
+			static_cast<sf::Uint8>(220u * (m_health / s_MAX_HEALTH)) + 25u,
+			0u,
+			255u));
+		window.draw(m_healthBar);
+	}
 	m_sptrState->draw(window, deltaTime);
 }
 

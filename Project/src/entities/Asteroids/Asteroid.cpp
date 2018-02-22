@@ -2,6 +2,7 @@
 
 float const Asteroid::INVULNERABILITY_FRAMES = 0.01f;
 sf::Time const Asteroid::s_FLASH_TIME = sf::seconds(0.05f);
+float const Asteroid::s_MAX_HEALTH = 10.0f;
 
 /// <summary>
 /// @brief Setups resource pointer.
@@ -33,7 +34,7 @@ Asteroid::Asteroid(std::shared_ptr<Resources> sptrResources)
 	, m_spawnEnemy(false)
 	, m_collisionCircle()
 	, m_windowC2Rect()
-	, m_health(10.0f)
+	, m_health(s_MAX_HEALTH)
 	, m_invulnerable(false)
 	, m_invulnTimer(0.0f)
 	, UPDATE_DT(App::getUpdateDeltaTime())
@@ -42,6 +43,8 @@ Asteroid::Asteroid(std::shared_ptr<Resources> sptrResources)
 	, m_explosionTimer(sf::milliseconds(0))
 	, m_flashTimer(sf::milliseconds(0))
 	, m_flash(false)
+	, m_sixthHealth(false)
+	, m_thirdHealth(false)
 {
 	const auto & windowRect = App::getViewC2Rect();
 	const auto & extraHeight = m_rectangle.getGlobalBounds().height * 2.0f;
@@ -68,6 +71,25 @@ Asteroid::Asteroid(std::shared_ptr<Resources> sptrResources)
 		sptrResources->m_explodeAnimation.m_id,
 		sptrResources->m_explodeAnimation.m_frames,
 		sptrResources->m_explodeAnimation.m_duration);
+
+	for (auto & animstruct : m_explodeAnimations)
+	{
+		animstruct.animator.addAnimation(
+			0,
+			sptrResources->m_explodeAnimation.m_frames,
+			sf::seconds(0.5f));
+
+		//m_circle.setPosition(m_position);
+		//m_circle.setScale(m_sptrResources->m_explodeTexture.m_scale);
+		//m_circle.setOrigin({ m_circle.getRadius(), m_circle.getRadius() });
+		//m_circle.setTexture(m_sptrResources->m_explodeTexture.m_sptrTexture.get(), true);
+		//m_circle.setTextureRect(m_sptrResources->m_explodeTexture.m_textureRect);
+		animstruct.sprite.setTexture(*sptrResources->m_explodeTexture.m_sptrTexture);
+		animstruct.sprite.setScale(m_sptrResources->m_explodeTexture.m_scale.x / 4, m_sptrResources->m_explodeTexture.m_scale.y / 4);
+		animstruct.sprite.setOrigin({ m_circle.getRadius(), m_circle.getRadius() });
+		animstruct.sprite.setTextureRect(m_sptrResources->m_explodeTexture.m_textureRect);
+		this->generateAnimStructVals(animstruct);
+	}
 }
 
 /// <summary>
@@ -77,6 +99,30 @@ Asteroid::Asteroid(std::shared_ptr<Resources> sptrResources)
 /// </summary>
 void Asteroid::update()
 {
+	if (m_health < ((s_MAX_HEALTH / 4) * 3) && !m_sixthHealth)
+	{
+		m_sixthHealth = true;
+		for (int i = 0; i < 3; ++i)
+		{
+			auto & animStruct = m_explodeAnimations.at(i);
+			animStruct.active = true;
+			animStruct.animator.playAnimation(0, false);
+
+			animStruct.sprite.setPosition(m_position.x + animStruct.xOffset, m_position.y + animStruct.yOffset);
+		}
+	}
+	else if (m_health < ((s_MAX_HEALTH / 3)) && !m_thirdHealth)
+	{
+		m_thirdHealth = true;
+		for (int i = 3; i < 9; ++i)
+		{
+			auto & animStruct = m_explodeAnimations.at(i);
+			animStruct.active = true;
+			animStruct.animator.playAnimation(0, false);
+
+			animStruct.sprite.setPosition(m_position.x + animStruct.xOffset, m_position.y + animStruct.yOffset);
+		}
+	}
 	if (m_invulnerable)
 	{
 		m_invulnTimer += App::getUpdateDeltaTime();
@@ -108,6 +154,17 @@ void Asteroid::update()
 				}
 			}
 		}
+		for (auto & animStruct : m_explodeAnimations)
+		{
+			if (animStruct.active && !animStruct.animator.isPlayingAnimation())
+			{
+				animStruct.active = false;
+			}
+			if (animStruct.active)
+			{
+				animStruct.sprite.setPosition(m_position.x + animStruct.xOffset, m_position.y + animStruct.yOffset);
+			}
+		}
 		m_position += m_velocity * UPDATE_DT;
 		m_rectangle.setPosition(m_position);
 		m_circle.setPosition(m_position);
@@ -135,6 +192,20 @@ void Asteroid::draw(Window & window, const float & deltaTime)
 		}
 		//window.draw(m_rectangle);
 		window.draw(m_circle);
+		for (auto & animStruct : m_explodeAnimations)
+		{
+			if (animStruct.active)
+			{
+				animStruct.timer += deltaTime;
+				if (animStruct.timer >= animStruct.timeToExplosion)
+				{
+					animStruct.animator.update(sf::seconds(deltaTime));
+					animStruct.animator.animate(animStruct.sprite);
+					window.draw(animStruct.sprite);
+				}
+
+			}
+		}
 	}
 }
 
@@ -230,6 +301,14 @@ void Asteroid::reuseAsteroid()
 	this->generateRandomPos();
 	this->generateRandomRotation();
 	this->generateRandomEnemy();
+	for (auto & animstruct : m_explodeAnimations)
+	{
+		animstruct.active = false;
+		animstruct.animator.stopAnimation();
+		this->generateAnimStructVals(animstruct);
+	}
+	m_sixthHealth = false;
+	m_thirdHealth = false;
 	m_health = 10.0f;
 	m_explode = false;
 	m_active = true;
@@ -397,6 +476,15 @@ void Asteroid::setRotation(float newRotation)
 float Asteroid::getRotation()
 {
 	return m_rotation;
+}
+
+void Asteroid::generateAnimStructVals(Asteroid::ExplosionAnim & animstruct)
+{
+	auto const explosionRadius = m_circle.getRadius() * 0.6f;
+	animstruct.xOffset = (rand() % static_cast<int>(explosionRadius * 2) - explosionRadius); //generate number from 25 to -25
+	animstruct.yOffset = (rand() % static_cast<int>(explosionRadius * 2) - explosionRadius); //generate number from 25 to -25
+	animstruct.timeToExplosion = (rand() % 25) / 100.0f;
+	animstruct.timer = 0.0f;
 }
 
 /// <summary>

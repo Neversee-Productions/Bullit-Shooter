@@ -128,6 +128,8 @@ void GameScene::update()
 		updateUI();
 		if (!m_player.isAlive())
 		{
+			m_soundManager.stop("bg_game_soundtrack");
+			m_soundManager.play("bg_game_end_soundtrack", false);
 			m_gameEnded = true;
 			m_ui.setPauseFlashing(true);
 			m_player.setOverheat(false);

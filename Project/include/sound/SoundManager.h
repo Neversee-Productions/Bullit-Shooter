@@ -76,6 +76,11 @@ private: // Private Member Functions
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
 		, js::json & playerParser);
+	static void setupPlayerShip(
+		ResourceHandler & resourceHandler
+		, SoundManager & soundManager
+		, js::json & shipParser
+	);
 	static void setupPlayerBullets(
 		ResourceHandler & resourceHandler
 		, SoundManager & soundManager
