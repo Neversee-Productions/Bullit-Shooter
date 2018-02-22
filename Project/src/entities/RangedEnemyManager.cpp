@@ -33,10 +33,7 @@ void RangedEnemyManager::update()
 {
 	for (auto & enemy : m_enemies)
 	{
-		if (enemy.getActive())
-		{
-			enemy.update();
-		}
+		enemy.update();
 	}
 }
 
@@ -51,10 +48,7 @@ void RangedEnemyManager::draw(Window & window, float const & deltaTime)
 {
 	for (auto & enemy : m_enemies)
 	{
-		if (enemy.getActive())
-		{
-			enemy.draw(window, deltaTime);
-		}
+		enemy.draw(window, deltaTime);
 	}
 }
 
@@ -76,4 +70,15 @@ void RangedEnemyManager::spawn(sf::Vector2f const & spawnPoint)
 	}
 	m_enemies.push_back(ai::AiRanged(m_player, spawnPoint));
 	m_enemies.back().init(m_sptrResources);
+}
+
+/// <summary>
+/// @brief Reset the enemy manager.
+/// 
+/// 
+/// </summary>
+void RangedEnemyManager::reset()
+{
+	m_enemies.clear();
+
 }

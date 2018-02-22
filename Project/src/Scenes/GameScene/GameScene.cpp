@@ -60,6 +60,7 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_asteroidManager.resetAsteroids();
 	m_basicEnemyManager.reset();
 	// TODO: Remove spawning ranged enemy instantly
+	m_rangedEnemyManager.reset();
 	m_rangedEnemyManager.spawn({ 0.0f, -350.0f });
 	m_ui.reset();
 	m_pickup.setActive(false);

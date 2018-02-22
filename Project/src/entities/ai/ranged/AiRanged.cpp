@@ -144,9 +144,12 @@ void ai::AiRanged::init(std::shared_ptr<ai::Resources> sptrResources)
 /// </summary>
 void ai::AiRanged::update()
 {
-	m_sptrState->update();
+	if (this->getActive())
+	{
+		m_sptrState->update();
+		this->updateHitbox();
+	}
 	m_bulletManager.update();
-	this->updateHitbox();
 }
 
 /// <summary>
@@ -158,14 +161,11 @@ void ai::AiRanged::update()
 /// <param name="deltaTime">read-only reference to delta time since last draw call.</param>
 void ai::AiRanged::draw(Window & window, float const & deltaTime)
 {
-	m_sptrState->draw(window, deltaTime);
+	if (this->getActive())
+	{
+		m_sptrState->draw(window, deltaTime);
+	}
 	m_bulletManager.draw(window, deltaTime);
-	// TODO: Remove collision rendering.
-	sf::CircleShape c(m_collisionCircle.r);
-	c.setFillColor(sf::Color(255u, 255u, 255u, 125u));
-	c.setOrigin({ m_collisionCircle.r, m_collisionCircle.r });
-	c.setPosition(m_collisionCircle.p.x, m_collisionCircle.p.y);
-	window.draw(c);
 }
 
 /// <summary>
@@ -267,7 +267,7 @@ void ai::AiRanged::setState(std::shared_ptr<ai::states::AiRangedState> sptrNewSt
 {
 	if (nullptr != m_sptrState)
 	{
-		m_sptrState->enter();
+		m_sptrState->exit();
 	}
 	if (nullptr != sptrNewState)
 	{
