@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\CometShot.h"
 
-const float bullets::CometShot::s_FIRE_RATE = 0.2f;
+const float bullets::CometShot::s_FIRE_RATE = 0.15f;
 const float bullets::CometShot::s_KNOCK_BACK = 40.0f;
 
 /// <summary>
@@ -10,9 +10,9 @@ const float bullets::CometShot::s_KNOCK_BACK = 40.0f;
 /// </summary>
 bullets::CometShot::CometShot()
 	: Bullet()
-	, m_damage(1.0f)
+	, m_damage(1.3f)
 {
-	m_speed = 12.0f * 60.0f;
+	m_speed = 13.0f * 60.0f;
 	m_velocity.y = -m_speed;
 	m_angle = -90.0f;
 

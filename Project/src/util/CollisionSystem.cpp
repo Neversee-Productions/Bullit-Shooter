@@ -20,6 +20,9 @@ CollisionSystem::CollisionSystem(
 	, m_basicEnemyManager(basicEnemyManager)
 	, m_pickup(pickup)
 	, m_gameUi(gameUi)
+	, m_pickingUp(false)
+	, m_pickupSoundPlaying(false)
+	, m_stayClearPlaying(false)
 {
 }
 
@@ -57,6 +60,17 @@ void CollisionSystem::update()
 }
 
 /// <summary>
+/// @brief setter for the can pickup bool.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new value of pickingup</param>
+void CollisionSystem::setPickingUp(bool check)
+{
+	m_pickingUp = check;
+}
+
+/// <summary>
 /// @brief Update player collisions
 /// </summary>
 void CollisionSystem::updatePlayer()
@@ -71,6 +85,15 @@ void CollisionSystem::updatePlayer()
 				if (tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), asteroid.getCollisionCircle()))
 				{
 					this->playerVsAsteroid(m_player, asteroid);
+					auto random = (rand() % 4 + 1); //generate number between 1 and 3
+					if (random == 4)
+					{
+						if (!m_stayClearPlaying)
+						{
+							m_stayClearPlaying = true;
+							m_soundManager.play("stay-clear");
+						}
+					}
 				}
 			}
 		}
@@ -176,6 +199,10 @@ void CollisionSystem::updatePlayerToPickup()
 		float length = thor::length(vector);
 		if (length < 100)
 		{
+			m_pickingUp = true;
+		}
+		if(m_pickingUp)
+		{
 			this->playerVsPickup(m_player, m_pickup);
 		}
 		else
@@ -194,11 +221,29 @@ void CollisionSystem::updatePlayerToGameUi()
 {
 	if (tinyh::c2CircletoAABB(m_player.getShieldCollisionCircle(), m_gameUi.getHealthCollisionBox()))
 	{
-		this->playerVsGameUi(m_player, m_gameUi);
+		m_gameUi.setHealthTransparency(100u);
 	}
 	else
 	{
 		m_gameUi.setHealthTransparency(255u);
+	}
+
+	if (tinyh::c2CircletoAABB(m_player.getShieldCollisionCircle(), m_gameUi.getRightUICollisionBox()))
+	{
+		m_gameUi.setRightBarsTransparency(100u);
+	}
+	else
+	{
+		m_gameUi.setRightBarsTransparency(255u);
+	}
+
+	if (tinyh::c2CircletoAABB(m_player.getShieldCollisionCircle(), m_gameUi.getLeftUICollisionBox()))
+	{
+		m_gameUi.setLeftBarsTransparency(100u);
+	}
+	else
+	{
+		m_gameUi.setLeftBarsTransparency(255u);
 	}
 }
 
@@ -404,6 +449,12 @@ void CollisionSystem::playerVsAsteroid(Player & player, Asteroid & asteroid)
 /// <param name="pickup">reference to the pickup that collided.</param>
 void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
 {
+	if (!m_pickupSoundPlaying)
+	{
+		m_pickupSoundPlaying = true;
+		m_soundManager.play("power-up");
+	}
+	pickup.setCanDisappear(false);
 	float const LENGTH = thor::length(player.getPosition() - pickup.getRightPosition());
 
 	player.setCanFire(false);
@@ -423,37 +474,29 @@ void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
 
 	if (!m_player.isDocking())
 	{
-		pickup.setRightVelocity((unitVecLeft * (LENGTH * 5.2f))* App::getUpdateDeltaTime());
-		pickup.setLeftVelocity((unitVecRight * (LENGTH * 5.2f)) * App::getUpdateDeltaTime());
+		pickup.setRightVelocity((unitVecLeft * (LENGTH * 7.2f))* App::getUpdateDeltaTime());
+		pickup.setLeftVelocity((unitVecRight * (LENGTH * 7.2f)) * App::getUpdateDeltaTime());
 	}
 	else //move faster when docking to prevent outrunning the pickup
 	{
-		pickup.setRightVelocity((unitVecLeft * (LENGTH * 8.2f))* App::getUpdateDeltaTime());
-		pickup.setLeftVelocity((unitVecRight * (LENGTH * 8.2f)) * App::getUpdateDeltaTime());
+		pickup.setRightVelocity((unitVecLeft * (LENGTH * 10.2f))* App::getUpdateDeltaTime());
+		pickup.setLeftVelocity((unitVecRight * (LENGTH * 10.2f)) * App::getUpdateDeltaTime());
 	}
 	player.fadeOutWeapons();
 
 	player.setConnectorPos(pickup.getLeftPosition(), pickup.getRightPosition());
-
+	
 	if (leftLength < 10 && rightLength < 10)
 	{
+		m_pickupSoundPlaying = false;
+		m_pickup.resetPickup();
+		m_pickingUp = false;
 		player.setWeaponsAlpha(255);
 		player.setAttachedWeapons(true);
 		player.nextWeapon();
+		player.setOverheat(false);
 		pickup.setActive(false);
 	}
-}
-
-/// <summary>
-/// @brief Collision between player and game ui has occured.
-/// 
-/// Details the appropriate response to player vs game ui collision.
-/// </summary>
-/// <param name="player">reference to the player that collided.</param>
-/// <param name="gameUi">reference to the game ui that collided.</param>
-void CollisionSystem::playerVsGameUi(Player & player, GameUI & gameUi)
-{
-	m_gameUi.setHealthTransparency(100u);
 }
 
 /// <summary>

@@ -2,7 +2,7 @@
 
 sf::Vector2u App::s_viewSize = sf::Vector2u(0, 0);
 
-const float App::s_updateDeltaTime = 1.0f / 60.0f;
+const float App::s_updateDeltaTime = 1.0f / 120.0f;
 
 tinyh::c2AABB App::s_rectView = tinyh::c2AABB();
 

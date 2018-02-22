@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\Standard.h"
 
-const float bullets::Standard::s_FIRE_RATE = 0.2f;
+const float bullets::Standard::s_FIRE_RATE = 0.1f;
 
 /// <summary>
 /// @brief this is the default constructor.
@@ -9,9 +9,9 @@ const float bullets::Standard::s_FIRE_RATE = 0.2f;
 /// </summary>
 bullets::Standard::Standard()
 	: Bullet()
-	, m_damage(1.0f)
+	, m_damage(0.5f)
 {
-	m_speed = 12.0f * 60.0f;
+	m_speed = 14.0f * 60.0f;
 	m_velocity.y = -m_speed;
 	m_angle = -90.0f;
 	m_type = BulletTypes::Standard;

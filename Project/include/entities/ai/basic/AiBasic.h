@@ -56,11 +56,13 @@ namespace ai
 			AiBase::Resources::Texture m_textureWindup;
 			AiBase::Resources::Texture m_textureCharge;
 			AiBase::Resources::Texture m_textureRecover;
+			AiBase::Resources::Texture m_textureDeath;
 
 			AiBase::Resources::Animation m_animationSeek;
 			AiBase::Resources::Animation m_animationWindup;
 			AiBase::Resources::Animation m_animationCharge;
 			AiBase::Resources::Animation m_animationRecover;
+			AiBase::Resources::Animation m_animationDeath;
 		};
 
 	private:
@@ -257,6 +259,13 @@ namespace ai
 		/// Used to access the recover animation.
 		/// </summary>
 		static std::string s_RECOVER_ID;
+
+		/// <summary>
+		/// @brief Static id of death state.
+		/// 
+		/// Used to access the death animation.
+		/// </summary>
+		static std::string s_DEATH_ID;
 
 		/// <summary>
 		/// @brief Static defines whether to color in states.

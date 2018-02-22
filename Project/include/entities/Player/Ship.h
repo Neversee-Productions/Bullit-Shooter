@@ -15,6 +15,7 @@
 #include "Thor\Vectors.hpp" 
 #include <iostream>
 #include "system\Window.h"
+#include "sound\SoundManager.h"
 
 ///
 /// @brief Ship class.
@@ -94,6 +95,7 @@ public:
 	void checkOffScreen();
 	void setDocking(bool check);
 	bool getDocking();
+	void dash();
 	void setPosition(sf::Vector2f pos);
 	void resetShip();
 
@@ -235,6 +237,27 @@ private:
 	/// 
 	/// </summary>
 	sf::Vector2f m_initialPosition;
+
+	/// <summary>
+	/// @brief reference to the sound manager.
+	/// 
+	/// 
+	/// </summary>
+	SoundManager & m_soundManager;
+
+	/// <summary>
+	/// @brief check if docking soundp playing.
+	/// 
+	/// 
+	/// </summary>
+	bool m_playingDocking;
+
+	/// <summary>
+	/// @brief check if undocking sound playing.
+	/// 
+	/// 
+	/// </summary>
+	bool m_playingUndocking;
 };
 
 #endif SHIP_H

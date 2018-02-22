@@ -44,6 +44,7 @@ void Controller::update()
 		m_currentState.m_btnSquare = this->checkButton(ButtonMappings::btnSquare);
 		m_currentState.m_btnTriangle = this->checkButton(ButtonMappings::btnTriangle);
 		m_currentState.m_btnTrigger = this->checkButton(ButtonMappings::FireTrigger);
+		m_currentState.m_l1 = this->checkButton(ButtonMappings::L1);
 		m_currentState.m_flightStick = {
 			this->checkAxis(ButtonMappings::FlightStickX),
 			this->checkAxis(ButtonMappings::FlightStickY)

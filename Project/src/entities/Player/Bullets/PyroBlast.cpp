@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\PyroBlast.h"
 
-const float bullets::PyroBlast::s_FIRE_RATE = 4.0f;
+const float bullets::PyroBlast::s_FIRE_RATE = 0.7f;
 
 /// <summary>
 /// @brief Default constructor.
@@ -10,9 +10,9 @@ const float bullets::PyroBlast::s_FIRE_RATE = 4.0f;
 bullets::PyroBlast::PyroBlast()
 	: Bullet()
 	, m_explode(false)
-	, m_damage(6.0f)
+	, m_damage(0.5f)
 {
-	m_speed = 4.0f * 60.0f;
+	m_speed = 6.0f * 60.0f;
 	m_velocity.y = -m_speed;
 
 	//different size to parent
@@ -38,9 +38,9 @@ void bullets::PyroBlast::update()
 	}
 	else
 	{
-		if (m_bulletRect.getSize().x < 700.0f)
+		if (m_bulletRect.getSize().x < 400.0f)
 		{
-			m_bulletRect.setSize(m_bulletRect.getSize() + sf::Vector2f(7.0f, 7.0f));
+			m_bulletRect.setSize(m_bulletRect.getSize() + sf::Vector2f(3.0f, 3.0f));
 			m_bulletRect.setOrigin(m_bulletRect.getSize().x / 2, m_bulletRect.getSize().y / 2);
 			updateExplosionCircle();
 		}

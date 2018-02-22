@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['l1',['L1',['../_controller_8h.html#abb0634e539e7de4537dcf4bcba46e0d0a9ec4c0afd450ceac7adb81c3bcfc9732',1,'Controller.h']]],
   ['label',['Label',['../classgui_1_1_label.html',1,'gui::Label'],['../classgui_1_1_label.html#addb92b228cf58df38d5c87f32ef9793d',1,'gui::Label::Label()'],['../classgui_1_1_label.html#a3cbf622aef364b29a7c0acc226c999d7',1,'gui::Label::Label(sf::String contents, unsigned int fontSize, sf::Vector2f position, std::shared_ptr&lt; sf::Font &gt; font, sf::Color color=sf::Color::White)']]],
   ['label_2ecpp',['Label.cpp',['../_label_8cpp.html',1,'']]],
   ['label_2eh',['Label.h',['../_label_8h.html',1,'']]],

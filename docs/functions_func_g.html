@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 : <a class="el" href="class_game_scene.html#ac6cce41b4a893c233dd0069af4b07429">GameScene</a>
 </li>
 <li>GameUI()
-: <a class="el" href="class_game_u_i.html#a0d3e17321f14a669ef4a2d6058d23b60">GameUI</a>
+: <a class="el" href="class_game_u_i.html#a302d7011a2d50253634dd0fe97140ca8">GameUI</a>
 </li>
 <li>generateRandomEnemy()
 : <a class="el" href="class_asteroid.html#aab7bb9d12da151279c1febc0223669d8">Asteroid</a>
@@ -145,6 +145,9 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>getCollisionRect()
 : <a class="el" href="classbullets_1_1_bullet.html#ab9913ac51dc0bd3824dff9f51393ce4e">bullets::Bullet</a>
 </li>
+<li>getCooldown()
+: <a class="el" href="class_bullet_manager.html#ab7180d124eebefd8bf7c6e08a9ce81c4">BulletManager</a>
+</li>
 <li>getDamage()
 : <a class="el" href="classbullets_1_1_bullet.html#ac04ee5a7fd77837aa7f0f6f965be13f4">bullets::Bullet</a>
 , <a class="el" href="classbullets_1_1_comet_shot.html#a723c9b100f8b1a7dbc46b20c0beca03e">bullets::CometShot</a>
@@ -166,7 +169,8 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 : <a class="el" href="class_basic_enemy_manager.html#ad015521922a330d8fa901c6426647100">BasicEnemyManager</a>
 </li>
 <li>getFireRate()
-: <a class="el" href="classbullets_1_1_comet_shot.html#a9b3ed75c8d53a751cda2480b49553d1a">bullets::CometShot</a>
+: <a class="el" href="class_bullet_manager.html#a19f38fff0844f87d35081cd58d86437c">BulletManager</a>
+, <a class="el" href="classbullets_1_1_comet_shot.html#a9b3ed75c8d53a751cda2480b49553d1a">bullets::CometShot</a>
 , <a class="el" href="classbullets_1_1_death_orb.html#a83bf9b07d2a56918d93ddffa602b77e5">bullets::DeathOrb</a>
 , <a class="el" href="classbullets_1_1_empowered.html#a0e225f005ecfdb93d192e7a018d67c44">bullets::Empowered</a>
 , <a class="el" href="classbullets_1_1_fire_blast.html#a7cb5fb7147751eb0e52f2af331ff6068">bullets::FireBlast</a>
@@ -177,6 +181,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="classbullets_1_1_pyro_blast.html#a76aa8e5981b82b4908f76b6c33859dd9">bullets::PyroBlast</a>
 , <a class="el" href="classbullets_1_1_standard.html#a0d215d87d710c18b917a625303f471fc">bullets::Standard</a>
 , <a class="el" href="classbullets_1_1_static_sphere.html#ad9af863a8b075d3f701e86227240ffc6">bullets::StaticSphere</a>
+, <a class="el" href="class_player.html#ac81962f3fcd0c78c2da40e0bfec9466f">Player</a>
 </li>
 <li>getFocus()
 : <a class="el" href="classgui_1_1_button.html#ae9ef9a30e1541892f187e208f2254b84">gui::Button</a>
@@ -208,6 +213,14 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 </li>
 <li>getNextSceneName()
 : <a class="el" href="class_scene.html#a4281c0ec2142a6a53a3057557d7ff195">Scene</a>
+</li>
+<li>getOvercharge()
+: <a class="el" href="class_bullet_manager.html#aa83e9311270ca20769f7bb9752f14628">BulletManager</a>
+, <a class="el" href="class_player.html#afaea55b9ef84b238c5f59f47f6b925e6">Player</a>
+</li>
+<li>getOverheat()
+: <a class="el" href="class_bullet_manager.html#a081fad3df17a40ca45cf63b8a54f681c">BulletManager</a>
+, <a class="el" href="class_player.html#acd703b9162327da6fa9806416ac75f7c">Player</a>
 </li>
 <li>getPaused()
 : <a class="el" href="class_game_u_i.html#a70fd9342b45c7703c87be8f5637c0ad3">GameUI</a>
@@ -248,12 +261,19 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>getShipRect()
 : <a class="el" href="class_ship.html#a8e4cc58952e94da1c74a6fc59096291d">Ship</a>
 </li>
+<li>getShowEnd()
+: <a class="el" href="class_game_u_i.html#a6b4091ca9b886e738c20809160f41289">GameUI</a>
+</li>
 <li>getSize()
 : <a class="el" href="classgui_1_1_label.html#a762c8ea73d28b6312d5f323670e002c4">gui::Label</a>
 , <a class="el" href="class_pickup.html#a366ca3e66cbebda6a4751dcbd7570127">Pickup</a>
 </li>
 <li>getStyle()
 : <a class="el" href="class_window.html#a8c2db4cd369bc7627efa38ee7df08739">Window</a>
+</li>
+<li>getTimeSinceFire()
+: <a class="el" href="class_bullet_manager.html#ad0195b036bf059ae1ee030d7ed456c1d">BulletManager</a>
+, <a class="el" href="class_player.html#aafd842ce18ca0f9943a0c090b795da96">Player</a>
 </li>
 <li>getType()
 : <a class="el" href="classbullets_1_1_bullet.html#ace28164e2d24b2d083acf702ee5a56b6">bullets::Bullet</a>

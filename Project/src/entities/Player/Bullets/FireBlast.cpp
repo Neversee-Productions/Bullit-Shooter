@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\FireBlast.h"
 
-const float bullets::FireBlast::s_FIRE_RATE = 0.1f;
+const float bullets::FireBlast::s_FIRE_RATE = 0.08f;
 
 /// <summary>
 /// @brief this is the default constructor.
@@ -9,7 +9,7 @@ const float bullets::FireBlast::s_FIRE_RATE = 0.1f;
 /// </summary>
 bullets::FireBlast::FireBlast()
 	: Bullet()
-	, m_damage(0.8f)
+	, m_damage(0.6f)
 {
 	m_speed = 20.0f * 60.0f;
 	m_velocity.y = -m_speed;

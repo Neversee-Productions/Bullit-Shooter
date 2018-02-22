@@ -133,6 +133,20 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a55909cda5bcaa595efe6187880f2d812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82c0859aed5848da5037fa65df9db04f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a82c0859aed5848da5037fa65df9db04f">clearAllBullets</a> ()</td></tr>
 <tr class="separator:a82c0859aed5848da5037fa65df9db04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f38fff0844f87d35081cd58d86437c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a19f38fff0844f87d35081cd58d86437c">getFireRate</a> ()</td></tr>
+<tr class="separator:a19f38fff0844f87d35081cd58d86437c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0195b036bf059ae1ee030d7ed456c1d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ad0195b036bf059ae1ee030d7ed456c1d">getTimeSinceFire</a> ()</td></tr>
+<tr class="separator:ad0195b036bf059ae1ee030d7ed456c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83e9311270ca20769f7bb9752f14628"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#aa83e9311270ca20769f7bb9752f14628">getOvercharge</a> ()</td></tr>
+<tr class="separator:aa83e9311270ca20769f7bb9752f14628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7180d124eebefd8bf7c6e08a9ce81c4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ab7180d124eebefd8bf7c6e08a9ce81c4">getCooldown</a> ()</td></tr>
+<tr class="separator:ab7180d124eebefd8bf7c6e08a9ce81c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081fad3df17a40ca45cf63b8a54f681c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a081fad3df17a40ca45cf63b8a54f681c">getOverheat</a> ()</td></tr>
+<tr class="separator:a081fad3df17a40ca45cf63b8a54f681c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a193d51e7b99324b0e0971ead3b674052"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a193d51e7b99324b0e0971ead3b674052">setOverheat</a> (bool check)</td></tr>
+<tr class="separator:a193d51e7b99324b0e0971ead3b674052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea47f55914bf8119e51a76792204f065"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#aea47f55914bf8119e51a76792204f065">setWeaponOverheatingValues</a> (float overchargePerBullet, float bulletCooldownRate, float overheatCooldownRate)</td></tr>
+<tr class="separator:aea47f55914bf8119e51a76792204f065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -153,6 +167,21 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a52ca07bdae59784e195be4300cfaed01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a387ddca238e2ee29e0d663c508938f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bullet_manager.html#a4f40098016265b8ea173d998abcdc22a">BulletTypeStringMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a2a387ddca238e2ee29e0d663c508938f">m_soundFireMap</a></td></tr>
 <tr class="separator:a2a387ddca238e2ee29e0d663c508938f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f209212bf5ec0695f36761d6ec7978"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#aa4f209212bf5ec0695f36761d6ec7978">m_fireRateVal</a></td></tr>
+<tr class="separator:aa4f209212bf5ec0695f36761d6ec7978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c69aabaffe892ff2c4abae0d0ab54fc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a4c69aabaffe892ff2c4abae0d0ab54fc">m_overchargePerBullet</a></td></tr>
+<tr class="separator:a4c69aabaffe892ff2c4abae0d0ab54fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0810eb35f25f844633b5a9c6a8a6015d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a0810eb35f25f844633b5a9c6a8a6015d">m_currentOvercharge</a></td></tr>
+<tr class="separator:a0810eb35f25f844633b5a9c6a8a6015d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8486cfd6f35eb718ac068fd02307fb5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#ad8486cfd6f35eb718ac068fd02307fb5">m_cooldownRate</a></td></tr>
+<tr class="separator:ad8486cfd6f35eb718ac068fd02307fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d8dfb232edca85a7de7f8b110acd67"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a37d8dfb232edca85a7de7f8b110acd67">m_bulletCooldownRate</a></td></tr>
+<tr class="separator:a37d8dfb232edca85a7de7f8b110acd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc742143ebf3744d1ffa036412728e9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#a2bc742143ebf3744d1ffa036412728e9">m_overheatCooldownRate</a></td></tr>
+<tr class="separator:a2bc742143ebf3744d1ffa036412728e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc6d2ce46ad859edb9cbe9f21009287"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bullet_manager.html#aedc6d2ce46ad859edb9cbe9f21009287">m_overheat</a></td></tr>
+<tr class="memdesc:aedc6d2ce46ad859edb9cbe9f21009287"><td class="mdescLeft">&#160;</td><td class="mdescRight">to check if overheated.  <a href="#aedc6d2ce46ad859edb9cbe9f21009287">More...</a><br /></td></tr>
+<tr class="separator:aedc6d2ce46ad859edb9cbe9f21009287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sebastian Kruzel </dd>
@@ -399,6 +428,101 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="ab7180d124eebefd8bf7c6e08a9ce81c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7180d124eebefd8bf7c6e08a9ce81c4">&#9670;&nbsp;</a></span>getCooldown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::getCooldown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get the bullet cooldown rate.</p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a19f38fff0844f87d35081cd58d86437c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f38fff0844f87d35081cd58d86437c">&#9670;&nbsp;</a></span>getFireRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::getFireRate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>getter for the fire rate value.</p>
+<dl class="section return"><dt>Returns</dt><dd>fire rate</dd></dl>
+
+</div>
+</div>
+<a id="aa83e9311270ca20769f7bb9752f14628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83e9311270ca20769f7bb9752f14628">&#9670;&nbsp;</a></span>getOvercharge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::getOvercharge </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get the overcharge rate.</p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a081fad3df17a40ca45cf63b8a54f681c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a081fad3df17a40ca45cf63b8a54f681c">&#9670;&nbsp;</a></span>getOverheat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BulletManager::getOverheat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>getter for the overheat bool.</p>
+<dl class="section return"><dt>Returns</dt><dd>overheat boolean</dd></dl>
+
+</div>
+</div>
+<a id="ad0195b036bf059ae1ee030d7ed456c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0195b036bf059ae1ee030d7ed456c1d">&#9670;&nbsp;</a></span>getTimeSinceFire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::getTimeSinceFire </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>a getter for the time since fire value.</p>
+<dl class="section return"><dt>Returns</dt><dd>time since fire</dd></dl>
+
+</div>
+</div>
 <a id="ad0d1d44d7cc99a2a57f7fe8234a2cf28"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0d1d44d7cc99a2a57f7fe8234a2cf28">&#9670;&nbsp;</a></span>init()</h2>
 
@@ -574,6 +698,65 @@ template&lt;typename data_type &gt; </div>
 
 </div>
 </div>
+<a id="a193d51e7b99324b0e0971ead3b674052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a193d51e7b99324b0e0971ead3b674052">&#9670;&nbsp;</a></span>setOverheat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BulletManager::setOverheat </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>check</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>setter for the overheat bool.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">check</td><td>new value of overheat</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aea47f55914bf8119e51a76792204f065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea47f55914bf8119e51a76792204f065">&#9670;&nbsp;</a></span>setWeaponOverheatingValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BulletManager::setWeaponOverheatingValues </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>overchargePerBullet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>bulletCooldownRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>overheatCooldownRate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae8638f3b70fe44a15413e1107ea806fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8638f3b70fe44a15413e1107ea806fe">&#9670;&nbsp;</a></span>update()</h2>
 
@@ -612,6 +795,29 @@ template&lt;typename data_type &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a37d8dfb232edca85a7de7f8b110acd67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d8dfb232edca85a7de7f8b110acd67">&#9670;&nbsp;</a></span>m_bulletCooldownRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::m_bulletCooldownRate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the cooldown rate of bullet.</p>
+
+</div>
+</div>
 <a id="a094aedb5357033af0d21ffd714890105"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a094aedb5357033af0d21ffd714890105">&#9670;&nbsp;</a></span>m_bulletMap</h2>
 
@@ -632,6 +838,143 @@ template&lt;typename data_type &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Map of bullet types to vector of bullets.</p>
+
+</div>
+</div>
+<a id="ad8486cfd6f35eb718ac068fd02307fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8486cfd6f35eb718ac068fd02307fb5">&#9670;&nbsp;</a></span>m_cooldownRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::m_cooldownRate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define cooldown rate of the weapon.</p>
+
+</div>
+</div>
+<a id="a0810eb35f25f844633b5a9c6a8a6015d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0810eb35f25f844633b5a9c6a8a6015d">&#9670;&nbsp;</a></span>m_currentOvercharge</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::m_currentOvercharge</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the current overcharge value.</p>
+
+</div>
+</div>
+<a id="aa4f209212bf5ec0695f36761d6ec7978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f209212bf5ec0695f36761d6ec7978">&#9670;&nbsp;</a></span>m_fireRateVal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::m_fireRateVal</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the current fireRate.</p>
+
+</div>
+</div>
+<a id="a4c69aabaffe892ff2c4abae0d0ab54fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c69aabaffe892ff2c4abae0d0ab54fc">&#9670;&nbsp;</a></span>m_overchargePerBullet</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::m_overchargePerBullet</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the overcharge amount per bullet fired.</p>
+
+</div>
+</div>
+<a id="aedc6d2ce46ad859edb9cbe9f21009287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc6d2ce46ad859edb9cbe9f21009287">&#9670;&nbsp;</a></span>m_overheat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BulletManager::m_overheat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bc742143ebf3744d1ffa036412728e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc742143ebf3744d1ffa036412728e9">&#9670;&nbsp;</a></span>m_overheatCooldownRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BulletManager::m_overheatCooldownRate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define the cooldown rate when overheated.</p>
 
 </div>
 </div>

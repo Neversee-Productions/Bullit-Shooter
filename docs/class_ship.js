@@ -12,6 +12,7 @@ var class_ship =
     ] ],
     [ "Ship", "class_ship.html#ab7608fcfc4d27c678aacaf9bfd68a462", null ],
     [ "checkOffScreen", "class_ship.html#a674e722435cbb2b2331e8f16fe5c877b", null ],
+    [ "dash", "class_ship.html#a951903f469400792482dfdec5113510a", null ],
     [ "decFrame", "class_ship.html#a7963cc9d019b5c2c7df85daa8815578f", null ],
     [ "draw", "class_ship.html#ae9a0712970979a6d24320ae208bd6899", null ],
     [ "getDocking", "class_ship.html#aabbc0d1ab3f5fb98debd457b13d7674b", null ],

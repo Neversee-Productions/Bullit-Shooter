@@ -29,6 +29,7 @@ struct GamePadState
 	bool m_btnSquare;
 	bool m_btnTriangle;
 	bool m_btnTrigger;
+	bool m_l1;
 	sf::Vector2f m_flightStick;
 	float m_flightThruster;
 #endif // JOYSTICK_
@@ -212,6 +213,7 @@ enum class ButtonMappings
 	btnSquare = 4, /// = 4
 	btnTriangle = 7, /// = 7
 	FireTrigger = 0, /// 
+	L1 = 1, /// = 1
 	FlightStickX = 0, /// Flight Stick = Axis::X(0)
 	FlightStickY = 1, /// Flight Stick = Axis::Y(1)
 	FlightThruster = 2, /// Right Thumbstick = Axis::Z(2)

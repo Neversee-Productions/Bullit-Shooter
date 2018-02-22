@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['dash',['dash',['../class_ship.html#a951903f469400792482dfdec5113510a',1,'Ship']]],
   ['deathorb',['DeathOrb',['../classbullets_1_1_death_orb.html#a8caaa53a50e8ade1b5e6fa2262cca9e4',1,'bullets::DeathOrb']]],
   ['decframe',['decFrame',['../class_ship.html#a7963cc9d019b5c2c7df85daa8815578f',1,'Ship']]],
   ['decrementhealth',['decrementHealth',['../classai_1_1_ai_basic.html#a2b7207dfde0bbb77bcc3f34f52446ab9',1,'ai::AiBasic::decrementHealth()'],['../class_asteroid.html#ab78f0ef044ce61a0e105daf1f4c7527a',1,'Asteroid::decrementHealth()'],['../class_game_u_i.html#a424ebdf50e17a3a316023fef697ae91c',1,'GameUI::decrementHealth()']]],

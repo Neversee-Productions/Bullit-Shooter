@@ -4,6 +4,7 @@ var class_connector =
     [ "Connector", "class_connector.html#a19a1a94cd477e5c3dffc5fb26802b64e", null ],
     [ "draw", "class_connector.html#a583f0836283bb8f579d06fd193f3d289", null ],
     [ "init", "class_connector.html#a96d3194e48edb6ab7d88cb64ae10ed60", null ],
+    [ "reset", "class_connector.html#a677fb6b28b2beb617ba895e9cd6fb7b5", null ],
     [ "update", "class_connector.html#add9ea7d60b351ab378b071b13b550a48", null ],
     [ "m_CLEAR_COLOR", "class_connector.html#ad0fc6c0ec3254c5617e212200725b58e", null ],
     [ "m_renderState", "class_connector.html#a94602f5c03234c5238f9a7d7e3ad65ad", null ],

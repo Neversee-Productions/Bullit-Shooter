@@ -91,11 +91,17 @@ public:
 	void resetBullets();
 	void resetWeapons();
 	void reset();
+	float getFireRate();
+	float getTimeSinceFire();
+	float getOvercharge();
+	bool getOverheat();
+	void setOverheat(bool check);
 
 private:
 	void switchWeaponInput();
 	bool checkAxis(float const & axis, bool flipped);
-	bool checkAxisThruster(float const & axis);
+	bool checkAxisThrusterPositive(float const & axis);
+	bool checkAxisThrusterNegative(float const & axis);
 
 private:
 	/// <summary>

@@ -26,6 +26,7 @@ namespace bullets
 		void updateCollisionCircle();
 		bool checkCircleCollision(const tinyh::c2Circle & other)final override;
 		void setPosition(const sf::Vector2f & pos) final override;
+		bool checkAABBCollision(const tinyh::c2AABB & rect) final override;
 
 	private:
 		void setAnimation(std::string const & animationId) final override;

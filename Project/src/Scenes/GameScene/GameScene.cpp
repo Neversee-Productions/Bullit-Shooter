@@ -16,9 +16,11 @@ GameScene::GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Con
 	, m_asteroidManager()
 	, m_basicEnemyManager()
 	, m_pickup()
-	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this))
+	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this), std::bind(&GameScene::restartGame, this))
 	, m_collisionSystem(m_player, m_asteroidManager, m_basicEnemyManager, m_pickup, m_ui)
 	, m_gamePaused(false)
+	, m_gameEnded(false)
+	, m_controller(*controller)
 {
 	m_pickup.setActive(false);
 }
@@ -47,20 +49,35 @@ void GameScene::start(const std::string & resourceFilePath)
 	std::cout << "Starting Game Scene" << std::endl;
 #endif // _DEBUG
 	Scene::setNextSceneName("");
-	//HERE WE REINITIALIZE THE GAME (FOR RESTARTING)
 	if (!m_resources)
 	{
 		this->setup(resourceFilePath);
 	}
+	//HERE WE REINITIALIZE THE GAME (FOR RESTARTING)
 	m_soundManager.stop("bg-soundtrack");
 	m_soundManager.play("bg_game_soundtrack", false);
 	m_background.reset();
 	m_player.reset();
 	m_asteroidManager.resetAsteroids();
 	m_basicEnemyManager.reset();
+	m_gamePaused = false;
+	m_gameEnded = false;
+	m_collisionSystem.setPickingUp(false);
 	m_ui.reset();
-	m_pickup.setActive(false);
-	m_ui.setPaused(false);
+	m_pickup.resetPickup();
+	auto random = (rand() % 3 + 1); //generate number between 1 and 2
+	if (random == 1)
+	{
+		m_soundManager.play("kill-bugs");
+	}
+	else if (random == 2)
+	{
+		m_soundManager.play("lets-go");
+	}
+	else
+	{
+		m_soundManager.play("stay-clear");
+	}
 }
 
 /// <summary>
@@ -83,12 +100,20 @@ void GameScene::stop()
 /// </summary>
 void GameScene::update()
 {
-	if (m_keyHandler.isPressed(sf::Keyboard::Escape) && !m_keyHandler.isPrevPressed(sf::Keyboard::Escape))
+	if (((m_keyHandler.isPressed(sf::Keyboard::Escape) && !m_keyHandler.isPrevPressed(sf::Keyboard::Escape)) || (m_controller.m_currentState.m_l1 && !m_controller.m_previousState.m_l1)) && !m_gameEnded)
 	{
 		m_gamePaused = !m_gamePaused;
 		m_ui.setPaused(m_gamePaused);
+		if (m_gamePaused == true)
+		{
+			m_ui.setPauseFlashing(true);
+		}
+		else
+		{
+			m_ui.setPauseFlashing(false);
+		}
 	}
-	if (!m_gamePaused)
+	if (!m_gamePaused && !m_ui.getShowEnd())
 	{
 		m_background.update();
 		m_player.update();
@@ -96,11 +121,20 @@ void GameScene::update()
 		m_basicEnemyManager.update();
 		m_pickup.update();
 		m_collisionSystem.update();
+		updateUI();
+		if (!m_player.isAlive())
+		{
+			m_gameEnded = true;
+			m_ui.setPauseFlashing(true);
+			m_player.setOverheat(false);
+			m_ui.setShowEnd(m_gameEnded);
+		}
 	}
 	else
 	{
 		if (!m_ui.getPaused())
 		{
+			m_ui.setPauseFlashing(false);
 			m_gamePaused = false;
 		}
 	}
@@ -116,7 +150,7 @@ void GameScene::update()
 /// <param name="deltaTime">define reference to draw time step.</param>
 void GameScene::draw(Window & window, const float & deltaTime)
 {
-	if (m_gamePaused)
+	if (m_gamePaused || m_ui.getShowEnd())
 	{
 		m_background.draw(window, 0);
 		m_pickup.draw(window, 0);
@@ -142,6 +176,11 @@ void GameScene::draw(Window & window, const float & deltaTime)
 void GameScene::backToMainMenu()
 {
 	Scene::setNextSceneName("MainMenu");
+}
+
+void GameScene::restartGame()
+{
+	Scene::setNextSceneName("Game");
 }
 
 /// <summary>
@@ -211,6 +250,19 @@ void GameScene::setup(const std::string & filePath)
 	m_ui.init(m_resources->m_sptrUI);
 }
 
+/// <summary>
+/// @brief method to update the ui.
+/// 
+/// 
+/// </summary>
+void GameScene::updateUI()
+{
+	m_ui.setFireRate(m_player.getFireRate());
+	m_ui.setTimeSinceFire(m_player.getTimeSinceFire());
+	m_ui.updateOvercharge(m_player.getOvercharge());
+	m_ui.setOverheat(m_player.getOverheat());
+}
+
 
 /// <summary>
 /// @brief Setups Player::Resources.
@@ -262,6 +314,7 @@ void GameScene::setupShip(ResourceHandler & resourceHandler, std::shared_ptr<Shi
 
 	sptrShipResources->m_sptrTexture = resourceHandler.loadUp<sf::Texture>(shipParser, SHIP_ID);
 	assert(nullptr != sptrShipResources->m_sptrTexture);
+	sptrShipResources->m_sptrTexture->setSmooth(true);
 
 	sptrShipResources->m_uptrFrames = std::make_unique<Ship::ShipFrames>();
 	auto & frames = *sptrShipResources->m_uptrFrames;
@@ -353,6 +406,7 @@ std::unique_ptr<Weapon::Resources::IndividualWeapon> GameScene::setupWeaponAnim(
 	auto beginAnimationOrigin = sf::Vector2f(jsonBeginOrigin.at("x").get<float>(), jsonBeginOrigin.at("y").get<float>());
 	beginAnimation.m_origin = std::move(beginAnimationOrigin);
 	beginAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, BEGIN_ID);
+	beginAnimation.m_sptrTexture->setSmooth(true);
 	
 	weaponResource.m_uptrBeginAnimation.swap(uptrBeginAnimation);
 
@@ -369,6 +423,7 @@ std::unique_ptr<Weapon::Resources::IndividualWeapon> GameScene::setupWeaponAnim(
 	auto shootAnimationOrigin = sf::Vector2f(jsonShootOrigin.at("x").get<float>(), jsonShootOrigin.at("y").get<float>());
 	shootAnimation.m_origin = std::move(shootAnimationOrigin);
 	shootAnimation.m_sptrTexture = resourceHandler.loadUp<sf::Texture>(weaponParser, SHOOT_ID);
+	shootAnimation.m_sptrTexture->setSmooth(true);
 
 	weaponResource.m_uptrShootAnimation.swap(uptrShootAnimation);
 

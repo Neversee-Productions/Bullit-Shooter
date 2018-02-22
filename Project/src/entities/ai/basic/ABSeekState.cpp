@@ -8,9 +8,9 @@
 /// <param name="aiUnit">reference of ai unit that will call this state.</param>
 ai::states::AiBasicSeekState::AiBasicSeekState(AiBasic & aiUnit)
 	: AiBasicState(aiUnit)
-	, m_MAX_SPEED(60.0f)
-	, m_MAX_TURN_RATE(60.0f)
-	, m_MIN_DISTANCE(200.0f)
+	, m_MAX_SPEED(120.0f)
+	, m_MAX_TURN_RATE(100.0f)
+	, m_MIN_DISTANCE(300.0f)
 	, m_MIN_ANGLE(15.0f)
 {
 }

@@ -1,6 +1,6 @@
 #include "Entities\Player\Bullets\NullWave.h"
 
-const float bullets::NullWave::s_FIRE_RATE = 1.0f;
+const float bullets::NullWave::s_FIRE_RATE = 0.3f;
 
 
 /// <summary>
@@ -10,9 +10,9 @@ const float bullets::NullWave::s_FIRE_RATE = 1.0f;
 /// </summary>
 bullets::NullWave::NullWave()
 	: Bullet()
-	, m_damage(6.0f)
+	, m_damage(4.0f)
 {
-	m_speed = 8.0f * 60.0f;
+	m_speed = 9.0f * 60.0f;
 	m_velocity.y = -m_speed;
 
 	//different size to parent

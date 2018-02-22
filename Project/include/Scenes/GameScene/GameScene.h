@@ -87,8 +87,10 @@ public:
 
 private:
 	void backToMainMenu();
+	void restartGame();
 	void goToNextScene() final override;
 	void setup(const std::string & filePath);
+	void updateUI();
 	void setupPlayer(
 		ResourceHandler & resourceHandler
 		, std::shared_ptr<Player::Resources> sptrPlayerResources
@@ -244,6 +246,20 @@ private:
 	/// 
 	/// </summary>
 	bool m_gamePaused;
+
+	/// <summary>
+	/// @brief check if game is over.
+	/// 
+	/// 
+	/// </summary>
+	bool m_gameEnded;
+
+	/// <summary>
+	/// @brief reference to the controller.
+	/// 
+	/// Allows for enquiry on inputs.
+	/// </summary>
+	Controller & m_controller;
 };
 
 #endif // !GAMESCENE_H

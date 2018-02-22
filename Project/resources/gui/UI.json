@@ -1,6 +1,10 @@
 {
     "healthTemplate": "resources/gui/textures/UI_healthTemplate.png",
     "health": "resources/gui/textures/UI_health.png",
+    "rechargeBar": "resources/gui/textures/rechargeBar.png",
+    "rechargeFrame": "resources/gui/textures/rechargeFrame.png",
+    "overchargeFrame": "resources/gui/textures/overChargeFrame.png",
+    "border": "resources/gui/textures/border.png",
     "buttonTexture": "resources/gui/textures/button.png",
     "font": "resources/gui/fonts/QuartzMS.TTF",
     "fontsize": 24

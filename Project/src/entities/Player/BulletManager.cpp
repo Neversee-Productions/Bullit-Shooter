@@ -10,6 +10,11 @@ BulletManager::BulletManager()
 	, m_windowC2Rect(App::getViewC2Rect())
 	, m_soundManager(SoundManager::instance())
 	, m_soundFireMap()
+	, m_fireRateVal(0.0f)
+	, m_overchargePerBullet(0.0f)
+	, m_currentOvercharge(0.0f)
+	, m_cooldownRate(0.0f)
+	, m_overheat(false)
 {
 	std::size_t const BULLET_TYPES = static_cast<std::size_t>(BulletTypes::AmountOfTypes);
 	m_soundFireMap.reserve(BULLET_TYPES);
@@ -67,110 +72,134 @@ void BulletManager::fireBullet(Weapon & weapon1, Weapon & weapon2,const BulletTy
 	{
 		initBulletvector(type);
 	}
-
-	switch (type)
+	if (!m_overheat)
 	{
-	case BulletTypes::Standard:
-		if (m_timeSinceFire > bullets::Standard::getFireRate()) //if its time to fire do it.
+		switch (type)
 		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
+		case BulletTypes::Standard:
+			if (m_timeSinceFire > bullets::Standard::getFireRate()) //if its time to fire do it.
+			{
+				m_fireRateVal = bullets::Standard::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::Empowered:
+			if (m_timeSinceFire > bullets::Empowered::getFireRate())
+			{
+				m_fireRateVal = bullets::Empowered::getFireRate();
+				fireEmpowered(position1, position2);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::DeathOrb:
+			if (m_timeSinceFire > bullets::DeathOrb::getFireRate())
+			{
+				m_fireRateVal = bullets::DeathOrb::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::FireBlast:
+			if (m_timeSinceFire > bullets::FireBlast::getFireRate())
+			{
+				m_fireRateVal = bullets::FireBlast::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::HolySphere:
+			if (m_timeSinceFire > bullets::HolySphere::getFireRate())
+			{
+				m_fireRateVal = bullets::HolySphere::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::MagmaShot:
+			if (m_timeSinceFire > bullets::MagmaShot::getFireRate())
+			{
+				m_fireRateVal = bullets::MagmaShot::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::NapalmSphere:
+			if (m_timeSinceFire > bullets::NapalmSphere::getFireRate())
+			{
+				m_fireRateVal = bullets::NapalmSphere::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::CometShot:
+			if (m_timeSinceFire > bullets::CometShot::getFireRate())
+			{
+				m_fireRateVal = bullets::CometShot::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::NullWave:
+			if (m_timeSinceFire > bullets::NullWave::getFireRate())
+			{
+				m_fireRateVal = bullets::NullWave::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::StaticSphere:
+			if (m_timeSinceFire > bullets::StaticSphere::getFireRate())
+			{
+				m_fireRateVal = bullets::StaticSphere::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		case BulletTypes::PyroBlast:
+			if (m_timeSinceFire > bullets::PyroBlast::getFireRate())
+			{
+				m_fireRateVal = bullets::PyroBlast::getFireRate();
+				fireOne(position1, position2, type);
+				weapon1.shoot();
+				weapon2.shoot();
+				m_soundManager.play(m_soundFireMap.at(type));
+				m_currentOvercharge += m_overchargePerBullet;
+			}
+			break;
+		default:
+			break;
 		}
-		break;
-	case BulletTypes::Empowered:
-		if (m_timeSinceFire > bullets::Empowered::getFireRate())
-		{
-			fireEmpowered(position1, position2);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-		break;
-	case BulletTypes::DeathOrb:
-		if (m_timeSinceFire > bullets::DeathOrb::getFireRate())
-		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-		break;
-	case BulletTypes::FireBlast:
-		if (m_timeSinceFire > bullets::FireBlast::getFireRate())
-		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-		break;
-	case BulletTypes::HolySphere:
-		if (m_timeSinceFire > bullets::HolySphere::getFireRate()) 
-		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-		break;
-	case BulletTypes::MagmaShot:
-		if (m_timeSinceFire > bullets::MagmaShot::getFireRate())
-		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-	break;
-	case BulletTypes::NapalmSphere:
-		if (m_timeSinceFire > bullets::NapalmSphere::getFireRate())
-		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-		break;
-	case BulletTypes::CometShot:
-		if (m_timeSinceFire > bullets::CometShot::getFireRate())
-		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-		break;
-	case BulletTypes::NullWave:
-		if (m_timeSinceFire > bullets::NullWave::getFireRate())
-		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-		break;
-	case BulletTypes::StaticSphere:
-		if (m_timeSinceFire > bullets::StaticSphere::getFireRate())
-		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-		break;
-	case BulletTypes::PyroBlast:
-		if (m_timeSinceFire > bullets::PyroBlast::getFireRate())
-		{
-			fireOne(position1, position2, type);
-			weapon1.shoot();
-			weapon2.shoot();
-			m_soundManager.play(m_soundFireMap.at(type));
-		}
-		break;
-	default:
-		break;
 	}
 }
 
@@ -185,37 +214,37 @@ void BulletManager::initBulletvector(BulletTypes type)
 	switch (type)
 	{
 	case BulletTypes::Standard:
-		initBulletMapVector<bullets::Standard>(type, 14);
+		initBulletMapVector<bullets::Standard>(type, 25);
 		break;
 	case BulletTypes::Empowered:
-		initBulletMapVector<bullets::Empowered>(type, 24);
+		initBulletMapVector<bullets::Empowered>(type, 70);
 		break;
 	case BulletTypes::DeathOrb:
-		initBulletMapVector<bullets::DeathOrb>(type, 24);
+		initBulletMapVector<bullets::DeathOrb>(type, 40);
 		break;
 	case BulletTypes::FireBlast:
-		initBulletMapVector<bullets::FireBlast>(type, 30);
+		initBulletMapVector<bullets::FireBlast>(type, 40);
 		break;
 	case BulletTypes::HolySphere:
-		initBulletMapVector<bullets::HolySphere>(type, 10);
+		initBulletMapVector<bullets::HolySphere>(type, 30);
 		break;
 	case BulletTypes::MagmaShot:
-		initBulletMapVector<bullets::MagmaShot>(type, 10);
-		break;
-	case BulletTypes::CometShot:
-		initBulletMapVector<bullets::CometShot>(type, 35);
+		initBulletMapVector<bullets::MagmaShot>(type, 30);
 		break;
 	case BulletTypes::NapalmSphere:
-		initBulletMapVector<bullets::NapalmSphere>(type, 20);
+		initBulletMapVector<bullets::NapalmSphere>(type, 35);
+		break;
+	case BulletTypes::CometShot:
+		initBulletMapVector<bullets::CometShot>(type, 40);
 		break;
 	case BulletTypes::NullWave:
-		initBulletMapVector<bullets::NullWave>(type, 10);
+		initBulletMapVector<bullets::NullWave>(type, 30);
 		break;
 	case BulletTypes::StaticSphere:
-		initBulletMapVector<bullets::StaticSphere>(type, 10);
+		initBulletMapVector<bullets::StaticSphere>(type, 30);
 		break;
 	case BulletTypes::PyroBlast:
-		initBulletMapVector<bullets::PyroBlast>(type, 10);
+		initBulletMapVector<bullets::PyroBlast>(type, 30);
 		break;
 	default:
 		break;
@@ -267,6 +296,25 @@ void BulletManager::draw(Window & window, const float & deltaTime)
 void BulletManager::update()
 {
 	m_timeSinceFire += App::getUpdateDeltaTime();
+	if (m_currentOvercharge > 1.0f)
+	{
+		m_currentOvercharge = 1.0f;
+		m_overheat = true;
+		m_cooldownRate = m_overheatCooldownRate;
+	}
+	if (m_currentOvercharge > 0.0f)
+	{
+		m_currentOvercharge -= m_cooldownRate;
+	}
+	else
+	{
+		m_currentOvercharge = 0.0f;
+	}
+	if (m_overheat && m_currentOvercharge == 0.0f)
+	{
+		m_overheat = false;
+		m_cooldownRate = m_bulletCooldownRate;
+	}
 	updateWindowCollisions();
 }
 
@@ -394,6 +442,82 @@ void BulletManager::clearAllBullets()
 		}
 	}
 
+}
+
+/// <summary>
+/// @brief getter for the fire rate value.
+/// 
+/// 
+/// </summary>
+/// <returns>fire rate</returns>
+float BulletManager::getFireRate()
+{
+	return m_fireRateVal;
+}
+
+/// <summary>
+/// @brief a getter for the time since fire value.
+/// 
+/// 
+/// </summary>
+/// <returns>time since fire</returns>
+float BulletManager::getTimeSinceFire()
+{
+	return m_timeSinceFire;
+}
+
+/// <summary>
+/// @brief get the overcharge rate.
+/// 
+/// 
+/// </summary>
+/// <returns></returns>
+float BulletManager::getOvercharge()
+{
+	return m_currentOvercharge;
+}
+
+/// <summary>
+/// @brief get the bullet cooldown rate.
+/// 
+/// 
+/// </summary>
+/// <returns></returns>
+float BulletManager::getCooldown()
+{
+	return m_cooldownRate;
+}
+
+/// <summary>
+/// @brief getter for the overheat bool.
+/// 
+/// 
+/// </summary>
+/// <returns>overheat boolean</returns>
+bool BulletManager::getOverheat()
+{
+	return m_overheat;
+}
+
+/// <summary>
+/// @brief setter for the overheat bool.
+/// 
+/// 
+/// </summary>
+/// <param name="check">new value of overheat</param>
+void BulletManager::setOverheat(bool check)
+{
+	m_overheat = check;
+}
+
+void BulletManager::setWeaponOverheatingValues(float overchargePerBullet, float bulletCooldownRate, float overheatCooldownRate)
+{
+	m_currentOvercharge = 0.0f;
+	m_overchargePerBullet = overchargePerBullet;
+	m_bulletCooldownRate = bulletCooldownRate;
+	m_overheatCooldownRate = overheatCooldownRate;
+	m_cooldownRate = m_bulletCooldownRate;
+	m_overheat = false;
 }
 
 /// <summary>

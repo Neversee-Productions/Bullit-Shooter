@@ -99,3 +99,14 @@ void Connector::draw(Window & window, float const & deltaTime)
 	m_shaderTexture.display();
 	window.draw(m_sprite);
 }
+
+/// <summary>
+/// @brief reset the connector.
+/// 
+/// 
+/// </summary>
+/// <param name="pos">new end position</param>
+void Connector::reset(sf::Vector2f pos)
+{
+
+}
