@@ -127,7 +127,7 @@ private: // Private Member Variables
 	/// </summary>
 	int const m_RANGED_ENEMY_SPAWN_CAP;
 	/// <summary>
-	/// @brief defines the cap on basic enemy spawning.
+	/// @brief defines the cap on basic enemy spawning from single asteroid.
 	/// 
 	/// 
 	/// </summary>

@@ -33,6 +33,7 @@ public: // Public Member Functions
 	void init(std::shared_ptr<gameUi::Resources> sptrResources);
 	void update();
 	void draw(Window & window, float const & deltaTime);
+	void reset();
 public: // Public Member Get's
 public: // Public Member Set's
 public: // Public Member Variables
@@ -43,6 +44,9 @@ public: // Public Static Variables
 	/// 
 	/// </summary>
 	static int s_scoreCurrent;
+	static int SCORE_FOR_ASTEROID;
+	static int SCORE_FOR_RANGED;
+	static int SCORE_FOR_BASIC;
 protected: // Protected Member Functions
 protected: // Protected Member Variables
 private: // Private Member Functions
@@ -59,6 +63,41 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	sf::Text m_scoreDisplay;
+
+	/// <summary>
+	/// @brief current target score.
+	/// 
+	/// 
+	/// </summary>
+	int m_scoreTarget;
+
+	/// <summary>
+	/// @brief current score displayed on label.
+	/// 
+	/// 
+	/// </summary>
+	int m_scoreDisplaying;
+
+	/// <summary>
+	/// @brief is score to be scaling.
+	/// 
+	/// 
+	/// </summary>
+	bool m_scaling;
+
+	/// <summary>
+	/// @brief is score scaling up.
+	/// 
+	/// 
+	/// </summary>
+	bool m_scalingUp;
+
+	/// <summary>
+	/// @brief is score scaling down.
+	/// 
+	/// 
+	/// </summary>
+	bool m_scalingDown;
 };
 
 

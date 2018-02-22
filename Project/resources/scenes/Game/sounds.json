@@ -470,13 +470,178 @@
         },
         "what-hit":
         {
-            "volume": 70.0,
+            "volume": 90.0,
             "loop": false,
             "attenuation": 1.0,
             "buffer":
             {
                 "key": "what-hit",
                 "path": "resources/scenes/Game/voice/what_hit.ogg"
+            }
+        },
+        "all-day1":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "all-day1",
+                "path": "resources/scenes/Game/voice/all-day1.ogg"
+            }
+        },
+        "all-day2":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "all-day2",
+                "path": "resources/scenes/Game/voice/all-day2.ogg"
+            }
+        },
+        "all-ya-got":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "all-ya-got",
+                "path": "resources/scenes/Game/voice/all-ya-got.ogg"
+            }
+        },
+        "get-some":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "get-some",
+                "path": "resources/scenes/Game/voice/get-some.ogg"
+            }
+        },
+        "guns":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "guns",
+                "path": "resources/scenes/Game/voice/guns.ogg"
+            }
+        },
+        "lets-do-this":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "lets-do-this",
+                "path": "resources/scenes/Game/voice/lets-do-this.ogg"
+            }
+        },
+        "locked-and-loaded":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "locked-and-loaded",
+                "path": "resources/scenes/Game/voice/locked-and-loaded.ogg"
+            }
+        },
+        "music-to-my-ears":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "music-to-my-ears",
+                "path": "resources/scenes/Game/voice/music-to-my-ears.ogg"
+            }
+        },
+        "nice-find":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "nice-find",
+                "path": "resources/scenes/Game/voice/nice-find.ogg"
+            }
+        },
+        "overheat1":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "overheat1",
+                "path": "resources/scenes/Game/voice/overheat1.ogg"
+            }
+        },
+        "overheat2":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "overheat2",
+                "path": "resources/scenes/Game/voice/overheat2.ogg"
+            }
+        },
+        "pain":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "pain",
+                "path": "resources/scenes/Game/voice/pain.ogg"
+            }
+        },
+        "ready-for-show":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "ready-for-show",
+                "path": "resources/scenes/Game/voice/ready-for-show.ogg"
+            }
+        },
+        "shiny":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "shiny",
+                "path": "resources/scenes/Game/voice/shiny.ogg"
+            }
+        },
+        "useful":
+        {
+            "volume": 70.0,
+            "loop": false,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "useful",
+                "path": "resources/scenes/Game/voice/useful.ogg"
             }
         }
     }

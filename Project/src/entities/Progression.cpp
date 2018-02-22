@@ -23,10 +23,10 @@ Progression::Progression(
 	, m_SCORE(Score::s_scoreCurrent)
 	, m_timer()
 	, m_UPDATE_DT_TIME(sf::seconds(App::getUpdateDeltaTime()))
-	, m_DIF_INC(10.0f)
+	, m_DIF_INC(20.0f)
 	, m_difficultyLevel(0u)
 	, m_difficultyWentUp(false)
-	, m_RANGED_ENEMY_SPAWN_CAP(20)
+	, m_RANGED_ENEMY_SPAWN_CAP(5)
 	, m_BASIC_ENEMY_SPAWN_CAP(5)
 	, m_ASTEROID_SPAWN_CAP(40)
 	, m_rangedEnemySpawnAmount(0)
@@ -53,7 +53,7 @@ void Progression::reset()
 	m_timer = sf::Time::Zero;
 	m_difficultyWentUp = false;
 	m_difficultyLevel = 0u;
-	m_rangedEnemySpawnAmount = 0;
+	m_rangedEnemySpawnAmount = 2;
 	s_spawnBasicEnemies = 1;
 	m_timerDisplay.setPosition(100.0f, 200.0f);
 	m_timerDisplay.setFillColor(sf::Color::White);

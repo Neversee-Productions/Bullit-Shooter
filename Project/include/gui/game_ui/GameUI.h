@@ -29,7 +29,7 @@ public: //public functions
 	void draw(Window & window, const float & deltaTime);
 	static void setup(std::shared_ptr<gameUi::Resources> sptrResources, ResourceHandler & resourceHandler, js::json & UIParser);
 	void init(std::shared_ptr<gameUi::Resources> resources);
-	void decrementHealth(float health);
+	void decrementHealth(const float & health);
 	const tinyh::c2AABB & getHealthCollisionBox();
 	const tinyh::c2AABB & getRightUICollisionBox();
 	const tinyh::c2AABB & getLeftUICollisionBox();
@@ -48,6 +48,7 @@ public: //public functions
 	void updateOvercharge(float overchargeValue);
 	void setOverheat(bool check);
 	void setPauseFlashing(bool check);
+	void setTargetHealth(const float & playerHealth);
 private: //private functions.
 public: //public member variables.
 private: //private member variables.

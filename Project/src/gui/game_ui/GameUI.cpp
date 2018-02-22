@@ -39,7 +39,7 @@ void GameUI::update()
 	{
 		if (m_healthLostSprite.getScale().x > m_targetHealth)
 		{
-			m_healthLostSprite.setScale(sf::Vector2f(m_healthLostSprite.getScale().x - 0.5f * App::getUpdateDeltaTime(), 1.0f));
+			m_healthLostSprite.setScale(sf::Vector2f(m_healthLostSprite.getScale().x - 0.25f * App::getUpdateDeltaTime(), 1.0f));
 		}
 	}
 	else
@@ -327,9 +327,9 @@ void GameUI::init(std::shared_ptr<gameUi::Resources> resources)
 /// 
 /// </summary>
 /// <param name="health">float value for health to be taken away</param>
-void GameUI::decrementHealth(float health)
+void GameUI::decrementHealth(const float & health)
 {
-	float healthLost = health / 100;
+	float healthLost = health / 100.0f;
 	m_targetHealth = m_healthSprite.getScale().x - healthLost;
 	if (m_healthSprite.getScale().x > 0)
 	{
@@ -495,6 +495,7 @@ void GameUI::setRecharge(float val)
 /// </summary>
 void GameUI::reset()
 {
+	m_score.reset();
 	m_healthSprite.setScale(1.0f, 1.0f);
 	m_healthLostSprite.setScale(1.0f, 1.0f);
 	m_targetHealth = 1.0f;
@@ -557,4 +558,29 @@ void GameUI::setOverheat(bool check)
 void GameUI::setPauseFlashing(bool check)
 {
 	m_pauseFlashing = check;
+}
+
+/// <summary>
+/// @brief set target health value.
+/// 
+/// 
+/// </summary>
+/// <param name="playerHealth"></param>
+void GameUI::setTargetHealth(const float & playerHealth)
+{
+	m_targetHealth = playerHealth / 100.0f;
+
+	//float healthLost = health / 100.0f;
+	//m_targetHealth = m_healthSprite.getScale().x - healthLost;
+	auto healthScale = playerHealth * (1.0f / 100.0f);
+	if (m_healthSprite.getScale().x > 0)
+	{
+		m_healthSprite.setScale(sf::Vector2f(healthScale , 1.0f));
+	}
+	else
+	{
+		m_healthSprite.setScale(sf::Vector2f(0.0f, 1.0f));
+	}
+
+
 }

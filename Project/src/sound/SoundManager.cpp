@@ -379,6 +379,21 @@ void SoundManager::setupVoices(ResourceHandler & resourceHandler, SoundManager &
 	std::string const STAY_CLEAR_ID = "stay-clear";
 	std::string const UNDOCKING_ID = "undocking";
 	std::string const WHAT_HIT_ID = "what-hit";
+	std::string const ALL_DAY1_ID = "all-day1";
+	std::string const ALL_DAY2_ID = "all-day2";
+	std::string const ALL_YA_GOT_ID = "all-ya-got";
+	std::string const GET_SOME_ID = "get-some";
+	std::string const GUNS_ID = "guns";
+	std::string const LETS_DO_THIS_ID = "lets-do-this";
+	std::string const LOCKED_AND_LOADED_ID = "locked-and-loaded";
+	std::string const MUSIC_TO_MY_EARS_ID = "music-to-my-ears";
+	std::string const NICE_FIND_ID = "nice-find";
+	std::string const OVERHEAT1_ID = "overheat1";
+	std::string const OVERHEAT2_ID = "overheat2";
+	std::string const PAIN_ID = "pain";
+	std::string const READY_FOR_SHOW_ID = "ready-for-show";
+	std::string const SHINY_ID = "shiny";
+	std::string const USEFUL_ID = "useful";
 
 
 	soundManager.addSound(voicesParser.at(CAREFUL_ID).get<SoundSetting>(), CAREFUL_ID);
@@ -391,6 +406,22 @@ void SoundManager::setupVoices(ResourceHandler & resourceHandler, SoundManager &
 	soundManager.addSound(voicesParser.at(STAY_CLEAR_ID).get<SoundSetting>(), STAY_CLEAR_ID);
 	soundManager.addSound(voicesParser.at(UNDOCKING_ID).get<SoundSetting>(), UNDOCKING_ID);
 	soundManager.addSound(voicesParser.at(WHAT_HIT_ID).get<SoundSetting>(), WHAT_HIT_ID);
+	soundManager.addSound(voicesParser.at(ALL_DAY1_ID).get<SoundSetting>(), ALL_DAY1_ID);
+	soundManager.addSound(voicesParser.at(ALL_DAY2_ID).get<SoundSetting>(), ALL_DAY2_ID);
+	soundManager.addSound(voicesParser.at(ALL_YA_GOT_ID).get<SoundSetting>(), ALL_YA_GOT_ID);
+	soundManager.addSound(voicesParser.at(GET_SOME_ID).get<SoundSetting>(), GET_SOME_ID);
+	soundManager.addSound(voicesParser.at(GUNS_ID).get<SoundSetting>(), GUNS_ID);
+	soundManager.addSound(voicesParser.at(LETS_DO_THIS_ID).get<SoundSetting>(), LETS_DO_THIS_ID);
+	soundManager.addSound(voicesParser.at(LOCKED_AND_LOADED_ID).get<SoundSetting>(), LOCKED_AND_LOADED_ID);
+	soundManager.addSound(voicesParser.at(MUSIC_TO_MY_EARS_ID).get<SoundSetting>(), MUSIC_TO_MY_EARS_ID);
+	soundManager.addSound(voicesParser.at(NICE_FIND_ID).get<SoundSetting>(), NICE_FIND_ID);
+	soundManager.addSound(voicesParser.at(OVERHEAT1_ID).get<SoundSetting>(), OVERHEAT1_ID);
+	soundManager.addSound(voicesParser.at(OVERHEAT2_ID).get<SoundSetting>(), OVERHEAT2_ID);
+	soundManager.addSound(voicesParser.at(PAIN_ID).get<SoundSetting>(), PAIN_ID);
+	soundManager.addSound(voicesParser.at(READY_FOR_SHOW_ID).get<SoundSetting>(), READY_FOR_SHOW_ID);
+	soundManager.addSound(voicesParser.at(SHINY_ID).get<SoundSetting>(), SHINY_ID);
+	soundManager.addSound(voicesParser.at(USEFUL_ID).get<SoundSetting>(), USEFUL_ID);
+
 
 }
 

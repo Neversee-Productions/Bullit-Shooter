@@ -1,6 +1,10 @@
 #include "gui\game_ui\Score.h"
 
 int Score::s_scoreCurrent = 0;
+int Score::SCORE_FOR_ASTEROID = 1000;
+int Score::SCORE_FOR_BASIC = 1500;
+int Score::SCORE_FOR_RANGED = 2000;
+
 
 /// <summary>
 /// @brief Default constructor.
@@ -10,6 +14,9 @@ int Score::s_scoreCurrent = 0;
 Score::Score()
 	: m_scoreStream("Score: ")
 	, m_scoreDisplay()
+	, m_scaling(false)
+	, m_scalingUp(false)
+	, m_scalingDown(false)
 {
 	m_scoreStream << "Score: ";
 }
@@ -43,6 +50,56 @@ void Score::init(std::shared_ptr<gameUi::Resources> sptrResources)
 /// </summary>
 void Score::update()
 {
+	if (m_scoreDisplaying < s_scoreCurrent)
+	{
+		//m_scaling = true;
+		if (s_scoreCurrent - m_scoreDisplaying > 3000)
+		{
+			m_scoreDisplaying += 35;
+		}
+		else
+		{
+			m_scoreDisplaying += 10;
+		}
+		if (m_scoreDisplaying > s_scoreCurrent)
+		{
+			//m_scaling = false;
+			m_scoreDisplaying = s_scoreCurrent;
+		}
+	}
+	//if (m_scaling && m_scalingUp)
+	//{
+	//	m_scoreDisplay.setScale(m_scoreDisplay.getScale().x + 0.01f, m_scoreDisplay.getScale().y + 0.01f);
+	//	if (m_scoreDisplay.getScale().x > 2)
+	//	{
+	//		m_scalingUp = false;
+	//		m_scalingDown = true;
+	//		m_scoreDisplay.setScale(2.0f, 2.0f);
+	//	}
+	//}
+	//else if (m_scalingDown)
+	//{
+	//	m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - 0.01f, m_scoreDisplay.getScale().y - 0.01f);
+	//	if (m_scoreDisplay.getScale().x < 1)
+	//	{
+	//		m_scalingUp = false;
+	//		m_scalingDown = true;
+	//		m_scoreDisplay.setScale(1.0f, 1.0f);
+	//	}
+	//}
+	//else
+	//{
+	//	m_scalingUp = true;
+	//	m_scalingDown = false;
+	//	if (m_scoreDisplay.getScale().x > 1)
+	//	{
+	//		m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - 0.01f, m_scoreDisplay.getScale().y - 0.01f);
+	//		if (m_scoreDisplay.getScale().x < 1)
+	//		{
+	//			m_scoreDisplay.setScale(1.0f, 1.0f);
+	//		}
+	//	}
+	//}
 }
 
 /// <summary>
@@ -54,10 +111,25 @@ void Score::update()
 /// <param name="deltaTime">read-only reference to the delta time.</param>
 void Score::draw(Window & window, float const & deltaTime)
 {
-	m_scoreDisplay.setString(m_scoreStream.str() + std::to_string(s_scoreCurrent));
+	m_scoreDisplay.setString(m_scoreStream.str() + std::to_string(m_scoreDisplaying));
 	m_scoreDisplay.setOrigin(
 		m_scoreDisplay.getGlobalBounds().width * 0.5f,
 		m_scoreDisplay.getGlobalBounds().height * 0.5f
 	);
 	window.draw(m_scoreDisplay);
+}
+
+/// <summary>
+/// @brief method to reset the score.
+/// 
+/// 
+/// </summary>
+void Score::reset()
+{
+	m_scoreDisplaying = 0;
+	m_scoreTarget = 0;
+	s_scoreCurrent = 0;
+	m_scaling = false;
+	m_scalingDown = false;
+	m_scalingUp = false;
 }

@@ -12,7 +12,7 @@ float const Shield::INVULNERABILITY_FRAMES = 0.09f;
 Shield::Shield(sf::Vector2f position, float radius)
 	: m_circle(radius)
 	, m_position(position)
-	, m_health(100)
+	, m_health(100.0f)
 	, m_invulnerable(false)
 	, m_invulnTimer(0.0f)
 {
