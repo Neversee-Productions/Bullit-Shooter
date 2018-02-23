@@ -23,7 +23,7 @@ Progression::Progression(
 	, m_SCORE(Score::s_scoreCurrent)
 	, m_timer()
 	, m_UPDATE_DT_TIME(sf::seconds(App::getUpdateDeltaTime()))
-	, m_DIF_INC(5.0f)
+	, m_DIF_INC(20.0f)
 	, m_difficultyLevel(0u)
 	, m_difficultyWentUp(false)
 	, m_RANGED_ENEMY_SPAWN_CAP(5)
