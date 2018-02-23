@@ -98,7 +98,7 @@ namespace ai
 		virtual bool checkCollision(tinyh::c2AABB const & collision) const final override;
 		virtual bool checkCollision(tinyh::c2Capsule const & collision) const final override;
 		tinyh::c2AABB const & getCollisionAABB() const;
-		void spawn(sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading);
+		void spawn(sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading, float const & angle);
 
 	protected: // Protected Member Functions
 		void setState(std::shared_ptr<SeekState> sptrState, bool rememberPrevious);

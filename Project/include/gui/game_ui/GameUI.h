@@ -247,6 +247,20 @@ private: //private member variables.
 	/// 
 	/// </summary>
 	Score m_score;
+
+	/// <summary>
+	/// @brief a timer that calculates how long since last enemy killed voice line.
+	/// 
+	/// 
+	/// </summary>
+	float m_overheatingVoiceTimer;
+
+	/// <summary>
+	/// @brief define how long until can say another voiceline after enemy killed.
+	/// 
+	/// 
+	/// </summary>
+	float m_timeUntilOverheatingVoice;
 };
 
 

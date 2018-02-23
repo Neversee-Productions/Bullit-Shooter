@@ -25,6 +25,8 @@ GameUI::GameUI(
 	, m_overheating(false)
 	, m_colorFlipTimer(0.0f)
 	, m_soundManager(SoundManager::instance())
+	, m_timeUntilOverheatingVoice(2.0f)
+	, m_overheatingVoiceTimer(0.0f)
 {
 }
 
@@ -35,6 +37,8 @@ GameUI::GameUI(
 /// </summary>
 void GameUI::update()
 {
+	m_overheatingVoiceTimer += App::getUpdateDeltaTime();
+
 	if (m_healthLostSprite.getScale().x > 0)
 	{
 		if (m_healthLostSprite.getScale().x > m_targetHealth)
@@ -502,6 +506,8 @@ void GameUI::reset()
 	m_showPauseScreen = false;
 	m_showGameEnd = false;
 	m_pauseFlashing = false;
+	m_timeUntilOverheatingVoice = 10.0f;
+	m_overheatingVoiceTimer = 0.0f;
 }
 
 /// <summary>
@@ -536,6 +542,23 @@ void GameUI::updateOvercharge(float overchargeValue)
 {
 	m_overchargeBarLeft.setScale(m_overchargeBarLeft.getScale().x, overchargeValue);
 	m_overchargeBarRight.setScale(m_overchargeBarRight.getScale().x, overchargeValue);
+	if (m_overheatingVoiceTimer > m_timeUntilOverheatingVoice)
+	{
+		if (overchargeValue > 0.6 && !m_overheating)
+		{
+			m_overheatingVoiceTimer = 0.0f;
+			auto random = (rand() % 2 + 1); //generate number between 1 and 2
+			if (random == 1)
+			{
+				m_soundManager.play("overheat1", false);
+			}
+			else if (random == 2)
+			{
+				m_soundManager.play("overheat2", false);
+			}
+		}
+	}
+
 }
 
 /// <summary>

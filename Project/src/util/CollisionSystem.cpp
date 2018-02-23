@@ -25,6 +25,8 @@ CollisionSystem::CollisionSystem(
 	, m_pickingUp(false)
 	, m_pickupSoundPlaying(false)
 	, m_stayClearPlaying(false)
+	, m_enemyKilledVoicelineTimer(0.0f)
+	, m_timeUntilKilledVoiceline(2.0f)
 {
 }
 
@@ -36,8 +38,11 @@ CollisionSystem::CollisionSystem(
 /// </summary>
 void CollisionSystem::update()
 {
+	m_enemyKilledVoicelineTimer += App::getUpdateDeltaTime();
+
 	this->updatePlayer();
 	this->updateAsteroids();
+
 }
 
 /// <summary>
@@ -420,8 +425,9 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 				for (int i = 0; i < Progression::getBasicEnemies(); ++i)
 				{
 					sf::Vector2f spawnPos = { asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y };
-					thor::rotate(spawnHeading, rotateBy * (std::rand() % 11 / 10.0f));
-					m_basicEnemyManager.spawn(m_player, spawnPos, spawnHeading);
+					float angle = rotateBy * (std::rand() % 11 / 10.0f);
+					thor::rotate(spawnHeading, angle);
+					m_basicEnemyManager.spawn(m_player, spawnPos, spawnHeading, thor::polarAngle(spawnHeading) - 90.0f);
 				}
 			}
 		}
@@ -510,11 +516,8 @@ void CollisionSystem::basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & 
 	{
 		Score::s_scoreCurrent += Score::SCORE_FOR_BASIC;
 		m_soundManager.play("enemy_death");
-		auto random = (rand() % 6 + 1); //generate number between 1 and 6
-		if (random == 2)
-		{
-			m_soundManager.play("what-hit");
-		}
+
+		generateKilledEnemyVoiceline();
 		enemy.setActive(false);
 	}
 }
@@ -534,11 +537,7 @@ void CollisionSystem::rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet 
 	{
 		Score::s_scoreCurrent += Score::SCORE_FOR_RANGED;
 		m_soundManager.play("enemy_death");
-		auto random = (rand() % 6 + 1); //generate number between 1 and 6
-		if (random == 2)
-		{
-			m_soundManager.play("what-hit");
-		}
+		generateKilledEnemyVoiceline();
 		enemy.setActive(false);
 	}
 }
@@ -591,6 +590,27 @@ void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
 	{
 		m_pickupSoundPlaying = true;
 		m_soundManager.play("power-up");
+		auto random = (rand() % 5 + 1); //generate number between 1 and 5
+		if (random == 1)
+		{
+			m_soundManager.play("guns");
+		}
+		else if (random == 2)
+		{
+			m_soundManager.play("locked-and-loaded");
+		}
+		else if (random == 3)
+		{
+			m_soundManager.play("nice-find");
+		}
+		else if (random == 4)
+		{
+			m_soundManager.play("shiny");
+		}
+		else if (random == 5)
+		{
+			m_soundManager.play("useful");
+		}
 	}
 	pickup.setCanDisappear(false);
 	float const LENGTH = thor::length(player.getPosition() - pickup.getRightPosition());
@@ -675,6 +695,36 @@ void CollisionSystem::asteroidVsAsteroid(Asteroid & asteroid1, Asteroid & astero
 	asteroid2.setRotation(asteroid1.getRotation());
 	asteroid1.setRotation(asteroid2Rot);
 
+}
+
+/// <summary>
+/// @brief generate a random line.
+/// 
+/// 
+/// </summary>
+void CollisionSystem::generateKilledEnemyVoiceline()
+{
+	if (m_enemyKilledVoicelineTimer > m_timeUntilKilledVoiceline)
+	{
+		m_enemyKilledVoicelineTimer = 0.0f;
+		auto random = (rand() % 20 + 1); //generate number between 1 and 20
+		if (random == 2)
+		{
+			m_soundManager.play("what-hit");
+		}
+		if (random == 6)
+		{
+			m_soundManager.play("get-some");
+		}
+		if (random == 11)
+		{
+			m_soundManager.play("all-ya-got");
+		}
+		if (random == 17)
+		{
+			m_soundManager.play("pain");
+		}
+	}
 }
 
 /// <summary>

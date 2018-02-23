@@ -184,12 +184,12 @@ tinyh::c2AABB const & ai::AiBasic::getCollisionAABB() const
 	return m_collisionRect;
 }
 
-void ai::AiBasic::spawn(sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading)
+void ai::AiBasic::spawn(sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading, float const & angle)
 {
 	m_position = spawnPosition;
 	m_speed = 0.0f;
 	m_heading = spawnHeading;
-	m_angle = 0.0f;
+	m_angle = angle;
 	m_health = s_MAX_HEALTH;
 	this->setActive(true);
 	this->setTexture(this->s_SEEK_ID);

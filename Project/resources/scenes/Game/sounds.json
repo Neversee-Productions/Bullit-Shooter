@@ -3,7 +3,7 @@
     {
         "bg-soundtrack":
         {
-            "volume": 60.0,
+            "volume": 50.0,
             "loop": true,
             "attenuation": 1.0,
             "buffer":
@@ -14,7 +14,7 @@
         },
         "bg-soundtrack-end":
         {
-            "volume": 60.0,
+            "volume": 50.0,
             "loop": false,
             "attenuation": 1.0,
             "buffer":
@@ -343,7 +343,7 @@
     {
         "alarm":
         {
-            "volume": 60.0,
+            "volume": 50.0,
             "loop": true,
             "attenuation": 1.0,
             "buffer":
@@ -525,7 +525,7 @@
         },
         "guns":
         {
-            "volume": 70.0,
+            "volume": 80.0,
             "loop": false,
             "attenuation": 1.0,
             "buffer":
@@ -547,7 +547,7 @@
         },
         "locked-and-loaded":
         {
-            "volume": 70.0,
+            "volume": 85.0,
             "loop": false,
             "attenuation": 1.0,
             "buffer":
@@ -569,7 +569,7 @@
         },
         "nice-find":
         {
-            "volume": 70.0,
+            "volume": 85.0,
             "loop": false,
             "attenuation": 1.0,
             "buffer":
@@ -624,7 +624,7 @@
         },
         "shiny":
         {
-            "volume": 70.0,
+            "volume": 100.0,
             "loop": false,
             "attenuation": 1.0,
             "buffer":
@@ -635,7 +635,7 @@
         },
         "useful":
         {
-            "volume": 70.0,
+            "volume": 100.0,
             "loop": false,
             "attenuation": 1.0,
             "buffer":

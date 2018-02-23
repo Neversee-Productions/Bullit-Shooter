@@ -52,54 +52,58 @@ void Score::update()
 {
 	if (m_scoreDisplaying < s_scoreCurrent)
 	{
-		//m_scaling = true;
+		m_scaling = true;
+		if (s_scoreCurrent - m_scoreDisplaying > 6000)
+		{
+			m_scoreDisplaying += static_cast<int>((150 * 120) * App::getUpdateDeltaTime());
+		}
 		if (s_scoreCurrent - m_scoreDisplaying > 3000)
 		{
-			m_scoreDisplaying += 35;
+			m_scoreDisplaying += static_cast<int>((35 * 120) * App::getUpdateDeltaTime());
 		}
 		else
 		{
-			m_scoreDisplaying += 10;
+			m_scoreDisplaying += static_cast<int>((10 * 120) * App::getUpdateDeltaTime());
 		}
 		if (m_scoreDisplaying > s_scoreCurrent)
 		{
-			//m_scaling = false;
+			m_scaling = false;
 			m_scoreDisplaying = s_scoreCurrent;
 		}
 	}
-	//if (m_scaling && m_scalingUp)
-	//{
-	//	m_scoreDisplay.setScale(m_scoreDisplay.getScale().x + 0.01f, m_scoreDisplay.getScale().y + 0.01f);
-	//	if (m_scoreDisplay.getScale().x > 2)
-	//	{
-	//		m_scalingUp = false;
-	//		m_scalingDown = true;
-	//		m_scoreDisplay.setScale(2.0f, 2.0f);
-	//	}
-	//}
-	//else if (m_scalingDown)
-	//{
-	//	m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - 0.01f, m_scoreDisplay.getScale().y - 0.01f);
-	//	if (m_scoreDisplay.getScale().x < 1)
-	//	{
-	//		m_scalingUp = false;
-	//		m_scalingDown = true;
-	//		m_scoreDisplay.setScale(1.0f, 1.0f);
-	//	}
-	//}
-	//else
-	//{
-	//	m_scalingUp = true;
-	//	m_scalingDown = false;
-	//	if (m_scoreDisplay.getScale().x > 1)
-	//	{
-	//		m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - 0.01f, m_scoreDisplay.getScale().y - 0.01f);
-	//		if (m_scoreDisplay.getScale().x < 1)
-	//		{
-	//			m_scoreDisplay.setScale(1.0f, 1.0f);
-	//		}
-	//	}
-	//}
+	if (m_scaling && m_scalingUp)
+	{
+		m_scoreDisplay.setScale(m_scoreDisplay.getScale().x + 0.01f, m_scoreDisplay.getScale().y + 0.01f);
+		if (m_scoreDisplay.getScale().x > 2)
+		{
+			m_scalingUp = false;
+			m_scalingDown = true;
+			m_scoreDisplay.setScale(2.0f, 2.0f);
+		}
+	}
+	else if (m_scalingDown)
+	{
+		m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - 0.01f, m_scoreDisplay.getScale().y - 0.01f);
+		if (m_scoreDisplay.getScale().x < 1)
+		{
+			m_scalingUp = false;
+			m_scalingDown = true;
+			m_scoreDisplay.setScale(1.0f, 1.0f);
+		}
+	}
+	else
+	{
+		m_scalingUp = true;
+		m_scalingDown = false;
+		if (m_scoreDisplay.getScale().x > 1)
+		{
+			m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - 0.01f, m_scoreDisplay.getScale().y - 0.01f);
+			if (m_scoreDisplay.getScale().x < 1)
+			{
+				m_scoreDisplay.setScale(1.0f, 1.0f);
+			}
+		}
+	}
 }
 
 /// <summary>
@@ -112,10 +116,6 @@ void Score::update()
 void Score::draw(Window & window, float const & deltaTime)
 {
 	m_scoreDisplay.setString(m_scoreStream.str() + std::to_string(m_scoreDisplaying));
-	m_scoreDisplay.setOrigin(
-		m_scoreDisplay.getGlobalBounds().width * 0.5f,
-		m_scoreDisplay.getGlobalBounds().height * 0.5f
-	);
 	window.draw(m_scoreDisplay);
 }
 
@@ -126,6 +126,9 @@ void Score::draw(Window & window, float const & deltaTime)
 /// </summary>
 void Score::reset()
 {
+	m_scoreDisplay.setOutlineColor(sf::Color::Black);
+	m_scoreDisplay.setOutlineThickness(2.0f);
+
 	m_scoreDisplaying = 0;
 	m_scoreTarget = 0;
 	s_scoreCurrent = 0;

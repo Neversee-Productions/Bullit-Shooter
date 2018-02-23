@@ -23,7 +23,7 @@ Progression::Progression(
 	, m_SCORE(Score::s_scoreCurrent)
 	, m_timer()
 	, m_UPDATE_DT_TIME(sf::seconds(App::getUpdateDeltaTime()))
-	, m_DIF_INC(20.0f)
+	, m_DIF_INC(5.0f)
 	, m_difficultyLevel(0u)
 	, m_difficultyWentUp(false)
 	, m_RANGED_ENEMY_SPAWN_CAP(5)
@@ -41,6 +41,7 @@ Progression::Progression(
 void Progression::init(std::shared_ptr<gameUi::Resources> sptrResources)
 {
 	m_timerDisplay.setFont(*sptrResources->m_sptrButtonFont);
+	m_waveDisplay.setFont(*sptrResources->m_sptrButtonFont);
 }
 
 /// <summary>
@@ -52,13 +53,26 @@ void Progression::reset()
 {
 	m_timer = sf::Time::Zero;
 	m_difficultyWentUp = false;
+	m_scaleDown = false;
+	m_scaleLabel = false;
 	m_difficultyLevel = 0u;
-	m_rangedEnemySpawnAmount = 2;
+	m_rangedEnemySpawnAmount = 1;
 	s_spawnBasicEnemies = 1;
-	m_timerDisplay.setPosition(100.0f, 200.0f);
+	m_timerDisplay.setPosition(1100.0f, 65.0f);
 	m_timerDisplay.setFillColor(sf::Color::White);
 	m_timerDisplay.setOutlineColor(sf::Color::Black);
 	m_timerDisplay.setOutlineThickness(2.0f);
+	m_timerDisplay.setScale(1.0f, 1.0f);
+	m_timerDisplay.setOrigin(m_timerDisplay.getScale().x / 2, m_timerDisplay.getScale().y / 2);
+
+
+	m_waveDisplay.setPosition(100.0f, 65.0f);
+	m_waveDisplay.setFillColor(sf::Color::White);
+	m_waveDisplay.setOutlineColor(sf::Color::Black);
+	m_waveDisplay.setOutlineThickness(2.0f);
+	m_waveDisplay.setScale(1.0f, 1.0f);
+	m_waveDisplay.setOrigin(m_waveDisplay.getScale().x / 2, m_waveDisplay.getScale().y / 2);
+	m_asteroidManager.s_spawnAmount = 1;
 }
 
 /// <summary>
@@ -71,6 +85,7 @@ void Progression::update()
 	m_timer += m_UPDATE_DT_TIME;
 	if (m_timer > sf::seconds(m_DIF_INC * static_cast<float>(m_difficultyLevel + 1)))
 	{
+		m_scaleLabel = true;
 		m_difficultyWentUp = true;
 		if (m_difficultyLevel < 255u)
 		{
@@ -85,6 +100,31 @@ void Progression::update()
 		{
 			++s_spawnBasicEnemies;
 		}
+	}
+	if (m_scaleLabel)
+	{
+		m_waveDisplay.setFillColor(sf::Color::Red);
+		if (!m_scaleDown)
+		{
+			//m_timerDisplay.setScale(m_timerDisplay.getScale().x + 0.01f, m_timerDisplay.getScale().y + 0.01f);
+			m_waveDisplay.setScale(m_waveDisplay.getScale().x + 0.03f, m_waveDisplay.getScale().y + 0.03f);
+			if (m_waveDisplay.getScale().x > 2.0f)
+			{
+				m_scaleDown = true;
+			}
+		}
+		else
+		{
+			m_waveDisplay.setScale(m_waveDisplay.getScale().x - 0.03f, m_waveDisplay.getScale().y - 0.03f);
+			if (m_waveDisplay.getScale().x <= 1.0f)
+			{
+				m_waveDisplay.setFillColor(sf::Color::White);
+				m_waveDisplay.setScale(1.0f, 1.0f);
+				m_scaleDown = false;
+				m_scaleLabel = false;
+			}
+		}
+
 	}
 }
 
@@ -103,11 +143,13 @@ void Progression::draw(Window & window, float const & deltaTime)
 		// Difficulty went up draw something.
 	}
 #ifdef _DEBUG
-	std::string displayStr = "Time: " + std::to_string(m_timer.asSeconds());
+	std::string displayStr = "Time: " + std::to_string(static_cast<int>(m_timer.asSeconds()));
 	displayStr.append("\n");
-	displayStr.append("Level: " + std::to_string(m_difficultyLevel + 1));
+	std::string waveStr = "Wave: " + std::to_string(m_difficultyLevel + 1);
 	m_timerDisplay.setString(displayStr);
+	m_waveDisplay.setString(waveStr);
 	window.draw(m_timerDisplay);
+	window.draw(m_waveDisplay);
 #endif // _DEBUG
 }
 

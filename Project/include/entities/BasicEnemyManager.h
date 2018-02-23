@@ -39,7 +39,7 @@ public: // Public Member Functions
 	void init(std::shared_ptr<Resources> sptrResources, Player & player);
 	void update();
 	void draw(Window & window, float const & deltaTime);
-	void spawn(Player & player, sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading);
+	void spawn(Player & player, sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading, float const & angle);
 	std::list<ai::AiBasic>::iterator despawn(std::list<ai::AiBasic>::iterator & _where);
 	std::list<ai::AiBasic> & getEnemies();
 	void reset();
