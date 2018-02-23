@@ -17,6 +17,7 @@ Score::Score()
 	, m_scaling(false)
 	, m_scalingUp(false)
 	, m_scalingDown(false)
+	, SCALE_VALUE(0.015f)
 {
 	m_scoreStream << "Score: ";
 }
@@ -52,7 +53,7 @@ void Score::update()
 {
 	if (m_scoreDisplaying < s_scoreCurrent)
 	{
-		m_scaling = true;
+   		m_scaling = true;
 		if (s_scoreCurrent - m_scoreDisplaying > 6000)
 		{
 			m_scoreDisplaying += static_cast<int>((150 * 120) * App::getUpdateDeltaTime());
@@ -73,21 +74,22 @@ void Score::update()
 	}
 	if (m_scaling && m_scalingUp)
 	{
-		m_scoreDisplay.setScale(m_scoreDisplay.getScale().x + 0.01f, m_scoreDisplay.getScale().y + 0.01f);
-		if (m_scoreDisplay.getScale().x > 2)
+		m_scoreDisplay.setScale(m_scoreDisplay.getScale().x + SCALE_VALUE, m_scoreDisplay.getScale().y + SCALE_VALUE);
+		if (m_scoreDisplay.getScale().x > 1.3f)
 		{
 			m_scalingUp = false;
 			m_scalingDown = true;
-			m_scoreDisplay.setScale(2.0f, 2.0f);
+			m_scoreDisplay.setScale(1.3f, 1.3f);
 		}
 	}
 	else if (m_scalingDown)
 	{
-		m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - 0.01f, m_scoreDisplay.getScale().y - 0.01f);
-		if (m_scoreDisplay.getScale().x < 1)
+		m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - SCALE_VALUE, m_scoreDisplay.getScale().y - SCALE_VALUE);
+		if (m_scoreDisplay.getScale().x < 1.0f)
 		{
-			m_scalingUp = false;
-			m_scalingDown = true;
+			m_scalingUp = true;
+			m_scalingDown = false;
+			m_scaling = false;
 			m_scoreDisplay.setScale(1.0f, 1.0f);
 		}
 	}
@@ -95,10 +97,11 @@ void Score::update()
 	{
 		m_scalingUp = true;
 		m_scalingDown = false;
-		if (m_scoreDisplay.getScale().x > 1)
+		m_scaling = false;
+		if (m_scoreDisplay.getScale().x > 1.0f)
 		{
-			m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - 0.01f, m_scoreDisplay.getScale().y - 0.01f);
-			if (m_scoreDisplay.getScale().x < 1)
+			m_scoreDisplay.setScale(m_scoreDisplay.getScale().x - SCALE_VALUE, m_scoreDisplay.getScale().y - SCALE_VALUE);
+			if (m_scoreDisplay.getScale().x < 1.0f)
 			{
 				m_scoreDisplay.setScale(1.0f, 1.0f);
 			}

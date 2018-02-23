@@ -98,6 +98,13 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	bool m_scalingDown;
+
+	/// <summary>
+	/// @brief define value by which score scales.
+	/// 
+	/// 
+	/// </summary>
+	const float SCALE_VALUE;
 };
 
 

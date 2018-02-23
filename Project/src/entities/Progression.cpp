@@ -146,15 +146,16 @@ void Progression::draw(Window & window, float const & deltaTime)
 		m_difficultyWentUp = false;
 		// Difficulty went up draw something.
 	}
-#ifdef _DEBUG
-	std::string displayStr = "Time: " + std::to_string(static_cast<int>(m_timer.asSeconds()));
-	displayStr.append("\n");
+	std::stringstream displayStr("    ");
+	float time = m_timer.asSeconds();
+	int whole = static_cast<int>(time);
+	int decimal = static_cast<int>((time - static_cast<float>(whole)) * 100.0f);
+	displayStr << "Time: " << whole << "." << decimal;
 	std::string waveStr = "Wave: " + std::to_string(m_difficultyLevel + 1);
-	m_timerDisplay.setString(displayStr);
+	m_timerDisplay.setString(displayStr.str());
 	m_waveDisplay.setString(waveStr);
 	window.draw(m_timerDisplay);
 	window.draw(m_waveDisplay);
-#endif // _DEBUG
 }
 
 /// <summary>
