@@ -7,6 +7,7 @@ std::string ai::AiRanged::s_DEPLOY_ID = "";
 std::string ai::AiRanged::s_SHOOT_ID = "";
 std::string ai::AiRanged::s_EBOLA_ID = "";
 std::string ai::AiRanged::s_DEATH_ID = "";
+std::string ai::AiRanged::s_EBOLA_IMPACT_ID = "";
 bool const ai::AiRanged::s_COLOR_QUAD = false;
 float const ai::AiRanged::s_C2_RADIUS = 25.0f;
 
@@ -69,6 +70,7 @@ void ai::AiRanged::setup(
 	std::string const JSON_SHOOT("shoot");
 	std::string const JSON_SPIT("ebola");
 	std::string const JSON_DEATH("death");
+	std::string const JSON_EBOLA_IMPACT("ebola-impact");
 
 	std::string const JSON_KEY("key");
 
@@ -76,7 +78,8 @@ void ai::AiRanged::setup(
 	ai::AiRanged::s_DEPLOY_ID = rangedEnemyParser.at(JSON_DEPLOY).at(JSON_KEY).get<std::string>();
 	ai::AiRanged::s_SHOOT_ID = rangedEnemyParser.at(JSON_SHOOT).at(JSON_KEY).get<std::string>();
 	ai::AiRanged::s_EBOLA_ID = rangedEnemyParser.at(JSON_SPIT).at(JSON_KEY).get<std::string>();
-	ai::AiRanged::s_DEATH_ID = rangedEnemyParser.at(JSON_DEATH).at(JSON_KEY).get < std::string>();
+	ai::AiRanged::s_DEATH_ID = rangedEnemyParser.at(JSON_DEATH).at(JSON_KEY).get<std::string>();
+	ai::AiRanged::s_EBOLA_IMPACT_ID = rangedEnemyParser.at(JSON_EBOLA_IMPACT).at(JSON_KEY).get<std::string>();
 
 	// Loading/Parsing Texture
 
@@ -110,6 +113,12 @@ void ai::AiRanged::setup(
 		rangedEnemyParser.at(JSON_DEATH).at(JSON_TEXTURE),
 		ai::AiRanged::s_DEATH_ID
 	);
+	ai::AiBase::setup(
+		sptrResources->m_textureEbolaImpact,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_EBOLA_IMPACT).at(JSON_TEXTURE),
+		ai::AiRanged::s_EBOLA_IMPACT_ID
+	);
 
 	// Loading/Parsing Animations
 
@@ -142,6 +151,12 @@ void ai::AiRanged::setup(
 		resourceHandler,
 		rangedEnemyParser.at(JSON_DEATH).at(JSON_ANIMATION),
 		ai::AiRanged::s_DEATH_ID
+	);
+	ai::AiBase::setup(
+		sptrResources->m_animationEbolaImpact,
+		resourceHandler,
+		rangedEnemyParser.at(JSON_EBOLA_IMPACT).at(JSON_ANIMATION),
+		ai::AiRanged::s_EBOLA_IMPACT_ID
 	);
 }
 
@@ -381,6 +396,7 @@ void ai::AiRanged::initAnimations()
 	this->initAnimation(m_sptrResources->m_animationDeploy);
 	this->initAnimation(m_sptrResources->m_animationShoot);
 	this->initAnimation(m_sptrResources->m_animationDeath);
+	this->initAnimation(m_sptrResources->m_animationEbolaImpact);
 }
 
 /// <summary>

@@ -32,8 +32,10 @@ public: // Constructors/Assignment Operators/Destructor
 public: // Public Member Functions
 	void update();
 	void draw(Window & window, float const & deltaTime);
+	void impact();
 public: // Public Member Get's
 	inline bool const & getActive() const { return m_active; }
+	inline bool const & getImpact() const { return m_impact; }
 	inline sf::Vector2f const & getPosition() const { return m_position; }
 	inline sf::Vector2f const & getHeading() const { return m_heading; }
 	inline float const & getSpeed() const { return m_speed; }
@@ -41,6 +43,7 @@ public: // Public Member Get's
 	inline tinyh::c2AABB const & getC2AABB() const { return m_c2Rect; }
 public: // Public Member Set's
 	inline void setActive(bool const & newActive) { m_active = newActive; }
+	inline void setImpact(bool const & newImpact) { m_impact = newImpact; }
 	inline void setPosition(sf::Vector2f const & newPosition) { m_position = newPosition; }
 	inline void setHeading(sf::Vector2f const & newHeading) { m_heading = thor::unitVector(newHeading); }
 	inline void setSpeed(float const & newSpeed) { m_speed = newSpeed; }
@@ -64,6 +67,12 @@ private: // Private Member Variables
 	/// not drawn/updated.
 	/// </summary>
 	bool m_active;
+	/// <summary>
+	/// @brief Determines if the bullet is in the impact state.
+	/// 
+	/// Impact state disables collisions.
+	/// </summary>
+	bool m_impact;
 	/// <summary>
 	/// @brief read-only reference to the update delta time.
 	/// 

@@ -301,7 +301,7 @@ void CollisionSystem::updateRangedEnemyBullets(ai::AiRanged & enemy)
 	auto & bullets = enemy.getBullets();
 	for (auto & bullet : bullets)
 	{
-		if (bullet.getActive()) // TODO: Add in '&& !getImpact()' condition
+		if (bullet.getActive() && !bullet.getImpact())
 		{
 			this->updateRangedEnemyBulletToPlayer(bullet);
 		}
@@ -551,7 +551,7 @@ void CollisionSystem::rangedEnemyBulletVsPlayer(AiBullet & bullet, Player & play
 {
 	player.decrementShield(5.0f);
 	m_gameUi.decrementHealth(5.0f);
-	bullet.setActive(false);
+	bullet.impact();
 }
 
 /// <summary>

@@ -113,6 +113,12 @@ namespace ai
 		/// </summary>
 		static std::string s_DEATH_ID;
 		/// <summary>
+		/// @brief Defines the ID of the ebola impact id.
+		/// 
+		/// 
+		/// </summary>
+		static std::string s_EBOLA_IMPACT_ID;
+		/// <summary>
 		/// @brief Defines whether to color the ai's states.
 		/// 
 		/// 

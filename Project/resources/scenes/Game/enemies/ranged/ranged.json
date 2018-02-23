@@ -1004,6 +1004,110 @@
             ]
         }
     },
+    "ebola-impact":
+    {
+        "key": "enemy_ranged_ebola_impact",
+        "texture":
+        {
+            "path": "resources/scenes/Game/enemies/ranged/ebola_impact.png",
+            "origin":
+            {
+                "x": 51,
+                "y": 48.5
+            },
+            "scale":
+            {
+                "x": 1,
+                "y": 1
+            },
+            "frame":
+            {
+                "x": 0,
+                "y": 0,
+                "w": 102,
+                "h": 97
+            }
+        },
+        "animation":
+        {
+            "texture": "enemy_ranged_ebola_impact",
+            "duration": 0.5,
+            "width": 102,
+            "height": 97,
+            "origin":
+            {
+                "x": 51,
+                "y": 48.5
+            },
+            "frames":
+            [
+                {
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "x": 102,
+                    "y": 0
+                },
+                {
+                    "x": 204,
+                    "y": 0
+                },
+                {
+                    "x": 306,
+                    "y": 0
+                },
+                {
+                    "x": 408,
+                    "y": 0
+                },
+                {
+                    "x": 510,
+                    "y": 0
+                },
+                {
+                    "x": 612,
+                    "y": 0
+                },
+                {
+                    "x": 714,
+                    "y": 0
+                },
+                {
+                    "x": 816,
+                    "y": 0
+                },
+                {
+                    "x": 918,
+                    "y": 0
+                },
+                {
+                    "x": 1020,
+                    "y": 0
+                },
+                {
+                    "x": 1122,
+                    "y": 0
+                },
+                {
+                    "x": 1224,
+                    "y": 0
+                },
+                {
+                    "x": 1326,
+                    "y": 0
+                },
+                {
+                    "x": 1428,
+                    "y": 0
+                },
+                {
+                    "x": 1530,
+                    "y": 0
+                }
+            ]
+        }
+    },
     "death":
     {
         "key": "enemy_ranged_death",

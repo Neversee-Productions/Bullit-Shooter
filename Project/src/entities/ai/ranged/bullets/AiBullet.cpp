@@ -8,6 +8,7 @@
 AiBullet::AiBullet(ai::Resources & resources)
 	: m_resources(resources)
 	, m_active(true)
+	, m_impact(false)
 	, m_UPDATE_DT(App::getUpdateDeltaTime())
 	, m_position({ 0.0f, 0.0f })
 	, m_heading({ 0.0f, -1.0f })
@@ -30,6 +31,11 @@ AiBullet::AiBullet(ai::Resources & resources)
 		m_resources.m_animationEbola.m_frames,
 		m_resources.m_animationEbola.m_duration
 	);
+	m_animator.addAnimation(
+		m_resources.m_animationEbolaImpact.m_id,
+		m_resources.m_animationEbolaImpact.m_frames,
+		m_resources.m_animationEbolaImpact.m_duration
+	);
 	m_animator.playAnimation(m_resources.m_animationEbola.m_id, true);
 }
 
@@ -44,6 +50,17 @@ void AiBullet::update()
 	m_collisionShape.setPosition(m_position);
 	m_collisionShape.setRotation(m_angle);
 	this->updateHitbox(m_collisionShape.getGlobalBounds());
+	if (m_impact && !m_animator.isPlayingAnimation())
+	{
+		this->setActive(false);
+		this->setImpact(false);
+		this->m_speed = 600.0f;
+		m_quad.setScale(m_resources.m_textureEbola.m_scale);
+		m_quad.setTexture(*m_resources.m_textureEbola.m_sptrTexture, true);
+		m_quad.setTextureRect(m_resources.m_textureEbola.m_textureRect);
+		m_quad.setOrigin(m_resources.m_textureEbola.m_origin);
+		m_animator.playAnimation(m_resources.m_animationEbola.m_id, true);
+	}
 }
 
 /// <summary>
@@ -61,6 +78,22 @@ void AiBullet::draw(Window & window, float const & deltaTime)
 	m_animator.animate(m_quad);
 	window.draw(m_collisionShape);
 	window.draw(m_quad);
+}
+
+/// <summary>
+/// @brief Turns ai bullet into its impact state.
+/// 
+/// 
+/// </summary>
+void AiBullet::impact()
+{
+	this->setImpact(true);
+	this->m_speed = 0.0f;
+	m_quad.setScale(m_resources.m_textureEbolaImpact.m_scale);
+	m_quad.setTexture(*m_resources.m_textureEbolaImpact.m_sptrTexture, true);
+	m_quad.setTextureRect(m_resources.m_textureEbolaImpact.m_textureRect);
+	m_quad.setOrigin(m_resources.m_textureEbolaImpact.m_origin);
+	m_animator.playAnimation(m_resources.m_animationEbolaImpact.m_id, false);
 }
 
 /// <summary>
