@@ -9,6 +9,7 @@
 // Project Includes
 #include "gui\game_ui\Score.h"
 #include "gui\game_ui\GameUiResources.h"
+#include "gui\game_ui\GameUI.h"
 #include "entities\Asteroids\AsteroidManager.h"
 #include "entities\BasicEnemyManager.h"
 #include "entities\RangedEnemyManager.h"
@@ -27,7 +28,8 @@ public: // Constructors/Assignment Operators/Destructor
 		Player & player,
 		AsteroidManager & asteroidManager,
 		BasicEnemyManager & basicEnemyManager,
-		RangedEnemyManager & rangedEnemyManager
+		RangedEnemyManager & rangedEnemyManager,
+		GameUI & gameUi
 	);
 	Progression(Progression const &) = default;
 	Progression(Progression &&) = default;
@@ -84,6 +86,12 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	RangedEnemyManager & m_rangedEnemyManager;
+	/// <summary>
+	/// @brief reference to the game ui.
+	/// 
+	/// 
+	/// </summary>
+	GameUI & m_gameUi;
 	/// <summary>
 	/// @brief stores read-only reference to score.
 	/// 

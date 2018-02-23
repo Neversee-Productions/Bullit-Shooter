@@ -48,6 +48,7 @@ public: //public functions
 	void updateOvercharge(float overchargeValue);
 	void setOverheat(bool check);
 	void setPauseFlashing(bool check);
+	void rechargeHealth(float const & newHealth);
 private: //private functions.
 public: //public member variables.
 private: //private member variables.
@@ -246,6 +247,10 @@ private: //private member variables.
 	/// 
 	/// </summary>
 	Score m_score;
+	/// <summary>
+	/// 
+	/// </summary>
+	bool m_rechargeHealth;
 };
 
 

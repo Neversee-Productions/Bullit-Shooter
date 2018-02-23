@@ -20,6 +20,7 @@ MainMenuScene::MainMenuScene(
 	, m_DELAY_TIME(0.5f)
 	, m_nextName()
 	, m_soundManager(SoundManager::instance())
+	, m_background(sf::Color::White)
 {
 }
 

@@ -32,7 +32,7 @@ public:
 	};
 
 public:
-	Background();
+	Background(sf::Color const & startColor = sf::Color::Black);
 	void init(std::shared_ptr<Resources> resources);
 	void update();
 	void draw(Window & window, const float & deltaTime);
@@ -48,6 +48,8 @@ private:
 	/// 
 	/// </summary>
 	float const & m_DELTA_TIME;
+
+	sf::Glsl::Vec4 const m_bgResetColor;
 
 	/// <summary>
 	/// @brief Define the background color.

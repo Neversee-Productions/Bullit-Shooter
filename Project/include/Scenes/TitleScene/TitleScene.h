@@ -2,6 +2,8 @@
 #define TITLESCENE_H
 
 #include "scenes\Scene.h"
+#include "util\JsonLoader.h"
+#include "entities\Background.h"
 
 /// 
 /// @brief Represents our title scene.
@@ -23,11 +25,10 @@ private:
 	struct Resources
 	{
 		/// <summary>
-		/// @brief shared pointer to a big background texture.
-		/// 
 		/// 
 		/// </summary>
-		std::shared_ptr<thor::BigTexture> m_sptrBackgroundTexture;
+		std::shared_ptr<Background::Resources> m_sptrBackground =
+			std::make_shared<Background::Resources>();
 
 		/// <summary>
 		/// @brief shared pointer to big title texture.
@@ -76,14 +77,7 @@ private:
 	/// Used as to determine the lifetime of its members.
 	/// </summary>
 	std::unique_ptr<Resources> m_resources;
-
-	/// <summary>
-	/// @brief Unique pointer to our background sprite.
-	/// 
-	/// 
-	/// </summary>
-	std::unique_ptr<thor::BigSprite> m_backgroundSprite;
-
+	
 	/// <summary>
 	/// @brief Unique pointer to our title sprite.
 	/// 
@@ -98,6 +92,12 @@ private:
 	/// </summary>
 	std::unique_ptr<sf::Text> m_continueText;
 
+	/// <summary>
+	/// @brief background shader effect.
+	/// 
+	/// 
+	/// </summary>
+	Background m_background;
 };
 
 #endif // !TITLESCENE_H

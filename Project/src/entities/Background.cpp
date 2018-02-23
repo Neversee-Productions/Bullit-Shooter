@@ -5,10 +5,11 @@
 /// 
 /// 
 /// </summary>
-Background::Background()
+Background::Background(sf::Color const & startColor)
 	: m_DELTA_TIME(App::getUpdateDeltaTime())
-	, m_bgColor(sf::Color::Black)
-	, m_bgTargetColor(sf::Color::Black)
+	, m_bgColor(startColor)
+	, m_bgTargetColor(startColor)
+	, m_bgResetColor(startColor)
 	, m_COLOR_CHANGE(0.5f)
 	, m_image(static_cast<sf::Vector2f>(App::getViewSize()))
 	, m_shader(nullptr)
@@ -80,8 +81,8 @@ void Background::setTargetColor(sf::Color const & newColor)
 /// </summary>
 void Background::reset()
 {
-	m_bgColor = sf::Color::Black;
-	m_bgTargetColor = sf::Color::Black;
+	m_bgColor = m_bgResetColor;
+	m_bgTargetColor = m_bgResetColor;
 	m_timer = sf::Time();
 }
 

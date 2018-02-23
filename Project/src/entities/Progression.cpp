@@ -15,11 +15,13 @@ Progression::Progression(
 	, AsteroidManager & asteroidManager
 	, BasicEnemyManager & basicEnemyManager
 	, RangedEnemyManager & rangedEnemyManager
+	, GameUI & gameUi
 )
 	: m_player(player)
 	, m_asteroidManager(asteroidManager)
 	, m_basicEnemyManager(basicEnemyManager)
 	, m_rangedEnemyManager(rangedEnemyManager)
+	, m_gameUi(gameUi)
 	, m_SCORE(Score::s_scoreCurrent)
 	, m_timer()
 	, m_UPDATE_DT_TIME(sf::seconds(App::getUpdateDeltaTime()))
@@ -85,6 +87,8 @@ void Progression::update()
 		{
 			++s_spawnBasicEnemies;
 		}
+		m_gameUi.rechargeHealth(100.0f);
+		m_player.setShieldHp(100.0f);
 	}
 }
 

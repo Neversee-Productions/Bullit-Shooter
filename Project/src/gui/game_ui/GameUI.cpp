@@ -25,6 +25,7 @@ GameUI::GameUI(
 	, m_overheating(false)
 	, m_colorFlipTimer(0.0f)
 	, m_soundManager(SoundManager::instance())
+	, m_rechargeHealth(false)
 {
 }
 
@@ -35,17 +36,32 @@ GameUI::GameUI(
 /// </summary>
 void GameUI::update()
 {
-	if (m_healthLostSprite.getScale().x > 0)
+	if (m_rechargeHealth)
 	{
-		if (m_healthLostSprite.getScale().x > m_targetHealth)
+		if (m_healthSprite.getScale().x < m_targetHealth)
 		{
-			m_healthLostSprite.setScale(sf::Vector2f(m_healthLostSprite.getScale().x - 0.5f * App::getUpdateDeltaTime(), 1.0f));
+			m_healthSprite.setScale(m_healthSprite.getScale().x + 0.5f * App::getUpdateDeltaTime(), 1.0f);
+		}
+		else
+		{
+			m_healthSprite.setScale(m_targetHealth, 1.0f);
+			m_rechargeHealth = false;
 		}
 	}
 	else
 	{
-		m_healthLostSprite.setScale(sf::Vector2f(0.0f, 1.0f));
-		m_healthSprite.setScale(0.0f, 1.0f);
+		if (m_healthLostSprite.getScale().x > 0)
+		{
+			if (m_healthLostSprite.getScale().x > m_targetHealth)
+			{
+				m_healthLostSprite.setScale(sf::Vector2f(m_healthLostSprite.getScale().x - 0.5f * App::getUpdateDeltaTime(), 1.0f));
+			}
+		}
+		else
+		{
+			m_healthLostSprite.setScale(sf::Vector2f(0.0f, 1.0f));
+			m_healthSprite.setScale(0.0f, 1.0f);
+		}
 	}
 	if (m_showPauseScreen)
 	{
@@ -501,6 +517,7 @@ void GameUI::reset()
 	m_showPauseScreen = false;
 	m_showGameEnd = false;
 	m_pauseFlashing = false;
+	m_rechargeHealth = false;
 }
 
 /// <summary>
@@ -557,4 +574,15 @@ void GameUI::setOverheat(bool check)
 void GameUI::setPauseFlashing(bool check)
 {
 	m_pauseFlashing = check;
+}
+
+/// <summary>
+/// 
+/// </summary>
+/// <param name="newHealth"></param>
+void GameUI::rechargeHealth(float const & newHealth)
+{
+	m_rechargeHealth = true;
+	m_targetHealth = newHealth / 100.0f;
+	m_healthLostSprite.setScale(m_targetHealth, 1.0f);
 }

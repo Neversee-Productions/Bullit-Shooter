@@ -15,9 +15,9 @@ TitleScene::TitleScene(
 	, m_keyHandler(keyhandler)
 	, m_controller(controller)
 	, m_resources(nullptr)
-	, m_backgroundSprite(nullptr)
 	, m_titleSprite(nullptr)
 	, m_continueText(nullptr)
+	, m_background()
 {
 }
 
@@ -47,6 +47,7 @@ void TitleScene::start(const std::string & resourceFilePath)
 	{
 		setup(resourceFilePath);
 	}
+	m_background.setTargetColor(sf::Color::White);
 }
 
 /// <summary>
@@ -56,7 +57,6 @@ void TitleScene::start(const std::string & resourceFilePath)
 /// </summary>
 void TitleScene::stop()
 {
-	std::unique_ptr<thor::BigSprite>().swap(m_backgroundSprite);
 	std::unique_ptr<Resources>().swap(m_resources);
 	std::unique_ptr<thor::BigSprite>().swap(m_titleSprite);
 	std::unique_ptr<sf::Text>().swap(m_continueText);
@@ -69,6 +69,7 @@ void TitleScene::stop()
 /// </summary>
 void TitleScene::update()
 {
+	m_background.update();
 	if (
 		m_keyHandler->isAnyPressed()
 		|| 
@@ -88,7 +89,7 @@ void TitleScene::update()
 /// <param name="deltaTime">reference to draw time step</param>
 void TitleScene::draw(Window & window, const float & deltaTime)
 {
-	window.draw(*m_backgroundSprite);
+	m_background.draw(window, deltaTime);
 	window.draw(*m_titleSprite);
 	window.draw(*m_continueText);
 }
@@ -115,16 +116,14 @@ void TitleScene::setup(const std::string & filePath)
 
 	Scene::setNextSceneName("");
 
-	std::ifstream rawFile(filePath);
-	js::json jsonLoader;
-	rawFile >> jsonLoader;
+	js::json jsonLoader = util::loadJsonFromFile(filePath);
 
 	// instatiate our resource pointers that will "own"
 	// the asset on the heap.
 	m_resources = std::make_unique<Resources>();
 
-	m_resources->m_sptrBackgroundTexture = resourceHandler.loadUp<thor::BigTexture>(jsonLoader, "background");
-	assert(nullptr != m_resources->m_sptrBackgroundTexture);
+	m_resources->m_sptrBackground->m_sptrBgShader = resourceHandler.loadUp<sf::Shader>(jsonLoader, "background");
+	assert(nullptr != m_resources->m_sptrBackground->m_sptrBgShader);
 	m_resources->m_sptrTitleTexture = resourceHandler.loadUp<thor::BigTexture>(jsonLoader, "title");
 	assert(nullptr != m_resources->m_sptrTitleTexture);
 	m_resources->m_sptrTextFont = resourceHandler.loadUp<sf::Font>(jsonLoader, "text");
@@ -136,13 +135,8 @@ void TitleScene::setup(const std::string & filePath)
 	// storing a constant of the center position of the window
 	const auto windowCenter = windowSize * 0.5f;
 
-	// Setup Background Sprite
-	m_backgroundSprite = std::make_unique<thor::BigSprite>();
-	auto & backgroundSprite = *m_backgroundSprite;
-	backgroundSprite.setTexture(*(m_resources->m_sptrBackgroundTexture));
-	const auto & boxBackground = backgroundSprite.getLocalBounds();
-	backgroundSprite.setOrigin(boxBackground.width * 0.5f, boxBackground.height * 0.5f);
-	backgroundSprite.setPosition(windowCenter);
+	// Setup Background
+	m_background.init(m_resources->m_sptrBackground);
 
 	// Setup Title Sprite
 	m_titleSprite = std::make_unique<thor::BigSprite>();

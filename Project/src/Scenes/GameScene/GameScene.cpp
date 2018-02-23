@@ -7,7 +7,7 @@
 /// </summary>
 GameScene::GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller)
 	: Scene("Game")
-	, m_background()
+	, m_background(sf::Color::White)
 	, m_player(*keyHandler, *controller, m_background)
 	, m_keyHandler(*keyHandler)
 	, m_soundManager(SoundManager::instance())
@@ -19,7 +19,7 @@ GameScene::GameScene(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Con
 	, m_pickup()
 	, m_ui(keyHandler,controller, std::bind(&GameScene::backToMainMenu, this), std::bind(&GameScene::restartGame, this))
 	, m_collisionSystem(m_player, m_asteroidManager, m_basicEnemyManager, m_rangedEnemyManager, m_pickup, m_ui)
-	, m_gameProgression(m_player, m_asteroidManager, m_basicEnemyManager, m_rangedEnemyManager)
+	, m_gameProgression(m_player, m_asteroidManager, m_basicEnemyManager, m_rangedEnemyManager, m_ui)
 	, m_gamePaused(false)
 	, m_gameEnded(false)
 	, m_controller(*controller)

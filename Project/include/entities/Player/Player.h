@@ -96,6 +96,7 @@ public:
 	float getOvercharge();
 	bool getOverheat();
 	void setOverheat(bool check);
+	inline void setShieldHp(float const & newHp) { m_shield.setHealth(newHp); }
 
 private:
 	void switchWeaponInput();
