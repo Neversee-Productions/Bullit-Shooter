@@ -401,7 +401,12 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 	}
 	if (!asteroid.isInvulnerable())
 	{
-		asteroid.decrementHealth(bullet.getDamage(), asteroidInvurnelabilityState);
+		float dmg = bullet.getDamage();
+		if (bullet.getType() == BulletTypes::Standard)
+		{
+			dmg = 0.65f;
+		}
+		asteroid.decrementHealth(dmg, asteroidInvurnelabilityState);
 		if (asteroid.isExplosion())
 		{
 			m_soundManager.play("asteroid_explosion");
