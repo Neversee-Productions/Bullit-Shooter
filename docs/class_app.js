@@ -4,6 +4,7 @@ var class_app =
     [ "getUpdateDeltaTime", "class_app.html#a8f144ef7b698c80e5414f00563474149", null ],
     [ "getViewC2Rect", "class_app.html#a0656955b498a6a4a10b26089e624779c", null ],
     [ "getViewSize", "class_app.html#a5ed1598aaff7e98ea2c9f4f28210491d", null ],
+    [ "getViewSizeF", "class_app.html#a3a50727045e11ac6dc952adf4875848c", null ],
     [ "getViewSizeI", "class_app.html#a838c4c080e706f5ecfffb8288cd470d9", null ],
     [ "setViewC2Rect", "class_app.html#a7e9cab266816de576d5da6482fee1eb9", null ],
     [ "setViewSize", "class_app.html#a57b3f984530d645babaf2679a39c1136", null ],

@@ -102,8 +102,8 @@ void Pickup::update()
 				m_flashTimer = 0.0f;
 				if (m_invisible)
 				{
-					m_leftSprite.setColor(sf::Color(255.0f, 255.0f, 255.0f, 0.0f));
-					m_rightSprite.setColor(sf::Color(255.0f, 255.0f, 255.0f, 0.0f));
+					m_leftSprite.setColor(sf::Color(255u, 255u, 255u, 0u));
+					m_rightSprite.setColor(sf::Color(255u, 255u, 255u, 0u));
 				}
 				else
 				{

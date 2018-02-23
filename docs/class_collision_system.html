@@ -154,8 +154,12 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a76ee9d6b1aba07312d2e689984d9b14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e9c7bf6b2dba7593eba2e4668406313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a0e9c7bf6b2dba7593eba2e4668406313">playerVsBasicEnemy</a> (<a class="el" href="class_player.html">Player</a> &amp;player, <a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> &amp;enemy)</td></tr>
 <tr class="separator:a0e9c7bf6b2dba7593eba2e4668406313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d113363b27499493af6ccd29d3df19a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a3d113363b27499493af6ccd29d3df19a">playerVsRangedEnemy</a> (<a class="el" href="class_player.html">Player</a> &amp;player, <a class="el" href="classai_1_1_ai_ranged.html">ai::AiRanged</a> &amp;enemy)</td></tr>
+<tr class="separator:a3d113363b27499493af6ccd29d3df19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c5778e2db32374d1fbefb82bed524f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a7c5778e2db32374d1fbefb82bed524f6">asteroidVsAsteroid</a> (<a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid1, <a class="el" href="class_asteroid.html">Asteroid</a> &amp;asteroid2)</td></tr>
 <tr class="separator:a7c5778e2db32374d1fbefb82bed524f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c06afb94b4a7620ee31a9a1babb8323"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a8c06afb94b4a7620ee31a9a1babb8323">generateKilledEnemyVoiceline</a> ()</td></tr>
+<tr class="separator:a8c06afb94b4a7620ee31a9a1babb8323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -181,6 +185,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a16f95974412ccfdae74389bb0c4ff299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cfa2d10d10a2fed3fe01a9fdabbe0a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a9cfa2d10d10a2fed3fe01a9fdabbe0a8">m_stayClearPlaying</a></td></tr>
 <tr class="separator:a9cfa2d10d10a2fed3fe01a9fdabbe0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab71648a0d974eda585d5d04f64ab8296"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#ab71648a0d974eda585d5d04f64ab8296">m_enemyKilledVoicelineTimer</a></td></tr>
+<tr class="separator:ab71648a0d974eda585d5d04f64ab8296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a42da5e236e159314ac7b4513eb9ec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_system.html#a05a42da5e236e159314ac7b4513eb9ec">m_timeUntilKilledVoiceline</a></td></tr>
+<tr class="separator:a05a42da5e236e159314ac7b4513eb9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge <code>Non-Default Constructible</code>, <code>Non-Copyable</code> system. </dd></dl>
@@ -522,6 +530,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a8c06afb94b4a7620ee31a9a1babb8323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c06afb94b4a7620ee31a9a1babb8323">&#9670;&nbsp;</a></span>generateKilledEnemyVoiceline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::generateKilledEnemyVoiceline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>generate a random line.</p>
+
+</div>
+</div>
 <a id="a19df03fb4844c9c0176d653bc23bfc1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19df03fb4844c9c0176d653bc23bfc1f">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -703,6 +737,51 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">player</td><td>reference to the player that collided.</td></tr>
     <tr><td class="paramname">pickup</td><td>reference to the pickup that collided.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3d113363b27499493af6ccd29d3df19a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d113363b27499493af6ccd29d3df19a">&#9670;&nbsp;</a></span>playerVsRangedEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionSystem::playerVsRangedEnemy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_player.html">Player</a> &amp;&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classai_1_1_ai_ranged.html">ai::AiRanged</a> &amp;&#160;</td>
+          <td class="paramname"><em>enemy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Collision between player and enemy has occured.</p>
+<p>Details the appropriate response to player vs enemy collision </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>reference to the player that collided.</td></tr>
+    <tr><td class="paramname">enemy</td><td>reference to the enemy that collided.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1190,6 +1269,29 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab71648a0d974eda585d5d04f64ab8296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab71648a0d974eda585d5d04f64ab8296">&#9670;&nbsp;</a></span>m_enemyKilledVoicelineTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CollisionSystem::m_enemyKilledVoicelineTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>a timer that calculates how long since last enemy killed voice line.</p>
+
+</div>
+</div>
 <a id="a8f919d6bd3d9c9bb22cb88d1f9b67c32"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f919d6bd3d9c9bb22cb88d1f9b67c32">&#9670;&nbsp;</a></span>m_gameUi</h2>
 
@@ -1371,6 +1473,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>define stay clear sound playing.</p>
+
+</div>
+</div>
+<a id="a05a42da5e236e159314ac7b4513eb9ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05a42da5e236e159314ac7b4513eb9ec">&#9670;&nbsp;</a></span>m_timeUntilKilledVoiceline</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CollisionSystem::m_timeUntilKilledVoiceline</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define how long until can say another voiceline after enemy killed.</p>
 
 </div>
 </div>

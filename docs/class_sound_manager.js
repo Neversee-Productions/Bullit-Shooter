@@ -16,6 +16,7 @@ var class_sound_manager =
     [ "setupPickup", "class_sound_manager.html#a3a7eb6d6589dfeeb862649d3b78b0aa4", null ],
     [ "setupPlayer", "class_sound_manager.html#a8a28421a95094fb93db1674ef1f86f01", null ],
     [ "setupPlayerBullets", "class_sound_manager.html#a870f9544c9bddd377301d9eb5fa2a1d8", null ],
+    [ "setupPlayerShip", "class_sound_manager.html#a7b5122c3105e36f1fe1529ce687c732c", null ],
     [ "setupPlayerWeapons", "class_sound_manager.html#aee3a1b06895a2539a5a1390320f8f58d", null ],
     [ "setupUI", "class_sound_manager.html#a858eb6557eeaed163ad315621f439ab7", null ],
     [ "setupVoices", "class_sound_manager.html#a33974b3993ae187769dcbb2a0eb8fb6f", null ],

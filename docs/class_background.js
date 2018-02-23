@@ -1,7 +1,7 @@
 var class_background =
 [
     [ "Resources", "struct_background_1_1_resources.html", "struct_background_1_1_resources" ],
-    [ "Background", "class_background.html#a05b686e4ce0cbdb3b1fa14a93fdf98a1", null ],
+    [ "Background", "class_background.html#af3a1ad316c1a109d890bf41c8969d191", null ],
     [ "draw", "class_background.html#ab64ba5922f8a497205725c021953d730", null ],
     [ "init", "class_background.html#a9e48d290fdba0d7cb52032c6fa454c62", null ],
     [ "interpolate", "class_background.html#ae958beb9f0026965327a465d90176575", null ],
@@ -9,6 +9,7 @@ var class_background =
     [ "setTargetColor", "class_background.html#a646e0cce504f8fd62fb2c836672d3da6", null ],
     [ "update", "class_background.html#acab58b65d4299d4bd51b8376e8c3e3d3", null ],
     [ "m_bgColor", "class_background.html#a227df2ea5c059e73058f9ea0767078d0", null ],
+    [ "m_bgResetColor", "class_background.html#a13a5c0287c367b9ba8c3dfad781919c9", null ],
     [ "m_bgTargetColor", "class_background.html#aa6b3cd8577849dc30b1b2e81188cabe4", null ],
     [ "m_COLOR_CHANGE", "class_background.html#a9eedbd8b13ea2a00123068dd45e06b4d", null ],
     [ "m_DELTA_TIME", "class_background.html#aed7743d670b7202121da0a64bd399797", null ],

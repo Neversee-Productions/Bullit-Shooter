@@ -82,6 +82,7 @@ $(document).ready(function(){initNavTree('class_asteroid_manager.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_asteroid_manager-members.html">List of all members</a>  </div>
@@ -115,6 +116,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a966f87ab6c9d0b4b63e7b9fb61bf235e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af73d7ff3ac072b1a980935ee10a33d51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#af73d7ff3ac072b1a980935ee10a33d51">resetAsteroids</a> ()</td></tr>
 <tr class="separator:af73d7ff3ac072b1a980935ee10a33d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaffb7a9c33442186df60bce03cc3b41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#acaffb7a9c33442186df60bce03cc3b41">spawn</a> (int const &amp;amountToSpawn)</td></tr>
+<tr class="separator:acaffb7a9c33442186df60bce03cc3b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:aa03cfd67e3f7ec8766afbb96a31d69f3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid_manager.html#aa03cfd67e3f7ec8766afbb96a31d69f3">s_spawnAmount</a> = 1</td></tr>
+<tr class="separator:aa03cfd67e3f7ec8766afbb96a31d69f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -355,6 +363,25 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
+<a id="acaffb7a9c33442186df60bce03cc3b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaffb7a9c33442186df60bce03cc3b41">&#9670;&nbsp;</a></span>spawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AsteroidManager::spawn </td>
+          <td>(</td>
+          <td class="paramtype">int const &amp;&#160;</td>
+          <td class="paramname"><em>amountToSpawn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Spawns a single asteroid.</p>
+
+</div>
+</div>
 <a id="a998ee2908933dd9bad98581374578221"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a998ee2908933dd9bad98581374578221">&#9670;&nbsp;</a></span>update()</h2>
 
@@ -535,6 +562,28 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>store read-only reference to update delta time, in seconds.</p>
+
+</div>
+</div>
+<a id="aa03cfd67e3f7ec8766afbb96a31d69f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03cfd67e3f7ec8766afbb96a31d69f3">&#9670;&nbsp;</a></span>s_spawnAmount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AsteroidManager::s_spawnAmount = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

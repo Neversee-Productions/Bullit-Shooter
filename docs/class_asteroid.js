@@ -1,11 +1,13 @@
 var class_asteroid =
 [
+    [ "ExplosionAnim", "struct_asteroid_1_1_explosion_anim.html", "struct_asteroid_1_1_explosion_anim" ],
     [ "Resources", "struct_asteroid_1_1_resources.html", "struct_asteroid_1_1_resources" ],
     [ "Asteroid", "class_asteroid.html#a7eb056e2a0a07464467dc62cc7cfa032", null ],
     [ "containsEnemy", "class_asteroid.html#acada18e8347e88438b2a39aa1af78107", null ],
     [ "decrementHealth", "class_asteroid.html#ab78f0ef044ce61a0e105daf1f4c7527a", null ],
     [ "draw", "class_asteroid.html#a8fb65c8b468aba5d13b1f47a05597c91", null ],
     [ "explode", "class_asteroid.html#a9b0dfbb65653601e62e13aff879b307c", null ],
+    [ "generateAnimStructVals", "class_asteroid.html#a87ea56957acd5f00ce31d0f325078548", null ],
     [ "generateRandomEnemy", "class_asteroid.html#aab7bb9d12da151279c1febc0223669d8", null ],
     [ "generateRandomPos", "class_asteroid.html#a66677a18808fbfa7df569b920b833ea8", null ],
     [ "generateRandomRotation", "class_asteroid.html#a09099c554fe7b0cdd61da1b7b17d155e", null ],
@@ -34,6 +36,7 @@ var class_asteroid =
     [ "m_circle", "class_asteroid.html#a25c0ef10347868332d4e2d637695f67f", null ],
     [ "m_collisionCircle", "class_asteroid.html#af2c2388afb2c00cc1779912110bfb527", null ],
     [ "m_explode", "class_asteroid.html#a8ee3ad2bec9ed08978e91f079235caa1", null ],
+    [ "m_explodeAnimations", "class_asteroid.html#aa2a424c1d5c07316eb8c0136f8ebea13", null ],
     [ "m_explosionTimer", "class_asteroid.html#a6b18d4c13a9ace4dd85b19e783ac8d3e", null ],
     [ "m_flash", "class_asteroid.html#aabe7676af8d707f47733560033896dfe", null ],
     [ "m_flashTimer", "class_asteroid.html#a218ad6789ebe8228d18f5780b923f3ee", null ],
@@ -43,11 +46,14 @@ var class_asteroid =
     [ "m_position", "class_asteroid.html#ac3e457510348bac65ce659bb679c81dd", null ],
     [ "m_rectangle", "class_asteroid.html#af1168c2dc99f7b121da4dd90676b6e65", null ],
     [ "m_rotation", "class_asteroid.html#ac04acf9b672d86a7075c24f34559af5a", null ],
+    [ "m_sixthHealth", "class_asteroid.html#a637c0359338aaff05d1801c17ecbaae1", null ],
     [ "m_spawnEnemy", "class_asteroid.html#a7062ca4b4750a833f7ef40e8ec229019", null ],
     [ "m_sptrResources", "class_asteroid.html#a72a2b1872c893cb978ee03e1e5a17eab", null ],
+    [ "m_thirdHealth", "class_asteroid.html#ad6c4a2c387e61229b4aa2c573c4c1746", null ],
     [ "m_velocity", "class_asteroid.html#a8dd7cd60da2412c5859e078a5902f03d", null ],
     [ "m_windowC2Rect", "class_asteroid.html#a17d2ded1192f1c0b20f7193e546295a4", null ],
     [ "s_FLASH_TIME", "class_asteroid.html#a967e137d6585839a79ad6240078beb2c", null ],
+    [ "s_MAX_HEALTH", "class_asteroid.html#aca575301d59e5f6cc5cd4b77a490d878", null ],
     [ "UPDATE_DT", "class_asteroid.html#abf0f15cc417c725f8a4b0eb34715ba15", null ],
     [ "UPDATE_TIME_DT", "class_asteroid.html#a088b1ae949938650c432a2bbf8483ef0", null ]
 ];

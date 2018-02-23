@@ -20,6 +20,9 @@ var dir_3e1dc876969ac49f2895e3f7ec46ddec =
       [ "Texture", "struct_pickup_1_1_resources_1_1_effect_1_1_texture.html", "struct_pickup_1_1_resources_1_1_effect_1_1_texture" ],
       [ "Animation", "struct_pickup_1_1_resources_1_1_effect_1_1_animation.html", "struct_pickup_1_1_resources_1_1_effect_1_1_animation" ]
     ] ],
+    [ "Progression.h", "_progression_8h.html", [
+      [ "Progression", "class_progression.html", "class_progression" ]
+    ] ],
     [ "RangedEnemyManager.h", "_ranged_enemy_manager_8h.html", [
       [ "RangedEnemyManager", "class_ranged_enemy_manager.html", "class_ranged_enemy_manager" ]
     ] ]

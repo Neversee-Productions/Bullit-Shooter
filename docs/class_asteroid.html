@@ -101,6 +101,8 @@ $(document).ready(function(){initNavTree('class_asteroid.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_asteroid_1_1_explosion_anim.html">ExplosionAnim</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_asteroid_1_1_resources.html">Resources</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -152,6 +154,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2c77dd9a52ea5a85357b925da78254d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae38773661f34db80c27054434524d19f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ae38773661f34db80c27054434524d19f">getRotation</a> ()</td></tr>
 <tr class="separator:ae38773661f34db80c27054434524d19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ea56957acd5f00ce31d0f325078548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a87ea56957acd5f00ce31d0f325078548">generateAnimStructVals</a> (<a class="el" href="struct_asteroid_1_1_explosion_anim.html">ExplosionAnim</a> &amp;animstruct)</td></tr>
+<tr class="separator:a87ea56957acd5f00ce31d0f325078548"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -212,6 +216,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a218ad6789ebe8228d18f5780b923f3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabe7676af8d707f47733560033896dfe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#aabe7676af8d707f47733560033896dfe">m_flash</a></td></tr>
 <tr class="separator:aabe7676af8d707f47733560033896dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a424c1d5c07316eb8c0136f8ebea13"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="struct_asteroid_1_1_explosion_anim.html">ExplosionAnim</a>, 9 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#aa2a424c1d5c07316eb8c0136f8ebea13">m_explodeAnimations</a></td></tr>
+<tr class="separator:aa2a424c1d5c07316eb8c0136f8ebea13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637c0359338aaff05d1801c17ecbaae1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a637c0359338aaff05d1801c17ecbaae1">m_sixthHealth</a></td></tr>
+<tr class="separator:a637c0359338aaff05d1801c17ecbaae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c4a2c387e61229b4aa2c573c4c1746"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#ad6c4a2c387e61229b4aa2c573c4c1746">m_thirdHealth</a></td></tr>
+<tr class="separator:ad6c4a2c387e61229b4aa2c573c4c1746"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -219,6 +229,8 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a92858a0bbfd0567abe520ac9935f496b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a967e137d6585839a79ad6240078beb2c"><td class="memItemLeft" align="right" valign="top">static sf::Time const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#a967e137d6585839a79ad6240078beb2c">s_FLASH_TIME</a> = sf::seconds(0.05f)</td></tr>
 <tr class="separator:a967e137d6585839a79ad6240078beb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca575301d59e5f6cc5cd4b77a490d878"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asteroid.html#aca575301d59e5f6cc5cd4b77a490d878">s_MAX_HEALTH</a> = 10.0f</td></tr>
+<tr class="separator:aca575301d59e5f6cc5cd4b77a490d878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge </dd>
@@ -352,6 +364,24 @@ Sebastian Kruzel</dd></dl>
       </table>
 </div><div class="memdoc">
 <p>Start explosion animation and enter explode state.</p>
+
+</div>
+</div>
+<a id="a87ea56957acd5f00ce31d0f325078548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ea56957acd5f00ce31d0f325078548">&#9670;&nbsp;</a></span>generateAnimStructVals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Asteroid::generateAnimStructVals </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_asteroid_1_1_explosion_anim.html">Asteroid::ExplosionAnim</a> &amp;&#160;</td>
+          <td class="paramname"><em>animstruct</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -991,6 +1021,29 @@ Sebastian Kruzel</dd></dl>
 
 </div>
 </div>
+<a id="aa2a424c1d5c07316eb8c0136f8ebea13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2a424c1d5c07316eb8c0136f8ebea13">&#9670;&nbsp;</a></span>m_explodeAnimations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;<a class="el" href="struct_asteroid_1_1_explosion_anim.html">ExplosionAnim</a>, 9&gt; Asteroid::m_explodeAnimations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define vector of animators which will be used to explode asteroid as it takes dmg.</p>
+
+</div>
+</div>
 <a id="a6b18d4c13a9ace4dd85b19e783ac8d3e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b18d4c13a9ace4dd85b19e783ac8d3e">&#9670;&nbsp;</a></span>m_explosionTimer</h2>
 
@@ -1198,6 +1251,29 @@ Sebastian Kruzel</dd></dl>
 
 </div>
 </div>
+<a id="a637c0359338aaff05d1801c17ecbaae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637c0359338aaff05d1801c17ecbaae1">&#9670;&nbsp;</a></span>m_sixthHealth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Asteroid::m_sixthHealth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>when is health sixth.</p>
+
+</div>
+</div>
 <a id="a7062ca4b4750a833f7ef40e8ec229019"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7062ca4b4750a833f7ef40e8ec229019">&#9670;&nbsp;</a></span>m_spawnEnemy</h2>
 
@@ -1241,6 +1317,29 @@ Sebastian Kruzel</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>define a shared pointer to loaded resources.</p>
+
+</div>
+</div>
+<a id="ad6c4a2c387e61229b4aa2c573c4c1746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c4a2c387e61229b4aa2c573c4c1746">&#9670;&nbsp;</a></span>m_thirdHealth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Asteroid::m_thirdHealth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>when is health third.</p>
 
 </div>
 </div>
@@ -1310,6 +1409,29 @@ Sebastian Kruzel</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>Determines how long should the asteroid flash.</p>
+
+</div>
+</div>
+<a id="aca575301d59e5f6cc5cd4b77a490d878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca575301d59e5f6cc5cd4b77a490d878">&#9670;&nbsp;</a></span>s_MAX_HEALTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float const Asteroid::s_MAX_HEALTH = 10.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define maximum health.</p>
 
 </div>
 </div>

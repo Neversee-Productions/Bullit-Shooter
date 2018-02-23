@@ -9,11 +9,13 @@ var class_collision_system =
     [ "asteroidVsBullet", "class_collision_system.html#acd9ace71c9cb947b6c090212b9913eb2", null ],
     [ "baseEnemyVsBullet", "class_collision_system.html#ae34de44783b8a1f5ede8d15f773c5e93", null ],
     [ "basicEnemyVsBullet", "class_collision_system.html#a08fa5ea4bf1c3c2aad791b0115368811", null ],
+    [ "generateKilledEnemyVoiceline", "class_collision_system.html#a8c06afb94b4a7620ee31a9a1babb8323", null ],
     [ "operator=", "class_collision_system.html#a19df03fb4844c9c0176d653bc23bfc1f", null ],
     [ "operator=", "class_collision_system.html#a272199177c97bbc4da63ecf44cf4001c", null ],
     [ "playerVsAsteroid", "class_collision_system.html#af0e7d14a74b7c6af72a2820148e27aed", null ],
     [ "playerVsBasicEnemy", "class_collision_system.html#a0e9c7bf6b2dba7593eba2e4668406313", null ],
     [ "playerVsPickup", "class_collision_system.html#a76ee9d6b1aba07312d2e689984d9b14f", null ],
+    [ "playerVsRangedEnemy", "class_collision_system.html#a3d113363b27499493af6ccd29d3df19a", null ],
     [ "rangedEnemyBulletVsPlayer", "class_collision_system.html#aed8c68a978e9378ed176d75d741c6ffc", null ],
     [ "rangedEnemyVsBullet", "class_collision_system.html#abd8994b1b99a59105826dcda8ed0a36f", null ],
     [ "setPickingUp", "class_collision_system.html#aea2b9de34489482f800927693368c87b", null ],
@@ -30,6 +32,7 @@ var class_collision_system =
     [ "updateRangedEnemyBulletToPlayer", "class_collision_system.html#a672853266d39ac5ad4419723136f8ecf", null ],
     [ "m_asteroidManager", "class_collision_system.html#a50dfb1cb132ae6169068e2fe21dadef0", null ],
     [ "m_basicEnemyManager", "class_collision_system.html#a6a3cfa6ccb62bf5b09243a97d46b8150", null ],
+    [ "m_enemyKilledVoicelineTimer", "class_collision_system.html#ab71648a0d974eda585d5d04f64ab8296", null ],
     [ "m_gameUi", "class_collision_system.html#a8f919d6bd3d9c9bb22cb88d1f9b67c32", null ],
     [ "m_pickingUp", "class_collision_system.html#ae2c1dce10f3960ab87973ff4c24f964e", null ],
     [ "m_pickup", "class_collision_system.html#a6c0691faa619a596ddb8b5add16db018", null ],
@@ -38,5 +41,6 @@ var class_collision_system =
     [ "m_rangedEnemyManager", "class_collision_system.html#a072fcf6dede0e9f8f25d5bb207bcd80c", null ],
     [ "m_soundManager", "class_collision_system.html#a12f905798b0f2b574455265dbc347f53", null ],
     [ "m_stayClearPlaying", "class_collision_system.html#a9cfa2d10d10a2fed3fe01a9fdabbe0a8", null ],
+    [ "m_timeUntilKilledVoiceline", "class_collision_system.html#a05a42da5e236e159314ac7b4513eb9ec", null ],
     [ "m_UPDATE_DT", "class_collision_system.html#afeb03c9ff8813b0314d93f0fc3884b76", null ]
 ];

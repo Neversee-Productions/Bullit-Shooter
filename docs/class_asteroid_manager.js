@@ -9,6 +9,7 @@ var class_asteroid_manager =
     [ "initAsteroidVector", "class_asteroid_manager.html#ac1022463f462f024de3d91e83708b110", null ],
     [ "resetAsteroids", "class_asteroid_manager.html#af73d7ff3ac072b1a980935ee10a33d51", null ],
     [ "setSpawnStartTimer", "class_asteroid_manager.html#a966f87ab6c9d0b4b63e7b9fb61bf235e", null ],
+    [ "spawn", "class_asteroid_manager.html#acaffb7a9c33442186df60bce03cc3b41", null ],
     [ "update", "class_asteroid_manager.html#a998ee2908933dd9bad98581374578221", null ],
     [ "updateSpawning", "class_asteroid_manager.html#a04be42ce873892cf6c608e84df534c68", null ],
     [ "m_asteroidSpawnFrequency", "class_asteroid_manager.html#aa343310016a140fdc98e460a83a63225", null ],
@@ -16,5 +17,6 @@ var class_asteroid_manager =
     [ "m_asteroidSpawnTimer", "class_asteroid_manager.html#a9aeab58c5c4e04d93eb9c0acfbd8ea3e", null ],
     [ "m_asteroidsVector", "class_asteroid_manager.html#a3299e1d72666aed399724e233b840f58", null ],
     [ "m_sptrResources", "class_asteroid_manager.html#a1656d6257c7a4d6b605fb34a71e83d8c", null ],
-    [ "m_UPDATE_DT", "class_asteroid_manager.html#a17948321621ea02d3cebfa53f2e94af4", null ]
+    [ "m_UPDATE_DT", "class_asteroid_manager.html#a17948321621ea02d3cebfa53f2e94af4", null ],
+    [ "s_spawnAmount", "class_asteroid_manager.html#aa03cfd67e3f7ec8766afbb96a31d69f3", null ]
 ];

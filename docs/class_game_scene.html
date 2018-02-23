@@ -171,8 +171,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:aca2e51c120b2f5738b29533850c43f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5e273e972cce18c850b982e0d177f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#aa5e273e972cce18c850b982e0d177f31">setupEnemies</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_game_scene_1_1_resources_1_1_enemies.html">Resources::Enemies</a> &gt; sptrEnemies, js::json &amp;gameSceneParser)</td></tr>
 <tr class="separator:aa5e273e972cce18c850b982e0d177f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9158ace2782173d2fe292ba104c76fc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a9158ace2782173d2fe292ba104c76fc1">setupUI</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="struct_game_u_i_1_1_resources.html">GameUI::Resources</a> &gt; sptrUI, js::json &amp;gameSceneParser)</td></tr>
-<tr class="separator:a9158ace2782173d2fe292ba104c76fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1736834932d434cc02d5ab060e51a768"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a1736834932d434cc02d5ab060e51a768">setupUI</a> (<a class="el" href="class_resource_handler.html">ResourceHandler</a> &amp;resourceHandler, std::shared_ptr&lt; <a class="el" href="structgame_ui_1_1_resources.html">gameUi::Resources</a> &gt; sptrUI, js::json &amp;gameSceneParser)</td></tr>
+<tr class="separator:a1736834932d434cc02d5ab060e51a768"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -200,6 +200,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a61241f10fb8a06a9102b93ba37305a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a473a0f35610854a312c1c689744ef822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_collision_system.html">CollisionSystem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a473a0f35610854a312c1c689744ef822">m_collisionSystem</a></td></tr>
 <tr class="separator:a473a0f35610854a312c1c689744ef822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e433f85cc2e9caf9ca069a39388e1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_progression.html">Progression</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ae2e433f85cc2e9caf9ca069a39388e1f">m_gameProgression</a></td></tr>
+<tr class="separator:ae2e433f85cc2e9caf9ca069a39388e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accac39b383c80afee0bf3df1a59d1469"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#accac39b383c80afee0bf3df1a59d1469">m_gamePaused</a></td></tr>
 <tr class="separator:accac39b383c80afee0bf3df1a59d1469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad95084e720c2198fd586239e3501eb17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#ad95084e720c2198fd586239e3501eb17">m_gameEnded</a></td></tr>
@@ -974,8 +976,8 @@ Rafael Plugge</dd></dl>
 
 </div>
 </div>
-<a id="a9158ace2782173d2fe292ba104c76fc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9158ace2782173d2fe292ba104c76fc1">&#9670;&nbsp;</a></span>setupUI()</h2>
+<a id="a1736834932d434cc02d5ab060e51a768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1736834932d434cc02d5ab060e51a768">&#9670;&nbsp;</a></span>setupUI()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -992,7 +994,7 @@ Rafael Plugge</dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="struct_game_u_i_1_1_resources.html">GameUI::Resources</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structgame_ui_1_1_resources.html">gameUi::Resources</a> &gt;&#160;</td>
           <td class="paramname"><em>sptrUI</em>, </td>
         </tr>
         <tr>
@@ -1404,6 +1406,29 @@ Rafael Plugge</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>determines if the game is paused or not.</p>
+
+</div>
+</div>
+<a id="ae2e433f85cc2e9caf9ca069a39388e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e433f85cc2e9caf9ca069a39388e1f">&#9670;&nbsp;</a></span>m_gameProgression</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_progression.html">Progression</a> GameScene::m_gameProgression</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>defines the game progression.</p>
 
 </div>
 </div>

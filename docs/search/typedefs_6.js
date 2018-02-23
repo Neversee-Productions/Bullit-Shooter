@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['recover',['Recover',['../namespaceai_1_1states.html#a63365e990a1d787362d13247a82b8613',1,'ai::states']]],
-  ['recoverstate',['RecoverState',['../classai_1_1_ai_basic.html#ae7eb27493c0594e594429f9c2d995155',1,'ai::AiBasic']]]
+  ['pickupmap',['PickupMap',['../struct_pickup_1_1_resources.html#ad09c6127368e4834dca2a7bad747c129',1,'Pickup::Resources']]]
 ];

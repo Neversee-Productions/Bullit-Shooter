@@ -18,5 +18,9 @@ var classai_1_1_ai_base =
     [ "update", "classai_1_1_ai_base.html#a373f492ed664fb7f8f28589ddcdcf6f5", null ],
     [ "m_active", "classai_1_1_ai_base.html#a8dfa5b784892ae98b045142dd351c1c9", null ],
     [ "m_health", "classai_1_1_ai_base.html#a271500fce90c0d7ebc00857e3f6c7cdf", null ],
+    [ "m_healthBar", "classai_1_1_ai_base.html#ab22b35f1f9bb60dda2c82136c5eab23a", null ],
+    [ "m_healthbarShowForTime", "classai_1_1_ai_base.html#ac3bfb986c0d35cffbd051b7862229278", null ],
+    [ "m_healthbarShowTimer", "classai_1_1_ai_base.html#a85910b42fbb549e9f44179dfe6967724", null ],
+    [ "m_showHealthbar", "classai_1_1_ai_base.html#a5b3be0cbe55ec4b200980679fcecbda8", null ],
     [ "s_DELTA_TIME", "classai_1_1_ai_base.html#a32adfd024f8457d3b148a16c479ccc4c", null ]
 ];

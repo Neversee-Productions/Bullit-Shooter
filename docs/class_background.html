@@ -104,8 +104,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a05b686e4ce0cbdb3b1fa14a93fdf98a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a05b686e4ce0cbdb3b1fa14a93fdf98a1">Background</a> ()</td></tr>
-<tr class="separator:a05b686e4ce0cbdb3b1fa14a93fdf98a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a1ad316c1a109d890bf41c8969d191"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#af3a1ad316c1a109d890bf41c8969d191">Background</a> (sf::Color const &amp;startColor=sf::Color::Black)</td></tr>
+<tr class="separator:af3a1ad316c1a109d890bf41c8969d191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e48d290fdba0d7cb52032c6fa454c62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a9e48d290fdba0d7cb52032c6fa454c62">init</a> (std::shared_ptr&lt; <a class="el" href="struct_background_1_1_resources.html">Resources</a> &gt; resources)</td></tr>
 <tr class="separator:a9e48d290fdba0d7cb52032c6fa454c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acab58b65d4299d4bd51b8376e8c3e3d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#acab58b65d4299d4bd51b8376e8c3e3d3">update</a> ()</td></tr>
@@ -126,6 +126,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aed7743d670b7202121da0a64bd399797"><td class="memItemLeft" align="right" valign="top">float const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#aed7743d670b7202121da0a64bd399797">m_DELTA_TIME</a></td></tr>
 <tr class="separator:aed7743d670b7202121da0a64bd399797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a5c0287c367b9ba8c3dfad781919c9"><td class="memItemLeft" align="right" valign="top">sf::Glsl::Vec4 const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a13a5c0287c367b9ba8c3dfad781919c9">m_bgResetColor</a></td></tr>
+<tr class="separator:a13a5c0287c367b9ba8c3dfad781919c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a227df2ea5c059e73058f9ea0767078d0"><td class="memItemLeft" align="right" valign="top">sf::Glsl::Vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a227df2ea5c059e73058f9ea0767078d0">m_bgColor</a></td></tr>
 <tr class="separator:a227df2ea5c059e73058f9ea0767078d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6b3cd8577849dc30b1b2e81188cabe4"><td class="memItemLeft" align="right" valign="top">sf::Glsl::Vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#aa6b3cd8577849dc30b1b2e81188cabe4">m_bgTargetColor</a></td></tr>
@@ -144,8 +146,8 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rafael Plugge This image is a rectangle with a shader applied to it. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a05b686e4ce0cbdb3b1fa14a93fdf98a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05b686e4ce0cbdb3b1fa14a93fdf98a1">&#9670;&nbsp;</a></span>Background()</h2>
+<a id="af3a1ad316c1a109d890bf41c8969d191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a1ad316c1a109d890bf41c8969d191">&#9670;&nbsp;</a></span>Background()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +155,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Background::Background </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">sf::Color const &amp;&#160;</td>
+          <td class="paramname"><em>startColor</em> = <code>sf::Color::Black</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -351,6 +354,28 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Define the background color.</p>
+
+</div>
+</div>
+<a id="a13a5c0287c367b9ba8c3dfad781919c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a5c0287c367b9ba8c3dfad781919c9">&#9670;&nbsp;</a></span>m_bgResetColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Glsl::Vec4 const Background::m_bgResetColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

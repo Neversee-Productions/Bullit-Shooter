@@ -10,6 +10,9 @@ var dir_0d8bd963a7f01f3140bdd0418521857d =
     [ "AiResources.h", "_ai_resources_8h.html", [
       [ "Resources", "structai_1_1_resources.html", "structai_1_1_resources" ]
     ] ],
+    [ "ARDeathState.h", "_a_r_death_state_8h.html", [
+      [ "AiRangedDeathState", "classai_1_1states_1_1_ai_ranged_death_state.html", "classai_1_1states_1_1_ai_ranged_death_state" ]
+    ] ],
     [ "ARDeployState.h", "_a_r_deploy_state_8h.html", [
       [ "AiRangedDeployState", "classai_1_1states_1_1_ai_ranged_deploy_state.html", "classai_1_1states_1_1_ai_ranged_deploy_state" ]
     ] ],

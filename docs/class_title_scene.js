@@ -9,7 +9,7 @@ var class_title_scene =
     [ "start", "class_title_scene.html#a668aa87847c45d2ff3416946e23f63eb", null ],
     [ "stop", "class_title_scene.html#acefc90e3641c2e50a0924918fe0ac6ee", null ],
     [ "update", "class_title_scene.html#a54f43bb05d23c6441f0dcf2e82122b8f", null ],
-    [ "m_backgroundSprite", "class_title_scene.html#a71d7e129617cc91cb2a3cb872ec1cd3c", null ],
+    [ "m_background", "class_title_scene.html#a149c84036bacce1e83184fdb64783f2a", null ],
     [ "m_continueText", "class_title_scene.html#a26339e7ac9e0fb76c236d16ca53662f7", null ],
     [ "m_controller", "class_title_scene.html#a0d34f92c448f39cbb8f6cab4504abf88", null ],
     [ "m_keyHandler", "class_title_scene.html#ad67d0dc6344df1255aaa7b54eb085e3e", null ],

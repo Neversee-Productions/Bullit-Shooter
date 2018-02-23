@@ -8,6 +8,8 @@ var hierarchy =
       [ "ai::states::AiBasicState", "classai_1_1states_1_1_ai_basic_state.html", [
         [ "ai::states::AiBasicChargeState", "classai_1_1states_1_1_ai_basic_charge_state.html", null ],
         [ "ai::states::AiBasicChargeState", "classai_1_1states_1_1_ai_basic_charge_state.html", null ],
+        [ "ai::states::AiBasicDeathState", "classai_1_1states_1_1_ai_basic_death_state.html", null ],
+        [ "ai::states::AiBasicDeathState", "classai_1_1states_1_1_ai_basic_death_state.html", null ],
         [ "ai::states::AiBasicRecoverState", "classai_1_1states_1_1_ai_basic_recover_state.html", null ],
         [ "ai::states::AiBasicRecoverState", "classai_1_1states_1_1_ai_basic_recover_state.html", null ],
         [ "ai::states::AiBasicSeekState", "classai_1_1states_1_1_ai_basic_seek_state.html", null ],
@@ -15,6 +17,7 @@ var hierarchy =
         [ "ai::states::AiBasicWindupState", "classai_1_1states_1_1_ai_basic_windup_state.html", null ]
       ] ],
       [ "ai::states::AiRangedState", "classai_1_1states_1_1_ai_ranged_state.html", [
+        [ "ai::states::AiRangedDeathState", "classai_1_1states_1_1_ai_ranged_death_state.html", null ],
         [ "ai::states::AiRangedDeployState", "classai_1_1states_1_1_ai_ranged_deploy_state.html", null ],
         [ "ai::states::AiRangedMoveState", "classai_1_1states_1_1_ai_ranged_move_state.html", null ],
         [ "ai::states::AiRangedShootState", "classai_1_1states_1_1_ai_ranged_shoot_state.html", null ]
@@ -61,6 +64,7 @@ var hierarchy =
     ] ],
     [ "Pickup::Resources::Effect", "struct_pickup_1_1_resources_1_1_effect.html", null ],
     [ "GameScene::Resources::Enemies", "struct_game_scene_1_1_resources_1_1_enemies.html", null ],
+    [ "Asteroid::ExplosionAnim", "struct_asteroid_1_1_explosion_anim.html", null ],
     [ "GamePadState", "struct_game_pad_state.html", null ],
     [ "GameUI", "class_game_u_i.html", null ],
     [ "gui::GUI", "classgui_1_1_g_u_i.html", null ],
@@ -79,17 +83,13 @@ var hierarchy =
     [ "ResourceHandler::MutexHolderPair< ThorFrameHolder >", "struct_resource_handler_1_1_mutex_holder_pair.html", null ],
     [ "Pickup", "class_pickup.html", null ],
     [ "Player", "class_player.html", null ],
+    [ "Progression", "class_progression.html", null ],
     [ "RangedEnemyManager", "class_ranged_enemy_manager.html", null ],
     [ "ResourceHandler", "class_resource_handler.html", null ],
-    [ "ai::AiBase::Resources", "structai_1_1_ai_base_1_1_resources.html", [
-      [ "ai::AiBasic::Resources", "structai_1_1_ai_basic_1_1_resources.html", null ],
-      [ "ai::Resources", "structai_1_1_resources.html", null ]
-    ] ],
     [ "Asteroid::Resources", "struct_asteroid_1_1_resources.html", null ],
     [ "Background::Resources", "struct_background_1_1_resources.html", null ],
     [ "BasicEnemyManager::Resources", "struct_basic_enemy_manager_1_1_resources.html", null ],
-    [ "Pickup::Resources", "struct_pickup_1_1_resources.html", null ],
-    [ "Ship::Resources", "struct_ship_1_1_resources.html", null ],
+    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
     [ "BulletManager::Resources", "struct_bullet_manager_1_1_resources.html", null ],
     [ "bullets::Bullet::Resources", "structbullets_1_1_bullet_1_1_resources.html", [
       [ "bullets::DeathOrb::Resources", "structbullets_1_1_death_orb_1_1_resources.html", null ],
@@ -97,13 +97,18 @@ var hierarchy =
     ] ],
     [ "Connector::Resources", "struct_connector_1_1_resources.html", null ],
     [ "Player::Resources", "struct_player_1_1_resources.html", null ],
+    [ "Ship::Resources", "struct_ship_1_1_resources.html", null ],
     [ "Weapon::Resources", "struct_weapon_1_1_resources.html", null ],
-    [ "GameUI::Resources", "struct_game_u_i_1_1_resources.html", null ],
-    [ "MainMenuScene::Resources", "struct_main_menu_scene_1_1_resources.html", null ],
+    [ "gameUi::Resources", "structgame_ui_1_1_resources.html", null ],
+    [ "Pickup::Resources", "struct_pickup_1_1_resources.html", null ],
+    [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
     [ "OptionsScene::Resources", "struct_options_scene_1_1_resources.html", null ],
     [ "SplashScene::Resources", "struct_splash_scene_1_1_resources.html", null ],
     [ "TitleScene::Resources", "struct_title_scene_1_1_resources.html", null ],
-    [ "GameScene::Resources", "struct_game_scene_1_1_resources.html", null ],
+    [ "ai::AiBase::Resources", "structai_1_1_ai_base_1_1_resources.html", [
+      [ "ai::AiBasic::Resources", "structai_1_1_ai_basic_1_1_resources.html", null ],
+      [ "ai::Resources", "structai_1_1_resources.html", null ]
+    ] ],
     [ "Scene", "class_scene.html", [
       [ "GameScene", "class_game_scene.html", null ],
       [ "MainMenuScene", "class_main_menu_scene.html", null ],
@@ -112,6 +117,7 @@ var hierarchy =
       [ "TitleScene", "class_title_scene.html", null ]
     ] ],
     [ "SceneManager", "class_scene_manager.html", null ],
+    [ "Score", "class_score.html", null ],
     [ "Shield", "class_shield.html", null ],
     [ "Ship", "class_ship.html", null ],
     [ "SoundManager::Sound", "struct_sound_manager_1_1_sound.html", null ],

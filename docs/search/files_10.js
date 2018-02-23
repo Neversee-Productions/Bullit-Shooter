@@ -4,6 +4,8 @@ var searchData=
   ['scene_2eh',['Scene.h',['../_scene_8h.html',1,'']]],
   ['scenemanager_2ecpp',['SceneManager.cpp',['../_scene_manager_8cpp.html',1,'']]],
   ['scenemanager_2eh',['SceneManager.h',['../_scene_manager_8h.html',1,'']]],
+  ['score_2ecpp',['Score.cpp',['../_score_8cpp.html',1,'']]],
+  ['score_2eh',['Score.h',['../_score_8h.html',1,'']]],
   ['shield_2ecpp',['Shield.cpp',['../_shield_8cpp.html',1,'']]],
   ['shield_2eh',['Shield.h',['../_shield_8h.html',1,'']]],
   ['ship_2ecpp',['Ship.cpp',['../_ship_8cpp.html',1,'']]],

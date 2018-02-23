@@ -149,6 +149,14 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a8dfa5b784892ae98b045142dd351c1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a271500fce90c0d7ebc00857e3f6c7cdf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a271500fce90c0d7ebc00857e3f6c7cdf">m_health</a></td></tr>
 <tr class="separator:a271500fce90c0d7ebc00857e3f6c7cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab22b35f1f9bb60dda2c82136c5eab23a"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#ab22b35f1f9bb60dda2c82136c5eab23a">m_healthBar</a></td></tr>
+<tr class="separator:ab22b35f1f9bb60dda2c82136c5eab23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3be0cbe55ec4b200980679fcecbda8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a5b3be0cbe55ec4b200980679fcecbda8">m_showHealthbar</a> = false</td></tr>
+<tr class="separator:a5b3be0cbe55ec4b200980679fcecbda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85910b42fbb549e9f44179dfe6967724"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#a85910b42fbb549e9f44179dfe6967724">m_healthbarShowTimer</a> = 0.0f</td></tr>
+<tr class="separator:a85910b42fbb549e9f44179dfe6967724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3bfb986c0d35cffbd051b7862229278"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_ai_base.html#ac3bfb986c0d35cffbd051b7862229278">m_healthbarShowForTime</a> = 1.5f</td></tr>
+<tr class="separator:ac3bfb986c0d35cffbd051b7862229278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
@@ -325,6 +333,8 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if ai died from this hit.</dd></dl>
+
+<p>Reimplemented in <a class="el" href="classai_1_1_ai_basic.html#af895ea89dcbc0b47958ae51d28c88deb">ai::AiBasic</a>, and <a class="el" href="classai_1_1_ai_ranged.html#a1c507b5a1e22d7f47964cf7efda7fbc1">ai::AiRanged</a>.</p>
 
 </div>
 </div>
@@ -606,6 +616,98 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Pertains the ai's current health.</p>
+
+</div>
+</div>
+<a id="ab22b35f1f9bb60dda2c82136c5eab23a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab22b35f1f9bb60dda2c82136c5eab23a">&#9670;&nbsp;</a></span>m_healthBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape ai::AiBase::m_healthBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>define healthbar for the enemy.</p>
+
+</div>
+</div>
+<a id="ac3bfb986c0d35cffbd051b7862229278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3bfb986c0d35cffbd051b7862229278">&#9670;&nbsp;</a></span>m_healthbarShowForTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ai::AiBase::m_healthbarShowForTime = 1.5f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>how long to show healthbar for.</p>
+
+</div>
+</div>
+<a id="a85910b42fbb549e9f44179dfe6967724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85910b42fbb549e9f44179dfe6967724">&#9670;&nbsp;</a></span>m_healthbarShowTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ai::AiBase::m_healthbarShowTimer = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>how long healthbar has been displayed.</p>
+
+</div>
+</div>
+<a id="a5b3be0cbe55ec4b200980679fcecbda8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b3be0cbe55ec4b200980679fcecbda8">&#9670;&nbsp;</a></span>m_showHealthbar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ai::AiBase::m_showHealthbar = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>should healthbar be displayed</p>
 
 </div>
 </div>

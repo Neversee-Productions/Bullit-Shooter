@@ -113,8 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af3968c2178a499640c8219d16da0985b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b0db4f34c84daa80b467115dab621ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_enemy_manager.html#a9b0db4f34c84daa80b467115dab621ba">draw</a> (<a class="el" href="class_window.html">Window</a> &amp;window, float const &amp;deltaTime)</td></tr>
 <tr class="separator:a9b0db4f34c84daa80b467115dab621ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a005c4790b7e95c83efb6585a86eb5d53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_enemy_manager.html#a005c4790b7e95c83efb6585a86eb5d53">spawn</a> (<a class="el" href="class_player.html">Player</a> &amp;player, sf::Vector2f const &amp;spawnPosition)</td></tr>
-<tr class="separator:a005c4790b7e95c83efb6585a86eb5d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfbb63ee3995320e79437e2ab0ce0b03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_enemy_manager.html#adfbb63ee3995320e79437e2ab0ce0b03">spawn</a> (<a class="el" href="class_player.html">Player</a> &amp;player, sf::Vector2f const &amp;spawnPosition, sf::Vector2f const &amp;spawnHeading, float const &amp;angle)</td></tr>
+<tr class="separator:adfbb63ee3995320e79437e2ab0ce0b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad615fc1378ae3894762fc702d9a63236"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_enemy_manager.html#ad615fc1378ae3894762fc702d9a63236">despawn</a> (std::list&lt; <a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> &gt;::iterator &amp;_where)</td></tr>
 <tr class="separator:ad615fc1378ae3894762fc702d9a63236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad015521922a330d8fa901c6426647100"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classai_1_1_ai_basic.html">ai::AiBasic</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_enemy_manager.html#ad015521922a330d8fa901c6426647100">getEnemies</a> ()</td></tr>
@@ -318,8 +318,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a005c4790b7e95c83efb6585a86eb5d53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a005c4790b7e95c83efb6585a86eb5d53">&#9670;&nbsp;</a></span>spawn()</h2>
+<a id="adfbb63ee3995320e79437e2ab0ce0b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfbb63ee3995320e79437e2ab0ce0b03">&#9670;&nbsp;</a></span>spawn()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,7 +334,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">sf::Vector2f const &amp;&#160;</td>
-          <td class="paramname"><em>spawnPosition</em>&#160;</td>
+          <td class="paramname"><em>spawnPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f const &amp;&#160;</td>
+          <td class="paramname"><em>spawnHeading</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float const &amp;&#160;</td>
+          <td class="paramname"><em>angle</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

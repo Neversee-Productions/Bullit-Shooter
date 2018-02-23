@@ -36,6 +36,7 @@ var class_player =
     [ "setConnectorPos", "class_player.html#af65497fe7b0be87cfeb962e95fe00c51", null ],
     [ "setOverheat", "class_player.html#a8127bd0dfb5b3d0dfd92944448d7d672", null ],
     [ "setPosition", "class_player.html#a04a1bb340ea6d425fb2927c397e96e4e", null ],
+    [ "setShieldHp", "class_player.html#aac91f9542d2494bdee060200f73a282b", null ],
     [ "setWeaponsAlpha", "class_player.html#a436598cf519a2d9977945f21135295d2", null ],
     [ "switchWeaponInput", "class_player.html#af7fcd21eac1a7cf26a111ae8d97cdbae", null ],
     [ "update", "class_player.html#a82c3476f3e65a4e2ac6bcd040771bdd4", null ],
