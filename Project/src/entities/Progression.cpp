@@ -63,7 +63,7 @@ void Progression::reset()
 	m_timerDisplay.setPosition(1100.0f, 65.0f);
 	m_timerDisplay.setFillColor(sf::Color::White);
 	m_timerDisplay.setOutlineColor(sf::Color::Black);
-	m_timerDisplay.setOutlineThickness(2.0f);
+	m_timerDisplay.setOutlineThickness(4.0f);
 	m_timerDisplay.setScale(1.0f, 1.0f);
 	m_timerDisplay.setOrigin(m_timerDisplay.getScale().x / 2, m_timerDisplay.getScale().y / 2);
 
@@ -71,7 +71,7 @@ void Progression::reset()
 	m_waveDisplay.setPosition(100.0f, 65.0f);
 	m_waveDisplay.setFillColor(sf::Color::White);
 	m_waveDisplay.setOutlineColor(sf::Color::Black);
-	m_waveDisplay.setOutlineThickness(2.0f);
+	m_waveDisplay.setOutlineThickness(4.0f);
 	m_waveDisplay.setScale(1.0f, 1.0f);
 	m_waveDisplay.setOrigin(m_waveDisplay.getScale().x / 2, m_waveDisplay.getScale().y / 2);
 	m_asteroidManager.s_spawnAmount = 1;

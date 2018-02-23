@@ -50,7 +50,7 @@ public: // Public Static Variables
 protected: // Protected Member Functions
 protected: // Protected Member Variables
 private: // Private Member Functions
-private: // Private Member Variables
+private: // Private Member Variable
 	/// <summary>
 	/// @brief Defines the string `Score: `.
 	/// 
