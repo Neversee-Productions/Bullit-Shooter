@@ -254,6 +254,7 @@ void ai::AiRanged::spawn(sf::Vector2f const & spawnPosition)
 		m_stateStack.pop();
 	}
 	std::shared_ptr<states::AiRangedState>(nullptr).swap(m_sptrState);
+	this->setState(std::make_shared<states::AiRangedMoveState>(this), false);
 }
 
 /// <summary>

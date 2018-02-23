@@ -70,8 +70,9 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_ui.reset();
 	m_pickup.resetPickup();
 	m_gameProgression.reset();
-	auto random = (rand() % 3 + 1); //generate number between 1 and 2
-	if (random == 1)
+	auto random = (rand() % 5 + 1); //generate number between 1 and 5
+	m_soundManager.play("ready-for-show");
+	/*if (random == 1)
 	{
 		m_soundManager.play("kill-bugs");
 	}
@@ -79,10 +80,18 @@ void GameScene::start(const std::string & resourceFilePath)
 	{
 		m_soundManager.play("lets-go");
 	}
-	else
+	else if (random == 3)
 	{
 		m_soundManager.play("stay-clear");
 	}
+	else if (random == 4)
+	{
+		m_soundManager.play("lets-do-this");
+	}
+	else if (random == 5)
+	{
+		m_soundManager.play("ready-for-show");
+	}*/
 }
 
 /// <summary>
@@ -131,11 +140,13 @@ void GameScene::update()
 		m_gameProgression.update();
 		if (!m_player.isAlive())
 		{
+			//m_soundManager.stop("alarm");
 			m_soundManager.stop("bg_game_soundtrack");
 			m_soundManager.play("bg_game_end_soundtrack", false);
 			m_gameEnded = true;
 			m_ui.setPauseFlashing(true);
 			m_player.setOverheat(false);
+			m_ui.setOverheat(false);
 			m_ui.setShowEnd(m_gameEnded);
 		}
 	}

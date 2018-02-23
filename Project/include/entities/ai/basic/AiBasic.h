@@ -101,11 +101,11 @@ namespace ai
 		virtual bool checkCollision(tinyh::c2AABB const & collision) const final override;
 		virtual bool checkCollision(tinyh::c2Capsule const & collision) const final override;
 		tinyh::c2AABB const & getCollisionAABB() const;
-		void spawn(sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading);
 		virtual bool decrementHealth(float const & damage) final override;
 		inline bool isAlive() const { return !m_dead; }
 		inline bool const & isDead() const { return m_dead; }
 		inline void setDead(bool const & newDead) { m_dead = newDead; }
+		void spawn(sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading, float const & angle);
 
 	protected: // Protected Member Functions
 		void setState(std::shared_ptr<SeekState> sptrState, bool rememberPrevious);

@@ -25,6 +25,8 @@ CollisionSystem::CollisionSystem(
 	, m_pickingUp(false)
 	, m_pickupSoundPlaying(false)
 	, m_stayClearPlaying(false)
+	, m_enemyKilledVoicelineTimer(0.0f)
+	, m_timeUntilKilledVoiceline(2.0f)
 {
 }
 
@@ -36,8 +38,11 @@ CollisionSystem::CollisionSystem(
 /// </summary>
 void CollisionSystem::update()
 {
+	m_enemyKilledVoicelineTimer += App::getUpdateDeltaTime();
+
 	this->updatePlayer();
 	this->updateAsteroids();
+
 }
 
 /// <summary>
@@ -396,7 +401,7 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 		if (asteroid.isExplosion())
 		{
 			m_soundManager.play("asteroid_explosion");
-			Score::s_scoreCurrent++;
+			Score::s_scoreCurrent += Score::SCORE_FOR_ASTEROID;
 			if (!m_pickup.isActive())
 			{
 				int const SPAWN_CHANCE = (std::rand() % 11); //generate number from 0 - 10
@@ -415,12 +420,14 @@ void CollisionSystem::asteroidVsBullet(Asteroid & asteroid, bullets::Bullet & bu
 			}
 			if (asteroid.containsEnemy())
 			{
+				sf::Vector2f spawnHeading = { 0.0f, 1.0f };
+				float const rotateBy = 360.0f / Progression::getBasicEnemies();
 				for (int i = 0; i < Progression::getBasicEnemies(); ++i)
 				{
 					sf::Vector2f spawnPos = { asteroid.getCollisionCircle().p.x, asteroid.getCollisionCircle().p.y };
-					sf::Vector2f spawnHeading = { 0.0f, 1.0f };
-					thor::rotate(spawnHeading, 360.0f * i);
-					m_basicEnemyManager.spawn(m_player, spawnPos, spawnHeading);
+					float angle = rotateBy * (std::rand() % 11 / 10.0f);
+					thor::rotate(spawnHeading, angle);
+					m_basicEnemyManager.spawn(m_player, spawnPos, spawnHeading, thor::polarAngle(spawnHeading) - 90.0f);
 				}
 			}
 		}
@@ -507,13 +514,14 @@ void CollisionSystem::basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & 
 	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
 	if (ENEMY_DIED)
 	{
-		Score::s_scoreCurrent++;
+		Score::s_scoreCurrent += Score::SCORE_FOR_BASIC;
 		m_soundManager.play("enemy_death");
 		auto random = (rand() % 6 + 1); //generate number between 1 and 6
 		if (random == 2)
 		{
 			m_soundManager.play("what-hit");
 		}
+		generateKilledEnemyVoiceline();
 	}
 }
 
@@ -530,13 +538,14 @@ void CollisionSystem::rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet 
 	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
 	if (ENEMY_DIED)
 	{
-		Score::s_scoreCurrent++;
+		Score::s_scoreCurrent += Score::SCORE_FOR_RANGED;
 		m_soundManager.play("enemy_death");
 		auto random = (rand() % 6 + 1); //generate number between 1 and 6
 		if (random == 2)
 		{
 			m_soundManager.play("what-hit");
 		}
+		generateKilledEnemyVoiceline();
 	}
 }
 
@@ -550,8 +559,8 @@ void CollisionSystem::rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet 
 void CollisionSystem::rangedEnemyBulletVsPlayer(AiBullet & bullet, Player & player)
 {
 	player.decrementShield(5.0f);
-	m_gameUi.decrementHealth(5.0f);
 	bullet.impact();
+	m_gameUi.setTargetHealth(player.getShieldHealth());
 }
 
 /// <summary>
@@ -566,7 +575,7 @@ void CollisionSystem::playerVsAsteroid(Player & player, Asteroid & asteroid)
 	if (!asteroid.isExplosion())
 	{
 		player.decrementShield(25.0f);
-		m_gameUi.decrementHealth(25.0f);
+		m_gameUi.setTargetHealth(player.getShieldHealth());
 		asteroid.decrementHealth(10.0f, false);
 		if (asteroid.isExplosion())
 		{
@@ -588,6 +597,27 @@ void CollisionSystem::playerVsPickup(Player & player, Pickup & pickup)
 	{
 		m_pickupSoundPlaying = true;
 		m_soundManager.play("power-up");
+		auto random = (rand() % 5 + 1); //generate number between 1 and 5
+		if (random == 1)
+		{
+			m_soundManager.play("guns");
+		}
+		else if (random == 2)
+		{
+			m_soundManager.play("locked-and-loaded");
+		}
+		else if (random == 3)
+		{
+			m_soundManager.play("nice-find");
+		}
+		else if (random == 4)
+		{
+			m_soundManager.play("shiny");
+		}
+		else if (random == 5)
+		{
+			m_soundManager.play("useful");
+		}
 	}
 	pickup.setCanDisappear(false);
 	float const LENGTH = thor::length(player.getPosition() - pickup.getRightPosition());
@@ -675,6 +705,36 @@ void CollisionSystem::asteroidVsAsteroid(Asteroid & asteroid1, Asteroid & astero
 }
 
 /// <summary>
+/// @brief generate a random line.
+/// 
+/// 
+/// </summary>
+void CollisionSystem::generateKilledEnemyVoiceline()
+{
+	if (m_enemyKilledVoicelineTimer > m_timeUntilKilledVoiceline)
+	{
+		m_enemyKilledVoicelineTimer = 0.0f;
+		auto random = (rand() % 20 + 1); //generate number between 1 and 20
+		if (random == 2)
+		{
+			m_soundManager.play("what-hit");
+		}
+		if (random == 6)
+		{
+			m_soundManager.play("get-some");
+		}
+		if (random == 11)
+		{
+			m_soundManager.play("all-ya-got");
+		}
+		if (random == 17)
+		{
+			m_soundManager.play("pain");
+		}
+	}
+}
+
+/// <summary>
 /// @brief Collision between player and enemy has occured.
 /// 
 /// Details the appropriate response to player vs enemy collision
@@ -686,7 +746,7 @@ void CollisionSystem::playerVsBasicEnemy(Player & player, ai::AiBasic & enemy)
 	float const PLAYER_DMG = 4.0f;
 	if (!player.isInvulnerable())
 	{
-		m_gameUi.decrementHealth(PLAYER_DMG);
+		player.decrementShield(PLAYER_DMG);
+		m_gameUi.setTargetHealth(player.getShieldHealth());
 	}
-	player.decrementShield(PLAYER_DMG);
 }

@@ -26,6 +26,8 @@ GameUI::GameUI(
 	, m_colorFlipTimer(0.0f)
 	, m_soundManager(SoundManager::instance())
 	, m_rechargeHealth(false)
+	, m_timeUntilOverheatingVoice(2.0f)
+	, m_overheatingVoiceTimer(0.0f)
 {
 }
 
@@ -36,6 +38,7 @@ GameUI::GameUI(
 /// </summary>
 void GameUI::update()
 {
+	m_overheatingVoiceTimer += App::getUpdateDeltaTime();
 	if (m_rechargeHealth)
 	{
 		if (m_healthSprite.getScale().x < m_targetHealth)
@@ -54,7 +57,7 @@ void GameUI::update()
 		{
 			if (m_healthLostSprite.getScale().x > m_targetHealth)
 			{
-				m_healthLostSprite.setScale(sf::Vector2f(m_healthLostSprite.getScale().x - 0.5f * App::getUpdateDeltaTime(), 1.0f));
+				m_healthLostSprite.setScale(sf::Vector2f(m_healthLostSprite.getScale().x - 0.25f * App::getUpdateDeltaTime(), 1.0f));
 			}
 		}
 		else
@@ -343,9 +346,9 @@ void GameUI::init(std::shared_ptr<gameUi::Resources> resources)
 /// 
 /// </summary>
 /// <param name="health">float value for health to be taken away</param>
-void GameUI::decrementHealth(float health)
+void GameUI::decrementHealth(const float & health)
 {
-	float healthLost = health / 100;
+	float healthLost = health / 100.0f;
 	m_targetHealth = m_healthSprite.getScale().x - healthLost;
 	if (m_healthSprite.getScale().x > 0)
 	{
@@ -511,6 +514,7 @@ void GameUI::setRecharge(float val)
 /// </summary>
 void GameUI::reset()
 {
+	m_score.reset();
 	m_healthSprite.setScale(1.0f, 1.0f);
 	m_healthLostSprite.setScale(1.0f, 1.0f);
 	m_targetHealth = 1.0f;
@@ -518,6 +522,8 @@ void GameUI::reset()
 	m_showGameEnd = false;
 	m_pauseFlashing = false;
 	m_rechargeHealth = false;
+	m_timeUntilOverheatingVoice = 10.0f;
+	m_overheatingVoiceTimer = 0.0f;
 }
 
 /// <summary>
@@ -552,6 +558,23 @@ void GameUI::updateOvercharge(float overchargeValue)
 {
 	m_overchargeBarLeft.setScale(m_overchargeBarLeft.getScale().x, overchargeValue);
 	m_overchargeBarRight.setScale(m_overchargeBarRight.getScale().x, overchargeValue);
+	if (m_overheatingVoiceTimer > m_timeUntilOverheatingVoice)
+	{
+		if (overchargeValue > 0.6 && !m_overheating)
+		{
+			m_overheatingVoiceTimer = 0.0f;
+			auto random = (rand() % 2 + 1); //generate number between 1 and 2
+			if (random == 1)
+			{
+				m_soundManager.play("overheat1", false);
+			}
+			else if (random == 2)
+			{
+				m_soundManager.play("overheat2", false);
+			}
+		}
+	}
+
 }
 
 /// <summary>
@@ -585,4 +608,25 @@ void GameUI::rechargeHealth(float const & newHealth)
 	m_rechargeHealth = true;
 	m_targetHealth = newHealth / 100.0f;
 	m_healthLostSprite.setScale(m_targetHealth, 1.0f);
+}
+/// @brief set target health value.
+/// 
+/// 
+/// </summary>
+/// <param name="playerHealth"></param>
+void GameUI::setTargetHealth(const float & playerHealth)
+{
+	m_targetHealth = playerHealth / 100.0f;
+
+	//float healthLost = health / 100.0f;
+	//m_targetHealth = m_healthSprite.getScale().x - healthLost;
+	auto healthScale = playerHealth * (1.0f / 100.0f);
+	if (m_healthSprite.getScale().x > 0)
+	{
+		m_healthSprite.setScale(sf::Vector2f(healthScale , 1.0f));
+	}
+	else
+	{
+		m_healthSprite.setScale(sf::Vector2f(0.0f, 1.0f));
+	}
 }

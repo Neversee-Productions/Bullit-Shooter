@@ -13,6 +13,8 @@
 #include "entities\Asteroids\AsteroidManager.h"
 #include "entities\BasicEnemyManager.h"
 #include "entities\RangedEnemyManager.h"
+#include <cmath>
+
 
 /// 
 /// @brief Defines the game progression
@@ -135,7 +137,7 @@ private: // Private Member Variables
 	/// </summary>
 	int const m_RANGED_ENEMY_SPAWN_CAP;
 	/// <summary>
-	/// @brief defines the cap on basic enemy spawning.
+	/// @brief defines the cap on basic enemy spawning from single asteroid.
 	/// 
 	/// 
 	/// </summary>
@@ -158,6 +160,27 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	sf::Text m_timerDisplay;
+
+	/// <summary>
+	/// @brief Will display current wave.
+	/// 
+	/// 
+	/// </summary>
+	sf::Text m_waveDisplay;
+
+	/// <summary>
+	/// @brief are we to scale the score.
+	/// 
+	/// 
+	/// </summary>
+	bool m_scaleLabel;
+
+	/// <summary>
+	/// @brief should label scale down.
+	/// 
+	/// 
+	/// </summary>
+	bool m_scaleDown;
 };
 
 #endif // !PROGRESSION_H

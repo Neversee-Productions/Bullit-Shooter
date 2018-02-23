@@ -53,13 +53,13 @@ void BasicEnemyManager::draw(Window & window, float const & deltaTime)
 /// </summary>
 /// <param name="player">required for enemy behaviour.</param>
 /// <param name="spawnPosition">determines spawn location.</param>
-void BasicEnemyManager::spawn(Player & player, sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading)
+void BasicEnemyManager::spawn(Player & player, sf::Vector2f const & spawnPosition, sf::Vector2f const & spawnHeading, float const & angle)
 {
 	for (auto & enemy : m_enemies)
 	{
 		if (!enemy.getActive())
 		{
-			enemy.spawn(spawnPosition, spawnHeading);
+			enemy.spawn(spawnPosition, spawnHeading, angle);
 			return;
 		}
 	}

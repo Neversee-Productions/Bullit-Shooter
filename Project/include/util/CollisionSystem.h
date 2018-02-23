@@ -66,6 +66,7 @@ private: // Private Member Functions
 	void playerVsPickup(Player & player, Pickup & pickup);
 	void playerVsBasicEnemy(Player & player, ai::AiBasic & enemy);
 	void asteroidVsAsteroid(Asteroid & asteroid1, Asteroid & asteroid2);
+	void generateKilledEnemyVoiceline();
 
 private: // Private Member Variables
 	/// <summary>
@@ -134,6 +135,20 @@ private: // Private Member Variables
 	/// 
 	/// </summary>
 	bool m_stayClearPlaying;
+
+	/// <summary>
+	/// @brief a timer that calculates how long since last enemy killed voice line.
+	/// 
+	/// 
+	/// </summary>
+	float m_enemyKilledVoicelineTimer;
+
+	/// <summary>
+	/// @brief define how long until can say another voiceline after enemy killed.
+	/// 
+	/// 
+	/// </summary>
+	float m_timeUntilKilledVoiceline;
 };
 
 #endif // !COLLISION_SYSTEM_H

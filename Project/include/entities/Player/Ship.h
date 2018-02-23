@@ -214,7 +214,7 @@ private:
 	/// 
 	/// 
 	/// </summary>
-	float m_maxVel = 1000.0f;
+	float m_maxVel = 1200.0f;
 
 	/// <summary>
 	/// @brief this defines the acceleration of the player.
