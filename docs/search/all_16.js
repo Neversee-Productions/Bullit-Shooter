@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xoffset',['xOffset',['../struct_asteroid_1_1_explosion_anim.html#afbd7b2e150204bf3c5ab91b3649e4fd3',1,'Asteroid::ExplosionAnim']]]
+  ['yoffset',['yOffset',['../struct_asteroid_1_1_explosion_anim.html#ae8d1f2247625e4c1daad1f7912af80de',1,'Asteroid::ExplosionAnim']]]
 ];

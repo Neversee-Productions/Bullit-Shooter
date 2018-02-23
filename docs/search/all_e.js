@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['napalmsphere',['NapalmSphere',['../classbullets_1_1_napalm_sphere.html',1,'bullets::NapalmSphere'],['../classbullets_1_1_napalm_sphere.html#a7acda0abd582842e0a9cab2f5e62e183',1,'bullets::NapalmSphere::NapalmSphere()'],['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca3edce204ebad3712f5d36cdcd9c464fc',1,'NapalmSphere():&#160;BulletTypes.h']]],
-  ['napalmsphere_2ecpp',['NapalmSphere.cpp',['../_napalm_sphere_8cpp.html',1,'']]],
-  ['napalmsphere_2eh',['NapalmSphere.h',['../_napalm_sphere_8h.html',1,'']]],
-  ['ndebug',['NDEBUG',['../main_8hpp.html#a8de3ed741dadc9c979a4ff17c0a9116e',1,'main.hpp']]],
-  ['nextweapon',['nextWeapon',['../class_player.html#a8953fa145bd442d1b71a5c7418b2e184',1,'Player']]],
-  ['nullwave',['NullWave',['../classbullets_1_1_null_wave.html',1,'bullets::NullWave'],['../classbullets_1_1_null_wave.html#ad50a4d3e508453afa1211985fe9aea1e',1,'bullets::NullWave::NullWave()'],['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca03be1064c7d808db5f644fafd7fdabf1',1,'NullWave():&#160;BulletTypes.h']]],
-  ['nullwave_2ecpp',['NullWave.cpp',['../_null_wave_8cpp.html',1,'']]],
-  ['nullwave_2eh',['NullWave.h',['../_null_wave_8h.html',1,'']]]
+  ['operator_3d',['operator=',['../class_ai_bullet.html#aa753c1c796a77b96ec54ef9534e451b0',1,'AiBullet::operator=(AiBullet const &amp;)=default'],['../class_ai_bullet.html#a7b9439dd646a4a30498c41528154594c',1,'AiBullet::operator=(AiBullet &amp;&amp;)=default'],['../class_ai_bullet_manager.html#ad51804f224c5f385a1ced8510c16ebc0',1,'AiBulletManager::operator=(AiBulletManager const &amp;)=default'],['../class_ai_bullet_manager.html#abf122bcbf62a66ff43cdc239db022d6d',1,'AiBulletManager::operator=(AiBulletManager &amp;&amp;)=default'],['../class_progression.html#ae51603e9cdf101c567be7c4fdd44b3e9',1,'Progression::operator=(Progression const &amp;)=default'],['../class_progression.html#ada7a4d9c4bf3338e49447f6721435ad6',1,'Progression::operator=(Progression &amp;&amp;)=default'],['../class_score.html#a3f565d841eecc7d11e4027a719985562',1,'Score::operator=(Score const &amp;)=default'],['../class_score.html#a65a6ef2973e22b1c1cd91f4b9d7029c6',1,'Score::operator=(Score &amp;&amp;)=default'],['../class_collision_system.html#a19df03fb4844c9c0176d653bc23bfc1f',1,'CollisionSystem::operator=(const CollisionSystem &amp;)=delete'],['../class_collision_system.html#a272199177c97bbc4da63ecf44cf4001c',1,'CollisionSystem::operator=(CollisionSystem &amp;&amp;)=default']]],
+  ['optionsscene',['OptionsScene',['../class_options_scene.html',1,'OptionsScene'],['../class_options_scene.html#ab9d397b1babd75abaa55383ae38e2f42',1,'OptionsScene::OptionsScene()']]],
+  ['optionsscene_2ecpp',['OptionsScene.cpp',['../_options_scene_8cpp.html',1,'']]],
+  ['optionsscene_2eh',['OptionsScene.h',['../_options_scene_8h.html',1,'']]]
 ];

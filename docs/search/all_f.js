@@ -1,7 +1,28 @@
 var searchData=
 [
-  ['operator_3d',['operator=',['../class_ai_bullet.html#aa753c1c796a77b96ec54ef9534e451b0',1,'AiBullet::operator=(AiBullet const &amp;)=default'],['../class_ai_bullet.html#a7b9439dd646a4a30498c41528154594c',1,'AiBullet::operator=(AiBullet &amp;&amp;)=default'],['../class_ai_bullet_manager.html#ad51804f224c5f385a1ced8510c16ebc0',1,'AiBulletManager::operator=(AiBulletManager const &amp;)=default'],['../class_ai_bullet_manager.html#abf122bcbf62a66ff43cdc239db022d6d',1,'AiBulletManager::operator=(AiBulletManager &amp;&amp;)=default'],['../class_progression.html#ae51603e9cdf101c567be7c4fdd44b3e9',1,'Progression::operator=(Progression const &amp;)=default'],['../class_progression.html#ada7a4d9c4bf3338e49447f6721435ad6',1,'Progression::operator=(Progression &amp;&amp;)=default'],['../class_score.html#a3f565d841eecc7d11e4027a719985562',1,'Score::operator=(Score const &amp;)=default'],['../class_score.html#a65a6ef2973e22b1c1cd91f4b9d7029c6',1,'Score::operator=(Score &amp;&amp;)=default'],['../class_collision_system.html#a19df03fb4844c9c0176d653bc23bfc1f',1,'CollisionSystem::operator=(const CollisionSystem &amp;)=delete'],['../class_collision_system.html#a272199177c97bbc4da63ecf44cf4001c',1,'CollisionSystem::operator=(CollisionSystem &amp;&amp;)=default']]],
-  ['optionsscene',['OptionsScene',['../class_options_scene.html',1,'OptionsScene'],['../class_options_scene.html#ab9d397b1babd75abaa55383ae38e2f42',1,'OptionsScene::OptionsScene()']]],
-  ['optionsscene_2ecpp',['OptionsScene.cpp',['../_options_scene_8cpp.html',1,'']]],
-  ['optionsscene_2eh',['OptionsScene.h',['../_options_scene_8h.html',1,'']]]
+  ['pete_5fis_5fcool',['PETE_IS_COOL',['../class_controller.html#ab71bd82e0906683338dee2bb6ffc93f1',1,'Controller']]],
+  ['pickup',['Pickup',['../class_pickup.html',1,'Pickup'],['../class_pickup.html#a96d607c3c6fbe14446c5cafc33163844',1,'Pickup::Pickup()'],['../class_pickup.html#a0e11ec5a4da05139187d891a20be3b2d',1,'Pickup::Pickup(std::shared_ptr&lt; Resources &gt; resources, sf::Vector2f position, sf::Vector2f size, BulletTypes const &amp;pickupType)']]],
+  ['pickup_2ecpp',['Pickup.cpp',['../_pickup_8cpp.html',1,'']]],
+  ['pickup_2eh',['Pickup.h',['../_pickup_8h.html',1,'']]],
+  ['pickupmap',['PickupMap',['../struct_pickup_1_1_resources.html#ad09c6127368e4834dca2a7bad747c129',1,'Pickup::Resources']]],
+  ['play',['play',['../class_sound_manager.html#a3c1075b63f9efe7962b4c72bd3d64d88',1,'SoundManager']]],
+  ['playanimation',['playAnimation',['../classai_1_1_ai_basic.html#ab11fc8c7a2142e71cff0c91c8479d2b8',1,'ai::AiBasic::playAnimation()'],['../classai_1_1_ai_ranged.html#a4346b412c0444dbfd1e7b5eddee02e53',1,'ai::AiRanged::playAnimation()']]],
+  ['player',['Player',['../class_player.html',1,'Player'],['../class_player.html#ac971e654c502989d7af7206809d776c4',1,'Player::Player()']]],
+  ['player_2ecpp',['Player.cpp',['../_player_8cpp.html',1,'']]],
+  ['player_2eh',['Player.h',['../_player_8h.html',1,'']]],
+  ['playervsasteroid',['playerVsAsteroid',['../class_collision_system.html#af0e7d14a74b7c6af72a2820148e27aed',1,'CollisionSystem']]],
+  ['playervsbasicenemy',['playerVsBasicEnemy',['../class_collision_system.html#a0e9c7bf6b2dba7593eba2e4668406313',1,'CollisionSystem']]],
+  ['playervspickup',['playerVsPickup',['../class_collision_system.html#a76ee9d6b1aba07312d2e689984d9b14f',1,'CollisionSystem']]],
+  ['playervsrangedenemy',['playerVsRangedEnemy',['../class_collision_system.html#a3d113363b27499493af6ccd29d3df19a',1,'CollisionSystem']]],
+  ['preloadscene',['preLoadScene',['../class_scene_manager.html#a088b1248bcd8fa69d9bd7a87e03996f9',1,'SceneManager']]],
+  ['pressed',['PRESSED',['../classgui_1_1_button.html#a60171d5543ff80ff7317724e58a1a346a5381dc876ab002103a027265bc14ae52',1,'gui::Button']]],
+  ['prestart',['preStart',['../class_game_scene.html#aa047fdbc6f7cdae8eb76eda686eb49d5',1,'GameScene::preStart()'],['../class_main_menu_scene.html#a0fceb466a18dabf67454e26eb2c87b8b',1,'MainMenuScene::preStart()'],['../class_options_scene.html#a809dbaf3fda2ad88ef5d706d2bd351ae',1,'OptionsScene::preStart()'],['../class_scene.html#a8085b58c34fde232253669e9d55fa85d',1,'Scene::preStart()'],['../class_splash_scene.html#ac2f189d6bf52b47a7500ad103b3a58dd',1,'SplashScene::preStart()'],['../class_title_scene.html#afbcce313c31908c58347e84ddd25d39f',1,'TitleScene::preStart()']]],
+  ['processevents',['processEvents',['../class_window.html#a381364c2704bed978cdf9df669c4b629',1,'Window']]],
+  ['processinput',['processInput',['../class_ship.html#ade787d0256047d5e0c92e0af82427e63',1,'Ship::processInput()'],['../classgui_1_1_g_u_i.html#ab7ed858973b6af6709956d4d3f518727',1,'gui::GUI::processInput()'],['../classgui_1_1_button.html#a7496b350e83b8768525150b5a674e159',1,'gui::Button::processInput()'],['../classgui_1_1_check_box.html#a5f4b0a96fb34657f3183629a9c47fdcf',1,'gui::CheckBox::processInput()'],['../classgui_1_1_label.html#a336d4f99363c593bc1b80277b823f955',1,'gui::Label::processInput()'],['../classgui_1_1_slider.html#a185aebd1d1539a73ba6bf138e1eb7761',1,'gui::Slider::processInput()'],['../classgui_1_1_widget.html#aee10906f093ef236ad47f08b31d8b1cf',1,'gui::Widget::processInput()']]],
+  ['progression',['Progression',['../class_progression.html',1,'Progression'],['../class_progression.html#abe03e780895e82f996e9a826efadcacf',1,'Progression::Progression()=delete'],['../class_progression.html#a1c3def147321372420bb1f59112d525a',1,'Progression::Progression(Player &amp;player, AsteroidManager &amp;asteroidManager, BasicEnemyManager &amp;basicEnemyManager, RangedEnemyManager &amp;rangedEnemyManager, GameUI &amp;gameUi)'],['../class_progression.html#aa0e47dcb61b1ae87de231c8602c5b310',1,'Progression::Progression(Progression const &amp;)=default'],['../class_progression.html#a1fca52b2e6e09e6b35417170fd97ca58',1,'Progression::Progression(Progression &amp;&amp;)=default']]],
+  ['progression_2ecpp',['Progression.cpp',['../_progression_8cpp.html',1,'']]],
+  ['progression_2eh',['Progression.h',['../_progression_8h.html',1,'']]],
+  ['pyroblast',['PyroBlast',['../classbullets_1_1_pyro_blast.html',1,'bullets::PyroBlast'],['../classbullets_1_1_pyro_blast.html#aee5bd308a6980c1c3b3cdc730b645715',1,'bullets::PyroBlast::PyroBlast()'],['../_bullet_types_8h.html#a18b518c583246d01a699417ba80a69cca4be4b9ea68a94f9d0ae7adb5264b0f4e',1,'PyroBlast():&#160;BulletTypes.h']]],
+  ['pyroblast_2ecpp',['PyroBlast.cpp',['../_pyro_blast_8cpp.html',1,'']]],
+  ['pyroblast_2eh',['PyroBlast.h',['../_pyro_blast_8h.html',1,'']]]
 ];

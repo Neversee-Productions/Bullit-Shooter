@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "Project", "index.html", [
-    [ "3rd year Project", "index.html", null ],
+    [ "Bullit \" \" Shooter", "index.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
