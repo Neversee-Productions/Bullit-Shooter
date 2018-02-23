@@ -357,7 +357,18 @@ void SoundManager::setupPickup(ResourceHandler & resourceHandler, SoundManager &
 void SoundManager::setupPlayerWeapons(ResourceHandler & resourceHandler, SoundManager & soundManager, js::json & weaponParser)
 {
 	std::string const WEAPON_BEGIN_ID = "weapon-begin";
+	std::string const WEAPON_BEGIN2_ID = "weapon-begin2";
+	std::string const WEAPON_BEGIN3_ID = "weapon-begin3";
+	std::string const WEAPON_BEGIN4_ID = "weapon-begin4";
+	std::string const WEAPON_BEGIN5_ID = "weapon-begin5";
+
+
 	soundManager.addSound(weaponParser.at("weapon-begin").get<SoundSetting>(), WEAPON_BEGIN_ID);
+	soundManager.addSound(weaponParser.at("weapon-begin2").get<SoundSetting>(), WEAPON_BEGIN2_ID);
+	soundManager.addSound(weaponParser.at("weapon-begin3").get<SoundSetting>(), WEAPON_BEGIN3_ID);
+	soundManager.addSound(weaponParser.at("weapon-begin4").get<SoundSetting>(), WEAPON_BEGIN4_ID);
+	soundManager.addSound(weaponParser.at("weapon-begin5").get<SoundSetting>(), WEAPON_BEGIN5_ID);
+
 }
 
 /// <summary>

@@ -230,7 +230,6 @@ void Player::switchWeaponInput()
 		m_weaponRight.setType(BulletTypes::Standard);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.08f, 0.004f, 0.003f);
-		m_soundManager.play("weapon-begin");
 	}
 	else if (KEY_TWO)
 	{
@@ -428,6 +427,27 @@ sf::Vector2f const & Player::getPosition() const
 /// </summary>
 void Player::nextWeapon()
 {
+	auto random = (rand() % 5 + 1); //generate number between 1 and 5
+	if (random == 1)
+	{
+		m_soundManager.play("weapon-begin");
+	}
+	else if (random == 2)
+	{
+		m_soundManager.play("weapon-begin2");
+	}
+	else if (random == 3)
+	{
+		m_soundManager.play("weapon-begin3");
+	}
+	else if (random == 4)
+	{
+		m_soundManager.play("weapon-begin4");
+	}
+	else if (random == 5)
+	{
+		m_soundManager.play("weapon-begin5");
+	}
 	BulletTypes currentType = m_weaponLeft.getBulletType();
 	switch (currentType)
 	{
@@ -436,77 +456,66 @@ void Player::nextWeapon()
 		m_weaponRight.setType(BulletTypes::Empowered);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.1f, 0.004f, 0.003f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::Empowered:
 		m_weaponLeft.setType(BulletTypes::DeathOrb);
 		m_weaponRight.setType(BulletTypes::DeathOrb);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.12f, 0.004f, 0.003f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::DeathOrb:
 		m_weaponLeft.setType(BulletTypes::FireBlast);
 		m_weaponRight.setType(BulletTypes::FireBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.07f, 0.004f, 0.003f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::FireBlast:
 		m_weaponLeft.setType(BulletTypes::HolySphere);
 		m_weaponRight.setType(BulletTypes::HolySphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.15f, 0.004f, 0.003f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::HolySphere:
 		m_weaponLeft.setType(BulletTypes::MagmaShot);
 		m_weaponRight.setType(BulletTypes::MagmaShot);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.18f, 0.005f, 0.004f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::MagmaShot:
 		m_weaponLeft.setType(BulletTypes::NapalmSphere);
 		m_weaponRight.setType(BulletTypes::NapalmSphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.15f, 0.005f, 0.004f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::NapalmSphere:
 		m_weaponLeft.setType(BulletTypes::CometShot);
 		m_weaponRight.setType(BulletTypes::CometShot);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.15f, 0.006f, 0.005f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::CometShot:
 		m_weaponLeft.setType(BulletTypes::NullWave);
 		m_weaponRight.setType(BulletTypes::NullWave);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.2f, 0.004f, 0.003f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::NullWave:
 		m_weaponLeft.setType(BulletTypes::StaticSphere);
 		m_weaponRight.setType(BulletTypes::StaticSphere);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.3f, 0.004f, 0.003f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::StaticSphere:
 		m_weaponLeft.setType(BulletTypes::PyroBlast);
 		m_weaponRight.setType(BulletTypes::PyroBlast);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.35f, 0.003f, 0.002f);
-		m_soundManager.play("weapon-begin");
 		break;
 	case BulletTypes::PyroBlast:
 		m_weaponLeft.setType(BulletTypes::Standard);
 		m_weaponRight.setType(BulletTypes::Standard);
 		m_background.setTargetColor(m_weaponLeft.getBgColor());
 		m_bulletManager.setWeaponOverheatingValues(0.08f, 0.004f, 0.003f);
-		m_soundManager.play("weapon-begin");
 		break;
 	default:
 		break;

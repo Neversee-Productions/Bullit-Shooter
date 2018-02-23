@@ -71,8 +71,7 @@ void GameScene::start(const std::string & resourceFilePath)
 	m_pickup.resetPickup();
 	m_gameProgression.reset();
 	auto random = (rand() % 5 + 1); //generate number between 1 and 5
-	m_soundManager.play("ready-for-show");
-	/*if (random == 1)
+	if (random == 1)
 	{
 		m_soundManager.play("kill-bugs");
 	}
@@ -91,7 +90,7 @@ void GameScene::start(const std::string & resourceFilePath)
 	else if (random == 5)
 	{
 		m_soundManager.play("ready-for-show");
-	}*/
+	}
 }
 
 /// <summary>

@@ -80,6 +80,9 @@ Window::Window(KeyHandler & keyHandler)
 	const auto & viewSize = m_renderTexture.getSize();
 	App::setViewSize(viewSize.x, viewSize.y);
 	App::setViewC2Rect(sf::Vector2f(0.0f, 0.0f), static_cast<sf::Vector2f>(App::getViewSize()));
+	//hide cursor
+	m_sfWindow.setMouseCursorVisible(false);
+
 }
 
 /// <summary>
