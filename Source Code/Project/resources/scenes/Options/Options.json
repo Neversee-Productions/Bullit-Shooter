@@ -1,0 +1,15 @@
+{
+	"textures":
+	{
+        "button": "resources/gui/textures/button.png",
+        "help": "resources/scenes/Options/help.png"
+	},
+    "sounds":
+    {
+    },
+	"fonts":
+	{
+		"button": "resources/gui/fonts/QuartzMS.TTF"
+	},
+	"fontsize": 24
+}

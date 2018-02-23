@@ -1,0 +1,23 @@
+{
+    "textures":
+    {
+        "background": "resources/scenes/Title/textures/background.jpg",
+        "title": "resources/scenes/Title/textures/title.png"
+    },
+    "sounds":
+    {
+    },
+    "fonts":
+    {
+        "text": "resources/scenes/Title/fonts/text.ttf"
+    },
+    "fontsize": 24,
+    "shaders":
+    {
+        "background":
+        {
+            "fragment": "resources/scenes/game/background/background.frag",
+            "vertex": "resources/scenes/game/background/background.vert"
+        }
+    }
+}

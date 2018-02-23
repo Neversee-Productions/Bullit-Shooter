@@ -1,0 +1,7 @@
+{
+    "MainMenu": "resources/scenes/MainMenu/MainMenu.json",
+    "Game": "resources/scenes/Game/Game.json",
+    "Options": "resources/scenes/Options/Options.json",
+    "Title": "resources/scenes/Title/Title.json",
+    "Splash": "resources/scenes/Splash/Splash.json"
+}

@@ -1,0 +1,23 @@
+{
+    "textures":
+    {
+        "splash_background": "resources/scenes/Splash/textures/splash_screen.png"
+    },
+    "sounds":
+    {
+        "bg-soundtrack":
+        {
+            "volume": 50.0,
+            "loop": true,
+            "attenuation": 1.0,
+            "buffer":
+            {
+                "key": "startup_bg_soundtrack",
+                "path": "resources/scenes/Splash/sounds/menu_music.ogg"
+            }
+        }
+    },
+    "fonts":
+    {
+    }
+}

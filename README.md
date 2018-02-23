@@ -1,6 +1,8 @@
-# 3rd year Project
+# Bullit " " Shooter
 
-### 2D Side Scroll Space shoot'em up
+## Space shoot'em up
+
+### 2018 Games Fleadh
 
 ## Meet the team
 
@@ -11,7 +13,7 @@
 
 * [Visual C++ Redistributable 2017](https://go.microsoft.com/fwlink/?LinkId=746571)
 
-*All external dependencies included in the project*
+*All external dependencies included in the project, under 'redist' folder*
 
 ## 3rd Party Libraries
 
