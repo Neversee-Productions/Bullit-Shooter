@@ -196,7 +196,7 @@ private:
 	sf::Vector2f m_weaponRightPos;
 
 	/// <summary>
-	/// @brief players shield.
+	/// @brief players shield
 	/// 
 	/// 
 	/// </summary>
