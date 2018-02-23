@@ -341,7 +341,7 @@ bool Player::checkAxis(float const & axis, bool flipped)
 /// <returns>return true if axis above threshold else false</returns>
 bool Player::checkAxisThrusterPositive(float const & axis)
 {
-	float const THRESHOLD = 70.0f;
+	float const THRESHOLD = 90.0f;
 	if (axis > THRESHOLD)
 	{
 		return true;
@@ -358,7 +358,7 @@ bool Player::checkAxisThrusterPositive(float const & axis)
 /// <returns>return true if axis below threshold else false</returns>
 bool Player::checkAxisThrusterNegative(float const & axis)
 {
-	float const THRESHOLD = 70.0f;
+	float const THRESHOLD = 90.0f;
 	if (axis < -THRESHOLD)
 	{
 		return true;

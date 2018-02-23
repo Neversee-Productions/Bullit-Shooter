@@ -420,13 +420,11 @@ void gui::GUI::processInput()
 		const auto & PREV_FLIGHT_STICK_Y = m_controller->m_previousState.m_flightStick.y;
 		const auto & FLIGHT_STICK_X = m_controller->m_currentState.m_flightStick.x;
 		const auto & PREV_FLIGHT_STICK_X = m_controller->m_previousState.m_flightStick.x;
-		const auto & FLIGHT_THURSTER = m_controller->m_currentState.m_flightThruster;
-		const auto & PREV_FLIGHT_THURSTER = m_controller->m_previousState.m_flightThruster;
 
-		const auto & FLIGHT_STICK_MAX = std::max({ FLIGHT_STICK_X, FLIGHT_STICK_Y, FLIGHT_THURSTER });
-		const auto & PREV_FLIGHT_STICK_MAX = std::max({ PREV_FLIGHT_STICK_X, PREV_FLIGHT_STICK_Y, PREV_FLIGHT_THURSTER });
-		const auto & FLIGHT_STICK_MIN = std::min({ FLIGHT_STICK_X, FLIGHT_STICK_Y, FLIGHT_THURSTER });
-		const auto & PREV_FLIGHT_STICK_MIN = std::min({ PREV_FLIGHT_STICK_X, PREV_FLIGHT_STICK_Y, PREV_FLIGHT_THURSTER });
+		const auto & FLIGHT_STICK_MAX = std::max({ FLIGHT_STICK_X, FLIGHT_STICK_Y });
+		const auto & PREV_FLIGHT_STICK_MAX = std::max({ PREV_FLIGHT_STICK_X, PREV_FLIGHT_STICK_Y });
+		const auto & FLIGHT_STICK_MIN = std::min({ FLIGHT_STICK_X, FLIGHT_STICK_Y });
+		const auto & PREV_FLIGHT_STICK_MIN = std::min({ PREV_FLIGHT_STICK_X, PREV_FLIGHT_STICK_Y });
 
 		if (FLIGHT_STICK_MIN < -JOYSTICK_THRESHOLD && PREV_FLIGHT_STICK_MIN >= -JOYSTICK_THRESHOLD)
 		{

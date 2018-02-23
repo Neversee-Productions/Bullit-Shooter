@@ -331,7 +331,6 @@ void GameUI::init(std::shared_ptr<gameUi::Resources> resources)
 		gui::Button::s_TEXT_RECT_MID,
 		gui::Button::s_TEXT_RECT_RIGHT
 	);
-	m_gameEndUI->addLabel("Game Over", 50u, sf::Vector2f(App::getViewSize().x / 2.0f, App::getViewSize().y * 0.1f), sptrButtonFont, sf::Color::White);
 	m_gui->addLabel("Pause", 50u, sf::Vector2f(App::getViewSize().x / 2.0f, App::getViewSize().y * 0.1f), sptrButtonFont, sf::Color::White);
 	const auto& windowSize = App::getViewSize();
 	m_gui->configure(gui::GUI::Layouts::StackVertically, windowSize);

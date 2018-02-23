@@ -94,6 +94,10 @@ void CollisionSystem::updatePlayer()
 		{
 			if (enemy.getActive())
 			{
+				if (enemy.isAlive() && tinyh::c2CircletoCircle(m_player.getShieldCollisionCircle(), enemy.getC2Circle()))
+				{
+					this->playerVsRangedEnemy(m_player, enemy);
+				}
 				this->updateRangedEnemyBullets(enemy);
 			}
 		}
@@ -511,16 +515,20 @@ void CollisionSystem::baseEnemyVsBullet(ai::AiBase & enemy, bullets::Bullet & bu
 void CollisionSystem::basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & bullet)
 {
 	this->baseEnemyVsBullet(enemy, bullet);
-	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
+	float dmg = bullet.getDamage();
+	if (bullet.getType() == BulletTypes::PyroBlast)
+	{
+		dmg = 0.1f;
+	}
+	else if (bullet.getType() == BulletTypes::StaticSphere)
+	{
+		dmg = 0.2f;
+	}
+	bool const & ENEMY_DIED = enemy.decrementHealth(dmg);
 	if (ENEMY_DIED)
 	{
 		Score::s_scoreCurrent += Score::SCORE_FOR_BASIC;
 		m_soundManager.play("enemy_death");
-		auto random = (rand() % 6 + 1); //generate number between 1 and 6
-		if (random == 2)
-		{
-			m_soundManager.play("what-hit");
-		}
 		generateKilledEnemyVoiceline();
 	}
 }
@@ -535,16 +543,20 @@ void CollisionSystem::basicEnemyVsBullet(ai::AiBasic & enemy, bullets::Bullet & 
 void CollisionSystem::rangedEnemyVsBullet(ai::AiRanged & enemy, bullets::Bullet & bullet)
 {
 	this->baseEnemyVsBullet(enemy, bullet);
-	bool const & ENEMY_DIED = enemy.decrementHealth(bullet.getDamage());
+	float dmg = bullet.getDamage();
+	if (bullet.getType() == BulletTypes::PyroBlast)
+	{
+		dmg = 0.1f;
+	}
+	else if (bullet.getType() == BulletTypes::StaticSphere)
+	{
+		dmg = 0.2f;
+	}
+	bool const & ENEMY_DIED = enemy.decrementHealth(dmg);
 	if (ENEMY_DIED)
 	{
 		Score::s_scoreCurrent += Score::SCORE_FOR_RANGED;
 		m_soundManager.play("enemy_death");
-		auto random = (rand() % 6 + 1); //generate number between 1 and 6
-		if (random == 2)
-		{
-			m_soundManager.play("what-hit");
-		}
 		generateKilledEnemyVoiceline();
 	}
 }
@@ -743,7 +755,24 @@ void CollisionSystem::generateKilledEnemyVoiceline()
 /// <param name="enemy">reference to the enemy that collided.</param>
 void CollisionSystem::playerVsBasicEnemy(Player & player, ai::AiBasic & enemy)
 {
-	float const PLAYER_DMG = 4.0f;
+	float const PLAYER_DMG = 3.0f;
+	if (!player.isInvulnerable())
+	{
+		player.decrementShield(PLAYER_DMG);
+		m_gameUi.setTargetHealth(player.getShieldHealth());
+	}
+}
+
+/// <summary>
+/// @brief Collision between player and enemy has occured.
+/// 
+/// Details the appropriate response to player vs enemy collision
+/// </summary>
+/// <param name="player">reference to the player that collided.</param>
+/// <param name="enemy">reference to the enemy that collided.</param>
+void CollisionSystem::playerVsRangedEnemy(Player & player, ai::AiRanged & enemy)
+{
+	float const PLAYER_DMG = 1.0f;
 	if (!player.isInvulnerable())
 	{
 		player.decrementShield(PLAYER_DMG);

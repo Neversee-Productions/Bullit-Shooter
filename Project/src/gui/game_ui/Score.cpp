@@ -38,7 +38,7 @@ void Score::init(std::shared_ptr<gameUi::Resources> sptrResources)
 		m_scoreDisplay.getGlobalBounds().height * 0.5f
 	);
 	m_scoreDisplay.setPosition(
-		App::getViewSizeI().x * 0.5f,
+		App::getViewSizeI().x * 0.475f,
 		App::getViewSizeI().y * 0.1f
 	);
 }

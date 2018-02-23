@@ -3,7 +3,7 @@
     {
         "bg-soundtrack":
         {
-            "volume": 50.0,
+            "volume": 20.0,
             "loop": true,
             "attenuation": 1.0,
             "buffer":
@@ -93,7 +93,7 @@
                 },
                 "impact":
                 {
-                    "volume": 30.0,
+                    "volume": 15.0,
                     "loop": false,
                     "attenuation": 1.0,
                     "buffer":

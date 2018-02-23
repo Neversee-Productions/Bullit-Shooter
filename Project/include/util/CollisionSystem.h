@@ -65,6 +65,7 @@ private: // Private Member Functions
 	void playerVsAsteroid(Player & player, Asteroid & asteroid);
 	void playerVsPickup(Player & player, Pickup & pickup);
 	void playerVsBasicEnemy(Player & player, ai::AiBasic & enemy);
+	void playerVsRangedEnemy(Player & player, ai::AiRanged & enemy);
 	void asteroidVsAsteroid(Asteroid & asteroid1, Asteroid & asteroid2);
 	void generateKilledEnemyVoiceline();
 
