@@ -50,6 +50,7 @@ void GameUI::update()
 			m_healthSprite.setScale(m_targetHealth, 1.0f);
 			m_rechargeHealth = false;
 		}
+		m_healthSprite.setColor(sf::Color(255u, 255u, 255u, m_healthSprite.getColor().a));
 	}
 	else
 	{
@@ -65,6 +66,7 @@ void GameUI::update()
 			m_healthLostSprite.setScale(sf::Vector2f(0.0f, 1.0f));
 			m_healthSprite.setScale(0.0f, 1.0f);
 		}
+		m_healthSprite.setColor(sf::Color(0u, 0u, 255u, m_healthSprite.getColor().a));
 	}
 	if (m_showPauseScreen)
 	{
@@ -209,7 +211,7 @@ void GameUI::init(std::shared_ptr<gameUi::Resources> resources)
 	m_healthLostSprite.setTexture(*resources->m_sptrHealthTexture, false);
 	m_healthLostSprite.setOrigin(0.0f, m_healthLostSprite.getGlobalBounds().height / 2);
 	m_healthLostSprite.setPosition(sf::Vector2f(m_healthTemplatePosition.x - 75.0f, m_healthTemplatePosition.y));
-	m_healthLostSprite.setColor(sf::Color(255u, 255u, 100u, 255u));
+	m_healthLostSprite.setColor(sf::Color(0u, 0u, 125u, 255u));
 
 	//initialize the collision rectangle
 	m_healthCollisionRect.min.x = m_healthTemplatePosition.x - (m_healthTemplateSprite.getLocalBounds().width / 2);
@@ -513,6 +515,7 @@ void GameUI::setRecharge(float val)
 /// </summary>
 void GameUI::reset()
 {
+	m_healthSprite.setColor(sf::Color::Blue);
 	m_score.reset();
 	m_healthSprite.setScale(1.0f, 1.0f);
 	m_healthLostSprite.setScale(1.0f, 1.0f);

@@ -32,7 +32,6 @@ void Score::init(std::shared_ptr<gameUi::Resources> sptrResources)
 {
 	m_scoreDisplay.setFont(*sptrResources->m_sptrButtonFont);
 	m_scoreDisplay.setFillColor(sf::Color::White);
-	m_scoreDisplay.setOutlineColor(sf::Color::Black);
 	m_scoreDisplay.setString(m_scoreStream.str() + std::to_string(s_scoreCurrent));
 	m_scoreDisplay.setOrigin(
 		m_scoreDisplay.getGlobalBounds().width * 0.5f,
@@ -130,7 +129,7 @@ void Score::draw(Window & window, float const & deltaTime)
 void Score::reset()
 {
 	m_scoreDisplay.setOutlineColor(sf::Color::Black);
-	m_scoreDisplay.setOutlineThickness(2.0f);
+	m_scoreDisplay.setOutlineThickness(4.0f);
 
 	m_scoreDisplaying = 0;
 	m_scoreTarget = 0;

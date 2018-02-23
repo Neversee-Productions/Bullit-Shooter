@@ -23,7 +23,11 @@ class GameUI
 public: //public member classes/structs.
 private: //private member classes/structs.
 public: //public functions
-	GameUI(std::shared_ptr<KeyHandler> keyHandler, std::shared_ptr<Controller> controller, std::function<void()> mainMenuFunction, std::function<void()> restartGameFunction
+	GameUI(
+		std::shared_ptr<KeyHandler> keyHandler
+		, std::shared_ptr<Controller> controller
+		, std::function<void()> mainMenuFunction
+		, std::function<void()> restartGameFunction
 	);
 	void update();
 	void draw(Window & window, const float & deltaTime);
